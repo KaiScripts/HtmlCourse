@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to use CSS Variables (Custom Properties) to create more maintainable and flexible stylesheets.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="36">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html" class="active">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>CSS Basics</h3>
+                <ul>
+                    <li><a href="page26.html">26. Introduction to CSS</a></li>
+                    <li><a href="page27.html">27. CSS Selectors</a></li>
+                    <li><a href="page28.html">28. CSS Box Model</a></li>
+                    <li><a href="page29.html">29. Typography</a></li>
+                    <li><a href="page30.html">30. Colors & Backgrounds</a></li>
+                    <li><a href="page31.html">31. Layout Basics</a></li>
+                    <li><a href="page32.html">32. Flexbox</a></li>
+                    <li><a href="page33.html">33. CSS Grid</a></li>
+                    <li><a href="page34.html">34. Responsive Design</a></li>
+                    <li><a href="page35.html">35. Transitions & Animations</a></li>
+                    <li><a href="page36.html" class="active">36. CSS Variables</a></li>
+                    <li><a href="page37.html">37. CSS Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 72%;"></div>
+                </div>
+                <p style="text-align: center;">Page 36 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>CSS Variables</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to CSS Variables</h2>
+                        <p>CSS Variables, officially known as CSS Custom Properties, are entities defined by CSS authors that contain specific values to be reused throughout a document. They help create more maintainable and flexible stylesheets by centralizing important values and enabling dynamic changes.</p>
+                        
+                        <p>Before CSS Variables, developers had to repeat the same values (like colors, font sizes, or spacing) throughout their stylesheets. Any change required updating every instance, which was error-prone and time-consuming. CSS Variables solve this problem by allowing you to define a value once and reference it multiple times.</p>
+                        
+                        <h3>Basic Syntax</h3>
+                        <p>CSS Variables have two parts: the declaration and the usage.</p>
+                        
+                        <h4>Declaring a CSS Variable</h4>
+                        <p>Variables are declared using the custom property notation, which starts with two dashes (<code>--</code>):</p>
+                        
+                        <pre><code class="language-css">:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --font-size-base: 16px;
+  --spacing-unit: 8px;
+}</code></pre>
+                        
+                        <p>In this example, we're declaring four variables in the <code>:root</code> selector, which makes them available throughout the document.</p>
+                        
+                        <h4>Using a CSS Variable</h4>
+                        <p>To use a variable, you use the <code>var()</code> function:</p>
+                        
+                        <pre><code class="language-css">.button {
+  background-color: var(--primary-color);
+  padding: var(--spacing-unit) calc(var(--spacing-unit) * 2);
+  font-size: var(--font-size-base);
+}
+
+.header {
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--secondary-color);
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Naming Conventions</h4>
+                            <p>When naming CSS Variables, consider these best practices:</p>
+                            <ul>
+                                <li>Use descriptive names that indicate the purpose (e.g., <code>--primary-color</code> instead of <code>--color1</code>)</li>
+                                <li>Use kebab-case (hyphens between words) for consistency with CSS properties</li>
+                                <li>Group related variables with prefixes (e.g., <code>--font-size-small</code>, <code>--font-size-medium</code>)</li>
+                                <li>Consider organizing by component or purpose (e.g., <code>--button-background</code>, <code>--button-text-color</code>)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Variable Scope and Inheritance</h2>
+                        <p>CSS Variables follow the normal rules of CSS cascading and inheritance, which gives them powerful scoping capabilities.</p>
+                        
+                        <h3>Global Variables</h3>
+                        <p>Variables defined in the <code>:root</code> selector are globally available throughout the document:</p>
+                        
+                        <pre><code class="language-css">:root {
+  --global-color: blue;
+}
+
+/* This will use the global variable */
+.element {
+  color: var(--global-color);
+}</code></pre>
+                        
+                        <h3>Local Variables</h3>
+                        <p>Variables can also be defined within specific selectors, limiting their scope:</p>
+                        
+                        <pre><code class="language-css">:root {
+  --text-color: black;
+}
+
+.card {
+  --text-color: darkgray; /* Local override */
+  color: var(--text-color); /* Uses darkgray */
+}
+
+.header {
+  color: var(--text-color); /* Uses black from :root */
+}</code></pre>
+                        
+                        <h3>Inheritance</h3>
+                        <p>Child elements inherit variables from their parents:</p>
+                        
+                        <pre><code class="language-css">.parent {
+  --custom-color: red;
+}
+
+.parent .child {
+  /* Inherits --custom-color from .parent */
+  color: var(--custom-color);
+}</code></pre>
+                        
+                        <h3>Cascading and Overriding</h3>
+                        <p>Variables follow the cascade, so more specific selectors can override variables:</p>
+                        
+                        <pre><code class="language-css">:root {
+  --theme-color: blue;
+}
+
+.container {
+  --theme-color: green; /* Override for this container */
+}
+
+.container.special {
+  --theme-color: purple; /* More specific override */
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Scoping Strategy</h4>
+                            <p>A common strategy for organizing CSS Variables is:</p>
+                            <ol>
+                                <li>Define global design tokens in <code>:root</code> (colors, spacing, typography)</li>
+                                <li>Define component-specific variables in component selectors</li>
+                                <li>Define state-specific variables in modifier classes</li>
+                            </ol>
+                            <pre><code class="language-css">:root {
+  /* Global design tokens */
+  --color-primary: #3498db;
+  --spacing-unit: 8px;
+}
+
+.button {
+  /* Component-specific variables */
+  --button-padding-x: calc(var(--spacing-unit) * 2);
+  --button-padding-y: var(--spacing-unit);
+  
+  padding: var(--button-padding-y) var(--button-padding-x);
+  background-color: var(--color-primary);
+}
+
+.button.large {
+  /* State-specific variables */
+  --button-padding-y: calc(var(--spacing-unit) * 2);
+  --button-padding-x: calc(var(--spacing-unit) * 4);
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>The var() Function</h2>
+                        <p>The <code>var()</code> function is used to insert the value of a CSS Variable into a property. It has some additional features beyond simple substitution.</p>
+                        
+                        <h3>Basic Usage</h3>
+                        <p>The simplest form just references a variable:</p>
+                        
+                        <pre><code class="language-css">:root {
+  --main-color: #3498db;
+}
+
+.element {
+  color: var(--main-color);
+}</code></pre>
+                        
+                        <h3>Fallback Values</h3>
+                        <p>You can provide a fallback value that will be used if the variable is not defined:</p>
+                        
+                        <pre><code class="language-css">.element {
+  /* If --undefined-color doesn't exist, black will be used */
+  color: var(--undefined-color, black);
+}</code></pre>
+                        
+                        <h3>Nested Fallbacks</h3>
+                        <p>You can nest <code>var()</code> functions for multiple fallback levels:</p>
+                        
+                        <pre><code class="language-css">.element {
+  /* First tries --primary-color, then --fallback-color, then uses blue */
+  color: var(--primary-color, var(--fallback-color, blue));
+}</code></pre>
+                        
+                        <h3>Using Variables in Calculations</h3>
+                        <p>CSS Variables can be used in <code>calc()</code> expressions:</p>
+                        
+                        <pre><code class="language-css">:root {
+  --spacing-unit: 8px;
+}
+
+.element {
+  /* 8px * 2 = 16px */
+  padding: calc(var(--spacing-unit) * 2);
+  
+  /* 8px + 4px = 12px */
+  margin: calc(var(--spacing-unit) + 4px);
+}</code></pre>
+                        
+                        <h3>Combining Multiple Variables</h3>
+                        <p>You can combine multiple variables in a single property:</p>
+                        
+                        <pre><code class="language-css">:root {
+  --h: 200;
+  --s: 50%;
+  --l: 50%;
+}
+
+.element {
+  /* Creates an HSL color using the three variables */
+  background-color: hsl(var(--h), var(--s), var(--l));
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Invalid Values</h4>
+                            <p>If a CSS Variable is used in a context where its value is invalid, the property will be set to its initial or inherited value:</p>
+                            <pre><code class="language-css">:root {
+  --padding: 20px;
+  --color: red;
+}
+
+.element {
+  /* Works fine */
+  padding: var(--padding);
+  
+  /* Invalid - 'red' is not a valid value for 'padding' */
+  /* Will use the initial value of padding instead */
+  padding: var(--color);
+}</code></pre>
+                            <p>This behavior is different from preprocessor variables (like Sass), which would cause a compilation error.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practical Use Cases</h2>
+                        <p>CSS Variables have many practical applications that make your CSS more maintainable and flexible. Here are some common use cases:</p>
+                        
+                        <h3>Theming and Color Schemes</h3>
+                        <p>One of the most popular uses for CSS Variables is creating theme systems:</p>
+                        
+                        <pre><code class="language-css">:root {
+  /* Light theme (default) */
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --heading-color: #000000;
+  --link-color: #0066cc;
+  --border-color: #dddddd;
+}
+
+/* Dark theme */
+.dark-theme {
+  --background-color: #222222;
+  --text-color: #f0f0f0;
+  --heading-color: #ffffff;
+  --link-color: #66aaff;
+  --border-color: #444444;
+}
+
+/* Using the theme variables */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3 {
+  color: var(--heading-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+.card {
+  border: 1px solid var(--border-color);
+}</code></pre>
+                        
+                        <p>With this approach, switching between themes is as simple as adding a class to the <code>body</code> element:</p>
+                        
+                        <pre><code class="language-javascript">// Toggle dark theme
+document.body.classList.toggle('dark-theme');</code></pre>
+                        
+                        <h3>Responsive Design</h3>
+                        <p>CSS Variables can be redefined in media queries for responsive designs:</p>
+                        
+                        <pre><code class="language-css">:root {
+  --container-width: 1200px;
+  --heading-size: 2.5rem;
+  --paragraph-size: 1rem;
+  --spacing-large: 48px;
+  --spacing-medium: 24px;
+  --spacing-small: 12px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-width: 100%;
+    --heading-size: 2rem;
+    --spacing-large: 32px;
+    --spacing-medium: 16px;
+    --spacing-small: 8px;
+  }
+}
+
+.container {
+  max-width: var(--container-width);
+}
+
+h1 {
+  font-size: var(--heading-size);
+  margin-bottom: var(--spacing-medium);
+}
+
+section {
+  padding: var(--spacing-large) var(--spacing-medium);
+}</code></pre>
+                        
+                        <h3>Component-Based Design</h3>
+                        <p>CSS Variables are perfect for component-based designs, allowing components to be customized while maintaining consistency:</p>
+                        
+                        <pre><code class="language-css">/* Base button styles */
+.button {
+  --button-bg: #3498db;
+  --button-text: white;
+  --button-padding-y: 8px;
+  --button-padding-x: 16px;
+  --button-radius: 4px;
+  
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: var(--button-padding-y) var(--button-padding-x);
+  border-radius: var(--button-radius);
+  border: none;
+  cursor: pointer;
+}
+
+/* Button variants */
+.button.primary {
+  --button-bg: #3498db;
+}
+
+.button.success {
+  --button-bg: #2ecc71;
+}
+
+.button.danger {
+  --button-bg: #e74c3c;
+}
+
+.button.large {
+  --button-padding-y: 12px;
+  --button-padding-x: 24px;
+  --button-radius: 6px;
+}
+
+.button.small {
+  --button-padding-y: 4px;
+  --button-padding-x: 8px;
+  --button-radius: 2px;
+}</code></pre>
+                        
+                        <p>This approach makes it easy to create and maintain multiple variants of a component.</p>
+                        
+                        <h3>Grid Systems</h3>
+                        <p>CSS Variables can simplify grid systems:</p>
+                        
+                        <pre><code class="language-css">:root {
+  --grid-columns: 12;
+  --grid-gap: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
+}
+
+.col-span-6 {
+  grid-column: span 6;
+}
+
+/* Responsive grid */
+@media (max-width: 768px) {
+  .grid {
+    --grid-columns: 6;
+    --grid-gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    --grid-columns: 2;
+  }
+}</code></pre>
+                        
+                        <h3>Animation Control</h3>
+                        <p>CSS Variables can be used to control animations:</p>
+                        
+                        <pre><code class="language-css">:root {
+  --animation-duration: 0.3s;
+  --animation-easing: ease-in-out;
+}
+
+.fade-in {
+  animation: fadeIn var(--animation-duration) var(--animation-easing);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --animation-duration: 0.1s;
+  }
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Design Systems</h4>
+                            <p>CSS Variables are a key component of modern design systems, allowing for consistent application of design tokens across an entire application or website. A typical design system might organize variables like this:</p>
+                            <pre><code class="language-css">:root {
+  /* Color palette */
+  --color-primary-100: #e3f2fd;
+  --color-primary-500: #2196f3;
+  --color-primary-900: #0d47a1;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-500: #9e9e9e;
+  --color-neutral-900: #212121;
+  
+  /* Semantic colors */
+  --color-background: var(--color-neutral-100);
+  --color-text: var(--color-neutral-900);
+  --color-link: var(--color-primary-500);
+  
+  /* Typography */
+  --font-family-base: 'Roboto', sans-serif;
+  --font-family-heading: 'Roboto Condensed', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  
+  /* Borders */
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 8px;
+  --border-width: 1px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  
+  /* Transitions */
+  --transition-fast: 0.1s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Dynamic CSS with JavaScript</h2>
+                        <p>One of the most powerful features of CSS Variables is that they can be manipulated with JavaScript, allowing for dynamic styling without having to modify CSS classes or inline styles.</p>
+                        
+                        <h3>Reading CSS Variables</h3>
+                        <p>You can read the value of a CSS Variable using <code>getComputedStyle()</code> and <code>getPropertyValue()</code>:</p>
+                        
+                        <pre><code class="language-javascript">// Get the value of --primary-color from :root
+const root = document.documentElement;
+const primaryColor = getComputedStyle(root).getPropertyValue('--primary-color').trim();
+
+console.log(primaryColor); // e.g., "#3498db"</code></pre>
+                        
+                        <h3>Setting CSS Variables</h3>
+                        <p>You can set or update CSS Variables using <code>style.setProperty()</code>:</p>
+                        
+                        <pre><code class="language-javascript">// Set a new value for --primary-color on :root
+document.documentElement.style.setProperty('--primary-color', '#ff0000');
+
+// Set a variable on a specific element
+const header = document.querySelector('.header');
+header.style.setProperty('--header-height', '60px');</code></pre>
+                        
+                        <h3>Example: Theme Switcher</h3>
+                        <p>Here's a complete example of a theme switcher using CSS Variables and JavaScript:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;div class="theme-controls"&gt;
+  &lt;button data-theme="light"&gt;Light Theme&lt;/button&gt;
+  &lt;button data-theme="dark"&gt;Dark Theme&lt;/button&gt;
+  &lt;button data-theme="blue"&gt;Blue Theme&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <pre><code class="language-css">/* CSS */
+:root {
+  /* Default theme (light) */
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --heading-color: #000000;
+  --link-color: #0066cc;
+  --border-color: #dddddd;
+}
+
+/* Theme styles using the variables */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3 {
+  color: var(--heading-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+.card {
+  border: 1px solid var(--border-color);
+}</code></pre>
+                        
+                        <pre><code class="language-javascript">// JavaScript
+const themes = {
+  light: {
+    '--background-color': '#ffffff',
+    '--text-color': '#333333',
+    '--heading-color': '#000000',
+    '--link-color': '#0066cc',
+    '--border-color': '#dddddd'
+  },
+  dark: {
+    '--background-color': '#222222',
+    '--text-color': '#f0f0f0',
+    '--heading-color': '#ffffff',
+    '--link-color': '#66aaff',
+    '--border-color': '#444444'
+  },
+  blue: {
+    '--background-color': '#e3f2fd',
+    '--text-color': '#0d47a1',
+    '--heading-color': '#01579b',
+    '--link-color': '#2196f3',
+    '--border-color': '#bbdefb'
+  }
+};
+
+// Function to set theme
+function setTheme(themeName) {
+  const theme = themes[themeName];
+  
+  // Apply each CSS variable
+  for (const [property, value] of Object.entries(theme)) {
+    document.documentElement.style.setProperty(property, value);
+  }
+  
+  // Save preference to localStorage
+  localStorage.setItem('theme', themeName);
+}
+
+// Add click handlers to buttons
+document.querySelectorAll('.theme-controls button').forEach(button => {
+  button.addEventListener('click', () => {
+    const theme = button.dataset.theme;
+    setTheme(theme);
+  });
+});
+
+// Load saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme && themes[savedTheme]) {
+  setTheme(savedTheme);
+}</code></pre>
+                        
+                        <h3>Example: Interactive Controls</h3>
+                        <p>CSS Variables can be used to create interactive controls for styling:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;div class="controls"&gt;
+  &lt;label&gt;
+    Hue:
+    &lt;input type="range" min="0" max="360" value="200" id="hue-control"&gt;
+  &lt;/label&gt;
+  
+  &lt;label&gt;
+    Saturation:
+    &lt;input type="range" min="0" max="100" value="50" id="saturation-control"&gt;
+  &lt;/label&gt;
+  
+  &lt;label&gt;
+    Lightness:
+    &lt;input type="range" min="0" max="100" value="50" id="lightness-control"&gt;
+  &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div class="preview"&gt;
+  &lt;h2&gt;Color Preview&lt;/h2&gt;
+  &lt;p&gt;Adjust the controls to change the color.&lt;/p&gt;
+  &lt;button&gt;Sample Button&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <pre><code class="language-css">/* CSS */
+:root {
+  --hue: 200;
+  --saturation: 50%;
+  --lightness: 50%;
+}
+
+.preview {
+  background-color: hsl(var(--hue), calc(var(--saturation) * 0.3), calc(var(--lightness) + 30%));
+  color: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 30%));
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid hsl(var(--hue), var(--saturation), var(--lightness));
+}
+
+.preview button {
+  background-color: hsl(var(--hue), var(--saturation), var(--lightness));
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.preview button:hover {
+  background-color: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 10%));
+}</code></pre>
+                        
+                        <pre><code class="language-javascript">// JavaScript
+const hueControl = document.getElementById('hue-control');
+const saturationControl = document.getElementById('saturation-control');
+const lightnessControl = document.getElementById('lightness-control');
+const root = document.documentElement;
+
+// Update CSS variables when controls change
+hueControl.addEventListener('input', () => {
+  root.style.setProperty('--hue', hueControl.value);
+});
+
+saturationControl.addEventListener('input', () => {
+  root.style.setProperty('--saturation', saturationControl.value + '%');
+});
+
+lightnessControl.addEventListener('input', () => {
+  root.style.setProperty('--lightness', lightnessControl.value + '%');
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Performance Considerations</h4>
+                            <p>When manipulating CSS Variables with JavaScript:</p>
+                            <ul>
+                                <li>Changing variables in <code>:root</code> affects the entire document and may trigger more repaints</li>
+                                <li>For animations, consider changing variables on specific elements rather than globally</li>
+                                <li>Batch variable changes when possible to minimize repaints</li>
+                                <li>For high-performance animations, consider using <code>requestAnimationFrame</code></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS Variables vs. Preprocessor Variables</h2>
+                        <p>CSS Variables (Custom Properties) and preprocessor variables (like those in Sass or Less) serve similar purposes but have important differences.</p>
+                        
+                        <h3>Key Differences</h3>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>CSS Variables</th>
+                                        <th>Preprocessor Variables</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Runtime vs. Compile-time</td>
+                                        <td>Runtime (evaluated in the browser)</td>
+                                        <td>Compile-time (processed before browser receives CSS)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DOM Access</td>
+                                        <td>Part of the DOM, can be accessed and modified with JavaScript</td>
+                                        <td>Not accessible in the DOM, values are compiled into static CSS</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cascading & Inheritance</td>
+                                        <td>Follow CSS cascade and inheritance rules</td>
+                                        <td>Don't cascade or inherit (scope is defined by preprocessor rules)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computed Values</td>
+                                        <td>Can be computed based on element context</td>
+                                        <td>Computed once during compilation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Media Queries</td>
+                                        <td>Can be redefined inside media queries</td>
+                                        <td>Can be used to generate different CSS in media queries</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fallbacks</td>
+                                        <td>Built-in fallback mechanism with <code>var(--prop, fallback)</code></td>
+                                        <td>No built-in fallback mechanism</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Browser Support</td>
+                                        <td>Modern browsers (IE11 requires polyfill)</td>
+                                        <td>All browsers (compiled to standard CSS)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3>When to Use Each</h3>
+                        <p>Both types of variables have their place in modern CSS development:</p>
+                        
+                        <h4>Use CSS Variables When:</h4>
+                        <ul>
+                            <li>You need to change values dynamically with JavaScript</li>
+                            <li>You want to leverage the cascade and inheritance</li>
+                            <li>You need to respond to media queries by changing variable values</li>
+                            <li>You're implementing theming or user customization</li>
+                            <li>You need to compute values based on element context</li>
+                        </ul>
+                        
+                        <h4>Use Preprocessor Variables When:</h4>
+                        <ul>
+                            <li>You need to support older browsers without polyfills</li>
+                            <li>You're using complex logic (loops, conditionals) to generate CSS</li>
+                            <li>You need to use variables in selectors or property names</li>
+                            <li>You're performing complex calculations at compile time</li>
+                            <li>You need to ensure consistent output across all browsers</li>
+                        </ul>
+                        
+                        <h3>Using Both Together</h3>
+                        <p>Many modern projects use both types of variables together, leveraging the strengths of each:</p>
+                        
+                        <pre><code class="language-scss">// Sass variables for compilation-time logic
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+
+// Generate CSS with Sass variables
+:root {
+  // Define CSS Variables with Sass
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --font-size-base: 16px;
+  
+  // Use Sass for calculations that won't change
+  --grid-columns: 12;
+  --container-width: 1200px;
+}
+
+// Use Sass for media query breakpoints
+@media (max-width: $breakpoint-md) {
+  :root {
+    // Redefine CSS Variables inside media queries
+    --font-size-base: 14px;
+    --container-width: 100%;
+  }
+}
+
+// Use CSS Variables for values that might change at runtime
+.element {
+  color: var(--primary-color);
+  font-size: var(--font-size-base);
+  
+  // Mix both types when appropriate
+  width: calc(var(--container-width) / #{$some-sass-variable});
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Best of Both Worlds</h4>
+                            <p>A common approach in modern projects:</p>
+                            <ol>
+                                <li>Use preprocessor variables for build-time configuration, breakpoints, and complex logic</li>
+                                <li>Generate CSS Variables from preprocessor variables for your design tokens</li>
+                                <li>Use CSS Variables in your actual CSS rules</li>
+                            </ol>
+                            <p>This gives you the power of preprocessors for generating CSS and the flexibility of CSS Variables for runtime changes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Browser Support and Fallbacks</h2>
+                        <p>CSS Variables are supported in all modern browsers, but you may need fallbacks for older browsers like Internet Explorer.</p>
+                        
+                        <h3>Current Browser Support</h3>
+                        <p>CSS Variables are supported in:</p>
+                        <ul>
+                            <li>Chrome 49+ (March 2016)</li>
+                            <li>Firefox 31+ (July 2014)</li>
+                            <li>Safari 9.1+ (March 2016)</li>
+                            <li>Edge 15+ (April 2017)</li>
+                            <li>Opera 36+ (March 2016)</li>
+                            <li>iOS Safari 9.3+ (March 2016)</li>
+                            <li>Android Browser 67+ (June 2018)</li>
+                        </ul>
+                        <p>Internet Explorer 11 and earlier do not support CSS Variables.</p>
+                        
+                        <h3>Providing Fallbacks</h3>
+                        <p>There are several ways to provide fallbacks for browsers that don't support CSS Variables:</p>
+                        
+                        <h4>1. Double Declaration</h4>
+                        <p>The simplest approach is to provide a fallback value before using the variable:</p>
+                        
+                        <pre><code class="language-css">.element {
+  /* Fallback for browsers that don't support variables */
+  color: #3498db;
+  /* Modern browsers will use this */
+  color: var(--primary-color);
+}</code></pre>
+                        
+                        <p>Browsers that don't support CSS Variables will use the first declaration, while browsers that do support them will override it with the second declaration.</p>
+                        
+                        <h4>2. Feature Detection with @supports</h4>
+                        <p>You can use <code>@supports</code> to provide different styles based on CSS Variable support:</p>
+                        
+                        <pre><code class="language-css">/* Base styles for all browsers */
+.element {
+  color: #3498db;
+  background-color: #f5f5f5;
+}
+
+/* Enhanced styles for browsers that support CSS Variables */
+@supports (--css: variables) {
+  .element {
+    color: var(--primary-color);
+    background-color: var(--background-color);
+  }
+}</code></pre>
+                        
+                        <h4>3. JavaScript Feature Detection</h4>
+                        <p>You can use JavaScript to detect support and add a class to the <code>html</code> element:</p>
+                        
+                        <pre><code class="language-javascript">// Check for CSS Variables support
+if (window.CSS && window.CSS.supports && window.CSS.supports('--a', 0)) {
+  document.documentElement.classList.add('css-vars-supported');
+} else {
+  document.documentElement.classList.add('css-vars-not-supported');
+}</code></pre>
+                        
+                        <pre><code class="language-css">/* Styles for browsers without CSS Variables support */
+.css-vars-not-supported .element {
+  color: #3498db;
+  background-color: #f5f5f5;
+}
+
+/* Styles for browsers with CSS Variables support */
+.css-vars-supported .element {
+  color: var(--primary-color);
+  background-color: var(--background-color);
+}</code></pre>
+                        
+                        <h4>4. CSS Variables Polyfill</h4>
+                        <p>For projects that need to support older browsers but still want to use CSS Variables, you can use a polyfill:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Include the polyfill in your HTML --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  // Initialize the polyfill
+  cssVars({
+    // Options
+    onlyLegacy: true, // Only apply to browsers that don't support CSS variables
+    updateDOM: true,  // Update the DOM with resolved values
+    silent: false     // Log warnings and errors
+  });
+&lt;/script&gt;</code></pre>
+                        
+                        <p>Popular polyfills include <code>css-vars-ponyfill</code> and <code>ie11CustomProperties</code>.</p>
+                        
+                        <div class="info-box">
+                            <h4>Progressive Enhancement Approach</h4>
+                            <p>For many projects, the best approach is progressive enhancement:</p>
+                            <ol>
+                                <li>Provide a basic, functional design for all browsers using standard CSS</li>
+                                <li>Enhance the experience for modern browsers using CSS Variables</li>
+                                <li>Only use a polyfill if you absolutely need the same experience in older browsers</li>
+                            </ol>
+                            <p>This approach ensures your site works everywhere while taking advantage of modern features where available.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Best Practices for CSS Variables</h2>
+                        <p>To get the most out of CSS Variables, follow these best practices:</p>
+                        
+                        <h3>Naming Conventions</h3>
+                        <ul>
+                            <li>Use descriptive, semantic names that indicate purpose</li>
+                            <li>Use kebab-case (hyphens between words)</li>
+                            <li>Group related variables with prefixes</li>
+                            <li>Consider using namespaces for larger projects</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">/* Good naming */
+:root {
+  --color-primary: #3498db;
+  --font-size-heading: 2rem;
+  --spacing-unit: 8px;
+  --animation-duration-fast: 0.2s;
+}
+
+/* Better with namespacing for larger projects */
+:root {
+  --brand-color-primary: #3498db;
+  --brand-color-secondary: #2ecc71;
+  
+  --typography-font-family-base: 'Roboto', sans-serif;
+  --typography-font-size-base: 16px;
+  
+  --layout-spacing-unit: 8px;
+  --layout-container-width: 1200px;
+}</code></pre>
+                        
+                        <h3>Organization</h3>
+                        <ul>
+                            <li>Define global variables in <code>:root</code></li>
+                            <li>Group related variables together</li>
+                            <li>Use comments to document variable purpose and usage</li>
+                            <li>Consider separating variables into their own CSS file</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">/* variables.css */
+:root {
+  /* Color Palette
+   * Primary colors are used for main UI elements
+   * Secondary colors are used for accents and highlights
+   */
+  --color-primary-100: #e3f2fd;
+  --color-primary-500: #2196f3;
+  --color-primary-900: #0d47a1;
+  --color-secondary-500: #ff4081;
+  
+  /* Typography
+   * Base size is 16px, scale factor is 1.25
+   */
+  --font-family-base: 'Roboto', sans-serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.563rem;
+  --font-size-2xl: 1.953rem;
+  
+  /* Spacing
+   * Base unit is 8px, use multiples for consistency
+   */
+  --spacing-unit: 8px;
+  --spacing-xs: calc(var(--spacing-unit) * 0.5);
+  --spacing-sm: var(--spacing-unit);
+  --spacing-md: calc(var(--spacing-unit) * 2);
+  --spacing-lg: calc(var(--spacing-unit) * 3);
+  --spacing-xl: calc(var(--spacing-unit) * 4);
+}</code></pre>
+                        
+                        <h3>Scoping</h3>
+                        <ul>
+                            <li>Define global design tokens in <code>:root</code></li>
+                            <li>Define component-specific variables within component selectors</li>
+                            <li>Override variables in more specific contexts when needed</li>
+                            <li>Use local variables for values that are only used within a component</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">:root {
+  /* Global design tokens */
+  --color-primary: #3498db;
+  --border-radius: 4px;
+}
+
+.card {
+  /* Component-specific variables */
+  --card-padding: 16px;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  padding: var(--card-padding);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.card.featured {
+  /* Override for specific variant */
+  --card-padding: 24px;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}</code></pre>
+                        
+                        <h3>Calculations</h3>
+                        <ul>
+                            <li>Use <code>calc()</code> to derive values from base variables</li>
+                            <li>Create relationships between variables to maintain consistency</li>
+                            <li>Use simple arithmetic for clarity</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">:root {
+  /* Base values */
+  --spacing-unit: 8px;
+  --font-size-base: 1rem;
+  --line-height-base: 1.5;
+  
+  /* Derived values */
+  --spacing-small: calc(var(--spacing-unit) * 0.5);
+  --spacing-large: calc(var(--spacing-unit) * 2);
+  --font-size-large: calc(var(--font-size-base) * 1.25);
+  --line-height-heading: calc(var(--line-height-base) * 0.85);
+}</code></pre>
+                        
+                        <h3>Performance</h3>
+                        <ul>
+                            <li>Avoid changing global variables frequently, especially during animations</li>
+                            <li>Limit the number of variables to what you actually need</li>
+                            <li>For animations, prefer changing variables on specific elements rather than <code>:root</code></li>
+                            <li>Use hardware-accelerated properties (<code>transform</code>, <code>opacity</code>) for animations</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">/* Less efficient - changes global variable */
+@keyframes pulse-inefficient {
+  0% { --global-scale: 1; }
+  50% { --global-scale: 1.1; }
+  100% { --global-scale: 1; }
+}
+
+/* More efficient - changes variable on specific element */
+.pulse-element {
+  --element-scale: 1;
+  transform: scale(var(--element-scale));
+}
+
+@keyframes pulse-efficient {
+  0% { --element-scale: 1; }
+  50% { --element-scale: 1.1; }
+  100% { --element-scale: 1; }
+}</code></pre>
+                        
+                        <h3>Documentation</h3>
+                        <ul>
+                            <li>Document the purpose and expected values of variables</li>
+                            <li>Group related variables with clear comments</li>
+                            <li>For larger projects, consider creating a style guide that shows all variables</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">:root {
+  /* Primary Colors
+   * Used for main UI elements and important actions
+   * --color-primary: Main brand color
+   * --color-primary-light: Used for hover states
+   * --color-primary-dark: Used for active states
+   */
+  --color-primary: #3498db;
+  --color-primary-light: #5dade2;
+  --color-primary-dark: #2980b9;
+  
+  /* Typography
+   * Base font size is 16px (1rem)
+   * Scale factor is 1.25 (major third)
+   */
+  --font-size-xs: 0.8rem;    /* 12.8px */
+  --font-size-sm: 0.9rem;    /* 14.4px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-lg: 1.25rem;   /* 20px */
+  --font-size-xl: 1.563rem;  /* 25px */
+  --font-size-2xl: 1.953rem; /* 31.25px */
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>CSS Variables in Design Systems</h4>
+                            <p>For larger projects and design systems:</p>
+                            <ul>
+                                <li>Create a clear hierarchy of variables (tokens → semantic variables → component variables)</li>
+                                <li>Document the purpose and usage of each variable</li>
+                                <li>Create a living style guide that shows all variables in context</li>
+                                <li>Consider using tools like Storybook to document and showcase your variables</li>
+                                <li>Establish naming conventions and enforce them with linting tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: CSS Variables</h2>
+                        <p>Let's practice applying CSS Variables with a hands-on exercise.</p>
+                        
+                        <h3>Exercise: Create a Theme System</h3>
+                        <p>Create an HTML file with the following content:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;CSS Variables Theme System&lt;/title&gt;
+  &lt;link rel="stylesheet" href="variables.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class="site-header"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1&gt;Theme System Demo&lt;/h1&gt;
+      
+      &lt;div class="theme-switcher"&gt;
+        &lt;button class="theme-button" data-theme="light"&gt;Light&lt;/button&gt;
+        &lt;button class="theme-button" data-theme="dark"&gt;Dark&lt;/button&gt;
+        &lt;button class="theme-button" data-theme="blue"&gt;Blue&lt;/button&gt;
+        &lt;button class="theme-button" data-theme="green"&gt;Green&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+  
+  &lt;main&gt;
+    &lt;div class="container"&gt;
+      &lt;section class="card"&gt;
+        &lt;h2&gt;Welcome to the Theme System&lt;/h2&gt;
+        &lt;p&gt;This demo showcases the power of CSS Variables for creating a flexible theme system.&lt;/p&gt;
+        &lt;a href="#" class="button primary"&gt;Primary Button&lt;/a&gt;
+        &lt;a href="#" class="button secondary"&gt;Secondary Button&lt;/a&gt;
+      &lt;/section&gt;
+      
+      &lt;div class="grid"&gt;
+        &lt;section class="card"&gt;
+          &lt;h3&gt;Feature One&lt;/h3&gt;
+          &lt;p&gt;This is a description of the first feature. It explains what the feature does and why it's useful.&lt;/p&gt;
+          &lt;a href="#" class="button small"&gt;Learn More&lt;/a&gt;
+        &lt;/section&gt;
+        
+        &lt;section class="card"&gt;
+          &lt;h3&gt;Feature Two&lt;/h3&gt;
+          &lt;p&gt;This is a description of the second feature. It explains what the feature does and why it's useful.&lt;/p&gt;
+          &lt;a href="#" class="button small"&gt;Learn More&lt;/a&gt;
+        &lt;/section&gt;
+        
+        &lt;section class="card"&gt;
+          &lt;h3&gt;Feature Three&lt;/h3&gt;
+          &lt;p&gt;This is a description of the third feature. It explains what the feature does and why it's useful.&lt;/p&gt;
+          &lt;a href="#" class="button small"&gt;Learn More&lt;/a&gt;
+        &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class="card accent"&gt;
+        &lt;h2&gt;Customization Options&lt;/h2&gt;
+        &lt;p&gt;Adjust these controls to customize the current theme:&lt;/p&gt;
+        
+        &lt;div class="controls"&gt;
+          &lt;div class="control-group"&gt;
+            &lt;label for="spacing-control"&gt;Spacing Scale:&lt;/label&gt;
+            &lt;input type="range" id="spacing-control" min="4" max="12" value="8"&gt;
+            &lt;span class="value"&gt;8px&lt;/span&gt;
+          &lt;/div&gt;
+          
+          &lt;div class="control-group"&gt;
+            &lt;label for="radius-control"&gt;Border Radius:&lt;/label&gt;
+            &lt;input type="range" id="radius-control" min="0" max="24" value="4"&gt;
+            &lt;span class="value"&gt;4px&lt;/span&gt;
+          &lt;/div&gt;
+          
+          &lt;div class="control-group"&gt;
+            &lt;label for="font-size-control"&gt;Base Font Size:&lt;/label&gt;
+            &lt;input type="range" id="font-size-control" min="12" max="20" value="16"&gt;
+            &lt;span class="value"&gt;16px&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+  
+  &lt;footer class="site-footer"&gt;
+    &lt;div class="container"&gt;
+      &lt;p&gt;&copy; 2025 Theme System Demo. Created with CSS Variables.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+  
+  &lt;script src="variables.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>Now, create a CSS file named <code>variables.css</code> and a JavaScript file named <code>variables.js</code> to implement a theme system using CSS Variables.</p>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Implement the following features:</p>
+                            <ol>
+                                <li>Create a comprehensive set of CSS Variables for:
+                                    <ul>
+                                        <li>Colors (primary, secondary, text, background, etc.)</li>
+                                        <li>Typography (font sizes, line heights, font families)</li>
+                                        <li>Spacing (based on a consistent scale)</li>
+                                        <li>Borders and shadows</li>
+                                    </ul>
+                                </li>
+                                <li>Define four different themes (light, dark, blue, green) using CSS Variables</li>
+                                <li>Implement the theme switcher buttons to change themes using JavaScript</li>
+                                <li>Make the range inputs update their respective CSS Variables in real-time</li>
+                                <li>Save the user's theme preference to localStorage</li>
+                                <li>Add a media query to detect and respect the user's preferred color scheme</li>
+                                <li>Ensure the design is responsive and works well on different screen sizes</li>
+                                <li>Add smooth transitions when changing themes or adjusting controls</li>
+                            </ol>
+                            <p>Use the concepts and best practices covered in this lesson to create a well-organized, maintainable theme system.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored CSS Variables (Custom Properties), a powerful feature for creating more maintainable and flexible stylesheets:</p>
+                        <ul>
+                            <li><strong>Basic Syntax</strong>: Declaring variables with <code>--name: value</code> and using them with <code>var(--name)</code></li>
+                            <li><strong>Scope and Inheritance</strong>: How variables follow CSS cascade and inheritance rules, allowing for global and local variables</li>
+                            <li><strong>The var() Function</strong>: Using variables with fallbacks and in calculations</li>
+                            <li><strong>Practical Use Cases</strong>: Theming, responsive design, component-based design, and more</li>
+                            <li><strong>Dynamic CSS with JavaScript</strong>: Reading and setting variables to create interactive styles</li>
+                            <li><strong>CSS Variables vs. Preprocessor Variables</strong>: Understanding the differences and when to use each</li>
+                            <li><strong>Browser Support and Fallbacks</strong>: Ensuring compatibility with older browsers</li>
+                            <li><strong>Best Practices</strong>: Naming conventions, organization, scoping, and performance considerations</li>
+                        </ul>
+                        
+                        <p>CSS Variables have revolutionized how we write and maintain CSS, enabling more dynamic, flexible, and maintainable stylesheets. They're particularly valuable for creating theme systems, design systems, and component libraries.</p>
+                        
+                        <p>In the next lesson, we'll explore CSS Best Practices, where we'll learn how to write clean, efficient, and maintainable CSS code.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page35.html" class="btn">Previous: Transitions & Animations</a>
+                        <a href="page37.html" class="btn">Next: CSS Best Practices</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

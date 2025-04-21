@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to create and style tables in HTML to organize and display tabular data effectively.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="8">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html" class="active">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>HTML Basics</h3>
+                <ul>
+                    <li><a href="page1.html">1. Introduction to HTML</a></li>
+                    <li><a href="page2.html">2. HTML Document Structure</a></li>
+                    <li><a href="page3.html">3. HTML Elements & Tags</a></li>
+                    <li><a href="page4.html">4. Text Formatting</a></li>
+                    <li><a href="page5.html">5. Links & Navigation</a></li>
+                    <li><a href="page6.html">6. Images & Multimedia</a></li>
+                    <li><a href="page7.html">7. Lists</a></li>
+                    <li><a href="page8.html" class="active">8. Tables</a></li>
+                    <li><a href="page9.html">9. Forms Basics</a></li>
+                    <li><a href="page10.html">10. Semantic HTML</a></li>
+                    <li><a href="page11.html">11. HTML Attributes</a></li>
+                    <li><a href="page12.html">12. HTML Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 16%;"></div>
+                </div>
+                <p style="text-align: center;">Page 8 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Tables in HTML</h1>
+                    
+                    <div class="card">
+                        <h2>Understanding HTML Tables</h2>
+                        <p>Tables are used to organize and display data in rows and columns. They're perfect for presenting tabular information such as financial data, schedules, comparison charts, and other structured content that needs to be aligned in a grid format.</p>
+                        
+                        <p>While tables were once misused for page layout, modern web development uses CSS for layout and reserves tables for their intended purpose: displaying tabular data. In this lesson, we'll learn how to create well-structured, accessible tables that effectively present your data.</p>
+                        
+                        <div class="info-box">
+                            <h4>Historical Note</h4>
+                            <p>In the early days of the web, tables were commonly used for page layout because CSS support was limited. This practice is now discouraged as it creates accessibility issues and makes responsive design difficult. Always use CSS for layout and tables only for tabular data.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Basic Table Structure</h2>
+                        <p>A basic HTML table consists of the <code>&lt;table&gt;</code> element, which contains rows defined by the <code>&lt;tr&gt;</code> (table row) element. Each row contains cells defined by the <code>&lt;td&gt;</code> (table data) element for regular cells or the <code>&lt;th&gt;</code> (table header) element for header cells.</p>
+                        
+                        <h3>Simple Table Example</h3>
+                        <pre><code class="language-html">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+        &lt;th&gt;Country&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John Smith&lt;/td&gt;
+        &lt;td&gt;28&lt;/td&gt;
+        &lt;td&gt;USA&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Maria Garcia&lt;/td&gt;
+        &lt;td&gt;32&lt;/td&gt;
+        &lt;td&gt;Spain&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                        
+                        <p>This creates a simple 3×3 table with a header row and two data rows. The <code>&lt;th&gt;</code> elements are used for the column headers, which are typically displayed in bold and centered by default.</p>
+                        
+                        <h3>Table Elements Hierarchy</h3>
+                        <p>Here's the hierarchy of the basic table elements:</p>
+                        <ul>
+                            <li><code>&lt;table&gt;</code>: The container for the entire table</li>
+                            <li><code>&lt;tr&gt;</code>: Table row, contains a single row of cells</li>
+                            <li><code>&lt;th&gt;</code>: Table header cell, used for column or row headers</li>
+                            <li><code>&lt;td&gt;</code>: Table data cell, used for regular data</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Accessibility Tip</h4>
+                            <p>Always use <code>&lt;th&gt;</code> elements for headers rather than styling <code>&lt;td&gt;</code> elements to look like headers. Screen readers use <code>&lt;th&gt;</code> elements to help users navigate tables and understand the relationship between headers and data cells.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Table Sections</h2>
+                        <p>HTML tables can be divided into three sections: header, body, and footer. These sections are defined by the <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code> elements, respectively.</p>
+                        
+                        <pre><code class="language-html">&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Product&lt;/th&gt;
+            &lt;th&gt;Price&lt;/th&gt;
+            &lt;th&gt;Quantity&lt;/th&gt;
+            &lt;th&gt;Total&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Widget A&lt;/td&gt;
+            &lt;td&gt;$10.00&lt;/td&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;$20.00&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Widget B&lt;/td&gt;
+            &lt;td&gt;$15.00&lt;/td&gt;
+            &lt;td&gt;3&lt;/td&gt;
+            &lt;td&gt;$45.00&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;th colspan="3"&gt;Total&lt;/th&gt;
+            &lt;td&gt;$65.00&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+                        
+                        <p>Using these section elements provides several benefits:</p>
+                        <ul>
+                            <li>Improved semantics and accessibility</li>
+                            <li>Ability to style each section differently with CSS</li>
+                            <li>When printing long tables that span multiple pages, browsers can repeat the header and footer on each page</li>
+                        </ul>
+                        
+                        <p>Note that the <code>&lt;tfoot&gt;</code> element can appear before or after the <code>&lt;tbody&gt;</code> in the HTML code, but it will always be rendered at the bottom of the table.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Table Captions</h2>
+                        <p>The <code>&lt;caption&gt;</code> element provides a title or description for a table. It should be the first child of the <code>&lt;table&gt;</code> element.</p>
+                        
+                        <pre><code class="language-html">&lt;table&gt;
+    &lt;caption&gt;Monthly Sales Report (2025)&lt;/caption&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Month&lt;/th&gt;
+        &lt;th&gt;Sales&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;January&lt;/td&gt;
+        &lt;td&gt;$10,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;February&lt;/td&gt;
+        &lt;td&gt;$12,500&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                        
+                        <p>The caption is typically displayed above the table, but its position can be adjusted with CSS. Using captions improves accessibility and provides context for the table's content.</p>
+                        
+                        <div class="info-box">
+                            <h4>Accessibility Tip</h4>
+                            <p>Always include a caption that clearly describes the table's content. This helps all users, especially those using screen readers, understand the purpose and context of the table before navigating through it.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Row and Column Spans</h2>
+                        <p>Sometimes you need cells that span multiple rows or columns. HTML provides the <code>colspan</code> and <code>rowspan</code> attributes for this purpose.</p>
+                        
+                        <h3>Column Span</h3>
+                        <p>The <code>colspan</code> attribute specifies how many columns a cell should span:</p>
+                        
+                        <pre><code class="language-html">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th colspan="2"&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;First Name&lt;/td&gt;
+        &lt;td&gt;Last Name&lt;/td&gt;
+        &lt;td&gt;Years&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;Smith&lt;/td&gt;
+        &lt;td&gt;28&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                        
+                        <p>In this example, the "Name" header spans two columns.</p>
+                        
+                        <h3>Row Span</h3>
+                        <p>The <code>rowspan</code> attribute specifies how many rows a cell should span:</p>
+                        
+                        <pre><code class="language-html">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Category&lt;/th&gt;
+        &lt;th&gt;Product&lt;/th&gt;
+        &lt;th&gt;Price&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="2"&gt;Electronics&lt;/td&gt;
+        &lt;td&gt;Smartphone&lt;/td&gt;
+        &lt;td&gt;$699&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Laptop&lt;/td&gt;
+        &lt;td&gt;$999&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                        
+                        <p>In this example, the "Electronics" cell spans two rows.</p>
+                        
+                        <h3>Complex Table with Row and Column Spans</h3>
+                        <p>Here's a more complex example that uses both row and column spans:</p>
+                        
+                        <pre><code class="language-html">&lt;table&gt;
+    &lt;caption&gt;Product Comparison&lt;/caption&gt;
+    &lt;tr&gt;
+        &lt;th rowspan="2"&gt;Category&lt;/th&gt;
+        &lt;th colspan="2"&gt;Basic Model&lt;/th&gt;
+        &lt;th colspan="2"&gt;Premium Model&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Price&lt;/th&gt;
+        &lt;th&gt;Features&lt;/th&gt;
+        &lt;th&gt;Price&lt;/th&gt;
+        &lt;th&gt;Features&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Smartphone&lt;/td&gt;
+        &lt;td&gt;$399&lt;/td&gt;
+        &lt;td&gt;4GB RAM, 64GB Storage&lt;/td&gt;
+        &lt;td&gt;$799&lt;/td&gt;
+        &lt;td&gt;8GB RAM, 256GB Storage&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Laptop&lt;/td&gt;
+        &lt;td&gt;$699&lt;/td&gt;
+        &lt;td&gt;i5, 8GB RAM, 256GB SSD&lt;/td&gt;
+        &lt;td&gt;$1299&lt;/td&gt;
+        &lt;td&gt;i7, 16GB RAM, 512GB SSD&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                        
+                        <p>When using row and column spans, it's important to ensure that the total number of cells in each row remains consistent with the table structure. Cells that are spanned by other cells are simply omitted from the HTML.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Table Headers and Associations</h2>
+                        <p>For complex tables, it's important to explicitly associate header cells with data cells to improve accessibility. This is done using the <code>scope</code> attribute for simple tables and the <code>id</code> and <code>headers</code> attributes for more complex tables.</p>
+                        
+                        <h3>The Scope Attribute</h3>
+                        <p>The <code>scope</code> attribute specifies whether a header cell is a header for a column, row, or group of columns or rows:</p>
+                        
+                        <pre><code class="language-html">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th scope="col"&gt;Name&lt;/th&gt;
+        &lt;th scope="col"&gt;Age&lt;/th&gt;
+        &lt;th scope="col"&gt;Country&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th scope="row"&gt;John Smith&lt;/th&gt;
+        &lt;td&gt;28&lt;/td&gt;
+        &lt;td&gt;USA&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th scope="row"&gt;Maria Garcia&lt;/th&gt;
+        &lt;td&gt;32&lt;/td&gt;
+        &lt;td&gt;Spain&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                        
+                        <p>The <code>scope</code> attribute can have the following values:</p>
+                        <ul>
+                            <li><code>col</code>: The header cell is a header for a column</li>
+                            <li><code>row</code>: The header cell is a header for a row</li>
+                            <li><code>colgroup</code>: The header cell is a header for a group of columns</li>
+                            <li><code>rowgroup</code>: The header cell is a header for a group of rows</li>
+                        </ul>
+                        
+                        <h3>The ID and Headers Attributes</h3>
+                        <p>For more complex tables, you can use the <code>id</code> attribute on header cells and the <code>headers</code> attribute on data cells to create explicit associations:</p>
+                        
+                        <pre><code class="language-html">&lt;table&gt;
+    &lt;caption&gt;Quarterly Sales by Department&lt;/caption&gt;
+    &lt;tr&gt;
+        &lt;th id="empty"&gt;&lt;/th&gt;
+        &lt;th id="q1"&gt;Q1&lt;/th&gt;
+        &lt;th id="q2"&gt;Q2&lt;/th&gt;
+        &lt;th id="q3"&gt;Q3&lt;/th&gt;
+        &lt;th id="q4"&gt;Q4&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th id="electronics"&gt;Electronics&lt;/th&gt;
+        &lt;td headers="electronics q1"&gt;$10,000&lt;/td&gt;
+        &lt;td headers="electronics q2"&gt;$12,500&lt;/td&gt;
+        &lt;td headers="electronics q3"&gt;$15,000&lt;/td&gt;
+        &lt;td headers="electronics q4"&gt;$18,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th id="clothing"&gt;Clothing&lt;/th&gt;
+        &lt;td headers="clothing q1"&gt;$8,000&lt;/td&gt;
+        &lt;td headers="clothing q2"&gt;$9,500&lt;/td&gt;
+        &lt;td headers="clothing q3"&gt;$11,000&lt;/td&gt;
+        &lt;td headers="clothing q4"&gt;$15,000&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                        
+                        <p>In this example, each data cell has a <code>headers</code> attribute that references the IDs of its associated header cells. This creates an explicit association between headers and data cells, which is especially helpful for screen readers.</p>
+                        
+                        <div class="info-box">
+                            <h4>Accessibility Tip</h4>
+                            <p>Always use the <code>scope</code> attribute for simple tables and the <code>id</code>/<code>headers</code> attributes for complex tables. This helps screen readers announce the appropriate headers when a user navigates to a data cell, making the table more understandable for users with visual impairments.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Column Groups</h2>
+                        <p>The <code>&lt;colgroup&gt;</code> and <code>&lt;col&gt;</code> elements allow you to group and style columns without having to specify styles for each cell individually.</p>
+                        
+                        <pre><code class="language-html">&lt;table&gt;
+    &lt;colgroup&gt;
+        &lt;col style="background-color: #f0f0f0;"&gt;
+        &lt;col span="2" style="background-color: #e0e0e0;"&gt;
+        &lt;col style="background-color: #d0d0d0;"&gt;
+    &lt;/colgroup&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Product&lt;/th&gt;
+        &lt;th&gt;Q1&lt;/th&gt;
+        &lt;th&gt;Q2&lt;/th&gt;
+        &lt;th&gt;Total&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Widget A&lt;/td&gt;
+        &lt;td&gt;100&lt;/td&gt;
+        &lt;td&gt;150&lt;/td&gt;
+        &lt;td&gt;250&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Widget B&lt;/td&gt;
+        &lt;td&gt;80&lt;/td&gt;
+        &lt;td&gt;120&lt;/td&gt;
+        &lt;td&gt;200&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                        
+                        <p>In this example, the first column has a light gray background, the second and third columns have a slightly darker background, and the fourth column has an even darker background. The <code>span</code> attribute on the second <code>&lt;col&gt;</code> element indicates that it applies to two columns.</p>
+                        
+                        <p>The <code>&lt;colgroup&gt;</code> and <code>&lt;col&gt;</code> elements should appear after the <code>&lt;caption&gt;</code> element (if present) and before any other table content.</p>
+                        
+                        <div class="info-box">
+                            <h4>Styling Limitation</h4>
+                            <p>Note that only a limited set of CSS properties can be applied to <code>&lt;col&gt;</code> elements: <code>background</code>, <code>border</code>, <code>width</code>, <code>visibility</code>, and a few others. Properties like <code>padding</code>, <code>height</code>, <code>text-align</code>, and <code>vertical-align</code> must be applied to the cells themselves.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Styling Tables with CSS</h2>
+                        <p>HTML tables have minimal styling by default. CSS can be used to enhance their appearance and readability.</p>
+                        
+                        <h3>Basic Table Styling</h3>
+                        <pre><code class="language-css">table {
+    border-collapse: collapse;  /* Removes space between cells */
+    width: 100%;                /* Makes table full width of container */
+    margin-bottom: 20px;        /* Adds space below the table */
+}
+
+th, td {
+    border: 1px solid #ddd;     /* Adds borders to cells */
+    padding: 8px;               /* Adds space inside cells */
+    text-align: left;           /* Aligns text to the left */
+}
+
+th {
+    background-color: #f2f2f2;  /* Light gray background for headers */
+    font-weight: bold;          /* Makes header text bold */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;  /* Zebra striping for rows */
+}
+
+tr:hover {
+    background-color: #f5f5f5;  /* Highlight on row hover */
+}</code></pre>
+                        
+                        <h3>Responsive Tables</h3>
+                        <p>Tables can be challenging on small screens. Here are some approaches to make tables responsive:</p>
+                        
+                        <h4>1. Horizontal Scrolling</h4>
+                        <pre><code class="language-css">.table-container {
+    overflow-x: auto;  /* Enables horizontal scrolling */
+    max-width: 100%;   /* Ensures container doesn't overflow */
+}
+
+/* Then wrap your table in a div with this class */</code></pre>
+                        
+                        <h4>2. Stacked Layout for Small Screens</h4>
+                        <pre><code class="language-css">@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;  /* Makes all elements block-level */
+    }
+    
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;  /* Hides the header row */
+    }
+    
+    tr {
+        margin-bottom: 15px;  /* Adds space between rows */
+        border: 1px solid #ccc;
+    }
+    
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;  /* Makes room for labels */
+    }
+    
+    td:before {
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);  /* Uses data-label attribute for headers */
+        font-weight: bold;
+    }
+}</code></pre>
+                        
+                        <p>For this approach, you'll need to add <code>data-label</code> attributes to your <code>&lt;td&gt;</code> elements:</p>
+                        
+                        <pre><code class="language-html">&lt;td data-label="Name"&gt;John Smith&lt;/td&gt;</code></pre>
+                        
+                        <h4>3. Using CSS Grid or Flexbox</h4>
+                        <p>For more complex responsive tables, you might consider using CSS Grid or Flexbox instead of the <code>&lt;table&gt;</code> element. This gives you more control over the layout at different screen sizes.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Table Accessibility</h2>
+                        <p>Creating accessible tables is crucial for users with disabilities, especially those using screen readers. Here are some key practices:</p>
+                        
+                        <h3>1. Use Proper Table Structure</h3>
+                        <ul>
+                            <li>Use <code>&lt;caption&gt;</code> to provide a title</li>
+                            <li>Use <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code> to organize content</li>
+                            <li>Use <code>&lt;th&gt;</code> for header cells and <code>&lt;td&gt;</code> for data cells</li>
+                        </ul>
+                        
+                        <h3>2. Associate Headers with Data Cells</h3>
+                        <ul>
+                            <li>Use the <code>scope</code> attribute for simple tables</li>
+                            <li>Use <code>id</code> and <code>headers</code> attributes for complex tables</li>
+                        </ul>
+                        
+                        <h3>3. Provide a Summary</h3>
+                        <p>While the <code>summary</code> attribute is deprecated in HTML5, you can provide a summary in the <code>&lt;caption&gt;</code> element or in the surrounding text.</p>
+                        
+                        <h3>4. Keep Tables Simple</h3>
+                        <p>When possible, avoid complex tables with multiple levels of headers or cells that span many rows or columns. Consider breaking complex tables into simpler ones.</p>
+                        
+                        <h3>5. Test with Screen Readers</h3>
+                        <p>Test your tables with screen readers to ensure they're properly announced and navigable.</p>
+                        
+                        <div class="info-box">
+                            <h4>ARIA Roles</h4>
+                            <p>For complex tables or when using non-table elements for tabular data, you can use ARIA roles to improve accessibility:</p>
+                            <pre><code class="language-html">&lt;div role="table" aria-label="Sales Data"&gt;
+    &lt;div role="rowgroup"&gt;
+        &lt;div role="row"&gt;
+            &lt;div role="columnheader"&gt;Product&lt;/div&gt;
+            &lt;div role="columnheader"&gt;Price&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div role="rowgroup"&gt;
+        &lt;div role="row"&gt;
+            &lt;div role="cell"&gt;Widget A&lt;/div&gt;
+            &lt;div role="cell"&gt;$10.00&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>When to Use Tables</h2>
+                        <p>Tables should be used for tabular data, not for layout. Here are some appropriate uses for tables:</p>
+                        
+                        <h3>Appropriate Uses</h3>
+                        <ul>
+                            <li>Financial data (e.g., budgets, sales reports)</li>
+                            <li>Schedules and timetables</li>
+                            <li>Product comparison charts</li>
+                            <li>Statistical data</li>
+                            <li>Specifications and technical data</li>
+                        </ul>
+                        
+                        <h3>Inappropriate Uses</h3>
+                        <ul>
+                            <li>Page layout</li>
+                            <li>Forms layout (use CSS instead)</li>
+                            <li>Navigation menus (use lists instead)</li>
+                            <li>Decorative elements</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Alternatives to Tables</h4>
+                            <p>For non-tabular data, consider these alternatives:</p>
+                            <ul>
+                                <li>CSS Grid or Flexbox for layout</li>
+                                <li>Lists for collections of items</li>
+                                <li>Description lists for name-value pairs</li>
+                                <li>Cards for product displays</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Creating Tables</h2>
+                        <p>Let's put what we've learned into practice by creating a web page with various types of tables:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;HTML Tables Practice&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1, h2 {
+            color: #333;
+        }
+        
+        /* Basic table styling */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        /* Zebra striping */
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        /* Hover effect */
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        /* Responsive table */
+        .table-container {
+            overflow-x: auto;
+            max-width: 100%;
+        }
+        
+        /* Styling for the schedule table */
+        .schedule th, .schedule td {
+            text-align: center;
+        }
+        
+        .schedule th:first-child {
+            text-align: left;
+        }
+        
+        /* Styling for the comparison table */
+        .comparison th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .comparison .feature-available {
+            color: green;
+            font-weight: bold;
+        }
+        
+        .comparison .feature-unavailable {
+            color: red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;HTML Tables Practice&lt;/h1&gt;
+    
+    &lt;h2&gt;Basic Table&lt;/h2&gt;
+    &lt;table&gt;
+        &lt;caption&gt;Employee Information&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th scope="col"&gt;Name&lt;/th&gt;
+                &lt;th scope="col"&gt;Position&lt;/th&gt;
+                &lt;th scope="col"&gt;Department&lt;/th&gt;
+                &lt;th scope="col"&gt;Email&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;John Smith&lt;/td&gt;
+                &lt;td&gt;Software Developer&lt;/td&gt;
+                &lt;td&gt;Engineering&lt;/td&gt;
+                &lt;td&gt;john.smith@example.com&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Maria Garcia&lt;/td&gt;
+                &lt;td&gt;Marketing Manager&lt;/td&gt;
+                &lt;td&gt;Marketing&lt;/td&gt;
+                &lt;td&gt;maria.garcia@example.com&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Robert Johnson&lt;/td&gt;
+                &lt;td&gt;Financial Analyst&lt;/td&gt;
+                &lt;td&gt;Finance&lt;/td&gt;
+                &lt;td&gt;robert.johnson@example.com&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Sarah Williams&lt;/td&gt;
+                &lt;td&gt;HR Specialist&lt;/td&gt;
+                &lt;td&gt;Human Resources&lt;/td&gt;
+                &lt;td&gt;sarah.williams@example.com&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+    
+    &lt;h2&gt;Table with Row and Column Spans&lt;/h2&gt;
+    &lt;div class="table-container"&gt;
+        &lt;table&gt;
+            &lt;caption&gt;Quarterly Sales Report (2025)&lt;/caption&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th rowspan="2" scope="col"&gt;Department&lt;/th&gt;
+                    &lt;th colspan="4" scope="colgroup"&gt;Quarterly Sales ($)&lt;/th&gt;
+                    &lt;th rowspan="2" scope="col"&gt;Annual Total&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope="col"&gt;Q1&lt;/th&gt;
+                    &lt;th scope="col"&gt;Q2&lt;/th&gt;
+                    &lt;th scope="col"&gt;Q3&lt;/th&gt;
+                    &lt;th scope="col"&gt;Q4&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;Electronics&lt;/th&gt;
+                    &lt;td&gt;15,000&lt;/td&gt;
+                    &lt;td&gt;18,500&lt;/td&gt;
+                    &lt;td&gt;22,000&lt;/td&gt;
+                    &lt;td&gt;28,000&lt;/td&gt;
+                    &lt;td&gt;83,500&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;Clothing&lt;/th&gt;
+                    &lt;td&gt;12,000&lt;/td&gt;
+                    &lt;td&gt;14,500&lt;/td&gt;
+                    &lt;td&gt;16,000&lt;/td&gt;
+                    &lt;td&gt;20,000&lt;/td&gt;
+                    &lt;td&gt;62,500&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;Home Goods&lt;/th&gt;
+                    &lt;td&gt;8,000&lt;/td&gt;
+                    &lt;td&gt;10,000&lt;/td&gt;
+                    &lt;td&gt;12,500&lt;/td&gt;
+                    &lt;td&gt;15,000&lt;/td&gt;
+                    &lt;td&gt;45,500&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+            &lt;tfoot&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;Quarterly Total&lt;/th&gt;
+                    &lt;td&gt;35,000&lt;/td&gt;
+                    &lt;td&gt;43,000&lt;/td&gt;
+                    &lt;td&gt;50,500&lt;/td&gt;
+                    &lt;td&gt;63,000&lt;/td&gt;
+                    &lt;td&gt;191,500&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tfoot&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+    
+    &lt;h2&gt;Weekly Schedule&lt;/h2&gt;
+    &lt;div class="table-container"&gt;
+        &lt;table class="schedule"&gt;
+            &lt;caption&gt;Weekly Class Schedule&lt;/caption&gt;
+            &lt;colgroup&gt;
+                &lt;col style="width: 15%;"&gt;
+                &lt;col style="width: 17%;"&gt;
+                &lt;col style="width: 17%;"&gt;
+                &lt;col style="width: 17%;"&gt;
+                &lt;col style="width: 17%;"&gt;
+                &lt;col style="width: 17%;"&gt;
+            &lt;/colgroup&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th scope="col"&gt;Time&lt;/th&gt;
+                    &lt;th scope="col"&gt;Monday&lt;/th&gt;
+                    &lt;th scope="col"&gt;Tuesday&lt;/th&gt;
+                    &lt;th scope="col"&gt;Wednesday&lt;/th&gt;
+                    &lt;th scope="col"&gt;Thursday&lt;/th&gt;
+                    &lt;th scope="col"&gt;Friday&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;9:00 - 10:30&lt;/th&gt;
+                    &lt;td&gt;Math&lt;/td&gt;
+                    &lt;td&gt;Science&lt;/td&gt;
+                    &lt;td&gt;Math&lt;/td&gt;
+                    &lt;td&gt;Science&lt;/td&gt;
+                    &lt;td&gt;Art&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;10:45 - 12:15&lt;/th&gt;
+                    &lt;td&gt;English&lt;/td&gt;
+                    &lt;td&gt;History&lt;/td&gt;
+                    &lt;td&gt;English&lt;/td&gt;
+                    &lt;td&gt;History&lt;/td&gt;
+                    &lt;td&gt;Music&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;12:15 - 1:15&lt;/th&gt;
+                    &lt;td colspan="5"&gt;Lunch Break&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;1:15 - 2:45&lt;/th&gt;
+                    &lt;td&gt;Computer Science&lt;/td&gt;
+                    &lt;td&gt;Physical Education&lt;/td&gt;
+                    &lt;td&gt;Computer Science&lt;/td&gt;
+                    &lt;td&gt;Physical Education&lt;/td&gt;
+                    &lt;td rowspan="2"&gt;Free Time&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;3:00 - 4:30&lt;/th&gt;
+                    &lt;td&gt;Foreign Language&lt;/td&gt;
+                    &lt;td&gt;Study Hall&lt;/td&gt;
+                    &lt;td&gt;Foreign Language&lt;/td&gt;
+                    &lt;td&gt;Study Hall&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+    
+    &lt;h2&gt;Product Comparison&lt;/h2&gt;
+    &lt;div class="table-container"&gt;
+        &lt;table class="comparison"&gt;
+            &lt;caption&gt;Subscription Plan Comparison&lt;/caption&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th scope="col"&gt;Feature&lt;/th&gt;
+                    &lt;th scope="col"&gt;Basic&lt;/th&gt;
+                    &lt;th scope="col"&gt;Standard&lt;/th&gt;
+                    &lt;th scope="col"&gt;Premium&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;Price&lt;/th&gt;
+                    &lt;td&gt;$9.99/month&lt;/td&gt;
+                    &lt;td&gt;$19.99/month&lt;/td&gt;
+                    &lt;td&gt;$29.99/month&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;Storage&lt;/th&gt;
+                    &lt;td&gt;10GB&lt;/td&gt;
+                    &lt;td&gt;50GB&lt;/td&gt;
+                    &lt;td&gt;100GB&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;Users&lt;/th&gt;
+                    &lt;td&gt;1&lt;/td&gt;
+                    &lt;td&gt;5&lt;/td&gt;
+                    &lt;td&gt;Unlimited&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;Customer Support&lt;/th&gt;
+                    &lt;td&gt;Email Only&lt;/td&gt;
+                    &lt;td&gt;Email & Phone&lt;/td&gt;
+                    &lt;td&gt;24/7 Priority Support&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;Advanced Analytics&lt;/th&gt;
+                    &lt;td class="feature-unavailable"&gt;✗&lt;/td&gt;
+                    &lt;td class="feature-available"&gt;✓&lt;/td&gt;
+                    &lt;td class="feature-available"&gt;✓&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope="row"&gt;Custom Branding&lt;/th&gt;
+                    &lt;td class="feature-unavailable"&gt;✗&lt;/td&gt;
+                    &lt;td class="feature-unavailable"&gt;✗&lt;/td&gt;
+                    &lt;td class="feature-available"&gt;✓&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Try It Yourself</h4>
+                            <p>Create the HTML document above and view it in your browser. Then try to:</p>
+                            <ol>
+                                <li>Add a new row to the Employee Information table</li>
+                                <li>Add a new department to the Quarterly Sales Report</li>
+                                <li>Create a new table with a complex structure using rowspan and colspan</li>
+                                <li>Modify the CSS to make the tables more visually appealing</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored tables in HTML:</p>
+                        <ul>
+                            <li>Tables are used to display tabular data in rows and columns</li>
+                            <li>Basic table structure includes <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, and <code>&lt;td&gt;</code> elements</li>
+                            <li>Tables can be divided into sections using <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code></li>
+                            <li>The <code>&lt;caption&gt;</code> element provides a title for the table</li>
+                            <li>Cells can span multiple rows or columns using the <code>rowspan</code> and <code>colspan</code> attributes</li>
+                            <li>Header cells should be associated with data cells using the <code>scope</code> attribute or <code>id</code>/<code>headers</code> attributes</li>
+                            <li>CSS can be used to style tables and make them responsive</li>
+                            <li>Accessibility is crucial for tables, especially for users with screen readers</li>
+                        </ul>
+                        
+                        <p>Tables are powerful tools for organizing and presenting data, but they should be used appropriately and with accessibility in mind. In the next lesson, we'll explore forms, which allow users to input data and interact with web pages.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page7.html" class="btn">Previous: Lists</a>
+                        <a href="page9.html" class="btn">Next: Forms Basics</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

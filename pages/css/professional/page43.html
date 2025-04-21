@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Animations | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Master advanced CSS animation techniques including keyframes, transitions, motion paths, and scroll-based animations.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="43">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html" class="active">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional CSS</h3>
+                <ul>
+                    <li><a href="page38.html">38. Advanced CSS Features</a></li>
+                    <li><a href="page39.html">39. CSS Preprocessors</a></li>
+                    <li><a href="page40.html">40. CSS Architecture</a></li>
+                    <li><a href="page41.html">41. CSS Frameworks</a></li>
+                    <li><a href="page42.html">42. Advanced Layouts</a></li>
+                    <li><a href="page43.html" class="active">43. Advanced Animations</a></li>
+                    <li><a href="page44.html">44. CSS-in-JS</a></li>
+                    <li><a href="page45.html">45. CSS Houdini</a></li>
+                    <li><a href="page46.html">46. CSS Performance</a></li>
+                    <li><a href="page47.html">47. CSS Testing</a></li>
+                    <li><a href="page48.html">48. CSS for Print</a></li>
+                    <li><a href="page49.html">49. Future of CSS</a></li>
+                    <li><a href="page50.html">50. Building a Portfolio</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 86%;"></div>
+                </div>
+                <p style="text-align: center;">Page 43 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Advanced Animations</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to Advanced CSS Animations</h2>
+                        <p>CSS animations have evolved significantly over the years, enabling developers to create sophisticated, engaging, and performance-optimized motion effects without relying on JavaScript or external libraries. In this lesson, we'll explore advanced animation techniques that go beyond basic transitions and keyframes.</p>
+                        
+                        <p>We'll dive deep into complex keyframe animations, timing functions, motion paths, scroll-based animations, and performance optimization. By the end of this lesson, you'll have the skills to create professional-grade animations that enhance user experience while maintaining performance.</p>
+                        
+                        <h3>The Importance of Animation in Modern Web Design</h3>
+                        <p>Well-designed animations serve several important purposes:</p>
+                        
+                        <ul>
+                            <li><strong>Improving User Experience</strong> - Animations provide visual feedback, guide attention, and create a more engaging interface</li>
+                            <li><strong>Communicating State Changes</strong> - Animations help users understand what's happening in the interface</li>
+                            <li><strong>Creating Personality</strong> - Animations can express brand identity and add character to a website</li>
+                            <li><strong>Enhancing Storytelling</strong> - Animations can guide users through a narrative or explain complex concepts</li>
+                            <li><strong>Reducing Cognitive Load</strong> - Well-designed animations can make interfaces feel more intuitive and easier to understand</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Animation Principles for the Web</h4>
+                            <p>The 12 principles of animation, developed by Disney animators in the 1930s, still apply to web animations today:</p>
+                            <ol>
+                                <li><strong>Squash and stretch</strong> - Objects compress and expand to emphasize movement</li>
+                                <li><strong>Anticipation</strong> - A preparatory movement before the main action</li>
+                                <li><strong>Staging</strong> - Presenting an idea clearly</li>
+                                <li><strong>Straight-ahead vs. pose-to-pose</strong> - Different approaches to creating animation frames</li>
+                                <li><strong>Follow through and overlapping action</strong> - Parts of an object continue to move after the main action stops</li>
+                                <li><strong>Slow in and slow out</strong> - Objects accelerate and decelerate rather than moving at constant speed</li>
+                                <li><strong>Arc</strong> - Natural movements tend to follow arced paths</li>
+                                <li><strong>Secondary action</strong> - Additional movements that support the main action</li>
+                                <li><strong>Timing</strong> - The speed of an action affects how it's perceived</li>
+                                <li><strong>Exaggeration</strong> - Emphasizing actions to make them more dramatic</li>
+                                <li><strong>Solid drawing</strong> - Creating three-dimensional forms</li>
+                                <li><strong>Appeal</strong> - Creating designs that are pleasing to look at</li>
+                            </ol>
+                            <p>Understanding these principles can help you create more natural and engaging animations.</p>
+                        </div>
+                        
+                        <h3>CSS Animation Techniques Overview</h3>
+                        <p>CSS offers several ways to create animations:</p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Technique</th>
+                                    <th>Best For</th>
+                                    <th>Complexity</th>
+                                    <th>Performance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Transitions</td>
+                                    <td>Simple state changes, hover effects, UI feedback</td>
+                                    <td>Low</td>
+                                    <td>Excellent</td>
+                                </tr>
+                                <tr>
+                                    <td>Keyframe Animations</td>
+                                    <td>Complex multi-step animations, looping animations</td>
+                                    <td>Medium</td>
+                                    <td>Good</td>
+                                </tr>
+                                <tr>
+                                    <td>Motion Path Animations</td>
+                                    <td>Objects following complex paths</td>
+                                    <td>High</td>
+                                    <td>Good</td>
+                                </tr>
+                                <tr>
+                                    <td>Scroll-based Animations</td>
+                                    <td>Animations triggered by scrolling</td>
+                                    <td>Medium-High</td>
+                                    <td>Varies</td>
+                                </tr>
+                                <tr>
+                                    <td>WAAPI (Web Animations API)</td>
+                                    <td>Animations that need JavaScript control</td>
+                                    <td>High</td>
+                                    <td>Excellent</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <p>In this lesson, we'll focus primarily on CSS-based animation techniques, but we'll also touch on how these can be enhanced with JavaScript when necessary.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Keyframe Animations</h2>
+                        <p>Keyframe animations allow you to define multiple steps in an animation sequence. Let's explore some advanced techniques for creating complex, engaging animations.</p>
+                        
+                        <h3>Multi-Step Keyframe Animations</h3>
+                        <p>While simple animations might use only <code>from</code> and <code>to</code> keyframes, complex animations often require multiple steps:</p>
+                        
+                        <pre><code class="language-css">@keyframes complex-move {
+  0% {
+    transform: translateX(0) translateY(0);
+    background-color: #3498db;
+  }
+  25% {
+    transform: translateX(100px) translateY(0);
+    background-color: #2ecc71;
+  }
+  50% {
+    transform: translateX(100px) translateY(100px);
+    background-color: #f1c40f;
+  }
+  75% {
+    transform: translateX(0) translateY(100px);
+    background-color: #e74c3c;
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+    background-color: #3498db;
+  }
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+  animation: complex-move 4s ease-in-out infinite;
+}</code></pre>
+                        
+                        <p>This creates a box that moves in a square pattern while changing colors.</p>
+                        
+                        <h3>Multiple Animations on a Single Element</h3>
+                        <p>You can apply multiple animations to a single element, allowing you to create complex effects by combining simpler animations:</p>
+                        
+                        <pre><code class="language-css">@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.element {
+  animation: 
+    rotate 3s linear infinite,
+    pulse 1.5s ease-in-out infinite;
+}</code></pre>
+                        
+                        <p>When combining animations that affect the same properties (like multiple transforms), you need to be careful about conflicts. In the example above, we're using <code>rotate</code> and <code>scale</code> transforms, which can be combined, but if both animations tried to use <code>translateX</code>, they would conflict.</p>
+                        
+                        <h3>Staggered Animations</h3>
+                        <p>Creating staggered animations, where similar elements animate with a slight delay between each one, can create visually appealing effects:</p>
+                        
+                        <pre><code class="language-css">.item {
+  animation: fade-in 0.5s ease forwards;
+  opacity: 0;
+}
+
+.item:nth-child(1) { animation-delay: 0.1s; }
+.item:nth-child(2) { animation-delay: 0.2s; }
+.item:nth-child(3) { animation-delay: 0.3s; }
+.item:nth-child(4) { animation-delay: 0.4s; }
+.item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}</code></pre>
+                        
+                        <p>For a large number of elements, you can use a CSS preprocessor like Sass to generate the delays:</p>
+                        
+                        <pre><code class="language-scss">@for $i from 1 through 20 {
+  .item:nth-child(#{$i}) {
+    animation-delay: #{$i * 0.1}s;
+  }
+}</code></pre>
+                        
+                        <h3>Advanced Animation Properties</h3>
+                        <p>Let's explore some of the more advanced animation properties:</p>
+                        
+                        <h4>Animation Fill Mode</h4>
+                        <pre><code class="language-css">.element {
+  animation: slide-in 1s ease forwards;
+  /* 
+    forwards: Keeps the final keyframe styles after animation completes
+    backwards: Applies the first keyframe styles before animation starts
+    both: Combines forwards and backwards
+    none: Default, element returns to its original styles
+  */
+}</code></pre>
+                        
+                        <h4>Animation Play State</h4>
+                        <pre><code class="language-css">.element {
+  animation: rotate 3s linear infinite;
+}
+
+.element:hover {
+  animation-play-state: paused; /* Pauses the animation on hover */
+}</code></pre>
+                        
+                        <h4>Animation Direction</h4>
+                        <pre><code class="language-css">.element {
+  animation: slide 2s ease infinite;
+  animation-direction: alternate; 
+  /* 
+    normal: Default, plays forward each cycle
+    reverse: Plays in reverse each cycle
+    alternate: Plays forward then backward
+    alternate-reverse: Plays backward then forward
+  */
+}</code></pre>
+                        
+                        <h3>Animating CSS Variables</h3>
+                        <p>CSS variables (custom properties) can be animated, opening up powerful possibilities:</p>
+                        
+                        <pre><code class="language-css">:root {
+  --hue: 0;
+}
+
+.element {
+  background-color: hsl(var(--hue), 80%, 60%);
+  animation: color-cycle 5s linear infinite;
+}
+
+@keyframes color-cycle {
+  0% { --hue: 0; }
+  100% { --hue: 360; }
+}</code></pre>
+                        
+                        <p>This allows the element's background color to cycle through the entire color spectrum.</p>
+                        
+                        <h3>Animating SVG with CSS</h3>
+                        <p>SVG elements can be animated with CSS, allowing for complex vector animations:</p>
+                        
+                        <pre><code class="language-html">&lt;svg width="200" height="200" viewBox="0 0 200 200"&gt;
+  &lt;circle class="circle" cx="100" cy="100" r="50" fill="none" stroke="#3498db" stroke-width="4"/&gt;
+&lt;/svg&gt;</code></pre>
+                        
+                        <pre><code class="language-css">.circle {
+  stroke-dasharray: 314; /* Circumference of circle (2 * π * r) */
+  stroke-dashoffset: 314;
+  animation: draw 2s ease forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}</code></pre>
+                        
+                        <p>This creates a drawing animation where the circle appears to be drawn over time.</p>
+                        
+                        <div class="note">
+                            <p><strong>Note:</strong> SVG animations have excellent browser support and can be more performant than animating complex shapes with CSS alone.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Timing Functions</h2>
+                        <p>Timing functions control how animations progress over time, allowing you to create more natural and engaging motion.</p>
+                        
+                        <h3>Built-in Timing Functions</h3>
+                        <p>CSS provides several built-in timing functions:</p>
+                        
+                        <ul>
+                            <li><code>linear</code> - Animation progresses at a constant rate</li>
+                            <li><code>ease</code> - Default, starts slow, speeds up, then slows down</li>
+                            <li><code>ease-in</code> - Starts slow, then speeds up</li>
+                            <li><code>ease-out</code> - Starts fast, then slows down</li>
+                            <li><code>ease-in-out</code> - Starts slow, speeds up in the middle, then slows down</li>
+                            <li><code>step-start</code> - Jumps immediately to the end state</li>
+                            <li><code>step-end</code> - Stays at the start state until the end, then jumps to the end state</li>
+                        </ul>
+                        
+                        <h3>Custom Cubic Bezier Curves</h3>
+                        <p>For more precise control, you can create custom timing functions using cubic-bezier curves:</p>
+                        
+                        <pre><code class="language-css">.element {
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  /* cubic-bezier(x1, y1, x2, y2) */
+}</code></pre>
+                        
+                        <p>The cubic-bezier function takes four parameters representing two control points (x1, y1, x2, y2) on a curve. The curve starts at (0,0) and ends at (1,1), with the control points influencing the path between.</p>
+                        
+                        <div class="info-box">
+                            <h4>Popular Custom Easing Functions</h4>
+                            <ul>
+                                <li><strong>Bounce:</strong> <code>cubic-bezier(0.175, 0.885, 0.32, 1.275)</code></li>
+                                <li><strong>Elastic:</strong> <code>cubic-bezier(0.68, -0.55, 0.265, 1.55)</code></li>
+                                <li><strong>Back:</strong> <code>cubic-bezier(0.68, -0.6, 0.32, 1.6)</code></li>
+                                <li><strong>Smooth:</strong> <code>cubic-bezier(0.4, 0, 0.2, 1)</code></li>
+                            </ul>
+                            <p>You can create and visualize custom cubic-bezier curves using tools like <a href="https://cubic-bezier.com/" target="_blank">cubic-bezier.com</a>.</p>
+                        </div>
+                        
+                        <h3>Step Timing Functions</h3>
+                        <p>Step timing functions create frame-by-frame animations rather than smooth transitions:</p>
+                        
+                        <pre><code class="language-css">.sprite {
+  width: 100px;
+  height: 100px;
+  background-image: url('sprite-sheet.png');
+  animation: play 1s steps(10) infinite;
+}
+
+@keyframes play {
+  from { background-position: 0px; }
+  to { background-position: -1000px; } /* 10 frames * 100px width */
+}</code></pre>
+                        
+                        <p>The <code>steps()</code> function takes two parameters:</p>
+                        <ol>
+                            <li>The number of steps</li>
+                            <li>The step position: <code>jump-start</code> (default), <code>jump-end</code>, <code>jump-none</code>, <code>jump-both</code>, <code>start</code>, or <code>end</code></li>
+                        </ol>
+                        
+                        <pre><code class="language-css">.element {
+  animation-timing-function: steps(5, jump-end);
+}</code></pre>
+                        
+                        <h3>Variable Speed Animations</h3>
+                        <p>You can create animations with variable speeds by using multiple keyframes with different timing functions:</p>
+                        
+                        <pre><code class="language-css">@keyframes variable-speed {
+  0% {
+    transform: translateX(0);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: translateX(200px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.element {
+  animation: variable-speed 3s infinite;
+}</code></pre>
+                        
+                        <p>This creates an animation where the element accelerates to the midpoint, then decelerates back to the starting position.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Motion Path Animations</h2>
+                        <p>Motion path animations allow elements to follow complex paths rather than simple straight lines or curves.</p>
+                        
+                        <h3>Using offset-path</h3>
+                        <p>The <code>offset-path</code> property (formerly <code>motion-path</code>) allows you to define a path for an element to follow:</p>
+                        
+                        <pre><code class="language-css">.element {
+  offset-path: path('M0,0 C100,0 200,100 300,100 C400,100 500,0 600,0');
+  offset-distance: 0%;
+  animation: move-along-path 3s linear infinite;
+}
+
+@keyframes move-along-path {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}</code></pre>
+                        
+                        <p>The <code>offset-path</code> property accepts various path values:</p>
+                        <ul>
+                            <li><code>path()</code> - SVG-style path data</li>
+                            <li><code>ray()</code> - A line at a specific angle</li>
+                            <li><code>url()</code> - Reference to an SVG path element</li>
+                            <li>Basic shapes like <code>circle()</code>, <code>ellipse()</code>, <code>inset()</code>, and <code>polygon()</code></li>
+                        </ul>
+                        
+                        <h3>Controlling Orientation Along the Path</h3>
+                        <p>By default, elements maintain their original orientation while moving along a path. You can control this with <code>offset-rotate</code>:</p>
+                        
+                        <pre><code class="language-css">.element {
+  offset-path: path('M0,0 C100,0 200,100 300,100 C400,100 500,0 600,0');
+  offset-rotate: auto; /* Element rotates to follow the path */
+  animation: move-along-path 3s linear infinite;
+}</code></pre>
+                        
+                        <p>The <code>offset-rotate</code> property accepts:</p>
+                        <ul>
+                            <li><code>auto</code> - Element rotates to follow the path direction</li>
+                            <li><code>auto &lt;angle&gt;</code> - Element rotates to follow the path plus an additional angle</li>
+                            <li><code>&lt;angle&gt;</code> - Element maintains a fixed rotation angle</li>
+                        </ul>
+                        
+                        <h3>Offset Anchor and Position</h3>
+                        <p>You can control how an element is positioned relative to the path:</p>
+                        
+                        <pre><code class="language-css">.element {
+  offset-path: path('M0,0 C100,0 200,100 300,100 C400,100 500,0 600,0');
+  offset-anchor: center; /* The point on the element that follows the path */
+  offset-position: 50% 50%; /* Initial position before applying the path */
+  animation: move-along-path 3s linear infinite;
+}</code></pre>
+                        
+                        <h3>Creating Complex Path Animations</h3>
+                        <p>For more complex animations, you can combine motion paths with other animation properties:</p>
+                        
+                        <pre><code class="language-css">.spacecraft {
+  width: 50px;
+  height: 30px;
+  background-image: url('spacecraft.png');
+  background-size: contain;
+  
+  /* Define the path */
+  offset-path: path('M0,100 Q100,0 200,100 T400,100 T600,100');
+  offset-rotate: auto;
+  
+  /* Animation */
+  animation: 
+    fly 10s linear infinite,
+    pulse 2s ease-in-out infinite;
+}
+
+@keyframes fly {
+  from { offset-distance: 0%; }
+  to { offset-distance: 100%; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}</code></pre>
+                        
+                        <div class="note">
+                            <p><strong>Note:</strong> As of 2025, motion path animations have good browser support, but you may still need to use vendor prefixes or polyfills for older browsers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Scroll-Based Animations</h2>
+                        <p>Scroll-based animations are triggered or controlled by the user's scrolling action, creating engaging and interactive experiences.</p>
+                        
+                        <h3>CSS Scroll Snap for Pagination Effects</h3>
+                        <p>CSS Scroll Snap provides a way to create smooth, controlled scrolling experiences:</p>
+                        
+                        <pre><code class="language-css">.container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+  /* Add transitions for smooth animations */
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Initial state for sections not in view */
+.section:not(:first-child) {
+  opacity: 0.5;
+  transform: scale(0.9);
+}
+
+/* When a section snaps into view, it becomes fully visible */
+.section:target {
+  opacity: 1;
+  transform: scale(1);
+}</code></pre>
+                        
+                        <h3>Intersection Observer for Scroll Animations</h3>
+                        <p>While not pure CSS, the Intersection Observer API is commonly used with CSS animations to create scroll-triggered effects:</p>
+                        
+                        <pre><code class="language-css">.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}</code></pre>
+                        
+                        <pre><code class="language-javascript">// JavaScript to detect when elements enter the viewport
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(element => {
+  observer.observe(element);
+});</code></pre>
+                        
+                        <h3>CSS Scroll Timeline (Experimental)</h3>
+                        <p>The CSS Scroll Timeline specification allows for native scroll-linked animations without JavaScript:</p>
+                        
+                        <pre><code class="language-css">@scroll-timeline progress-timeline {
+  source: selector(#scroll-container);
+  orientation: vertical;
+  scroll-offsets: 0%, 100%;
+}
+
+.progress-bar {
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: grow-progress linear;
+  animation-timeline: progress-timeline;
+}
+
+@keyframes grow-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}</code></pre>
+                        
+                        <div class="note">
+                            <p><strong>Note:</strong> As of 2025, CSS Scroll Timeline is still being standardized and may require polyfills or JavaScript alternatives for full browser support.</p>
+                        </div>
+                        
+                        <h3>Parallax Scrolling Effects</h3>
+                        <p>Parallax effects create depth by moving elements at different speeds during scrolling:</p>
+                        
+                        <pre><code class="language-css">.parallax-container {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 1px;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.parallax-layer-back {
+  transform: translateZ(-1px) scale(2);
+}
+
+.parallax-layer-base {
+  transform: translateZ(0);
+}
+
+.parallax-layer-front {
+  transform: translateZ(0.5px) scale(0.5);
+}</code></pre>
+                        
+                        <p>This creates a simple parallax effect with three layers moving at different speeds.</p>
+                        
+                        <h3>Sticky Elements with Animations</h3>
+                        <p>Combining sticky positioning with animations can create engaging scroll experiences:</p>
+                        
+                        <pre><code class="language-css">.sticky-container {
+  height: 300vh; /* Taller than viewport to allow scrolling */
+}
+
+.sticky-element {
+  position: sticky;
+  top: 50vh;
+  transform: translateY(-50%); /* Center vertically */
+  height: 50vh;
+  width: 80%;
+  margin: 0 auto;
+  
+  /* Properties to animate */
+  opacity: 0;
+  transform-origin: center;
+}
+
+/* JavaScript will add these classes based on scroll position */
+.sticky-element.visible {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.sticky-element.stage-1 {
+  transform: translateY(-50%) scale(0.8);
+  transition: transform 0.5s ease;
+}
+
+.sticky-element.stage-2 {
+  transform: translateY(-50%) scale(1);
+  transition: transform 0.5s ease;
+}
+
+.sticky-element.stage-3 {
+  transform: translateY(-50%) scale(1.2);
+  transition: transform 0.5s ease;
+}</code></pre>
+                        
+                        <pre><code class="language-javascript">// JavaScript to control animation stages based on scroll position
+window.addEventListener('scroll', () => {
+  const container = document.querySelector('.sticky-container');
+  const element = document.querySelector('.sticky-element');
+  const containerHeight = container.offsetHeight;
+  const viewportHeight = window.innerHeight;
+  
+  // Calculate scroll progress (0 to 1)
+  const scrollTop = window.pageYOffset;
+  const scrollProgress = scrollTop / (containerHeight - viewportHeight);
+  
+  // Make element visible at the start
+  if (scrollProgress > 0.1) {
+    element.classList.add('visible');
+  } else {
+    element.classList.remove('visible');
+  }
+  
+  // Add animation stages based on scroll progress
+  if (scrollProgress > 0.3 && scrollProgress <= 0.5) {
+    element.classList.add('stage-1');
+    element.classList.remove('stage-2', 'stage-3');
+  } else if (scrollProgress > 0.5 && scrollProgress <= 0.7) {
+    element.classList.add('stage-2');
+    element.classList.remove('stage-1', 'stage-3');
+  } else if (scrollProgress > 0.7) {
+    element.classList.add('stage-3');
+    element.classList.remove('stage-1', 'stage-2');
+  } else {
+    element.classList.remove('stage-1', 'stage-2', 'stage-3');
+  }
+});</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Performance Optimization</h2>
+                        <p>Creating smooth, performant animations is crucial for a good user experience. Let's explore techniques to optimize animation performance.</p>
+                        
+                        <h3>The Compositor Thread and GPU Acceleration</h3>
+                        <p>Modern browsers use a compositor thread to handle certain CSS properties separately from the main thread, allowing for smoother animations:</p>
+                        
+                        <div class="info-box">
+                            <h4>Properties That Trigger Compositing</h4>
+                            <p>These properties can be animated without triggering layout or paint operations:</p>
+                            <ul>
+                                <li><code>transform</code></li>
+                                <li><code>opacity</code></li>
+                                <li><code>filter</code></li>
+                                <li><code>will-change</code></li>
+                            </ul>
+                            <p>Whenever possible, use these properties for animations instead of properties that trigger layout (like <code>width</code>, <code>height</code>, <code>top</code>, <code>left</code>, etc.).</p>
+                        </div>
+                        
+                        <h3>Using will-change</h3>
+                        <p>The <code>will-change</code> property hints to browsers about properties that are expected to change, allowing for optimization:</p>
+                        
+                        <pre><code class="language-css">.element {
+  will-change: transform, opacity;
+}</code></pre>
+                        
+                        <div class="note">
+                            <p><strong>Note:</strong> Use <code>will-change</code> sparingly and only for elements that will actually change. Overuse can cause performance problems by consuming memory unnecessarily.</p>
+                        </div>
+                        
+                        <h3>Reducing Repaints and Reflows</h3>
+                        <p>Repaints and reflows (layout recalculations) are expensive operations that can cause jank in animations:</p>
+                        
+                        <pre><code class="language-css">/* Instead of this (triggers reflow) */
+.bad-animation {
+  animation: move-bad 1s ease infinite;
+}
+
+@keyframes move-bad {
+  from { left: 0; top: 0; }
+  to { left: 100px; top: 100px; }
+}
+
+/* Use this (only compositing) */
+.good-animation {
+  animation: move-good 1s ease infinite;
+}
+
+@keyframes move-good {
+  from { transform: translate(0, 0); }
+  to { transform: translate(100px, 100px); }
+}</code></pre>
+                        
+                        <h3>Reducing Animation Complexity</h3>
+                        <p>Complex animations with many elements or properties can strain the browser:</p>
+                        
+                        <ul>
+                            <li>Limit the number of animated elements on screen at once</li>
+                            <li>Simplify animations for mobile devices</li>
+                            <li>Consider using simpler animations for elements that are off-screen or in the background</li>
+                            <li>Use <code>animation-play-state: paused</code> for animations that aren't currently visible</li>
+                        </ul>
+                        
+                        <h3>Respecting User Preferences</h3>
+                        <p>Some users prefer reduced motion due to accessibility concerns or personal preference:</p>
+                        
+                        <pre><code class="language-css">/* Default animations */
+.element {
+  transition: transform 0.5s ease;
+}
+
+.element:hover {
+  transform: scale(1.2);
+}
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .element {
+    transition: none;
+  }
+  
+  .element:hover {
+    transform: none;
+  }
+}</code></pre>
+                        
+                        <h3>Measuring Animation Performance</h3>
+                        <p>Use browser developer tools to measure and optimize animation performance:</p>
+                        
+                        <ul>
+                            <li>Chrome DevTools Performance panel can record and analyze animation performance</li>
+                            <li>The Rendering tab can highlight repaints and show the compositor layers</li>
+                            <li>The FPS meter can help identify drops in frame rate</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Performance Checklist</h4>
+                            <ul>
+                                <li>Use <code>transform</code> and <code>opacity</code> for animations when possible</li>
+                                <li>Promote animated elements to their own layer with <code>will-change</code> or <code>transform: translateZ(0)</code></li>
+                                <li>Avoid animating expensive properties like <code>box-shadow</code> (use <code>filter: drop-shadow()</code> instead)</li>
+                                <li>Keep animations short and purposeful</li>
+                                <li>Test on lower-powered devices</li>
+                                <li>Provide reduced motion alternatives</li>
+                                <li>Use CSS animations for simple effects and JavaScript for complex, interactive animations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practical Animation Patterns</h2>
+                        <p>Let's explore some practical animation patterns that you can use in your projects.</p>
+                        
+                        <h3>Loading Animations</h3>
+                        <p>Loading animations provide feedback to users while content is being processed:</p>
+                        
+                        <pre><code class="language-css">/* Spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #3498db;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Pulsing dots */
+.loading-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #3498db;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 1; }
+}</code></pre>
+                        
+                        <h3>Micro-Interactions</h3>
+                        <p>Micro-interactions are small animations that provide feedback for user actions:</p>
+                        
+                        <pre><code class="language-css">/* Button hover effect */
+.button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Checkbox animation */
+.checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox:checked::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 6px;
+  height: 12px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg) scale(0);
+  background-color: #3498db;
+  animation: check 0.3s forwards;
+}
+
+@keyframes check {
+  from { transform: rotate(45deg) scale(0); }
+  to { transform: rotate(45deg) scale(1); }
+}</code></pre>
+                        
+                        <h3>Page Transitions</h3>
+                        <p>Page transitions create a smoother experience when navigating between pages:</p>
+                        
+                        <pre><code class="language-css">/* Page transition using CSS */
+.page {
+  animation: fade-in 0.5s ease;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Exit animation (requires JavaScript to add class before navigation) */
+.page.exit {
+  animation: fade-out 0.5s ease forwards;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-20px); }
+}</code></pre>
+                        
+                        <h3>Content Reveal Animations</h3>
+                        <p>Content reveal animations draw attention to important information:</p>
+                        
+                        <pre><code class="language-css">/* Text reveal animation */
+.reveal-text {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal-text span {
+  display: block;
+  animation: reveal 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@keyframes reveal {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* Image reveal animation */
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  animation: image-reveal 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3498db;
+  transform-origin: right;
+  animation: sweep 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes image-reveal {
+  from { transform: scale(1.2); }
+  to { transform: scale(1); }
+}
+
+@keyframes sweep {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}</code></pre>
+                        
+                        <h3>3D Animations</h3>
+                        <p>3D animations can create depth and visual interest:</p>
+                        
+                        <pre><code class="language-css">/* 3D card flip */
+.card-container {
+  perspective: 1000px;
+  width: 300px;
+  height: 200px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* 3D cube */
+.cube-container {
+  perspective: 1000px;
+  width: 200px;
+  height: 200px;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 10s linear infinite;
+}
+
+.cube-face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  backface-visibility: hidden;
+}
+
+.front { transform: translateZ(100px); }
+.back { transform: rotateY(180deg) translateZ(100px); }
+.right { transform: rotateY(90deg) translateZ(100px); }
+.left { transform: rotateY(-90deg) translateZ(100px); }
+.top { transform: rotateX(90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+@keyframes rotate {
+  from { transform: rotateX(0) rotateY(0); }
+  to { transform: rotateX(360deg) rotateY(360deg); }
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Advanced Animation Project</h2>
+                        <p>Let's put your advanced animation skills to the test with a comprehensive exercise that combines multiple techniques.</p>
+                        
+                        <h3>Exercise: Create an Animated Product Showcase</h3>
+                        <p>In this exercise, you'll create an animated product showcase that uses keyframe animations, motion paths, scroll-based animations, and 3D effects.</p>
+                        
+                        <h4>Step 1: Set Up the HTML Structure</h4>
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Animated Product Showcase&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;nav&gt;
+      &lt;div class="logo"&gt;TechGadget&lt;/div&gt;
+      &lt;ul class="nav-links"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Products&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Features&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Reviews&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  
+  &lt;section class="hero"&gt;
+    &lt;div class="hero-content"&gt;
+      &lt;h1 class="reveal-text"&gt;&lt;span&gt;The Future of Technology&lt;/span&gt;&lt;/h1&gt;
+      &lt;p class="reveal-text"&gt;&lt;span&gt;Introducing the revolutionary TechGadget Pro, designed for the modern world.&lt;/span&gt;&lt;/p&gt;
+      &lt;button class="cta-button"&gt;Learn More&lt;/button&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="product-showcase"&gt;
+      &lt;div class="product-container"&gt;
+        &lt;div class="product"&gt;
+          &lt;div class="product-front"&gt;
+            &lt;img src="https://via.placeholder.com/400x400" alt="TechGadget Pro"&gt;
+          &lt;/div&gt;
+          &lt;div class="product-back"&gt;
+            &lt;img src="https://via.placeholder.com/400x400" alt="TechGadget Pro Back"&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;div class="product-features"&gt;
+        &lt;div class="feature feature-1"&gt;
+          &lt;div class="feature-icon"&gt;🔋&lt;/div&gt;
+          &lt;div class="feature-text"&gt;48-hour battery life&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="feature feature-2"&gt;
+          &lt;div class="feature-icon"&gt;📱&lt;/div&gt;
+          &lt;div class="feature-text"&gt;Edge-to-edge display&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="feature feature-3"&gt;
+          &lt;div class="feature-icon"&gt;🔒&lt;/div&gt;
+          &lt;div class="feature-text"&gt;Advanced security&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="feature feature-4"&gt;
+          &lt;div class="feature-icon"&gt;📷&lt;/div&gt;
+          &lt;div class="feature-text"&gt;Pro-grade camera&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  
+  &lt;section class="scroll-section"&gt;
+    &lt;div class="sticky-container"&gt;
+      &lt;div class="sticky-element"&gt;
+        &lt;div class="product-large"&gt;
+          &lt;img src="https://via.placeholder.com/600x600" alt="TechGadget Pro"&gt;
+        &lt;/div&gt;
+        &lt;div class="product-details"&gt;
+          &lt;div class="detail detail-1"&gt;
+            &lt;h3&gt;Stunning Display&lt;/h3&gt;
+            &lt;p&gt;Experience true-to-life colors on our revolutionary edge-to-edge display.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="detail detail-2"&gt;
+            &lt;h3&gt;All-Day Battery&lt;/h3&gt;
+            &lt;p&gt;With up to 48 hours of battery life, you'll never be left searching for a charger.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="detail detail-3"&gt;
+            &lt;h3&gt;Pro-Grade Camera&lt;/h3&gt;
+            &lt;p&gt;Capture stunning photos and videos with our advanced camera system.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  
+  &lt;section class="color-options"&gt;
+    &lt;h2&gt;Available Colors&lt;/h2&gt;
+    &lt;div class="colors-container"&gt;
+      &lt;div class="color-option" style="--color: #3498db;"&gt;
+        &lt;div class="color-circle"&gt;&lt;/div&gt;
+        &lt;span&gt;Ocean Blue&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="color-option" style="--color: #e74c3c;"&gt;
+        &lt;div class="color-circle"&gt;&lt;/div&gt;
+        &lt;span&gt;Ruby Red&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="color-option" style="--color: #2ecc71;"&gt;
+        &lt;div class="color-circle"&gt;&lt;/div&gt;
+        &lt;span&gt;Emerald Green&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="color-option" style="--color: #f1c40f;"&gt;
+        &lt;div class="color-circle"&gt;&lt;/div&gt;
+        &lt;span&gt;Sunrise Gold&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="color-option" style="--color: #9b59b6;"&gt;
+        &lt;div class="color-circle"&gt;&lt;/div&gt;
+        &lt;span&gt;Royal Purple&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="product-display"&gt;
+      &lt;div class="product-3d"&gt;
+        &lt;div class="product-3d-front" style="--product-color: #3498db;"&gt;&lt;/div&gt;
+        &lt;div class="product-3d-back" style="--product-color: #3498db;"&gt;&lt;/div&gt;
+        &lt;div class="product-3d-left" style="--product-color: #3498db;"&gt;&lt;/div&gt;
+        &lt;div class="product-3d-right" style="--product-color: #3498db;"&gt;&lt;/div&gt;
+        &lt;div class="product-3d-top" style="--product-color: #3498db;"&gt;&lt;/div&gt;
+        &lt;div class="product-3d-bottom" style="--product-color: #3498db;"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  
+  &lt;section class="features-path"&gt;
+    &lt;h2&gt;Explore the Features&lt;/h2&gt;
+    &lt;div class="path-container"&gt;
+      &lt;svg class="feature-path" viewBox="0 0 1000 300" width="100%" height="300">
+        &lt;path d="M0,150 C200,50 300,250 500,150 C700,50 800,250 1000,150" fill="none" stroke="#eee" stroke-width="2"/&gt;
+      &lt;/svg&gt;
+      
+      &lt;div class="feature-item"&gt;
+        &lt;div class="feature-icon"&gt;🔋&lt;/div&gt;
+        &lt;div class="feature-content"&gt;
+          &lt;h3&gt;Long-lasting Battery&lt;/h3&gt;
+          &lt;p&gt;48 hours of battery life on a single charge.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  
+  &lt;footer&gt;
+    &lt;div class="footer-content"&gt;
+      &lt;div class="footer-logo"&gt;TechGadget&lt;/div&gt;
+      &lt;p&gt;&copy; 2025 TechGadget Inc. All rights reserved.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+  
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <h4>Step 2: Create the CSS</h4>
+                        <pre><code class="language-css">/* Base Styles */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --text-color: #333;
+  --background-color: #f9f9f9;
+  --accent-color: #e74c3c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 80px; /* Account for fixed header */
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.reveal-text {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.reveal-text span {
+  display: block;
+  animation: reveal 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+@keyframes reveal {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.hero-content h1 span {
+  animation-delay: 0.2s;
+}
+
+.hero-content p span {
+  animation-delay: 0.4s;
+}
+
+.cta-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fade-in 0.5s ease forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Showcase */
+.product-showcase {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.product-container {
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 2rem;
+}
+
+.product {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: float 3s ease-in-out infinite, rotate-y 15s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotateY(var(--rotation, 0deg)); }
+  50% { transform: translateY(-20px) rotateY(var(--rotation, 0deg)); }
+}
+
+@keyframes rotate-y {
+  from { --rotation: 0deg; }
+  to { --rotation: 360deg; }
+}
+
+.product-front, .product-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-front img, .product-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-back {
+  transform: rotateY(180deg);
+}
+
+/* Product Features */
+.product-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  animation: feature-in 0.5s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.feature-1 { animation-delay: 0.8s; }
+.feature-2 { animation-delay: 0.9s; }
+.feature-3 { animation-delay: 1s; }
+.feature-4 { animation-delay: 1.1s; }
+
+@keyframes feature-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+}
+
+.feature-text {
+  font-weight: 500;
+}
+
+/* Scroll Section */
+.scroll-section {
+  height: 300vh;
+  position: relative;
+}
+
+.sticky-container {
+  height: 100%;
+  position: relative;
+}
+
+.sticky-element {
+  position: sticky;
+  top: 50vh;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.sticky-element.visible {
+  opacity: 1;
+}
+
+.sticky-element.stage-1 .detail-1 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sticky-element.stage-2 .detail-2 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sticky-element.stage-3 .detail-3 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.product-large {
+  flex: 1;
+  max-width: 500px;
+}
+
+.product-large img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.sticky-element.stage-1 .product-large img {
+  transform: rotate(-5deg) scale(0.95);
+}
+
+.sticky-element.stage-2 .product-large img {
+  transform: rotate(0deg) scale(1);
+}
+
+.sticky-element.stage-3 .product-large img {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.product-details {
+  flex: 1;
+  max-width: 500px;
+}
+
+.detail {
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.detail h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.detail p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Color Options */
+.color-options {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.color-options h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.colors-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.color-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.color-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color);
+  transition: transform 0.3s ease;
+}
+
+.color-option:hover .color-circle {
+  transform: scale(1.2);
+}
+
+.color-option span {
+  font-weight: 500;
+}
+
+.product-display {
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.product-3d {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate-product 20s linear infinite;
+}
+
+@keyframes rotate-product {
+  from { transform: rotateY(0) rotateX(10deg); }
+  to { transform: rotateY(360deg) rotateX(10deg); }
+}
+
+.product-3d-front, .product-3d-back, .product-3d-left, .product-3d-right, .product-3d-top, .product-3d-bottom {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--product-color);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-3d-front {
+  transform: translateZ(150px);
+  border-radius: 20px;
+}
+
+.product-3d-back {
+  transform: rotateY(180deg) translateZ(150px);
+  border-radius: 20px;
+}
+
+.product-3d-left {
+  transform: rotateY(-90deg) translateZ(150px);
+  width: 300px;
+  border-radius: 20px;
+}
+
+.product-3d-right {
+  transform: rotateY(90deg) translateZ(150px);
+  width: 300px;
+  border-radius: 20px;
+}
+
+.product-3d-top {
+  transform: rotateX(90deg) translateZ(150px);
+  height: 300px;
+  border-radius: 20px;
+}
+
+.product-3d-bottom {
+  transform: rotateX(-90deg) translateZ(150px);
+  height: 300px;
+  border-radius: 20px;
+}
+
+/* Features Path */
+.features-path {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features-path h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.path-container {
+  position: relative;
+  height: 300px;
+}
+
+.feature-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.feature-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  
+  /* Motion path animation */
+  offset-path: path('M0,150 C200,50 300,250 500,150 C700,50 800,250 1000,150');
+  offset-rotate: auto;
+  animation: move-along-path 20s linear infinite;
+}
+
+@keyframes move-along-path {
+  from { offset-distance: 0%; }
+  to { offset-distance: 100%; }
+}
+
+.feature-item .feature-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.feature-item .feature-content {
+  flex: 1;
+}
+
+.feature-item h3 {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.feature-item p {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .sticky-element {
+    flex-direction: column;
+  }
+  
+  .colors-container {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .product-features {
+    grid-template-columns: 1fr;
+  }
+  
+  .feature-item {
+    width: 250px;
+  }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}</code></pre>
+                        
+                        <h4>Step 3: Add JavaScript for Scroll Animations</h4>
+                        <pre><code class="language-javascript">// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // Scroll animation for sticky section
+  const stickyContainer = document.querySelector('.sticky-container');
+  const stickyElement = document.querySelector('.sticky-element');
+  
+  window.addEventListener('scroll', () => {
+    const containerRect = stickyContainer.getBoundingClientRect();
+    const containerHeight = stickyContainer.offsetHeight;
+    const viewportHeight = window.innerHeight;
+    
+    // Calculate scroll progress (0 to 1)
+    const scrollTop = window.pageYOffset;
+    const scrollProgress = scrollTop / (containerHeight - viewportHeight);
+    
+    // Make element visible at the start
+    if (scrollProgress > 0.1) {
+      stickyElement.classList.add('visible');
+    } else {
+      stickyElement.classList.remove('visible');
+    }
+    
+    // Add animation stages based on scroll progress
+    if (scrollProgress > 0.3 && scrollProgress <= 0.5) {
+      stickyElement.classList.add('stage-1');
+      stickyElement.classList.remove('stage-2', 'stage-3');
+    } else if (scrollProgress > 0.5 && scrollProgress <= 0.7) {
+      stickyElement.classList.add('stage-2');
+      stickyElement.classList.remove('stage-1', 'stage-3');
+    } else if (scrollProgress > 0.7) {
+      stickyElement.classList.add('stage-3');
+      stickyElement.classList.remove('stage-1', 'stage-2');
+    } else {
+      stickyElement.classList.remove('stage-1', 'stage-2', 'stage-3');
+    }
+  });
+  
+  // Color selection functionality
+  const colorOptions = document.querySelectorAll('.color-option');
+  const product3D = document.querySelector('.product-3d');
+  
+  colorOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      const color = getComputedStyle(option).getPropertyValue('--color');
+      
+      // Update all sides of the 3D product
+      document.querySelectorAll('.product-3d-front, .product-3d-back, .product-3d-left, .product-3d-right, .product-3d-top, .product-3d-bottom').forEach(side => {
+        side.style.setProperty('--product-color', color);
+      });
+    });
+  });
+});</code></pre>
+                        
+                        <h4>Step 4: Enhance the Animation</h4>
+                        <p>Now that you have the basic animation, try enhancing it with these advanced techniques:</p>
+                        
+                        <ol>
+                            <li>Add more feature items to the motion path with different delays</li>
+                            <li>Create a loading animation for the page</li>
+                            <li>Add micro-interactions to the navigation links and buttons</li>
+                            <li>Implement a parallax effect in the hero section</li>
+                            <li>Add a progress indicator that fills as the user scrolls</li>
+                        </ol>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Extend your product showcase with these additional features:</p>
+                            <ol>
+                                <li>Create a "dark mode" toggle with animated transitions</li>
+                                <li>Add a product comparison section with animated charts</li>
+                                <li>Implement a testimonial carousel with smooth transitions</li>
+                                <li>Create an animated pricing table with hover effects</li>
+                                <li>Add a contact form with animated validation feedback</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored advanced animation techniques that allow you to create sophisticated, engaging, and performance-optimized motion effects. We've covered:</p>
+                        <ul>
+                            <li><strong>Advanced Keyframe Animations</strong>: Multi-step animations, multiple animations on a single element, staggered animations, and animating CSS variables</li>
+                            <li><strong>Advanced Timing Functions</strong>: Custom cubic-bezier curves, step timing functions, and variable speed animations</li>
+                            <li><strong>Motion Path Animations</strong>: Using offset-path to create complex movement paths, controlling orientation, and combining with other animations</li>
+                            <li><strong>Scroll-Based Animations</strong>: CSS Scroll Snap, Intersection Observer, CSS Scroll Timeline, parallax effects, and sticky elements</li>
+                            <li><strong>Performance Optimization</strong>: Using the compositor thread, will-change, reducing repaints and reflows, and respecting user preferences</li>
+                            <li><strong>Practical Animation Patterns</strong>: Loading animations, micro-interactions, page transitions, content reveals, and 3D animations</li>
+                        </ul>
+                        
+                        <p>Remember that effective animations serve a purpose beyond mere decoration. They should enhance the user experience, provide feedback, guide attention, and make interfaces more intuitive and engaging.</p>
+                        
+                        <p>In the next lesson, we'll explore CSS-in-JS, a modern approach to styling that combines the power of CSS with the flexibility of JavaScript.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page42.html" class="btn">Previous: Advanced Layouts</a>
+                        <a href="page44.html" class="btn">Next: CSS-in-JS</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

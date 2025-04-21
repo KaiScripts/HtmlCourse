@@ -1,0 +1,2699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSockets | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to use WebSockets for real-time bidirectional communication between clients and servers.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="23">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html" class="active">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional HTML</h3>
+                <ul>
+                    <li><a href="page13.html">13. Advanced HTML Concepts</a></li>
+                    <li><a href="page14.html">14. HTML5 Semantic Elements</a></li>
+                    <li><a href="page15.html">15. HTML Forms Advanced</a></li>
+                    <li><a href="page16.html">16. HTML Media & Graphics</a></li>
+                    <li><a href="page17.html">17. HTML APIs</a></li>
+                    <li><a href="page18.html">18. Web Storage</a></li>
+                    <li><a href="page19.html">19. Geolocation API</a></li>
+                    <li><a href="page20.html">20. Drag & Drop API</a></li>
+                    <li><a href="page21.html">21. Web Workers</a></li>
+                    <li><a href="page22.html">22. Server-Sent Events</a></li>
+                    <li><a href="page23.html" class="active">23. WebSockets</a></li>
+                    <li><a href="page24.html">24. Responsive HTML</a></li>
+                    <li><a href="page25.html">25. HTML Accessibility</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 46%;"></div>
+                </div>
+                <p style="text-align: center;">Page 23 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>WebSockets</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to WebSockets</h2>
+                        <p>WebSockets is a communication protocol that provides full-duplex communication channels over a single TCP connection. Unlike HTTP, which is a request-response protocol, WebSockets enable real-time, bidirectional communication between clients and servers.</p>
+                        
+                        <p>WebSockets are ideal for applications that require real-time updates and interactive features, such as:</p>
+                        <ul>
+                            <li>Chat applications and messaging platforms</li>
+                            <li>Multiplayer games</li>
+                            <li>Collaborative editing tools</li>
+                            <li>Live trading platforms</li>
+                            <li>Real-time dashboards and monitoring systems</li>
+                            <li>Interactive maps and location tracking</li>
+                            <li>Live sports updates and betting platforms</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Key Benefits of WebSockets</h4>
+                            <ul>
+                                <li><strong>Full-Duplex Communication</strong>: Both client and server can send messages independently</li>
+                                <li><strong>Low Latency</strong>: Minimal overhead compared to HTTP requests</li>
+                                <li><strong>Persistent Connection</strong>: Single connection remains open, reducing handshake overhead</li>
+                                <li><strong>Real-Time Updates</strong>: Immediate delivery of messages in both directions</li>
+                                <li><strong>Reduced Server Load</strong>: Less overhead compared to polling techniques</li>
+                                <li><strong>Cross-Domain Communication</strong>: Can communicate across domains with proper configuration</li>
+                                <li><strong>Wide Browser Support</strong>: Supported in all modern browsers</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>WebSockets vs. Other Real-Time Technologies</h3>
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>WebSockets</th>
+                                        <th>Server-Sent Events</th>
+                                        <th>Long Polling</th>
+                                        <th>HTTP/2 Push</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Communication Direction</td>
+                                        <td>Bidirectional</td>
+                                        <td>Server to Client</td>
+                                        <td>Primarily Server to Client</td>
+                                        <td>Server to Client</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Protocol</td>
+                                        <td>WebSocket (ws:// or wss://)</td>
+                                        <td>HTTP</td>
+                                        <td>HTTP</td>
+                                        <td>HTTP/2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Connection</td>
+                                        <td>Persistent</td>
+                                        <td>Persistent HTTP</td>
+                                        <td>Multiple HTTP Requests</td>
+                                        <td>Multiplexed HTTP/2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Message Types</td>
+                                        <td>Text and Binary</td>
+                                        <td>Text-based with event types</td>
+                                        <td>Any HTTP Response</td>
+                                        <td>HTTP/2 Frames</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Header Overhead</td>
+                                        <td>Low (after handshake)</td>
+                                        <td>Medium</td>
+                                        <td>High</td>
+                                        <td>Low (compressed)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Complexity</td>
+                                        <td>Medium</td>
+                                        <td>Low</td>
+                                        <td>Low</td>
+                                        <td>High</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Best For</td>
+                                        <td>Interactive applications</td>
+                                        <td>Server updates to client</td>
+                                        <td>Simple polling needs</td>
+                                        <td>Resource pushing</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3>How WebSockets Work</h3>
+                        <p>WebSockets operate through a handshake process that upgrades an HTTP connection to a WebSocket connection:</p>
+                        
+                        <ol>
+                            <li><strong>Handshake</strong>: The client sends an HTTP request with an <code>Upgrade: websocket</code> header</li>
+                            <li><strong>Upgrade</strong>: The server responds with a <code>101 Switching Protocols</code> status code</li>
+                            <li><strong>WebSocket Connection</strong>: The HTTP connection is upgraded to a WebSocket connection</li>
+                            <li><strong>Data Transfer</strong>: Both client and server can send messages independently</li>
+                            <li><strong>Termination</strong>: Either side can close the connection with a close frame</li>
+                        </ol>
+                        
+                        <p>Once established, the WebSocket connection remains open until explicitly closed by either the client or server, or until a network error occurs.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Client-Side Implementation</h2>
+                        <p>Implementing WebSockets on the client side is straightforward using the WebSocket API provided by browsers.</p>
+                        
+                        <h3>Basic Usage</h3>
+                        <pre><code class="language-javascript">// Create a new WebSocket connection
+const socket = new WebSocket('ws://example.com/socket');
+
+// Connection opened
+socket.addEventListener('open', (event) => {
+    console.log('Connection established');
+    
+    // Send a message to the server
+    socket.send('Hello Server!');
+});
+
+// Listen for messages
+socket.addEventListener('message', (event) => {
+    console.log('Message from server:', event.data);
+});
+
+// Listen for connection close
+socket.addEventListener('close', (event) => {
+    console.log('Connection closed with code:', event.code, 'reason:', event.reason);
+});
+
+// Listen for errors
+socket.addEventListener('error', (event) => {
+    console.error('WebSocket error:', event);
+});</code></pre>
+                        
+                        <h3>Sending Different Types of Data</h3>
+                        <p>WebSockets can send both text and binary data:</p>
+                        
+                        <pre><code class="language-javascript">// Sending text data
+socket.send('Hello Server!');
+
+// Sending JSON data
+const data = {
+    type: 'message',
+    content: 'Hello Server!',
+    timestamp: new Date().toISOString()
+};
+socket.send(JSON.stringify(data));
+
+// Sending binary data
+const buffer = new ArrayBuffer(8);
+const view = new Uint8Array(buffer);
+for (let i = 0; i < view.length; i++) {
+    view[i] = i;
+}
+socket.send(buffer);
+
+// Sending a Blob
+const blob = new Blob(['Hello Server!'], { type: 'text/plain' });
+socket.send(blob);</code></pre>
+                        
+                        <h3>Connection States</h3>
+                        <p>The WebSocket object has a <code>readyState</code> property that indicates the current state of the connection:</p>
+                        
+                        <pre><code class="language-javascript">// Check the connection state
+switch (socket.readyState) {
+    case WebSocket.CONNECTING:
+        console.log('Connection is being established');
+        break;
+    case WebSocket.OPEN:
+        console.log('Connection is open and ready to communicate');
+        break;
+    case WebSocket.CLOSING:
+        console.log('Connection is in the process of closing');
+        break;
+    case WebSocket.CLOSED:
+        console.log('Connection is closed or could not be opened');
+        break;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>WebSocket ReadyState Values</h4>
+                            <ul>
+                                <li><code>WebSocket.CONNECTING (0)</code>: Connection is being established</li>
+                                <li><code>WebSocket.OPEN (1)</code>: Connection is open and ready to communicate</li>
+                                <li><code>WebSocket.CLOSING (2)</code>: Connection is in the process of closing</li>
+                                <li><code>WebSocket.CLOSED (3)</code>: Connection is closed or could not be opened</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Handling Reconnection</h3>
+                        <p>Unlike Server-Sent Events, WebSockets don't automatically reconnect if the connection is lost. You need to implement reconnection logic yourself:</p>
+                        
+                        <pre><code class="language-javascript">class ReconnectingWebSocket {
+    constructor(url, protocols) {
+        this.url = url;
+        this.protocols = protocols;
+        this.socket = null;
+        this.isConnected = false;
+        this.reconnectAttempts = 0;
+        this.maxReconnectAttempts = 10;
+        this.reconnectInterval = 1000; // Start with 1 second
+        this.maxReconnectInterval = 30000; // Max 30 seconds
+        this.listeners = {
+            open: [],
+            message: [],
+            close: [],
+            error: []
+        };
+        
+        this.connect();
+    }
+    
+    connect() {
+        this.socket = new WebSocket(this.url, this.protocols);
+        
+        this.socket.addEventListener('open', (event) => {
+            console.log('Connection established');
+            this.isConnected = true;
+            this.reconnectAttempts = 0;
+            this.reconnectInterval = 1000;
+            
+            // Call all open listeners
+            this.listeners.open.forEach(listener => listener(event));
+        });
+        
+        this.socket.addEventListener('message', (event) => {
+            // Call all message listeners
+            this.listeners.message.forEach(listener => listener(event));
+        });
+        
+        this.socket.addEventListener('close', (event) => {
+            console.log('Connection closed with code:', event.code, 'reason:', event.reason);
+            this.isConnected = false;
+            
+            // Call all close listeners
+            this.listeners.close.forEach(listener => listener(event));
+            
+            // Don't reconnect if the close was clean (code 1000)
+            if (event.code !== 1000 && this.reconnectAttempts < this.maxReconnectAttempts) {
+                this.reconnect();
+            }
+        });
+        
+        this.socket.addEventListener('error', (event) => {
+            console.error('WebSocket error:', event);
+            
+            // Call all error listeners
+            this.listeners.error.forEach(listener => listener(event));
+        });
+    }
+    
+    reconnect() {
+        this.reconnectAttempts++;
+        
+        console.log(`Reconnecting (attempt ${this.reconnectAttempts} of ${this.maxReconnectAttempts})...`);
+        
+        // Use exponential backoff for reconnection
+        const timeout = Math.min(
+            this.reconnectInterval * Math.pow(1.5, this.reconnectAttempts - 1),
+            this.maxReconnectInterval
+        );
+        
+        setTimeout(() => {
+            this.connect();
+        }, timeout);
+    }
+    
+    addEventListener(type, listener) {
+        if (this.listeners[type]) {
+            this.listeners[type].push(listener);
+        }
+    }
+    
+    removeEventListener(type, listener) {
+        if (this.listeners[type]) {
+            const index = this.listeners[type].indexOf(listener);
+            if (index !== -1) {
+                this.listeners[type].splice(index, 1);
+            }
+        }
+    }
+    
+    send(data) {
+        if (this.socket && this.socket.readyState === WebSocket.OPEN) {
+            this.socket.send(data);
+            return true;
+        }
+        return false;
+    }
+    
+    close(code, reason) {
+        if (this.socket) {
+            this.socket.close(code, reason);
+        }
+    }
+}
+
+// Usage
+const socket = new ReconnectingWebSocket('ws://example.com/socket');
+
+socket.addEventListener('open', (event) => {
+    console.log('Connection established');
+    socket.send('Hello Server!');
+});
+
+socket.addEventListener('message', (event) => {
+    console.log('Message from server:', event.data);
+});</code></pre>
+                        
+                        <h3>Secure WebSockets</h3>
+                        <p>For secure connections, use the <code>wss://</code> protocol instead of <code>ws://</code>:</p>
+                        
+                        <pre><code class="language-javascript">// Create a secure WebSocket connection
+const socket = new WebSocket('wss://example.com/socket');</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>WebSocket Security Considerations</h4>
+                            <ul>
+                                <li><strong>Always use wss:// in production</strong> to encrypt the connection</li>
+                                <li><strong>Implement proper authentication</strong> to verify client identity</li>
+                                <li><strong>Validate all incoming messages</strong> to prevent injection attacks</li>
+                                <li><strong>Implement rate limiting</strong> to prevent abuse</li>
+                                <li><strong>Set appropriate timeouts</strong> to detect and handle stale connections</li>
+                                <li><strong>Be cautious with cross-origin connections</strong> and verify the Origin header on the server</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Server-Side Implementation</h2>
+                        <p>To implement WebSockets on the server side, you need a WebSocket server. Here are examples in different server-side technologies:</p>
+                        
+                        <h3>Node.js with ws</h3>
+                        <p>Using the popular <code>ws</code> library:</p>
+                        
+                        <pre><code class="language-javascript">const WebSocket = require('ws');
+
+// Create a WebSocket server
+const wss = new WebSocket.Server({ port: 8080 });
+
+// Handle new connections
+wss.on('connection', (ws, req) => {
+    const ip = req.socket.remoteAddress;
+    console.log(`New connection from ${ip}`);
+    
+    // Send a welcome message
+    ws.send(JSON.stringify({
+        type: 'welcome',
+        message: 'Welcome to the WebSocket server!'
+    }));
+    
+    // Handle messages from clients
+    ws.on('message', (message) => {
+        console.log(`Received message: ${message}`);
+        
+        try {
+            // Parse the message (assuming JSON)
+            const data = JSON.parse(message);
+            
+            // Handle different message types
+            switch (data.type) {
+                case 'chat':
+                    // Broadcast the message to all clients
+                    broadcastMessage(ws, {
+                        type: 'chat',
+                        sender: data.sender,
+                        message: data.message,
+                        timestamp: new Date().toISOString()
+                    });
+                    break;
+                    
+                case 'ping':
+                    // Respond with a pong
+                    ws.send(JSON.stringify({
+                        type: 'pong',
+                        timestamp: new Date().toISOString()
+                    }));
+                    break;
+                    
+                default:
+                    console.log(`Unknown message type: ${data.type}`);
+            }
+        } catch (error) {
+            console.error('Error processing message:', error);
+        }
+    });
+    
+    // Handle connection close
+    ws.on('close', (code, reason) => {
+        console.log(`Connection closed with code ${code} and reason: ${reason}`);
+    });
+    
+    // Handle errors
+    ws.on('error', (error) => {
+        console.error('WebSocket error:', error);
+    });
+});
+
+// Broadcast a message to all clients except the sender
+function broadcastMessage(sender, message) {
+    wss.clients.forEach((client) => {
+        if (client !== sender && client.readyState === WebSocket.OPEN) {
+            client.send(JSON.stringify(message));
+        }
+    });
+}
+
+console.log('WebSocket server is running on port 8080');</code></pre>
+                        
+                        <h3>Node.js with Socket.IO</h3>
+                        <p>Socket.IO is a library that builds on WebSockets and provides additional features:</p>
+                        
+                        <pre><code class="language-javascript">const express = require('express');
+const http = require('http');
+const { Server } = require('socket.io');
+
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server);
+
+// Serve static files
+app.use(express.static('public'));
+
+// Handle Socket.IO connections
+io.on('connection', (socket) => {
+    console.log('New client connected:', socket.id);
+    
+    // Send a welcome message
+    socket.emit('welcome', {
+        message: 'Welcome to the Socket.IO server!',
+        id: socket.id
+    });
+    
+    // Join a room
+    socket.on('join-room', (room) => {
+        socket.join(room);
+        console.log(`Client ${socket.id} joined room: ${room}`);
+        
+        // Notify everyone in the room
+        io.to(room).emit('room-notification', {
+            message: `A new user has joined the room: ${room}`,
+            users: getClientsInRoom(room)
+        });
+    });
+    
+    // Handle chat messages
+    socket.on('chat-message', (data) => {
+        console.log(`Message from ${socket.id}: ${data.message}`);
+        
+        // Broadcast to the specified room or to everyone
+        if (data.room) {
+            io.to(data.room).emit('chat-message', {
+                sender: socket.id,
+                message: data.message,
+                room: data.room,
+                timestamp: new Date().toISOString()
+            });
+        } else {
+            io.emit('chat-message', {
+                sender: socket.id,
+                message: data.message,
+                timestamp: new Date().toISOString()
+            });
+        }
+    });
+    
+    // Handle typing indicator
+    socket.on('typing', (data) => {
+        // Broadcast to others in the room
+        socket.to(data.room).emit('typing', {
+            sender: socket.id,
+            isTyping: data.isTyping
+        });
+    });
+    
+    // Handle disconnection
+    socket.on('disconnect', () => {
+        console.log('Client disconnected:', socket.id);
+        
+        // Notify rooms that the user was in
+        const rooms = Array.from(socket.rooms);
+        rooms.forEach(room => {
+            if (room !== socket.id) { // Socket.IO automatically adds the socket ID as a room
+                io.to(room).emit('room-notification', {
+                    message: `A user has left the room: ${room}`,
+                    users: getClientsInRoom(room)
+                });
+            }
+        });
+    });
+});
+
+// Helper function to get clients in a room
+function getClientsInRoom(room) {
+    const clients = io.sockets.adapter.rooms.get(room);
+    return clients ? Array.from(clients) : [];
+}
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});</code></pre>
+                        
+                        <h3>Python with websockets</h3>
+                        <pre><code class="language-python">import asyncio
+import websockets
+import json
+from datetime import datetime
+
+# Store connected clients
+connected_clients = set()
+
+async def handle_connection(websocket, path):
+    # Add client to the set
+    connected_clients.add(websocket)
+    
+    try:
+        # Send welcome message
+        await websocket.send(json.dumps({
+            "type": "welcome",
+            "message": "Welcome to the WebSocket server!",
+            "timestamp": datetime.now().isoformat()
+        }))
+        
+        # Handle messages
+        async for message in websocket:
+            try:
+                # Parse the message
+                data = json.loads(message)
+                
+                # Handle different message types
+                if data.get("type") == "chat":
+                    # Broadcast the message to all clients
+                    await broadcast_message({
+                        "type": "chat",
+                        "sender": data.get("sender", "Anonymous"),
+                        "message": data.get("message", ""),
+                        "timestamp": datetime.now().isoformat()
+                    }, websocket)
+                
+                elif data.get("type") == "ping":
+                    # Respond with a pong
+                    await websocket.send(json.dumps({
+                        "type": "pong",
+                        "timestamp": datetime.now().isoformat()
+                    }))
+                
+                else:
+                    print(f"Unknown message type: {data.get('type')}")
+            
+            except json.JSONDecodeError:
+                print(f"Received non-JSON message: {message}")
+    
+    except websockets.exceptions.ConnectionClosed as e:
+        print(f"Connection closed with code {e.code} and reason: {e.reason}")
+    
+    finally:
+        # Remove client from the set
+        connected_clients.remove(websocket)
+
+async def broadcast_message(message, sender=None):
+    # Convert message to JSON
+    message_json = json.dumps(message)
+    
+    # Send to all clients except the sender
+    if connected_clients:
+        await asyncio.gather(
+            *[client.send(message_json) for client in connected_clients if client != sender]
+        )
+
+# Start the WebSocket server
+start_server = websockets.serve(handle_connection, "localhost", 8765)
+
+# Run the server
+asyncio.get_event_loop().run_until_complete(start_server)
+asyncio.get_event_loop().run_forever()</code></pre>
+                        
+                        <h3>Java with Spring Boot</h3>
+                        <pre><code class="language-java">import org.springframework.context.annotation.Configuration;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
+import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
+import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
+
+@Configuration
+@EnableWebSocket
+public class WebSocketConfig implements WebSocketConfigurer {
+
+    @Override
+    public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+        registry.addHandler(new ChatWebSocketHandler(), "/chat")
+                .setAllowedOrigins("*");
+    }
+}
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.web.socket.CloseStatus;
+import org.springframework.web.socket.TextMessage;
+import org.springframework.web.socket.WebSocketSession;
+import org.springframework.web.socket.handler.TextWebSocketHandler;
+
+import java.io.IOException;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+public class ChatWebSocketHandler extends TextWebSocketHandler {
+
+    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final Map<String, WebSocketSession> sessions = new ConcurrentHashMap<>();
+
+    @Override
+    public void afterConnectionEstablished(WebSocketSession session) throws Exception {
+        // Add session to the map
+        sessions.put(session.getId(), session);
+        
+        // Send welcome message
+        Map<String, Object> message = Map.of(
+            "type", "welcome",
+            "message", "Welcome to the WebSocket server!",
+            "timestamp", System.currentTimeMillis()
+        );
+        
+        session.sendMessage(new TextMessage(objectMapper.writeValueAsString(message)));
+    }
+
+    @Override
+    protected void handleTextMessage(WebSocketSession session, TextMessage textMessage) throws Exception {
+        // Parse the message
+        Map<String, Object> message = objectMapper.readValue(textMessage.getPayload(), Map.class);
+        String type = (String) message.get("type");
+        
+        if ("chat".equals(type)) {
+            // Broadcast the message to all clients
+            Map<String, Object> broadcastMessage = Map.of(
+                "type", "chat",
+                "sender", message.getOrDefault("sender", "Anonymous"),
+                "message", message.getOrDefault("message", ""),
+                "timestamp", System.currentTimeMillis()
+            );
+            
+            broadcastMessage(broadcastMessage, session);
+        } else if ("ping".equals(type)) {
+            // Respond with a pong
+            Map<String, Object> pongMessage = Map.of(
+                "type", "pong",
+                "timestamp", System.currentTimeMillis()
+            );
+            
+            session.sendMessage(new TextMessage(objectMapper.writeValueAsString(pongMessage)));
+        } else {
+            System.out.println("Unknown message type: " + type);
+        }
+    }
+
+    @Override
+    public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+        // Remove session from the map
+        sessions.remove(session.getId());
+        System.out.println("Connection closed with code " + status.getCode() + " and reason: " + status.getReason());
+    }
+
+    private void broadcastMessage(Map<String, Object> message, WebSocketSession sender) throws IOException {
+        String messageJson = objectMapper.writeValueAsString(message);
+        TextMessage textMessage = new TextMessage(messageJson);
+        
+        for (WebSocketSession session : sessions.values()) {
+            if (session != sender && session.isOpen()) {
+                session.sendMessage(textMessage);
+            }
+        }
+    }
+}</code></pre>
+                        
+                        <h3>PHP with Ratchet</h3>
+                        <pre><code class="language-php">&lt;?php
+// composer require cboden/ratchet
+
+use Ratchet\MessageComponentInterface;
+use Ratchet\ConnectionInterface;
+use Ratchet\Server\IoServer;
+use Ratchet\Http\HttpServer;
+use Ratchet\WebSocket\WsServer;
+
+class ChatServer implements MessageComponentInterface {
+    protected $clients;
+
+    public function __construct() {
+        $this->clients = new \SplObjectStorage;
+    }
+
+    public function onOpen(ConnectionInterface $conn) {
+        // Store the new connection
+        $this->clients->attach($conn);
+        
+        echo "New connection! ({$conn->resourceId})\n";
+        
+        // Send welcome message
+        $welcomeMessage = json_encode([
+            'type' => 'welcome',
+            'message' => 'Welcome to the WebSocket server!',
+            'timestamp' => date('c')
+        ]);
+        
+        $conn->send($welcomeMessage);
+    }
+
+    public function onMessage(ConnectionInterface $from, $msg) {
+        $numRecv = count($this->clients) - 1;
+        echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n",
+            $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
+        
+        try {
+            // Parse the message
+            $data = json_decode($msg, true);
+            
+            if (!$data || !isset($data['type'])) {
+                echo "Invalid message format\n";
+                return;
+            }
+            
+            // Handle different message types
+            switch ($data['type']) {
+                case 'chat':
+                    // Broadcast the message to all clients
+                    $broadcastMessage = json_encode([
+                        'type' => 'chat',
+                        'sender' => $data['sender'] ?? 'Anonymous',
+                        'message' => $data['message'] ?? '',
+                        'timestamp' => date('c')
+                    ]);
+                    
+                    foreach ($this->clients as $client) {
+                        if ($from !== $client) {
+                            $client->send($broadcastMessage);
+                        }
+                    }
+                    break;
+                    
+                case 'ping':
+                    // Respond with a pong
+                    $pongMessage = json_encode([
+                        'type' => 'pong',
+                        'timestamp' => date('c')
+                    ]);
+                    
+                    $from->send($pongMessage);
+                    break;
+                    
+                default:
+                    echo "Unknown message type: {$data['type']}\n";
+            }
+        } catch (\Exception $e) {
+            echo "Error processing message: {$e->getMessage()}\n";
+        }
+    }
+
+    public function onClose(ConnectionInterface $conn) {
+        // Remove the connection
+        $this->clients->detach($conn);
+        
+        echo "Connection {$conn->resourceId} has disconnected\n";
+    }
+
+    public function onError(ConnectionInterface $conn, \Exception $e) {
+        echo "An error has occurred: {$e->getMessage()}\n";
+        
+        $conn->close();
+    }
+}
+
+// Run the server
+$server = IoServer::factory(
+    new HttpServer(
+        new WsServer(
+            new ChatServer()
+        )
+    ),
+    8080
+);
+
+echo "WebSocket server is running on port 8080\n";
+$server->run();</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Server-Side Considerations</h4>
+                            <ul>
+                                <li><strong>Connection Limits</strong>: Be aware of connection limits in your server environment</li>
+                                <li><strong>Memory Usage</strong>: Each connected client consumes server resources</li>
+                                <li><strong>Scaling</strong>: For high-traffic applications, consider using a message broker or pub/sub system</li>
+                                <li><strong>Heartbeats</strong>: Implement heartbeats to detect and clean up stale connections</li>
+                                <li><strong>Authentication</strong>: Implement proper authentication to verify client identity</li>
+                                <li><strong>Rate Limiting</strong>: Implement rate limiting to prevent abuse</li>
+                                <li><strong>Error Handling</strong>: Implement robust error handling to prevent server crashes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>WebSocket Protocol</h2>
+                        <p>The WebSocket protocol is defined in RFC 6455 and consists of two parts: the handshake and the data transfer.</p>
+                        
+                        <h3>Handshake</h3>
+                        <p>The WebSocket handshake is an HTTP upgrade request from the client and a response from the server:</p>
+                        
+                        <pre><code class="language-http">// Client request
+GET /chat HTTP/1.1
+Host: example.com
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==
+Origin: http://example.com
+Sec-WebSocket-Version: 13
+
+// Server response
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=</code></pre>
+                        
+                        <p>The <code>Sec-WebSocket-Key</code> and <code>Sec-WebSocket-Accept</code> headers are used to verify that the server understands the WebSocket protocol.</p>
+                        
+                        <h3>Frame Format</h3>
+                        <p>After the handshake, data is transferred in frames. Each frame has the following format:</p>
+                        
+                        <pre><code class="language-text">0                   1                   2                   3
+ 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-------+-+-------------+-------------------------------+
+|F|R|R|R| opcode|M| Payload len |    Extended payload length    |
+|I|S|S|S|  (4)  |A|     (7)     |             (16/64)           |
+|N|V|V|V|       |S|             |   (if payload len==126/127)   |
+| |1|2|3|       |K|             |                               |
++-+-+-+-+-------+-+-------------+ - - - - - - - - - - - - - - - +
+|     Extended payload length continued, if payload len == 127  |
++ - - - - - - - - - - - - - - - +-------------------------------+
+|                               |Masking-key, if MASK set to 1  |
++-------------------------------+-------------------------------+
+| Masking-key (continued)       |          Payload Data         |
++-------------------------------- - - - - - - - - - - - - - - - +
+:                     Payload Data continued ...                :
++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+|                     Payload Data continued ...                |
++---------------------------------------------------------------+</code></pre>
+                        
+                        <p>Key components of the frame:</p>
+                        <ul>
+                            <li><strong>FIN</strong>: Indicates if this is the final fragment in a message</li>
+                            <li><strong>RSV1-3</strong>: Reserved bits for extensions</li>
+                            <li><strong>Opcode</strong>: Defines the interpretation of the payload data</li>
+                            <li><strong>MASK</strong>: Indicates if the payload is masked</li>
+                            <li><strong>Payload length</strong>: Length of the payload data</li>
+                            <li><strong>Masking key</strong>: Used to mask the payload data (client to server only)</li>
+                            <li><strong>Payload data</strong>: The actual data being transmitted</li>
+                        </ul>
+                        
+                        <h3>Opcodes</h3>
+                        <p>The opcode field defines the interpretation of the payload data:</p>
+                        <ul>
+                            <li><code>0x0</code>: Continuation frame</li>
+                            <li><code>0x1</code>: Text frame</li>
+                            <li><code>0x2</code>: Binary frame</li>
+                            <li><code>0x8</code>: Close frame</li>
+                            <li><code>0x9</code>: Ping frame</li>
+                            <li><code>0xA</code>: Pong frame</li>
+                        </ul>
+                        
+                        <h3>Close Codes</h3>
+                        <p>When closing a WebSocket connection, a status code can be included to indicate the reason:</p>
+                        <ul>
+                            <li><code>1000</code>: Normal closure</li>
+                            <li><code>1001</code>: Going away (e.g., server shutdown)</li>
+                            <li><code>1002</code>: Protocol error</li>
+                            <li><code>1003</code>: Unsupported data</li>
+                            <li><code>1005</code>: No status received</li>
+                            <li><code>1006</code>: Abnormal closure</li>
+                            <li><code>1007</code>: Invalid frame payload data</li>
+                            <li><code>1008</code>: Policy violation</li>
+                            <li><code>1009</code>: Message too big</li>
+                            <li><code>1010</code>: Missing extension</li>
+                            <li><code>1011</code>: Internal error</li>
+                            <li><code>1012</code>: Service restart</li>
+                            <li><code>1013</code>: Try again later</li>
+                            <li><code>1014</code>: Bad gateway</li>
+                            <li><code>1015</code>: TLS handshake failure</li>
+                        </ul>
+                        
+                        <pre><code class="language-javascript">// Closing a WebSocket connection with a code and reason
+socket.close(1000, 'Normal closure');</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>WebSocket Protocol Features</h4>
+                            <ul>
+                                <li><strong>Minimal Overhead</strong>: Small frame header (2-14 bytes)</li>
+                                <li><strong>Fragmentation</strong>: Large messages can be split into multiple frames</li>
+                                <li><strong>Ping/Pong</strong>: Heartbeat mechanism to keep connections alive</li>
+                                <li><strong>Close Handshake</strong>: Clean closure with status code and reason</li>
+                                <li><strong>Extensions</strong>: Protocol can be extended for additional features</li>
+                                <li><strong>Subprotocols</strong>: Application-level protocols can be negotiated</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced WebSocket Techniques</h2>
+                        <p>Let's explore some advanced techniques for working with WebSockets.</p>
+                        
+                        <h3>Authentication and Authorization</h3>
+                        <p>You can secure your WebSocket connections using various authentication methods:</p>
+                        
+                        <pre><code class="language-javascript">// Client-side: Include authentication token in the URL
+const token = getAuthToken(); // Get token from your auth system
+const socket = new WebSocket(`wss://example.com/socket?token=${token}`);
+
+// Or using a custom protocol
+const socket = new WebSocket('wss://example.com/socket', [`token-${token}`]);
+
+// Server-side (Node.js/ws)
+const WebSocket = require('ws');
+const url = require('url');
+
+const wss = new WebSocket.Server({ port: 8080 });
+
+wss.on('connection', (ws, req) => {
+    // Get token from URL query parameters
+    const query = url.parse(req.url, true).query;
+    const token = query.token;
+    
+    // Verify the token
+    if (!isValidToken(token)) {
+        ws.close(1008, 'Invalid token');
+        return;
+    }
+    
+    // Get user from token
+    const user = getUserFromToken(token);
+    
+    // Store user information with the connection
+    ws.user = user;
+    
+    // Continue with normal connection handling
+    // ...
+});</code></pre>
+                        
+                        <h3>Subprotocols</h3>
+                        <p>WebSocket subprotocols allow you to specify the application-level protocol to use:</p>
+                        
+                        <pre><code class="language-javascript">// Client-side: Specify subprotocols
+const socket = new WebSocket('wss://example.com/socket', ['chat', 'json']);
+
+// Check which subprotocol was selected
+console.log('Selected protocol:', socket.protocol);
+
+// Server-side (Node.js/ws)
+const WebSocket = require('ws');
+
+const wss = new WebSocket.Server({
+    port: 8080,
+    // Handle subprotocol selection
+    handleProtocols: (protocols, request) => {
+        console.log('Client requested protocols:', protocols);
+        
+        // Select the first supported protocol
+        if (protocols.includes('json')) {
+            return 'json';
+        } else if (protocols.includes('chat')) {
+            return 'chat';
+        }
+        
+        // No supported protocol
+        return false;
+    }
+});
+
+wss.on('connection', (ws, req) => {
+    console.log('Connection established with protocol:', ws.protocol);
+    
+    // Handle messages based on the selected protocol
+    ws.on('message', (message) => {
+        if (ws.protocol === 'json') {
+            // Parse JSON message
+            const data = JSON.parse(message);
+            // ...
+        } else if (ws.protocol === 'chat') {
+            // Handle chat message
+            // ...
+        }
+    });
+});</code></pre>
+                        
+                        <h3>Binary Data and Transferable Objects</h3>
+                        <p>WebSockets can efficiently handle binary data:</p>
+                        
+                        <pre><code class="language-javascript">// Client-side: Send binary data
+const buffer = new ArrayBuffer(16);
+const view = new Uint32Array(buffer);
+for (let i = 0; i < view.length; i++) {
+    view[i] = i;
+}
+
+// Send the buffer
+socket.send(buffer);
+
+// Server-side (Node.js/ws)
+wss.on('connection', (ws) => {
+    // Set binary type
+    ws.binaryType = 'arraybuffer';
+    
+    ws.on('message', (data) => {
+        if (data instanceof ArrayBuffer) {
+            console.log('Received binary data of length:', data.byteLength);
+            
+            // Process the binary data
+            const view = new Uint32Array(data);
+            console.log('Values:', Array.from(view));
+            
+            // Send binary response
+            const response = new ArrayBuffer(8);
+            const responseView = new Uint32Array(response);
+            responseView[0] = 123;
+            responseView[1] = 456;
+            
+            ws.send(response);
+        } else {
+            console.log('Received text data:', data);
+        }
+    });
+});</code></pre>
+                        
+                        <h3>Heartbeats and Connection Management</h3>
+                        <p>Implement heartbeats to detect and clean up stale connections:</p>
+                        
+                        <pre><code class="language-javascript">// Server-side (Node.js/ws)
+const WebSocket = require('ws');
+
+const wss = new WebSocket.Server({ port: 8080 });
+
+function heartbeat() {
+    this.isAlive = true;
+}
+
+wss.on('connection', (ws) => {
+    ws.isAlive = true;
+    ws.on('pong', heartbeat);
+    
+    // Handle messages
+    ws.on('message', (message) => {
+        // ...
+    });
+});
+
+// Check for stale connections every 30 seconds
+const interval = setInterval(() => {
+    wss.clients.forEach((ws) => {
+        if (ws.isAlive === false) {
+            return ws.terminate();
+        }
+        
+        ws.isAlive = false;
+        ws.ping();
+    });
+}, 30000);
+
+// Clean up the interval when the server closes
+wss.on('close', () => {
+    clearInterval(interval);
+});
+
+// Client-side heartbeat
+const socket = new WebSocket('wss://example.com/socket');
+
+// Set up ping interval
+let pingInterval;
+
+socket.addEventListener('open', () => {
+    // Send a ping every 25 seconds
+    pingInterval = setInterval(() => {
+        if (socket.readyState === WebSocket.OPEN) {
+            socket.send(JSON.stringify({ type: 'ping' }));
+        }
+    }, 25000);
+});
+
+socket.addEventListener('message', (event) => {
+    try {
+        const data = JSON.parse(event.data);
+        if (data.type === 'pong') {
+            console.log('Received pong from server');
+        }
+    } catch (error) {
+        console.error('Error parsing message:', error);
+    }
+});
+
+socket.addEventListener('close', () => {
+    clearInterval(pingInterval);
+});</code></pre>
+                        
+                        <h3>Scaling with Redis</h3>
+                        <p>For applications that need to scale across multiple servers, you can use Redis pub/sub:</p>
+                        
+                        <pre><code class="language-javascript">const WebSocket = require('ws');
+const Redis = require('ioredis');
+const http = require('http');
+
+// Create Redis clients
+const subscriber = new Redis();
+const publisher = new Redis();
+
+// Create HTTP server
+const server = http.createServer();
+
+// Create WebSocket server
+const wss = new WebSocket.Server({ server });
+
+// Keep track of connected clients
+const clients = new Map();
+
+// Handle WebSocket connections
+wss.on('connection', (ws, req) => {
+    const clientId = Date.now().toString();
+    
+    // Store client information
+    clients.set(clientId, {
+        ws: ws,
+        channels: new Set()
+    });
+    
+    console.log(`Client connected: ${clientId}`);
+    
+    // Handle messages from client
+    ws.on('message', (message) => {
+        try {
+            const data = JSON.parse(message);
+            
+            switch (data.action) {
+                case 'subscribe':
+                    // Subscribe to a channel
+                    const channel = data.channel;
+                    
+                    if (channel) {
+                        // Add channel to client's subscriptions
+                        clients.get(clientId).channels.add(channel);
+                        
+                        // Subscribe to Redis channel
+                        subscriber.subscribe(channel);
+                        
+                        console.log(`Client ${clientId} subscribed to ${channel}`);
+                        
+                        // Confirm subscription
+                        ws.send(JSON.stringify({
+                            type: 'subscription',
+                            status: 'success',
+                            channel: channel
+                        }));
+                    }
+                    break;
+                    
+                case 'unsubscribe':
+                    // Unsubscribe from a channel
+                    const unsubChannel = data.channel;
+                    
+                    if (unsubChannel) {
+                        // Remove channel from client's subscriptions
+                        clients.get(clientId).channels.delete(unsubChannel);
+                        
+                        // Check if any clients are still subscribed to this channel
+                        let stillSubscribed = false;
+                        for (const client of clients.values()) {
+                            if (client.channels.has(unsubChannel)) {
+                                stillSubscribed = true;
+                                break;
+                            }
+                        }
+                        
+                        // If no clients are subscribed, unsubscribe from Redis
+                        if (!stillSubscribed) {
+                            subscriber.unsubscribe(unsubChannel);
+                        }
+                        
+                        console.log(`Client ${clientId} unsubscribed from ${unsubChannel}`);
+                        
+                        // Confirm unsubscription
+                        ws.send(JSON.stringify({
+                            type: 'subscription',
+                            status: 'success',
+                            action: 'unsubscribe',
+                            channel: unsubChannel
+                        }));
+                    }
+                    break;
+                    
+                case 'publish':
+                    // Publish a message to a channel
+                    const pubChannel = data.channel;
+                    const pubMessage = data.message;
+                    
+                    if (pubChannel && pubMessage) {
+                        // Publish to Redis
+                        publisher.publish(pubChannel, JSON.stringify({
+                            type: 'message',
+                            channel: pubChannel,
+                            message: pubMessage,
+                            sender: clientId,
+                            timestamp: new Date().toISOString()
+                        }));
+                        
+                        console.log(`Client ${clientId} published to ${pubChannel}`);
+                    }
+                    break;
+                    
+                default:
+                    console.log(`Unknown action: ${data.action}`);
+            }
+        } catch (error) {
+            console.error('Error processing message:', error);
+        }
+    });
+    
+    // Handle disconnection
+    ws.on('close', () => {
+        console.log(`Client disconnected: ${clientId}`);
+        
+        // Get client's subscriptions
+        const client = clients.get(clientId);
+        if (client) {
+            // Check each channel
+            for (const channel of client.channels) {
+                // Check if any other clients are still subscribed to this channel
+                let stillSubscribed = false;
+                for (const [id, c] of clients.entries()) {
+                    if (id !== clientId && c.channels.has(channel)) {
+                        stillSubscribed = true;
+                        break;
+                    }
+                }
+                
+                // If no clients are subscribed, unsubscribe from Redis
+                if (!stillSubscribed) {
+                    subscriber.unsubscribe(channel);
+                }
+            }
+            
+            // Remove client
+            clients.delete(clientId);
+        }
+    });
+});
+
+// Handle Redis messages
+subscriber.on('message', (channel, message) => {
+    console.log(`Received message from Redis channel ${channel}`);
+    
+    // Forward message to all clients subscribed to this channel
+    for (const client of clients.values()) {
+        if (client.channels.has(channel)) {
+            client.ws.send(message);
+        }
+    }
+});
+
+// Start the server
+const PORT = process.env.PORT || 8080;
+server.listen(PORT, () => {
+    console.log(`WebSocket server is running on port ${PORT}`);
+});</code></pre>
+                        
+                        <h3>Compression</h3>
+                        <p>WebSocket extensions like permessage-deflate can be used to compress messages:</p>
+                        
+                        <pre><code class="language-javascript">// Server-side (Node.js/ws)
+const WebSocket = require('ws');
+
+const wss = new WebSocket.Server({
+    port: 8080,
+    perMessageDeflate: {
+        zlibDeflateOptions: {
+            // See zlib defaults
+            level: 6,
+            memLevel: 8,
+            windowBits: 15
+        },
+        zlibInflateOptions: {
+            windowBits: 15
+        },
+        // Threshold for compression (in bytes)
+        threshold: 1024
+    }
+});
+
+// Client-side
+// Compression is handled automatically by the browser</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Advanced WebSocket Best Practices</h4>
+                            <ul>
+                                <li><strong>Message Format</strong>: Define a clear message format (e.g., JSON with type field)</li>
+                                <li><strong>Error Handling</strong>: Implement robust error handling on both client and server</li>
+                                <li><strong>Reconnection</strong>: Implement exponential backoff for reconnection attempts</li>
+                                <li><strong>Heartbeats</strong>: Use ping/pong frames or application-level heartbeats</li>
+                                <li><strong>Connection Pooling</strong>: Reuse connections for multiple purposes</li>
+                                <li><strong>Load Balancing</strong>: Use sticky sessions or shared state for load balancing</li>
+                                <li><strong>Monitoring</strong>: Monitor connection counts, message rates, and resource usage</li>
+                                <li><strong>Graceful Shutdown</strong>: Implement graceful shutdown procedures</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Browser Support and Polyfills</h2>
+                        <p>WebSockets are supported in all modern browsers, but there are some considerations for older browsers.</p>
+                        
+                        <h3>Browser Compatibility</h3>
+                        <ul>
+                            <li><strong>Chrome</strong>: Full support since version 4</li>
+                            <li><strong>Firefox</strong>: Full support since version 4</li>
+                            <li><strong>Safari</strong>: Full support since version 5</li>
+                            <li><strong>Edge</strong>: Full support since version 12</li>
+                            <li><strong>Internet Explorer</strong>: Partial support in IE 10+</li>
+                            <li><strong>Opera</strong>: Full support since version 11</li>
+                            <li><strong>iOS Safari</strong>: Full support since iOS 4.2</li>
+                            <li><strong>Android Browser</strong>: Full support since Android 4.4</li>
+                        </ul>
+                        
+                        <h3>Feature Detection</h3>
+                        <pre><code class="language-javascript">// Check if WebSockets are supported
+if ('WebSocket' in window) {
+    // WebSockets are supported
+    const socket = new WebSocket('wss://example.com/socket');
+    // Set up event handlers...
+} else {
+    // WebSockets are not supported
+    console.log('WebSockets are not supported in this browser.');
+    // Use a polyfill or fallback approach
+    usePolyfill();
+}</code></pre>
+                        
+                        <h3>Polyfills and Fallbacks</h3>
+                        <p>For browsers that don't support WebSockets natively, you can use libraries like Socket.IO that provide fallbacks:</p>
+                        
+                        <pre><code class="language-javascript">// Using Socket.IO
+const socket = io('https://example.com');
+
+// Connection opened
+socket.on('connect', () => {
+    console.log('Connection established');
+    
+    // Send a message to the server
+    socket.emit('message', 'Hello Server!');
+});
+
+// Listen for messages
+socket.on('message', (data) => {
+    console.log('Message from server:', data);
+});
+
+// Listen for connection close
+socket.on('disconnect', (reason) => {
+    console.log('Connection closed:', reason);
+});</code></pre>
+                        
+                        <p>Socket.IO automatically selects the best transport method available:</p>
+                        <ol>
+                            <li>WebSocket</li>
+                            <li>HTTP/2 Server Push</li>
+                            <li>HTTP Long Polling</li>
+                            <li>JSONP Polling</li>
+                        </ol>
+                        
+                        <h3>SockJS</h3>
+                        <p>Another popular library for WebSocket emulation is SockJS:</p>
+                        
+                        <pre><code class="language-javascript">// Using SockJS
+const socket = new SockJS('https://example.com/socket');
+
+// Connection opened
+socket.onopen = function() {
+    console.log('Connection established');
+    
+    // Send a message to the server
+    socket.send('Hello Server!');
+};
+
+// Listen for messages
+socket.onmessage = function(e) {
+    console.log('Message from server:', e.data);
+};
+
+// Listen for connection close
+socket.onclose = function() {
+    console.log('Connection closed');
+};</code></pre>
+                        
+                        <p>SockJS provides the following fallback transports:</p>
+                        <ol>
+                            <li>WebSocket</li>
+                            <li>XHR Streaming</li>
+                            <li>XHR Polling</li>
+                            <li>JSONP Polling</li>
+                            <li>IFrame-based transports for cross-domain support</li>
+                        </ol>
+                        
+                        <div class="info-box">
+                            <h4>Polyfill Considerations</h4>
+                            <ul>
+                                <li><strong>Performance</strong>: Fallback transports may have higher latency and overhead</li>
+                                <li><strong>Features</strong>: Some WebSocket features may not be available in fallbacks</li>
+                                <li><strong>Binary Support</strong>: Binary data support varies across fallback transports</li>
+                                <li><strong>Server Requirements</strong>: Server-side implementation must support the fallback transports</li>
+                                <li><strong>Size</strong>: Polyfill libraries add additional code size to your application</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Real-World Use Cases</h2>
+                        <p>Let's explore some practical applications of WebSockets in real-world scenarios.</p>
+                        
+                        <h3>1. Chat Application</h3>
+                        <p>Create a real-time chat application:</p>
+                        
+                        <pre><code class="language-javascript">// Client-side
+document.addEventListener('DOMContentLoaded', function() {
+    const messagesList = document.getElementById('messages');
+    const messageInput = document.getElementById('message-input');
+    const sendButton = document.getElementById('send-button');
+    const usernameInput = document.getElementById('username-input');
+    const loginButton = document.getElementById('login-button');
+    const loginForm = document.getElementById('login-form');
+    const chatInterface = document.getElementById('chat-interface');
+    
+    let username = '';
+    let socket = null;
+    
+    // Handle login
+    loginButton.addEventListener('click', function() {
+        username = usernameInput.value.trim();
+        
+        if (username) {
+            // Hide login form, show chat interface
+            loginForm.style.display = 'none';
+            chatInterface.style.display = 'block';
+            
+            // Connect to WebSocket server
+            connectToServer();
+        }
+    });
+    
+    // Connect to WebSocket server
+    function connectToServer() {
+        socket = new WebSocket('wss://example.com/chat');
+        
+        // Connection opened
+        socket.addEventListener('open', function(event) {
+            console.log('Connected to chat server');
+            
+            // Send join message
+            socket.send(JSON.stringify({
+                type: 'join',
+                username: username
+            }));
+            
+            // Add system message
+            addMessage('System', 'Connected to chat server', true);
+        });
+        
+        // Listen for messages
+        socket.addEventListener('message', function(event) {
+            try {
+                const data = JSON.parse(event.data);
+                
+                switch (data.type) {
+                    case 'message':
+                        // Add chat message
+                        addMessage(data.username, data.message, data.username === username);
+                        break;
+                        
+                    case 'join':
+                        // Add system message for user joining
+                        addMessage('System', `${data.username} has joined the chat`, false);
+                        break;
+                        
+                    case 'leave':
+                        // Add system message for user leaving
+                        addMessage('System', `${data.username} has left the chat`, false);
+                        break;
+                        
+                    case 'users':
+                        // Update users list
+                        updateUsersList(data.users);
+                        break;
+                }
+            } catch (error) {
+                console.error('Error parsing message:', error);
+            }
+        });
+        
+        // Handle connection close
+        socket.addEventListener('close', function(event) {
+            console.log('Disconnected from chat server');
+            
+            // Add system message
+            addMessage('System', 'Disconnected from chat server', true);
+            
+            // Try to reconnect after a delay
+            setTimeout(connectToServer, 3000);
+        });
+        
+        // Handle errors
+        socket.addEventListener('error', function(event) {
+            console.error('WebSocket error:', event);
+            addMessage('System', 'Connection error', true);
+        });
+    }
+    
+    // Send message
+    sendButton.addEventListener('click', sendMessage);
+    messageInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    });
+    
+    function sendMessage() {
+        const message = messageInput.value.trim();
+        
+        if (message && socket && socket.readyState === WebSocket.OPEN) {
+            // Send message to server
+            socket.send(JSON.stringify({
+                type: 'message',
+                username: username,
+                message: message
+            }));
+            
+            // Clear input
+            messageInput.value = '';
+        }
+    }
+    
+    // Add message to the chat
+    function addMessage(sender, message, isOwnMessage) {
+        const messageElement = document.createElement('div');
+        messageElement.className = isOwnMessage ? 'message own-message' : 'message';
+        
+        const timestamp = new Date().toLocaleTimeString();
+        
+        messageElement.innerHTML = `
+            <div class="message-header">
+                <span class="message-sender">${sender}</span>
+                <span class="message-time">${timestamp}</span>
+            </div>
+            <div class="message-content">${message}</div>
+        `;
+        
+        messagesList.appendChild(messageElement);
+        
+        // Scroll to bottom
+        messagesList.scrollTop = messagesList.scrollHeight;
+    }
+    
+    // Update users list
+    function updateUsersList(users) {
+        const usersList = document.getElementById('users-list');
+        usersList.innerHTML = '';
+        
+        users.forEach(user => {
+            const userElement = document.createElement('div');
+            userElement.className = 'user';
+            userElement.textContent = user;
+            usersList.appendChild(userElement);
+        });
+    }
+});
+
+// Server-side (Node.js/ws)
+const WebSocket = require('ws');
+const wss = new WebSocket.Server({ port: 8080 });
+
+// Store connected users
+const users = new Map();
+
+// Handle new connections
+wss.on('connection', (ws) => {
+    let username = '';
+    
+    // Handle messages
+    ws.on('message', (message) => {
+        try {
+            const data = JSON.parse(message);
+            
+            switch (data.type) {
+                case 'join':
+                    // Store username
+                    username = data.username;
+                    users.set(ws, username);
+                    
+                    // Broadcast join message
+                    broadcastMessage({
+                        type: 'join',
+                        username: username
+                    });
+                    
+                    // Send current users list to the new user
+                    ws.send(JSON.stringify({
+                        type: 'users',
+                        users: Array.from(users.values())
+                    }));
+                    break;
+                    
+                case 'message':
+                    // Broadcast chat message
+                    broadcastMessage({
+                        type: 'message',
+                        username: username,
+                        message: data.message
+                    });
+                    break;
+            }
+        } catch (error) {
+            console.error('Error processing message:', error);
+        }
+    });
+    
+    // Handle disconnection
+    ws.on('close', () => {
+        if (username) {
+            // Remove user
+            users.delete(ws);
+            
+            // Broadcast leave message
+            broadcastMessage({
+                type: 'leave',
+                username: username
+            });
+        }
+    });
+});
+
+// Broadcast message to all clients
+function broadcastMessage(message) {
+    wss.clients.forEach((client) => {
+        if (client.readyState === WebSocket.OPEN) {
+            client.send(JSON.stringify(message));
+        }
+    });
+}</code></pre>
+                        
+                        <h3>2. Collaborative Drawing App</h3>
+                        <p>Create a real-time collaborative drawing application:</p>
+                        
+                        <pre><code class="language-javascript">// Client-side
+document.addEventListener('DOMContentLoaded', function() {
+    const canvas = document.getElementById('drawing-canvas');
+    const ctx = canvas.getContext('2d');
+    const colorPicker = document.getElementById('color-picker');
+    const brushSize = document.getElementById('brush-size');
+    const clearButton = document.getElementById('clear-button');
+    const usersList = document.getElementById('users-list');
+    
+    // Set canvas size
+    canvas.width = 800;
+    canvas.height = 600;
+    
+    // Drawing state
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+    let color = colorPicker.value;
+    let size = brushSize.value;
+    
+    // Connect to WebSocket server
+    const socket = new WebSocket('wss://example.com/draw');
+    
+    // Generate a random user ID
+    const userId = 'user_' + Math.random().toString(36).substr(2, 9);
+    
+    // Connection opened
+    socket.addEventListener('open', function(event) {
+        console.log('Connected to drawing server');
+        
+        // Join the drawing session
+        socket.send(JSON.stringify({
+            type: 'join',
+            userId: userId
+        }));
+    });
+    
+    // Listen for messages
+    socket.addEventListener('message', function(event) {
+        try {
+            const data = JSON.parse(event.data);
+            
+            switch (data.type) {
+                case 'draw':
+                    // Draw line from another user
+                    drawLine(
+                        data.x1,
+                        data.y1,
+                        data.x2,
+                        data.y2,
+                        data.color,
+                        data.size
+                    );
+                    break;
+                    
+                case 'clear':
+                    // Clear canvas
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    break;
+                    
+                case 'users':
+                    // Update users list
+                    updateUsersList(data.users);
+                    break;
+            }
+        } catch (error) {
+            console.error('Error parsing message:', error);
+        }
+    });
+    
+    // Handle mouse events
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('mouseout', stopDrawing);
+    
+    // Handle touch events
+    canvas.addEventListener('touchstart', handleTouchStart);
+    canvas.addEventListener('touchmove', handleTouchMove);
+    canvas.addEventListener('touchend', stopDrawing);
+    
+    // Handle color and size changes
+    colorPicker.addEventListener('change', function() {
+        color = this.value;
+    });
+    
+    brushSize.addEventListener('change', function() {
+        size = this.value;
+    });
+    
+    // Handle clear button
+    clearButton.addEventListener('click', function() {
+        // Clear canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Send clear message
+        socket.send(JSON.stringify({
+            type: 'clear',
+            userId: userId
+        }));
+    });
+    
+    // Start drawing
+    function startDrawing(e) {
+        isDrawing = true;
+        [lastX, lastY] = getCoordinates(e);
+    }
+    
+    // Draw
+    function draw(e) {
+        if (!isDrawing) return;
+        
+        e.preventDefault();
+        
+        const [x, y] = getCoordinates(e);
+        
+        // Draw line
+        drawLine(lastX, lastY, x, y, color, size);
+        
+        // Send draw message
+        socket.send(JSON.stringify({
+            type: 'draw',
+            userId: userId,
+            x1: lastX,
+            y1: lastY,
+            x2: x,
+            y2: y,
+            color: color,
+            size: size
+        }));
+        
+        // Update last position
+        [lastX, lastY] = [x, y];
+    }
+    
+    // Stop drawing
+    function stopDrawing() {
+        isDrawing = false;
+    }
+    
+    // Handle touch start
+    function handleTouchStart(e) {
+        e.preventDefault();
+        startDrawing(e.touches[0]);
+    }
+    
+    // Handle touch move
+    function handleTouchMove(e) {
+        e.preventDefault();
+        draw(e.touches[0]);
+    }
+    
+    // Get coordinates from mouse or touch event
+    function getCoordinates(e) {
+        const rect = canvas.getBoundingClientRect();
+        return [
+            e.clientX - rect.left,
+            e.clientY - rect.top
+        ];
+    }
+    
+    // Draw line on canvas
+    function drawLine(x1, y1, x2, y2, color, size) {
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = size;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+    }
+    
+    // Update users list
+    function updateUsersList(users) {
+        usersList.innerHTML = '';
+        
+        users.forEach(user => {
+            const userElement = document.createElement('div');
+            userElement.className = 'user';
+            userElement.textContent = user;
+            usersList.appendChild(userElement);
+        });
+    }
+});
+
+// Server-side (Node.js/ws)
+const WebSocket = require('ws');
+const wss = new WebSocket.Server({ port: 8080 });
+
+// Store connected users
+const users = new Map();
+
+// Handle new connections
+wss.on('connection', (ws) => {
+    let userId = '';
+    
+    // Handle messages
+    ws.on('message', (message) => {
+        try {
+            const data = JSON.parse(message);
+            
+            switch (data.type) {
+                case 'join':
+                    // Store user ID
+                    userId = data.userId;
+                    users.set(ws, userId);
+                    
+                    // Send current users list to all clients
+                    broadcastUsersList();
+                    break;
+                    
+                case 'draw':
+                    // Broadcast draw message to all clients except sender
+                    broadcastToOthers(ws, data);
+                    break;
+                    
+                case 'clear':
+                    // Broadcast clear message to all clients
+                    broadcastMessage({
+                        type: 'clear'
+                    });
+                    break;
+            }
+        } catch (error) {
+            console.error('Error processing message:', error);
+        }
+    });
+    
+    // Handle disconnection
+    ws.on('close', () => {
+        if (userId) {
+            // Remove user
+            users.delete(ws);
+            
+            // Update users list
+            broadcastUsersList();
+        }
+    });
+});
+
+// Broadcast message to all clients
+function broadcastMessage(message) {
+    wss.clients.forEach((client) => {
+        if (client.readyState === WebSocket.OPEN) {
+            client.send(JSON.stringify(message));
+        }
+    });
+}
+
+// Broadcast message to all clients except sender
+function broadcastToOthers(sender, message) {
+    wss.clients.forEach((client) => {
+        if (client !== sender && client.readyState === WebSocket.OPEN) {
+            client.send(JSON.stringify(message));
+        }
+    });
+}
+
+// Broadcast users list to all clients
+function broadcastUsersList() {
+    broadcastMessage({
+        type: 'users',
+        users: Array.from(users.values())
+    });
+}</code></pre>
+                        
+                        <h3>3. Real-Time Dashboard</h3>
+                        <p>Create a real-time dashboard for monitoring system metrics:</p>
+                        
+                        <pre><code class="language-javascript">// Client-side
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize charts
+    const cpuChart = createChart('cpu-chart', 'CPU Usage', '%');
+    const memoryChart = createChart('memory-chart', 'Memory Usage', 'GB');
+    const networkChart = createChart('network-chart', 'Network Traffic', 'Mbps');
+    
+    // Connect to WebSocket server
+    const socket = new WebSocket('wss://example.com/metrics');
+    
+    // Connection opened
+    socket.addEventListener('open', function(event) {
+        console.log('Connected to metrics server');
+        
+        // Request initial data
+        socket.send(JSON.stringify({
+            type: 'subscribe',
+            metrics: ['cpu', 'memory', 'network', 'disk', 'services']
+        }));
+    });
+    
+    // Listen for messages
+    socket.addEventListener('message', function(event) {
+        try {
+            const data = JSON.parse(event.data);
+            
+            // Update timestamp
+            document.getElementById('last-update').textContent = 
+                new Date(data.timestamp).toLocaleTimeString();
+            
+            // Update charts
+            if (data.cpu) {
+                updateChart(cpuChart, data.cpu.usage);
+                document.getElementById('cpu-cores').textContent = 
+                    formatCoreUsage(data.cpu.cores);
+            }
+            
+            if (data.memory) {
+                updateChart(memoryChart, data.memory.used);
+                document.getElementById('memory-total').textContent = 
+                    `${data.memory.used.toFixed(2)} / ${data.memory.total} GB`;
+                document.getElementById('memory-swap').textContent = 
+                    `Swap: ${data.memory.swap.toFixed(2)} GB`;
+            }
+            
+            if (data.network) {
+                updateChart(networkChart, data.network.incoming + data.network.outgoing);
+                document.getElementById('network-in').textContent = 
+                    `In: ${data.network.incoming.toFixed(2)} Mbps`;
+                document.getElementById('network-out').textContent = 
+                    `Out: ${data.network.outgoing.toFixed(2)} Mbps`;
+            }
+            
+            // Update other metrics
+            if (data.disk) {
+                updateDiskUsage(data.disk);
+            }
+            
+            if (data.services) {
+                updateServices(data.services);
+            }
+            
+            // Update summary metrics
+            if (data.summary) {
+                document.getElementById('active-users').textContent = 
+                    data.summary.activeUsers;
+                document.getElementById('requests-per-second').textContent = 
+                    data.summary.requestsPerSecond;
+                document.getElementById('error-rate').textContent = 
+                    data.summary.errorRate.toFixed(2) + '%';
+            }
+        } catch (error) {
+            console.error('Error parsing message:', error);
+        }
+    });
+    
+    // Handle connection close
+    socket.addEventListener('close', function(event) {
+        console.log('Disconnected from metrics server');
+        
+        // Show disconnected status
+        document.getElementById('connection-status').textContent = 'Disconnected';
+        document.getElementById('connection-status').className = 'status-disconnected';
+        
+        // Try to reconnect after a delay
+        setTimeout(function() {
+            location.reload();
+        }, 5000);
+    });
+    
+    // Handle errors
+    socket.addEventListener('error', function(event) {
+        console.error('WebSocket error:', event);
+        
+        // Show error status
+        document.getElementById('connection-status').textContent = 'Error';
+        document.getElementById('connection-status').className = 'status-error';
+    });
+    
+    // Create a chart
+    function createChart(elementId, label, unit) {
+        const ctx = document.getElementById(elementId).getContext('2d');
+        
+        return new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: Array(20).fill(''),
+                datasets: [{
+                    label: label,
+                    data: Array(20).fill(0),
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: unit
+                        }
+                    }
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        });
+    }
+    
+    // Update a chart with new data
+    function updateChart(chart, value) {
+        // Add new data point
+        chart.data.datasets[0].data.push(value);
+        
+        // Remove oldest data point
+        if (chart.data.datasets[0].data.length > 20) {
+            chart.data.datasets[0].data.shift();
+        }
+        
+        // Add new label
+        chart.data.labels.push('');
+        
+        // Remove oldest label
+        if (chart.data.labels.length > 20) {
+            chart.data.labels.shift();
+        }
+        
+        // Update the chart
+        chart.update();
+    }
+    
+    // Format CPU core usage
+    function formatCoreUsage(cores) {
+        return cores.map(core => `${core.toFixed(1)}%`).join(', ');
+    }
+    
+    // Update disk usage
+    function updateDiskUsage(disks) {
+        const diskContainer = document.getElementById('disk-usage');
+        diskContainer.innerHTML = '';
+        
+        for (const disk of disks) {
+            const diskElement = document.createElement('div');
+            diskElement.className = 'disk';
+            
+            const usedPercentage = (disk.used / disk.total) * 100;
+            
+            diskElement.innerHTML = `
+                <div class="disk-name">${disk.mount}</div>
+                <div class="disk-bar">
+                    <div class="disk-bar-used" style="width: ${usedPercentage}%"></div>
+                </div>
+                <div class="disk-info">
+                    ${disk.used.toFixed(1)} / ${disk.total} GB (${usedPercentage.toFixed(1)}%)
+                </div>
+            `;
+            
+            diskContainer.appendChild(diskElement);
+        }
+    }
+    
+    // Update services status
+    function updateServices(services) {
+        const servicesContainer = document.getElementById('services-status');
+        servicesContainer.innerHTML = '';
+        
+        for (const service of services) {
+            const serviceElement = document.createElement('div');
+            serviceElement.className = `service service-${service.status}`;
+            
+            serviceElement.innerHTML = `
+                <div class="service-name">${service.name}</div>
+                <div class="service-status">${service.status}</div>
+                <div class="service-uptime">${service.uptime}</div>
+            `;
+            
+            servicesContainer.appendChild(serviceElement);
+        }
+    }
+});
+
+// Server-side (Node.js/ws)
+const WebSocket = require('ws');
+const os = require('os');
+const fs = require('fs');
+const child_process = require('child_process');
+
+const wss = new WebSocket.Server({ port: 8080 });
+
+// Store connected clients
+const clients = new Set();
+
+// Handle new connections
+wss.on('connection', (ws) => {
+    // Add client to set
+    clients.add(ws);
+    
+    console.log(`Client connected (${clients.size} total)`);
+    
+    // Handle messages
+    ws.on('message', (message) => {
+        try {
+            const data = JSON.parse(message);
+            
+            if (data.type === 'subscribe') {
+                // Store subscribed metrics
+                ws.subscribedMetrics = data.metrics;
+                
+                // Send initial data
+                sendMetrics(ws);
+            }
+        } catch (error) {
+            console.error('Error processing message:', error);
+        }
+    });
+    
+    // Handle disconnection
+    ws.on('close', () => {
+        // Remove client from set
+        clients.delete(ws);
+        
+        console.log(`Client disconnected (${clients.size} total)`);
+    });
+});
+
+// Send metrics to a client
+function sendMetrics(client) {
+    const metrics = {
+        timestamp: new Date().toISOString()
+    };
+    
+    // Only include metrics the client is subscribed to
+    if (!client.subscribedMetrics) return;
+    
+    if (client.subscribedMetrics.includes('cpu')) {
+        metrics.cpu = getCpuMetrics();
+    }
+    
+    if (client.subscribedMetrics.includes('memory')) {
+        metrics.memory = getMemoryMetrics();
+    }
+    
+    if (client.subscribedMetrics.includes('network')) {
+        metrics.network = getNetworkMetrics();
+    }
+    
+    if (client.subscribedMetrics.includes('disk')) {
+        metrics.disk = getDiskMetrics();
+    }
+    
+    if (client.subscribedMetrics.includes('services')) {
+        metrics.services = getServicesStatus();
+    }
+    
+    // Add summary metrics
+    metrics.summary = {
+        activeUsers: Math.floor(Math.random() * 1000),
+        requestsPerSecond: Math.floor(Math.random() * 500),
+        errorRate: Math.random() * 5
+    };
+    
+    // Send metrics to the client
+    client.send(JSON.stringify(metrics));
+}
+
+// Get CPU metrics
+function getCpuMetrics() {
+    const cpus = os.cpus();
+    const cores = cpus.map(cpu => {
+        const total = Object.values(cpu.times).reduce((a, b) => a + b, 0);
+        const idle = cpu.times.idle;
+        return ((total - idle) / total) * 100;
+    });
+    
+    return {
+        usage: cores.reduce((a, b) => a + b, 0) / cores.length,
+        cores: cores
+    };
+}
+
+// Get memory metrics
+function getMemoryMetrics() {
+    const totalMemory = os.totalmem() / (1024 * 1024 * 1024); // GB
+    const freeMemory = os.freemem() / (1024 * 1024 * 1024); // GB
+    const usedMemory = totalMemory - freeMemory;
+    
+    return {
+        total: totalMemory.toFixed(2),
+        used: usedMemory,
+        swap: Math.random() * 8 // Simulated swap usage
+    };
+}
+
+// Get network metrics
+function getNetworkMetrics() {
+    // In a real application, you would measure actual network traffic
+    return {
+        incoming: Math.random() * 100,
+        outgoing: Math.random() * 50
+    };
+}
+
+// Get disk metrics
+function getDiskMetrics() {
+    // In a real application, you would use fs.statfs or similar
+    return [
+        {
+            mount: '/',
+            total: 100,
+            used: 45 + Math.random() * 10
+        },
+        {
+            mount: '/home',
+            total: 500,
+            used: 200 + Math.random() * 20
+        },
+        {
+            mount: '/var',
+            total: 200,
+            used: 80 + Math.random() * 15
+        }
+    ];
+}
+
+// Get services status
+function getServicesStatus() {
+    // In a real application, you would check actual service status
+    const statuses = ['running', 'running', 'running', 'warning', 'error'];
+    
+    return [
+        {
+            name: 'Web Server',
+            status: statuses[Math.floor(Math.random() * 3)],
+            uptime: '10d 4h 30m'
+        },
+        {
+            name: 'Database',
+            status: statuses[Math.floor(Math.random() * 3)],
+            uptime: '5d 12h 45m'
+        },
+        {
+            name: 'Cache',
+            status: statuses[Math.floor(Math.random() * 3)],
+            uptime: '8d 2h 15m'
+        },
+        {
+            name: 'Message Queue',
+            status: statuses[Math.floor(Math.random() * 5)],
+            uptime: '3d 6h 10m'
+        }
+    ];
+}
+
+// Send metrics to all clients every 5 seconds
+setInterval(() => {
+    for (const client of clients) {
+        if (client.readyState === WebSocket.OPEN) {
+            sendMetrics(client);
+        }
+    }
+}, 5000);</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Other Common Use Cases</h4>
+                            <ul>
+                                <li><strong>Multiplayer Games</strong>: Real-time game state synchronization</li>
+                                <li><strong>Financial Trading Platforms</strong>: Real-time price updates and order execution</li>
+                                <li><strong>Live Sports Updates</strong>: Real-time scores, statistics, and play-by-play</li>
+                                <li><strong>Collaborative Editing Tools</strong>: Real-time document editing and collaboration</li>
+                                <li><strong>IoT Monitoring</strong>: Real-time device monitoring and control</li>
+                                <li><strong>Auction Platforms</strong>: Real-time bid updates and notifications</li>
+                                <li><strong>Live Polls and Voting</strong>: Real-time voting results and feedback</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Building a Real-Time Multiplayer Game</h2>
+                        <p>Let's create a practical application that uses WebSockets to implement a simple multiplayer game.</p>
+                        
+                        <h3>Exercise: Create a Multiplayer Snake Game</h3>
+                        <p>Build a multiplayer snake game with the following features:</p>
+                        <ul>
+                            <li>Multiple players can join the game</li>
+                            <li>Each player controls their own snake</li>
+                            <li>Players can see other players' snakes in real-time</li>
+                            <li>Food appears randomly on the board</li>
+                            <li>Players score points by eating food</li>
+                            <li>Game over when a snake hits a wall or another snake</li>
+                            <li>Leaderboard showing top scores</li>
+                        </ul>
+                        
+                        <p>Start with this template and enhance it:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Multiplayer Snake Game&lt;/title&gt;
+    &lt;style&gt;
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        h1, h2 {
+            color: #3366ff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .game-area {
+            flex: 1;
+            min-width: 600px;
+        }
+        
+        .sidebar {
+            width: 300px;
+            padding: 0 20px;
+        }
+        
+        #game-canvas {
+            background-color: #000;
+            border: 2px solid #333;
+        }
+        
+        .player-info {
+            margin-bottom: 20px;
+        }
+        
+        .leaderboard {
+            margin-top: 20px;
+        }
+        
+        .leaderboard-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .controls {
+            margin-top: 20px;
+        }
+        
+        .login-form {
+            margin-bottom: 20px;
+        }
+        
+        /* Add more styles for your game */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="game-area"&gt;
+            &lt;h1&gt;Multiplayer Snake Game&lt;/h1&gt;
+            
+            &lt;div id="login-form" class="login-form"&gt;
+                &lt;input type="text" id="player-name" placeholder="Enter your name"&gt;
+                &lt;button id="join-button"&gt;Join Game&lt;/button&gt;
+            &lt;/div&gt;
+            
+            &lt;canvas id="game-canvas" width="600" height="600"&gt;&lt;/canvas&gt;
+            
+            &lt;div class="controls"&gt;
+                &lt;p&gt;Use arrow keys to control your snake.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="sidebar"&gt;
+            &lt;div class="player-info"&gt;
+                &lt;h2&gt;Your Snake&lt;/h2&gt;
+                &lt;p&gt;Name: &lt;span id="player-name-display"&gt;Not connected&lt;/span&gt;&lt;/p&gt;
+                &lt;p&gt;Score: &lt;span id="player-score"&gt;0&lt;/span&gt;&lt;/p&gt;
+                &lt;p&gt;Length: &lt;span id="player-length"&gt;0&lt;/span&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="players-online"&gt;
+                &lt;h2&gt;Players Online&lt;/h2&gt;
+                &lt;div id="players-list"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="leaderboard"&gt;
+                &lt;h2&gt;Leaderboard&lt;/h2&gt;
+                &lt;div id="leaderboard-list"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script&gt;
+        // Add your JavaScript here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Game variables
+            const canvas = document.getElementById('game-canvas');
+            const ctx = canvas.getContext('2d');
+            const gridSize = 20;
+            const width = canvas.width;
+            const height = canvas.height;
+            
+            let socket;
+            let playerId;
+            let playerName;
+            let players = {};
+            let food = [];
+            let gameActive = false;
+            
+            // Handle join button
+            document.getElementById('join-button').addEventListener('click', joinGame);
+            
+            function joinGame() {
+                playerName = document.getElementById('player-name').value.trim();
+                
+                if (!playerName) {
+                    alert('Please enter your name');
+                    return;
+                }
+                
+                // Hide login form
+                document.getElementById('login-form').style.display = 'none';
+                
+                // Connect to WebSocket server
+                connectToServer();
+                
+                // Set up keyboard controls
+                setupControls();
+                
+                // Update player info
+                document.getElementById('player-name-display').textContent = playerName;
+            }
+            
+            function connectToServer() {
+                // Connect to WebSocket server
+                // ...
+            }
+            
+            function setupControls() {
+                // Set up keyboard controls
+                // ...
+            }
+            
+            function updateGame() {
+                // Update game state
+                // ...
+            }
+            
+            function renderGame() {
+                // Render game state
+                // ...
+            }
+            
+            function updateLeaderboard() {
+                // Update leaderboard
+                // ...
+            }
+            
+            function updatePlayersList() {
+                // Update players list
+                // ...
+            }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Enhance the template with:</p>
+                            <ol>
+                                <li>Complete implementation of the snake game mechanics</li>
+                                <li>WebSocket server implementation for multiplayer functionality</li>
+                                <li>Real-time synchronization of game state between players</li>
+                                <li>Collision detection between snakes</li>
+                                <li>Food generation and consumption</li>
+                                <li>Scoring system and leaderboard</li>
+                                <li>Game over handling and respawn functionality</li>
+                                <li>Visual indicators for different players</li>
+                                <li>Mobile support with touch controls</li>
+                                <li>Game rooms for multiple concurrent games</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored WebSockets, a powerful technology that enables real-time, bidirectional communication between clients and servers:</p>
+                        <ul>
+                            <li><strong>Introduction to WebSockets</strong>: What WebSockets are, their benefits, and how they compare to other real-time technologies</li>
+                            <li><strong>Client-Side Implementation</strong>: How to use the WebSocket API to establish connections, send and receive messages, and handle events</li>
+                            <li><strong>Server-Side Implementation</strong>: How to implement WebSocket servers in various server-side technologies</li>
+                            <li><strong>WebSocket Protocol</strong>: The details of the WebSocket protocol, including handshake, frame format, and opcodes</li>
+                            <li><strong>Advanced WebSocket Techniques</strong>: Authentication, subprotocols, binary data, heartbeats, and scaling</li>
+                            <li><strong>Browser Support and Polyfills</strong>: Current browser support and fallback approaches</li>
+                            <li><strong>Real-World Use Cases</strong>: Practical applications of WebSockets in various scenarios</li>
+                        </ul>
+                        
+                        <p>WebSockets provide a powerful way to implement real-time, interactive features in web applications. By understanding how to use WebSockets effectively, you can create more engaging and responsive user experiences.</p>
+                        
+                        <p>Remember these key points:</p>
+                        <ul>
+                            <li><strong>WebSockets provide full-duplex communication</strong>, allowing both client and server to send messages independently</li>
+                            <li><strong>WebSockets maintain a persistent connection</strong>, reducing latency and overhead</li>
+                            <li><strong>WebSockets can send both text and binary data</strong>, making them versatile for different types of applications</li>
+                            <li><strong>Implement reconnection logic</strong> to handle connection failures</li>
+                            <li><strong>Use secure WebSockets (wss://)</strong> in production to encrypt the connection</li>
+                            <li><strong>Consider scaling solutions</strong> for high-traffic applications</li>
+                            <li><strong>Implement proper authentication and validation</strong> to secure your WebSocket connections</li>
+                        </ul>
+                        
+                        <p>In the next lesson, we'll explore Responsive HTML, which focuses on creating web pages that adapt to different screen sizes and devices.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page22.html" class="btn">Previous: Server-Sent Events</a>
+                        <a href="page24.html" class="btn">Next: Responsive HTML</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

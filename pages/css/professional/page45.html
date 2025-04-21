@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Houdini | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn about CSS Houdini APIs and how they enable powerful new styling capabilities for modern web development.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="45">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html" class="active">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional CSS</h3>
+                <ul>
+                    <li><a href="page38.html">38. Advanced CSS Features</a></li>
+                    <li><a href="page39.html">39. CSS Preprocessors</a></li>
+                    <li><a href="page40.html">40. CSS Architecture</a></li>
+                    <li><a href="page41.html">41. CSS Frameworks</a></li>
+                    <li><a href="page42.html">42. Advanced Layouts</a></li>
+                    <li><a href="page43.html">43. Advanced Animations</a></li>
+                    <li><a href="page44.html">44. CSS-in-JS</a></li>
+                    <li><a href="page45.html" class="active">45. CSS Houdini</a></li>
+                    <li><a href="page46.html">46. CSS Performance</a></li>
+                    <li><a href="page47.html">47. CSS Testing</a></li>
+                    <li><a href="page48.html">48. CSS for Print</a></li>
+                    <li><a href="page49.html">49. Future of CSS</a></li>
+                    <li><a href="page50.html">50. Building a Portfolio</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 90%;"></div>
+                </div>
+                <p style="text-align: center;">Page 45 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>CSS Houdini</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to CSS Houdini</h2>
+                        <p>CSS Houdini is a set of low-level APIs that expose parts of the CSS engine, giving developers direct access to the CSS Object Model (CSSOM). This allows developers to extend CSS by hooking into the styling and layout process of a browser's rendering engine.</p>
+                        
+                        <p>Named after the famous escape artist Harry Houdini, these APIs help developers "escape" the constraints of traditional CSS by providing more power and flexibility. With Houdini, developers can create new CSS features without waiting for browser vendors to implement them, leading to more consistent cross-browser experiences.</p>
+                        
+                        <h3>The Problem Houdini Solves</h3>
+                        <p>Before Houdini, extending CSS capabilities required:</p>
+                        <ul>
+                            <li>Waiting for browser vendors to implement new CSS features</li>
+                            <li>Using JavaScript to manipulate the DOM, which can be inefficient</li>
+                            <li>Relying on polyfills that often have performance issues</li>
+                            <li>Creating complex workarounds for cross-browser compatibility</li>
+                        </ul>
+                        
+                        <p>Houdini addresses these issues by providing standardized APIs that allow developers to extend CSS in a way that's efficient, performant, and works consistently across browsers.</p>
+                        
+                        <h3>The Houdini Task Force</h3>
+                        <p>CSS Houdini is developed by the <a href="https://github.com/w3c/css-houdini-drafts" target="_blank">Houdini Task Force</a>, a group of engineers from major browser vendors including Google, Apple, Microsoft, Mozilla, and others. Their goal is to develop new APIs that give developers more control over rendering while maintaining performance benefits of the browser's rendering engine.</p>
+                        
+                        <div class="info-box">
+                            <h4>Why "Houdini"?</h4>
+                            <p>The name "Houdini" was chosen because these APIs allow developers to escape the limitations of CSS, much like how the famous escape artist Harry Houdini would escape from seemingly impossible situations. Houdini APIs let developers perform "magic tricks" with CSS that were previously impossible.</p>
+                        </div>
+                        
+                        <h3>The Houdini APIs</h3>
+                        <p>CSS Houdini consists of several APIs, each addressing different aspects of the CSS engine:</p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>API</th>
+                                    <th>Purpose</th>
+                                    <th>Browser Support</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CSS Properties and Values API</td>
+                                    <td>Register custom CSS properties with type checking, default values, and inheritance behavior</td>
+                                    <td>Chrome, Edge, Opera, Safari</td>
+                                </tr>
+                                <tr>
+                                    <td>CSS Painting API</td>
+                                    <td>Create custom painting functions that can be used with the paint() function in CSS</td>
+                                    <td>Chrome, Edge, Opera, Safari</td>
+                                </tr>
+                                <tr>
+                                    <td>CSS Layout API</td>
+                                    <td>Create custom layout algorithms for CSS</td>
+                                    <td>Experimental</td>
+                                </tr>
+                                <tr>
+                                    <td>CSS Parser API</td>
+                                    <td>Extend the CSS parser to support new syntax</td>
+                                    <td>Not implemented yet</td>
+                                </tr>
+                                <tr>
+                                    <td>CSS Typed OM</td>
+                                    <td>Typed JavaScript representation of CSS values for better performance and error handling</td>
+                                    <td>Chrome, Edge, Opera</td>
+                                </tr>
+                                <tr>
+                                    <td>Worklets</td>
+                                    <td>Lightweight JavaScript contexts for running Houdini code</td>
+                                    <td>Chrome, Edge, Opera, Safari</td>
+                                </tr>
+                                <tr>
+                                    <td>Font Metrics API</td>
+                                    <td>Access font metrics from JavaScript</td>
+                                    <td>Not implemented yet</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <p>In this lesson, we'll focus on the most widely supported and practical Houdini APIs: CSS Properties and Values API, CSS Painting API, and Worklets.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS Properties and Values API</h2>
+                        <p>The CSS Properties and Values API allows developers to register custom CSS properties (also known as CSS variables) with type checking, default values, and inheritance behavior. This brings more structure and predictability to CSS variables.</p>
+                        
+                        <h3>Custom Properties Before Houdini</h3>
+                        <p>Before Houdini, CSS custom properties (variables) looked like this:</p>
+                        
+                        <pre><code class="language-css">:root {
+  --main-color: #3498db;
+  --secondary-color: #2ecc71;
+  --spacing: 20px;
+}
+
+.element {
+  color: var(--main-color);
+  margin: var(--spacing);
+  /* This works even though --spacing is a length and not a color */
+  background-color: var(--spacing); 
+}</code></pre>
+                        
+                        <p>The problem with traditional CSS variables is that they:</p>
+                        <ul>
+                            <li>Have no type checking (you can use a length where a color is expected)</li>
+                            <li>Don't have default values (if a variable is undefined, the property is invalid)</li>
+                            <li>Always inherit by default (you can't change this behavior)</li>
+                            <li>Can't be animated smoothly (transitions between values don't work)</li>
+                        </ul>
+                        
+                        <h3>Registering Custom Properties with Houdini</h3>
+                        <p>With the CSS Properties and Values API, you can register custom properties with specific characteristics:</p>
+                        
+                        <pre><code class="language-javascript">// Register a custom property
+CSS.registerProperty({
+  name: '--theme-color',
+  syntax: '&lt;color&gt;',
+  inherits: false,
+  initialValue: '#3498db'
+});</code></pre>
+                        
+                        <p>This registration defines:</p>
+                        <ul>
+                            <li><strong>name</strong>: The name of the custom property (must start with --)</li>
+                            <li><strong>syntax</strong>: The allowed value types (using CSS Value Definition Syntax)</li>
+                            <li><strong>inherits</strong>: Whether the property inherits its value from its parent</li>
+                            <li><strong>initialValue</strong>: The default value if not specified elsewhere</li>
+                        </ul>
+                        
+                        <h3>Syntax Options</h3>
+                        <p>The syntax parameter accepts various types:</p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Syntax</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>&lt;length&gt;</code></td>
+                                    <td>Any valid CSS length value</td>
+                                    <td>10px, 2em, 5rem</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;number&gt;</code></td>
+                                    <td>Any number</td>
+                                    <td>1, 2.5, -10</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;percentage&gt;</code></td>
+                                    <td>Any percentage value</td>
+                                    <td>50%, 100%, 33.3%</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;color&gt;</code></td>
+                                    <td>Any valid CSS color</td>
+                                    <td>#fff, rgb(255,0,0), hsl(120, 100%, 50%)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;image&gt;</code></td>
+                                    <td>Any valid image value</td>
+                                    <td>url(), linear-gradient()</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;url&gt;</code></td>
+                                    <td>A URL value</td>
+                                    <td>url('image.jpg')</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;integer&gt;</code></td>
+                                    <td>Whole numbers only</td>
+                                    <td>1, 42, -10</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;angle&gt;</code></td>
+                                    <td>Angle values</td>
+                                    <td>45deg, 1rad, 0.5turn</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;time&gt;</code></td>
+                                    <td>Time values</td>
+                                    <td>1s, 300ms</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;resolution&gt;</code></td>
+                                    <td>Resolution values</td>
+                                    <td>96dpi, 2dppx</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;transform-function&gt;</code></td>
+                                    <td>Transform functions</td>
+                                    <td>rotate(45deg), scale(2)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>*</code></td>
+                                    <td>Any valid CSS value</td>
+                                    <td>Any CSS value</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h3>Benefits of Registered Properties</h3>
+                        <p>Registering custom properties provides several benefits:</p>
+                        
+                        <h4>1. Type Checking</h4>
+                        <p>The browser will validate that values match the specified syntax:</p>
+                        
+                        <pre><code class="language-javascript">CSS.registerProperty({
+  name: '--border-width',
+  syntax: '&lt;length&gt;',
+  inherits: true,
+  initialValue: '1px'
+});</code></pre>
+                        
+                        <pre><code class="language-css">.element {
+  /* This will work */
+  --border-width: 2px;
+  
+  /* This will be invalid and fall back to the initial value */
+  --border-width: blue;
+}</code></pre>
+                        
+                        <h4>2. Default Values</h4>
+                        <p>If a property isn't defined, it will use the initialValue instead of being invalid:</p>
+                        
+                        <pre><code class="language-javascript">CSS.registerProperty({
+  name: '--button-color',
+  syntax: '&lt;color&gt;',
+  inherits: false,
+  initialValue: '#3498db'
+});</code></pre>
+                        
+                        <pre><code class="language-css">.button {
+  background-color: var(--button-color);
+  /* Even if --button-color isn't defined elsewhere, 
+     it will use #3498db instead of being invalid */
+}</code></pre>
+                        
+                        <h4>3. Control Over Inheritance</h4>
+                        <p>You can specify whether a property should inherit from its parent:</p>
+                        
+                        <pre><code class="language-javascript">CSS.registerProperty({
+  name: '--theme-color',
+  syntax: '&lt;color&gt;',
+  inherits: false, /* Won't inherit from parent elements */
+  initialValue: '#3498db'
+});</code></pre>
+                        
+                        <h4>4. Animatable Properties</h4>
+                        <p>The most powerful benefit: registered properties with numeric types or colors can be animated smoothly:</p>
+                        
+                        <pre><code class="language-javascript">CSS.registerProperty({
+  name: '--button-size',
+  syntax: '&lt;length&gt;',
+  inherits: false,
+  initialValue: '100px'
+});</code></pre>
+                        
+                        <pre><code class="language-css">.button {
+  width: var(--button-size);
+  height: var(--button-size);
+  transition: --button-size 0.3s ease;
+}
+
+.button:hover {
+  --button-size: 120px;
+  /* This will smoothly animate from 100px to 120px */
+}</code></pre>
+                        
+                        <h3>Practical Example: Theme System with Registered Properties</h3>
+                        <p>Let's create a theme system using registered properties:</p>
+                        
+                        <pre><code class="language-javascript">// Register theme properties
+CSS.registerProperty({
+  name: '--theme-primary',
+  syntax: '&lt;color&gt;',
+  inherits: true,
+  initialValue: '#3498db'
+});
+
+CSS.registerProperty({
+  name: '--theme-secondary',
+  syntax: '&lt;color&gt;',
+  inherits: true,
+  initialValue: '#2ecc71'
+});
+
+CSS.registerProperty({
+  name: '--theme-text',
+  syntax: '&lt;color&gt;',
+  inherits: true,
+  initialValue: '#333333'
+});
+
+CSS.registerProperty({
+  name: '--theme-background',
+  syntax: '&lt;color&gt;',
+  inherits: true,
+  initialValue: '#ffffff'
+});
+
+CSS.registerProperty({
+  name: '--theme-spacing-unit',
+  syntax: '&lt;length&gt;',
+  inherits: true,
+  initialValue: '8px'
+});
+
+CSS.registerProperty({
+  name: '--theme-border-radius',
+  syntax: '&lt;length&gt;',
+  inherits: true,
+  initialValue: '4px'
+});</code></pre>
+                        
+                        <pre><code class="language-css">/* Base theme styles */
+:root {
+  --theme-primary: #3498db;
+  --theme-secondary: #2ecc71;
+  --theme-text: #333333;
+  --theme-background: #ffffff;
+  --theme-spacing-unit: 8px;
+  --theme-border-radius: 4px;
+}
+
+/* Dark theme */
+.dark-theme {
+  --theme-primary: #2980b9;
+  --theme-secondary: #27ae60;
+  --theme-text: #f5f5f5;
+  --theme-background: #222222;
+}
+
+/* Component using theme properties */
+.button {
+  background-color: var(--theme-primary);
+  color: var(--theme-background);
+  padding: calc(var(--theme-spacing-unit) * 2) calc(var(--theme-spacing-unit) * 4);
+  border-radius: var(--theme-border-radius);
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: color-mix(in srgb, var(--theme-primary) 80%, black);
+}
+
+.button.secondary {
+  background-color: var(--theme-secondary);
+}
+
+/* Theme toggle with smooth transition */
+body {
+  background-color: var(--theme-background);
+  color: var(--theme-text);
+  transition: --theme-background 0.5s ease, --theme-text 0.5s ease;
+}</code></pre>
+                        
+                        <pre><code class="language-javascript">// JavaScript to toggle theme
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Browser Support Note</h4>
+                            <p>While the CSS Properties and Values API is supported in Chrome, Edge, Opera, and Safari, it's always good practice to check for support before using it:</p>
+                            <pre><code class="language-javascript">if (window.CSS && CSS.registerProperty) {
+  // Register properties here
+} else {
+  console.log('CSS Properties and Values API not supported');
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS Painting API</h2>
+                        <p>The CSS Painting API (also known as the Worklet API) allows developers to programmatically generate images that can be used anywhere a CSS image can be used. This is like having a &lt;canvas&gt; element available in your CSS.</p>
+                        
+                        <h3>Understanding Worklets</h3>
+                        <p>Before diving into the Painting API, it's important to understand worklets. Worklets are lightweight JavaScript contexts that run specific pieces of JavaScript code in the browser's rendering pipeline. They're designed to be efficient and don't have access to the DOM.</p>
+                        
+                        <p>Types of worklets include:</p>
+                        <ul>
+                            <li><strong>Paint Worklet</strong>: For the CSS Painting API</li>
+                            <li><strong>Layout Worklet</strong>: For the CSS Layout API</li>
+                            <li><strong>Animation Worklet</strong>: For high-performance animations</li>
+                        </ul>
+                        
+                        <h3>How the CSS Painting API Works</h3>
+                        <p>The CSS Painting API allows you to create custom paint worklets that can be used with the <code>paint()</code> function in CSS. Here's the basic workflow:</p>
+                        
+                        <ol>
+                            <li>Create a JavaScript file with your paint worklet class</li>
+                            <li>Register the paint worklet using <code>CSS.paintWorklet.addModule()</code></li>
+                            <li>Use the registered paint worklet in your CSS with the <code>paint()</code> function</li>
+                        </ol>
+                        
+                        <h3>Creating a Basic Paint Worklet</h3>
+                        <p>Let's create a simple paint worklet that draws a checkerboard pattern:</p>
+                        
+                        <pre><code class="language-javascript">// checkerboard.js
+class CheckerboardPainter {
+  // The paint() method is called when the element is being painted
+  paint(ctx, size, properties) {
+    // Define the size of each square
+    const squareSize = 20;
+    
+    // Get the number of squares that fit in the element
+    const xSquares = Math.ceil(size.width / squareSize);
+    const ySquares = Math.ceil(size.height / squareSize);
+    
+    // Set colors
+    const colors = ['#e74c3c', '#3498db'];
+    
+    // Draw the checkerboard
+    for (let x = 0; x < xSquares; x++) {
+      for (let y = 0; y < ySquares; y++) {
+        // Alternate colors
+        const colorIndex = (x + y) % 2;
+        
+        // Set fill color
+        ctx.fillStyle = colors[colorIndex];
+        
+        // Draw the square
+        ctx.fillRect(
+          x * squareSize,
+          y * squareSize,
+          squareSize,
+          squareSize
+        );
+      }
+    }
+  }
+}
+
+// Register the paint worklet
+registerPaint('checkerboard', CheckerboardPainter);</code></pre>
+                        
+                        <p>Now, register and use the worklet in your main JavaScript and CSS:</p>
+                        
+                        <pre><code class="language-javascript">// In your main JavaScript file
+if ('paintWorklet' in CSS) {
+  CSS.paintWorklet.addModule('checkerboard.js');
+} else {
+  console.log('CSS Paint API not supported');
+}</code></pre>
+                        
+                        <pre><code class="language-css">/* In your CSS */
+.checkerboard {
+  background-image: paint(checkerboard);
+  width: 200px;
+  height: 200px;
+}</code></pre>
+                        
+                        <h3>Using Custom Properties with Paint Worklets</h3>
+                        <p>Paint worklets become more powerful when combined with custom properties. Let's enhance our checkerboard example:</p>
+                        
+                        <pre><code class="language-javascript">// checkerboard.js
+class CheckerboardPainter {
+  // Define the custom properties the worklet will use
+  static get inputProperties() {
+    return [
+      '--checkerboard-size',
+      '--checkerboard-color-1',
+      '--checkerboard-color-2'
+    ];
+  }
+  
+  paint(ctx, size, properties) {
+    // Get custom property values
+    const squareSize = parseInt(properties.get('--checkerboard-size').toString()) || 20;
+    const color1 = properties.get('--checkerboard-color-1').toString() || '#e74c3c';
+    const color2 = properties.get('--checkerboard-color-2').toString() || '#3498db';
+    
+    const xSquares = Math.ceil(size.width / squareSize);
+    const ySquares = Math.ceil(size.height / squareSize);
+    
+    const colors = [color1, color2];
+    
+    for (let x = 0; x < xSquares; x++) {
+      for (let y = 0; y < ySquares; y++) {
+        const colorIndex = (x + y) % 2;
+        ctx.fillStyle = colors[colorIndex];
+        ctx.fillRect(
+          x * squareSize,
+          y * squareSize,
+          squareSize,
+          squareSize
+        );
+      }
+    }
+  }
+}
+
+registerPaint('checkerboard', CheckerboardPainter);</code></pre>
+                        
+                        <pre><code class="language-css">/* In your CSS */
+.checkerboard {
+  --checkerboard-size: 30px;
+  --checkerboard-color-1: #9b59b6;
+  --checkerboard-color-2: #f1c40f;
+  background-image: paint(checkerboard);
+  width: 300px;
+  height: 300px;
+}</code></pre>
+                        
+                        <h3>Advanced Paint Worklet: Polka Dot Pattern</h3>
+                        <p>Let's create a more complex paint worklet that draws a polka dot pattern:</p>
+                        
+                        <pre><code class="language-javascript">// polkadot.js
+class PolkaDotPainter {
+  static get inputProperties() {
+    return [
+      '--polka-dot-spacing',
+      '--polka-dot-size',
+      '--polka-dot-color'
+    ];
+  }
+  
+  paint(ctx, size, properties) {
+    // Get custom property values
+    const spacing = parseInt(properties.get('--polka-dot-spacing').toString()) || 40;
+    const dotSize = parseInt(properties.get('--polka-dot-size').toString()) || 10;
+    const dotColor = properties.get('--polka-dot-color').toString() || '#3498db';
+    
+    // Calculate the number of dots
+    const xDots = Math.ceil(size.width / spacing);
+    const yDots = Math.ceil(size.height / spacing);
+    
+    // Set dot color
+    ctx.fillStyle = dotColor;
+    
+    // Draw the dots
+    for (let x = 0; x < xDots; x++) {
+      for (let y = 0; y < yDots; y++) {
+        // Offset every other row
+        const offsetX = y % 2 === 0 ? 0 : spacing / 2;
+        
+        // Draw the dot
+        ctx.beginPath();
+        ctx.arc(
+          offsetX + x * spacing,
+          y * spacing,
+          dotSize / 2,
+          0,
+          2 * Math.PI
+        );
+        ctx.fill();
+      }
+    }
+  }
+}
+
+registerPaint('polkadot', PolkaDotPainter);</code></pre>
+                        
+                        <pre><code class="language-javascript">// In your main JavaScript file
+if ('paintWorklet' in CSS) {
+  CSS.paintWorklet.addModule('polkadot.js');
+} else {
+  console.log('CSS Paint API not supported');
+}</code></pre>
+                        
+                        <pre><code class="language-css">/* In your CSS */
+.polkadot {
+  --polka-dot-spacing: 50px;
+  --polka-dot-size: 20px;
+  --polka-dot-color: #e74c3c;
+  background-image: paint(polkadot);
+  width: 300px;
+  height: 300px;
+}</code></pre>
+                        
+                        <h3>Practical Applications of the CSS Painting API</h3>
+                        <p>The CSS Painting API opens up many possibilities for custom graphics in CSS:</p>
+                        
+                        <h4>1. Custom Backgrounds</h4>
+                        <p>Create complex background patterns that would be difficult or impossible with standard CSS:</p>
+                        <ul>
+                            <li>Geometric patterns (triangles, hexagons)</li>
+                            <li>Noise textures</li>
+                            <li>Custom gradients</li>
+                        </ul>
+                        
+                        <h4>2. Custom Borders</h4>
+                        <p>Create unique border styles:</p>
+                        <pre><code class="language-css">.element {
+  border-image: paint(wavyBorder);
+}</code></pre>
+                        
+                        <h4>3. Custom Masks</h4>
+                        <p>Create complex masks for elements:</p>
+                        <pre><code class="language-css">.element {
+  mask-image: paint(circleMask);
+}</code></pre>
+                        
+                        <h4>4. Dynamic Graphics</h4>
+                        <p>Create graphics that respond to custom properties:</p>
+                        <pre><code class="language-css">.progress-bar {
+  --progress: 75;
+  background-image: paint(progressIndicator);
+}</code></pre>
+                        
+                        <h4>5. Animated Patterns</h4>
+                        <p>When combined with CSS animations, you can create animated patterns:</p>
+                        <pre><code class="language-css">@keyframes progress {
+  from { --progress: 0; }
+  to { --progress: 100; }
+}
+
+.progress-bar {
+  --progress: 0;
+  background-image: paint(progressIndicator);
+  animation: progress 3s linear forwards;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Performance Considerations</h4>
+                            <p>While paint worklets are designed to be efficient, complex drawing operations can still impact performance. Keep these tips in mind:</p>
+                            <ul>
+                                <li>Keep drawing operations as simple as possible</li>
+                                <li>Avoid creating too many paint worklets on a single page</li>
+                                <li>Test performance on lower-end devices</li>
+                                <li>Consider using static images for very complex patterns that don't need to be dynamic</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS Layout API</h2>
+                        <p>The CSS Layout API allows developers to create custom layout algorithms that can be used with the <code>display</code> property. While this API is still experimental and not widely supported, it's worth understanding its potential.</p>
+                        
+                        <h3>Understanding the CSS Layout API</h3>
+                        <p>The CSS Layout API lets you define how elements should be positioned and sized within a container. This is similar to existing layout modes like flexbox or grid, but you can create your own custom algorithms.</p>
+                        
+                        <h3>Basic Structure of a Layout Worklet</h3>
+                        <p>Here's a simplified example of what a layout worklet might look like:</p>
+                        
+                        <pre><code class="language-javascript">// masonry.js
+class MasonryLayout {
+  static get inputProperties() {
+    return ['--masonry-column-gap', '--masonry-row-gap'];
+  }
+  
+  static get childrenInputProperties() {
+    return ['--masonry-span'];
+  }
+  
+  async intrinsicSizes(children, edges, styleMap) {
+    // Calculate intrinsic sizes
+    // ...
+  }
+  
+  async layout(children, edges, constraints, styleMap) {
+    // Get layout parameters
+    const columnGap = parseInt(styleMap.get('--masonry-column-gap').toString()) || 10;
+    const rowGap = parseInt(styleMap.get('--masonry-row-gap').toString()) || 10;
+    
+    // Calculate layout positions for each child
+    // ...
+    
+    // Return layout information
+    return {
+      childFragments: childFragments,
+      autoBlockSize: totalHeight
+    };
+  }
+}
+
+registerLayout('masonry', MasonryLayout);</code></pre>
+                        
+                        <pre><code class="language-javascript">// In your main JavaScript file
+if ('layoutWorklet' in CSS) {
+  CSS.layoutWorklet.addModule('masonry.js');
+} else {
+  console.log('CSS Layout API not supported');
+}</code></pre>
+                        
+                        <pre><code class="language-css">/* In your CSS */
+.masonry-container {
+  display: layout(masonry);
+  --masonry-column-gap: 20px;
+  --masonry-row-gap: 20px;
+}
+
+.masonry-item {
+  --masonry-span: 1;
+}</code></pre>
+                        
+                        <h3>Potential Applications of the CSS Layout API</h3>
+                        <p>Once fully implemented, the CSS Layout API could enable:</p>
+                        
+                        <ul>
+                            <li><strong>Masonry Layouts</strong>: Create Pinterest-style layouts natively in CSS</li>
+                            <li><strong>Calendar Layouts</strong>: Create complex calendar views with custom positioning</li>
+                            <li><strong>Circular Layouts</strong>: Position elements in a circle or along curved paths</li>
+                            <li><strong>Constraint-Based Layouts</strong>: Create layouts based on constraints like in native app development</li>
+                            <li><strong>Variable-Height Grid</strong>: Create grid layouts where items can have different heights</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Current Status</h4>
+                            <p>As of now, the CSS Layout API is still in the experimental stage and not ready for production use. Keep an eye on its development, as it promises to be a powerful tool for creating custom layouts in the future.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS Typed OM</h2>
+                        <p>The CSS Typed Object Model (Typed OM) provides a more structured and performant way to work with CSS values in JavaScript. It replaces the string-based CSSOM with typed JavaScript objects.</p>
+                        
+                        <h3>Traditional CSSOM vs. Typed OM</h3>
+                        <p>Let's compare the traditional CSSOM with the new Typed OM:</p>
+                        
+                        <h4>Traditional CSSOM (String-based)</h4>
+                        <pre><code class="language-javascript">// Get a style
+const width = element.style.width; // Returns a string like "100px"
+
+// Set a style
+element.style.width = '100px';
+
+// Modify a style (requires parsing and serializing strings)
+const currentWidth = parseInt(element.style.width); // Parse the string
+element.style.width = (currentWidth + 10) + 'px'; // Modify and serialize back to string</code></pre>
+                        
+                        <h4>CSS Typed OM</h4>
+                        <pre><code class="language-javascript">// Get a style (returns a CSSUnitValue)
+const width = element.attributeStyleMap.get('width'); // Returns a CSSUnitValue object
+
+// Set a style
+element.attributeStyleMap.set('width', CSS.px(100));
+
+// Modify a style (works with typed values directly)
+const currentWidth = element.attributeStyleMap.get('width');
+element.attributeStyleMap.set('width', CSS.px(currentWidth.value + 10));</code></pre>
+                        
+                        <h3>Benefits of the Typed OM</h3>
+                        <ul>
+                            <li><strong>Performance</strong>: Reduces the need for string parsing and serialization</li>
+                            <li><strong>Type Safety</strong>: Provides proper typing for CSS values</li>
+                            <li><strong>Error Prevention</strong>: Catches invalid values at runtime</li>
+                            <li><strong>Arithmetic Operations</strong>: Simplifies calculations with CSS values</li>
+                            <li><strong>Better DevTools Integration</strong>: Improves debugging experience</li>
+                        </ul>
+                        
+                        <h3>Working with CSS Values</h3>
+                        <p>The Typed OM provides factory methods for creating different types of CSS values:</p>
+                        
+                        <pre><code class="language-javascript">// Length values
+const length = CSS.px(10);
+const em = CSS.em(1.5);
+const rem = CSS.rem(2);
+
+// Percentage values
+const percentage = CSS.percent(50);
+
+// Color values
+const color = CSS.color('rgb(255, 0, 0)');
+
+// Number values
+const number = CSS.number(42);
+
+// Angle values
+const angle = CSS.deg(45);
+
+// Time values
+const time = CSS.s(1);</code></pre>
+                        
+                        <h3>Performing Calculations</h3>
+                        <p>The Typed OM makes it easier to perform calculations with CSS values:</p>
+                        
+                        <pre><code class="language-javascript">// Add two length values
+const width1 = CSS.px(100);
+const width2 = CSS.px(50);
+const totalWidth = CSS.px(width1.value + width2.value); // CSS.px(150)
+
+// Convert between units
+const pixelValue = CSS.px(16);
+const emValue = CSS.em(pixelValue.value / 16); // CSS.em(1)
+
+// Create calc() expressions
+const calc = new CSSMathSum(CSS.px(100), CSS.percent(50));
+element.attributeStyleMap.set('width', calc); // width: calc(100px + 50%)</code></pre>
+                        
+                        <h3>Accessing Computed Styles</h3>
+                        <p>The Typed OM also provides a way to access computed styles:</p>
+                        
+                        <pre><code class="language-javascript">// Get computed styles
+const computedStyles = element.computedStyleMap();
+
+// Get a specific computed style
+const computedWidth = computedStyles.get('width'); // Returns a CSSUnitValue
+console.log(computedWidth.value, computedWidth.unit); // e.g., 100, "px"</code></pre>
+                        
+                        <h3>Practical Example: Animation with Typed OM</h3>
+                        <p>Here's how you might use the Typed OM for animations:</p>
+                        
+                        <pre><code class="language-javascript">function animateWidth(element, startWidth, endWidth, duration) {
+  const startTime = performance.now();
+  
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Calculate current width
+    const currentWidth = startWidth + (endWidth - startWidth) * progress;
+    
+    // Set the width using Typed OM
+    element.attributeStyleMap.set('width', CSS.px(currentWidth));
+    
+    // Continue animation if not complete
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    }
+  }
+  
+  requestAnimationFrame(update);
+}
+
+// Usage
+const box = document.querySelector('.box');
+animateWidth(box, 100, 300, 1000); // Animate from 100px to 300px over 1 second</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Browser Support</h4>
+                            <p>The CSS Typed OM is currently supported in Chrome, Edge, and Opera. Always check for support before using it:</p>
+                            <pre><code class="language-javascript">if (window.CSS && CSS.px) {
+  // CSS Typed OM is supported
+} else {
+  // Fall back to traditional CSSOM
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practical Applications of CSS Houdini</h2>
+                        <p>Let's explore some real-world applications of CSS Houdini to solve common web development challenges.</p>
+                        
+                        <h3>1. Custom Animation Effects</h3>
+                        <p>Create custom animation effects that aren't possible with standard CSS animations:</p>
+                        
+                        <pre><code class="language-javascript">// confetti.js
+class ConfettiPainter {
+  static get inputProperties() {
+    return ['--confetti-density', '--confetti-spread', '--confetti-colors'];
+  }
+  
+  paint(ctx, size, properties) {
+    const density = parseInt(properties.get('--confetti-density').toString()) || 50;
+    const spread = parseInt(properties.get('--confetti-spread').toString()) || 50;
+    const colorsStr = properties.get('--confetti-colors').toString() || '#e74c3c,#3498db,#2ecc71,#f1c40f,#9b59b6';
+    const colors = colorsStr.split(',');
+    
+    // Draw confetti pieces
+    for (let i = 0; i < density; i++) {
+      const x = Math.random() * size.width;
+      const y = Math.random() * spread;
+      const width = Math.random() * 10 + 5;
+      const height = Math.random() * 10 + 5;
+      const colorIndex = Math.floor(Math.random() * colors.length);
+      
+      ctx.fillStyle = colors[colorIndex];
+      ctx.fillRect(x, y, width, height);
+    }
+  }
+}
+
+registerPaint('confetti', ConfettiPainter);</code></pre>
+                        
+                        <pre><code class="language-css">.celebration {
+  --confetti-density: 100;
+  --confetti-spread: 200;
+  --confetti-colors: #e74c3c,#3498db,#2ecc71,#f1c40f,#9b59b6;
+  position: relative;
+}
+
+.celebration::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: paint(confetti);
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  from {
+    --confetti-spread: 0;
+    opacity: 1;
+  }
+  to {
+    --confetti-spread: 100%;
+    opacity: 0;
+  }
+}</code></pre>
+                        
+                        <h3>2. Responsive Design Patterns</h3>
+                        <p>Create custom responsive design patterns that adapt based on container size:</p>
+                        
+                        <pre><code class="language-javascript">// responsiveGrid.js
+class ResponsiveGridPainter {
+  static get inputProperties() {
+    return ['--grid-columns', '--grid-color', '--grid-gap'];
+  }
+  
+  paint(ctx, size, properties) {
+    const containerWidth = size.width;
+    const columns = parseInt(properties.get('--grid-columns').toString()) || 12;
+    const gap = parseInt(properties.get('--grid-gap').toString()) || 10;
+    const color = properties.get('--grid-color').toString() || 'rgba(52, 152, 219, 0.2)';
+    
+    // Calculate column width
+    const columnWidth = (containerWidth - (gap * (columns - 1))) / columns;
+    
+    // Draw grid columns
+    ctx.fillStyle = color;
+    
+    for (let i = 0; i < columns; i++) {
+      const x = i * (columnWidth + gap);
+      ctx.fillRect(x, 0, columnWidth, size.height);
+    }
+  }
+}
+
+registerPaint('responsiveGrid', ResponsiveGridPainter);</code></pre>
+                        
+                        <pre><code class="language-css">.container {
+  --grid-columns: 12;
+  --grid-color: rgba(52, 152, 219, 0.2);
+  --grid-gap: 20px;
+  background-image: paint(responsiveGrid);
+  width: 100%;
+  height: 500px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    --grid-columns: 6;
+    --grid-gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    --grid-columns: 2;
+    --grid-gap: 5px;
+  }
+}</code></pre>
+                        
+                        <h3>3. Interactive UI Elements</h3>
+                        <p>Create interactive UI elements that respond to user input:</p>
+                        
+                        <pre><code class="language-javascript">// ripple.js
+class RipplePainter {
+  static get inputProperties() {
+    return [
+      '--ripple-x',
+      '--ripple-y',
+      '--ripple-color',
+      '--ripple-size',
+      '--ripple-opacity'
+    ];
+  }
+  
+  paint(ctx, size, properties) {
+    // Get properties
+    const x = parseFloat(properties.get('--ripple-x').toString()) || 0;
+    const y = parseFloat(properties.get('--ripple-y').toString()) || 0;
+    const rippleSize = parseFloat(properties.get('--ripple-size').toString()) || 0;
+    const rippleColor = properties.get('--ripple-color').toString() || 'rgba(255, 255, 255, 0.7)';
+    const opacity = parseFloat(properties.get('--ripple-opacity').toString()) || 1;
+    
+    // Draw ripple
+    ctx.fillStyle = rippleColor;
+    ctx.globalAlpha = opacity;
+    
+    ctx.beginPath();
+    ctx.arc(x, y, rippleSize, 0, 2 * Math.PI);
+    ctx.fill();
+  }
+}
+
+registerPaint('ripple', RipplePainter);</code></pre>
+                        
+                        <pre><code class="language-css">.button {
+  --ripple-x: 0;
+  --ripple-y: 0;
+  --ripple-color: rgba(255, 255, 255, 0.7);
+  --ripple-size: 0;
+  --ripple-opacity: 0;
+  
+  position: relative;
+  overflow: hidden;
+  background-color: #3498db;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: paint(ripple);
+  pointer-events: none;
+}</code></pre>
+                        
+                        <pre><code class="language-javascript">// JavaScript to handle the ripple effect
+document.querySelectorAll('.button').forEach(button => {
+  button.addEventListener('click', (e) => {
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Set ripple position
+    button.style.setProperty('--ripple-x', `${x}px`);
+    button.style.setProperty('--ripple-y', `${y}px`);
+    button.style.setProperty('--ripple-opacity', '1');
+    
+    // Animate ripple size
+    button.style.setProperty('--ripple-size', '0');
+    
+    // Use requestAnimationFrame for smooth animation
+    requestAnimationFrame(() => {
+      button.style.setProperty('--ripple-size', `${Math.max(rect.width, rect.height) * 2}px`);
+      
+      // Fade out the ripple
+      setTimeout(() => {
+        button.style.setProperty('--ripple-opacity', '0');
+      }, 300);
+    });
+  });
+});</code></pre>
+                        
+                        <h3>4. Custom Form Elements</h3>
+                        <p>Create custom form elements with unique visual feedback:</p>
+                        
+                        <pre><code class="language-javascript">// customCheckbox.js
+class CheckboxPainter {
+  static get inputProperties() {
+    return ['--checkbox-checked', '--checkbox-color'];
+  }
+  
+  paint(ctx, size, properties) {
+    const checked = properties.get('--checkbox-checked').toString() === 'true';
+    const color = properties.get('--checkbox-color').toString() || '#3498db';
+    
+    const width = size.width;
+    const height = size.height;
+    const min = Math.min(width, height);
+    const strokeWidth = min * 0.1;
+    
+    // Draw checkbox
+    ctx.strokeStyle = color;
+    ctx.lineWidth = strokeWidth;
+    ctx.strokeRect(strokeWidth, strokeWidth, min - strokeWidth * 2, min - strokeWidth * 2);
+    
+    // If checked, draw checkmark
+    if (checked) {
+      ctx.beginPath();
+      ctx.moveTo(min * 0.2, min * 0.5);
+      ctx.lineTo(min * 0.4, min * 0.7);
+      ctx.lineTo(min * 0.8, min * 0.3);
+      ctx.strokeStyle = color;
+      ctx.lineWidth = strokeWidth;
+      ctx.stroke();
+    }
+  }
+}
+
+registerPaint('checkbox', CheckboxPainter);</code></pre>
+                        
+                        <pre><code class="language-css">.custom-checkbox {
+  --checkbox-checked: false;
+  --checkbox-color: #3498db;
+  
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  background-image: paint(checkbox);
+  cursor: pointer;
+}
+
+.custom-checkbox:checked {
+  --checkbox-checked: true;
+}</code></pre>
+                        
+                        <h3>5. Data Visualization</h3>
+                        <p>Create custom data visualizations directly in CSS:</p>
+                        
+                        <pre><code class="language-javascript">// barChart.js
+class BarChartPainter {
+  static get inputProperties() {
+    return ['--chart-data', '--chart-colors', '--chart-max'];
+  }
+  
+  paint(ctx, size, properties) {
+    // Get properties
+    const dataStr = properties.get('--chart-data').toString() || '10,20,30,40,50';
+    const colorsStr = properties.get('--chart-colors').toString() || '#3498db,#2ecc71,#e74c3c,#f1c40f,#9b59b6';
+    const max = parseInt(properties.get('--chart-max').toString()) || 100;
+    
+    // Parse data and colors
+    const data = dataStr.split(',').map(val => parseInt(val));
+    const colors = colorsStr.split(',');
+    
+    // Calculate bar width
+    const width = size.width;
+    const height = size.height;
+    const barWidth = width / data.length;
+    
+    // Draw bars
+    data.forEach((value, index) => {
+      const barHeight = (value / max) * height;
+      const x = index * barWidth;
+      const y = height - barHeight;
+      
+      // Set bar color
+      ctx.fillStyle = colors[index % colors.length];
+      
+      // Draw bar
+      ctx.fillRect(x, y, barWidth * 0.8, barHeight);
+    });
+  }
+}
+
+registerPaint('barChart', BarChartPainter);</code></pre>
+                        
+                        <pre><code class="language-css">.chart {
+  --chart-data: 30,60,85,40,70;
+  --chart-colors: #3498db,#2ecc71,#e74c3c,#f1c40f,#9b59b6;
+  --chart-max: 100;
+  
+  width: 500px;
+  height: 300px;
+  background-image: paint(barChart);
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Creating a Custom Theme System with Houdini</h2>
+                        <p>Let's put your CSS Houdini knowledge to practice by creating a custom theme system with animated transitions.</p>
+                        
+                        <h3>Exercise: Build a Theme System with Smooth Transitions</h3>
+                        <p>In this exercise, you'll create a theme system that allows for smooth transitions between themes using CSS Houdini.</p>
+                        
+                        <h4>Step 1: Register Custom Properties</h4>
+                        <pre><code class="language-javascript">// theme-properties.js
+if (window.CSS && CSS.registerProperty) {
+  // Register theme colors
+  CSS.registerProperty({
+    name: '--theme-primary',
+    syntax: '&lt;color&gt;',
+    inherits: true,
+    initialValue: '#3498db'
+  });
+  
+  CSS.registerProperty({
+    name: '--theme-secondary',
+    syntax: '&lt;color&gt;',
+    inherits: true,
+    initialValue: '#2ecc71'
+  });
+  
+  CSS.registerProperty({
+    name: '--theme-background',
+    syntax: '&lt;color&gt;',
+    inherits: true,
+    initialValue: '#ffffff'
+  });
+  
+  CSS.registerProperty({
+    name: '--theme-text',
+    syntax: '&lt;color&gt;',
+    inherits: true,
+    initialValue: '#333333'
+  });
+  
+  CSS.registerProperty({
+    name: '--theme-border',
+    syntax: '&lt;color&gt;',
+    inherits: true,
+    initialValue: '#e0e0e0'
+  });
+  
+  // Register theme metrics
+  CSS.registerProperty({
+    name: '--theme-border-radius',
+    syntax: '&lt;length&gt;',
+    inherits: true,
+    initialValue: '4px'
+  });
+  
+  CSS.registerProperty({
+    name: '--theme-spacing',
+    syntax: '&lt;length&gt;',
+    inherits: true,
+    initialValue: '8px'
+  });
+} else {
+  console.log('CSS Properties and Values API not supported');
+}</code></pre>
+                        
+                        <h4>Step 2: Create a Theme Background Painter</h4>
+                        <pre><code class="language-javascript">// theme-background.js
+class ThemeBackgroundPainter {
+  static get inputProperties() {
+    return [
+      '--theme-background',
+      '--theme-primary',
+      '--theme-pattern-size',
+      '--theme-pattern-opacity'
+    ];
+  }
+  
+  paint(ctx, size, properties) {
+    // Get properties
+    const background = properties.get('--theme-background').toString();
+    const primary = properties.get('--theme-primary').toString();
+    const patternSize = parseInt(properties.get('--theme-pattern-size').toString()) || 20;
+    const opacity = parseFloat(properties.get('--theme-pattern-opacity').toString()) || 0.05;
+    
+    // Fill background
+    ctx.fillStyle = background;
+    ctx.fillRect(0, 0, size.width, size.height);
+    
+    // Draw pattern
+    ctx.fillStyle = primary;
+    ctx.globalAlpha = opacity;
+    
+    // Create a subtle dot pattern
+    for (let x = 0; x < size.width; x += patternSize) {
+      for (let y = 0; y < size.height; y += patternSize) {
+        if ((x + y) % (patternSize * 2) === 0) {
+          ctx.beginPath();
+          ctx.arc(x, y, 1, 0, 2 * Math.PI);
+          ctx.fill();
+        }
+      }
+    }
+  }
+}
+
+registerPaint('themeBackground', ThemeBackgroundPainter);</code></pre>
+                        
+                        <h4>Step 3: Create CSS for Themes</h4>
+                        <pre><code class="language-css">/* theme.css */
+:root {
+  /* Default theme (light) */
+  --theme-primary: #3498db;
+  --theme-secondary: #2ecc71;
+  --theme-background: #ffffff;
+  --theme-text: #333333;
+  --theme-border: #e0e0e0;
+  --theme-border-radius: 4px;
+  --theme-spacing: 8px;
+  --theme-pattern-size: 20px;
+  --theme-pattern-opacity: 0.05;
+  
+  /* Transition for theme changes */
+  transition: 
+    --theme-primary 0.5s ease,
+    --theme-secondary 0.5s ease,
+    --theme-background 0.5s ease,
+    --theme-text 0.5s ease,
+    --theme-border 0.5s ease;
+}
+
+/* Dark theme */
+.theme-dark {
+  --theme-primary: #3498db;
+  --theme-secondary: #2ecc71;
+  --theme-background: #222222;
+  --theme-text: #f5f5f5;
+  --theme-border: #444444;
+}
+
+/* Nature theme */
+.theme-nature {
+  --theme-primary: #27ae60;
+  --theme-secondary: #f39c12;
+  --theme-background: #f9f9f9;
+  --theme-text: #2c3e50;
+  --theme-border: #bdc3c7;
+}
+
+/* Ocean theme */
+.theme-ocean {
+  --theme-primary: #2980b9;
+  --theme-secondary: #1abc9c;
+  --theme-background: #ecf0f1;
+  --theme-text: #2c3e50;
+  --theme-border: #bdc3c7;
+}
+
+/* Apply theme to elements */
+body {
+  background-color: var(--theme-background);
+  color: var(--theme-text);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: calc(var(--theme-spacing) * 2);
+}
+
+.card {
+  background-color: var(--theme-background);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-border-radius);
+  padding: calc(var(--theme-spacing) * 3);
+  margin-bottom: calc(var(--theme-spacing) * 2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  background-color: var(--theme-primary);
+  color: white;
+  border: none;
+  border-radius: var(--theme-border-radius);
+  padding: calc(var(--theme-spacing) * 1.5) calc(var(--theme-spacing) * 3);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: color-mix(in srgb, var(--theme-primary) 80%, black);
+}
+
+.button.secondary {
+  background-color: var(--theme-secondary);
+}
+
+.button.secondary:hover {
+  background-color: color-mix(in srgb, var(--theme-secondary) 80%, black);
+}
+
+/* Apply the custom background pattern */
+.pattern-background {
+  background-image: paint(themeBackground);
+}</code></pre>
+                        
+                        <h4>Step 4: Create HTML Structure</h4>
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;CSS Houdini Theme System&lt;/title&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"&gt;
+  &lt;link rel="stylesheet" href="theme.css"&gt;
+&lt;/head&gt;
+&lt;body class="pattern-background"&gt;
+  &lt;div class="container"&gt;
+    &lt;h1&gt;CSS Houdini Theme System&lt;/h1&gt;
+    
+    &lt;div class="theme-controls"&gt;
+      &lt;h2&gt;Select a Theme&lt;/h2&gt;
+      &lt;button id="theme-light" class="button"&gt;Light Theme&lt;/button&gt;
+      &lt;button id="theme-dark" class="button"&gt;Dark Theme&lt;/button&gt;
+      &lt;button id="theme-nature" class="button"&gt;Nature Theme&lt;/button&gt;
+      &lt;button id="theme-ocean" class="button"&gt;Ocean Theme&lt;/button&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="card"&gt;
+      &lt;h2&gt;Card Title&lt;/h2&gt;
+      &lt;p&gt;This is a card component that uses the theme system. The colors, borders, and spacing all adapt based on the selected theme.&lt;/p&gt;
+      &lt;button class="button"&gt;Primary Button&lt;/button&gt;
+      &lt;button class="button secondary"&gt;Secondary Button&lt;/button&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="card"&gt;
+      &lt;h2&gt;Features&lt;/h2&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Smooth transitions between themes&lt;/li&gt;
+        &lt;li&gt;Custom background pattern using Paint API&lt;/li&gt;
+        &lt;li&gt;Type-checked CSS custom properties&lt;/li&gt;
+        &lt;li&gt;Consistent design system&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;script src="theme-properties.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    // Register the paint worklet
+    if ('paintWorklet' in CSS) {
+      CSS.paintWorklet.addModule('theme-background.js');
+    } else {
+      console.log('CSS Paint API not supported');
+    }
+    
+    // Theme switching functionality
+    document.getElementById('theme-light').addEventListener('click', () => {
+      document.body.className = 'pattern-background';
+    });
+    
+    document.getElementById('theme-dark').addEventListener('click', () => {
+      document.body.className = 'pattern-background theme-dark';
+    });
+    
+    document.getElementById('theme-nature').addEventListener('click', () => {
+      document.body.className = 'pattern-background theme-nature';
+    });
+    
+    document.getElementById('theme-ocean').addEventListener('click', () => {
+      document.body.className = 'pattern-background theme-ocean';
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <h4>Step 5: Enhance with Custom Controls</h4>
+                        <p>Add custom controls to adjust theme properties dynamically:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Add this to the HTML after the theme-controls div --&gt;
+&lt;div class="card"&gt;
+  &lt;h2&gt;Customize Current Theme&lt;/h2&gt;
+  
+  &lt;div class="control-group"&gt;
+    &lt;label for="primary-color"&gt;Primary Color:&lt;/label&gt;
+    &lt;input type="color" id="primary-color" value="#3498db"&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="control-group"&gt;
+    &lt;label for="secondary-color"&gt;Secondary Color:&lt;/label&gt;
+    &lt;input type="color" id="secondary-color" value="#2ecc71"&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="control-group"&gt;
+    &lt;label for="background-color"&gt;Background Color:&lt;/label&gt;
+    &lt;input type="color" id="background-color" value="#ffffff"&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="control-group"&gt;
+    &lt;label for="text-color"&gt;Text Color:&lt;/label&gt;
+    &lt;input type="color" id="text-color" value="#333333"&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="control-group"&gt;
+    &lt;label for="border-radius"&gt;Border Radius: &lt;span id="radius-value"&gt;4px&lt;/span&gt;&lt;/label&gt;
+    &lt;input type="range" id="border-radius" min="0" max="20" value="4"&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="control-group"&gt;
+    &lt;label for="pattern-size"&gt;Pattern Size: &lt;span id="pattern-size-value"&gt;20px&lt;/span&gt;&lt;/label&gt;
+    &lt;input type="range" id="pattern-size" min="10" max="50" value="20"&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="control-group"&gt;
+    &lt;label for="pattern-opacity"&gt;Pattern Opacity: &lt;span id="pattern-opacity-value"&gt;0.05&lt;/span&gt;&lt;/label&gt;
+    &lt;input type="range" id="pattern-opacity" min="0" max="20" value="5"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <pre><code class="language-javascript">// Add this to the script section
+// Custom controls functionality
+document.getElementById('primary-color').addEventListener('input', (e) => {
+  document.documentElement.style.setProperty('--theme-primary', e.target.value);
+});
+
+document.getElementById('secondary-color').addEventListener('input', (e) => {
+  document.documentElement.style.setProperty('--theme-secondary', e.target.value);
+});
+
+document.getElementById('background-color').addEventListener('input', (e) => {
+  document.documentElement.style.setProperty('--theme-background', e.target.value);
+});
+
+document.getElementById('text-color').addEventListener('input', (e) => {
+  document.documentElement.style.setProperty('--theme-text', e.target.value);
+});
+
+document.getElementById('border-radius').addEventListener('input', (e) => {
+  const value = e.target.value + 'px';
+  document.documentElement.style.setProperty('--theme-border-radius', value);
+  document.getElementById('radius-value').textContent = value;
+});
+
+document.getElementById('pattern-size').addEventListener('input', (e) => {
+  const value = e.target.value + 'px';
+  document.documentElement.style.setProperty('--theme-pattern-size', e.target.value);
+  document.getElementById('pattern-size-value').textContent = value;
+});
+
+document.getElementById('pattern-opacity').addEventListener('input', (e) => {
+  const value = e.target.value / 100;
+  document.documentElement.style.setProperty('--theme-pattern-opacity', value);
+  document.getElementById('pattern-opacity-value').textContent = value;
+});</code></pre>
+                        
+                        <pre><code class="language-css">/* Add this to the CSS */
+.control-group {
+  margin-bottom: calc(var(--theme-spacing) * 2);
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: var(--theme-spacing);
+  font-weight: 500;
+}
+
+.control-group input[type="color"] {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-border-radius);
+}
+
+.control-group input[type="range"] {
+  width: 100%;
+}</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Extend your theme system with these additional features:</p>
+                            <ol>
+                                <li>Add a feature to save custom themes to localStorage</li>
+                                <li>Create a custom paint worklet for button hover effects</li>
+                                <li>Implement a theme switcher that changes based on time of day</li>
+                                <li>Add animation effects when switching between themes</li>
+                                <li>Create a custom form input style using the Paint API</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored CSS Houdini, a set of low-level APIs that give developers direct access to the CSS engine. We've covered:</p>
+                        <ul>
+                            <li><strong>CSS Properties and Values API</strong>: For registering custom CSS properties with type checking, default values, and inheritance behavior</li>
+                            <li><strong>CSS Painting API</strong>: For creating custom painting functions that can be used with the paint() function in CSS</li>
+                            <li><strong>CSS Layout API</strong>: For creating custom layout algorithms (though still experimental)</li>
+                            <li><strong>CSS Typed OM</strong>: For working with CSS values in a more structured and performant way</li>
+                            <li><strong>Practical Applications</strong>: Real-world examples of how to use Houdini to solve common web development challenges</li>
+                        </ul>
+                        
+                        <p>CSS Houdini represents a significant advancement in web development, allowing developers to extend CSS in ways that were previously impossible. While browser support is still growing, the APIs that are available today already provide powerful capabilities for creating custom styles, animations, and interactions.</p>
+                        
+                        <p>As you continue your CSS journey, keep an eye on the development of Houdini APIs, as they promise to revolutionize how we approach styling on the web.</p>
+                        
+                        <p>In the next lesson, we'll explore CSS Performance, focusing on techniques to optimize your CSS for better rendering and loading performance.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page44.html" class="btn">Previous: CSS-in-JS</a>
+                        <a href="page46.html" class="btn">Next: CSS Performance</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

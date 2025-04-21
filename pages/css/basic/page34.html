@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to create websites that adapt to different screen sizes and devices using responsive design techniques.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="34">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html" class="active">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>CSS Basics</h3>
+                <ul>
+                    <li><a href="page26.html">26. Introduction to CSS</a></li>
+                    <li><a href="page27.html">27. CSS Selectors</a></li>
+                    <li><a href="page28.html">28. CSS Box Model</a></li>
+                    <li><a href="page29.html">29. Typography</a></li>
+                    <li><a href="page30.html">30. Colors & Backgrounds</a></li>
+                    <li><a href="page31.html">31. Layout Basics</a></li>
+                    <li><a href="page32.html">32. Flexbox</a></li>
+                    <li><a href="page33.html">33. CSS Grid</a></li>
+                    <li><a href="page34.html" class="active">34. Responsive Design</a></li>
+                    <li><a href="page35.html">35. Transitions & Animations</a></li>
+                    <li><a href="page36.html">36. CSS Variables</a></li>
+                    <li><a href="page37.html">37. CSS Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 68%;"></div>
+                </div>
+                <p style="text-align: center;">Page 34 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Responsive Design</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to Responsive Design</h2>
+                        <p>Responsive web design is an approach to web design that makes web pages render well on a variety of devices and window or screen sizes. It's about creating websites that provide an optimal viewing experience—easy reading and navigation with minimal resizing, panning, and scrolling—across a wide range of devices from desktop computer monitors to mobile phones.</p>
+                        
+                        <p>In today's multi-device world, responsive design isn't just a nice-to-have feature—it's essential. Users expect websites to work seamlessly regardless of the device they're using, and search engines like Google prioritize mobile-friendly websites in their rankings.</p>
+                        
+                        <h3>Key Principles of Responsive Design</h3>
+                        <ul>
+                            <li><strong>Fluid Layouts</strong>: Using relative units (percentages, em, rem) instead of fixed units (pixels) for layout elements</li>
+                            <li><strong>Flexible Images</strong>: Ensuring images scale properly within their containers</li>
+                            <li><strong>Media Queries</strong>: Applying different styles based on device characteristics (screen size, resolution, orientation)</li>
+                            <li><strong>Mobile-First Approach</strong>: Designing for mobile devices first, then progressively enhancing for larger screens</li>
+                            <li><strong>Content Prioritization</strong>: Displaying the most important content first, especially on smaller screens</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Responsive vs. Adaptive Design</h4>
+                            <p>While often used interchangeably, responsive and adaptive design are slightly different approaches:</p>
+                            <ul>
+                                <li><strong>Responsive Design</strong>: Uses fluid grids and flexible images that continuously adapt to any screen size using CSS media queries</li>
+                                <li><strong>Adaptive Design</strong>: Creates several distinct layouts for multiple screen sizes and serves the appropriate layout based on detected screen size</li>
+                            </ul>
+                            <p>Responsive design is generally preferred for its flexibility and future-proofing, while adaptive design can offer more control over specific layouts.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>The Viewport Meta Tag</h2>
+                        <p>The viewport meta tag is the foundation of responsive design. It tells the browser how to control the page's dimensions and scaling.</p>
+                        
+                        <pre><code class="language-html">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+                        
+                        <p>This tag instructs the browser to:</p>
+                        <ul>
+                            <li><code>width=device-width</code>: Set the width of the viewport to the width of the device</li>
+                            <li><code>initial-scale=1.0</code>: Set the initial zoom level to 1.0 (no zoom)</li>
+                        </ul>
+                        
+                        <p>Without this tag, mobile browsers will render the page at a typical desktop screen width and then scale it down, resulting in a poor user experience with tiny text and elements.</p>
+                        
+                        <h3>Additional Viewport Options</h3>
+                        <p>The viewport meta tag can include additional parameters:</p>
+                        
+                        <pre><code class="language-html">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, user-scalable=yes"&gt;</code></pre>
+                        
+                        <ul>
+                            <li><code>maximum-scale</code>: Maximum zoom level allowed</li>
+                            <li><code>minimum-scale</code>: Minimum zoom level allowed</li>
+                            <li><code>user-scalable</code>: Whether users can zoom in/out (yes/no)</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Accessibility Consideration</h4>
+                            <p>Never disable user scaling (<code>user-scalable=no</code>) as it creates accessibility issues for users with visual impairments who need to zoom in. Always allow users to control their viewing experience.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Fluid Layouts</h2>
+                        <p>Fluid layouts use relative units instead of fixed units to create designs that adapt to different screen sizes.</p>
+                        
+                        <h3>Relative Units</h3>
+                        <p>Here are the key relative units to use in responsive design:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Unit</th>
+                                        <th>Description</th>
+                                        <th>Use Case</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>%</code></td>
+                                        <td>Percentage relative to parent element</td>
+                                        <td>Container widths, margins, padding</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>em</code></td>
+                                        <td>Relative to the font-size of the element</td>
+                                        <td>Typography, padding, margins related to text</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rem</code></td>
+                                        <td>Relative to the root element's font-size</td>
+                                        <td>Global sizing, consistent spacing</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vw</code></td>
+                                        <td>1% of viewport width</td>
+                                        <td>Full-width elements, hero sections</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vh</code></td>
+                                        <td>1% of viewport height</td>
+                                        <td>Full-height elements, hero sections</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vmin</code></td>
+                                        <td>1% of the smaller dimension (width or height)</td>
+                                        <td>Maintaining aspect ratios</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vmax</code></td>
+                                        <td>1% of the larger dimension (width or height)</td>
+                                        <td>Full-bleed elements</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3>Example: Fluid Layout</h3>
+                        <p>Here's an example of a fluid layout using relative units:</p>
+                        
+                        <pre><code class="language-css">/* Fixed-width layout (not responsive) */
+.container-fixed {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* Fluid layout (responsive) */
+.container-fluid {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  width: 25%; /* Takes 25% of parent container */
+}
+
+.main-content {
+  width: 75%; /* Takes 75% of parent container */
+}
+
+.padding-element {
+  padding: 1.5rem; /* Relative to root font size */
+}
+
+.hero-section {
+  height: 80vh; /* 80% of viewport height */
+  font-size: calc(1rem + 1vw); /* Responsive font size */
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>The calc() Function</h4>
+                            <p>The <code>calc()</code> function allows you to perform calculations with mixed units, which is extremely useful for responsive design:</p>
+                            <pre><code class="language-css">/* Sidebar that's 250px wide on large screens but scales down on smaller screens */
+.sidebar {
+  width: calc(250px - 10vw);
+  min-width: 150px;
+}
+
+/* Font size that scales with viewport but has minimum and maximum sizes */
+.responsive-text {
+  font-size: calc(16px + 0.5vw);
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Media Queries</h2>
+                        <p>Media queries allow you to apply different styles based on device characteristics like screen size, resolution, and orientation. They're the backbone of responsive design.</p>
+                        
+                        <h3>Basic Syntax</h3>
+                        <p>The basic syntax for a media query is:</p>
+                        
+                        <pre><code class="language-css">@media media-type and (media-feature) {
+  /* CSS rules to apply when media query matches */
+}</code></pre>
+                        
+                        <h3>Media Types</h3>
+                        <ul>
+                            <li><code>all</code>: All devices (default)</li>
+                            <li><code>screen</code>: Computer screens, tablets, smartphones</li>
+                            <li><code>print</code>: Printers and print preview</li>
+                            <li><code>speech</code>: Screen readers</li>
+                        </ul>
+                        
+                        <h3>Common Media Features</h3>
+                        <ul>
+                            <li><code>width</code>, <code>min-width</code>, <code>max-width</code>: Viewport width</li>
+                            <li><code>height</code>, <code>min-height</code>, <code>max-height</code>: Viewport height</li>
+                            <li><code>orientation</code>: Portrait or landscape</li>
+                            <li><code>aspect-ratio</code>: Width-to-height ratio</li>
+                            <li><code>resolution</code>: Pixel density (dpi or dpcm)</li>
+                            <li><code>hover</code>: Whether the device supports hover</li>
+                            <li><code>pointer</code>: Type of pointing device (none, coarse, fine)</li>
+                        </ul>
+                        
+                        <h3>Examples of Media Queries</h3>
+                        
+                        <pre><code class="language-css">/* Styles for screens narrower than 768px */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  
+  .sidebar {
+    display: none;
+  }
+}
+
+/* Styles for screens between 768px and 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+  
+  .sidebar {
+    width: 30%;
+  }
+}
+
+/* Styles for landscape orientation */
+@media screen and (orientation: landscape) {
+  .hero {
+    height: 70vh;
+  }
+}
+
+/* Styles for high-resolution displays (Retina) */
+@media screen and (min-resolution: 192dpi) {
+  .logo {
+    background-image: url('logo@2x.png');
+  }
+}
+
+/* Styles for devices that support hover */
+@media (hover: hover) {
+  .button:hover {
+    background-color: #0066cc;
+  }
+}
+
+/* Styles for print */
+@media print {
+  .navigation, .sidebar, .footer {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+    color: black;
+    background: white;
+  }
+}</code></pre>
+                        
+                        <h3>Logical Operators</h3>
+                        <p>You can combine media features using logical operators:</p>
+                        
+                        <pre><code class="language-css">/* AND operator (both conditions must be true) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Styles for medium-sized screens */
+}
+
+/* OR operator (comma-separated, any condition can be true) */
+@media screen and (max-width: 600px), (orientation: portrait) {
+  /* Styles for small screens OR portrait orientation */
+}
+
+/* NOT operator (negates the condition) */
+@media not screen and (min-width: 768px) {
+  /* Styles for everything except screens wider than 768px */
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Common Breakpoints</h4>
+                            <p>While breakpoints should be based on your content, these are commonly used ranges:</p>
+                            <ul>
+                                <li><strong>Small phones</strong>: up to 576px</li>
+                                <li><strong>Large phones/Small tablets</strong>: 577px to 768px</li>
+                                <li><strong>Tablets/Small laptops</strong>: 769px to 992px</li>
+                                <li><strong>Laptops/Desktops</strong>: 993px to 1200px</li>
+                                <li><strong>Large desktops</strong>: 1201px and above</li>
+                            </ul>
+                            <p>Remember that these are guidelines, not rules. Your breakpoints should be determined by where your design starts to break, not by specific device dimensions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Mobile-First Approach</h2>
+                        <p>The mobile-first approach means designing for mobile devices first, then progressively enhancing the design for larger screens. This approach has several advantages:</p>
+                        
+                        <ul>
+                            <li>Forces you to focus on content and core functionality</li>
+                            <li>Ensures fast loading on mobile devices</li>
+                            <li>Aligns with how CSS works (styles cascade and override)</li>
+                            <li>Matches current usage trends (more mobile than desktop users)</li>
+                        </ul>
+                        
+                        <h3>Mobile-First vs. Desktop-First CSS</h3>
+                        
+                        <pre><code class="language-css">/* Desktop-first approach */
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+/* Mobile-first approach */
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}</code></pre>
+                        
+                        <p>Notice how the mobile-first approach starts with styles for the smallest screens and then uses <code>min-width</code> media queries to add styles for larger screens. The desktop-first approach does the opposite, starting with styles for large screens and using <code>max-width</code> media queries to override them for smaller screens.</p>
+                        
+                        <div class="info-box">
+                            <h4>Performance Benefit</h4>
+                            <p>Mobile-first CSS can improve performance on mobile devices. When a mobile browser loads your CSS, it only needs to parse and apply the base styles and the media queries that match its viewport. With a desktop-first approach, mobile browsers have to parse all the desktop styles first, then override them with mobile styles, which is less efficient.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Responsive Images</h2>
+                        <p>Images often account for most of the downloaded bytes on a webpage. Making them responsive is crucial for performance and user experience.</p>
+                        
+                        <h3>Basic Responsive Images</h3>
+                        <p>The simplest way to make images responsive is to use CSS:</p>
+                        
+                        <pre><code class="language-css">img {
+  max-width: 100%;
+  height: auto;
+}</code></pre>
+                        
+                        <p>This ensures that images never exceed their container's width and maintain their aspect ratio.</p>
+                        
+                        <h3>The srcset Attribute</h3>
+                        <p>For more control, use the <code>srcset</code> attribute to provide multiple image sources based on resolution or viewport width:</p>
+                        
+                        <pre><code class="language-html"><!-- Resolution-based selection -->
+&lt;img src="image.jpg"
+     srcset="image.jpg 1x, image@2x.jpg 2x, image@3x.jpg 3x"
+     alt="Responsive image"&gt;
+
+<!-- Width-based selection -->
+&lt;img src="small.jpg"
+     srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
+     sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+     alt="Responsive image"&gt;</code></pre>
+                        
+                        <p>In the width-based example:</p>
+                        <ul>
+                            <li><code>srcset</code> defines the available images and their widths (500w, 1000w, 1500w)</li>
+                            <li><code>sizes</code> tells the browser what size the image will be displayed at different breakpoints:
+                                <ul>
+                                    <li>On screens up to 600px wide, the image takes 100% of the viewport width</li>
+                                    <li>On screens between 601px and 1200px, it takes 50% of the viewport width</li>
+                                    <li>On larger screens, it takes 33% of the viewport width</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <h3>The picture Element</h3>
+                        <p>The <code>picture</code> element provides even more control, allowing you to specify different image sources based on media queries:</p>
+                        
+                        <pre><code class="language-html">&lt;picture&gt;
+  &lt;source media="(max-width: 600px)" srcset="small.jpg"&gt;
+  &lt;source media="(max-width: 1200px)" srcset="medium.jpg"&gt;
+  &lt;source media="(min-width: 1201px)" srcset="large.jpg"&gt;
+  &lt;img src="fallback.jpg" alt="Responsive image"&gt;
+&lt;/picture&gt;</code></pre>
+                        
+                        <p>This allows you to not only serve different sizes but also different crops or image formats based on the device capabilities.</p>
+                        
+                        <h3>Art Direction with picture</h3>
+                        <p>The <code>picture</code> element is particularly useful for "art direction" — showing different images based on context, not just different sizes of the same image:</p>
+                        
+                        <pre><code class="language-html">&lt;picture&gt;
+  &lt;source media="(max-width: 600px)" srcset="portrait-crop.jpg"&gt;
+  &lt;source media="(min-width: 601px)" srcset="landscape-crop.jpg"&gt;
+  &lt;img src="fallback.jpg" alt="Art-directed responsive image"&gt;
+&lt;/picture&gt;</code></pre>
+                        
+                        <h3>Modern Image Formats</h3>
+                        <p>You can also use the <code>picture</code> element to serve modern image formats with fallbacks:</p>
+                        
+                        <pre><code class="language-html">&lt;picture&gt;
+  &lt;source type="image/webp" srcset="image.webp"&gt;
+  &lt;source type="image/jpeg" srcset="image.jpg"&gt;
+  &lt;img src="image.jpg" alt="Image with format fallback"&gt;
+&lt;/picture&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Lazy Loading</h4>
+                            <p>Modern browsers support native lazy loading for images, which defers loading off-screen images until the user scrolls near them:</p>
+                            <pre><code class="language-html">&lt;img src="image.jpg" alt="Lazy-loaded image" loading="lazy"&gt;</code></pre>
+                            <p>This can significantly improve page load performance, especially for long pages with many images.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Responsive Typography</h2>
+                        <p>Typography is a crucial aspect of responsive design. Text should be readable on all devices without requiring zooming.</p>
+                        
+                        <h3>Base Font Size</h3>
+                        <p>Start with a reasonable base font size:</p>
+                        
+                        <pre><code class="language-css">html {
+  font-size: 16px; /* Default for most browsers */
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; /* Slightly smaller on mobile */
+  }
+}</code></pre>
+                        
+                        <h3>Relative Units for Typography</h3>
+                        <p>Use relative units for font sizes to maintain proportions:</p>
+                        
+                        <pre><code class="language-css">body {
+  font-size: 1rem; /* Equal to the root font size */
+}
+
+h1 {
+  font-size: 2.5rem; /* 2.5 times the root font size */
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+.small-text {
+  font-size: 0.875rem;
+}</code></pre>
+                        
+                        <h3>Fluid Typography</h3>
+                        <p>For more advanced responsive typography, you can use fluid sizing that scales smoothly between viewport sizes:</p>
+                        
+                        <pre><code class="language-css">/* Fluid typography using calc() */
+h1 {
+  font-size: calc(1.5rem + 2vw); /* Base size plus viewport-based scaling */
+}
+
+/* Fluid typography with clamp() for min/max boundaries */
+h2 {
+  font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem); /* Min, preferred, max */
+}</code></pre>
+                        
+                        <p>The <code>clamp()</code> function is particularly useful as it provides minimum and maximum sizes while allowing fluid scaling in between.</p>
+                        
+                        <h3>Line Height</h3>
+                        <p>Line height should also be responsive:</p>
+                        
+                        <pre><code class="language-css">body {
+  line-height: 1.5; /* Unitless value is recommended */
+}
+
+h1, h2, h3 {
+  line-height: 1.2; /* Tighter for headings */
+}
+
+@media (max-width: 768px) {
+  body {
+    line-height: 1.6; /* Slightly more spacing on small screens */
+  }
+}</code></pre>
+                        
+                        <h3>Text Columns</h3>
+                        <p>For longer text, consider using columns on larger screens:</p>
+                        
+                        <pre><code class="language-css">.article-content {
+  column-width: 20em; /* Creates as many columns as will fit */
+  column-gap: 2em;
+}
+
+/* Or with specific column count */
+@media (min-width: 768px) {
+  .article-content {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  .article-content {
+    column-count: 3;
+  }
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Accessibility Tip</h4>
+                            <p>For optimal readability, aim for around 45-75 characters per line. On small screens, this usually means full width, but on larger screens, you'll want to constrain text containers:</p>
+                            <pre><code class="language-css">.text-container {
+  max-width: 70ch; /* ch unit is the width of the "0" character */
+  margin: 0 auto;
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Responsive Navigation</h2>
+                        <p>Navigation is one of the most challenging aspects of responsive design. Here are common patterns for responsive navigation:</p>
+                        
+                        <h3>Basic Responsive Navigation</h3>
+                        <p>A simple approach is to transform a horizontal menu into a vertical one on small screens:</p>
+                        
+                        <pre><code class="language-html">&lt;nav class="main-nav"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Portfolio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                        
+                        <pre><code class="language-css">.main-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav li {
+  margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+  }
+  
+  .main-nav li {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}</code></pre>
+                        
+                        <h3>Hamburger Menu</h3>
+                        <p>For more complex navigation, a hamburger menu is common on mobile:</p>
+                        
+                        <pre><code class="language-html">&lt;nav class="main-nav"&gt;
+  &lt;button class="menu-toggle" aria-expanded="false" aria-controls="main-menu"&gt;
+    &lt;span class="sr-only"&gt;Menu&lt;/span&gt;
+    &lt;span class="hamburger"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  
+  &lt;ul id="main-menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Portfolio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                        
+                        <pre><code class="language-css">.main-nav {
+  position: relative;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #333;
+  position: relative;
+}
+
+.hamburger::before, .hamburger::after {
+  content: '';
+  position: absolute;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  bottom: -8px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem;
+  }
+  
+  .main-nav ul.active {
+    display: flex;
+  }
+  
+  .main-nav li {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}</code></pre>
+                        
+                        <pre><code class="language-javascript">document.querySelector('.menu-toggle').addEventListener('click', function() {
+  const menu = document.getElementById('main-menu');
+  const expanded = this.getAttribute('aria-expanded') === 'true';
+  
+  this.setAttribute('aria-expanded', !expanded);
+  menu.classList.toggle('active');
+});</code></pre>
+                        
+                        <h3>Off-Canvas Navigation</h3>
+                        <p>Another popular pattern is off-canvas navigation, where the menu slides in from the side:</p>
+                        
+                        <pre><code class="language-html">&lt;div class="site-wrapper"&gt;
+  &lt;nav class="off-canvas-nav"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Portfolio&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+  
+  &lt;main class="site-content"&gt;
+    &lt;header&gt;
+      &lt;button class="menu-toggle" aria-expanded="false" aria-controls="off-canvas-menu"&gt;
+        &lt;span class="sr-only"&gt;Menu&lt;/span&gt;
+        &lt;span class="hamburger"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;h1&gt;Site Title&lt;/h1&gt;
+    &lt;/header&gt;
+    
+    &lt;!-- Page content --&gt;
+  &lt;/main&gt;
+  
+  &lt;div class="overlay"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <pre><code class="language-css">.site-wrapper {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.off-canvas-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: #333;
+  color: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  padding: 2rem 1rem;
+}
+
+.site-content {
+  transition: transform 0.3s ease;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+}
+
+.site-wrapper.nav-open .off-canvas-nav {
+  transform: translateX(0);
+}
+
+.site-wrapper.nav-open .site-content {
+  transform: translateX(250px);
+}
+
+.site-wrapper.nav-open .overlay {
+  opacity: 1;
+  visibility: visible;
+}</code></pre>
+                        
+                        <pre><code class="language-javascript">document.querySelector('.menu-toggle').addEventListener('click', function() {
+  const wrapper = document.querySelector('.site-wrapper');
+  const expanded = this.getAttribute('aria-expanded') === 'true';
+  
+  this.setAttribute('aria-expanded', !expanded);
+  wrapper.classList.toggle('nav-open');
+});
+
+document.querySelector('.overlay').addEventListener('click', function() {
+  document.querySelector('.site-wrapper').classList.remove('nav-open');
+  document.querySelector('.menu-toggle').setAttribute('aria-expanded', 'false');
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Accessibility Considerations</h4>
+                            <p>When implementing responsive navigation:</p>
+                            <ul>
+                                <li>Use semantic HTML (<code>nav</code>, <code>ul</code>, <code>li</code>)</li>
+                                <li>Include proper ARIA attributes (<code>aria-expanded</code>, <code>aria-controls</code>)</li>
+                                <li>Ensure keyboard navigation works</li>
+                                <li>Add screen reader text for icons (<code>sr-only</code> class)</li>
+                                <li>Test with keyboard and screen readers</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Responsive Tables</h2>
+                        <p>Tables can be challenging on small screens. Here are several approaches to make them responsive:</p>
+                        
+                        <h3>Horizontal Scrolling</h3>
+                        <p>The simplest approach is to wrap the table in a container with horizontal scrolling:</p>
+                        
+                        <pre><code class="language-html">&lt;div class="table-container"&gt;
+  &lt;table&gt;
+    &lt;!-- Table content --&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <pre><code class="language-css">.table-container {
+  width: 100%;
+  overflow-x: auto;
+}</code></pre>
+                        
+                        <h3>Responsive Table with Data Attributes</h3>
+                        <p>A more sophisticated approach uses data attributes to create a card-like view on small screens:</p>
+                        
+                        <pre><code class="language-html">&lt;table class="responsive-table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Email&lt;/th&gt;
+      &lt;th&gt;Phone&lt;/th&gt;
+      &lt;th&gt;Address&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td data-label="Name"&gt;John Doe&lt;/td&gt;
+      &lt;td data-label="Email"&gt;john@example.com&lt;/td&gt;
+      &lt;td data-label="Phone"&gt;(123) 456-7890&lt;/td&gt;
+      &lt;td data-label="Address"&gt;123 Main St, Anytown, USA&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- More rows --&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                        
+                        <pre><code class="language-css">@media (max-width: 768px) {
+  .responsive-table thead {
+    display: none;
+  }
+  
+  .responsive-table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    padding: 1rem;
+  }
+  
+  .responsive-table td {
+    display: block;
+    text-align: right;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .responsive-table td:last-child {
+    border-bottom: none;
+  }
+  
+  .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+}</code></pre>
+                        
+                        <h3>Column Toggle</h3>
+                        <p>Another approach is to hide less important columns on small screens:</p>
+                        
+                        <pre><code class="language-html">&lt;table class="column-toggle-table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Email&lt;/th&gt;
+      &lt;th class="optional"&gt;Phone&lt;/th&gt;
+      &lt;th class="optional"&gt;Address&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;John Doe&lt;/td&gt;
+      &lt;td&gt;john@example.com&lt;/td&gt;
+      &lt;td class="optional"&gt;(123) 456-7890&lt;/td&gt;
+      &lt;td class="optional"&gt;123 Main St, Anytown, USA&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- More rows --&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                        
+                        <pre><code class="language-css">@media (max-width: 768px) {
+  .column-toggle-table .optional {
+    display: none;
+  }
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Accessibility Tip</h4>
+                            <p>When using responsive table techniques, ensure that all data remains accessible. For techniques that visually transform tables, maintain proper table semantics in the HTML for screen readers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Responsive Forms</h2>
+                        <p>Forms should be easy to use on all devices, especially on mobile where input can be challenging.</p>
+                        
+                        <h3>Basic Responsive Form</h3>
+                        <p>Start with a mobile-friendly form layout:</p>
+                        
+                        <pre><code class="language-html">&lt;form class="responsive-form"&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="name"&gt;Name&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="form-group"&gt;
+    &lt;label for="email"&gt;Email&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="form-group"&gt;
+    &lt;label for="message"&gt;Message&lt;/label&gt;
+    &lt;textarea id="message" name="message" rows="5" required&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  
+  &lt;button type="submit"&gt;Send Message&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        
+                        <pre><code class="language-css">.responsive-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  padding: 0.75rem 1.5rem;
+  background: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  /* On larger screens, we can use a two-column layout for some fields */
+  .form-row {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .form-row .form-group {
+    flex: 1;
+  }
+}</code></pre>
+                        
+                        <h3>Input Types for Mobile</h3>
+                        <p>Use appropriate input types to trigger the right keyboard on mobile devices:</p>
+                        
+                        <pre><code class="language-html">&lt;input type="tel" id="phone" name="phone" placeholder="(123) 456-7890"&gt;
+&lt;input type="email" id="email" name="email" placeholder="you@example.com"&gt;
+&lt;input type="url" id="website" name="website" placeholder="https://example.com"&gt;
+&lt;input type="number" id="quantity" name="quantity" min="1" max="10"&gt;
+&lt;input type="date" id="birthdate" name="birthdate"&gt;</code></pre>
+                        
+                        <h3>Form Layout Techniques</h3>
+                        <p>Adjust form layouts based on screen size:</p>
+                        
+                        <pre><code class="language-html">&lt;form class="responsive-form"&gt;
+  &lt;div class="form-row"&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label for="first-name"&gt;First Name&lt;/label&gt;
+      &lt;input type="text" id="first-name" name="first-name" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+      &lt;label for="last-name"&gt;Last Name&lt;/label&gt;
+      &lt;input type="text" id="last-name" name="last-name" required&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="form-group"&gt;
+    &lt;label for="address"&gt;Address&lt;/label&gt;
+    &lt;input type="text" id="address" name="address" required&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="form-row"&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label for="city"&gt;City&lt;/label&gt;
+      &lt;input type="text" id="city" name="city" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+      &lt;label for="state"&gt;State&lt;/label&gt;
+      &lt;select id="state" name="state" required&gt;
+        &lt;option value=""&gt;Select State&lt;/option&gt;
+        &lt;option value="CA"&gt;California&lt;/option&gt;
+        &lt;option value="NY"&gt;New York&lt;/option&gt;
+        &lt;!-- More options --&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+      &lt;label for="zip"&gt;ZIP Code&lt;/label&gt;
+      &lt;input type="text" id="zip" name="zip" pattern="[0-9]{5}" required&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        
+                        <pre><code class="language-css">.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1 1 100%; /* Full width by default (mobile) */
+}
+
+@media (min-width: 576px) {
+  .form-row .form-group {
+    flex: 1; /* Equal width on larger screens */
+  }
+  
+  /* Special case for ZIP code field */
+  .form-row .form-group:last-child {
+    flex: 0 0 100px; /* Fixed width for ZIP */
+  }
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Mobile Form Best Practices</h4>
+                            <ul>
+                                <li>Use appropriate input types (<code>tel</code>, <code>email</code>, <code>number</code>, etc.)</li>
+                                <li>Make touch targets large enough (at least 44×44px)</li>
+                                <li>Use <code>autocomplete</code> attributes to help users fill forms faster</li>
+                                <li>Implement inline validation to provide immediate feedback</li>
+                                <li>Minimize the number of required fields</li>
+                                <li>Consider single-column layouts for mobile</li>
+                                <li>Test your forms on actual mobile devices</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Testing Responsive Designs</h2>
+                        <p>Testing is a crucial part of responsive design. Here are some methods and tools for testing:</p>
+                        
+                        <h3>Browser Developer Tools</h3>
+                        <p>Modern browsers include device emulation tools:</p>
+                        <ul>
+                            <li>Chrome: Open DevTools (F12) > Toggle Device Toolbar (Ctrl+Shift+M)</li>
+                            <li>Firefox: Open DevTools (F12) > Responsive Design Mode (Ctrl+Shift+M)</li>
+                            <li>Safari: Open Web Inspector > Responsive Design Mode</li>
+                        </ul>
+                        
+                        <h3>Testing on Real Devices</h3>
+                        <p>While emulators are useful, testing on real devices is essential:</p>
+                        <ul>
+                            <li>Test on different device types (phones, tablets, desktops)</li>
+                            <li>Test on different operating systems (iOS, Android, Windows, macOS)</li>
+                            <li>Test on different browsers (Chrome, Safari, Firefox, Edge)</li>
+                        </ul>
+                        
+                        <h3>Online Testing Tools</h3>
+                        <p>Several online services allow you to test your site on multiple devices:</p>
+                        <ul>
+                            <li>BrowserStack</li>
+                            <li>Responsively App</li>
+                            <li>Sizzy</li>
+                            <li>Screenfly</li>
+                        </ul>
+                        
+                        <h3>Responsive Testing Checklist</h3>
+                        <p>When testing your responsive design, check the following:</p>
+                        <ul>
+                            <li>Layout: Does the layout adapt appropriately at different breakpoints?</li>
+                            <li>Images: Do images scale correctly and load appropriately for the device?</li>
+                            <li>Typography: Is text readable at all sizes without zooming?</li>
+                            <li>Navigation: Is the navigation usable on all devices?</li>
+                            <li>Touch targets: Are buttons and links large enough for touch interaction?</li>
+                            <li>Forms: Are forms usable on mobile devices?</li>
+                            <li>Performance: Does the site load quickly on mobile networks?</li>
+                            <li>Orientation: Does the design work in both portrait and landscape orientations?</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Debugging Responsive Issues</h4>
+                            <p>When you encounter responsive design issues:</p>
+                            <ol>
+                                <li>Use browser DevTools to inspect the problematic elements</li>
+                                <li>Check which CSS rules are being applied (and which are being overridden)</li>
+                                <li>Test by temporarily adding borders or background colors to elements</li>
+                                <li>Use the "Computed" tab in DevTools to see the final computed values</li>
+                                <li>Check for conflicting media queries or specificity issues</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Responsive Techniques</h2>
+                        <p>Beyond the basics, here are some advanced techniques for responsive design:</p>
+                        
+                        <h3>Container Queries</h3>
+                        <p>Container queries allow you to style elements based on their container's size, not just the viewport:</p>
+                        
+                        <pre><code class="language-css">/* Define a container */
+.card-container {
+  container-type: inline-size;
+  container-name: card;
+}
+
+/* Style based on container width */
+@container card (min-width: 400px) {
+  .card {
+    display: flex;
+  }
+  
+  .card-image {
+    flex: 0 0 200px;
+  }
+}
+
+@container card (max-width: 399px) {
+  .card-image {
+    margin-bottom: 1rem;
+  }
+}</code></pre>
+                        
+                        <p>Container queries are a newer feature with growing browser support. They're particularly useful for reusable components that might appear in different contexts.</p>
+                        
+                        <h3>Feature Queries</h3>
+                        <p>Feature queries (<code>@supports</code>) allow you to apply styles based on browser support for specific features:</p>
+                        
+                        <pre><code class="language-css">/* Base styles for all browsers */
+.element {
+  display: block;
+}
+
+/* Enhanced styles for browsers that support grid */
+@supports (display: grid) {
+  .element {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Styles for browsers that support both grid and container queries */
+@supports (display: grid) and (container-type: inline-size) {
+  .element {
+    container-type: inline-size;
+  }
+}</code></pre>
+                        
+                        <h3>Responsive JavaScript</h3>
+                        <p>Use JavaScript to enhance responsive behavior:</p>
+                        
+                        <pre><code class="language-javascript">// Respond to viewport changes
+const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+function handleViewportChange(e) {
+  if (e.matches) {
+    // Mobile view
+    console.log('Mobile view active');
+    // Initialize mobile-specific functionality
+  } else {
+    // Desktop view
+    console.log('Desktop view active');
+    // Initialize desktop-specific functionality
+  }
+}
+
+// Initial check
+handleViewportChange(mediaQuery);
+
+// Listen for changes
+mediaQuery.addEventListener('change', handleViewportChange);</code></pre>
+                        
+                        <h3>Content-Based Breakpoints</h3>
+                        <p>Instead of using standard device breakpoints, consider content-based breakpoints:</p>
+                        
+                        <pre><code class="language-css">/* Base styles for all screens */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* When product cards get too cramped */
+@media (max-width: 320px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* When there's enough space for larger product images */
+@media (min-width: 1200px) {
+  .product-image {
+    height: 300px;
+  }
+}</code></pre>
+                        
+                        <p>With this approach, you set breakpoints where your specific content and design elements start to break, rather than at standard device widths.</p>
+                        
+                        <h3>Responsive Design Patterns</h3>
+                        <p>Several established patterns can help with complex responsive layouts:</p>
+                        
+                        <ul>
+                            <li><strong>Mostly Fluid</strong>: A multi-column layout that stacks columns on small screens</li>
+                            <li><strong>Column Drop</strong>: Columns are dropped below each other as the screen narrows</li>
+                            <li><strong>Layout Shifter</strong>: Different layouts for different screen sizes, not just stacking</li>
+                            <li><strong>Off Canvas</strong>: Places less frequently used content (like navigation) off-screen on small devices</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Future-Proofing Your Responsive Design</h4>
+                            <p>To make your responsive designs more future-proof:</p>
+                            <ul>
+                                <li>Use relative units and fluid layouts</li>
+                                <li>Implement progressive enhancement</li>
+                                <li>Test on a wide range of devices</li>
+                                <li>Use feature queries for newer CSS features</li>
+                                <li>Keep your breakpoints content-based, not device-based</li>
+                                <li>Stay updated on new responsive techniques and browser capabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Responsive Design</h2>
+                        <p>Let's practice applying responsive design principles with a hands-on exercise.</p>
+                        
+                        <h3>Exercise: Create a Responsive Landing Page</h3>
+                        <p>Create an HTML file with the following content:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Responsive Landing Page&lt;/title&gt;
+  &lt;link rel="stylesheet" href="responsive.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class="site-header"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="logo"&gt;
+        &lt;h1&gt;TechCo&lt;/h1&gt;
+      &lt;/div&gt;
+      
+      &lt;nav class="main-nav"&gt;
+        &lt;button class="menu-toggle" aria-expanded="false" aria-controls="main-menu"&gt;
+          &lt;span class="sr-only"&gt;Menu&lt;/span&gt;
+          &lt;span class="hamburger"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        
+        &lt;ul id="main-menu"&gt;
+          &lt;li&gt;&lt;a href="#" class="active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Products&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+  
+  &lt;section class="hero"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="hero-content"&gt;
+        &lt;h2&gt;Innovative Solutions for Tomorrow's Challenges&lt;/h2&gt;
+        &lt;p&gt;We create cutting-edge technology to help businesses thrive in the digital age.&lt;/p&gt;
+        &lt;a href="#" class="button"&gt;Learn More&lt;/a&gt;
+      &lt;/div&gt;
+      
+      &lt;div class="hero-image"&gt;
+        &lt;img src="https://via.placeholder.com/600x400" alt="Technology illustration"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  
+  &lt;section class="features"&gt;
+    &lt;div class="container"&gt;
+      &lt;h2 class="section-title"&gt;Our Features&lt;/h2&gt;
+      
+      &lt;div class="feature-grid"&gt;
+        &lt;div class="feature"&gt;
+          &lt;div class="feature-icon"&gt;🚀&lt;/div&gt;
+          &lt;h3&gt;Fast Performance&lt;/h3&gt;
+          &lt;p&gt;Our solutions are optimized for speed and efficiency, ensuring your business operates at peak performance.&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="feature"&gt;
+          &lt;div class="feature-icon"&gt;🔒&lt;/div&gt;
+          &lt;h3&gt;Secure Platform&lt;/h3&gt;
+          &lt;p&gt;Security is our priority. We implement the latest security measures to protect your valuable data.&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="feature"&gt;
+          &lt;div class="feature-icon"&gt;📱&lt;/div&gt;
+          &lt;h3&gt;Mobile Friendly&lt;/h3&gt;
+          &lt;p&gt;All our products are designed with mobile users in mind, providing a seamless experience across all devices.&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="feature"&gt;
+          &lt;div class="feature-icon"&gt;💬&lt;/div&gt;
+          &lt;h3&gt;24/7 Support&lt;/h3&gt;
+          &lt;p&gt;Our dedicated support team is available around the clock to assist you with any questions or issues.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  
+  &lt;section class="testimonials"&gt;
+    &lt;div class="container"&gt;
+      &lt;h2 class="section-title"&gt;What Our Clients Say&lt;/h2&gt;
+      
+      &lt;div class="testimonial-grid"&gt;
+        &lt;div class="testimonial"&gt;
+          &lt;blockquote&gt;
+            &lt;p&gt;"TechCo's solutions have transformed our business operations, resulting in a 40% increase in productivity."&lt;/p&gt;
+            &lt;cite&gt;- Jane Smith, CEO of Smith Enterprises&lt;/cite&gt;
+          &lt;/blockquote&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="testimonial"&gt;
+          &lt;blockquote&gt;
+            &lt;p&gt;"The customer support team at TechCo is exceptional. They're always available and quick to resolve any issues."&lt;/p&gt;
+            &lt;cite&gt;- John Doe, CTO of Doe Technologies&lt;/cite&gt;
+          &lt;/blockquote&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="testimonial"&gt;
+          &lt;blockquote&gt;
+            &lt;p&gt;"We've been using TechCo's platform for over two years now, and it has been a game-changer for our company."&lt;/p&gt;
+            &lt;cite&gt;- Sarah Johnson, Operations Manager at Johnson Inc.&lt;/cite&gt;
+          &lt;/blockquote&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  
+  &lt;section class="cta"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="cta-content"&gt;
+        &lt;h2&gt;Ready to Get Started?&lt;/h2&gt;
+        &lt;p&gt;Join thousands of businesses that trust TechCo for their technology needs.&lt;/p&gt;
+        &lt;a href="#" class="button"&gt;Contact Us Today&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  
+  &lt;footer class="site-footer"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="footer-grid"&gt;
+        &lt;div class="footer-about"&gt;
+          &lt;h3&gt;About TechCo&lt;/h3&gt;
+          &lt;p&gt;TechCo is a leading provider of innovative technology solutions for businesses of all sizes.&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="footer-links"&gt;
+          &lt;h3&gt;Quick Links&lt;/h3&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Products&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="footer-contact"&gt;
+          &lt;h3&gt;Contact Us&lt;/h3&gt;
+          &lt;p&gt;Email: info@techco.com&lt;/p&gt;
+          &lt;p&gt;Phone: (123) 456-7890&lt;/p&gt;
+          &lt;p&gt;Address: 123 Tech Street, San Francisco, CA 94107&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;div class="copyright"&gt;
+        &lt;p&gt;&copy; 2025 TechCo. All rights reserved.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+  
+  &lt;script src="responsive.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>Now, create a CSS file named <code>responsive.css</code> and a JavaScript file named <code>responsive.js</code> to make this landing page fully responsive.</p>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Apply the following responsive design techniques:</p>
+                            <ol>
+                                <li>Use a mobile-first approach with <code>min-width</code> media queries</li>
+                                <li>Create a responsive navigation menu that transforms into a hamburger menu on small screens</li>
+                                <li>Make the hero section stack vertically on mobile and display side-by-side on larger screens</li>
+                                <li>Create a responsive grid for the features section</li>
+                                <li>Make the testimonials display in a single column on mobile and multiple columns on larger screens</li>
+                                <li>Use fluid typography that scales appropriately across different screen sizes</li>
+                                <li>Ensure all images are responsive</li>
+                                <li>Create a responsive footer that stacks sections on mobile</li>
+                                <li>Add appropriate spacing and padding that adjusts based on screen size</li>
+                                <li>Implement the JavaScript for the mobile menu toggle</li>
+                            </ol>
+                            <p>Test your responsive design at various screen sizes to ensure it looks good and functions properly on all devices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored responsive web design, a crucial approach for creating websites that work well on all devices:</p>
+                        <ul>
+                            <li><strong>Responsive Design Principles</strong>: Fluid layouts, flexible images, media queries, mobile-first approach, and content prioritization</li>
+                            <li><strong>Viewport Meta Tag</strong>: The foundation of responsive design that controls how pages scale on different devices</li>
+                            <li><strong>Fluid Layouts</strong>: Using relative units (%, em, rem, vw, vh) instead of fixed units for flexible designs</li>
+                            <li><strong>Media Queries</strong>: Applying different styles based on device characteristics like screen size and orientation</li>
+                            <li><strong>Mobile-First Approach</strong>: Starting with styles for mobile devices and progressively enhancing for larger screens</li>
+                            <li><strong>Responsive Images</strong>: Techniques for serving appropriate images for different devices using srcset, sizes, and picture elements</li>
+                            <li><strong>Responsive Typography</strong>: Creating readable text that scales appropriately across different screen sizes</li>
+                            <li><strong>Responsive Navigation</strong>: Patterns for creating navigation menus that work well on all devices</li>
+                            <li><strong>Responsive Tables and Forms</strong>: Techniques for making these challenging elements work well on small screens</li>
+                            <li><strong>Testing Responsive Designs</strong>: Methods and tools for ensuring your designs work across different devices</li>
+                            <li><strong>Advanced Techniques</strong>: Container queries, feature queries, responsive JavaScript, and content-based breakpoints</li>
+                        </ul>
+                        
+                        <p>Responsive design is no longer optional—it's a fundamental aspect of modern web development. By applying these principles and techniques, you can create websites that provide an optimal experience for users on any device.</p>
+                        
+                        <p>In the next lesson, we'll explore CSS Transitions and Animations, which allow you to add movement and interactivity to your web pages.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page33.html" class="btn">Previous: CSS Grid</a>
+                        <a href="page35.html" class="btn">Next: Transitions & Animations</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

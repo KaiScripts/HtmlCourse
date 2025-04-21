@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to HTML | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn the basics of HTML, what it is, and how it forms the foundation of the web.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="1">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html" class="active">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>HTML Basics</h3>
+                <ul>
+                    <li><a href="page1.html" class="active">1. Introduction to HTML</a></li>
+                    <li><a href="page2.html">2. HTML Document Structure</a></li>
+                    <li><a href="page3.html">3. HTML Elements & Tags</a></li>
+                    <li><a href="page4.html">4. Text Formatting</a></li>
+                    <li><a href="page5.html">5. Links & Navigation</a></li>
+                    <li><a href="page6.html">6. Images & Multimedia</a></li>
+                    <li><a href="page7.html">7. Lists</a></li>
+                    <li><a href="page8.html">8. Tables</a></li>
+                    <li><a href="page9.html">9. Forms Basics</a></li>
+                    <li><a href="page10.html">10. Semantic HTML</a></li>
+                    <li><a href="page11.html">11. HTML Attributes</a></li>
+                    <li><a href="page12.html">12. HTML Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 2%;"></div>
+                </div>
+                <p style="text-align: center;">Page 1 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Introduction to HTML</h1>
+                    
+                    <div class="card">
+                        <h2>What is HTML?</h2>
+                        <p>HTML (HyperText Markup Language) is the standard markup language used to create web pages. It describes the structure of a web page and consists of a series of elements that tell the browser how to display the content.</p>
+                        
+                        <p>Think of HTML as the skeleton of a website. Just like how your bones give structure to your body, HTML gives structure to web content. It's the foundation upon which all websites are built.</p>
+                        
+                        <div class="info-box">
+                            <h4>Key Concept</h4>
+                            <p>HTML is not a programming language; it's a markup language. This means it uses special syntax to annotate (or "mark up") text to define how it should be structured and presented in a web browser.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>The Evolution of HTML</h2>
+                        <p>HTML has evolved significantly since its creation in the early 1990s by Tim Berners-Lee. Here's a brief timeline of its development:</p>
+                        
+                        <ul>
+                            <li><strong>1991:</strong> HTML 1.0 - The original version (never standardized)</li>
+                            <li><strong>1995:</strong> HTML 2.0 - The first standard specification</li>
+                            <li><strong>1997:</strong> HTML 3.2 - Added tables, applets, and text flow around images</li>
+                            <li><strong>1999:</strong> HTML 4.01 - Introduced stylesheets, scripts, and frames</li>
+                            <li><strong>2000-2014:</strong> XHTML - A stricter, XML-based version of HTML</li>
+                            <li><strong>2014:</strong> HTML5 - The current standard with improved support for multimedia, new semantic elements, and APIs</li>
+                        </ul>
+                        
+                        <p>Today, we use HTML5, which introduced many new features that make it easier to include audio, video, and interactive graphics on websites. It also introduced semantic elements that better describe the content they contain, making web pages more accessible and SEO-friendly.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Why Learn HTML?</h2>
+                        <p>HTML is the fundamental building block of the web. Here's why learning HTML is essential:</p>
+                        
+                        <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                            <div class="mini-card">
+                                <h4>Foundation of Web Development</h4>
+                                <p>All web development starts with HTML. Even the most complex websites and web applications are built on HTML foundations.</p>
+                            </div>
+                            <div class="mini-card">
+                                <h4>Universal Language</h4>
+                                <p>HTML is supported by all browsers and devices that can access the web, making it truly universal.</p>
+                            </div>
+                            <div class="mini-card">
+                                <h4>Career Opportunities</h4>
+                                <p>Understanding HTML is a prerequisite for careers in web development, design, digital marketing, and content creation.</p>
+                            </div>
+                            <div class="mini-card">
+                                <h4>Content Control</h4>
+                                <p>Knowing HTML gives you precise control over how your content appears on the web.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>How HTML Works</h2>
+                        <p>HTML uses a system of tags to define elements on a web page. These elements form a tree-like structure known as the Document Object Model (DOM).</p>
+                        
+                        <p>When you visit a website, your browser:</p>
+                        <ol>
+                            <li>Requests the HTML file from the server</li>
+                            <li>Parses the HTML code</li>
+                            <li>Builds the DOM tree</li>
+                            <li>Renders the page according to the DOM structure</li>
+                        </ol>
+                        
+                        <div class="info-box">
+                            <h4>The Browser's Role</h4>
+                            <p>Different browsers may render the same HTML slightly differently. This is why web developers test their sites across multiple browsers to ensure consistency.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Your First HTML Element</h2>
+                        <p>Let's look at a simple HTML element to understand its structure:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</code></pre>
+                        
+                        <p>This example shows a paragraph element. It consists of:</p>
+                        <ul>
+                            <li>An opening tag: <code>&lt;p&gt;</code></li>
+                            <li>The content: "This is a paragraph of text."</li>
+                            <li>A closing tag: <code>&lt;/p&gt;</code></li>
+                        </ul>
+                        
+                        <p>The opening and closing tags define where the element begins and ends. The content is what appears on the web page.</p>
+                        
+                        <div class="try-it-box">
+                            <h4>Try It Yourself</h4>
+                            <p>In the next lesson, we'll create our first complete HTML document. For now, try to identify the elements in this snippet:</p>
+                            <pre><code class="language-html">&lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+&lt;p&gt;This is my first website. I'm learning &lt;strong&gt;HTML&lt;/strong&gt;!&lt;/p&gt;</code></pre>
+                            <p>Can you identify the heading, paragraph, and strong elements?</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>HTML and Other Web Technologies</h2>
+                        <p>HTML rarely works alone. Modern websites combine three core technologies:</p>
+                        
+                        <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                            <div class="mini-card">
+                                <h4>HTML</h4>
+                                <p>Provides the structure and content of web pages.</p>
+                            </div>
+                            <div class="mini-card">
+                                <h4>CSS</h4>
+                                <p>Controls the presentation and styling of HTML elements.</p>
+                            </div>
+                            <div class="mini-card">
+                                <h4>JavaScript</h4>
+                                <p>Adds interactivity and dynamic behavior to web pages.</p>
+                            </div>
+                        </div>
+                        
+                        <p>In this course, we'll focus on HTML and CSS, the two fundamental technologies that control the structure and appearance of web pages.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this introduction, we've learned that:</p>
+                        <ul>
+                            <li>HTML is a markup language used to structure content on the web</li>
+                            <li>It has evolved significantly since its creation in the early 1990s</li>
+                            <li>HTML5 is the current standard with improved features and semantic elements</li>
+                            <li>HTML elements consist of opening tags, content, and closing tags</li>
+                            <li>HTML works alongside CSS and JavaScript to create modern websites</li>
+                        </ul>
+                        
+                        <p>In the next lesson, we'll explore the basic structure of an HTML document and create our first complete web page.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <span></span> <!-- Empty span for grid alignment -->
+                        <a href="page2.html" class="btn">Next Lesson: HTML Document Structure</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

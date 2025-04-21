@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-in-JS | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn about CSS-in-JS libraries, approaches, and best practices for styling modern web applications.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="44">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html" class="active">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional CSS</h3>
+                <ul>
+                    <li><a href="page38.html">38. Advanced CSS Features</a></li>
+                    <li><a href="page39.html">39. CSS Preprocessors</a></li>
+                    <li><a href="page40.html">40. CSS Architecture</a></li>
+                    <li><a href="page41.html">41. CSS Frameworks</a></li>
+                    <li><a href="page42.html">42. Advanced Layouts</a></li>
+                    <li><a href="page43.html">43. Advanced Animations</a></li>
+                    <li><a href="page44.html" class="active">44. CSS-in-JS</a></li>
+                    <li><a href="page45.html">45. CSS Houdini</a></li>
+                    <li><a href="page46.html">46. CSS Performance</a></li>
+                    <li><a href="page47.html">47. CSS Testing</a></li>
+                    <li><a href="page48.html">48. CSS for Print</a></li>
+                    <li><a href="page49.html">49. Future of CSS</a></li>
+                    <li><a href="page50.html">50. Building a Portfolio</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 88%;"></div>
+                </div>
+                <p style="text-align: center;">Page 44 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>CSS-in-JS</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to CSS-in-JS</h2>
+                        <p>CSS-in-JS is a styling technique where JavaScript is used to define and generate CSS instead of writing it in separate files. This approach emerged as web applications became more component-based, and developers sought ways to better encapsulate styles with their corresponding components.</p>
+                        
+                        <p>In this lesson, we'll explore the various CSS-in-JS libraries, their approaches, benefits, drawbacks, and best practices. By the end, you'll understand when and how to use CSS-in-JS effectively in your projects.</p>
+                        
+                        <h3>The Evolution of CSS Approaches</h3>
+                        <p>To understand CSS-in-JS, it's helpful to look at how CSS approaches have evolved:</p>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1996</div>
+                                <div class="timeline-content">
+                                    <h4>Inline Styles</h4>
+                                    <p>CSS was initially written directly in HTML using the style attribute. This approach lacked reusability and separation of concerns.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">Early 2000s</div>
+                                <div class="timeline-content">
+                                    <h4>External Stylesheets</h4>
+                                    <p>CSS moved to separate files, promoting separation of concerns and reusability, but creating challenges with global scope and specificity.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2009-2012</div>
+                                <div class="timeline-content">
+                                    <h4>CSS Preprocessors</h4>
+                                    <p>Tools like Sass and Less introduced variables, nesting, and mixins, making CSS more maintainable but still not solving scoping issues.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2013-2015</div>
+                                <div class="timeline-content">
+                                    <h4>BEM and CSS Methodologies</h4>
+                                    <p>Naming conventions like BEM helped manage CSS at scale by creating explicit relationships between components and their styles.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2014-2016</div>
+                                <div class="timeline-content">
+                                    <h4>CSS Modules</h4>
+                                    <p>CSS Modules introduced local scoping by default, allowing developers to write CSS that was automatically scoped to specific components.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2014-Present</div>
+                                <div class="timeline-content">
+                                    <h4>CSS-in-JS</h4>
+                                    <p>Libraries like Styled Components and Emotion brought CSS directly into JavaScript, enabling component-scoped styles with full access to the JavaScript ecosystem.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>Why CSS-in-JS?</h3>
+                        <p>CSS-in-JS emerged to solve several challenges in modern web development:</p>
+                        
+                        <div class="info-box">
+                            <h4>Key Problems CSS-in-JS Addresses</h4>
+                            <ul>
+                                <li><strong>Global Namespace:</strong> Traditional CSS uses a global namespace, leading to potential naming conflicts</li>
+                                <li><strong>Dependencies:</strong> CSS lacks a built-in way to manage dependencies between styles</li>
+                                <li><strong>Dead Code Elimination:</strong> It's difficult to know which CSS is actually being used</li>
+                                <li><strong>Minification:</strong> Class names in traditional CSS can't be safely minified</li>
+                                <li><strong>Sharing Constants:</strong> Sharing values between CSS and JavaScript is cumbersome</li>
+                                <li><strong>Non-deterministic Resolution:</strong> CSS specificity rules can lead to unpredictable results</li>
+                                <li><strong>Isolation:</strong> Styles for one component can unintentionally affect others</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Core Concepts of CSS-in-JS</h3>
+                        <p>While different CSS-in-JS libraries have varying APIs, they share several core concepts:</p>
+                        
+                        <h4>Component-Scoped Styles</h4>
+                        <p>CSS-in-JS libraries typically generate unique class names for each component, ensuring styles don't leak between components:</p>
+                        
+                        <pre><code class="language-jsx">// Using styled-components
+import styled from 'styled-components';
+
+const Button = styled.button`
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  
+  &:hover {
+    background-color: #2980b9;
+  }
+`;
+
+// Usage
+function App() {
+  return &lt;Button&gt;Click Me&lt;/Button&gt;;
+}</code></pre>
+                        
+                        <h4>Dynamic Styling Based on Props</h4>
+                        <p>CSS-in-JS allows styles to change based on component props:</p>
+                        
+                        <pre><code class="language-jsx">const Button = styled.button`
+  background-color: ${props => props.primary ? '#3498db' : '#e74c3c'};
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  
+  &:hover {
+    background-color: ${props => props.primary ? '#2980b9' : '#c0392b'};
+  }
+`;
+
+// Usage
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Button primary&gt;Primary Button&lt;/Button&gt;
+      &lt;Button&gt;Secondary Button&lt;/Button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+                        
+                        <h4>Theming</h4>
+                        <p>Most CSS-in-JS libraries provide theming capabilities:</p>
+                        
+                        <pre><code class="language-jsx">import { ThemeProvider } from 'styled-components';
+
+const theme = {
+  colors: {
+    primary: '#3498db',
+    secondary: '#e74c3c',
+    text: '#333',
+    background: '#f9f9f9'
+  },
+  fonts: {
+    body: 'Roboto, sans-serif',
+    heading: 'Montserrat, sans-serif'
+  },
+  spacing: {
+    small: '8px',
+    medium: '16px',
+    large: '24px'
+  }
+};
+
+const Button = styled.button`
+  background-color: ${props => props.theme.colors.primary};
+  color: white;
+  font-family: ${props => props.theme.fonts.body};
+  padding: ${props => props.theme.spacing.medium};
+`;
+
+function App() {
+  return (
+    &lt;ThemeProvider theme={theme}&gt;
+      &lt;Button&gt;Themed Button&lt;/Button&gt;
+    &lt;/ThemeProvider&gt;
+  );
+}</code></pre>
+                        
+                        <h4>Global Styles</h4>
+                        <p>CSS-in-JS libraries also provide ways to define global styles:</p>
+                        
+                        <pre><code class="language-jsx">import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  a {
+    color: #3498db;
+    text-decoration: none;
+  }
+`;
+
+function App() {
+  return (
+    &lt;&gt;
+      &lt;GlobalStyle /&gt;
+      &lt;div&gt;Your app content&lt;/div&gt;
+    &lt;/&gt;
+  );
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Popular CSS-in-JS Libraries</h2>
+                        <p>Several CSS-in-JS libraries have emerged, each with its own approach and features. Let's explore the most popular ones:</p>
+                        
+                        <h3>Styled Components</h3>
+                        <p>Styled Components is one of the most popular CSS-in-JS libraries, focusing on component-based styling with tagged template literals.</p>
+                        
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Automatic critical CSS injection</li>
+                            <li>No class name bugs</li>
+                            <li>Easier deletion of CSS</li>
+                            <li>Simple dynamic styling</li>
+                            <li>Painless maintenance</li>
+                            <li>Automatic vendor prefixing</li>
+                        </ul>
+                        
+                        <h4>Basic Usage</h4>
+                        <pre><code class="language-jsx">import styled from 'styled-components';
+
+// Create a styled component
+const Title = styled.h1`
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+`;
+
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+`;
+
+// Use the components
+function App() {
+  return (
+    &lt;Wrapper&gt;
+      &lt;Title&gt;Hello World!&lt;/Title&gt;
+    &lt;/Wrapper&gt;
+  );
+}</code></pre>
+                        
+                        <h4>Extending Styles</h4>
+                        <pre><code class="language-jsx">const Button = styled.button`
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid palevioletred;
+  color: palevioletred;
+  margin: 0 1em;
+  padding: 0.25em 1em;
+`;
+
+// Extend the Button component
+const PrimaryButton = styled(Button)`
+  background: palevioletred;
+  color: white;
+`;</code></pre>
+                        
+                        <h4>Adapting Based on Props</h4>
+                        <pre><code class="language-jsx">const Button = styled.button`
+  background: ${props => props.primary ? 'palevioletred' : 'white'};
+  color: ${props => props.primary ? 'white' : 'palevioletred'};
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Button&gt;Normal Button&lt;/Button&gt;
+      &lt;Button primary&gt;Primary Button&lt;/Button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+                        
+                        <h3>Emotion</h3>
+                        <p>Emotion is a flexible CSS-in-JS library designed for high performance and developer experience.</p>
+                        
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Highly performant</li>
+                            <li>Flexible and composable</li>
+                            <li>Works with and without React</li>
+                            <li>Supports source maps</li>
+                            <li>Minimal size</li>
+                        </ul>
+                        
+                        <h4>Basic Usage with React</h4>
+                        <pre><code class="language-jsx">/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
+
+const style = css`
+  color: hotpink;
+`;
+
+function App() {
+  return (
+    &lt;div css={style}&gt;
+      This has a hotpink color
+    &lt;/div&gt;
+  );
+}</code></pre>
+                        
+                        <h4>Styled Components API</h4>
+                        <pre><code class="language-jsx">import styled from '@emotion/styled';
+
+const Button = styled.button`
+  color: ${props => props.primary ? 'white' : 'hotpink'};
+  background-color: ${props => props.primary ? 'hotpink' : 'white'};
+  border: 2px solid hotpink;
+  border-radius: 3px;
+`;
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Button&gt;Normal Button&lt;/Button&gt;
+      &lt;Button primary&gt;Primary Button&lt;/Button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+                        
+                        <h4>Object Styles</h4>
+                        <pre><code class="language-jsx">/** @jsx jsx */
+import { jsx } from '@emotion/react';
+
+function App() {
+  return (
+    &lt;div
+      css={{
+        color: 'hotpink',
+        '&:hover': {
+          color: 'darkorchid'
+        }
+      }}
+    &gt;
+      This has a hotpink color and turns darkorchid on hover
+    &lt;/div&gt;
+  );
+}</code></pre>
+                        
+                        <h3>JSS</h3>
+                        <p>JSS is a more authoring tool that allows you to use JavaScript to describe styles. It's used by Material-UI and other libraries.</p>
+                        
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Framework agnostic</li>
+                            <li>Supports plugins</li>
+                            <li>Small size</li>
+                            <li>High performance</li>
+                        </ul>
+                        
+                        <h4>Basic Usage</h4>
+                        <pre><code class="language-jsx">import { createUseStyles } from 'react-jss';
+
+// Create a styles object
+const useStyles = createUseStyles({
+  myButton: {
+    color: 'green',
+    margin: {
+      top: 5,
+      right: 0,
+      bottom: 0,
+      left: '1rem'
+    },
+    '& span': {
+      fontWeight: 'bold'
+    }
+  },
+  myLabel: {
+    fontStyle: 'italic'
+  }
+});
+
+function Button() {
+  const classes = useStyles();
+  return (
+    &lt;button className={classes.myButton}&gt;
+      &lt;span className={classes.myLabel}&gt;Click me!&lt;/span&gt;
+    &lt;/button&gt;
+  );
+}</code></pre>
+                        
+                        <h4>Dynamic Values</h4>
+                        <pre><code class="language-jsx">const useStyles = createUseStyles({
+  myButton: {
+    padding: props => props.size === 'small' ? '5px 10px' : '10px 20px',
+    background: props => props.primary ? 'blue' : 'gray',
+    color: 'white'
+  }
+});
+
+function Button({ size, primary, children }) {
+  const classes = useStyles({ size, primary });
+  return (
+    &lt;button className={classes.myButton}&gt;
+      {children}
+    &lt;/button&gt;
+  );
+}</code></pre>
+                        
+                        <h3>CSS Modules</h3>
+                        <p>While not strictly CSS-in-JS, CSS Modules is a popular approach that provides local scoping for CSS classes and is often used alongside JavaScript frameworks.</p>
+                        
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Local scope by default</li>
+                            <li>Explicit dependencies</li>
+                            <li>No runtime overhead</li>
+                            <li>Works with existing CSS</li>
+                        </ul>
+                        
+                        <h4>Basic Usage</h4>
+                        <pre><code class="language-css">/* Button.module.css */
+.button {
+  background-color: blue;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+}
+
+.primary {
+  background-color: green;
+}
+
+.large {
+  font-size: 1.2rem;
+  padding: 12px 20px;
+}</code></pre>
+                        
+                        <pre><code class="language-jsx">// Button.jsx
+import React from 'react';
+import styles from './Button.module.css';
+
+function Button({ primary, large, children }) {
+  const buttonClass = `${styles.button} ${primary ? styles.primary : ''} ${large ? styles.large : ''}`;
+  
+  return (
+    &lt;button className={buttonClass}&gt;
+      {children}
+    &lt;/button&gt;
+  );
+}</code></pre>
+                        
+                        <h3>Comparison of CSS-in-JS Libraries</h3>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Library</th>
+                                    <th>Approach</th>
+                                    <th>Bundle Size</th>
+                                    <th>Runtime</th>
+                                    <th>Framework Support</th>
+                                    <th>Learning Curve</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Styled Components</td>
+                                    <td>Tagged template literals</td>
+                                    <td>~12.5kB (gzipped)</td>
+                                    <td>Yes</td>
+                                    <td>React, React Native</td>
+                                    <td>Low</td>
+                                </tr>
+                                <tr>
+                                    <td>Emotion</td>
+                                    <td>Multiple APIs (css prop, styled)</td>
+                                    <td>~7.9kB (gzipped)</td>
+                                    <td>Yes</td>
+                                    <td>Framework agnostic, React</td>
+                                    <td>Low</td>
+                                </tr>
+                                <tr>
+                                    <td>JSS</td>
+                                    <td>JavaScript objects</td>
+                                    <td>~6.6kB (gzipped)</td>
+                                    <td>Yes</td>
+                                    <td>Framework agnostic</td>
+                                    <td>Medium</td>
+                                </tr>
+                                <tr>
+                                    <td>CSS Modules</td>
+                                    <td>Build-time CSS transformation</td>
+                                    <td>0kB (build-time only)</td>
+                                    <td>No</td>
+                                    <td>Framework agnostic</td>
+                                    <td>Very Low</td>
+                                </tr>
+                                <tr>
+                                    <td>Linaria</td>
+                                    <td>Zero-runtime CSS-in-JS</td>
+                                    <td>0kB (build-time only)</td>
+                                    <td>No</td>
+                                    <td>Framework agnostic</td>
+                                    <td>Medium</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced CSS-in-JS Techniques</h2>
+                        <p>Now that we've covered the basics, let's explore some advanced techniques and patterns used in CSS-in-JS.</p>
+                        
+                        <h3>Component Composition</h3>
+                        <p>CSS-in-JS libraries make it easy to compose styles by extending components:</p>
+                        
+                        <pre><code class="language-jsx">import styled from 'styled-components';
+
+// Base button component
+const Button = styled.button`
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+`;
+
+// Primary button extends the base button
+const PrimaryButton = styled(Button)`
+  background-color: #3498db;
+  color: white;
+  border: none;
+  
+  &:hover {
+    background-color: #2980b9;
+  }
+`;
+
+// Secondary button also extends the base button
+const SecondaryButton = styled(Button)`
+  background-color: white;
+  color: #3498db;
+  border: 2px solid #3498db;
+  
+  &:hover {
+    background-color: #f8f9fa;
+  }
+`;
+
+// Danger button extends the primary button but changes colors
+const DangerButton = styled(PrimaryButton)`
+  background-color: #e74c3c;
+  
+  &:hover {
+    background-color: #c0392b;
+  }
+`;</code></pre>
+                        
+                        <h3>Style Objects and Helper Functions</h3>
+                        <p>You can create reusable style objects and helper functions to maintain consistency:</p>
+                        
+                        <pre><code class="language-jsx">// Helper functions for common styles
+const flexCenter = `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ellipsis = `
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+// Reusable style objects
+const boxShadows = {
+  small: '0 2px 4px rgba(0, 0, 0, 0.1)',
+  medium: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  large: '0 8px 16px rgba(0, 0, 0, 0.1)'
+};
+
+// Using the helpers and objects
+const Card = styled.div`
+  ${flexCenter}
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: ${props => boxShadows[props.elevation || 'small']};
+`;
+
+const CardTitle = styled.h3`
+  ${ellipsis}
+  max-width: 100%;
+  margin-bottom: 10px;
+`;</code></pre>
+                        
+                        <h3>Theming and Design Systems</h3>
+                        <p>CSS-in-JS is particularly powerful for implementing design systems:</p>
+                        
+                        <pre><code class="language-jsx">// theme.js
+const theme = {
+  colors: {
+    primary: {
+      main: '#3498db',
+      light: '#5dade2',
+      dark: '#2980b9',
+      contrastText: '#ffffff'
+    },
+    secondary: {
+      main: '#2ecc71',
+      light: '#58d68d',
+      dark: '#27ae60',
+      contrastText: '#ffffff'
+    },
+    error: {
+      main: '#e74c3c',
+      light: '#ec7063',
+      dark: '#c0392b',
+      contrastText: '#ffffff'
+    },
+    text: {
+      primary: '#333333',
+      secondary: '#666666',
+      disabled: '#999999'
+    },
+    background: {
+      default: '#ffffff',
+      paper: '#f5f5f5'
+    }
+  },
+  typography: {
+    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+    fontSize: 16,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+    fontWeightBold: 700,
+    h1: {
+      fontSize: '2.5rem',
+      fontWeight: 500,
+      lineHeight: 1.2
+    },
+    h2: {
+      fontSize: '2rem',
+      fontWeight: 500,
+      lineHeight: 1.3
+    },
+    // ... other typography styles
+  },
+  spacing: (factor) => `${0.25 * factor}rem`,
+  breakpoints: {
+    xs: '0px',
+    sm: '600px',
+    md: '960px',
+    lg: '1280px',
+    xl: '1920px'
+  },
+  shadows: [
+    'none',
+    '0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)',
+    // ... more shadow levels
+  ],
+  shape: {
+    borderRadius: 4
+  },
+  transitions: {
+    easing: {
+      easeInOut: 'cubic-bezier(0.4, 0, 0.2, 1)',
+      easeOut: 'cubic-bezier(0.0, 0, 0.2, 1)',
+      easeIn: 'cubic-bezier(0.4, 0, 1, 1)',
+      sharp: 'cubic-bezier(0.4, 0, 0.6, 1)'
+    },
+    duration: {
+      shortest: 150,
+      shorter: 200,
+      short: 250,
+      standard: 300,
+      complex: 375,
+      enteringScreen: 225,
+      leavingScreen: 195
+    }
+  }
+};
+
+export default theme;</code></pre>
+                        
+                        <pre><code class="language-jsx">// Button.jsx
+import styled from 'styled-components';
+
+const Button = styled.button`
+  font-family: ${props => props.theme.typography.fontFamily};
+  font-weight: ${props => props.theme.typography.fontWeightMedium};
+  font-size: 1rem;
+  padding: ${props => props.theme.spacing(2)} ${props => props.theme.spacing(4)};
+  border-radius: ${props => props.theme.shape.borderRadius}px;
+  transition: background-color ${props => props.theme.transitions.duration.short}ms ${props => props.theme.transitions.easing.easeInOut};
+  
+  /* Variant styles */
+  background-color: ${props => {
+    if (props.variant === 'contained') {
+      return props.color ? props.theme.colors[props.color].main : props.theme.colors.primary.main;
+    }
+    return 'transparent';
+  }};
+  
+  color: ${props => {
+    if (props.variant === 'contained') {
+      return props.color ? props.theme.colors[props.color].contrastText : props.theme.colors.primary.contrastText;
+    }
+    return props.color ? props.theme.colors[props.color].main : props.theme.colors.primary.main;
+  }};
+  
+  border: ${props => {
+    if (props.variant === 'outlined') {
+      return `1px solid ${props.color ? props.theme.colors[props.color].main : props.theme.colors.primary.main}`;
+    }
+    return 'none';
+  }};
+  
+  &:hover {
+    background-color: ${props => {
+      if (props.variant === 'contained') {
+        return props.color ? props.theme.colors[props.color].dark : props.theme.colors.primary.dark;
+      }
+      return props.color ? props.theme.colors[props.color].light + '33' : props.theme.colors.primary.light + '33';
+    }};
+  }
+  
+  /* Size styles */
+  ${props => props.size === 'small' && `
+    padding: ${props.theme.spacing(1)} ${props.theme.spacing(2)};
+    font-size: 0.875rem;
+  `}
+  
+  ${props => props.size === 'large' && `
+    padding: ${props.theme.spacing(3)} ${props.theme.spacing(6)};
+    font-size: 1.125rem;
+  `}
+  
+  /* Disabled styles */
+  ${props => props.disabled && `
+    opacity: 0.5;
+    cursor: not-allowed;
+    &:hover {
+      background-color: ${
+        props.variant === 'contained' 
+          ? props.color ? props.theme.colors[props.color].main : props.theme.colors.primary.main
+          : 'transparent'
+      };
+    }
+  `}
+`;
+
+export default Button;</code></pre>
+                        
+                        <h3>Server-Side Rendering</h3>
+                        <p>CSS-in-JS libraries provide solutions for server-side rendering (SSR) to avoid the flash of unstyled content:</p>
+                        
+                        <pre><code class="language-jsx">// Example with styled-components and Next.js
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
+
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
+
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(&lt;App {...props} /&gt;),
+        });
+
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          &lt;&gt;
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          &lt;/&gt;
+        ),
+      };
+    } finally {
+      sheet.seal();
+    }
+  }
+
+  render() {
+    return (
+      &lt;Html&gt;
+        &lt;Head /&gt;
+        &lt;body&gt;
+          &lt;Main /&gt;
+          &lt;NextScript /&gt;
+        &lt;/body&gt;
+      &lt;/Html&gt;
+    );
+  }
+}</code></pre>
+                        
+                        <h3>Zero-Runtime CSS-in-JS</h3>
+                        <p>A newer trend in CSS-in-JS is zero-runtime solutions that extract CSS at build time:</p>
+                        
+                        <pre><code class="language-jsx">// Example with Linaria
+import { styled } from '@linaria/react';
+
+const Button = styled.button`
+  background-color: ${props => props.primary ? 'blue' : 'gray'};
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+// This gets compiled to regular CSS at build time
+// No runtime overhead!</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Benefits of Zero-Runtime CSS-in-JS</h4>
+                            <ul>
+                                <li>No runtime performance overhead</li>
+                                <li>Smaller bundle size</li>
+                                <li>Better performance on mobile devices</li>
+                                <li>Still provides the developer experience benefits of CSS-in-JS</li>
+                            </ul>
+                            <p>Popular zero-runtime CSS-in-JS libraries include Linaria, Astroturf, and vanilla-extract.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS-in-JS Best Practices</h2>
+                        <p>Let's explore some best practices for using CSS-in-JS effectively in your projects.</p>
+                        
+                        <h3>Performance Considerations</h3>
+                        <p>CSS-in-JS can impact performance if not used carefully:</p>
+                        
+                        <h4>Avoid Creating Styles in Render</h4>
+                        <pre><code class="language-jsx">// Bad: Creates new styles on every render
+function Button({ color }) {
+  // This creates a new component on every render
+  const DynamicButton = styled.button`
+    background-color: ${color};
+    color: white;
+    padding: 10px 15px;
+  `;
+  
+  return &lt;DynamicButton&gt;Click Me&lt;/DynamicButton&gt;;
+}
+
+// Good: Create styles outside the component
+const Button = styled.button`
+  background-color: ${props => props.color};
+  color: white;
+  padding: 10px 15px;
+`;
+
+function ButtonComponent({ color }) {
+  return &lt;Button color={color}&gt;Click Me&lt;/Button&gt;;
+}</code></pre>
+                        
+                        <h4>Use Memoization for Dynamic Styles</h4>
+                        <pre><code class="language-jsx">import { useMemo } from 'react';
+import { css } from '@emotion/react';
+
+function Component({ color, fontSize }) {
+  // Memoize the styles to prevent recalculation on every render
+  const styles = useMemo(() => ({
+    container: css`
+      background-color: ${color};
+      font-size: ${fontSize}px;
+    `
+  }), [color, fontSize]);
+  
+  return &lt;div css={styles.container}&gt;Content&lt;/div&gt;;
+}</code></pre>
+                        
+                        <h4>Consider Zero-Runtime Solutions</h4>
+                        <p>For performance-critical applications, consider using zero-runtime CSS-in-JS libraries like Linaria or vanilla-extract.</p>
+                        
+                        <h3>Organization and Maintainability</h3>
+                        <p>Proper organization is key to maintaining CSS-in-JS codebases:</p>
+                        
+                        <h4>Separate Styled Components from Logic</h4>
+                        <pre><code class="language-jsx">// components/Button/styles.js
+import styled from 'styled-components';
+
+export const ButtonContainer = styled.button`
+  background-color: ${props => props.primary ? 'blue' : 'gray'};
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+`;
+
+// components/Button/index.js
+import React from 'react';
+import { ButtonContainer } from './styles';
+
+function Button({ primary, children, onClick }) {
+  return (
+    &lt;ButtonContainer primary={primary} onClick={onClick}&gt;
+      {children}
+    &lt;/ButtonContainer&gt;
+  );
+}
+
+export default Button;</code></pre>
+                        
+                        <h4>Create a Component Library</h4>
+                        <p>Organize your styled components into a reusable library:</p>
+                        
+                        <pre><code class="language-jsx">// components/index.js
+export { default as Button } from './Button';
+export { default as Card } from './Card';
+export { default as Input } from './Input';
+// ... other components
+
+// Usage
+import { Button, Card, Input } from './components';</code></pre>
+                        
+                        <h4>Use Consistent Naming Conventions</h4>
+                        <pre><code class="language-jsx">// Consistent naming for styled components
+const CardContainer = styled.div`...`;
+const CardHeader = styled.div`...`;
+const CardTitle = styled.h3`...`;
+const CardContent = styled.div`...`;
+const CardFooter = styled.div`...`;</code></pre>
+                        
+                        <h3>Integration with Existing Codebases</h3>
+                        <p>When integrating CSS-in-JS into existing projects:</p>
+                        
+                        <h4>Gradual Migration</h4>
+                        <p>Start by converting new components to CSS-in-JS while leaving existing CSS as is.</p>
+                        
+                        <h4>Interoperability with Global CSS</h4>
+                        <pre><code class="language-jsx">// Using className alongside styled-components
+const StyledButton = styled.button`
+  background-color: blue;
+  color: white;
+  padding: 10px 15px;
+`;
+
+function Button({ className, children }) {
+  return (
+    &lt;StyledButton className={className}&gt;
+      {children}
+    &lt;/StyledButton&gt;
+  );
+}</code></pre>
+                        
+                        <h4>Using CSS Modules with CSS-in-JS</h4>
+                        <pre><code class="language-jsx">import styles from './legacy.module.css';
+import styled from 'styled-components';
+
+const ModernComponent = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+function Component() {
+  return (
+    &lt;ModernComponent&gt;
+      &lt;div className={styles.legacyClass}&gt;
+        Legacy content
+      &lt;/div&gt;
+      Modern content
+    &lt;/ModernComponent&gt;
+  );
+}</code></pre>
+                        
+                        <h3>Testing CSS-in-JS</h3>
+                        <p>Testing components with CSS-in-JS requires some special considerations:</p>
+                        
+                        <h4>Setting Up Theme Provider for Tests</h4>
+                        <pre><code class="language-jsx">// test-utils.js
+import React from 'react';
+import { render } from '@testing-library/react';
+import { ThemeProvider } from 'styled-components';
+import theme from './theme';
+
+const AllTheProviders = ({ children }) => {
+  return (
+    &lt;ThemeProvider theme={theme}&gt;
+      {children}
+    &lt;/ThemeProvider&gt;
+  );
+};
+
+const customRender = (ui, options) =>
+  render(ui, { wrapper: AllTheProviders, ...options });
+
+// re-export everything
+export * from '@testing-library/react';
+
+// override render method
+export { customRender as render };</code></pre>
+                        
+                        <h4>Testing Styled Components</h4>
+                        <pre><code class="language-jsx">// Button.test.js
+import React from 'react';
+import { render, screen } from './test-utils';
+import Button from './Button';
+
+test('renders a primary button with correct styles', () => {
+  render(&lt;Button primary&gt;Click Me&lt;/Button&gt;);
+  const button = screen.getByText('Click Me');
+  
+  // Check that the button has the correct styles
+  expect(button).toHaveStyleRule('background-color', 'blue');
+  expect(button).toHaveStyleRule('color', 'white');
+});</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Pros and Cons of CSS-in-JS</h2>
+                        <p>Let's evaluate the advantages and disadvantages of CSS-in-JS to help you decide if it's right for your project.</p>
+                        
+                        <h3>Advantages of CSS-in-JS</h3>
+                        <ul>
+                            <li><strong>Scoped Styles:</strong> CSS-in-JS provides automatic scoping, eliminating the risk of style conflicts</li>
+                            <li><strong>Dynamic Styling:</strong> Styles can easily adapt based on props and state</li>
+                            <li><strong>Colocated Code:</strong> Styles live with the components they style, improving maintainability</li>
+                            <li><strong>Dead Code Elimination:</strong> Unused styles are automatically removed when components are deleted</li>
+                            <li><strong>Critical CSS Extraction:</strong> Many libraries automatically extract and inline critical CSS</li>
+                            <li><strong>TypeScript Integration:</strong> Better type safety for styles and props</li>
+                            <li><strong>Full JavaScript Power:</strong> Access to JavaScript variables, functions, and logic in styles</li>
+                            <li><strong>Theming:</strong> Robust theming capabilities with access to theme values in components</li>
+                        </ul>
+                        
+                        <h3>Disadvantages of CSS-in-JS</h3>
+                        <ul>
+                            <li><strong>Runtime Overhead:</strong> Most CSS-in-JS libraries add some JavaScript overhead</li>
+                            <li><strong>Bundle Size:</strong> Adds additional code to your JavaScript bundle</li>
+                            <li><strong>Learning Curve:</strong> Requires learning new APIs and patterns</li>
+                            <li><strong>Build Complexity:</strong> May require additional build configuration</li>
+                            <li><strong>Developer Tools:</strong> Browser DevTools integration isn't always as seamless as with traditional CSS</li>
+                            <li><strong>SSR Complexity:</strong> Server-side rendering requires additional setup</li>
+                            <li><strong>Legacy Browser Support:</strong> Some features may require polyfills for older browsers</li>
+                        </ul>
+                        
+                        <h3>When to Use CSS-in-JS</h3>
+                        <p>CSS-in-JS is particularly well-suited for:</p>
+                        
+                        <ul>
+                            <li>Component-based applications (React, Vue, etc.)</li>
+                            <li>Projects where component reusability is important</li>
+                            <li>Applications with complex theming requirements</li>
+                            <li>Teams familiar with JavaScript who want to minimize context switching</li>
+                            <li>Projects where styles need to be dynamically generated based on props or state</li>
+                        </ul>
+                        
+                        <h3>When to Consider Alternatives</h3>
+                        <p>Traditional CSS approaches might be better for:</p>
+                        
+                        <ul>
+                            <li>Performance-critical applications where every kilobyte matters</li>
+                            <li>Projects with significant existing CSS that would be costly to migrate</li>
+                            <li>Teams with specialized CSS developers who prefer traditional CSS workflows</li>
+                            <li>Simple websites or applications where the benefits of CSS-in-JS don't outweigh the costs</li>
+                            <li>Projects where browser support for older versions is critical</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Finding the Right Balance</h4>
+                            <p>Many projects use a hybrid approach:</p>
+                            <ul>
+                                <li>Global styles and resets with traditional CSS</li>
+                                <li>Component-specific styles with CSS-in-JS</li>
+                                <li>Consider zero-runtime CSS-in-JS for performance-critical applications</li>
+                                <li>Use CSS Modules as a middle ground between traditional CSS and full CSS-in-JS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Building a Component Library with CSS-in-JS</h2>
+                        <p>Let's put your CSS-in-JS knowledge to practice by building a small component library using styled-components.</p>
+                        
+                        <h3>Exercise: Create a Themed Component Library</h3>
+                        <p>In this exercise, you'll create a small component library with a theme system using styled-components.</p>
+                        
+                        <h4>Step 1: Set Up the Project</h4>
+                        <pre><code class="language-bash">mkdir css-in-js-exercise
+cd css-in-js-exercise
+npm init -y
+npm install react react-dom styled-components
+npm install --save-dev parcel</code></pre>
+                        
+                        <h4>Step 2: Create the Theme</h4>
+                        <pre><code class="language-jsx">// src/theme.js
+const theme = {
+  colors: {
+    primary: '#3498db',
+    secondary: '#2ecc71',
+    danger: '#e74c3c',
+    warning: '#f39c12',
+    info: '#1abc9c',
+    light: '#f8f9fa',
+    dark: '#343a40',
+    text: {
+      primary: '#333333',
+      secondary: '#666666',
+      light: '#ffffff'
+    }
+  },
+  spacing: {
+    xs: '0.25rem',
+    sm: '0.5rem',
+    md: '1rem',
+    lg: '1.5rem',
+    xl: '2rem'
+  },
+  typography: {
+    fontFamily: "'Roboto', sans-serif",
+    fontSize: {
+      small: '0.875rem',
+      medium: '1rem',
+      large: '1.25rem',
+      xlarge: '1.5rem'
+    },
+    fontWeight: {
+      regular: 400,
+      medium: 500,
+      bold: 700
+    }
+  },
+  borderRadius: {
+    small: '0.25rem',
+    medium: '0.5rem',
+    large: '1rem',
+    round: '50%'
+  },
+  shadows: {
+    small: '0 2px 4px rgba(0, 0, 0, 0.1)',
+    medium: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    large: '0 8px 16px rgba(0, 0, 0, 0.1)'
+  },
+  transitions: {
+    short: '0.2s ease',
+    medium: '0.3s ease',
+    long: '0.5s ease'
+  }
+};
+
+export default theme;</code></pre>
+                        
+                        <h4>Step 3: Create Button Component</h4>
+                        <pre><code class="language-jsx">// src/components/Button/index.js
+import styled, { css } from 'styled-components';
+
+const getButtonColors = (props) => {
+  const { variant, theme, color = 'primary' } = props;
+  const colorValue = theme.colors[color];
+  
+  if (variant === 'outlined') {
+    return css`
+      color: ${colorValue};
+      background-color: transparent;
+      border: 1px solid ${colorValue};
+      
+      &:hover {
+        background-color: ${colorValue}20;
+      }
+    `;
+  }
+  
+  if (variant === 'text') {
+    return css`
+      color: ${colorValue};
+      background-color: transparent;
+      border: none;
+      
+      &:hover {
+        background-color: ${colorValue}10;
+      }
+    `;
+  }
+  
+  // Default is 'contained'
+  return css`
+    color: ${theme.colors.text.light};
+    background-color: ${colorValue};
+    border: none;
+    
+    &:hover {
+      background-color: ${colorValue}dd;
+    }
+  `;
+};
+
+const getSizeStyles = (props) => {
+  const { size = 'medium', theme } = props;
+  
+  if (size === 'small') {
+    return css`
+      padding: ${theme.spacing.xs} ${theme.spacing.md};
+      font-size: ${theme.typography.fontSize.small};
+    `;
+  }
+  
+  if (size === 'large') {
+    return css`
+      padding: ${theme.spacing.md} ${theme.spacing.xl};
+      font-size: ${theme.typography.fontSize.large};
+    `;
+  }
+  
+  // Default is 'medium'
+  return css`
+    padding: ${theme.spacing.sm} ${theme.spacing.lg};
+    font-size: ${theme.typography.fontSize.medium};
+  `;
+};
+
+const Button = styled.button`
+  font-family: ${props => props.theme.typography.fontFamily};
+  font-weight: ${props => props.theme.typography.fontWeight.medium};
+  border-radius: ${props => props.theme.borderRadius.small};
+  cursor: pointer;
+  transition: all ${props => props.theme.transitions.short};
+  
+  /* Apply color styles based on variant */
+  ${props => getButtonColors(props)}
+  
+  /* Apply size styles */
+  ${props => getSizeStyles(props)}
+  
+  /* Full width option */
+  ${props => props.fullWidth && css`
+    width: 100%;
+  `}
+  
+  /* Disabled state */
+  ${props => props.disabled && css`
+    opacity: 0.5;
+    cursor: not-allowed;
+    
+    &:hover {
+      background-color: ${
+        props.variant === 'contained' 
+          ? props.theme.colors[props.color || 'primary'] 
+          : props.variant === 'outlined' 
+            ? 'transparent' 
+            : 'transparent'
+      };
+    }
+  `}
+`;
+
+export default Button;</code></pre>
+                        
+                        <h4>Step 4: Create Card Component</h4>
+                        <pre><code class="language-jsx">// src/components/Card/index.js
+import styled from 'styled-components';
+
+const Card = styled.div`
+  background-color: white;
+  border-radius: ${props => props.theme.borderRadius.medium};
+  box-shadow: ${props => props.theme.shadows.small};
+  overflow: hidden;
+  transition: box-shadow ${props => props.theme.transitions.short};
+  
+  &:hover {
+    box-shadow: ${props => props.theme.shadows.medium};
+  }
+`;
+
+const CardHeader = styled.div`
+  padding: ${props => props.theme.spacing.md};
+  border-bottom: 1px solid ${props => props.theme.colors.light};
+  
+  ${props => props.color && `
+    background-color: ${props.theme.colors[props.color]};
+    color: ${props.theme.colors.text.light};
+  `}
+`;
+
+const CardTitle = styled.h3`
+  margin: 0;
+  font-size: ${props => props.theme.typography.fontSize.large};
+  font-weight: ${props => props.theme.typography.fontWeight.medium};
+`;
+
+const CardContent = styled.div`
+  padding: ${props => props.theme.spacing.md};
+`;
+
+const CardFooter = styled.div`
+  padding: ${props => props.theme.spacing.md};
+  border-top: 1px solid ${props => props.theme.colors.light};
+  display: flex;
+  justify-content: flex-end;
+  gap: ${props => props.theme.spacing.sm};
+`;
+
+Card.Header = CardHeader;
+Card.Title = CardTitle;
+Card.Content = CardContent;
+Card.Footer = CardFooter;
+
+export default Card;</code></pre>
+                        
+                        <h4>Step 5: Create Input Component</h4>
+                        <pre><code class="language-jsx">// src/components/Input/index.js
+import styled, { css } from 'styled-components';
+
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: ${props => props.theme.spacing.md};
+`;
+
+const Label = styled.label`
+  font-size: ${props => props.theme.typography.fontSize.small};
+  margin-bottom: ${props => props.theme.spacing.xs};
+  color: ${props => props.theme.colors.text.secondary};
+`;
+
+const StyledInput = styled.input`
+  font-family: ${props => props.theme.typography.fontFamily};
+  font-size: ${props => props.theme.typography.fontSize.medium};
+  padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.md};
+  border: 1px solid ${props => props.error ? props.theme.colors.danger : props.theme.colors.light};
+  border-radius: ${props => props.theme.borderRadius.small};
+  transition: border-color ${props => props.theme.transitions.short};
+  
+  &:focus {
+    outline: none;
+    border-color: ${props => props.error ? props.theme.colors.danger : props.theme.colors.primary};
+  }
+  
+  ${props => props.fullWidth && css`
+    width: 100%;
+  `}
+  
+  ${props => props.disabled && css`
+    background-color: ${props.theme.colors.light};
+    cursor: not-allowed;
+  `}
+`;
+
+const ErrorMessage = styled.div`
+  color: ${props => props.theme.colors.danger};
+  font-size: ${props => props.theme.typography.fontSize.small};
+  margin-top: ${props => props.theme.spacing.xs};
+`;
+
+const Input = ({ label, error, ...props }) => {
+  return (
+    <InputContainer>
+      {label && <Label>{label}</Label>}
+      <StyledInput error={error} {...props} />
+      {error && <ErrorMessage>{error}</ErrorMessage>}
+    </InputContainer>
+  );
+};
+
+export default Input;</code></pre>
+                        
+                        <h4>Step 6: Create App Component</h4>
+                        <pre><code class="language-jsx">// src/App.js
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import theme from './theme';
+import Button from './components/Button';
+import Card from './components/Card';
+import Input from './components/Input';
+import { GlobalStyle } from './GlobalStyle';
+
+const App = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: ''
+  });
+  
+  const [errors, setErrors] = useState({});
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    
+    // Clear error when user types
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Simple validation
+    const newErrors = {};
+    if (!formData.name) {
+      newErrors.name = 'Name is required';
+    }
+    
+    if (!formData.email) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email is invalid';
+    }
+    
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+    
+    // Form is valid
+    alert('Form submitted successfully!');
+  };
+  
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem' }}>
+        <h1>CSS-in-JS Component Library</h1>
+        
+        <h2>Buttons</h2>
+        <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
+          <Button>Default Button</Button>
+          <Button color="secondary">Secondary</Button>
+          <Button color="danger">Danger</Button>
+          <Button variant="outlined">Outlined</Button>
+          <Button variant="text">Text Button</Button>
+          <Button size="small">Small</Button>
+          <Button size="large">Large</Button>
+          <Button disabled>Disabled</Button>
+        </div>
+        
+        <h2>Card</h2>
+        <Card style={{ marginBottom: '2rem' }}>
+          <Card.Header>
+            <Card.Title>Card Title</Card.Title>
+          </Card.Header>
+          <Card.Content>
+            <p>This is a card component built with styled-components.</p>
+            <p>It demonstrates how to create compound components with CSS-in-JS.</p>
+          </Card.Content>
+          <Card.Footer>
+            <Button variant="text">Cancel</Button>
+            <Button>Submit</Button>
+          </Card.Footer>
+        </Card>
+        
+        <Card style={{ marginBottom: '2rem' }}>
+          <Card.Header color="primary">
+            <Card.Title>Colored Header</Card.Title>
+          </Card.Header>
+          <Card.Content>
+            <p>This card has a colored header using the theme's primary color.</p>
+          </Card.Content>
+        </Card>
+        
+        <h2>Form</h2>
+        <Card>
+          <Card.Header>
+            <Card.Title>Contact Form</Card.Title>
+          </Card.Header>
+          <Card.Content>
+            <form onSubmit={handleSubmit}>
+              <Input
+                label="Name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                error={errors.name}
+                fullWidth
+              />
+              <Input
+                label="Email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                error={errors.email}
+                fullWidth
+              />
+              <div style={{ marginTop: '1rem' }}>
+                <Button type="submit">Submit</Button>
+              </div>
+            </form>
+          </Card.Content>
+        </Card>
+      </div>
+    </ThemeProvider>
+  );
+};
+
+export default App;</code></pre>
+                        
+                        <h4>Step 7: Create Global Styles</h4>
+                        <pre><code class="language-jsx">// src/GlobalStyle.js
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: ${props => props.theme.typography.fontFamily};
+    font-size: ${props => props.theme.typography.fontSize.medium};
+    line-height: 1.5;
+    color: ${props => props.theme.colors.text.primary};
+    background-color: ${props => props.theme.colors.light};
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+`;</code></pre>
+                        
+                        <h4>Step 8: Create Entry Point</h4>
+                        <pre><code class="language-jsx">// src/index.js
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<App />);</code></pre>
+                        
+                        <h4>Step 9: Create HTML File</h4>
+                        <pre><code class="language-html"><!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS-in-JS Exercise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="src/index.js"></script>
+</body>
+</html></code></pre>
+                        
+                        <h4>Step 10: Run the Project</h4>
+                        <pre><code class="language-bash">npx parcel index.html</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Extend your component library with these additional features:</p>
+                            <ol>
+                                <li>Create a dark mode theme and add a theme toggle</li>
+                                <li>Add a responsive grid system using styled-components</li>
+                                <li>Create a dropdown menu component</li>
+                                <li>Implement a modal dialog component</li>
+                                <li>Add animations to your components using keyframes from styled-components</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored CSS-in-JS, a modern approach to styling that combines the power of CSS with the flexibility of JavaScript. We've covered:</p>
+                        <ul>
+                            <li><strong>Core Concepts of CSS-in-JS</strong>: Component-scoped styles, dynamic styling based on props, theming, and global styles</li>
+                            <li><strong>Popular CSS-in-JS Libraries</strong>: Styled Components, Emotion, JSS, and CSS Modules</li>
+                            <li><strong>Advanced Techniques</strong>: Component composition, style objects, helper functions, theming, design systems, and server-side rendering</li>
+                            <li><strong>Best Practices</strong>: Performance considerations, organization, maintainability, and testing</li>
+                            <li><strong>Pros and Cons</strong>: The advantages and disadvantages of CSS-in-JS to help you decide if it's right for your project</li>
+                        </ul>
+                        
+                        <p>CSS-in-JS is a powerful approach that aligns well with component-based architectures, providing benefits like scoped styles, dynamic styling, and improved maintainability. However, it's important to consider the trade-offs, such as runtime overhead and increased bundle size, when deciding whether to use it in your projects.</p>
+                        
+                        <p>In the next lesson, we'll explore CSS Houdini, a set of low-level APIs that give developers direct access to the CSS engine, enabling more powerful and performant styling capabilities.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page43.html" class="btn">Previous: Advanced Animations</a>
+                        <a href="page45.html" class="btn">Next: CSS Houdini</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

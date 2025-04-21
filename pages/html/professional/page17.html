@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML APIs | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn about HTML5 APIs and how to use them to create interactive web applications.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="17">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html" class="active">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional HTML</h3>
+                <ul>
+                    <li><a href="page13.html">13. Advanced HTML Concepts</a></li>
+                    <li><a href="page14.html">14. HTML5 Semantic Elements</a></li>
+                    <li><a href="page15.html">15. HTML Forms Advanced</a></li>
+                    <li><a href="page16.html">16. HTML Media & Graphics</a></li>
+                    <li><a href="page17.html" class="active">17. HTML APIs</a></li>
+                    <li><a href="page18.html">18. Web Storage</a></li>
+                    <li><a href="page19.html">19. Geolocation API</a></li>
+                    <li><a href="page20.html">20. Drag & Drop API</a></li>
+                    <li><a href="page21.html">21. Web Workers</a></li>
+                    <li><a href="page22.html">22. Server-Sent Events</a></li>
+                    <li><a href="page23.html">23. WebSockets</a></li>
+                    <li><a href="page24.html">24. Responsive HTML</a></li>
+                    <li><a href="page25.html">25. HTML Accessibility</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 34%;"></div>
+                </div>
+                <p style="text-align: center;">Page 17 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>HTML5 APIs</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to HTML5 APIs</h2>
+                        <p>HTML5 introduced a rich set of JavaScript APIs that enable web developers to create more powerful, interactive, and feature-rich web applications. These APIs provide access to device features, storage capabilities, real-time communication, and much more.</p>
+                        
+                        <p>In this lesson, we'll explore the core HTML5 APIs and how they can be used to enhance web applications. We'll cover the fundamental concepts and provide practical examples for each API.</p>
+                        
+                        <div class="info-box">
+                            <h4>What are Web APIs?</h4>
+                            <p>Web APIs (Application Programming Interfaces) are sets of rules and protocols that allow different software applications to communicate with each other. In the context of web development, APIs provide JavaScript with the ability to interact with browser features, device hardware, and external services.</p>
+                            <p>HTML5 APIs are built into modern browsers and don't require additional plugins or extensions to function. They're designed to be:</p>
+                            <ul>
+                                <li><strong>Cross-browser compatible</strong> (with some feature detection required)</li>
+                                <li><strong>Secure</strong> with appropriate permission models</li>
+                                <li><strong>Standardized</strong> by W3C and other standards bodies</li>
+                                <li><strong>JavaScript-accessible</strong> through well-defined interfaces</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Overview of HTML5 APIs</h2>
+                        <p>HTML5 includes a wide range of APIs that can be categorized into several groups:</p>
+                        
+                        <h3>Storage APIs</h3>
+                        <ul>
+                            <li><strong>Web Storage API</strong> (localStorage and sessionStorage)</li>
+                            <li><strong>IndexedDB API</strong> for client-side database storage</li>
+                            <li><strong>Cache API</strong> for storing and retrieving network requests</li>
+                        </ul>
+                        
+                        <h3>Device Access APIs</h3>
+                        <ul>
+                            <li><strong>Geolocation API</strong> for accessing geographical location</li>
+                            <li><strong>Media Devices API</strong> for accessing cameras and microphones</li>
+                            <li><strong>Battery Status API</strong> for checking device battery status</li>
+                            <li><strong>Vibration API</strong> for controlling device vibration</li>
+                            <li><strong>Ambient Light API</strong> for detecting light levels</li>
+                        </ul>
+                        
+                        <h3>Communication APIs</h3>
+                        <ul>
+                            <li><strong>Fetch API</strong> for making HTTP requests</li>
+                            <li><strong>WebSockets API</strong> for real-time bidirectional communication</li>
+                            <li><strong>Server-Sent Events</strong> for server-to-client updates</li>
+                            <li><strong>WebRTC</strong> for peer-to-peer communication</li>
+                        </ul>
+                        
+                        <h3>Graphics and Media APIs</h3>
+                        <ul>
+                            <li><strong>Canvas API</strong> for 2D drawing</li>
+                            <li><strong>WebGL</strong> for 3D graphics</li>
+                            <li><strong>Web Audio API</strong> for audio processing</li>
+                            <li><strong>Media Capture and Streams API</strong> for working with audio/video streams</li>
+                        </ul>
+                        
+                        <h3>Performance and Integration APIs</h3>
+                        <ul>
+                            <li><strong>Web Workers API</strong> for background processing</li>
+                            <li><strong>Service Workers API</strong> for offline capabilities</li>
+                            <li><strong>Intersection Observer API</strong> for viewport detection</li>
+                            <li><strong>Page Visibility API</strong> for detecting if a page is visible</li>
+                            <li><strong>Performance API</strong> for measuring performance</li>
+                        </ul>
+                        
+                        <h3>User Interaction APIs</h3>
+                        <ul>
+                            <li><strong>Drag and Drop API</strong> for drag-and-drop interactions</li>
+                            <li><strong>Pointer Events API</strong> for handling various input types</li>
+                            <li><strong>Fullscreen API</strong> for fullscreen mode</li>
+                            <li><strong>Clipboard API</strong> for clipboard access</li>
+                            <li><strong>Notifications API</strong> for displaying notifications</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>API Support Considerations</h4>
+                            <p>When working with HTML5 APIs, it's important to:</p>
+                            <ul>
+                                <li>Check for browser support using feature detection</li>
+                                <li>Provide fallbacks for unsupported features</li>
+                                <li>Be aware of permission requirements</li>
+                                <li>Consider security implications</li>
+                                <li>Test across different browsers and devices</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Feature Detection</h2>
+                        <p>Before using any HTML5 API, it's essential to check if the browser supports it. This is called feature detection, and it's a more reliable approach than browser detection.</p>
+                        
+                        <h3>Basic Feature Detection</h3>
+                        <pre><code class="language-javascript">// Check if Geolocation API is supported
+if ('geolocation' in navigator) {
+    // Geolocation is available
+    console.log('Geolocation is supported');
+} else {
+    // Geolocation is not available
+    console.log('Geolocation is not supported');
+}
+
+// Check if Web Storage API is supported
+if (typeof(Storage) !== 'undefined') {
+    // Web Storage is available
+    console.log('Web Storage is supported');
+} else {
+    // Web Storage is not available
+    console.log('Web Storage is not supported');
+}
+
+// Check if Service Workers API is supported
+if ('serviceWorker' in navigator) {
+    // Service Workers are available
+    console.log('Service Workers are supported');
+} else {
+    // Service Workers are not available
+    console.log('Service Workers are not supported');
+}</code></pre>
+                        
+                        <h3>Using Modernizr</h3>
+                        <p>Modernizr is a JavaScript library that makes feature detection easier by providing a consistent API for checking browser capabilities.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Include Modernizr --&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+    // Check for Geolocation support
+    if (Modernizr.geolocation) {
+        // Geolocation is supported
+        console.log('Geolocation is supported');
+    } else {
+        // Geolocation is not supported
+        console.log('Geolocation is not supported');
+    }
+    
+    // Check for WebGL support
+    if (Modernizr.webgl) {
+        // WebGL is supported
+        console.log('WebGL is supported');
+    } else {
+        // WebGL is not supported
+        console.log('WebGL is not supported');
+    }
+    
+    // Check for multiple features
+    if (Modernizr.websockets && Modernizr.webworkers) {
+        // Both WebSockets and Web Workers are supported
+        console.log('Both WebSockets and Web Workers are supported');
+    }
+&lt;/script&gt;</code></pre>
+                        
+                        <h3>Creating Fallbacks</h3>
+                        <p>When a feature isn't supported, you should provide a fallback to ensure your application still works:</p>
+                        
+                        <pre><code class="language-javascript">// Example: Storage with fallback
+function saveData(key, value) {
+    if (typeof(Storage) !== 'undefined') {
+        // Use localStorage if available
+        localStorage.setItem(key, value);
+        return true;
+    } else {
+        // Fallback to cookies
+        document.cookie = `${key}=${value}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
+        return false;
+    }
+}
+
+function getData(key) {
+    if (typeof(Storage) !== 'undefined') {
+        // Use localStorage if available
+        return localStorage.getItem(key);
+    } else {
+        // Fallback to cookies
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.startsWith(key + '=')) {
+                return cookie.substring(key.length + 1);
+            }
+        }
+        return null;
+    }
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Feature Detection vs. Browser Detection</h4>
+                            <p>Feature detection is preferred over browser detection because:</p>
+                            <ul>
+                                <li>It tests for the actual feature rather than assuming based on browser</li>
+                                <li>It works with new browsers that may not be in your detection list</li>
+                                <li>It accounts for users who have disabled certain features</li>
+                                <li>It's more future-proof as browsers evolve</li>
+                            </ul>
+                            <p>Avoid code like this:</p>
+                            <pre><code class="language-javascript">// Bad practice: Browser detection
+if (navigator.userAgent.indexOf('Chrome') !== -1) {
+    // Chrome-specific code
+} else if (navigator.userAgent.indexOf('Firefox') !== -1) {
+    // Firefox-specific code
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Permissions API</h2>
+                        <p>Many HTML5 APIs require user permission to access sensitive features like location, camera, or notifications. The Permissions API provides a unified way to check and request permissions.</p>
+                        
+                        <h3>Checking Permission Status</h3>
+                        <pre><code class="language-javascript">// Check if the Permissions API is supported
+if ('permissions' in navigator) {
+    // Check the status of geolocation permission
+    navigator.permissions.query({ name: 'geolocation' })
+        .then(permissionStatus => {
+            console.log(`Geolocation permission: ${permissionStatus.state}`);
+            
+            // Permission states: 'granted', 'denied', or 'prompt'
+            if (permissionStatus.state === 'granted') {
+                // Permission already granted
+                getLocation();
+            } else if (permissionStatus.state === 'prompt') {
+                // We'll need to ask for permission
+                showPermissionExplanation();
+            } else if (permissionStatus.state === 'denied') {
+                // Permission was denied
+                showPermissionDeniedMessage();
+            }
+            
+            // Listen for changes to the permission state
+            permissionStatus.onchange = function() {
+                console.log(`Geolocation permission changed to: ${this.state}`);
+            };
+        })
+        .catch(error => {
+            console.error('Error checking permission:', error);
+        });
+} else {
+    console.log('Permissions API not supported');
+}</code></pre>
+                        
+                        <h3>Requesting Permissions</h3>
+                        <p>Permissions are typically requested when you try to use the API for the first time:</p>
+                        
+                        <pre><code class="language-javascript">// Request geolocation permission by using the API
+function requestGeolocation() {
+    navigator.geolocation.getCurrentPosition(
+        position => {
+            // Success callback - permission was granted
+            console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`);
+        },
+        error => {
+            // Error callback - permission was denied or there was an error
+            console.error('Geolocation error:', error.message);
+            
+            if (error.code === error.PERMISSION_DENIED) {
+                showPermissionDeniedMessage();
+            }
+        }
+    );
+}
+
+// Request notification permission
+function requestNotificationPermission() {
+    if ('Notification' in window) {
+        Notification.requestPermission()
+            .then(permission => {
+                if (permission === 'granted') {
+                    console.log('Notification permission granted');
+                    showNotification('Permission Granted', 'You will now receive notifications');
+                } else {
+                    console.log('Notification permission denied');
+                }
+            });
+    }
+}
+
+// Request camera/microphone permission
+function requestMediaPermission() {
+    if ('mediaDevices' in navigator) {
+        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+            .then(stream => {
+                // Permission granted, stream contains the media
+                console.log('Media permission granted');
+                // Use the stream
+                const videoElement = document.getElementById('videoPreview');
+                videoElement.srcObject = stream;
+            })
+            .catch(error => {
+                console.error('Media permission denied:', error);
+            });
+    }
+}</code></pre>
+                        
+                        <h3>Best Practices for Permissions</h3>
+                        <ul>
+                            <li><strong>Explain why</strong> you need the permission before requesting it</li>
+                            <li><strong>Request permissions</strong> only when needed, not on page load</li>
+                            <li><strong>Provide fallbacks</strong> when permissions are denied</li>
+                            <li><strong>Remember that permissions</strong> can be revoked at any time</li>
+                            <li><strong>Test the denied state</strong> in your application</li>
+                        </ul>
+                        
+                        <pre><code class="language-javascript">// Example of good permission request pattern
+function shareLocation() {
+    // First, explain why we need the permission
+    const explanation = document.getElementById('location-explanation');
+    const shareButton = document.getElementById('share-location-btn');
+    
+    explanation.style.display = 'block';
+    shareButton.addEventListener('click', () => {
+        // Only request when user explicitly agrees
+        navigator.geolocation.getCurrentPosition(
+            position => {
+                // Handle success
+                displayMap(position.coords.latitude, position.coords.longitude);
+            },
+            error => {
+                // Handle error or denial
+                if (error.code === error.PERMISSION_DENIED) {
+                    displayStaticMap(); // Fallback
+                    showPermissionInstructions(); // Help user enable permission
+                }
+            }
+        );
+    });
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Permissions API Support</h4>
+                            <p>The Permissions API is still evolving, and support varies across browsers. The following permissions can typically be queried:</p>
+                            <ul>
+                                <li><code>geolocation</code> - Device location</li>
+                                <li><code>notifications</code> - System notifications</li>
+                                <li><code>push</code> - Push notifications</li>
+                                <li><code>microphone</code> - Audio input</li>
+                                <li><code>camera</code> - Video input</li>
+                                <li><code>background-sync</code> - Background synchronization</li>
+                                <li><code>persistent-storage</code> - Persistent storage</li>
+                                <li><code>midi</code> - MIDI devices</li>
+                                <li><code>clipboard-read</code> and <code>clipboard-write</code> - Clipboard access</li>
+                            </ul>
+                            <p>Always check for API support before using it, and provide appropriate fallbacks.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>History API</h2>
+                        <p>The History API allows you to manipulate the browser's history, enabling the creation of single-page applications with proper URL handling and back/forward navigation support.</p>
+                        
+                        <h3>Navigating History</h3>
+                        <pre><code class="language-javascript">// Go back one page (like browser's back button)
+window.history.back();
+
+// Go forward one page (like browser's forward button)
+window.history.forward();
+
+// Go back or forward by a specific number of pages
+// Negative numbers go back, positive numbers go forward
+window.history.go(-2); // Go back two pages
+window.history.go(1);  // Go forward one page
+
+// Get the history length
+console.log(window.history.length);</code></pre>
+                        
+                        <h3>Manipulating History</h3>
+                        <p>The History API allows you to add new entries to the browser's history without reloading the page:</p>
+                        
+                        <pre><code class="language-javascript">// Add a new history entry
+// This changes the URL without reloading the page
+window.history.pushState({ page: 2 }, 'Title', '/new-url');
+
+// Replace the current history entry
+// This updates the URL without adding a new history entry
+window.history.replaceState({ page: 3 }, 'New Title', '/updated-url');</code></pre>
+                        
+                        <h3>Handling History Changes</h3>
+                        <p>When the user navigates using the browser's back or forward buttons, you can respond to these changes:</p>
+                        
+                        <pre><code class="language-javascript">// Listen for popstate events (triggered when navigating history)
+window.addEventListener('popstate', function(event) {
+    // event.state contains the state object passed to pushState or replaceState
+    console.log('Navigation occurred, state:', event.state);
+    
+    if (event.state) {
+        // Update the page based on the state
+        updatePage(event.state);
+    } else {
+        // Handle the case when there's no state (e.g., initial page load)
+        loadDefaultContent();
+    }
+});</code></pre>
+                        
+                        <h3>Building a Single-Page Application</h3>
+                        <p>Here's an example of how to use the History API to create a simple single-page application:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;SPA with History API&lt;/title&gt;
+    &lt;style&gt;
+        nav {
+            background: #f4f4f4;
+            padding: 10px;
+        }
+        nav a {
+            margin-right: 15px;
+        }
+        .page {
+            display: none;
+            padding: 20px;
+        }
+        .active {
+            display: block;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav&gt;
+        &lt;a href="/" data-page="home"&gt;Home&lt;/a&gt;
+        &lt;a href="/about" data-page="about"&gt;About&lt;/a&gt;
+        &lt;a href="/contact" data-page="contact"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+    
+    &lt;div id="content"&gt;
+        &lt;div id="home" class="page"&gt;
+            &lt;h1&gt;Home Page&lt;/h1&gt;
+            &lt;p&gt;Welcome to our website!&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div id="about" class="page"&gt;
+            &lt;h1&gt;About Us&lt;/h1&gt;
+            &lt;p&gt;Learn more about our company.&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div id="contact" class="page"&gt;
+            &lt;h1&gt;Contact Us&lt;/h1&gt;
+            &lt;p&gt;Get in touch with our team.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script&gt;
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the application
+            const currentPath = window.location.pathname;
+            navigateToPage(currentPath);
+            
+            // Handle navigation link clicks
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    const pageName = this.getAttribute('data-page');
+                    
+                    // Update history and navigate to the page
+                    window.history.pushState({ page: pageName }, '', href);
+                    navigateToPage(href);
+                });
+            });
+            
+            // Handle browser back/forward navigation
+            window.addEventListener('popstate', function(e) {
+                navigateToPage(window.location.pathname);
+            });
+            
+            // Function to show the appropriate page
+            function navigateToPage(path) {
+                // Hide all pages
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Determine which page to show
+                let pageName = 'home';
+                if (path === '/about') {
+                    pageName = 'about';
+                } else if (path === '/contact') {
+                    pageName = 'contact';
+                }
+                
+                // Show the selected page
+                document.getElementById(pageName).classList.add('active');
+                
+                // Update the document title
+                document.title = pageName.charAt(0).toUpperCase() + pageName.slice(1) + ' - SPA Example';
+            }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>History API Considerations</h4>
+                            <ul>
+                                <li>The <code>pushState()</code> and <code>replaceState()</code> methods don't trigger a page reload</li>
+                                <li>The <code>popstate</code> event is only triggered by browser navigation (back/forward), not by <code>pushState()</code> or <code>replaceState()</code></li>
+                                <li>Server-side routing must be configured to handle the URLs you create</li>
+                                <li>State objects should be serializable (avoid functions or DOM elements)</li>
+                                <li>There are size limits for state objects (typically a few MB)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Page Visibility API</h2>
+                        <p>The Page Visibility API allows you to detect when a web page is visible or hidden to the user, such as when the user switches tabs or minimizes the browser window.</p>
+                        
+                        <h3>Checking Page Visibility</h3>
+                        <pre><code class="language-javascript">// Check if the Page Visibility API is supported
+if ('hidden' in document) {
+    // Check if the page is currently visible
+    if (document.hidden) {
+        console.log('Page is currently hidden');
+    } else {
+        console.log('Page is currently visible');
+    }
+} else {
+    console.log('Page Visibility API not supported');
+}</code></pre>
+                        
+                        <h3>Responding to Visibility Changes</h3>
+                        <pre><code class="language-javascript">// Listen for visibility changes
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        // Page is now hidden
+        console.log('Page is now hidden');
+        pauseVideo();
+        stopAnimation();
+        pauseAudio();
+    } else {
+        // Page is now visible
+        console.log('Page is now visible');
+        resumeVideo();
+        startAnimation();
+        resumeAudio();
+    }
+});</code></pre>
+                        
+                        <h3>Practical Applications</h3>
+                        <p>The Page Visibility API is useful for:</p>
+                        <ul>
+                            <li>Pausing media playback when the user switches tabs</li>
+                            <li>Stopping animations to save CPU/battery</li>
+                            <li>Pausing game loops</li>
+                            <li>Stopping polling or frequent updates</li>
+                            <li>Adjusting notification behavior</li>
+                        </ul>
+                        
+                        <pre><code class="language-javascript">// Example: Video player that pauses when tab is not visible
+const video = document.getElementById('myVideo');
+
+// Initial setup based on current visibility
+if (document.hidden) {
+    video.pause();
+}
+
+// Handle visibility changes
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        video.pause();
+    } else {
+        // Only auto-play if the video was playing before
+        if (!video.ended && !video.paused) {
+            video.play();
+        }
+    }
+});
+
+// Example: Efficient polling that adjusts based on visibility
+let pollingInterval;
+const ACTIVE_POLLING_INTERVAL = 5000;  // 5 seconds
+const INACTIVE_POLLING_INTERVAL = 60000; // 1 minute
+
+function startPolling() {
+    // Set initial polling interval based on visibility
+    const interval = document.hidden ? INACTIVE_POLLING_INTERVAL : ACTIVE_POLLING_INTERVAL;
+    pollingInterval = setInterval(fetchUpdates, interval);
+}
+
+function adjustPolling() {
+    // Clear existing interval
+    clearInterval(pollingInterval);
+    // Set new interval based on visibility
+    const interval = document.hidden ? INACTIVE_POLLING_INTERVAL : ACTIVE_POLLING_INTERVAL;
+    pollingInterval = setInterval(fetchUpdates, interval);
+}
+
+function fetchUpdates() {
+    console.log('Fetching updates...');
+    // Fetch data from server
+}
+
+// Start polling
+startPolling();
+
+// Adjust polling interval when visibility changes
+document.addEventListener('visibilitychange', adjustPolling);</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Browser Compatibility Notes</h4>
+                            <p>Different browsers may use vendor-prefixed properties for the Page Visibility API. For maximum compatibility, you can use this helper function:</p>
+                            <pre><code class="language-javascript">// Cross-browser support for Page Visibility
+function getHiddenProp() {
+    const prefixes = ['webkit', 'moz', 'ms', 'o'];
+    
+    // If 'hidden' is natively supported, return it
+    if ('hidden' in document) {
+        return 'hidden';
+    }
+    
+    // Otherwise, try the prefixed versions
+    for (let i = 0; i < prefixes.length; i++) {
+        const prefix = prefixes[i];
+        const hiddenProp = `${prefix}Hidden`;
+        if (hiddenProp in document) {
+            return hiddenProp;
+        }
+    }
+    
+    // Not supported
+    return null;
+}
+
+function getVisibilityEvent() {
+    const hiddenProp = getHiddenProp();
+    if (!hiddenProp) return null;
+    
+    return hiddenProp.replace(/hidden/i, 'visibilitychange');
+}
+
+function isDocumentHidden() {
+    const hiddenProp = getHiddenProp();
+    if (!hiddenProp) return false;
+    
+    return document[hiddenProp];
+}
+
+// Usage
+const visEvent = getVisibilityEvent();
+if (visEvent) {
+    document.addEventListener(visEvent, function() {
+        if (isDocumentHidden()) {
+            console.log('Page is now hidden');
+        } else {
+            console.log('Page is now visible');
+        }
+    });
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Fullscreen API</h2>
+                        <p>The Fullscreen API allows you to present web content in fullscreen mode, hiding the browser's UI and using the entire screen.</p>
+                        
+                        <h3>Entering Fullscreen Mode</h3>
+                        <pre><code class="language-javascript">// Request fullscreen for an element
+function openFullscreen(element) {
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.webkitRequestFullscreen) { /* Safari */
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { /* IE11 */
+        element.msRequestFullscreen();
+    }
+}
+
+// Example: Make a video fullscreen
+const video = document.getElementById('myVideo');
+const fullscreenButton = document.getElementById('fullscreenBtn');
+
+fullscreenButton.addEventListener('click', function() {
+    openFullscreen(video);
+});
+
+// Example: Make the entire page fullscreen
+const fullPageButton = document.getElementById('fullPageBtn');
+
+fullPageButton.addEventListener('click', function() {
+    openFullscreen(document.documentElement);
+});</code></pre>
+                        
+                        <h3>Exiting Fullscreen Mode</h3>
+                        <pre><code class="language-javascript">// Exit fullscreen mode
+function closeFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE11 */
+        document.msExitFullscreen();
+    }
+}
+
+// Example: Exit fullscreen button
+const exitFullscreenButton = document.getElementById('exitFullscreenBtn');
+
+exitFullscreenButton.addEventListener('click', function() {
+    closeFullscreen();
+});</code></pre>
+                        
+                        <h3>Detecting Fullscreen Changes</h3>
+                        <pre><code class="language-javascript">// Listen for fullscreen changes
+document.addEventListener('fullscreenchange', fullscreenChanged);
+document.addEventListener('webkitfullscreenchange', fullscreenChanged);
+document.addEventListener('mozfullscreenchange', fullscreenChanged);
+document.addEventListener('MSFullscreenChange', fullscreenChanged);
+
+function fullscreenChanged() {
+    if (document.fullscreenElement || 
+        document.webkitFullscreenElement || 
+        document.mozFullScreenElement ||
+        document.msFullscreenElement) {
+        // Entered fullscreen mode
+        console.log('Entered fullscreen mode');
+        showExitButton();
+    } else {
+        // Exited fullscreen mode
+        console.log('Exited fullscreen mode');
+        hideExitButton();
+    }
+}</code></pre>
+                        
+                        <h3>Checking Fullscreen Support</h3>
+                        <pre><code class="language-javascript">// Check if fullscreen is supported
+function isFullscreenSupported() {
+    return document.fullscreenEnabled || 
+           document.webkitFullscreenEnabled || 
+           document.mozFullScreenEnabled ||
+           document.msFullscreenEnabled;
+}
+
+// Check if currently in fullscreen mode
+function isInFullscreen() {
+    return !!(document.fullscreenElement || 
+              document.webkitFullscreenElement || 
+              document.mozFullScreenElement ||
+              document.msFullscreenElement);
+}
+
+// Example usage
+if (isFullscreenSupported()) {
+    console.log('Fullscreen is supported');
+    enableFullscreenButton();
+} else {
+    console.log('Fullscreen is not supported');
+    disableFullscreenButton();
+}</code></pre>
+                        
+                        <h3>Styling Fullscreen Elements</h3>
+                        <p>You can use the <code>:fullscreen</code> CSS pseudo-class to style elements in fullscreen mode:</p>
+                        
+                        <pre><code class="language-css">/* Style for fullscreen video */
+video:fullscreen {
+    background-color: black;
+}
+
+/* Cross-browser support */
+video:-webkit-full-screen {
+    background-color: black;
+}
+
+video:-moz-full-screen {
+    background-color: black;
+}
+
+video:-ms-fullscreen {
+    background-color: black;
+}
+
+/* Style for any fullscreen element */
+:fullscreen {
+    background-color: white;
+}
+
+:-webkit-full-screen {
+    background-color: white;
+}
+
+:-moz-full-screen {
+    background-color: white;
+}
+
+:-ms-fullscreen {
+    background-color: white;
+}</code></pre>
+                        
+                        <h3>Complete Fullscreen Example</h3>
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Fullscreen API Example&lt;/title&gt;
+    &lt;style&gt;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .video-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        video {
+            width: 100%;
+            display: block;
+        }
+        
+        .controls {
+            margin-top: 10px;
+        }
+        
+        button {
+            padding: 8px 16px;
+            background: #3366ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        button:hover {
+            background: #2255ee;
+        }
+        
+        button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        #exitFullscreenBtn {
+            display: none;
+        }
+        
+        /* Fullscreen styles */
+        :fullscreen .controls {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            z-index: 1000;
+        }
+        
+        :-webkit-full-screen .controls {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            z-index: 1000;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container" id="pageContainer"&gt;
+        &lt;h1&gt;Fullscreen API Example&lt;/h1&gt;
+        
+        &lt;div class="video-container" id="videoContainer"&gt;
+            &lt;video id="myVideo" controls&gt;
+                &lt;source src="video.mp4" type="video/mp4"&gt;
+                Your browser does not support the video tag.
+            &lt;/video&gt;
+            
+            &lt;div class="controls"&gt;
+                &lt;button id="videoFullscreenBtn"&gt;Fullscreen Video&lt;/button&gt;
+                &lt;button id="containerFullscreenBtn"&gt;Fullscreen Container&lt;/button&gt;
+                &lt;button id="pageFullscreenBtn"&gt;Fullscreen Page&lt;/button&gt;
+                &lt;button id="exitFullscreenBtn"&gt;Exit Fullscreen&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="status"&gt;
+            &lt;p id="supportStatus"&gt;Checking fullscreen support...&lt;/p&gt;
+            &lt;p id="currentStatus"&gt;Not in fullscreen mode&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script&gt;
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get elements
+            const video = document.getElementById('myVideo');
+            const videoContainer = document.getElementById('videoContainer');
+            const pageContainer = document.getElementById('pageContainer');
+            const videoFullscreenBtn = document.getElementById('videoFullscreenBtn');
+            const containerFullscreenBtn = document.getElementById('containerFullscreenBtn');
+            const pageFullscreenBtn = document.getElementById('pageFullscreenBtn');
+            const exitFullscreenBtn = document.getElementById('exitFullscreenBtn');
+            const supportStatus = document.getElementById('supportStatus');
+            const currentStatus = document.getElementById('currentStatus');
+            
+            // Check fullscreen support
+            if (isFullscreenSupported()) {
+                supportStatus.textContent = 'Fullscreen is supported in this browser';
+                enableButtons();
+            } else {
+                supportStatus.textContent = 'Fullscreen is not supported in this browser';
+                disableButtons();
+            }
+            
+            // Add event listeners
+            videoFullscreenBtn.addEventListener('click', function() {
+                openFullscreen(video);
+            });
+            
+            containerFullscreenBtn.addEventListener('click', function() {
+                openFullscreen(videoContainer);
+            });
+            
+            pageFullscreenBtn.addEventListener('click', function() {
+                openFullscreen(document.documentElement);
+            });
+            
+            exitFullscreenBtn.addEventListener('click', function() {
+                closeFullscreen();
+            });
+            
+            // Listen for fullscreen changes
+            document.addEventListener('fullscreenchange', fullscreenChanged);
+            document.addEventListener('webkitfullscreenchange', fullscreenChanged);
+            document.addEventListener('mozfullscreenchange', fullscreenChanged);
+            document.addEventListener('MSFullscreenChange', fullscreenChanged);
+            
+            // Functions
+            function isFullscreenSupported() {
+                return document.fullscreenEnabled || 
+                       document.webkitFullscreenEnabled || 
+                       document.mozFullScreenEnabled ||
+                       document.msFullscreenEnabled;
+            }
+            
+            function isInFullscreen() {
+                return !!(document.fullscreenElement || 
+                          document.webkitFullscreenElement || 
+                          document.mozFullScreenElement ||
+                          document.msFullscreenElement);
+            }
+            
+            function openFullscreen(element) {
+                if (element.requestFullscreen) {
+                    element.requestFullscreen();
+                } else if (element.webkitRequestFullscreen) { /* Safari */
+                    element.webkitRequestFullscreen();
+                } else if (element.msRequestFullscreen) { /* IE11 */
+                    element.msRequestFullscreen();
+                }
+            }
+            
+            function closeFullscreen() {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE11 */
+                    document.msExitFullscreen();
+                }
+            }
+            
+            function fullscreenChanged() {
+                if (isInFullscreen()) {
+                    currentStatus.textContent = 'Currently in fullscreen mode';
+                    exitFullscreenBtn.style.display = 'inline-block';
+                } else {
+                    currentStatus.textContent = 'Not in fullscreen mode';
+                    exitFullscreenBtn.style.display = 'none';
+                }
+            }
+            
+            function enableButtons() {
+                videoFullscreenBtn.disabled = false;
+                containerFullscreenBtn.disabled = false;
+                pageFullscreenBtn.disabled = false;
+            }
+            
+            function disableButtons() {
+                videoFullscreenBtn.disabled = true;
+                containerFullscreenBtn.disabled = true;
+                pageFullscreenBtn.disabled = true;
+                exitFullscreenBtn.disabled = true;
+            }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Fullscreen API Limitations</h4>
+                            <ul>
+                                <li>Fullscreen requests must be triggered by user interaction (click, tap, etc.)</li>
+                                <li>Some browsers restrict which elements can go fullscreen</li>
+                                <li>Keyboard input may be limited in fullscreen mode for security reasons</li>
+                                <li>Users can always exit fullscreen mode with the Escape key</li>
+                                <li>Fullscreen requests may be denied in certain contexts (e.g., cross-origin iframes)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Clipboard API</h2>
+                        <p>The Clipboard API provides a way to programmatically access the system clipboard for copy, cut, and paste operations.</p>
+                        
+                        <h3>Reading from the Clipboard</h3>
+                        <pre><code class="language-javascript">// Check if Clipboard API is supported
+if (navigator.clipboard) {
+    // Read text from clipboard
+    navigator.clipboard.readText()
+        .then(text => {
+            console.log('Clipboard content:', text);
+            document.getElementById('pasteTarget').value = text;
+        })
+        .catch(err => {
+            console.error('Failed to read clipboard:', err);
+        });
+} else {
+    console.log('Clipboard API not supported');
+}</code></pre>
+                        
+                        <h3>Writing to the Clipboard</h3>
+                        <pre><code class="language-javascript">// Write text to clipboard
+function copyToClipboard(text) {
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                console.log('Text copied to clipboard');
+                showCopySuccess();
+            })
+            .catch(err => {
+                console.error('Failed to copy text:', err);
+                showCopyError();
+            });
+    } else {
+        // Fallback for older browsers
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';  // Prevent scrolling to bottom
+        document.body.appendChild(textarea);
+        textarea.select();
+        
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                console.log('Text copied to clipboard (fallback)');
+                showCopySuccess();
+            } else {
+                console.error('Failed to copy text (fallback)');
+                showCopyError();
+            }
+        } catch (err) {
+            console.error('Failed to copy text (fallback):', err);
+            showCopyError();
+        }
+        
+        document.body.removeChild(textarea);
+    }
+}
+
+// Example: Copy button
+const copyButton = document.getElementById('copyBtn');
+const textToCopy = document.getElementById('textToCopy');
+
+copyButton.addEventListener('click', function() {
+    copyToClipboard(textToCopy.value);
+});</code></pre>
+                        
+                        <h3>Working with Rich Content</h3>
+                        <p>The modern Clipboard API also supports rich content like images and HTML:</p>
+                        
+                        <pre><code class="language-javascript">// Copy HTML to clipboard
+async function copyHtml() {
+    const html = '&lt;h1&gt;Hello World&lt;/h1&gt;&lt;p&gt;This is &lt;b&gt;rich&lt;/b&gt; text.&lt;/p&gt;';
+    const text = 'Hello World\nThis is rich text.'; // Plain text fallback
+    
+    try {
+        const clipboardItem = new ClipboardItem({
+            'text/html': new Blob([html], { type: 'text/html' }),
+            'text/plain': new Blob([text], { type: 'text/plain' })
+        });
+        
+        await navigator.clipboard.write([clipboardItem]);
+        console.log('HTML copied to clipboard');
+    } catch (err) {
+        console.error('Failed to copy HTML:', err);
+        // Fallback to plain text
+        copyToClipboard(text);
+    }
+}
+
+// Copy image to clipboard
+async function copyImage(imageElement) {
+    try {
+        const canvas = document.createElement('canvas');
+        canvas.width = imageElement.naturalWidth;
+        canvas.height = imageElement.naturalHeight;
+        
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(imageElement, 0, 0);
+        
+        canvas.toBlob(async (blob) => {
+            const clipboardItem = new ClipboardItem({ 'image/png': blob });
+            await navigator.clipboard.write([clipboardItem]);
+            console.log('Image copied to clipboard');
+        });
+    } catch (err) {
+        console.error('Failed to copy image:', err);
+    }
+}</code></pre>
+                        
+                        <h3>Handling Paste Events</h3>
+                        <pre><code class="language-javascript">// Listen for paste events
+document.getElementById('pasteArea').addEventListener('paste', function(e) {
+    // Prevent the default paste behavior
+    e.preventDefault();
+    
+    // Get clipboard data
+    const clipboardData = e.clipboardData || window.clipboardData;
+    
+    // Check for plain text
+    if (clipboardData.types.includes('text/plain')) {
+        const text = clipboardData.getData('text/plain');
+        console.log('Pasted text:', text);
+        this.value = text;
+    }
+    
+    // Check for HTML
+    if (clipboardData.types.includes('text/html')) {
+        const html = clipboardData.getData('text/html');
+        console.log('Pasted HTML:', html);
+        // Process HTML content
+    }
+    
+    // Check for images
+    const items = clipboardData.items;
+    for (let i = 0; i < items.length; i++) {
+        if (items[i].type.indexOf('image') !== -1) {
+            const blob = items[i].getAsFile();
+            const url = URL.createObjectURL(blob);
+            
+            // Display the image
+            const img = document.createElement('img');
+            img.src = url;
+            document.getElementById('imagePreview').appendChild(img);
+            
+            console.log('Image pasted');
+            break;
+        }
+    }
+});</code></pre>
+                        
+                        <h3>Complete Clipboard Example</h3>
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Clipboard API Example&lt;/title&gt;
+    &lt;style&gt;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            padding: 8px 16px;
+            background: #3366ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        button:hover {
+            background: #2255ee;
+        }
+        
+        .success-message, .error-message {
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .success-message {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+        
+        .error-message {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+        
+        .image-preview {
+            margin-top: 20px;
+            border: 1px dashed #ccc;
+            padding: 10px;
+            min-height: 100px;
+        }
+        
+        .image-preview img {
+            max-width: 100%;
+            max-height: 300px;
+            display: block;
+            margin: 10px 0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Clipboard API Example&lt;/h1&gt;
+        
+        &lt;div class="section"&gt;
+            &lt;h2&gt;Copy Text&lt;/h2&gt;
+            &lt;textarea id="textToCopy" placeholder="Type text to copy..."&gt;This is sample text that will be copied to the clipboard.&lt;/textarea&gt;
+            &lt;button id="copyTextBtn"&gt;Copy Text&lt;/button&gt;
+            &lt;div id="copySuccess" class="success-message"&gt;Text copied to clipboard!&lt;/div&gt;
+            &lt;div id="copyError" class="error-message"&gt;Failed to copy text. Please try again.&lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="section"&gt;
+            &lt;h2&gt;Copy HTML&lt;/h2&gt;
+            &lt;div id="htmlToCopy"&gt;
+                &lt;h3&gt;This is a &lt;span style="color: red;"&gt;formatted&lt;/span&gt; HTML content&lt;/h3&gt;
+                &lt;p&gt;It includes &lt;strong&gt;bold text&lt;/strong&gt; and &lt;em&gt;italic text&lt;/em&gt;.&lt;/p&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Item 1&lt;/li&gt;
+                    &lt;li&gt;Item 2&lt;/li&gt;
+                    &lt;li&gt;Item 3&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;button id="copyHtmlBtn"&gt;Copy HTML&lt;/button&gt;
+            &lt;div id="copyHtmlSuccess" class="success-message"&gt;HTML copied to clipboard!&lt;/div&gt;
+            &lt;div id="copyHtmlError" class="error-message"&gt;Failed to copy HTML. Please try again.&lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="section"&gt;
+            &lt;h2&gt;Copy Image&lt;/h2&gt;
+            &lt;img id="imageToCopy" src="sample-image.jpg" alt="Sample image" style="max-width: 100%;"&gt;
+            &lt;button id="copyImageBtn"&gt;Copy Image&lt;/button&gt;
+            &lt;div id="copyImageSuccess" class="success-message"&gt;Image copied to clipboard!&lt;/div&gt;
+            &lt;div id="copyImageError" class="error-message"&gt;Failed to copy image. Please try again.&lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="section"&gt;
+            &lt;h2&gt;Paste Content&lt;/h2&gt;
+            &lt;p&gt;Click in the textarea below and paste content (Ctrl+V or Command+V):&lt;/p&gt;
+            &lt;textarea id="pasteArea" placeholder="Paste content here..."&gt;&lt;/textarea&gt;
+            &lt;button id="readClipboardBtn"&gt;Read from Clipboard&lt;/button&gt;
+            
+            &lt;h3&gt;Image Preview&lt;/h3&gt;
+            &lt;div id="imagePreview" class="image-preview"&gt;
+                &lt;p&gt;Pasted images will appear here&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script&gt;
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elements
+            const textToCopy = document.getElementById('textToCopy');
+            const copyTextBtn = document.getElementById('copyTextBtn');
+            const copySuccess = document.getElementById('copySuccess');
+            const copyError = document.getElementById('copyError');
+            
+            const htmlToCopy = document.getElementById('htmlToCopy');
+            const copyHtmlBtn = document.getElementById('copyHtmlBtn');
+            const copyHtmlSuccess = document.getElementById('copyHtmlSuccess');
+            const copyHtmlError = document.getElementById('copyHtmlError');
+            
+            const imageToCopy = document.getElementById('imageToCopy');
+            const copyImageBtn = document.getElementById('copyImageBtn');
+            const copyImageSuccess = document.getElementById('copyImageSuccess');
+            const copyImageError = document.getElementById('copyImageError');
+            
+            const pasteArea = document.getElementById('pasteArea');
+            const readClipboardBtn = document.getElementById('readClipboardBtn');
+            const imagePreview = document.getElementById('imagePreview');
+            
+            // Check Clipboard API support
+            const clipboardSupported = 'clipboard' in navigator;
+            
+            if (!clipboardSupported) {
+                console.warn('Clipboard API is not supported in this browser');
+                document.querySelectorAll('button').forEach(btn => {
+                    btn.disabled = true;
+                    btn.textContent += ' (Not Supported)';
+                });
+            }
+            
+            // Copy text
+            copyTextBtn.addEventListener('click', function() {
+                copyToClipboard(textToCopy.value);
+            });
+            
+            // Copy HTML
+            copyHtmlBtn.addEventListener('click', function() {
+                copyHtmlToClipboard(htmlToCopy.innerHTML);
+            });
+            
+            // Copy image
+            copyImageBtn.addEventListener('click', function() {
+                copyImageToClipboard(imageToCopy);
+            });
+            
+            // Read from clipboard
+            readClipboardBtn.addEventListener('click', function() {
+                readFromClipboard();
+            });
+            
+            // Handle paste events
+            pasteArea.addEventListener('paste', handlePaste);
+            
+            // Functions
+            function copyToClipboard(text) {
+                hideMessages();
+                
+                if (clipboardSupported) {
+                    navigator.clipboard.writeText(text)
+                        .then(() => {
+                            showMessage(copySuccess);
+                        })
+                        .catch(err => {
+                            console.error('Failed to copy text:', err);
+                            showMessage(copyError);
+                        });
+                } else {
+                    // Fallback
+                    const textarea = document.createElement('textarea');
+                    textarea.value = text;
+                    textarea.style.position = 'fixed';
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    
+                    try {
+                        const successful = document.execCommand('copy');
+                        if (successful) {
+                            showMessage(copySuccess);
+                        } else {
+                            showMessage(copyError);
+                        }
+                    } catch (err) {
+                        console.error('Failed to copy text (fallback):', err);
+                        showMessage(copyError);
+                    }
+                    
+                    document.body.removeChild(textarea);
+                }
+            }
+            
+            async function copyHtmlToClipboard(html) {
+                hideMessages();
+                const text = htmlToCopy.textContent || htmlToCopy.innerText; // Plain text fallback
+                
+                if (clipboardSupported && 'write' in navigator.clipboard) {
+                    try {
+                        const clipboardItem = new ClipboardItem({
+                            'text/html': new Blob([html], { type: 'text/html' }),
+                            'text/plain': new Blob([text], { type: 'text/plain' })
+                        });
+                        
+                        await navigator.clipboard.write([clipboardItem]);
+                        showMessage(copyHtmlSuccess);
+                    } catch (err) {
+                        console.error('Failed to copy HTML:', err);
+                        // Fallback to plain text
+                        copyToClipboard(text);
+                        showMessage(copyHtmlError);
+                    }
+                } else {
+                    // Fallback to plain text
+                    copyToClipboard(text);
+                }
+            }
+            
+            async function copyImageToClipboard(imageElement) {
+                hideMessages();
+                
+                if (clipboardSupported && 'write' in navigator.clipboard) {
+                    try {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = imageElement.naturalWidth;
+                        canvas.height = imageElement.naturalHeight;
+                        
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(imageElement, 0, 0);
+                        
+                        canvas.toBlob(async (blob) => {
+                            try {
+                                const clipboardItem = new ClipboardItem({ 'image/png': blob });
+                                await navigator.clipboard.write([clipboardItem]);
+                                showMessage(copyImageSuccess);
+                            } catch (err) {
+                                console.error('Failed to copy image to clipboard:', err);
+                                showMessage(copyImageError);
+                            }
+                        });
+                    } catch (err) {
+                        console.error('Failed to copy image:', err);
+                        showMessage(copyImageError);
+                    }
+                } else {
+                    showMessage(copyImageError);
+                }
+            }
+            
+            function readFromClipboard() {
+                if (clipboardSupported) {
+                    navigator.clipboard.readText()
+                        .then(text => {
+                            pasteArea.value = text;
+                        })
+                        .catch(err => {
+                            console.error('Failed to read clipboard:', err);
+                            pasteArea.value = 'Failed to read clipboard. Please paste manually.';
+                        });
+                } else {
+                    pasteArea.value = 'Clipboard API not supported. Please paste manually.';
+                }
+            }
+            
+            function handlePaste(e) {
+                // Clear previous content
+                pasteArea.value = '';
+                imagePreview.innerHTML = '<p>Processing pasted content...</p>';
+                
+                // Get clipboard data
+                const clipboardData = e.clipboardData || window.clipboardData;
+                
+                // Check for plain text
+                if (clipboardData.types.includes('text/plain')) {
+                    const text = clipboardData.getData('text/plain');
+                    pasteArea.value = text;
+                }
+                
+                // Check for HTML
+                if (clipboardData.types.includes('text/html')) {
+                    const html = clipboardData.getData('text/html');
+                    console.log('Pasted HTML:', html);
+                    // You could display this HTML if needed
+                }
+                
+                // Check for images
+                let hasImage = false;
+                const items = clipboardData.items;
+                
+                imagePreview.innerHTML = '';
+                
+                for (let i = 0; i < items.length; i++) {
+                    if (items[i].type.indexOf('image') !== -1) {
+                        hasImage = true;
+                        const blob = items[i].getAsFile();
+                        const url = URL.createObjectURL(blob);
+                        
+                        // Display the image
+                        const img = document.createElement('img');
+                        img.src = url;
+                        imagePreview.appendChild(img);
+                        
+                        break;
+                    }
+                }
+                
+                if (!hasImage) {
+                    imagePreview.innerHTML = '<p>No image found in pasted content</p>';
+                }
+                
+                // Prevent the default paste behavior
+                e.preventDefault();
+            }
+            
+            function showMessage(element) {
+                element.style.display = 'block';
+                setTimeout(() => {
+                    element.style.display = 'none';
+                }, 3000);
+            }
+            
+            function hideMessages() {
+                document.querySelectorAll('.success-message, .error-message').forEach(el => {
+                    el.style.display = 'none';
+                });
+            }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Clipboard API Permissions</h4>
+                            <p>The Clipboard API requires permission to access the clipboard:</p>
+                            <ul>
+                                <li><code>writeText()</code> generally works without explicit permission</li>
+                                <li><code>readText()</code> requires user permission and may only work in secure contexts (HTTPS)</li>
+                                <li>Reading and writing rich content (HTML, images) requires permission</li>
+                                <li>Permissions may be requested automatically when using the API or may require user interaction</li>
+                                <li>Always provide fallbacks for browsers that don't support the Clipboard API</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Building a Feature Detection Tool</h2>
+                        <p>Let's create a practical tool that detects browser support for various HTML5 APIs and features.</p>
+                        
+                        <h3>Exercise: Create a Feature Detection Dashboard</h3>
+                        <p>Create a dashboard that checks and displays the browser's support for various HTML5 APIs. The dashboard should:</p>
+                        <ul>
+                            <li>Test for support of at least 10 different HTML5 APIs</li>
+                            <li>Display the results in a user-friendly way</li>
+                            <li>Provide information about each API and its capabilities</li>
+                            <li>Include links to documentation or fallback solutions</li>
+                        </ul>
+                        
+                        <p>Start with this template and enhance it:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;HTML5 API Feature Detection&lt;/title&gt;
+    &lt;style&gt;
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        h1, h2 {
+            color: #3366ff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Add more styles for your dashboard */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;HTML5 API Feature Detection Dashboard&lt;/h1&gt;
+        
+        &lt;div id="browser-info"&gt;
+            &lt;h2&gt;Browser Information&lt;/h2&gt;
+            &lt;div id="browser-details"&gt;
+                &lt;!-- Browser details will be displayed here --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div id="feature-tests"&gt;
+            &lt;h2&gt;API Support Tests&lt;/h2&gt;
+            &lt;div id="test-results"&gt;
+                &lt;!-- Test results will be displayed here --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script&gt;
+        // Add your JavaScript here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Display browser information
+            displayBrowserInfo();
+            
+            // Run feature tests
+            runFeatureTests();
+        });
+        
+        function displayBrowserInfo() {
+            // Implement browser information display
+        }
+        
+        function runFeatureTests() {
+            // Implement feature tests for various APIs
+            
+            // Example test
+            testFeature('Geolocation API', 'geolocation' in navigator);
+        }
+        
+        function testFeature(featureName, isSupported) {
+            // Display test result
+            const resultElement = document.createElement('div');
+            resultElement.className = `feature-test ${isSupported ? 'supported' : 'not-supported'}`;
+            resultElement.innerHTML = `
+                <h3>${featureName}</h3>
+                <p>Support: ${isSupported ? 'Yes ✓' : 'No ✗'}</p>
+            `;
+            
+            document.getElementById('test-results').appendChild(resultElement);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Enhance the template with:</p>
+                            <ol>
+                                <li>Tests for at least 10 different HTML5 APIs (e.g., Web Storage, Geolocation, Clipboard, Fullscreen, etc.)</li>
+                                <li>Detailed information about each API and its capabilities</li>
+                                <li>Visual indicators for supported and unsupported features</li>
+                                <li>Links to documentation or fallback solutions for unsupported features</li>
+                                <li>A way to test certain APIs interactively (e.g., request geolocation, try fullscreen mode)</li>
+                                <li>A responsive design that works well on both desktop and mobile devices</li>
+                                <li>Export functionality to save the test results</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored several core HTML5 APIs that enhance web applications with powerful capabilities:</p>
+                        <ul>
+                            <li><strong>Feature Detection</strong>: Checking for API support before using it</li>
+                            <li><strong>Permissions API</strong>: Managing user permissions for sensitive features</li>
+                            <li><strong>History API</strong>: Manipulating browser history for single-page applications</li>
+                            <li><strong>Page Visibility API</strong>: Detecting when a page is visible or hidden</li>
+                            <li><strong>Fullscreen API</strong>: Presenting content in fullscreen mode</li>
+                            <li><strong>Clipboard API</strong>: Programmatically accessing the system clipboard</li>
+                        </ul>
+                        
+                        <p>These APIs provide the foundation for creating modern, interactive web applications that can access device features and provide rich user experiences. By understanding how to use these APIs effectively, you can create web applications that rival native applications in functionality and user experience.</p>
+                        
+                        <p>Remember these key points:</p>
+                        <ul>
+                            <li><strong>Always check for API support</strong> using feature detection</li>
+                            <li><strong>Provide fallbacks</strong> for browsers that don't support certain features</li>
+                            <li><strong>Request permissions</strong> only when needed and explain why they're necessary</li>
+                            <li><strong>Consider security implications</strong> when using powerful APIs</li>
+                            <li><strong>Test across different browsers</strong> to ensure consistent behavior</li>
+                        </ul>
+                        
+                        <p>In the next lesson, we'll explore the Web Storage API, which provides a way to store data locally in the browser.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page16.html" class="btn">Previous: HTML Media & Graphics</a>
+                        <a href="page18.html" class="btn">Next: Web Storage</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

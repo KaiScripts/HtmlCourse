@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors & Backgrounds | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to use CSS colors and backgrounds to create visually appealing web designs.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="30">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html" class="active">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>CSS Basics</h3>
+                <ul>
+                    <li><a href="page26.html">26. Introduction to CSS</a></li>
+                    <li><a href="page27.html">27. CSS Selectors</a></li>
+                    <li><a href="page28.html">28. CSS Box Model</a></li>
+                    <li><a href="page29.html">29. Typography</a></li>
+                    <li><a href="page30.html" class="active">30. Colors & Backgrounds</a></li>
+                    <li><a href="page31.html">31. Layout Basics</a></li>
+                    <li><a href="page32.html">32. Flexbox</a></li>
+                    <li><a href="page33.html">33. CSS Grid</a></li>
+                    <li><a href="page34.html">34. Responsive Design</a></li>
+                    <li><a href="page35.html">35. Transitions & Animations</a></li>
+                    <li><a href="page36.html">36. CSS Variables</a></li>
+                    <li><a href="page37.html">37. CSS Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+                <p style="text-align: center;">Page 30 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Colors & Backgrounds</h1>
+                    
+                    <div class="card">
+                        <h2>The Power of Color in Web Design</h2>
+                        <p>Color is one of the most powerful tools in web design. It sets the mood, creates visual hierarchy, reinforces branding, and guides users through your interface. Understanding how to effectively use color in CSS is essential for creating visually appealing and user-friendly websites.</p>
+                        
+                        <p>Similarly, backgrounds provide context, create contrast for content, and add visual interest to your designs. CSS offers a wide range of options for creating rich, layered backgrounds that enhance your web pages.</p>
+                        
+                        <p>In this lesson, we'll explore the various ways to define and apply colors and backgrounds in CSS, from simple solid colors to complex gradients and patterns.</p>
+                        
+                        <div class="info-box">
+                            <h4>Color Psychology</h4>
+                            <p>Colors evoke emotional responses and have cultural associations that can affect how users perceive your website:</p>
+                            <ul>
+                                <li><strong>Red</strong>: Energy, passion, urgency, attention</li>
+                                <li><strong>Blue</strong>: Trust, calm, professionalism, security</li>
+                                <li><strong>Green</strong>: Growth, nature, health, prosperity</li>
+                                <li><strong>Yellow</strong>: Optimism, clarity, warmth, caution</li>
+                                <li><strong>Purple</strong>: Creativity, luxury, wisdom, spirituality</li>
+                                <li><strong>Orange</strong>: Enthusiasm, playfulness, affordability</li>
+                                <li><strong>Black</strong>: Sophistication, power, elegance, formality</li>
+                                <li><strong>White</strong>: Simplicity, cleanliness, purity, space</li>
+                            </ul>
+                            <p>Consider these associations when choosing colors for your website to ensure they align with your brand and message.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS Color Values</h2>
+                        <p>CSS provides several ways to specify colors, each with its own advantages and use cases.</p>
+                        
+                        <h3>Named Colors</h3>
+                        <p>CSS includes 140+ named colors that you can use by their keyword names:</p>
+                        
+                        <pre><code class="language-css">h1 {
+  color: red;
+}
+
+.alert {
+  background-color: yellow;
+}
+
+.button {
+  border-color: navy;
+}</code></pre>
+                        
+                        <p>Named colors are easy to remember and use, but they offer limited options and can vary slightly between browsers.</p>
+                        
+                        <h3>Hexadecimal Colors</h3>
+                        <p>Hexadecimal (hex) color values are six-digit codes preceded by a hash (#) that represent RGB values in base-16:</p>
+                        
+                        <pre><code class="language-css">h1 {
+  color: #ff0000; /* Red */
+}
+
+.alert {
+  background-color: #ffff00; /* Yellow */
+}
+
+.button {
+  border-color: #000080; /* Navy */
+}</code></pre>
+                        
+                        <p>Each pair of digits represents a color channel (red, green, blue) with values from 00 to FF (0-255 in decimal).</p>
+                        
+                        <p>You can also use a shorthand three-digit hex code when each channel has repeated digits:</p>
+                        
+                        <pre><code class="language-css">/* #ff0000 can be shortened to #f00 */
+h1 {
+  color: #f00; /* Red */
+}
+
+/* #00ff00 can be shortened to #0f0 */
+.success {
+  color: #0f0; /* Green */
+}</code></pre>
+                        
+                        <p>Hex codes with an additional pair of digits for alpha (transparency) are also supported:</p>
+                        
+                        <pre><code class="language-css">/* #rrggbbaa format */
+.overlay {
+  background-color: #00000080; /* Black with 50% opacity */
+}
+
+/* Shorthand #rgba format */
+.highlight {
+  background-color: #f003; /* Red with 30% opacity */
+}</code></pre>
+                        
+                        <h3>RGB and RGBA Colors</h3>
+                        <p>RGB colors specify red, green, and blue channel values directly:</p>
+                        
+                        <pre><code class="language-css">h1 {
+  color: rgb(255, 0, 0); /* Red */
+}
+
+.alert {
+  background-color: rgb(255, 255, 0); /* Yellow */
+}
+
+/* With alpha channel for transparency */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+}</code></pre>
+                        
+                        <p>Each channel takes a value from 0 to 255, and the alpha channel (in RGBA) takes a value from 0 (fully transparent) to 1 (fully opaque).</p>
+                        
+                        <p>Modern CSS also supports a space-separated format with an optional alpha value:</p>
+                        
+                        <pre><code class="language-css">/* Modern RGB syntax */
+.modern-rgb {
+  color: rgb(255 0 0); /* Red */
+}
+
+/* Modern RGBA syntax */
+.modern-rgba {
+  color: rgb(255 0 0 / 0.5); /* Red with 50% opacity */
+}</code></pre>
+                        
+                        <h3>HSL and HSLA Colors</h3>
+                        <p>HSL (Hue, Saturation, Lightness) is an intuitive way to specify colors:</p>
+                        
+                        <pre><code class="language-css">h1 {
+  color: hsl(0, 100%, 50%); /* Red */
+}
+
+.alert {
+  background-color: hsl(60, 100%, 50%); /* Yellow */
+}
+
+/* With alpha channel for transparency */
+.overlay {
+  background-color: hsla(0, 0%, 0%, 0.5); /* Black with 50% opacity */
+}</code></pre>
+                        
+                        <ul>
+                            <li><strong>Hue</strong>: A degree on the color wheel (0-360), where 0/360 is red, 120 is green, and 240 is blue</li>
+                            <li><strong>Saturation</strong>: A percentage where 0% is grayscale and 100% is full color</li>
+                            <li><strong>Lightness</strong>: A percentage where 0% is black, 100% is white, and 50% is the "normal" color</li>
+                        </ul>
+                        
+                        <p>HSL makes it easy to create variations of a color by adjusting saturation or lightness:</p>
+                        
+                        <pre><code class="language-css">/* Different shades of blue */
+.primary {
+  color: hsl(210, 100%, 50%); /* Vibrant blue */
+}
+
+.primary-light {
+  color: hsl(210, 100%, 70%); /* Lighter blue */
+}
+
+.primary-dark {
+  color: hsl(210, 100%, 30%); /* Darker blue */
+}
+
+.primary-muted {
+  color: hsl(210, 50%, 50%); /* Less saturated blue */
+}</code></pre>
+                        
+                        <p>Modern CSS also supports a space-separated format with an optional alpha value:</p>
+                        
+                        <pre><code class="language-css">/* Modern HSL syntax */
+.modern-hsl {
+  color: hsl(0 100% 50%); /* Red */
+}
+
+/* Modern HSLA syntax */
+.modern-hsla {
+  color: hsl(0 100% 50% / 0.5); /* Red with 50% opacity */
+}</code></pre>
+                        
+                        <h3>HWB Colors</h3>
+                        <p>HWB (Hue, Whiteness, Blackness) is a newer color model that some find more intuitive than HSL:</p>
+                        
+                        <pre><code class="language-css">.hwb-example {
+  color: hwb(0 0% 0%); /* Red */
+}
+
+.hwb-with-white {
+  color: hwb(0 20% 0%); /* Red with 20% white added */
+}
+
+.hwb-with-black {
+  color: hwb(0 0% 20%); /* Red with 20% black added */
+}
+
+.hwb-with-both {
+  color: hwb(0 20% 20%); /* Red with both white and black added */
+}
+
+/* With alpha */
+.hwb-alpha {
+  color: hwb(0 0% 0% / 0.5); /* Red with 50% opacity */
+}</code></pre>
+                        
+                        <ul>
+                            <li><strong>Hue</strong>: Same as HSL, a degree on the color wheel (0-360)</li>
+                            <li><strong>Whiteness</strong>: Percentage of white to mix in (0-100%)</li>
+                            <li><strong>Blackness</strong>: Percentage of black to mix in (0-100%)</li>
+                        </ul>
+                        
+                        <h3>Lab and LCH Colors</h3>
+                        <p>CSS now supports Lab and LCH color spaces, which can represent a wider range of colors than RGB:</p>
+                        
+                        <pre><code class="language-css">/* Lab color */
+.lab-example {
+  color: lab(50% 50 0); /* Reddish color */
+}
+
+/* LCH color */
+.lch-example {
+  color: lch(50% 50 0); /* Reddish color */
+}
+
+/* With alpha */
+.lab-alpha {
+  color: lab(50% 50 0 / 0.5); /* With 50% opacity */
+}</code></pre>
+                        
+                        <p>These color spaces are designed to be perceptually uniform and can represent colors outside the sRGB gamut, though browser support is still evolving.</p>
+                        
+                        <h3>currentColor Keyword</h3>
+                        <p>The <code>currentColor</code> keyword refers to the current value of the <code>color</code> property:</p>
+                        
+                        <pre><code class="language-css">.button {
+  color: blue;
+  border-color: currentColor; /* Will be blue */
+  box-shadow: 0 0 5px currentColor; /* Will also be blue */
+}
+
+.button:hover {
+  color: darkblue; /* When color changes, currentColor references also change */
+}</code></pre>
+                        
+                        <p>This is useful for maintaining color consistency across different properties.</p>
+                        
+                        <h3>transparent Keyword</h3>
+                        <p>The <code>transparent</code> keyword represents a fully transparent color:</p>
+                        
+                        <pre><code class="language-css">.invisible-border {
+  border: 1px solid transparent;
+}
+
+/* Equivalent to */
+.also-invisible {
+  border: 1px solid rgba(0, 0, 0, 0);
+}</code></pre>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Color Format</th>
+                                        <th>Example</th>
+                                        <th>Advantages</th>
+                                        <th>Use Cases</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Named Colors</td>
+                                        <td><code>red</code></td>
+                                        <td>Easy to remember, readable</td>
+                                        <td>Quick prototyping, simple designs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hexadecimal</td>
+                                        <td><code>#ff0000</code></td>
+                                        <td>Precise, widely used</td>
+                                        <td>Design systems, exact color matching</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RGB/RGBA</td>
+                                        <td><code>rgb(255, 0, 0)</code></td>
+                                        <td>Intuitive channel values, supports alpha</td>
+                                        <td>When transparency is needed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>HSL/HSLA</td>
+                                        <td><code>hsl(0, 100%, 50%)</code></td>
+                                        <td>Intuitive adjustments, easy to create variations</td>
+                                        <td>Creating color schemes, dynamic colors</td>
+                                    </tr>
+                                    <tr>
+                                        <td>HWB</td>
+                                        <td><code>hwb(0 0% 0%)</code></td>
+                                        <td>Intuitive mixing with white/black</td>
+                                        <td>Creating tints and shades</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lab/LCH</td>
+                                        <td><code>lab(50% 50 0)</code></td>
+                                        <td>Wider color gamut, perceptually uniform</td>
+                                        <td>Advanced color work, future-proofing</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Color Properties</h2>
+                        <p>CSS provides several properties for applying colors to different aspects of elements.</p>
+                        
+                        <h3>Text Color</h3>
+                        <p>The <code>color</code> property sets the color of text content:</p>
+                        
+                        <pre><code class="language-css">p {
+  color: #333; /* Dark gray text */
+}
+
+a {
+  color: #0066cc; /* Blue links */
+}
+
+a:hover {
+  color: #004499; /* Darker blue on hover */
+}</code></pre>
+                        
+                        <h3>Background Color</h3>
+                        <p>The <code>background-color</code> property sets the background color of an element:</p>
+                        
+                        <pre><code class="language-css">body {
+  background-color: #f5f5f5; /* Light gray background */
+}
+
+.card {
+  background-color: white;
+}
+
+.highlight {
+  background-color: rgba(255, 255, 0, 0.3); /* Semi-transparent yellow */
+}</code></pre>
+                        
+                        <h3>Border Color</h3>
+                        <p>The <code>border-color</code> property sets the color of an element's border:</p>
+                        
+                        <pre><code class="language-css">.box {
+  border: 1px solid #ccc; /* Gray border */
+}
+
+/* Individual border sides */
+.custom-borders {
+  border-top-color: red;
+  border-right-color: green;
+  border-bottom-color: blue;
+  border-left-color: yellow;
+}</code></pre>
+                        
+                        <h3>Outline Color</h3>
+                        <p>The <code>outline-color</code> property sets the color of an element's outline:</p>
+                        
+                        <pre><code class="language-css">input:focus {
+  outline-color: #4d90fe; /* Blue outline for focused inputs */
+}
+
+.highlight {
+  outline: 2px dashed #ff9900;
+  outline-offset: 2px; /* Space between the element and its outline */
+}</code></pre>
+                        
+                        <h3>Text Decoration Color</h3>
+                        <p>The <code>text-decoration-color</code> property sets the color of text decorations:</p>
+                        
+                        <pre><code class="language-css">a {
+  text-decoration: underline;
+  text-decoration-color: #ff6600; /* Orange underline */
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  text-decoration-color: red;
+}</code></pre>
+                        
+                        <h3>Caret Color</h3>
+                        <p>The <code>caret-color</code> property sets the color of the cursor (caret) in inputs:</p>
+                        
+                        <pre><code class="language-css">input {
+  caret-color: #0066cc; /* Blue cursor in text inputs */
+}</code></pre>
+                        
+                        <h3>Accent Color</h3>
+                        <p>The <code>accent-color</code> property sets the accent color for form controls:</p>
+                        
+                        <pre><code class="language-css">/* Changes the color of checkboxes, radio buttons, and other controls */
+form {
+  accent-color: #0066cc;
+}</code></pre>
+                        
+                        <h3>Column Rule Color</h3>
+                        <p>The <code>column-rule-color</code> property sets the color of the rule between columns:</p>
+                        
+                        <pre><code class="language-css">.multi-column {
+  columns: 3;
+  column-rule: 1px solid;
+  column-rule-color: #ccc; /* Gray rule between columns */
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Background Properties</h2>
+                        <p>CSS provides a rich set of properties for controlling element backgrounds.</p>
+                        
+                        <h3>Background Image</h3>
+                        <p>The <code>background-image</code> property sets one or more background images:</p>
+                        
+                        <pre><code class="language-css">.hero {
+  background-image: url('hero.jpg');
+}
+
+/* Multiple background images (listed from top to bottom) */
+.layered {
+  background-image: 
+    url('overlay.png'),
+    url('texture.png'),
+    url('background.jpg');
+}</code></pre>
+                        
+                        <h3>Background Repeat</h3>
+                        <p>The <code>background-repeat</code> property controls how background images repeat:</p>
+                        
+                        <pre><code class="language-css">.repeat {
+  background-image: url('pattern.png');
+  background-repeat: repeat; /* Default: repeats in both directions */
+}
+
+.repeat-x {
+  background-image: url('pattern.png');
+  background-repeat: repeat-x; /* Repeats horizontally only */
+}
+
+.repeat-y {
+  background-image: url('pattern.png');
+  background-repeat: repeat-y; /* Repeats vertically only */
+}
+
+.no-repeat {
+  background-image: url('icon.png');
+  background-repeat: no-repeat; /* No repetition */
+}
+
+.space {
+  background-image: url('pattern.png');
+  background-repeat: space; /* Repeats with space between */
+}
+
+.round {
+  background-image: url('pattern.png');
+  background-repeat: round; /* Stretches or squeezes to avoid partial tiles */
+}</code></pre>
+                        
+                        <h3>Background Position</h3>
+                        <p>The <code>background-position</code> property sets the starting position of a background image:</p>
+                        
+                        <pre><code class="language-css">/* Keywords */
+.top-left {
+  background-position: top left;
+}
+
+.center {
+  background-position: center;
+}
+
+/* Percentages */
+.custom-position {
+  background-position: 25% 75%;
+}
+
+/* Length values */
+.pixel-position {
+  background-position: 20px 50px;
+}
+
+/* Mixed values */
+.mixed-position {
+  background-position: right 20px bottom 10px;
+}</code></pre>
+                        
+                        <h3>Background Size</h3>
+                        <p>The <code>background-size</code> property controls the size of background images:</p>
+                        
+                        <pre><code class="language-css">/* Keywords */
+.cover {
+  background-size: cover; /* Scales to cover the entire element */
+}
+
+.contain {
+  background-size: contain; /* Scales to fit inside the element */
+}
+
+/* Length values */
+.pixel-size {
+  background-size: 200px 100px;
+}
+
+/* Percentages */
+.percentage-size {
+  background-size: 50% 75%;
+}
+
+/* Auto for one dimension */
+.auto-width {
+  background-size: auto 300px;
+}</code></pre>
+                        
+                        <h3>Background Attachment</h3>
+                        <p>The <code>background-attachment</code> property determines whether a background image scrolls with the content:</p>
+                        
+                        <pre><code class="language-css">.scroll {
+  background-attachment: scroll; /* Default: scrolls with the element */
+}
+
+.fixed {
+  background-attachment: fixed; /* Fixed relative to the viewport */
+}
+
+.local {
+  background-attachment: local; /* Scrolls with the element's contents */
+}</code></pre>
+                        
+                        <h3>Background Origin</h3>
+                        <p>The <code>background-origin</code> property specifies where the background positioning area begins:</p>
+                        
+                        <pre><code class="language-css">.border-box {
+  background-origin: border-box; /* Background starts at the border edge */
+}
+
+.padding-box {
+  background-origin: padding-box; /* Default: Background starts at the padding edge */
+}
+
+.content-box {
+  background-origin: content-box; /* Background starts at the content edge */
+}</code></pre>
+                        
+                        <h3>Background Clip</h3>
+                        <p>The <code>background-clip</code> property determines how far the background extends:</p>
+                        
+                        <pre><code class="language-css">.border-box {
+  background-clip: border-box; /* Default: Background extends to the border edge */
+}
+
+.padding-box {
+  background-clip: padding-box; /* Background extends to the padding edge */
+}
+
+.content-box {
+  background-clip: content-box; /* Background extends to the content edge */
+}
+
+/* Text clipping (non-standard but widely supported) */
+.text-clip {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent; /* Makes text transparent to show background */
+  background-image: linear-gradient(to right, #ff8a00, #da1b60);
+}</code></pre>
+                        
+                        <h3>Background Shorthand</h3>
+                        <p>The <code>background</code> shorthand property sets all background properties at once:</p>
+                        
+                        <pre><code class="language-css">/* background: color image position/size repeat attachment origin clip */
+.hero {
+  background: #f5f5f5 url('hero.jpg') center/cover no-repeat fixed;
+}
+
+/* Multiple backgrounds */
+.complex {
+  background: 
+    url('overlay.png') top left/auto no-repeat,
+    url('pattern.png') center/200px repeat,
+    linear-gradient(to bottom, #f5f5f5, #e5e5e5);
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Background Shorthand Order</h4>
+                            <p>When using the <code>background</code> shorthand, the order is flexible, but some rules apply:</p>
+                            <ul>
+                                <li>If both <code>background-position</code> and <code>background-size</code> are specified, they must be separated by a slash (<code>/</code>)</li>
+                                <li><code>background-color</code> can only be specified once and should be the last layer</li>
+                                <li>Omitted values are set to their initial values</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Gradients</h2>
+                        <p>CSS gradients are special types of background images that show a smooth transition between two or more colors.</p>
+                        
+                        <h3>Linear Gradients</h3>
+                        <p>Linear gradients transition colors along a straight line:</p>
+                        
+                        <pre><code class="language-css">/* Default (top to bottom) */
+.gradient-default {
+  background-image: linear-gradient(red, blue);
+}
+
+/* With direction angle */
+.gradient-angle {
+  background-image: linear-gradient(45deg, red, blue);
+}
+
+/* With direction keyword */
+.gradient-direction {
+  background-image: linear-gradient(to right, red, blue);
+}
+
+/* Multiple color stops */
+.gradient-multi {
+  background-image: linear-gradient(to right, red, yellow, green, blue);
+}
+
+/* With specific color stop positions */
+.gradient-positions {
+  background-image: linear-gradient(to right, red 0%, yellow 25%, green 50%, blue 100%);
+}
+
+/* Hard color stops (creates stripes) */
+.gradient-stripes {
+  background-image: linear-gradient(to right, 
+    red 0%, red 25%, 
+    yellow 25%, yellow 50%, 
+    green 50%, green 75%, 
+    blue 75%, blue 100%);
+}</code></pre>
+                        
+                        <h3>Radial Gradients</h3>
+                        <p>Radial gradients transition colors from a central point outward:</p>
+                        
+                        <pre><code class="language-css">/* Default (center, ellipse) */
+.radial-default {
+  background-image: radial-gradient(red, blue);
+}
+
+/* Circle shape */
+.radial-circle {
+  background-image: radial-gradient(circle, red, blue);
+}
+
+/* With position */
+.radial-position {
+  background-image: radial-gradient(at top right, red, blue);
+}
+
+/* With size */
+.radial-size {
+  background-image: radial-gradient(circle closest-side, red, blue);
+}
+
+/* Full syntax */
+.radial-full {
+  background-image: radial-gradient(circle closest-corner at 20% 30%, red, yellow, blue);
+}</code></pre>
+                        
+                        <p>Size keywords for radial gradients:</p>
+                        <ul>
+                            <li><code>closest-side</code>: Gradient ends at the closest side of the box</li>
+                            <li><code>closest-corner</code>: Gradient ends at the closest corner of the box</li>
+                            <li><code>farthest-side</code>: Gradient ends at the farthest side of the box</li>
+                            <li><code>farthest-corner</code>: Gradient ends at the farthest corner of the box (default)</li>
+                        </ul>
+                        
+                        <h3>Conic Gradients</h3>
+                        <p>Conic gradients transition colors around a center point (like a color wheel):</p>
+                        
+                        <pre><code class="language-css">/* Default (center, starting at top) */
+.conic-default {
+  background-image: conic-gradient(red, yellow, green, blue, purple, red);
+}
+
+/* With position */
+.conic-position {
+  background-image: conic-gradient(at 70% 30%, red, yellow, green, blue);
+}
+
+/* With starting angle */
+.conic-angle {
+  background-image: conic-gradient(from 45deg, red, yellow, green, blue);
+}
+
+/* Full syntax */
+.conic-full {
+  background-image: conic-gradient(from 90deg at 60% 40%, red, yellow, green, blue);
+}
+
+/* Pie chart effect */
+.pie-chart {
+  background-image: conic-gradient(
+    red 0deg, red 90deg,
+    yellow 90deg, yellow 180deg,
+    green 180deg, green 270deg,
+    blue 270deg, blue 360deg
+  );
+  border-radius: 50%;
+}</code></pre>
+                        
+                        <h3>Repeating Gradients</h3>
+                        <p>Repeating gradients create patterns by repeating color stops:</p>
+                        
+                        <pre><code class="language-css">/* Repeating linear gradient */
+.repeating-linear {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #f5f5f5,
+    #f5f5f5 10px,
+    #e5e5e5 10px,
+    #e5e5e5 20px
+  );
+}
+
+/* Repeating radial gradient */
+.repeating-radial {
+  background-image: repeating-radial-gradient(
+    circle,
+    #f5f5f5,
+    #f5f5f5 10px,
+    #e5e5e5 10px,
+    #e5e5e5 20px
+  );
+}
+
+/* Repeating conic gradient */
+.repeating-conic {
+  background-image: repeating-conic-gradient(
+    #f5f5f5 0deg,
+    #f5f5f5 15deg,
+    #e5e5e5 15deg,
+    #e5e5e5 30deg
+  );
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Background Patterns and Effects</h2>
+                        <p>CSS backgrounds can be combined to create complex patterns and effects.</p>
+                        
+                        <h3>Striped Backgrounds</h3>
+                        <p>Create striped patterns using linear gradients:</p>
+                        
+                        <pre><code class="language-css">/* Horizontal stripes */
+.horizontal-stripes {
+  background-image: linear-gradient(
+    #f5f5f5 50%,
+    #e5e5e5 50%
+  );
+  background-size: 100% 20px;
+}
+
+/* Vertical stripes */
+.vertical-stripes {
+  background-image: linear-gradient(
+    to right,
+    #f5f5f5 50%,
+    #e5e5e5 50%
+  );
+  background-size: 20px 100%;
+}
+
+/* Diagonal stripes */
+.diagonal-stripes {
+  background-image: linear-gradient(
+    45deg,
+    #f5f5f5 25%,
+    #e5e5e5 25%,
+    #e5e5e5 50%,
+    #f5f5f5 50%,
+    #f5f5f5 75%,
+    #e5e5e5 75%
+  );
+  background-size: 40px 40px;
+}</code></pre>
+                        
+                        <h3>Checkerboard Pattern</h3>
+                        <p>Create a checkerboard pattern using multiple gradients:</p>
+                        
+                        <pre><code class="language-css">.checkerboard {
+  background-image:
+    linear-gradient(45deg, #ccc 25%, transparent 25%),
+    linear-gradient(-45deg, #ccc 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ccc 75%),
+    linear-gradient(-45deg, transparent 75%, #ccc 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px 0, 10px 10px;
+}</code></pre>
+                        
+                        <h3>Polka Dot Pattern</h3>
+                        <p>Create a polka dot pattern using radial gradients:</p>
+                        
+                        <pre><code class="language-css">.polka-dots {
+  background-image: radial-gradient(#ccc 20%, transparent 20%);
+  background-size: 20px 20px;
+}
+
+/* Offset pattern for more dots */
+.more-dots {
+  background-image: 
+    radial-gradient(#ccc 20%, transparent 20%),
+    radial-gradient(#ccc 20%, transparent 20%);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}</code></pre>
+                        
+                        <h3>Grid Pattern</h3>
+                        <p>Create a grid pattern using linear gradients:</p>
+                        
+                        <pre><code class="language-css">.grid {
+  background-image:
+    linear-gradient(#ccc 1px, transparent 1px),
+    linear-gradient(to right, #ccc 1px, transparent 1px);
+  background-size: 20px 20px;
+}</code></pre>
+                        
+                        <h3>Layered Backgrounds</h3>
+                        <p>Combine multiple backgrounds for complex effects:</p>
+                        
+                        <pre><code class="language-css">.layered {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Dark overlay */
+    url('texture.png'), /* Texture */
+    linear-gradient(to right, #3494e6, #ec6ead); /* Gradient base */
+}</code></pre>
+                        
+                        <h3>Frosted Glass Effect</h3>
+                        <p>Create a frosted glass effect using backdrop-filter:</p>
+                        
+                        <pre><code class="language-css">.frosted-glass {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Performance Considerations</h4>
+                            <p>Complex background patterns and effects can impact performance, especially on mobile devices. Consider these tips:</p>
+                            <ul>
+                                <li>Use CSS patterns instead of image files when possible for better performance</li>
+                                <li>Limit the number of background layers</li>
+                                <li>Be cautious with backdrop-filter, as it can be GPU-intensive</li>
+                                <li>Test on lower-end devices to ensure good performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Color Theory and Accessibility</h2>
+                        <p>Understanding color theory and accessibility considerations is essential for effective web design.</p>
+                        
+                        <h3>Color Schemes</h3>
+                        <p>Common color schemes used in web design:</p>
+                        <ul>
+                            <li><strong>Monochromatic</strong>: Different shades and tints of a single hue</li>
+                            <li><strong>Analogous</strong>: Colors that are adjacent on the color wheel</li>
+                            <li><strong>Complementary</strong>: Colors opposite each other on the color wheel</li>
+                            <li><strong>Split Complementary</strong>: A base color and two colors adjacent to its complement</li>
+                            <li><strong>Triadic</strong>: Three colors equally spaced around the color wheel</li>
+                            <li><strong>Tetradic</strong>: Four colors arranged in two complementary pairs</li>
+                        </ul>
+                        
+                        <h3>Color Contrast</h3>
+                        <p>Sufficient color contrast is crucial for readability and accessibility:</p>
+                        <ul>
+                            <li>WCAG 2.1 Level AA requires a contrast ratio of at least 4.5:1 for normal text</li>
+                            <li>Large text (18pt or 14pt bold) requires a contrast ratio of at least 3:1</li>
+                            <li>UI components and graphical objects require a contrast ratio of at least 3:1</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">/* Good contrast for body text */
+body {
+  color: #333; /* Dark gray text */
+  background-color: #fff; /* White background */
+}
+
+/* Improved contrast for links */
+a {
+  color: #0056b3; /* Darker blue for better contrast */
+}</code></pre>
+                        
+                        <h3>Color and User Preferences</h3>
+                        <p>Respect user preferences for color schemes:</p>
+                        
+                        <pre><code class="language-css">/* Detect user's preference for dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #f0f0f0;
+    background-color: #121212;
+  }
+  
+  a {
+    color: #80b3ff;
+  }
+}
+
+/* Detect user's preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}</code></pre>
+                        
+                        <h3>Color Blindness Considerations</h3>
+                        <p>About 8% of men and 0.5% of women have some form of color blindness. Design with this in mind:</p>
+                        <ul>
+                            <li>Don't rely solely on color to convey information</li>
+                            <li>Avoid problematic color combinations (red/green, blue/purple, green/brown)</li>
+                            <li>Use patterns, shapes, or labels in addition to color</li>
+                            <li>Test your designs with color blindness simulators</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">/* Using patterns with color */
+.success {
+  background-color: #4caf50; /* Green */
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 20px 20px;
+}
+
+.error {
+  background-color: #f44336; /* Red */
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 20px 20px;
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Colors & Backgrounds</h2>
+                        <p>Let's practice applying colors and backgrounds with a hands-on exercise.</p>
+                        
+                        <h3>Exercise: Create a Color Theme</h3>
+                        <p>Create an HTML file with the following content:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Colors & Backgrounds Practice&lt;/title&gt;
+  &lt;link rel="stylesheet" href="colors.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Color Theme Demo&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#" class="active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  
+  &lt;main&gt;
+    &lt;section class="hero"&gt;
+      &lt;div class="hero-content"&gt;
+        &lt;h2&gt;Welcome to Our Website&lt;/h2&gt;
+        &lt;p&gt;This is a demonstration of CSS colors and backgrounds.&lt;/p&gt;
+        &lt;button class="cta-button"&gt;Learn More&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    
+    &lt;section class="features"&gt;
+      &lt;h2&gt;Our Features&lt;/h2&gt;
+      &lt;div class="feature-grid"&gt;
+        &lt;div class="feature-card"&gt;
+          &lt;div class="icon"&gt;🎨&lt;/div&gt;
+          &lt;h3&gt;Beautiful Colors&lt;/h3&gt;
+          &lt;p&gt;Our design uses a carefully selected color palette for maximum impact.&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="feature-card"&gt;
+          &lt;div class="icon"&gt;🖼️&lt;/div&gt;
+          &lt;h3&gt;Amazing Backgrounds&lt;/h3&gt;
+          &lt;p&gt;We use gradients and patterns to create unique visual experiences.&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="feature-card"&gt;
+          &lt;div class="icon"&gt;👁️&lt;/div&gt;
+          &lt;h3&gt;Accessible Design&lt;/h3&gt;
+          &lt;p&gt;Our colors are chosen with accessibility and readability in mind.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    
+    &lt;section class="testimonial"&gt;
+      &lt;blockquote&gt;
+        &lt;p&gt;"The attention to color detail in this design is impressive. Every element feels cohesive and purposeful."&lt;/p&gt;
+        &lt;cite&gt;— Jane Smith, Design Expert&lt;/cite&gt;
+      &lt;/blockquote&gt;
+    &lt;/section&gt;
+    
+    &lt;section class="call-to-action"&gt;
+      &lt;h2&gt;Ready to Get Started?&lt;/h2&gt;
+      &lt;p&gt;Join thousands of satisfied customers using our services.&lt;/p&gt;
+      &lt;button class="cta-button"&gt;Sign Up Now&lt;/button&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+  
+  &lt;footer&gt;
+    &lt;div class="footer-content"&gt;
+      &lt;div class="footer-section"&gt;
+        &lt;h3&gt;About Us&lt;/h3&gt;
+        &lt;p&gt;We are a company dedicated to beautiful design and user experience.&lt;/p&gt;
+      &lt;/div&gt;
+      
+      &lt;div class="footer-section"&gt;
+        &lt;h3&gt;Quick Links&lt;/h3&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      
+      &lt;div class="footer-section"&gt;
+        &lt;h3&gt;Contact Us&lt;/h3&gt;
+        &lt;p&gt;Email: info@example.com&lt;/p&gt;
+        &lt;p&gt;Phone: (123) 456-7890&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="copyright"&gt;
+      &lt;p&gt;&copy; 2025 Color Theme Demo. All rights reserved.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>Now, create a CSS file named <code>colors.css</code> and style the page using colors and backgrounds:</p>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Apply the following styles to create a cohesive color theme:</p>
+                            <ol>
+                                <li>Choose a primary color and create a color scheme (monochromatic, analogous, complementary, etc.)</li>
+                                <li>Style the header with a gradient background</li>
+                                <li>Create a hero section with a layered background (overlay on an image or pattern)</li>
+                                <li>Style the feature cards with different background colors or patterns</li>
+                                <li>Use a subtle pattern for the testimonial section background</li>
+                                <li>Create a call-to-action section with an eye-catching background</li>
+                                <li>Style the footer with a dark color scheme</li>
+                                <li>Ensure all text has sufficient contrast with its background</li>
+                                <li>Use hover effects with color transitions for interactive elements</li>
+                                <li>Add a dark mode version using a media query</li>
+                            </ol>
+                            <p>Try to create a visually appealing and accessible design using the colors and backgrounds properties we've learned in this lesson.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored CSS colors and backgrounds, which are essential for creating visually appealing and engaging web designs:</p>
+                        <ul>
+                            <li><strong>Color Values</strong>: Different ways to specify colors, including named colors, hex, RGB, HSL, and newer formats</li>
+                            <li><strong>Color Properties</strong>: How to apply colors to text, backgrounds, borders, and other element parts</li>
+                            <li><strong>Background Properties</strong>: Controlling background images, position, size, repeat, and more</li>
+                            <li><strong>Gradients</strong>: Creating linear, radial, and conic gradients for smooth color transitions</li>
+                            <li><strong>Background Patterns</strong>: Techniques for creating stripes, checkerboards, polka dots, and other patterns</li>
+                            <li><strong>Color Theory</strong>: Understanding color schemes, contrast, and accessibility considerations</li>
+                        </ul>
+                        
+                        <p>Effective use of colors and backgrounds can significantly enhance the visual appeal and user experience of your websites. By mastering these properties, you can create designs that are both beautiful and functional, while ensuring they remain accessible to all users.</p>
+                        
+                        <p>In the next lesson, we'll explore CSS Layout Basics, where you'll learn how to position and arrange elements on the page using various layout techniques.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page29.html" class="btn">Previous: Typography</a>
+                        <a href="page31.html" class="btn">Next: Layout Basics</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

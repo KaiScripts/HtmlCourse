@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Features | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Explore advanced CSS features and modern techniques for professional web development.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="38">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html" class="active">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional CSS</h3>
+                <ul>
+                    <li><a href="page38.html" class="active">38. Advanced CSS Features</a></li>
+                    <li><a href="page39.html">39. CSS Preprocessors</a></li>
+                    <li><a href="page40.html">40. CSS Architecture</a></li>
+                    <li><a href="page41.html">41. CSS Frameworks</a></li>
+                    <li><a href="page42.html">42. Advanced Layouts</a></li>
+                    <li><a href="page43.html">43. Advanced Animations</a></li>
+                    <li><a href="page44.html">44. CSS-in-JS</a></li>
+                    <li><a href="page45.html">45. CSS Houdini</a></li>
+                    <li><a href="page46.html">46. CSS Performance</a></li>
+                    <li><a href="page47.html">47. CSS Testing</a></li>
+                    <li><a href="page48.html">48. CSS for Print</a></li>
+                    <li><a href="page49.html">49. Future of CSS</a></li>
+                    <li><a href="page50.html">50. Building a Portfolio</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 76%;"></div>
+                </div>
+                <p style="text-align: center;">Page 38 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Advanced CSS Features</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to Advanced CSS</h2>
+                        <p>CSS has evolved significantly since its inception, with modern CSS offering powerful features that were once only possible with JavaScript or complex workarounds. These advanced features enable developers to create more sophisticated, efficient, and maintainable stylesheets.</p>
+                        
+                        <p>In this lesson, we'll explore modern CSS features that go beyond the basics, focusing on capabilities that have transformed how professional developers approach styling. These features provide more control, flexibility, and expressiveness, allowing for complex designs with less code.</p>
+                        
+                        <h3>The Evolution of CSS</h3>
+                        <p>CSS has undergone several major evolutions:</p>
+                        
+                        <ul>
+                            <li><strong>CSS1 (1996)</strong>: Basic styling capabilities like colors, fonts, margins, and borders</li>
+                            <li><strong>CSS2 (1998)</strong>: Added positioning, z-index, media types, and bidirectional text</li>
+                            <li><strong>CSS2.1 (2011)</strong>: Refined CSS2 with bug fixes and removed poorly supported features</li>
+                            <li><strong>CSS3 (2000s-present)</strong>: Modular approach with independent specifications for features like animations, flexbox, grid, and more</li>
+                            <li><strong>Modern CSS (Current)</strong>: Living standard with continuous improvements and new features</li>
+                        </ul>
+                        
+                        <p>Today's CSS is more powerful than ever, with features that solve complex layout challenges, enable sophisticated animations, and provide dynamic styling capabilities that adapt to different contexts and user preferences.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Modern Selectors</h2>
+                        <p>CSS offers powerful selectors that go beyond the basics, allowing for more precise targeting of elements based on their attributes, states, and relationships.</p>
+                        
+                        <h3>Attribute Selectors</h3>
+                        <p>Attribute selectors target elements based on their attributes and attribute values:</p>
+                        
+                        <pre><code class="language-css">/* Elements with the specified attribute */
+[data-type] {
+  background-color: #f5f5f5;
+}
+
+/* Elements with an exact attribute value */
+[data-type="primary"] {
+  font-weight: bold;
+}
+
+/* Attribute value begins with specified string */
+[href^="https://"] {
+  color: green;
+}
+
+/* Attribute value ends with specified string */
+[src$=".jpg"] {
+  border: 1px solid #ddd;
+}
+
+/* Attribute value contains specified string */
+[class*="card"] {
+  padding: 1rem;
+}
+
+/* Attribute value is in a space-separated list */
+[class~="featured"] {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Attribute value is in a hyphen-separated list */
+[lang|="en"] {
+  font-family: 'Arial', sans-serif;
+}</code></pre>
+                        
+                        <p>These selectors are particularly useful for targeting elements based on data attributes, which are commonly used for JavaScript hooks and storing additional information.</p>
+                        
+                        <h3>Pseudo-Classes</h3>
+                        <p>Advanced pseudo-classes allow for targeting elements based on states, positions, and relationships:</p>
+                        
+                        <h4>Structural Pseudo-Classes</h4>
+                        <pre><code class="language-css">/* First child element */
+:first-child {
+  margin-top: 0;
+}
+
+/* Last child element */
+:last-child {
+  margin-bottom: 0;
+}
+
+/* Only child element */
+:only-child {
+  font-weight: bold;
+}
+
+/* First element of its type */
+p:first-of-type {
+  font-size: 1.2em;
+}
+
+/* Last element of its type */
+p:last-of-type {
+  font-style: italic;
+}
+
+/* Only element of its type */
+p:only-of-type {
+  color: blue;
+}
+
+/* Nth child (even, odd, formula) */
+li:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+li:nth-child(odd) {
+  background-color: white;
+}
+
+li:nth-child(3n+1) {
+  font-weight: bold;
+}
+
+/* Nth of type */
+p:nth-of-type(3) {
+  color: red;
+}
+
+/* Empty elements */
+div:empty {
+  display: none;
+}</code></pre>
+                        
+                        <h4>Form Pseudo-Classes</h4>
+                        <pre><code class="language-css">/* Checked inputs (checkboxes, radio buttons) */
+input:checked + label {
+  font-weight: bold;
+}
+
+/* Disabled form elements */
+input:disabled {
+  opacity: 0.5;
+}
+
+/* Required form elements */
+input:required {
+  border-color: red;
+}
+
+/* Optional form elements */
+input:optional {
+  border-color: #ddd;
+}
+
+/* Valid form elements */
+input:valid {
+  border-color: green;
+}
+
+/* Invalid form elements */
+input:invalid {
+  border-color: red;
+}
+
+/* In-range and out-of-range values */
+input:in-range {
+  background-color: #e6ffe6;
+}
+
+input:out-of-range {
+  background-color: #ffe6e6;
+}</code></pre>
+                        
+                        <h4>User Interaction Pseudo-Classes</h4>
+                        <pre><code class="language-css">/* Hover state */
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Active state (being clicked) */
+.button:active {
+  transform: translateY(1px);
+}
+
+/* Focus state */
+input:focus {
+  outline: 2px solid blue;
+}
+
+/* Focus-visible (keyboard focus) */
+button:focus-visible {
+  outline: 2px solid blue;
+  outline-offset: 2px;
+}
+
+/* Focus-within (element or child has focus) */
+.form-group:focus-within {
+  background-color: #f5f5f5;
+}</code></pre>
+                        
+                        <h3>Pseudo-Elements</h3>
+                        <p>Pseudo-elements create "virtual" elements that don't exist in the HTML but can be styled:</p>
+                        
+                        <pre><code class="language-css">/* First line of text */
+p::first-line {
+  font-weight: bold;
+}
+
+/* First letter of text */
+p::first-letter {
+  font-size: 2em;
+  float: left;
+  margin-right: 0.25em;
+}
+
+/* Before and after elements */
+.card::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+.external-link::after {
+  content: " ↗";
+  font-size: 0.8em;
+}
+
+/* Selection (highlighted text) */
+::selection {
+  background-color: #ffeb3b;
+  color: black;
+}
+
+/* Placeholder text */
+input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Marker (list bullets or numbers) */
+li::marker {
+  color: #0066cc;
+  font-weight: bold;
+}</code></pre>
+                        
+                        <h3>Combinators</h3>
+                        <p>Advanced combinators allow for targeting elements based on their relationships:</p>
+                        
+                        <pre><code class="language-css">/* Direct child */
+.parent > .child {
+  margin-left: 1rem;
+}
+
+/* Adjacent sibling */
+h2 + p {
+  font-size: 1.2em;
+}
+
+/* General sibling */
+h2 ~ p {
+  line-height: 1.6;
+}
+
+/* Descendant (any level) */
+.container .title {
+  color: #333;
+}</code></pre>
+                        
+                        <h3>:is() and :where() Pseudo-Classes</h3>
+                        <p>These newer pseudo-classes help simplify complex selectors:</p>
+                        
+                        <pre><code class="language-css">/* Without :is() */
+header h1, header h2, header h3,
+footer h1, footer h2, footer h3 {
+  font-family: 'Georgia', serif;
+}
+
+/* With :is() */
+:is(header, footer) :is(h1, h2, h3) {
+  font-family: 'Georgia', serif;
+}
+
+/* :where() is similar but has zero specificity */
+:where(header, footer) :where(h1, h2, h3) {
+  color: #333;
+}</code></pre>
+                        
+                        <p>The key difference between <code>:is()</code> and <code>:where()</code> is that <code>:is()</code> takes the specificity of its most specific argument, while <code>:where()</code> has zero specificity.</p>
+                        
+                        <h3>:has() Relational Pseudo-Class</h3>
+                        <p>The <code>:has()</code> pseudo-class (parent selector) allows selecting elements based on their children:</p>
+                        
+                        <pre><code class="language-css">/* Card that contains an image */
+.card:has(img) {
+  padding-top: 0;
+}
+
+/* Paragraphs that contain links */
+p:has(a) {
+  padding-left: 1rem;
+  border-left: 3px solid #0066cc;
+}
+
+/* Form groups with required inputs */
+.form-group:has(input:required) {
+  background-color: #fff8e1;
+}
+
+/* Lists with more than 5 items */
+ul:has(li:nth-child(5)) {
+  column-count: 2;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Browser Support</h4>
+                            <p>Most modern selectors have excellent browser support, but some newer features like <code>:has()</code> may not be supported in all browsers. Always check current browser support before using these features in production, and consider providing fallbacks for critical functionality.</p>
+                            <p>Resources like <a href="https://caniuse.com/" target="_blank">caniuse.com</a> can help you determine browser support for specific CSS features.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Layout Techniques</h2>
+                        <p>Modern CSS provides powerful layout capabilities that go beyond the basics of Flexbox and Grid. Let's explore some advanced layout techniques:</p>
+                        
+                        <h3>Subgrid</h3>
+                        <p>Subgrid allows nested grid items to align with the tracks of their parent grid:</p>
+                        
+                        <pre><code class="language-css">/* Parent grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+/* Child element with its own grid */
+.nested-grid {
+  grid-column: span 6;
+  display: grid;
+  /* Use the parent's column tracks */
+  grid-template-columns: subgrid;
+  /* Or for both rows and columns */
+  /* grid-template: subgrid / subgrid; */
+}</code></pre>
+                        
+                        <p>Subgrid is particularly useful for card layouts where you want the content within each card to align across the entire layout.</p>
+                        
+                        <h3>Masonry Layout</h3>
+                        <p>CSS is developing native support for masonry layouts, though it's still experimental:</p>
+                        
+                        <pre><code class="language-css">.masonry-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: masonry;
+  gap: 20px;
+}</code></pre>
+                        
+                        <p>Until full browser support arrives, JavaScript libraries or CSS tricks using column layouts are still common for masonry layouts:</p>
+                        
+                        <pre><code class="language-css">.masonry-fallback {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+.masonry-fallback > * {
+  break-inside: avoid;
+  margin-bottom: 20px;
+}</code></pre>
+                        
+                        <h3>Aspect Ratio</h3>
+                        <p>The <code>aspect-ratio</code> property maintains a consistent width-to-height ratio:</p>
+                        
+                        <pre><code class="language-css">/* 16:9 aspect ratio */
+.video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+}
+
+/* 1:1 aspect ratio (square) */
+.profile-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* 4:3 aspect ratio */
+.card {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}</code></pre>
+                        
+                        <p>This property is particularly useful for responsive media, cards, and other elements where maintaining proportions is important.</p>
+                        
+                        <h3>Container Queries</h3>
+                        <p>Container queries allow styles to be applied based on the size of a parent container rather than the viewport:</p>
+                        
+                        <pre><code class="language-css">/* Define a container */
+.card-container {
+  container-type: inline-size;
+  container-name: card;
+}
+
+/* Styles based on container width */
+@container card (min-width: 400px) {
+  .card {
+    display: flex;
+  }
+  
+  .card-image {
+    width: 40%;
+  }
+  
+  .card-content {
+    width: 60%;
+  }
+}
+
+@container card (max-width: 399px) {
+  .card {
+    display: block;
+  }
+  
+  .card-image {
+    width: 100%;
+  }
+}</code></pre>
+                        
+                        <p>Container queries are powerful for component-based design, allowing components to adapt based on their container's size rather than the viewport size.</p>
+                        
+                        <h3>Multi-Column Layout</h3>
+                        <p>Multi-column layout creates newspaper-style columns for text content:</p>
+                        
+                        <pre><code class="language-css">.text-content {
+  column-count: 3;
+  column-gap: 2rem;
+  column-rule: 1px solid #ddd;
+}
+
+/* Prevent headings from breaking across columns */
+.text-content h2 {
+  column-span: all;
+  margin-top: 2rem;
+}
+
+/* Prevent elements from breaking across columns */
+.text-content figure {
+  break-inside: avoid;
+}</code></pre>
+                        
+                        <h3>Logical Properties</h3>
+                        <p>Logical properties and values adapt to the text direction and writing mode:</p>
+                        
+                        <pre><code class="language-css">/* Traditional physical properties */
+.box {
+  margin-left: 1rem;
+  padding-right: 2rem;
+  border-top: 1px solid #ddd;
+  width: 200px;
+  height: 100px;
+}
+
+/* Logical properties */
+.box {
+  margin-inline-start: 1rem;
+  padding-inline-end: 2rem;
+  border-block-start: 1px solid #ddd;
+  inline-size: 200px;
+  block-size: 100px;
+}</code></pre>
+                        
+                        <p>Logical properties are particularly important for internationalization, as they automatically adapt to different writing directions (left-to-right, right-to-left, top-to-bottom).</p>
+                        
+                        <h3>Scroll Snap</h3>
+                        <p>Scroll snap creates smooth, controlled scrolling experiences:</p>
+                        
+                        <pre><code class="language-css">/* Container */
+.scroll-container {
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  display: flex;
+}
+
+/* Items */
+.scroll-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  height: 100vh;
+}
+
+/* Optional: Scroll padding */
+.scroll-container {
+  scroll-padding: 0 1rem;
+}</code></pre>
+                        
+                        <p>Scroll snap is useful for creating carousels, slideshows, and paginated content without JavaScript.</p>
+                        
+                        <div class="info-box">
+                            <h4>Progressive Enhancement</h4>
+                            <p>When using advanced layout features, consider implementing them with progressive enhancement:</p>
+                            <ol>
+                                <li>Start with a simple, functional layout that works everywhere</li>
+                                <li>Enhance with advanced features where supported</li>
+                                <li>Use feature queries (<code>@supports</code>) to detect support</li>
+                            </ol>
+                            <pre><code class="language-css">/* Base layout */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Enhanced layout with grid if supported */
+@supports (display: grid) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Color and Effects</h2>
+                        <p>Modern CSS provides sophisticated color and visual effects capabilities that were once only possible with images or JavaScript.</p>
+                        
+                        <h3>Modern Color Formats</h3>
+                        <p>CSS now supports several advanced color formats:</p>
+                        
+                        <h4>HSL and HSLA</h4>
+                        <pre><code class="language-css">/* Hue, Saturation, Lightness */
+.element {
+  color: hsl(210, 100%, 50%);
+  background-color: hsla(210, 100%, 50%, 0.5);
+}</code></pre>
+                        
+                        <h4>RGB and RGBA with Modern Syntax</h4>
+                        <pre><code class="language-css">/* Modern RGB syntax with alpha */
+.element {
+  color: rgb(0 128 255);
+  background-color: rgb(0 128 255 / 50%);
+}</code></pre>
+                        
+                        <h4>HWB (Hue, Whiteness, Blackness)</h4>
+                        <pre><code class="language-css">.element {
+  color: hwb(210 0% 0%);
+  background-color: hwb(210 20% 10%);
+}</code></pre>
+                        
+                        <h4>Lab and LCH</h4>
+                        <pre><code class="language-css">/* Perceptually uniform color spaces */
+.element {
+  color: lab(50% 40 20);
+  background-color: lch(50% 50 210);
+}</code></pre>
+                        
+                        <h4>Color Functions</h4>
+                        <pre><code class="language-css">/* Relative color syntax */
+.element {
+  --brand-color: #0066cc;
+  --brand-light: color-mix(in srgb, var(--brand-color), white 30%);
+  --brand-dark: color-mix(in srgb, var(--brand-color), black 30%);
+  
+  /* Relative color adjustments */
+  --accent-color: color-contrast(var(--brand-color) vs white, black);
+}</code></pre>
+                        
+                        <h3>Gradients</h3>
+                        <p>CSS supports sophisticated gradient effects:</p>
+                        
+                        <h4>Linear Gradients</h4>
+                        <pre><code class="language-css">/* Basic linear gradient */
+.element {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+/* Multiple color stops */
+.element {
+  background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+}
+
+/* Hard color stops */
+.element {
+  background: linear-gradient(to right, 
+    #ff7e5f 0%, 
+    #ff7e5f 50%, 
+    #feb47b 50%, 
+    #feb47b 100%
+  );
+}</code></pre>
+                        
+                        <h4>Radial Gradients</h4>
+                        <pre><code class="language-css">/* Basic radial gradient */
+.element {
+  background: radial-gradient(circle, #ff7e5f, #feb47b);
+}
+
+/* Positioned radial gradient */
+.element {
+  background: radial-gradient(
+    circle at top right,
+    #ff7e5f,
+    #feb47b
+  );
+}
+
+/* Sized radial gradient */
+.element {
+  background: radial-gradient(
+    circle closest-side,
+    #ff7e5f,
+    #feb47b
+  );
+}</code></pre>
+                        
+                        <h4>Conic Gradients</h4>
+                        <pre><code class="language-css">/* Basic conic gradient */
+.element {
+  background: conic-gradient(
+    from 0deg,
+    red, orange, yellow, green, blue, purple, red
+  );
+}
+
+/* Pie chart */
+.element {
+  background: conic-gradient(
+    #ff7e5f 0% 25%,
+    #feb47b 25% 50%,
+    #c471ed 50% 75%,
+    #12c2e9 75% 100%
+  );
+  border-radius: 50%;
+}</code></pre>
+                        
+                        <h4>Repeating Gradients</h4>
+                        <pre><code class="language-css">/* Repeating linear gradient */
+.element {
+  background: repeating-linear-gradient(
+    45deg,
+    #f5f5f5,
+    #f5f5f5 10px,
+    #e0e0e0 10px,
+    #e0e0e0 20px
+  );
+}
+
+/* Repeating radial gradient */
+.element {
+  background: repeating-radial-gradient(
+    circle,
+    #f5f5f5,
+    #f5f5f5 10px,
+    #e0e0e0 10px,
+    #e0e0e0 20px
+  );
+}</code></pre>
+                        
+                        <h3>Blend Modes</h3>
+                        <p>Blend modes control how elements blend with their background:</p>
+                        
+                        <h4>Background Blend Mode</h4>
+                        <pre><code class="language-css">.element {
+  background-image: 
+    linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5)),
+    url('image.jpg');
+  background-blend-mode: multiply;
+}</code></pre>
+                        
+                        <h4>Mix Blend Mode</h4>
+                        <pre><code class="language-css">.overlay {
+  mix-blend-mode: overlay;
+}
+
+.screen {
+  mix-blend-mode: screen;
+}
+
+.multiply {
+  mix-blend-mode: multiply;
+}</code></pre>
+                        
+                        <h3>Filters</h3>
+                        <p>CSS filters apply visual effects to elements:</p>
+                        
+                        <pre><code class="language-css">/* Basic filters */
+.blur {
+  filter: blur(5px);
+}
+
+.brightness {
+  filter: brightness(1.5);
+}
+
+.contrast {
+  filter: contrast(150%);
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.sepia {
+  filter: sepia(80%);
+}
+
+.hue-rotate {
+  filter: hue-rotate(90deg);
+}
+
+.invert {
+  filter: invert(100%);
+}
+
+.opacity {
+  filter: opacity(50%);
+}
+
+.saturate {
+  filter: saturate(200%);
+}
+
+.drop-shadow {
+  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
+}
+
+/* Multiple filters */
+.multiple-filters {
+  filter: contrast(150%) brightness(1.2) blur(2px);
+}</code></pre>
+                        
+                        <h4>Backdrop Filter</h4>
+                        <p>Backdrop filters apply effects to the area behind an element:</p>
+                        
+                        <pre><code class="language-css">.frosted-glass {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: brightness(80%);
+}</code></pre>
+                        
+                        <h3>Masks and Clipping</h3>
+                        <p>CSS provides powerful masking and clipping capabilities:</p>
+                        
+                        <h4>Clip Path</h4>
+                        <pre><code class="language-css">/* Basic shapes */
+.circle {
+  clip-path: circle(50%);
+}
+
+.ellipse {
+  clip-path: ellipse(50% 40% at 50% 50%);
+}
+
+.polygon {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* Inset (rounded rectangle) */
+.inset {
+  clip-path: inset(10% 20% 10% 20% round 20px);
+}</code></pre>
+                        
+                        <h4>Mask Image</h4>
+                        <pre><code class="language-css">.masked-element {
+  mask-image: url('mask.svg');
+  mask-size: cover;
+}
+
+/* Gradient mask */
+.gradient-mask {
+  mask-image: linear-gradient(to bottom, black, transparent);
+}</code></pre>
+                        
+                        <h3>Shapes</h3>
+                        <p>CSS Shapes control how content flows around elements:</p>
+                        
+                        <pre><code class="language-css">/* Text wrapping around a circle */
+.circle-shape {
+  float: left;
+  width: 200px;
+  height: 200px;
+  shape-outside: circle(50%);
+}
+
+/* Text wrapping around a polygon */
+.polygon-shape {
+  float: right;
+  width: 300px;
+  height: 300px;
+  shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Performance Considerations</h4>
+                            <p>Advanced visual effects can impact performance. Consider these tips:</p>
+                            <ul>
+                                <li>Use hardware-accelerated properties when possible (<code>transform</code>, <code>opacity</code>)</li>
+                                <li>Be cautious with filters and blend modes on large elements or animations</li>
+                                <li>Test performance on lower-end devices</li>
+                                <li>Consider using <code>will-change</code> for elements with complex effects that will animate</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Custom Properties and Calculations</h2>
+                        <p>CSS Variables (Custom Properties) enable powerful dynamic styling capabilities when combined with calculations and functions.</p>
+                        
+                        <h3>Advanced Custom Properties</h3>
+                        <p>Custom properties can be used in sophisticated ways:</p>
+                        
+                        <h4>Fallback Chains</h4>
+                        <pre><code class="language-css">:root {
+  --primary-color: blue;
+  /* --accent-color is not defined here */
+}
+
+.element {
+  /* Fallback chain: try --theme-color, then --accent-color, then --primary-color, then red */
+  color: var(--theme-color, var(--accent-color, var(--primary-color, red)));
+}</code></pre>
+                        
+                        <h4>Scoped Variables</h4>
+                        <pre><code class="language-css">/* Component-specific variables */
+.card {
+  --card-padding: 1.5rem;
+  --card-border-radius: 8px;
+  
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+}
+
+/* Variant with different values */
+.card.compact {
+  --card-padding: 0.75rem;
+}</code></pre>
+                        
+                        <h4>Computed Variables</h4>
+                        <pre><code class="language-css">:root {
+  --hue: 210;
+  --saturation: 100%;
+  --lightness: 50%;
+  
+  /* Computed color using HSL */
+  --primary-color: hsl(var(--hue), var(--saturation), var(--lightness));
+  
+  /* Derived colors */
+  --primary-light: hsl(var(--hue), var(--saturation), calc(var(--lightness) + 20%));
+  --primary-dark: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 20%));
+}</code></pre>
+                        
+                        <h3>Advanced Calculations</h3>
+                        <p>The <code>calc()</code> function enables complex mathematical expressions:</p>
+                        
+                        <h4>Basic Calculations</h4>
+                        <pre><code class="language-css">.element {
+  /* Basic arithmetic */
+  width: calc(100% - 2rem);
+  
+  /* Mixed units */
+  margin: calc(1rem + 2px);
+  
+  /* Complex expressions */
+  padding: calc(1rem * 1.5 + 2px);
+}</code></pre>
+                        
+                        <h4>Nested Calculations</h4>
+                        <pre><code class="language-css">.element {
+  /* Nested calculations */
+  width: calc(100% - calc(2rem + 10px));
+  
+  /* Or simplified */
+  width: calc(100% - 2rem - 10px);
+}</code></pre>
+                        
+                        <h4>Calculations with Variables</h4>
+                        <pre><code class="language-css">:root {
+  --spacing-unit: 8px;
+  --container-margin: 2rem;
+}
+
+.container {
+  width: calc(100% - (var(--container-margin) * 2));
+  padding: calc(var(--spacing-unit) * 2);
+}
+
+.column {
+  width: calc((100% - (var(--spacing-unit) * 3)) / 4);
+  margin-right: var(--spacing-unit);
+}</code></pre>
+                        
+                        <h3>Modern Math Functions</h3>
+                        <p>CSS now supports additional math functions beyond <code>calc()</code>:</p>
+                        
+                        <h4>min(), max(), and clamp()</h4>
+                        <pre><code class="language-css">/* min() - uses the smallest value */
+.element {
+  width: min(80%, 500px);
+}
+
+/* max() - uses the largest value */
+.element {
+  font-size: max(1rem, 3vw);
+}
+
+/* clamp() - constrains a value between a minimum and maximum */
+.element {
+  font-size: clamp(1rem, 3vw, 2rem);
+  width: clamp(200px, 50%, 800px);
+  padding: clamp(1rem, 5%, 3rem);
+}</code></pre>
+                        
+                        <p>These functions are particularly useful for responsive design, allowing values to scale within constraints.</p>
+                        
+                        <h4>Trigonometric Functions</h4>
+                        <pre><code class="language-css">/* Creating a circular layout */
+@for $i from 1 through 8 {
+  .item:nth-child(#{$i}) {
+    --angle: calc(#{$i - 1} * (360deg / 8));
+    --x: calc(cos(var(--angle)) * 150px);
+    --y: calc(sin(var(--angle)) * 150px);
+    transform: translate(var(--x), var(--y));
+  }
+}</code></pre>
+                        
+                        <p>Note: The above example uses Sass for the loop, but the trigonometric functions are native CSS.</p>
+                        
+                        <h3>Dynamic Theming</h3>
+                        <p>Custom properties enable sophisticated theming systems:</p>
+                        
+                        <pre><code class="language-css">/* Base theme variables */
+:root {
+  /* Color palette */
+  --color-primary-100: hsl(210, 100%, 95%);
+  --color-primary-200: hsl(210, 100%, 85%);
+  --color-primary-500: hsl(210, 100%, 50%);
+  --color-primary-700: hsl(210, 100%, 35%);
+  --color-primary-900: hsl(210, 100%, 20%);
+  
+  --color-neutral-100: hsl(0, 0%, 95%);
+  --color-neutral-200: hsl(0, 0%, 85%);
+  --color-neutral-500: hsl(0, 0%, 50%);
+  --color-neutral-700: hsl(0, 0%, 35%);
+  --color-neutral-900: hsl(0, 0%, 20%);
+  
+  /* Semantic variables */
+  --color-background: var(--color-neutral-100);
+  --color-surface: white;
+  --color-text: var(--color-neutral-900);
+  --color-text-muted: var(--color-neutral-700);
+  --color-border: var(--color-neutral-200);
+  
+  --color-primary: var(--color-primary-500);
+  --color-primary-hover: var(--color-primary-700);
+  
+  /* Other variables */
+  --border-radius: 4px;
+  --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-large: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme */
+.dark-theme {
+  --color-background: var(--color-neutral-900);
+  --color-surface: var(--color-neutral-700);
+  --color-text: var(--color-neutral-100);
+  --color-text-muted: var(--color-neutral-200);
+  --color-border: var(--color-neutral-500);
+  
+  --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-large: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* High contrast theme */
+.high-contrast-theme {
+  --color-background: black;
+  --color-surface: black;
+  --color-text: white;
+  --color-text-muted: white;
+  --color-border: white;
+  
+  --color-primary: yellow;
+  --color-primary-hover: orange;
+}
+
+/* Using the theme variables */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-small);
+}
+
+.button {
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: var(--border-radius);
+}
+
+.button:hover {
+  background-color: var(--color-primary-hover);
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Custom Properties vs. Preprocessor Variables</h4>
+                            <p>While both serve similar purposes, CSS Custom Properties have distinct advantages:</p>
+                            <ul>
+                                <li>They're dynamic and can be changed at runtime with JavaScript</li>
+                                <li>They cascade and inherit like other CSS properties</li>
+                                <li>They can be scoped to specific elements</li>
+                                <li>They can be changed in media queries</li>
+                            </ul>
+                            <p>Preprocessor variables (like those in Sass) are evaluated at compile time and can't be changed dynamically, but they offer more programming features like conditionals and loops.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Feature Queries and Progressive Enhancement</h2>
+                        <p>Feature queries allow you to apply styles conditionally based on browser support for specific CSS features.</p>
+                        
+                        <h3>@supports Rule</h3>
+                        <p>The <code>@supports</code> rule checks if a browser supports a particular CSS property or value:</p>
+                        
+                        <pre><code class="language-css">/* Basic feature detection */
+@supports (display: grid) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+}
+
+/* Fallback for browsers without grid support */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container > * {
+  flex: 0 0 calc(33.333% - 1rem);
+  margin: 0.5rem;
+}</code></pre>
+                        
+                        <h3>Logical Operators</h3>
+                        <p>Feature queries support logical operators for more complex conditions:</p>
+                        
+                        <pre><code class="language-css">/* AND operator */
+@supports (display: grid) and (grid-template-columns: subgrid) {
+  /* Styles for browsers that support both grid and subgrid */
+}
+
+/* OR operator */
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+  /* Styles for browsers that support either standard or prefixed backdrop-filter */
+}
+
+/* NOT operator */
+@supports not (display: grid) {
+  /* Fallback styles for browsers without grid support */
+}</code></pre>
+                        
+                        <h3>Progressive Enhancement Strategies</h3>
+                        <p>Progressive enhancement ensures your site works for all users while providing enhanced experiences for those with modern browsers:</p>
+                        
+                        <h4>1. Start with a Solid Base</h4>
+                        <pre><code class="language-css">/* Base styles that work everywhere */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 600px) {
+  .gallery-item {
+    width: calc(50% - 0.5rem);
+    margin-right: 1rem;
+  }
+  
+  .gallery-item:nth-child(2n) {
+    margin-right: 0;
+  }
+}</code></pre>
+                        
+                        <h4>2. Enhance with Modern Features</h4>
+                        <pre><code class="language-css">/* Enhanced layout with grid */
+@supports (display: grid) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .gallery-item {
+    width: auto;
+    margin: 0;
+  }
+}</code></pre>
+                        
+                        <h4>3. Add Cutting-Edge Features</h4>
+                        <pre><code class="language-css">/* Further enhancement with aspect-ratio */
+@supports (aspect-ratio: 1) {
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+}</code></pre>
+                        
+                        <h3>Handling Vendor Prefixes</h3>
+                        <p>While autoprefixers handle most vendor prefixes automatically, you can use feature queries for more complex cases:</p>
+                        
+                        <pre><code class="language-css">/* Standard property */
+.element {
+  backdrop-filter: blur(10px);
+}
+
+/* Prefixed version */
+@supports (-webkit-backdrop-filter: blur(10px)) and not (backdrop-filter: blur(10px)) {
+  .element {
+    -webkit-backdrop-filter: blur(10px);
+  }
+}</code></pre>
+                        
+                        <h3>Detecting Multiple Features</h3>
+                        <p>For complex layouts that depend on multiple features:</p>
+                        
+                        <pre><code class="language-css">/* Check for multiple features */
+@supports (display: grid) and (aspect-ratio: 1) and (gap: 1rem) {
+  /* Advanced layout that requires all these features */
+  .advanced-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .advanced-layout-item {
+    aspect-ratio: 1;
+  }
+}</code></pre>
+                        
+                        <h3>Feature Detection with JavaScript</h3>
+                        <p>For more complex cases, you can combine CSS feature queries with JavaScript:</p>
+                        
+                        <pre><code class="language-javascript">// Check for CSS Grid support
+if (CSS.supports('display: grid')) {
+  document.documentElement.classList.add('grid-supported');
+} else {
+  document.documentElement.classList.add('grid-not-supported');
+}
+
+// Check for multiple features
+if (CSS.supports('display: grid') && CSS.supports('aspect-ratio: 1')) {
+  document.documentElement.classList.add('modern-layout-supported');
+}</code></pre>
+                        
+                        <pre><code class="language-css">/* Then use these classes in your CSS */
+.grid-supported .container {
+  display: grid;
+  /* Grid styles */
+}
+
+.grid-not-supported .container {
+  display: flex;
+  /* Flexbox fallback */
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Testing Feature Support</h4>
+                            <p>When implementing progressive enhancement:</p>
+                            <ul>
+                                <li>Test in multiple browsers, including older versions</li>
+                                <li>Use tools like BrowserStack or browser developer tools to emulate different browsers</li>
+                                <li>Check <a href="https://caniuse.com/" target="_blank">caniuse.com</a> for current browser support data</li>
+                                <li>Consider using polyfills for critical features in older browsers</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Media Queries Level 4 and 5</h2>
+                        <p>Modern media queries go beyond screen size, allowing styles to adapt based on user preferences, device capabilities, and environmental conditions.</p>
+                        
+                        <h3>User Preference Media Queries</h3>
+                        <p>These media queries detect user preferences set at the operating system level:</p>
+                        
+                        <h4>Prefers Color Scheme</h4>
+                        <pre><code class="language-css">/* Light mode (default) */
+:root {
+  --background-color: white;
+  --text-color: black;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212;
+    --text-color: #f5f5f5;
+  }
+}</code></pre>
+                        
+                        <h4>Prefers Reduced Motion</h4>
+                        <pre><code class="language-css">/* Default animations */
+.element {
+  transition: transform 0.3s ease;
+}
+
+.element:hover {
+  transform: scale(1.1);
+}
+
+/* Reduced or no animations */
+@media (prefers-reduced-motion: reduce) {
+  .element {
+    transition: none;
+  }
+  
+  .element:hover {
+    transform: none;
+  }
+}</code></pre>
+                        
+                        <h4>Prefers Contrast</h4>
+                        <pre><code class="language-css">/* Standard contrast */
+:root {
+  --text-color: #555;
+  --border-color: #ddd;
+}
+
+/* High contrast */
+@media (prefers-contrast: more) {
+  :root {
+    --text-color: black;
+    --border-color: black;
+  }
+}</code></pre>
+                        
+                        <h4>Prefers Reduced Data</h4>
+                        <pre><code class="language-css">/* Default styles with high-quality images */
+.hero {
+  background-image: url('hero-hd.jpg');
+}
+
+/* Reduced data usage */
+@media (prefers-reduced-data: reduce) {
+  .hero {
+    background-image: url('hero-low.jpg');
+  }
+  
+  /* Avoid loading web fonts */
+  body {
+    font-family: system-ui, sans-serif;
+  }
+}</code></pre>
+                        
+                        <h3>Display Quality Media Queries</h3>
+                        <p>These media queries detect the display capabilities of the device:</p>
+                        
+                        <h4>Resolution</h4>
+                        <pre><code class="language-css">/* Standard resolution */
+.logo {
+  background-image: url('logo.png');
+}
+
+/* High resolution (retina) displays */
+@media (min-resolution: 2dppx) {
+  .logo {
+    background-image: url('logo@2x.png');
+  }
+}</code></pre>
+                        
+                        <h4>Color Gamut</h4>
+                        <pre><code class="language-css">/* Standard color gamut */
+:root {
+  --accent-color: #ff0000;
+}
+
+/* Wide color gamut displays */
+@media (color-gamut: p3) {
+  :root {
+    --accent-color: color(display-p3 1 0 0);
+  }
+}</code></pre>
+                        
+                        <h3>Interaction Media Queries</h3>
+                        <p>These media queries detect how users interact with the device:</p>
+                        
+                        <h4>Hover</h4>
+                        <pre><code class="language-css">/* For devices where hover is available */
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* For devices without hover capability */
+@media (hover: none) {
+  .card {
+    /* Add visual cues that don't rely on hover */
+    border: 2px solid transparent;
+  }
+  
+  .card:active {
+    border-color: blue;
+  }
+}</code></pre>
+                        
+                        <h4>Pointer</h4>
+                        <pre><code class="language-css">/* For fine pointer devices (mouse) */
+@media (pointer: fine) {
+  .button {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* For coarse pointer devices (touch) */
+@media (pointer: coarse) {
+  .button {
+    padding: 0.75rem 1.5rem; /* Larger touch target */
+  }
+  
+  .nav-links li {
+    margin-bottom: 1rem; /* More space between links */
+  }
+}</code></pre>
+                        
+                        <h3>Environmental Media Queries</h3>
+                        <p>These media queries detect environmental conditions:</p>
+                        
+                        <h4>Light Level</h4>
+                        <pre><code class="language-css">/* Normal lighting */
+:root {
+  --background-color: white;
+  --text-color: #333;
+}
+
+/* Dim lighting */
+@media (light-level: dim) {
+  :root {
+    --background-color: #222;
+    --text-color: #f0f0f0;
+  }
+}
+
+/* Bright lighting (e.g., direct sunlight) */
+@media (light-level: washed) {
+  :root {
+    --text-color: black;
+    --contrast-ratio: 1.5;
+  }
+}</code></pre>
+                        
+                        <h3>Combining Media Queries</h3>
+                        <p>Media queries can be combined for more specific targeting:</p>
+                        
+                        <pre><code class="language-css">/* Target mobile devices in dark mode */
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+  .header {
+    background-color: #121212;
+    border-bottom: 1px solid #333;
+  }
+}
+
+/* Target touch devices with coarse pointers that don't support hover */
+@media (pointer: coarse) and (hover: none) {
+  .dropdown {
+    /* Use click/tap to open instead of hover */
+  }
+}</code></pre>
+                        
+                        <h3>Container Queries vs. Media Queries</h3>
+                        <p>Container queries and media queries serve different purposes and can be used together:</p>
+                        
+                        <pre><code class="language-css">/* Media query for overall layout */
+@media (min-width: 768px) {
+  .main-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Container query for component layout */
+.card-container {
+  container-type: inline-size;
+}
+
+@container (min-width: 400px) {
+  .card {
+    display: flex;
+  }
+  
+  .card-image {
+    width: 40%;
+  }
+  
+  .card-content {
+    width: 60%;
+  }
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Media Query Best Practices</h4>
+                            <p>When using advanced media queries:</p>
+                            <ul>
+                                <li>Always provide sensible defaults before applying media queries</li>
+                                <li>Test on real devices when possible</li>
+                                <li>Combine related media features for more specific targeting</li>
+                                <li>Consider using feature queries (<code>@supports</code>) alongside media queries for newer features</li>
+                                <li>Use CSS variables to reduce repetition across media queries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Advanced CSS Features</h2>
+                        <p>Let's practice applying advanced CSS features with a hands-on exercise.</p>
+                        
+                        <h3>Exercise: Create a Modern Card Component</h3>
+                        <p>Create an HTML file with the following content:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Advanced CSS Card Component&lt;/title&gt;
+  &lt;link rel="stylesheet" href="advanced-card.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;h1&gt;Advanced CSS Card Component&lt;/h1&gt;
+    
+    &lt;div class="theme-controls"&gt;
+      &lt;button data-theme="light"&gt;Light Theme&lt;/button&gt;
+      &lt;button data-theme="dark"&gt;Dark Theme&lt;/button&gt;
+      &lt;button data-theme="colorful"&gt;Colorful Theme&lt;/button&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="card-grid"&gt;
+      &lt;article class="card"&gt;
+        &lt;div class="card-image"&gt;
+          &lt;img src="https://source.unsplash.com/random/600x400/?nature" alt="Nature"&gt;
+          &lt;span class="card-badge"&gt;New&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="card-content"&gt;
+          &lt;h2 class="card-title"&gt;Exploring Nature&lt;/h2&gt;
+          &lt;p class="card-description"&gt;Discover the beauty of natural landscapes and wildlife in this stunning collection of photographs.&lt;/p&gt;
+          &lt;div class="card-meta"&gt;
+            &lt;span class="card-category"&gt;Nature&lt;/span&gt;
+            &lt;span class="card-date"&gt;April 15, 2025&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;a href="#" class="card-button"&gt;Read More&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+      
+      &lt;article class="card featured"&gt;
+        &lt;div class="card-image"&gt;
+          &lt;img src="https://source.unsplash.com/random/600x400/?technology" alt="Technology"&gt;
+          &lt;span class="card-badge"&gt;Featured&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="card-content"&gt;
+          &lt;h2 class="card-title"&gt;Future of Technology&lt;/h2&gt;
+          &lt;p class="card-description"&gt;Explore the latest innovations and breakthroughs in technology that are shaping our future.&lt;/p&gt;
+          &lt;div class="card-meta"&gt;
+            &lt;span class="card-category"&gt;Technology&lt;/span&gt;
+            &lt;span class="card-date"&gt;April 18, 2025&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;a href="#" class="card-button"&gt;Read More&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+      
+      &lt;article class="card"&gt;
+        &lt;div class="card-image"&gt;
+          &lt;img src="https://source.unsplash.com/random/600x400/?architecture" alt="Architecture"&gt;
+        &lt;/div&gt;
+        &lt;div class="card-content"&gt;
+          &lt;h2 class="card-title"&gt;Modern Architecture&lt;/h2&gt;
+          &lt;p class="card-description"&gt;Admire the bold lines and innovative designs of contemporary architecture from around the world.&lt;/p&gt;
+          &lt;div class="card-meta"&gt;
+            &lt;span class="card-category"&gt;Architecture&lt;/span&gt;
+            &lt;span class="card-date"&gt;April 10, 2025&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;a href="#" class="card-button"&gt;Read More&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;script src="advanced-card.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>Now, create a CSS file named <code>advanced-card.css</code> and a JavaScript file named <code>advanced-card.js</code> to implement a modern card component using the advanced CSS features we've covered in this lesson.</p>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Implement the following features in your card component:</p>
+                            <ol>
+                                <li>Use CSS Variables for a comprehensive theming system with light, dark, and colorful themes</li>
+                                <li>Implement advanced selectors like <code>:is()</code>, <code>:where()</code>, or <code>:has()</code></li>
+                                <li>Use modern layout techniques like Grid, aspect-ratio, and clamp()</li>
+                                <li>Add visual effects using gradients, masks, or filters</li>
+                                <li>Create smooth transitions and subtle animations</li>
+                                <li>Implement responsive design using container queries (if supported) and media queries</li>
+                                <li>Add user preference media queries for dark mode and reduced motion</li>
+                                <li>Use feature queries for progressive enhancement</li>
+                                <li>Add JavaScript to toggle between themes</li>
+                            </ol>
+                            <p>Use the concepts and features covered in this lesson to create a modern, accessible, and visually appealing card component.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored advanced CSS features that enable more sophisticated, efficient, and maintainable stylesheets:</p>
+                        <ul>
+                            <li><strong>Modern Selectors</strong>: Advanced attribute selectors, pseudo-classes, pseudo-elements, and new selectors like <code>:is()</code>, <code>:where()</code>, and <code>:has()</code></li>
+                            <li><strong>Advanced Layout Techniques</strong>: Subgrid, masonry layout, aspect-ratio, container queries, and scroll snap</li>
+                            <li><strong>Advanced Color and Effects</strong>: Modern color formats, gradients, blend modes, filters, masks, and shapes</li>
+                            <li><strong>Custom Properties and Calculations</strong>: Advanced usage of CSS variables, calc(), and modern math functions</li>
+                            <li><strong>Feature Queries</strong>: Using <code>@supports</code> for progressive enhancement and graceful degradation</li>
+                            <li><strong>Media Queries Level 4 and 5</strong>: User preference, display quality, interaction, and environmental media queries</li>
+                        </ul>
+                        
+                        <p>These advanced features provide more control, flexibility, and expressiveness, allowing you to create sophisticated designs with less code. As you continue to develop your CSS skills, incorporating these features will help you write more efficient, maintainable, and future-proof stylesheets.</p>
+                        
+                        <p>In the next lesson, we'll explore CSS Preprocessors like Sass and Less, which extend CSS with programming features like variables, nesting, mixins, and functions.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="../basic/page37.html" class="btn">Previous: CSS Best Practices</a>
+                        <a href="page39.html" class="btn">Next: CSS Preprocessors</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

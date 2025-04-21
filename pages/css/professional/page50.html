@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a Portfolio | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to create a professional portfolio website that showcases your HTML and CSS skills to potential employers and clients.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="50">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html" class="active">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional CSS</h3>
+                <ul>
+                    <li><a href="page38.html">38. Advanced CSS Features</a></li>
+                    <li><a href="page39.html">39. CSS Preprocessors</a></li>
+                    <li><a href="page40.html">40. CSS Architecture</a></li>
+                    <li><a href="page41.html">41. CSS Frameworks</a></li>
+                    <li><a href="page42.html">42. Advanced Layouts</a></li>
+                    <li><a href="page43.html">43. Advanced Animations</a></li>
+                    <li><a href="page44.html">44. CSS-in-JS</a></li>
+                    <li><a href="page45.html">45. CSS Houdini</a></li>
+                    <li><a href="page46.html">46. CSS Performance</a></li>
+                    <li><a href="page47.html">47. CSS Testing</a></li>
+                    <li><a href="page48.html">48. CSS for Print</a></li>
+                    <li><a href="page49.html">49. Future of CSS</a></li>
+                    <li><a href="page50.html" class="active">50. Building a Portfolio</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 100%;"></div>
+                </div>
+                <p style="text-align: center;">Page 50 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Building a Portfolio</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to Portfolio Development</h2>
+                        <p>Congratulations on reaching the final lesson of our HTML and CSS Mastery Course! Throughout this course, you've learned a wealth of HTML and CSS techniques, from basic fundamentals to advanced professional concepts. Now it's time to put all that knowledge to work by creating a professional portfolio website that showcases your skills to potential employers and clients.</p>
+                        
+                        <p>A well-designed portfolio is essential for web developers and designers. It serves as both a demonstration of your technical abilities and a canvas for your creative vision. In this lesson, we'll guide you through the process of creating a portfolio that effectively highlights your skills while implementing best practices in HTML and CSS.</p>
+                        
+                        <h3>Why You Need a Portfolio</h3>
+                        <p>Before diving into the technical aspects, let's understand why a portfolio is so important:</p>
+                        
+                        <ul>
+                            <li><strong>Showcase Your Skills</strong>: A portfolio provides concrete evidence of your HTML and CSS proficiency</li>
+                            <li><strong>Demonstrate Your Style</strong>: It shows your design sensibilities and creative approach</li>
+                            <li><strong>Highlight Your Process</strong>: You can explain your workflow and problem-solving methods</li>
+                            <li><strong>Build Credibility</strong>: It establishes trust with potential clients and employers</li>
+                            <li><strong>Stand Out from Competition</strong>: A unique, well-crafted portfolio sets you apart</li>
+                            <li><strong>Show Growth</strong>: You can update it over time to demonstrate your progression</li>
+                        </ul>
+                        
+                        <h3>Portfolio Planning</h3>
+                        <p>Before writing a single line of code, it's important to plan your portfolio carefully. This planning phase will guide your development process and help ensure your portfolio effectively communicates your skills and personality.</p>
+                        
+                        <h4>Define Your Goals</h4>
+                        <p>Start by clarifying what you want to achieve with your portfolio:</p>
+                        
+                        <ul>
+                            <li>Are you seeking employment at a specific type of company?</li>
+                            <li>Are you looking to attract freelance clients in a particular industry?</li>
+                            <li>Are you showcasing a specific skill set or specialization?</li>
+                            <li>What types of projects do you want to work on in the future?</li>
+                        </ul>
+                        
+                        <p>Your answers to these questions will influence everything from the design aesthetic to the projects you highlight.</p>
+                        
+                        <h4>Identify Your Audience</h4>
+                        <p>Consider who will be viewing your portfolio:</p>
+                        
+                        <ul>
+                            <li><strong>Hiring Managers</strong>: Often looking for specific skills and professional presentation</li>
+                            <li><strong>Technical Recruiters</strong>: Scanning for keywords and evidence of technical proficiency</li>
+                            <li><strong>Creative Directors</strong>: Evaluating your design sensibilities and creative thinking</li>
+                            <li><strong>Potential Clients</strong>: Seeking reassurance that you can solve their specific problems</li>
+                            <li><strong>Fellow Developers</strong>: May be interested in your code quality and technical solutions</li>
+                        </ul>
+                        
+                        <p>Understanding your audience will help you tailor your content and presentation to their needs and expectations.</p>
+                        
+                        <h4>Content Inventory</h4>
+                        <p>Take stock of what you'll include in your portfolio:</p>
+                        
+                        <ul>
+                            <li><strong>Projects</strong>: Select your best work that aligns with your goals</li>
+                            <li><strong>Skills</strong>: List the technologies and techniques you're proficient in</li>
+                            <li><strong>About Information</strong>: Prepare your bio, professional background, and personal story</li>
+                            <li><strong>Contact Details</strong>: Decide which contact methods to include</li>
+                            <li><strong>Testimonials</strong>: Gather feedback from clients or colleagues (if available)</li>
+                            <li><strong>Resume/CV</strong>: Prepare a downloadable version of your resume</li>
+                            <li><strong>Blog/Articles</strong>: Consider if you want to include written content</li>
+                        </ul>
+                        
+                        <h4>Design Direction</h4>
+                        <p>Establish the visual direction for your portfolio:</p>
+                        
+                        <ul>
+                            <li><strong>Style</strong>: Minimalist, bold, playful, corporate, artistic, etc.</li>
+                            <li><strong>Color Scheme</strong>: Choose colors that reflect your personal brand</li>
+                            <li><strong>Typography</strong>: Select fonts that balance personality and readability</li>
+                            <li><strong>Layout Approach</strong>: Single-page, multi-page, card-based, etc.</li>
+                            <li><strong>Visual Elements</strong>: Photography, illustrations, animations, etc.</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Portfolio Planning Worksheet</h4>
+                            <p>Create a document with the following sections to organize your portfolio planning:</p>
+                            <ol>
+                                <li><strong>Goals</strong>: List 3-5 specific goals for your portfolio</li>
+                                <li><strong>Target Audience</strong>: Identify your primary and secondary audiences</li>
+                                <li><strong>Content List</strong>: Inventory all content you plan to include</li>
+                                <li><strong>Project Showcase</strong>: List projects with brief descriptions of what they demonstrate</li>
+                                <li><strong>Design Notes</strong>: Describe your visual direction and collect inspiration</li>
+                                <li><strong>Technical Requirements</strong>: List any specific features or technologies you want to implement</li>
+                                <li><strong>Timeline</strong>: Set deadlines for design, development, and launch</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Portfolio Structure and Architecture</h2>
+                        <p>With your planning complete, it's time to establish the structure and architecture of your portfolio website.</p>
+                        
+                        <h3>Site Architecture</h3>
+                        <p>Decide on the overall organization of your portfolio. There are two main approaches:</p>
+                        
+                        <h4>Single-Page Portfolio</h4>
+                        <p>A single-page portfolio presents all content on one long scrolling page, typically with navigation that jumps to different sections.</p>
+                        
+                        <p><strong>Advantages:</strong></p>
+                        <ul>
+                            <li>Simpler user experience with no page loading</li>
+                            <li>Easier to create a cohesive narrative flow</li>
+                            <li>Often quicker to develop</li>
+                            <li>Works well for portfolios with fewer projects</li>
+                        </ul>
+                        
+                        <p><strong>Disadvantages:</strong></p>
+                        <ul>
+                            <li>Can become unwieldy with lots of content</li>
+                            <li>More challenging to optimize for search engines</li>
+                            <li>May result in longer initial load time</li>
+                            <li>Limited space for detailed project information</li>
+                        </ul>
+                        
+                        <h4>Multi-Page Portfolio</h4>
+                        <p>A multi-page portfolio spreads content across several pages, with dedicated pages for projects, about information, contact, etc.</p>
+                        
+                        <p><strong>Advantages:</strong></p>
+                        <ul>
+                            <li>Better organization for larger amounts of content</li>
+                            <li>Improved SEO with dedicated pages for different topics</li>
+                            <li>More space for detailed project information</li>
+                            <li>Faster initial page load</li>
+                        </ul>
+                        
+                        <p><strong>Disadvantages:</strong></p>
+                        <ul>
+                            <li>More complex to develop and maintain</li>
+                            <li>Requires more attention to navigation and user flow</li>
+                            <li>May feel less cohesive without careful design</li>
+                        </ul>
+                        
+                        <h3>Essential Sections</h3>
+                        <p>Regardless of whether you choose a single-page or multi-page approach, your portfolio should include these key sections:</p>
+                        
+                        <h4>1. Hero/Introduction</h4>
+                        <p>This is the first thing visitors see—make it count. Include:</p>
+                        <ul>
+                            <li>Your name and professional title</li>
+                            <li>A concise statement about what you do</li>
+                            <li>A compelling visual element (photo, illustration, animation)</li>
+                            <li>A call-to-action (e.g., "View My Work" or "Get in Touch")</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;section class="hero">
+  &lt;div class="hero-content">
+    &lt;h1>Jane Smith&lt;/h1>
+    &lt;h2>Front-End Developer & UI Designer&lt;/h2>
+    &lt;p>I create responsive, accessible, and beautiful web experiences&lt;/p>
+    &lt;div class="hero-cta">
+      &lt;a href="#projects" class="btn primary">View My Work&lt;/a>
+      &lt;a href="#contact" class="btn secondary">Get in Touch&lt;/a>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="hero-image">
+    &lt;img src="img/hero-illustration.svg" alt="Abstract illustration representing web development">
+  &lt;/div>
+&lt;/section></code></pre>
+                        
+                        <h4>2. About</h4>
+                        <p>Share your story and what makes you unique. Include:</p>
+                        <ul>
+                            <li>A brief professional bio</li>
+                            <li>Your background and experience</li>
+                            <li>Your approach to work and problem-solving</li>
+                            <li>Personal touches that make you memorable</li>
+                            <li>A professional photo (optional but recommended)</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;section id="about" class="about">
+  &lt;div class="container">
+    &lt;h2>About Me&lt;/h2>
+    &lt;div class="about-content">
+      &lt;div class="about-image">
+        &lt;img src="img/profile-photo.jpg" alt="Jane Smith, Front-End Developer">
+      &lt;/div>
+      &lt;div class="about-text">
+        &lt;p>I'm a front-end developer with 3 years of experience creating responsive and accessible web experiences. My background in graphic design gives me a unique perspective on creating interfaces that are both beautiful and functional.&lt;/p>
+        &lt;p>I'm passionate about clean code, user-centered design, and continuous learning. When I'm not coding, you can find me hiking, reading sci-fi novels, or experimenting with new recipes.&lt;/p>
+        &lt;div class="about-details">
+          &lt;div class="detail">
+            &lt;h3>Education&lt;/h3>
+            &lt;p>B.S. in Computer Science, University of Technology, 2020&lt;/p>
+          &lt;/div>
+          &lt;div class="detail">
+            &lt;h3>Location&lt;/h3>
+            &lt;p>San Francisco, CA (Open to Remote)&lt;/p>
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/section></code></pre>
+                        
+                        <h4>3. Skills</h4>
+                        <p>Highlight your technical abilities. Include:</p>
+                        <ul>
+                            <li>Languages and frameworks you're proficient in</li>
+                            <li>Tools and software you use</li>
+                            <li>Soft skills relevant to your work</li>
+                            <li>Visual indicators of skill level (optional)</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;section id="skills" class="skills">
+  &lt;div class="container">
+    &lt;h2>Skills & Expertise&lt;/h2>
+    &lt;div class="skills-container">
+      &lt;div class="skill-category">
+        &lt;h3>Languages&lt;/h3>
+        &lt;ul class="skill-list">
+          &lt;li>
+            &lt;span class="skill-name">HTML5&lt;/span>
+            &lt;div class="skill-bar">
+              &lt;div class="skill-level" style="width: 95%">&lt;/div>
+            &lt;/div>
+          &lt;/li>
+          &lt;li>
+            &lt;span class="skill-name">CSS3/Sass&lt;/span>
+            &lt;div class="skill-bar">
+              &lt;div class="skill-level" style="width: 90%">&lt;/div>
+            &lt;/div>
+          &lt;/li>
+          &lt;li>
+            &lt;span class="skill-name">JavaScript&lt;/span>
+            &lt;div class="skill-bar">
+              &lt;div class="skill-level" style="width: 85%">&lt;/div>
+            &lt;/div>
+          &lt;/li>
+        &lt;/ul>
+      &lt;/div>
+      
+      &lt;div class="skill-category">
+        &lt;h3>Frameworks & Libraries&lt;/h3>
+        &lt;div class="skill-tags">
+          &lt;span class="skill-tag">React&lt;/span>
+          &lt;span class="skill-tag">Vue.js&lt;/span>
+          &lt;span class="skill-tag">Bootstrap&lt;/span>
+          &lt;span class="skill-tag">Tailwind CSS&lt;/span>
+          &lt;span class="skill-tag">jQuery&lt;/span>
+        &lt;/div>
+      &lt;/div>
+      
+      &lt;div class="skill-category">
+        &lt;h3>Tools & Software&lt;/h3>
+        &lt;div class="skill-icons">
+          &lt;div class="skill-icon">
+            &lt;img src="img/icons/vscode.svg" alt="VS Code">
+            &lt;span>VS Code&lt;/span>
+          &lt;/div>
+          &lt;div class="skill-icon">
+            &lt;img src="img/icons/git.svg" alt="Git">
+            &lt;span>Git&lt;/span>
+          &lt;/div>
+          &lt;div class="skill-icon">
+            &lt;img src="img/icons/figma.svg" alt="Figma">
+            &lt;span>Figma&lt;/span>
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/section></code></pre>
+                        
+                        <h4>4. Projects/Work</h4>
+                        <p>This is the heart of your portfolio. For each project, include:</p>
+                        <ul>
+                            <li>High-quality screenshots or mockups</li>
+                            <li>Project title and brief description</li>
+                            <li>Technologies used</li>
+                            <li>Your role and contributions</li>
+                            <li>Links to live site and/or code repository</li>
+                            <li>Process information (for detailed project pages)</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;section id="projects" class="projects">
+  &lt;div class="container">
+    &lt;h2>Featured Projects&lt;/h2>
+    
+    &lt;div class="project-card">
+      &lt;div class="project-image">
+        &lt;img src="img/projects/project1.jpg" alt="E-commerce Website Screenshot">
+      &lt;/div>
+      &lt;div class="project-content">
+        &lt;h3>Modern E-commerce Platform&lt;/h3>
+        &lt;p>A responsive e-commerce website with product filtering, cart functionality, and secure checkout process.&lt;/p>
+        &lt;div class="project-tech">
+          &lt;span class="tech-tag">HTML5&lt;/span>
+          &lt;span class="tech-tag">CSS3/Sass&lt;/span>
+          &lt;span class="tech-tag">JavaScript&lt;/span>
+          &lt;span class="tech-tag">React&lt;/span>
+        &lt;/div>
+        &lt;div class="project-links">
+          &lt;a href="#" class="btn">View Live&lt;/a>
+          &lt;a href="#" class="btn secondary">View Code&lt;/a>
+          &lt;a href="projects/ecommerce.html" class="btn text">Case Study →&lt;/a>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+    
+    &lt;!-- Additional project cards would go here -->
+    
+  &lt;/div>
+&lt;/section></code></pre>
+                        
+                        <h4>5. Contact</h4>
+                        <p>Make it easy for people to reach you. Include:</p>
+                        <ul>
+                            <li>A contact form (if possible)</li>
+                            <li>Email address</li>
+                            <li>Social media profiles</li>
+                            <li>A call-to-action encouraging contact</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;section id="contact" class="contact">
+  &lt;div class="container">
+    &lt;h2>Get In Touch&lt;/h2>
+    &lt;p class="contact-intro">Interested in working together? I'd love to hear from you!&lt;/p>
+    
+    &lt;div class="contact-container">
+      &lt;form class="contact-form">
+        &lt;div class="form-group">
+          &lt;label for="name">Name&lt;/label>
+          &lt;input type="text" id="name" name="name" required>
+        &lt;/div>
+        
+        &lt;div class="form-group">
+          &lt;label for="email">Email&lt;/label>
+          &lt;input type="email" id="email" name="email" required>
+        &lt;/div>
+        
+        &lt;div class="form-group">
+          &lt;label for="message">Message&lt;/label>
+          &lt;textarea id="message" name="message" rows="5" required>&lt;/textarea>
+        &lt;/div>
+        
+        &lt;button type="submit" class="btn primary">Send Message&lt;/button>
+      &lt;/form>
+      
+      &lt;div class="contact-info">
+        &lt;div class="contact-method">
+          &lt;h3>Email&lt;/h3>
+          &lt;p>&lt;a href="mailto:jane@example.com">jane@example.com&lt;/a>&lt;/p>
+        &lt;/div>
+        
+        &lt;div class="contact-method">
+          &lt;h3>Social Media&lt;/h3>
+          &lt;div class="social-links">
+            &lt;a href="#" aria-label="GitHub">
+              &lt;svg>...&lt;/svg>
+            &lt;/a>
+            &lt;a href="#" aria-label="LinkedIn">
+              &lt;svg>...&lt;/svg>
+            &lt;/a>
+            &lt;a href="#" aria-label="Twitter">
+              &lt;svg>...&lt;/svg>
+            &lt;/a>
+          &lt;/div>
+        &lt;/div>
+        
+        &lt;div class="contact-method">
+          &lt;h3>Location&lt;/h3>
+          &lt;p>San Francisco, CA&lt;br>Available for remote work worldwide&lt;/p>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/section></code></pre>
+                        
+                        <h4>6. Footer</h4>
+                        <p>Include essential information at the bottom of your site:</p>
+                        <ul>
+                            <li>Copyright information</li>
+                            <li>Links to important pages</li>
+                            <li>Secondary contact information</li>
+                            <li>Acknowledgments or credits (if applicable)</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;footer class="footer">
+  &lt;div class="container">
+    &lt;div class="footer-content">
+      &lt;div class="footer-logo">
+        &lt;img src="img/logo.svg" alt="Jane Smith Logo">
+      &lt;/div>
+      
+      &lt;div class="footer-links">
+        &lt;ul>
+          &lt;li>&lt;a href="#about">About&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="#projects">Projects&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="#contact">Contact&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="/resume.pdf">Resume&lt;/a>&lt;/li>
+        &lt;/ul>
+      &lt;/div>
+      
+      &lt;div class="footer-social">
+        &lt;a href="#" aria-label="GitHub">
+          &lt;svg>...&lt;/svg>
+        &lt;/a>
+        &lt;a href="#" aria-label="LinkedIn">
+          &lt;svg>...&lt;/svg>
+        &lt;/a>
+        &lt;a href="#" aria-label="Twitter">
+          &lt;svg>...&lt;/svg>
+        &lt;/a>
+      &lt;/div>
+    &lt;/div>
+    
+    &lt;div class="footer-bottom">
+      &lt;p>&copy; 2025 Jane Smith. All rights reserved.&lt;/p>
+      &lt;p>Built with HTML, CSS, and a lot of ☕&lt;/p>
+    &lt;/div>
+  &lt;/div>
+&lt;/footer></code></pre>
+                        
+                        <h3>Optional Sections</h3>
+                        <p>Depending on your goals and content, you might also include:</p>
+                        
+                        <ul>
+                            <li><strong>Testimonials</strong>: Quotes from clients or colleagues</li>
+                            <li><strong>Resume/CV</strong>: A dedicated page or downloadable PDF</li>
+                            <li><strong>Services</strong>: What you offer to clients</li>
+                            <li><strong>Blog/Articles</strong>: Showcase your knowledge and thoughts</li>
+                            <li><strong>Process</strong>: Explain how you approach projects</li>
+                            <li><strong>Timeline/Experience</strong>: A visual representation of your career</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Portfolio Design Best Practices</h2>
+                        <p>Now that we've established the structure, let's focus on design best practices that will make your portfolio stand out.</p>
+                        
+                        <h3>Visual Design</h3>
+                        <p>The visual design of your portfolio should reflect your personal brand while maintaining professionalism and usability.</p>
+                        
+                        <h4>Color Scheme</h4>
+                        <p>Choose a color palette that represents your personal brand:</p>
+                        
+                        <ul>
+                            <li>Select 2-3 primary colors and 2-3 secondary colors</li>
+                            <li>Ensure sufficient contrast for accessibility</li>
+                            <li>Consider color psychology and industry norms</li>
+                            <li>Use color consistently throughout your portfolio</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">:root {
+  /* Primary colors */
+  --primary-color: #2563eb;
+  --secondary-color: #10b981;
+  --accent-color: #f59e0b;
+  
+  /* Neutral colors */
+  --text-color: #1f2937;
+  --background-color: #f9fafb;
+  --card-color: #ffffff;
+  
+  /* UI colors */
+  --success-color: #10b981;
+  --error-color: #ef4444;
+  --warning-color: #f59e0b;
+  
+  /* Dark mode colors */
+  --dark-background: #111827;
+  --dark-card: #1f2937;
+  --dark-text: #f9fafb;
+}</code></pre>
+                        
+                        <h4>Typography</h4>
+                        <p>Choose fonts that are both expressive and readable:</p>
+                        
+                        <ul>
+                            <li>Select 1-2 font families (e.g., one for headings, one for body text)</li>
+                            <li>Ensure fonts are web-safe or properly loaded via services like Google Fonts</li>
+                            <li>Establish a clear type hierarchy with different sizes and weights</li>
+                            <li>Maintain sufficient line height and spacing for readability</li>
+                            <li>Consider responsive typography that scales with viewport size</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">:root {
+  /* Typography */
+  --heading-font: 'Montserrat', sans-serif;
+  --body-font: 'Open Sans', sans-serif;
+  --code-font: 'Fira Code', monospace;
+  
+  /* Font sizes */
+  --text-xs: clamp(0.75rem, 0.7vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8vw, 1rem);
+  --text-base: clamp(1rem, 1vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1.2vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.5vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 2vw, 1.875rem);
+  --text-3xl: clamp(1.875rem, 2.5vw, 2.25rem);
+  --text-4xl: clamp(2.25rem, 3vw, 3rem);
+  
+  /* Line heights */
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-loose: 1.8;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: var(--text-4xl); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-base); }</code></pre>
+                        
+                        <h4>Layout and Spacing</h4>
+                        <p>Create a clean, organized layout with consistent spacing:</p>
+                        
+                        <ul>
+                            <li>Use a grid system for alignment and organization</li>
+                            <li>Establish a consistent spacing system</li>
+                            <li>Ensure adequate whitespace around elements</li>
+                            <li>Create visual hierarchy through size and placement</li>
+                            <li>Design for different screen sizes from the start</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">:root {
+  /* Spacing system */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  
+  /* Container widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+section {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}</code></pre>
+                        
+                        <h4>Visual Elements</h4>
+                        <p>Enhance your portfolio with thoughtful visual elements:</p>
+                        
+                        <ul>
+                            <li>Use high-quality images and graphics</li>
+                            <li>Incorporate consistent iconography</li>
+                            <li>Consider subtle animations and transitions</li>
+                            <li>Use visual dividers and separators</li>
+                            <li>Ensure all visual elements have a purpose</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">/* Card styling */
+.card {
+  background-color: var(--card-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Button styling */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 80%, black);
+}
+
+/* Image styling */
+.img-container {
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.img-container:hover img {
+  transform: scale(1.05);
+}</code></pre>
+                        
+                        <h3>User Experience</h3>
+                        <p>A great portfolio isn't just about looks—it needs to provide an excellent user experience.</p>
+                        
+                        <h4>Navigation</h4>
+                        <p>Make it easy for visitors to find what they're looking for:</p>
+                        
+                        <ul>
+                            <li>Create a clear, intuitive navigation system</li>
+                            <li>Highlight the current section or page</li>
+                            <li>Include a fixed or sticky navigation for longer pages</li>
+                            <li>Add a "back to top" button for long scrolling pages</li>
+                            <li>Ensure navigation is accessible via keyboard</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;header class="header">
+  &lt;div class="container">
+    &lt;div class="header-content">
+      &lt;div class="logo">
+        &lt;a href="/">
+          &lt;img src="img/logo.svg" alt="Jane Smith">
+        &lt;/a>
+      &lt;/div>
+      
+      &lt;nav class="main-nav">
+        &lt;button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          &lt;span>&lt;/span>
+          &lt;span>&lt;/span>
+          &lt;span>&lt;/span>
+        &lt;/button>
+        
+        &lt;ul class="nav-links">
+          &lt;li>&lt;a href="#about" class="nav-link">About&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="#skills" class="nav-link">Skills&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="#projects" class="nav-link">Projects&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="#contact" class="nav-link">Contact&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="/resume.pdf" class="nav-link highlight">Resume&lt;/a>&lt;/li>
+        &lt;/ul>
+      &lt;/nav>
+    &lt;/div>
+  &lt;/div>
+&lt;/header>
+
+&lt;!-- Back to top button -->
+&lt;button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    &lt;polyline points="18 15 12 9 6 15">&lt;/polyline>
+  &lt;/svg>
+&lt;/button></code></pre>
+                        
+                        <h4>Responsive Design</h4>
+                        <p>Ensure your portfolio looks great on all devices:</p>
+                        
+                        <ul>
+                            <li>Use a mobile-first approach to design</li>
+                            <li>Test on multiple devices and screen sizes</li>
+                            <li>Optimize images for different screen resolutions</li>
+                            <li>Adjust typography and spacing for smaller screens</li>
+                            <li>Consider touch interactions for mobile users</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">/* Base styles (mobile first) */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-8);
+}
+
+.project-image {
+  margin-bottom: var(--space-4);
+}
+
+.project-content {
+  padding: var(--space-4);
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .project-card {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .project-image {
+    flex: 1;
+    margin-bottom: 0;
+    margin-right: var(--space-6);
+  }
+  
+  .project-content {
+    flex: 1;
+  }
+  
+  /* Alternate layout for even projects */
+  .project-card:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  
+  .project-card:nth-child(even) .project-image {
+    margin-right: 0;
+    margin-left: var(--space-6);
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .project-image {
+    flex: 3;
+  }
+  
+  .project-content {
+    flex: 2;
+    padding: var(--space-6);
+  }
+}</code></pre>
+                        
+                        <h4>Accessibility</h4>
+                        <p>Make your portfolio accessible to all users:</p>
+                        
+                        <ul>
+                            <li>Use semantic HTML elements</li>
+                            <li>Ensure sufficient color contrast</li>
+                            <li>Add alt text to all images</li>
+                            <li>Make sure all interactive elements are keyboard accessible</li>
+                            <li>Test with screen readers</li>
+                            <li>Include ARIA attributes where appropriate</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;!-- Accessible form example -->
+&lt;form class="contact-form">
+  &lt;div class="form-group">
+    &lt;label for="name" id="name-label">Name&lt;/label>
+    &lt;input 
+      type="text" 
+      id="name" 
+      name="name" 
+      aria-labelledby="name-label" 
+      aria-required="true"
+      required
+    >
+  &lt;/div>
+  
+  &lt;div class="form-group">
+    &lt;label for="email" id="email-label">Email&lt;/label>
+    &lt;input 
+      type="email" 
+      id="email" 
+      name="email" 
+      aria-labelledby="email-label" 
+      aria-required="true"
+      required
+    >
+    &lt;div class="form-hint" id="email-hint">We'll never share your email with anyone else.&lt;/div>
+  &lt;/div>
+  
+  &lt;div class="form-group">
+    &lt;label for="message" id="message-label">Message&lt;/label>
+    &lt;textarea 
+      id="message" 
+      name="message" 
+      rows="5" 
+      aria-labelledby="message-label" 
+      aria-required="true"
+      required
+    >&lt;/textarea>
+  &lt;/div>
+  
+  &lt;button 
+    type="submit" 
+    class="btn primary"
+    aria-label="Send message"
+  >
+    Send Message
+  &lt;/button>
+&lt;/form></code></pre>
+                        
+                        <h4>Performance</h4>
+                        <p>Ensure your portfolio loads quickly and runs smoothly:</p>
+                        
+                        <ul>
+                            <li>Optimize images (compress, use appropriate formats)</li>
+                            <li>Minimize HTTP requests</li>
+                            <li>Use lazy loading for images and content</li>
+                            <li>Minify CSS and JavaScript</li>
+                            <li>Consider a static site for faster loading</li>
+                            <li>Test performance using tools like Lighthouse</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;!-- Lazy loading images -->
+&lt;img 
+  src="placeholder.jpg" 
+  data-src="actual-image.jpg" 
+  alt="Project screenshot" 
+  class="lazy-image"
+  width="800"
+  height="600"
+  loading="lazy"
+>
+
+&lt;!-- Preload critical assets -->
+&lt;link rel="preload" href="fonts/montserrat-v15-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+&lt;link rel="preload" href="css/critical.css" as="style">
+&lt;link rel="preload" href="js/main.js" as="script"></code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Portfolio Features</h2>
+                        <p>Take your portfolio to the next level with these advanced features and techniques.</p>
+                        
+                        <h3>Interactive Elements</h3>
+                        <p>Add interactivity to engage visitors and showcase your skills:</p>
+                        
+                        <h4>Project Filtering</h4>
+                        <p>Allow visitors to filter your projects by category or technology:</p>
+                        
+                        <pre><code class="language-html">&lt;div class="project-filters">
+  &lt;button class="filter-btn active" data-filter="all">All Projects&lt;/button>
+  &lt;button class="filter-btn" data-filter="web">Web Development&lt;/button>
+  &lt;button class="filter-btn" data-filter="ui">UI Design&lt;/button>
+  &lt;button class="filter-btn" data-filter="mobile">Mobile Apps&lt;/button>
+&lt;/div>
+
+&lt;div class="projects-grid">
+  &lt;div class="project-card" data-category="web ui">
+    &lt;!-- Project content -->
+  &lt;/div>
+  &lt;div class="project-card" data-category="mobile">
+    &lt;!-- Project content -->
+  &lt;/div>
+  &lt;div class="project-card" data-category="web">
+    &lt;!-- Project content -->
+  &lt;/div>
+&lt;/div></code></pre>
+                        
+                        <pre><code class="language-javascript">// Project filtering functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      // Get filter value
+      const filter = button.getAttribute('data-filter');
+      
+      // Filter projects
+      projectCards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+});</code></pre>
+                        
+                        <h4>Project Modals</h4>
+                        <p>Create detailed project modals that open when a project is clicked:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Project card with modal trigger -->
+&lt;div class="project-card" data-project-id="project1">
+  &lt;div class="project-image">
+    &lt;img src="img/projects/project1-thumb.jpg" alt="E-commerce Website">
+  &lt;/div>
+  &lt;div class="project-content">
+    &lt;h3>Modern E-commerce Platform&lt;/h3>
+    &lt;p>A responsive e-commerce website with product filtering, cart functionality, and secure checkout.&lt;/p>
+    &lt;button class="btn view-project" data-project-id="project1">View Details&lt;/button>
+  &lt;/div>
+&lt;/div>
+
+&lt;!-- Project modal -->
+&lt;div class="project-modal" id="modal-project1">
+  &lt;div class="modal-overlay">&lt;/div>
+  &lt;div class="modal-container">
+    &lt;button class="modal-close" aria-label="Close modal">&times;&lt;/button>
+    
+    &lt;div class="modal-content">
+      &lt;div class="modal-header">
+        &lt;h2>Modern E-commerce Platform&lt;/h2>
+      &lt;/div>
+      
+      &lt;div class="modal-body">
+        &lt;div class="project-gallery">
+          &lt;img src="img/projects/project1-full.jpg" alt="E-commerce Website Homepage">
+          &lt;img src="img/projects/project1-detail1.jpg" alt="Product Listing Page">
+          &lt;img src="img/projects/project1-detail2.jpg" alt="Shopping Cart">
+        &lt;/div>
+        
+        &lt;div class="project-details">
+          &lt;div class="project-info">
+            &lt;h3>Project Overview&lt;/h3>
+            &lt;p>A complete e-commerce solution built for a boutique clothing retailer. The site features a responsive design, product filtering, user accounts, shopping cart, and secure checkout process.&lt;/p>
+            
+            &lt;h3>My Role&lt;/h3>
+            &lt;p>As the lead front-end developer, I was responsible for translating design mockups into a fully functional website, implementing the shopping cart functionality, and ensuring a seamless user experience across all devices.&lt;/p>
+            
+            &lt;h3>Technologies Used&lt;/h3>
+            &lt;ul class="tech-list">
+              &lt;li>HTML5&lt;/li>
+              &lt;li>CSS3/Sass&lt;/li>
+              &lt;li>JavaScript&lt;/li>
+              &lt;li>React&lt;/li>
+              &lt;li>Redux&lt;/li>
+              &lt;li>Node.js&lt;/li>
+              &lt;li>MongoDB&lt;/li>
+            &lt;/ul>
+            
+            &lt;h3>Key Features&lt;/h3>
+            &lt;ul>
+              &lt;li>Responsive design for all devices&lt;/li>
+              &lt;li>Advanced product filtering and search&lt;/li>
+              &lt;li>User account management&lt;/li>
+              &lt;li>Shopping cart with local storage&lt;/li>
+              &lt;li>Secure checkout process&lt;/li>
+              &lt;li>Order tracking&lt;/li>
+            &lt;/ul>
+          &lt;/div>
+          
+          &lt;div class="project-links">
+            &lt;a href="#" class="btn primary">View Live Site&lt;/a>
+            &lt;a href="#" class="btn secondary">View Code&lt;/a>
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/div></code></pre>
+                        
+                        <pre><code class="language-javascript">// Project modal functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const modalTriggers = document.querySelectorAll('.view-project');
+  const modalCloseButtons = document.querySelectorAll('.modal-close');
+  const modalOverlays = document.querySelectorAll('.modal-overlay');
+  
+  // Open modal
+  modalTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const projectId = trigger.getAttribute('data-project-id');
+      const modal = document.getElementById(`modal-${projectId}`);
+      
+      if (modal) {
+        document.body.classList.add('modal-open');
+        modal.classList.add('active');
+      }
+    });
+  });
+  
+  // Close modal functions
+  function closeAllModals() {
+    document.body.classList.remove('modal-open');
+    document.querySelectorAll('.project-modal').forEach(modal => {
+      modal.classList.remove('active');
+    });
+  }
+  
+  // Close on button click
+  modalCloseButtons.forEach(button => {
+    button.addEventListener('click', closeAllModals);
+  });
+  
+  // Close on overlay click
+  modalOverlays.forEach(overlay => {
+    overlay.addEventListener('click', closeAllModals);
+  });
+  
+  // Close on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeAllModals();
+    }
+  });
+});</code></pre>
+                        
+                        <h4>Animated Scroll Effects</h4>
+                        <p>Add subtle animations that trigger as users scroll down the page:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Elements with scroll animations -->
+&lt;section id="about" class="about">
+  &lt;div class="container">
+    &lt;h2 class="section-title animate-on-scroll" data-animation="fade-up">About Me&lt;/h2>
+    
+    &lt;div class="about-content">
+      &lt;div class="about-image animate-on-scroll" data-animation="fade-right" data-delay="200">
+        &lt;img src="img/profile-photo.jpg" alt="Jane Smith">
+      &lt;/div>
+      
+      &lt;div class="about-text">
+        &lt;p class="animate-on-scroll" data-animation="fade-left" data-delay="400">
+          I'm a front-end developer with 3 years of experience creating responsive and accessible web experiences.
+        &lt;/p>
+        &lt;p class="animate-on-scroll" data-animation="fade-left" data-delay="600">
+          My background in graphic design gives me a unique perspective on creating interfaces that are both beautiful and functional.
+        &lt;/p>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/section></code></pre>
+                        
+                        <pre><code class="language-javascript">// Scroll animation functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+  
+  // Create intersection observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Get animation type and delay
+        const animation = entry.target.getAttribute('data-animation') || 'fade-up';
+        const delay = entry.target.getAttribute('data-delay') || 0;
+        
+        // Add animation class after delay
+        setTimeout(() => {
+          entry.target.classList.add('animated', animation);
+        }, delay);
+        
+        // Unobserve after animation
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  // Observe all animated elements
+  animatedElements.forEach(element => {
+    observer.observe(element);
+  });
+});</code></pre>
+                        
+                        <pre><code class="language-css">/* Animation styles */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Different animation types */
+.animate-on-scroll[data-animation="fade-up"] {
+  transform: translateY(30px);
+}
+
+.animate-on-scroll[data-animation="fade-down"] {
+  transform: translateY(-30px);
+}
+
+.animate-on-scroll[data-animation="fade-left"] {
+  transform: translateX(30px);
+}
+
+.animate-on-scroll[data-animation="fade-right"] {
+  transform: translateX(-30px);
+}
+
+.animate-on-scroll[data-animation="zoom-in"] {
+  transform: scale(0.9);
+}
+
+/* Reset for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}</code></pre>
+                        
+                        <h3>Dark Mode</h3>
+                        <p>Implement a dark mode option for your portfolio:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Dark mode toggle -->
+&lt;button class="theme-toggle" aria-label="Toggle dark mode">
+  &lt;svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    &lt;circle cx="12" cy="12" r="5">&lt;/circle>
+    &lt;line x1="12" y1="1" x2="12" y2="3">&lt;/line>
+    &lt;line x1="12" y1="21" x2="12" y2="23">&lt;/line>
+    &lt;line x1="4.22" y1="4.22" x2="5.64" y2="5.64">&lt;/line>
+    &lt;line x1="18.36" y1="18.36" x2="19.78" y2="19.78">&lt;/line>
+    &lt;line x1="1" y1="12" x2="3" y2="12">&lt;/line>
+    &lt;line x1="21" y1="12" x2="23" y2="12">&lt;/line>
+    &lt;line x1="4.22" y1="19.78" x2="5.64" y2="18.36">&lt;/line>
+    &lt;line x1="18.36" y1="5.64" x2="19.78" y2="4.22">&lt;/line>
+  &lt;/svg>
+  &lt;svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    &lt;path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z">&lt;/path>
+  &lt;/svg>
+&lt;/button></code></pre>
+                        
+                        <pre><code class="language-css">/* Dark mode styles */
+:root {
+  /* Light mode colors */
+  --background: #f9fafb;
+  --text-color: #1f2937;
+  --heading-color: #111827;
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --primary-color: #2563eb;
+  --secondary-color: #10b981;
+}
+
+/* Dark mode colors */
+[data-theme="dark"] {
+  --background: #111827;
+  --text-color: #f9fafb;
+  --heading-color: #f3f4f6;
+  --card-bg: #1f2937;
+  --border-color: #374151;
+  --primary-color: #3b82f6;
+  --secondary-color: #34d399;
+}
+
+/* System preference dark mode */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #111827;
+    --text-color: #f9fafb;
+    --heading-color: #f3f4f6;
+    --card-bg: #1f2937;
+    --border-color: #374151;
+    --primary-color: #3b82f6;
+    --secondary-color: #34d399;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+/* Theme toggle button styles */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle .sun-icon {
+  display: none;
+}
+
+.theme-toggle .moon-icon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+  display: none;
+}</code></pre>
+                        
+                        <pre><code class="language-javascript">// Dark mode functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.querySelector('.theme-toggle');
+  
+  // Check for saved theme preference or use system preference
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+  
+  // Toggle theme
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+  
+  // Listen for system preference changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      const newTheme = e.matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+    }
+  });
+});</code></pre>
+                        
+                        <h3>Contact Form Functionality</h3>
+                        <p>Implement a working contact form for your portfolio:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Contact form with validation and submission -->
+&lt;form id="contact-form" class="contact-form">
+  &lt;div class="form-group">
+    &lt;label for="name">Name&lt;/label>
+    &lt;input type="text" id="name" name="name" required>
+    &lt;div class="error-message">&lt;/div>
+  &lt;/div>
+  
+  &lt;div class="form-group">
+    &lt;label for="email">Email&lt;/label>
+    &lt;input type="email" id="email" name="email" required>
+    &lt;div class="error-message">&lt;/div>
+  &lt;/div>
+  
+  &lt;div class="form-group">
+    &lt;label for="subject">Subject&lt;/label>
+    &lt;input type="text" id="subject" name="subject" required>
+    &lt;div class="error-message">&lt;/div>
+  &lt;/div>
+  
+  &lt;div class="form-group">
+    &lt;label for="message">Message&lt;/label>
+    &lt;textarea id="message" name="message" rows="5" required>&lt;/textarea>
+    &lt;div class="error-message">&lt;/div>
+  &lt;/div>
+  
+  &lt;div class="form-submit">
+    &lt;button type="submit" class="btn primary">Send Message&lt;/button>
+    &lt;div class="form-status">&lt;/div>
+  &lt;/div>
+&lt;/form></code></pre>
+                        
+                        <pre><code class="language-javascript">// Contact form functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contact-form');
+  
+  if (contactForm) {
+    // Form validation
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Clear previous error messages
+      document.querySelectorAll('.error-message').forEach(el => {
+        el.textContent = '';
+      });
+      
+      // Get form data
+      const formData = new FormData(contactForm);
+      const formValues = Object.fromEntries(formData.entries());
+      
+      // Validate form
+      let isValid = true;
+      
+      // Name validation
+      if (!formValues.name.trim()) {
+        document.querySelector('#name + .error-message').textContent = 'Name is required';
+        isValid = false;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formValues.email)) {
+        document.querySelector('#email + .error-message').textContent = 'Please enter a valid email address';
+        isValid = false;
+      }
+      
+      // Subject validation
+      if (!formValues.subject.trim()) {
+        document.querySelector('#subject + .error-message').textContent = 'Subject is required';
+        isValid = false;
+      }
+      
+      // Message validation
+      if (!formValues.message.trim()) {
+        document.querySelector('#message + .error-message').textContent = 'Message is required';
+        isValid = false;
+      } else if (formValues.message.trim().length < 10) {
+        document.querySelector('#message + .error-message').textContent = 'Message must be at least 10 characters';
+        isValid = false;
+      }
+      
+      // If form is valid, submit it
+      if (isValid) {
+        const statusElement = document.querySelector('.form-status');
+        statusElement.textContent = 'Sending message...';
+        statusElement.className = 'form-status sending';
+        
+        try {
+          // Replace with your actual form submission endpoint
+          const response = await fetch('https://formspree.io/f/your-form-id', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formValues)
+          });
+          
+          if (response.ok) {
+            // Success
+            statusElement.textContent = 'Message sent successfully!';
+            statusElement.className = 'form-status success';
+            contactForm.reset();
+            
+            // Clear success message after 5 seconds
+            setTimeout(() => {
+              statusElement.textContent = '';
+              statusElement.className = 'form-status';
+            }, 5000);
+          } else {
+            // Error
+            statusElement.textContent = 'Failed to send message. Please try again.';
+            statusElement.className = 'form-status error';
+          }
+        } catch (error) {
+          console.error('Form submission error:', error);
+          statusElement.textContent = 'An error occurred. Please try again later.';
+          statusElement.className = 'form-status error';
+        }
+      }
+    });
+  }
+});</code></pre>
+                        
+                        <h3>Analytics and SEO</h3>
+                        <p>Optimize your portfolio for search engines and track visitor behavior:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- SEO meta tags -->
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  &lt;title>Jane Smith | Front-End Developer & UI Designer&lt;/title>
+  &lt;meta name="description" content="Jane Smith is a front-end developer and UI designer specializing in creating responsive, accessible, and beautiful web experiences.">
+  
+  &lt;!-- Open Graph tags -->
+  &lt;meta property="og:title" content="Jane Smith | Front-End Developer & UI Designer">
+  &lt;meta property="og:description" content="Front-end developer and UI designer specializing in creating responsive, accessible, and beautiful web experiences.">
+  &lt;meta property="og:image" content="https://www.janesmith.com/img/social-preview.jpg">
+  &lt;meta property="og:url" content="https://www.janesmith.com">
+  &lt;meta property="og:type" content="website">
+  
+  &lt;!-- Twitter Card tags -->
+  &lt;meta name="twitter:card" content="summary_large_image">
+  &lt;meta name="twitter:title" content="Jane Smith | Front-End Developer & UI Designer">
+  &lt;meta name="twitter:description" content="Front-end developer and UI designer specializing in creating responsive, accessible, and beautiful web experiences.">
+  &lt;meta name="twitter:image" content="https://www.janesmith.com/img/social-preview.jpg">
+  
+  &lt;!-- Canonical URL -->
+  &lt;link rel="canonical" href="https://www.janesmith.com">
+  
+  &lt;!-- Favicon -->
+  &lt;link rel="icon" href="/favicon.ico">
+  &lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  &lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  &lt;link rel="manifest" href="/site.webmanifest">
+  
+  &lt;!-- Google Analytics -->
+  &lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX">&lt;/script>
+  &lt;script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  &lt;/script>
+&lt;/head></code></pre>
+                        
+                        <pre><code class="language-html">&lt;!-- Structured data for SEO -->
+&lt;script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jane Smith",
+  "url": "https://www.janesmith.com",
+  "image": "https://www.janesmith.com/img/jane-smith.jpg",
+  "jobTitle": "Front-End Developer & UI Designer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
+  },
+  "sameAs": [
+    "https://github.com/janesmith",
+    "https://linkedin.com/in/janesmith",
+    "https://twitter.com/janesmith"
+  ],
+  "description": "Front-end developer and UI designer specializing in creating responsive, accessible, and beautiful web experiences."
+}
+&lt;/script></code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Portfolio Deployment and Maintenance</h2>
+                        <p>Once you've built your portfolio, you need to deploy it and keep it updated.</p>
+                        
+                        <h3>Hosting Options</h3>
+                        <p>Consider these hosting options for your portfolio:</p>
+                        
+                        <ul>
+                            <li><strong>GitHub Pages</strong>: Free hosting for static sites directly from your GitHub repository</li>
+                            <li><strong>Netlify</strong>: Free tier with continuous deployment from Git and form handling</li>
+                            <li><strong>Vercel</strong>: Excellent for Next.js and React projects with automatic deployments</li>
+                            <li><strong>Firebase Hosting</strong>: Google's hosting service with a generous free tier</li>
+                            <li><strong>AWS Amplify</strong>: Managed hosting with CI/CD pipeline integration</li>
+                            <li><strong>Shared Hosting</strong>: Traditional hosting providers like Bluehost or SiteGround</li>
+                        </ul>
+                        
+                        <h4>GitHub Pages Deployment</h4>
+                        <p>Here's how to deploy your portfolio to GitHub Pages:</p>
+                        
+                        <pre><code class="language-bash"># Initialize Git repository
+git init
+
+# Add all files
+git add .
+
+# Commit changes
+git commit -m "Initial portfolio commit"
+
+# Create GitHub repository and add remote
+git remote add origin https://github.com/username/portfolio.git
+
+# Push to GitHub
+git push -u origin main
+
+# Deploy to GitHub Pages (if using main branch)
+# Go to repository Settings > Pages
+# Select main branch and / (root) folder
+# Click Save</code></pre>
+                        
+                        <h4>Netlify Deployment</h4>
+                        <p>Here's how to deploy your portfolio to Netlify:</p>
+                        
+                        <pre><code class="language-bash"># Create netlify.toml configuration file
+echo '[build]
+  publish = "/"
+  command = ""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200' > netlify.toml
+
+# Push to GitHub repository
+git add netlify.toml
+git commit -m "Add Netlify configuration"
+git push
+
+# Then connect Netlify to your GitHub repository through the Netlify dashboard</code></pre>
+                        
+                        <h3>Custom Domain Setup</h3>
+                        <p>Setting up a custom domain adds professionalism to your portfolio:</p>
+                        
+                        <ol>
+                            <li><strong>Purchase a Domain</strong>: Buy from registrars like Namecheap, Google Domains, or GoDaddy</li>
+                            <li><strong>Configure DNS</strong>: Point your domain to your hosting provider</li>
+                            <li><strong>Set Up HTTPS</strong>: Ensure your site is secure with SSL/TLS</li>
+                        </ol>
+                        
+                        <pre><code class="language-bash"># Example DNS configuration for GitHub Pages
+# Add these records to your domain registrar's DNS settings
+
+# A Records
+@ 185.199.108.153
+@ 185.199.109.153
+@ 185.199.110.153
+@ 185.199.111.153
+
+# CNAME Record
+www username.github.io</code></pre>
+                        
+                        <h3>Portfolio Maintenance</h3>
+                        <p>Keep your portfolio fresh and relevant:</p>
+                        
+                        <ul>
+                            <li><strong>Regular Updates</strong>: Add new projects and remove outdated ones</li>
+                            <li><strong>Content Refresh</strong>: Update your bio, skills, and other information</li>
+                            <li><strong>Technical Maintenance</strong>: Update dependencies and fix bugs</li>
+                            <li><strong>Performance Optimization</strong>: Regularly test and improve performance</li>
+                            <li><strong>Analytics Review</strong>: Check visitor behavior and make improvements</li>
+                        </ul>
+                        
+                        <h4>Update Checklist</h4>
+                        <p>Use this checklist for regular portfolio maintenance:</p>
+                        
+                        <pre><code class="language-markdown"># Portfolio Maintenance Checklist
+
+## Quarterly Updates
+- [ ] Add new projects
+- [ ] Update skills list
+- [ ] Refresh bio and about section
+- [ ] Update resume/CV
+- [ ] Check all links are working
+- [ ] Test contact form functionality
+- [ ] Review analytics data
+- [ ] Update testimonials (if applicable)
+
+## Technical Maintenance
+- [ ] Update dependencies and libraries
+- [ ] Run performance tests (Lighthouse, PageSpeed)
+- [ ] Check for broken links
+- [ ] Test on latest browsers and devices
+- [ ] Verify SSL certificate is valid
+- [ ] Check for accessibility issues
+- [ ] Optimize images and assets
+- [ ] Backup portfolio files and database (if applicable)
+
+## Annual Review
+- [ ] Comprehensive design review
+- [ ] Major content refresh
+- [ ] Consider new technologies or features
+- [ ] Review hosting and domain renewal
+- [ ] Update copyright year
+- [ ] Comprehensive SEO review</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Portfolio Planning</h2>
+                        <p>Let's put your knowledge into practice with a portfolio planning exercise.</p>
+                        
+                        <h3>Exercise: Create Your Portfolio Plan</h3>
+                        <p>Follow these steps to create a comprehensive plan for your portfolio website:</p>
+                        
+                        <h4>Step 1: Define Your Goals and Audience</h4>
+                        <p>Create a document with the following sections:</p>
+                        
+                        <pre><code class="language-markdown"># Portfolio Goals and Audience
+
+## Primary Goals
+1. [Your first goal]
+2. [Your second goal]
+3. [Your third goal]
+
+## Target Audience
+- Primary: [Describe your primary audience]
+- Secondary: [Describe your secondary audience]
+
+## Key Messages
+- [Key message 1]
+- [Key message 2]
+- [Key message 3]</code></pre>
+                        
+                        <h4>Step 2: Content Inventory</h4>
+                        <p>List all the content you'll include in your portfolio:</p>
+                        
+                        <pre><code class="language-markdown"># Portfolio Content Inventory
+
+## About Me
+- Professional bio (short version)
+- Professional bio (long version)
+- Skills list
+- Education and certifications
+- Professional photo
+
+## Projects
+1. [Project 1 Name]
+   - Description
+   - Technologies used
+   - My role
+   - Key features
+   - Screenshots/mockups
+   - Links (live site, code)
+
+2. [Project 2 Name]
+   - Description
+   - Technologies used
+   - My role
+   - Key features
+   - Screenshots/mockups
+   - Links (live site, code)
+
+3. [Project 3 Name]
+   - Description
+   - Technologies used
+   - My role
+   - Key features
+   - Screenshots/mockups
+   - Links (live site, code)
+
+## Additional Content
+- Resume/CV
+- Testimonials
+- Blog posts/articles
+- Services offered</code></pre>
+                        
+                        <h4>Step 3: Site Structure</h4>
+                        <p>Decide on your portfolio structure and create a sitemap:</p>
+                        
+                        <pre><code class="language-markdown"># Portfolio Structure
+
+## Site Type
+- [Single-page or Multi-page]
+
+## Sitemap
+- Home/Hero
+- About
+- Skills
+- Projects
+  - [Project 1 Detail Page - if multi-page]
+  - [Project 2 Detail Page - if multi-page]
+  - [Project 3 Detail Page - if multi-page]
+- Contact
+- [Additional pages]</code></pre>
+                        
+                        <h4>Step 4: Design Direction</h4>
+                        <p>Define the visual direction for your portfolio:</p>
+                        
+                        <pre><code class="language-markdown"># Design Direction
+
+## Style Keywords
+- [Style keyword 1]
+- [Style keyword 2]
+- [Style keyword 3]
+
+## Color Palette
+- Primary: [HEX code]
+- Secondary: [HEX code]
+- Accent: [HEX code]
+- Background: [HEX code]
+- Text: [HEX code]
+
+## Typography
+- Heading Font: [Font name]
+- Body Font: [Font name]
+- Code Font (if applicable): [Font name]
+
+## Visual Elements
+- [Element 1 - e.g., illustrations, photos, animations]
+- [Element 2]
+- [Element 3]
+
+## Layout Approach
+- [Layout description]</code></pre>
+                        
+                        <h4>Step 5: Technical Requirements</h4>
+                        <p>List the technical features and requirements for your portfolio:</p>
+                        
+                        <pre><code class="language-markdown"># Technical Requirements
+
+## Core Technologies
+- HTML5
+- CSS3
+- JavaScript
+- [Other technologies]
+
+## Features
+- Responsive design
+- Dark mode toggle
+- Project filtering
+- Contact form functionality
+- Animations
+- [Other features]
+
+## Performance Goals
+- Lighthouse score targets
+- Page load time target
+- Accessibility requirements
+
+## Hosting and Deployment
+- Hosting platform
+- Domain name
+- Deployment method</code></pre>
+                        
+                        <h4>Step 6: Implementation Timeline</h4>
+                        <p>Create a timeline for building your portfolio:</p>
+                        
+                        <pre><code class="language-markdown"># Implementation Timeline
+
+## Week 1: Planning and Setup
+- Complete portfolio plan
+- Set up development environment
+- Create project structure
+- Set up version control
+
+## Week 2: Design and HTML Structure
+- Create design mockups
+- Implement basic HTML structure
+- Set up CSS architecture
+
+## Week 3: Core Styling and Responsiveness
+- Implement core CSS styles
+- Create responsive layouts
+- Implement navigation
+
+## Week 4: JavaScript Functionality
+- Implement interactive features
+- Create animations
+- Set up contact form
+
+## Week 5: Content and Refinement
+- Add all content
+- Optimize images
+- Refine design details
+- Test across devices and browsers
+
+## Week 6: Launch Preparation
+- Performance optimization
+- SEO implementation
+- Final testing
+- Deployment</code></pre>
+                        
+                        <h4>Step 7: Review and Refine</h4>
+                        <p>Review your portfolio plan and make any necessary adjustments before implementation. Consider:</p>
+                        
+                        <ul>
+                            <li>Is your plan aligned with your goals?</li>
+                            <li>Does it effectively target your audience?</li>
+                            <li>Is the scope realistic for your timeline?</li>
+                            <li>Have you included all necessary content?</li>
+                            <li>Are there any technical challenges you need to address?</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary and Next Steps</h2>
+                        <p>Congratulations on completing the HTML and CSS Mastery Course! In this final lesson, we've covered everything you need to know to create a professional portfolio website that showcases your skills and projects.</p>
+                        
+                        <h3>Key Takeaways</h3>
+                        <p>Here's a summary of what we've learned about building a portfolio:</p>
+                        
+                        <ul>
+                            <li><strong>Portfolio Planning</strong>: Define your goals, audience, and content before starting development</li>
+                            <li><strong>Structure and Architecture</strong>: Organize your portfolio with essential sections like hero, about, projects, and contact</li>
+                            <li><strong>Design Best Practices</strong>: Create a visually appealing portfolio with consistent colors, typography, and layout</li>
+                            <li><strong>User Experience</strong>: Ensure your portfolio is accessible, responsive, and performs well</li>
+                            <li><strong>Advanced Features</strong>: Enhance your portfolio with interactive elements, dark mode, and other advanced features</li>
+                            <li><strong>Deployment and Maintenance</strong>: Launch your portfolio and keep it updated</li>
+                        </ul>
+                        
+                        <h3>Next Steps</h3>
+                        <p>Now that you've completed this course, here are some suggested next steps:</p>
+                        
+                        <ol>
+                            <li><strong>Build Your Portfolio</strong>: Apply what you've learned to create your own professional portfolio</li>
+                            <li><strong>Continue Learning</strong>: Explore advanced topics like JavaScript frameworks, backend development, or UI/UX design</li>
+                            <li><strong>Join the Community</strong>: Participate in web development communities, forums, and meetups</li>
+                            <li><strong>Contribute to Open Source</strong>: Find projects that interest you and contribute to them</li>
+                            <li><strong>Stay Updated</strong>: Follow blogs, podcasts, and newsletters to keep up with the latest web development trends</li>
+                        </ol>
+                        
+                        <h3>Additional Resources</h3>
+                        <p>Here are some resources to help you continue your web development journey:</p>
+                        
+                        <h4>Portfolio Inspiration</h4>
+                        <ul>
+                            <li><a href="https://www.awwwards.com/" target="_blank">Awwwards</a> - Website awards and inspiration</li>
+                            <li><a href="https://www.behance.net/" target="_blank">Behance</a> - Creative portfolio platform</li>
+                            <li><a href="https://dribbble.com/" target="_blank">Dribbble</a> - Design inspiration</li>
+                        </ul>
+                        
+                        <h4>Learning Resources</h4>
+                        <ul>
+                            <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a> - Comprehensive web development documentation</li>
+                            <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a> - Articles and tutorials on CSS</li>
+                            <li><a href="https://web.dev/" target="_blank">web.dev</a> - Guidance for modern web development</li>
+                        </ul>
+                        
+                        <h4>Tools and Services</h4>
+                        <ul>
+                            <li><a href="https://github.com/" target="_blank">GitHub</a> - Version control and project hosting</li>
+                            <li><a href="https://www.netlify.com/" target="_blank">Netlify</a> - Website deployment and hosting</li>
+                            <li><a href="https://formspree.io/" target="_blank">Formspree</a> - Form handling for static sites</li>
+                        </ul>
+                        
+                        <h3>Final Thoughts</h3>
+                        <p>Building a portfolio is not just about showcasing your work—it's about telling your story as a developer or designer. Your portfolio should reflect your personality, skills, and aspirations. It's a living document that will evolve as you grow in your career.</p>
+                        
+                        <p>Remember that the best portfolios are those that are authentic and focused. Quality matters more than quantity, so showcase your best work and explain your process and contributions clearly.</p>
+                        
+                        <p>We hope this course has provided you with the knowledge and skills you need to create beautiful, functional websites and a compelling portfolio. Good luck on your web development journey!</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page49.html" class="btn">Previous: Future of CSS</a>
+                        <a href="../../../index.html" class="btn">Back to Home</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

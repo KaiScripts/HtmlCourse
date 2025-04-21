@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to CSS | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn the fundamentals of CSS and how it works with HTML to style web pages.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="26">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html" class="active">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>CSS Basics</h3>
+                <ul>
+                    <li><a href="page26.html" class="active">26. Introduction to CSS</a></li>
+                    <li><a href="page27.html">27. CSS Selectors</a></li>
+                    <li><a href="page28.html">28. CSS Box Model</a></li>
+                    <li><a href="page29.html">29. Typography</a></li>
+                    <li><a href="page30.html">30. Colors & Backgrounds</a></li>
+                    <li><a href="page31.html">31. Layout Basics</a></li>
+                    <li><a href="page32.html">32. Flexbox</a></li>
+                    <li><a href="page33.html">33. CSS Grid</a></li>
+                    <li><a href="page34.html">34. Responsive Design</a></li>
+                    <li><a href="page35.html">35. Transitions & Animations</a></li>
+                    <li><a href="page36.html">36. CSS Variables</a></li>
+                    <li><a href="page37.html">37. CSS Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 52%;"></div>
+                </div>
+                <p style="text-align: center;">Page 26 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Introduction to CSS</h1>
+                    
+                    <div class="card">
+                        <h2>What is CSS?</h2>
+                        <p>CSS (Cascading Style Sheets) is a style sheet language used to describe the presentation of a document written in HTML. While HTML provides the structure and content of a web page, CSS controls how that content looks and is laid out on the screen.</p>
+                        
+                        <p>Think of it this way: if HTML is the skeleton of a web page, CSS is the skin, clothing, and makeup that gives it visual appeal and personality. CSS allows you to control colors, fonts, spacing, layout, animations, and much more.</p>
+                        
+                        <div class="info-box">
+                            <h4>CSS Evolution</h4>
+                            <p>CSS has evolved significantly since its introduction:</p>
+                            <ul>
+                                <li><strong>CSS1 (1996)</strong>: Basic styling capabilities like fonts, colors, and margins</li>
+                                <li><strong>CSS2 (1998)</strong>: Added positioning, z-index, media types, and bidirectional text</li>
+                                <li><strong>CSS3 (2001-present)</strong>: Modular approach with features like animations, flexbox, grid, variables, and more</li>
+                            </ul>
+                            <p>Unlike its predecessors, CSS3 is divided into modules that can be updated independently, allowing for more rapid evolution of the language.</p>
+                        </div>
+                        
+                        <h3>Why CSS is Important</h3>
+                        <p>CSS is a fundamental technology of the web for several reasons:</p>
+                        
+                        <ul>
+                            <li><strong>Separation of Concerns</strong>: CSS allows you to separate content (HTML) from presentation (CSS), making your code more maintainable and easier to update</li>
+                            <li><strong>Consistency</strong>: With CSS, you can define styles once and apply them across your entire website, ensuring a consistent look and feel</li>
+                            <li><strong>Efficiency</strong>: CSS reduces redundancy by allowing you to define styles in one place instead of repeating them throughout your HTML</li>
+                            <li><strong>Responsive Design</strong>: CSS enables you to create websites that adapt to different screen sizes and devices</li>
+                            <li><strong>Accessibility</strong>: Proper CSS implementation can improve the accessibility of your website for users with disabilities</li>
+                            <li><strong>User Experience</strong>: CSS allows you to create visually appealing and intuitive interfaces that enhance the user experience</li>
+                        </ul>
+                        
+                        <h3>Before CSS: Styling in HTML</h3>
+                        <p>Before CSS was widely adopted, styling was done directly in HTML using attributes and tags that are now deprecated:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Styling before CSS (don't use these methods!) --&gt;
+&lt;font face="Arial" color="blue" size="4"&gt;This text is blue Arial.&lt;/font&gt;
+
+&lt;table bgcolor="#f0f0f0" width="100%" border="1"&gt;
+  &lt;tr&gt;
+    &lt;td align="center"&gt;Centered cell content&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;body bgcolor="lightgray"&gt;
+  &lt;h1 align="center"&gt;Centered Heading&lt;/h1&gt;
+&lt;/body&gt;</code></pre>
+                        
+                        <p>This approach had several problems:</p>
+                        <ul>
+                            <li>Mixing content and presentation made HTML files larger and harder to maintain</li>
+                            <li>Changing the design required updating every HTML file</li>
+                            <li>Limited styling options compared to CSS</li>
+                            <li>Inconsistent implementation across browsers</li>
+                        </ul>
+                        
+                        <h3>CSS vs. HTML: Separation of Concerns</h3>
+                        <p>Let's compare the old HTML styling approach with modern CSS:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>HTML with Inline Styling (Bad Practice)</th>
+                                        <th>HTML with External CSS (Good Practice)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <pre><code class="language-html">&lt;h1 style="color: blue; font-family: Arial; text-align: center;"&gt;
+  Welcome to My Website
+&lt;/h1&gt;
+&lt;p style="color: #333; font-size: 16px; line-height: 1.5;"&gt;
+  This is a paragraph with inline styles.
+&lt;/p&gt;</code></pre>
+                                        </td>
+                                        <td>
+                                            <pre><code class="language-html">&lt;!-- HTML file --&gt;
+&lt;h1 class="page-title"&gt;Welcome to My Website&lt;/h1&gt;
+&lt;p class="content"&gt;This is a paragraph with external styles.&lt;/p&gt;
+
+&lt;!-- CSS file (style.css) --&gt;
+.page-title {
+  color: blue;
+  font-family: Arial;
+  text-align: center;
+}
+.content {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}</code></pre>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <p>The CSS approach offers several advantages:</p>
+                        <ul>
+                            <li>HTML is cleaner and focuses on content structure</li>
+                            <li>Styles can be changed in one place and affect the entire website</li>
+                            <li>Styles can be cached by browsers, improving load times</li>
+                            <li>Different style sheets can be applied for different devices or user preferences</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>How CSS Works</h2>
+                        <p>CSS works by selecting HTML elements and applying styles to them. The browser reads the CSS and renders the HTML accordingly.</p>
+                        
+                        <h3>Basic CSS Syntax</h3>
+                        <p>CSS consists of rules that have two main parts: a selector and a declaration block.</p>
+                        
+                        <pre><code class="language-css">selector {
+  property: value;
+  another-property: another-value;
+}</code></pre>
+                        
+                        <ul>
+                            <li><strong>Selector</strong>: Targets the HTML element(s) to style (e.g., <code>h1</code>, <code>.class-name</code>, <code>#id-name</code>)</li>
+                            <li><strong>Declaration Block</strong>: Contains one or more declarations enclosed in curly braces</li>
+                            <li><strong>Declaration</strong>: A property-value pair that specifies which style property to change and what value to assign to it</li>
+                            <li><strong>Property</strong>: The style attribute you want to change (e.g., <code>color</code>, <code>font-size</code>, <code>margin</code>)</li>
+                            <li><strong>Value</strong>: The setting you specify for the property (e.g., <code>blue</code>, <code>16px</code>, <code>20px</code>)</li>
+                        </ul>
+                        
+                        <p>Here's a simple example:</p>
+                        
+                        <pre><code class="language-css">h1 {
+  color: blue;
+  font-size: 24px;
+  text-align: center;
+}</code></pre>
+                        
+                        <p>This rule selects all <code>&lt;h1&gt;</code> elements and applies three style declarations: it sets the text color to blue, the font size to 24 pixels, and centers the text.</p>
+                        
+                        <h3>CSS Comments</h3>
+                        <p>Comments in CSS are enclosed between <code>/*</code> and <code>*/</code>. They are ignored by browsers but can help you document your code:</p>
+                        
+                        <pre><code class="language-css">/* This is a CSS comment */
+
+/* 
+ * This is a multi-line comment
+ * that explains what the following CSS does
+ */
+ 
+body {
+  font-family: Arial, sans-serif; /* Use Arial font if available, otherwise use any sans-serif font */
+  line-height: 1.6; /* Set line height to 1.6 times the font size */
+}</code></pre>
+                        
+                        <h3>Ways to Include CSS in HTML</h3>
+                        <p>There are three ways to include CSS in an HTML document:</p>
+                        
+                        <h4>1. External CSS (Recommended)</h4>
+                        <p>CSS is written in a separate file with a <code>.css</code> extension and linked to the HTML document using the <code>&lt;link&gt;</code> element in the <code>&lt;head&gt;</code> section:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- In the HTML file --&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;</code></pre>
+                        
+                        <pre><code class="language-css">/* In styles.css */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1 {
+  color: #0066cc;
+}</code></pre>
+                        
+                        <p><strong>Advantages:</strong></p>
+                        <ul>
+                            <li>Separates HTML and CSS completely</li>
+                            <li>Makes maintenance easier as styles are in one place</li>
+                            <li>Reduces file size and improves load times when multiple pages use the same styles</li>
+                            <li>Browser caching improves performance for returning visitors</li>
+                        </ul>
+                        
+                        <h4>2. Internal CSS (Style Element)</h4>
+                        <p>CSS is included within a <code>&lt;style&gt;</code> element in the <code>&lt;head&gt;</code> section of the HTML document:</p>
+                        
+                        <pre><code class="language-html">&lt;head&gt;
+  &lt;style&gt;
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    h1 {
+      color: #0066cc;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+                        
+                        <p><strong>Advantages:</strong></p>
+                        <ul>
+                            <li>No need for additional files</li>
+                            <li>Useful for single-page websites or pages with unique styles</li>
+                            <li>No extra HTTP requests to fetch external CSS files</li>
+                        </ul>
+                        
+                        <h4>3. Inline CSS (Style Attribute)</h4>
+                        <p>CSS is applied directly to individual HTML elements using the <code>style</code> attribute:</p>
+                        
+                        <pre><code class="language-html">&lt;h1 style="color: #0066cc; font-size: 28px;"&gt;Welcome to My Website&lt;/h1&gt;
+&lt;p style="font-family: Arial, sans-serif; line-height: 1.6;"&gt;This is a paragraph with inline styles.&lt;/p&gt;</code></pre>
+                        
+                        <p><strong>Advantages:</strong></p>
+                        <ul>
+                            <li>Useful for applying unique styles to a single element</li>
+                            <li>Can override other styles for quick testing or fixes</li>
+                            <li>Necessary in some email templates where external CSS isn't fully supported</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Best Practice: Use External CSS</h4>
+                            <p>While all three methods work, external CSS is generally considered the best practice for most websites because:</p>
+                            <ul>
+                                <li>It maintains a clean separation between content and presentation</li>
+                                <li>It makes your website more maintainable and scalable</li>
+                                <li>It improves page load times through caching</li>
+                                <li>It allows for consistent styling across multiple pages</li>
+                            </ul>
+                            <p>Use internal CSS for page-specific styles that aren't used elsewhere, and reserve inline CSS for exceptional cases or dynamic styling with JavaScript.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS Terminology</h2>
+                        <p>Before diving deeper into CSS, let's familiarize ourselves with some key terminology:</p>
+                        
+                        <h3>Selectors</h3>
+                        <p>Selectors are patterns that match HTML elements. They tell the browser which elements should receive the specified styles.</p>
+                        
+                        <pre><code class="language-css">/* Type selector (element name) */
+p {
+  color: navy;
+}
+
+/* Class selector (preceded by a dot) */
+.highlight {
+  background-color: yellow;
+}
+
+/* ID selector (preceded by a hash) */
+#header {
+  background-color: black;
+  color: white;
+}
+
+/* Attribute selector */
+input[type="text"] {
+  border: 1px solid gray;
+}
+
+/* Pseudo-class selector */
+a:hover {
+  text-decoration: underline;
+}</code></pre>
+                        
+                        <p>We'll explore selectors in much more detail in the next lesson.</p>
+                        
+                        <h3>Properties and Values</h3>
+                        <p>Properties are the style attributes you want to change, and values are the settings for those properties.</p>
+                        
+                        <pre><code class="language-css">h1 {
+  color: blue;          /* Property: color, Value: blue */
+  font-size: 24px;      /* Property: font-size, Value: 24px */
+  margin-bottom: 20px;  /* Property: margin-bottom, Value: 20px */
+}</code></pre>
+                        
+                        <p>CSS has hundreds of properties, each controlling a different aspect of an element's appearance.</p>
+                        
+                        <h3>Units</h3>
+                        <p>CSS uses various units to specify values for properties like size, spacing, and positioning:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Unit Type</th>
+                                        <th>Unit</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="4">Absolute Units</td>
+                                        <td>px</td>
+                                        <td>Pixels (1/96th of an inch)</td>
+                                        <td><code>font-size: 16px;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>pt</td>
+                                        <td>Points (1/72nd of an inch)</td>
+                                        <td><code>font-size: 12pt;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>in</td>
+                                        <td>Inches</td>
+                                        <td><code>margin: 0.5in;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>cm</td>
+                                        <td>Centimeters</td>
+                                        <td><code>padding: 1cm;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="7">Relative Units</td>
+                                        <td>%</td>
+                                        <td>Percentage (relative to parent element)</td>
+                                        <td><code>width: 50%;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>em</td>
+                                        <td>Relative to the font-size of the element</td>
+                                        <td><code>margin: 2em;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>rem</td>
+                                        <td>Relative to the font-size of the root element</td>
+                                        <td><code>padding: 1.5rem;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>vw</td>
+                                        <td>Viewport width (1% of viewport width)</td>
+                                        <td><code>width: 50vw;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>vh</td>
+                                        <td>Viewport height (1% of viewport height)</td>
+                                        <td><code>height: 100vh;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>vmin</td>
+                                        <td>1% of the smaller dimension of the viewport</td>
+                                        <td><code>font-size: 5vmin;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>vmax</td>
+                                        <td>1% of the larger dimension of the viewport</td>
+                                        <td><code>width: 80vmax;</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <p>For responsive design, relative units are generally preferred over absolute units because they scale better across different devices and screen sizes.</p>
+                        
+                        <h3>Colors</h3>
+                        <p>CSS provides several ways to specify colors:</p>
+                        
+                        <pre><code class="language-css">/* Color names */
+h1 {
+  color: blue;
+}
+
+/* Hexadecimal values */
+p {
+  color: #ff0000; /* Red */
+}
+
+/* RGB values */
+div {
+  color: rgb(0, 255, 0); /* Green */
+}
+
+/* RGBA values (with alpha/transparency) */
+button {
+  background-color: rgba(0, 0, 255, 0.5); /* Semi-transparent blue */
+}
+
+/* HSL values (Hue, Saturation, Lightness) */
+span {
+  color: hsl(120, 100%, 50%); /* Green */
+}
+
+/* HSLA values (with alpha/transparency) */
+a {
+  color: hsla(240, 100%, 50%, 0.7); /* Semi-transparent blue */
+}</code></pre>
+                        
+                        <p>We'll explore colors in more detail in a later lesson.</p>
+                        
+                        <h3>The Cascade</h3>
+                        <p>The "C" in CSS stands for "Cascading," which refers to how styles are applied when multiple rules target the same element. The cascade determines which styles take precedence.</p>
+                        
+                        <p>Styles are applied in this order of importance (from highest to lowest):</p>
+                        
+                        <ol>
+                            <li><strong>Importance</strong>: Styles with <code>!important</code> override other styles</li>
+                            <li><strong>Specificity</strong>: More specific selectors override less specific ones</li>
+                            <li><strong>Source Order</strong>: Later styles override earlier ones</li>
+                        </ol>
+                        
+                        <pre><code class="language-css">/* Less specific selector */
+p {
+  color: blue;
+}
+
+/* More specific selector (overrides the above) */
+.content p {
+  color: red;
+}
+
+/* Using !important (overrides everything else) */
+p {
+  color: green !important; /* Avoid using !important when possible */
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Avoid !important</h4>
+                            <p>While <code>!important</code> can be useful in certain situations, it's generally considered a bad practice because:</p>
+                            <ul>
+                                <li>It breaks the natural cascade of CSS</li>
+                                <li>It makes debugging more difficult</li>
+                                <li>It can lead to specificity wars where you need increasingly powerful selectors</li>
+                            </ul>
+                            <p>Instead of using <code>!important</code>, try to write more specific selectors or restructure your CSS to avoid conflicts.</p>
+                        </div>
+                        
+                        <h3>Inheritance</h3>
+                        <p>Some CSS properties are inherited from parent elements to their children, while others are not.</p>
+                        
+                        <pre><code class="language-css">body {
+  font-family: Arial, sans-serif; /* Inherited by all elements inside body */
+  color: #333; /* Inherited by all elements inside body */
+}
+
+div {
+  border: 1px solid black; /* Not inherited by child elements */
+  padding: 20px; /* Not inherited by child elements */
+}</code></pre>
+                        
+                        <p>Properties that are typically inherited include:</p>
+                        <ul>
+                            <li>Text properties (<code>color</code>, <code>font-family</code>, <code>font-size</code>, <code>line-height</code>, etc.)</li>
+                            <li>List properties (<code>list-style</code>, <code>list-style-type</code>, etc.)</li>
+                            <li>Some table properties (<code>border-collapse</code>, <code>border-spacing</code>)</li>
+                        </ul>
+                        
+                        <p>Properties that are typically not inherited include:</p>
+                        <ul>
+                            <li>Box model properties (<code>width</code>, <code>height</code>, <code>margin</code>, <code>padding</code>, <code>border</code>)</li>
+                            <li>Positioning properties (<code>position</code>, <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>)</li>
+                            <li>Background properties (<code>background</code>, <code>background-color</code>, etc.)</li>
+                        </ul>
+                        
+                        <p>You can force inheritance using the <code>inherit</code> keyword:</p>
+                        
+                        <pre><code class="language-css">div {
+  border: 1px solid black;
+}
+
+p {
+  border: inherit; /* Inherits the border from its parent div */
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Browser Developer Tools</h2>
+                        <p>Modern web browsers include powerful developer tools that are invaluable for working with CSS. These tools allow you to inspect and modify CSS in real-time, making them essential for learning and debugging.</p>
+                        
+                        <h3>Accessing Developer Tools</h3>
+                        <p>You can access developer tools in most browsers using these methods:</p>
+                        <ul>
+                            <li><strong>Chrome, Edge, Firefox, Safari</strong>: Right-click on any element and select "Inspect" or "Inspect Element"</li>
+                            <li><strong>Keyboard shortcuts</strong>:
+                                <ul>
+                                    <li>Windows/Linux: <code>F12</code> or <code>Ctrl+Shift+I</code></li>
+                                    <li>macOS: <code>Cmd+Option+I</code></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <h3>Key Features for CSS Development</h3>
+                        <p>Browser developer tools offer several features that are particularly useful for CSS:</p>
+                        
+                        <h4>1. Element Inspector</h4>
+                        <p>The Element Inspector shows the HTML structure of the page and allows you to select elements to view and edit their CSS properties.</p>
+                        
+                        <h4>2. Styles Panel</h4>
+                        <p>The Styles panel shows all CSS rules that apply to the selected element, including:</p>
+                        <ul>
+                            <li>Applied styles (active)</li>
+                            <li>Overridden styles (crossed out)</li>
+                            <li>Inherited styles</li>
+                            <li>User agent (browser default) styles</li>
+                        </ul>
+                        
+                        <h4>3. Computed Panel</h4>
+                        <p>The Computed panel shows the final computed values of all CSS properties for the selected element after the cascade and inheritance have been applied.</p>
+                        
+                        <h4>4. Box Model Visualization</h4>
+                        <p>Most developer tools include a visual representation of the box model for the selected element, showing content, padding, border, and margin dimensions.</p>
+                        
+                        <h4>5. CSS Changes in Real-Time</h4>
+                        <p>You can edit CSS properties directly in the developer tools and see the changes applied to the page in real-time. This is incredibly useful for experimenting with different styles.</p>
+                        
+                        <div class="info-box">
+                            <h4>Developer Tools Tip</h4>
+                            <p>Changes made in developer tools are temporary and will be lost when you refresh the page. To save your changes, you need to copy them to your actual CSS files.</p>
+                            <p>Most developer tools have a feature to copy all changes you've made to CSS, which you can then paste into your stylesheet.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS Resets and Normalizers</h2>
+                        <p>Different browsers have different default styles for HTML elements. These inconsistencies can make it challenging to create a consistent look across all browsers.</p>
+                        
+                        <p>To address this issue, web developers often use CSS resets or normalizers:</p>
+                        
+                        <h3>CSS Resets</h3>
+                        <p>CSS resets strip away all browser default styles, essentially giving you a blank slate to work with. This approach removes margins, paddings, font sizes, and other default styles.</p>
+                        
+                        <p>A simple CSS reset might look like this:</p>
+                        
+                        <pre><code class="language-css">/* Simple CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, address, cite, code, del, em, img, ins, kbd, q, s, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup,
+menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}</code></pre>
+                        
+                        <p>Popular CSS reset libraries include:</p>
+                        <ul>
+                            <li><a href="https://meyerweb.com/eric/tools/css/reset/" target="_blank">Eric Meyer's Reset CSS</a></li>
+                            <li><a href="https://github.com/shannonmoeller/reset-css" target="_blank">Reset CSS</a></li>
+                        </ul>
+                        
+                        <h3>CSS Normalizers</h3>
+                        <p>Unlike resets, normalizers preserve useful browser defaults while still ensuring consistency across browsers. They fix bugs and common inconsistencies without completely stripping styles.</p>
+                        
+                        <p>The most popular CSS normalizer is <a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a>, which:</p>
+                        <ul>
+                            <li>Preserves useful browser defaults rather than erasing them</li>
+                            <li>Normalizes styles for a wide range of HTML elements</li>
+                            <li>Corrects bugs and common browser inconsistencies</li>
+                            <li>Improves usability with subtle modifications</li>
+                            <li>Explains the code with detailed comments</li>
+                        </ul>
+                        
+                        <h3>Modern Approaches</h3>
+                        <p>In recent years, more minimal approaches have gained popularity:</p>
+                        
+                        <h4>1. Modern Normalize</h4>
+                        <p>A smaller, more modern version of Normalize.css that focuses on newer browsers.</p>
+                        
+                        <h4>2. CSS Reset</h4>
+                        <p>A very minimal reset that includes just the essentials:</p>
+                        
+                        <pre><code class="language-css">/* Modern minimal CSS reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Which Approach Should You Use?</h4>
+                            <p>The choice between a reset, normalizer, or minimal approach depends on your project needs:</p>
+                            <ul>
+                                <li><strong>CSS Reset</strong>: Use when you want complete control and plan to define all styles from scratch</li>
+                                <li><strong>Normalize.css</strong>: Use when you want consistency across browsers while preserving useful defaults</li>
+                                <li><strong>Minimal Reset</strong>: Use for modern projects where you need just the essentials and don't need to support older browsers</li>
+                            </ul>
+                            <p>For beginners, Normalize.css is often a good starting point as it provides consistency without requiring you to redefine every style from scratch.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Your First CSS</h2>
+                        <p>Let's put what we've learned into practice by creating a simple HTML page with CSS styling.</p>
+                        
+                        <h3>Exercise: Style a Simple Web Page</h3>
+                        <p>Create an HTML file with the following content:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My First CSS Page&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  
+  &lt;main&gt;
+    &lt;section class="hero"&gt;
+      &lt;h2&gt;Learn Web Development&lt;/h2&gt;
+      &lt;p&gt;Welcome to my website where you can learn HTML and CSS from scratch.&lt;/p&gt;
+      &lt;button class="cta-button"&gt;Get Started&lt;/button&gt;
+    &lt;/section&gt;
+    
+    &lt;section class="features"&gt;
+      &lt;div class="feature"&gt;
+        &lt;h3&gt;HTML Basics&lt;/h3&gt;
+        &lt;p&gt;Learn the fundamentals of HTML, the backbone of the web.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="feature"&gt;
+        &lt;h3&gt;CSS Styling&lt;/h3&gt;
+        &lt;p&gt;Master CSS to create beautiful and responsive websites.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="feature"&gt;
+        &lt;h3&gt;Web Projects&lt;/h3&gt;
+        &lt;p&gt;Apply your knowledge by building real-world projects.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+  
+  &lt;footer&gt;
+    &lt;p&gt;&copy; 2025 My Website. All rights reserved.&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>Now, create a CSS file named <code>styles.css</code> and add styles to make the page look attractive. Here's a starting point:</p>
+                        
+                        <pre><code class="language-css">/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Add your styles here */
+/* Try styling the header, navigation, hero section, features, and footer */
+/* Experiment with colors, fonts, spacing, and layout */</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Try to implement the following styles:</p>
+                            <ol>
+                                <li>Set a background color for the body</li>
+                                <li>Style the header with a different background color and some padding</li>
+                                <li>Make the navigation links display horizontally instead of vertically</li>
+                                <li>Add hover effects to the navigation links</li>
+                                <li>Center the hero section text and add some margin</li>
+                                <li>Style the CTA button with a background color, rounded corners, and hover effect</li>
+                                <li>Make the features section display the three features side by side</li>
+                                <li>Add some spacing between elements using margin and padding</li>
+                                <li>Style the footer with a different background color and centered text</li>
+                            </ol>
+                            <p>Don't worry if you're not sure how to implement all of these yet—we'll cover these techniques in detail in the upcoming lessons. The goal is to experiment and get comfortable with CSS syntax.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this introduction to CSS, we've covered the fundamental concepts that form the foundation of CSS styling:</p>
+                        <ul>
+                            <li><strong>What CSS Is</strong>: A style sheet language that controls the presentation of HTML documents</li>
+                            <li><strong>Why CSS Is Important</strong>: It separates content from presentation, ensures consistency, improves efficiency, enables responsive design, and enhances user experience</li>
+                            <li><strong>CSS Syntax</strong>: Selectors, declaration blocks, properties, and values</li>
+                            <li><strong>Ways to Include CSS</strong>: External, internal, and inline CSS, with external being the recommended approach</li>
+                            <li><strong>CSS Terminology</strong>: Selectors, properties, values, units, colors, cascade, and inheritance</li>
+                            <li><strong>Browser Developer Tools</strong>: Essential tools for inspecting and modifying CSS in real-time</li>
+                            <li><strong>CSS Resets and Normalizers</strong>: Techniques to ensure consistent styling across different browsers</li>
+                        </ul>
+                        
+                        <p>CSS is a powerful language that allows you to transform plain HTML into visually appealing and user-friendly websites. As you continue through this course, you'll learn more advanced CSS techniques that will enable you to create sophisticated layouts and effects.</p>
+                        
+                        <p>In the next lesson, we'll dive deeper into CSS selectors, which are the patterns used to select and style HTML elements.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="../../html/professional/page25.html" class="btn">Previous: HTML Accessibility</a>
+                        <a href="page27.html" class="btn">Next: CSS Selectors</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

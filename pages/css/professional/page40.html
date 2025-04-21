@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Architecture | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn about CSS architecture methodologies like BEM, SMACSS, and ITCSS to organize and scale your CSS code.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="40">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html" class="active">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional CSS</h3>
+                <ul>
+                    <li><a href="page38.html">38. Advanced CSS Features</a></li>
+                    <li><a href="page39.html">39. CSS Preprocessors</a></li>
+                    <li><a href="page40.html" class="active">40. CSS Architecture</a></li>
+                    <li><a href="page41.html">41. CSS Frameworks</a></li>
+                    <li><a href="page42.html">42. Advanced Layouts</a></li>
+                    <li><a href="page43.html">43. Advanced Animations</a></li>
+                    <li><a href="page44.html">44. CSS-in-JS</a></li>
+                    <li><a href="page45.html">45. CSS Houdini</a></li>
+                    <li><a href="page46.html">46. CSS Performance</a></li>
+                    <li><a href="page47.html">47. CSS Testing</a></li>
+                    <li><a href="page48.html">48. CSS for Print</a></li>
+                    <li><a href="page49.html">49. Future of CSS</a></li>
+                    <li><a href="page50.html">50. Building a Portfolio</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+                <p style="text-align: center;">Page 40 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>CSS Architecture</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to CSS Architecture</h2>
+                        <p>CSS architecture refers to the organization and structure of your CSS codebase. As projects grow in size and complexity, maintaining CSS becomes increasingly challenging without a proper architectural approach. A well-designed CSS architecture helps manage this complexity by providing guidelines for organizing, structuring, and naming your styles.</p>
+                        
+                        <p>In this lesson, we'll explore various CSS architecture methodologies, including BEM, SMACSS, ITCSS, and Atomic CSS, and learn how to implement them in your projects to create maintainable, scalable, and organized stylesheets.</p>
+                        
+                        <h3>Why CSS Architecture Matters</h3>
+                        <p>Without a proper architecture, CSS codebases often suffer from several problems:</p>
+                        
+                        <ul>
+                            <li><strong>Specificity Issues</strong>: Selectors fighting each other, requiring increasingly specific selectors to override styles</li>
+                            <li><strong>Cascade Conflicts</strong>: Unexpected style inheritance and overrides</li>
+                            <li><strong>Code Duplication</strong>: Repeated styles across different components</li>
+                            <li><strong>Poor Maintainability</strong>: Difficulty in updating styles without breaking other parts of the site</li>
+                            <li><strong>Lack of Scalability</strong>: Challenges in adding new features or components</li>
+                            <li><strong>Collaboration Issues</strong>: Difficulty for multiple developers to work on the same codebase</li>
+                        </ul>
+                        
+                        <p>A good CSS architecture addresses these issues by providing:</p>
+                        
+                        <ul>
+                            <li><strong>Predictability</strong>: Styles behave as expected</li>
+                            <li><strong>Reusability</strong>: Components can be reused across the project</li>
+                            <li><strong>Maintainability</strong>: Styles can be updated without unexpected side effects</li>
+                            <li><strong>Scalability</strong>: The system can grow without becoming unwieldy</li>
+                            <li><strong>Clarity</strong>: The purpose and relationship of styles are clear</li>
+                        </ul>
+                        
+                        <h3>Key Principles of CSS Architecture</h3>
+                        <p>Regardless of the specific methodology you choose, several principles apply to all good CSS architectures:</p>
+                        
+                        <div class="info-box">
+                            <h4>Core Principles</h4>
+                            <ol>
+                                <li><strong>Separation of Concerns</strong>: Divide your CSS into logical sections based on their purpose</li>
+                                <li><strong>Single Responsibility</strong>: Each class should have a single, well-defined purpose</li>
+                                <li><strong>Low Specificity</strong>: Keep selector specificity as low as possible to avoid specificity wars</li>
+                                <li><strong>Encapsulation</strong>: Components should be self-contained and not affected by their context</li>
+                                <li><strong>Consistency</strong>: Follow consistent naming and coding conventions</li>
+                                <li><strong>Documentation</strong>: Document your architecture and conventions for team reference</li>
+                            </ol>
+                        </div>
+                        
+                        <p>In the following sections, we'll explore different CSS architecture methodologies that implement these principles in various ways.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>BEM Methodology</h2>
+                        <p>BEM (Block, Element, Modifier) is one of the most popular CSS methodologies, developed by Yandex. It provides a strict naming convention that makes your CSS more readable and understandable, while also solving many common CSS problems.</p>
+                        
+                        <h3>BEM Naming Convention</h3>
+                        <p>BEM divides the UI into independent blocks and uses a specific naming pattern:</p>
+                        
+                        <pre><code class="language-css">/* Block: A standalone entity that is meaningful on its own */
+.block {}
+
+/* Element: A part of a block that has no standalone meaning */
+.block__element {}
+
+/* Modifier: A flag on a block or element that changes appearance or behavior */
+.block--modifier {}
+.block__element--modifier {}</code></pre>
+                        
+                        <h3>BEM Examples</h3>
+                        <p>Let's look at some examples to understand how BEM works in practice:</p>
+                        
+                        <h4>Card Component</h4>
+                        <pre><code class="language-html">&lt;div class="card"&gt;
+  &lt;div class="card__header"&gt;
+    &lt;h2 class="card__title"&gt;Card Title&lt;/h2&gt;
+  &lt;/div&gt;
+  &lt;div class="card__body"&gt;
+    &lt;p class="card__text"&gt;Card content goes here.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="card__footer"&gt;
+    &lt;button class="card__button"&gt;Read More&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="card card--featured"&gt;
+  &lt;div class="card__header"&gt;
+    &lt;h2 class="card__title"&gt;Featured Card&lt;/h2&gt;
+  &lt;/div&gt;
+  &lt;div class="card__body"&gt;
+    &lt;p class="card__text"&gt;This is a featured card with special styling.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="card__footer"&gt;
+    &lt;button class="card__button card__button--primary"&gt;Read More&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <p>And the corresponding CSS:</p>
+                        
+                        <pre><code class="language-css">/* Block */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Block modifier */
+.card--featured {
+  border-color: gold;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Elements */
+.card__header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card__body {
+  padding: 15px;
+}
+
+.card__text {
+  margin: 0;
+}
+
+.card__footer {
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
+
+.card__button {
+  padding: 8px 12px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Element modifier */
+.card__button--primary {
+  background-color: #0066cc;
+  color: white;
+  border-color: #0055aa;
+}</code></pre>
+                        
+                        <h4>Form Component</h4>
+                        <pre><code class="language-html">&lt;form class="form"&gt;
+  &lt;div class="form__group"&gt;
+    &lt;label class="form__label" for="name"&gt;Name&lt;/label&gt;
+    &lt;input class="form__input" id="name" type="text"&gt;
+    &lt;span class="form__error"&gt;Please enter your name&lt;/span&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="form__group"&gt;
+    &lt;label class="form__label" for="email"&gt;Email&lt;/label&gt;
+    &lt;input class="form__input form__input--error" id="email" type="email"&gt;
+    &lt;span class="form__error form__error--visible"&gt;Please enter a valid email&lt;/span&gt;
+  &lt;/div&gt;
+  
+  &lt;button class="form__button form__button--submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        
+                        <h3>Benefits of BEM</h3>
+                        <ul>
+                            <li><strong>Clear Structure</strong>: The relationship between blocks, elements, and modifiers is explicit in the class names</li>
+                            <li><strong>Low Specificity</strong>: All selectors have the same specificity (a single class), avoiding specificity wars</li>
+                            <li><strong>Modularity</strong>: Blocks are independent and can be moved around without breaking</li>
+                            <li><strong>Reusability</strong>: Components can be reused across different parts of the site</li>
+                            <li><strong>Readability</strong>: Class names clearly communicate their purpose and relationship</li>
+                        </ul>
+                        
+                        <h3>Challenges with BEM</h3>
+                        <ul>
+                            <li><strong>Long Class Names</strong>: BEM class names can become quite lengthy</li>
+                            <li><strong>Verbosity</strong>: HTML can look cluttered with many BEM classes</li>
+                            <li><strong>Nesting Complexity</strong>: Deep nesting can lead to very long class names</li>
+                            <li><strong>Learning Curve</strong>: New team members need to understand the convention</li>
+                        </ul>
+                        
+                        <h3>BEM Best Practices</h3>
+                        <ul>
+                            <li><strong>Keep blocks small and focused</strong>: A block should represent a single component or feature</li>
+                            <li><strong>Avoid deep nesting</strong>: Try to keep your element nesting shallow (1-2 levels)</li>
+                            <li><strong>Use modifiers sparingly</strong>: Only create modifiers for significant variations</li>
+                            <li><strong>Consider using preprocessors</strong>: Sass or Less can make BEM more manageable with nesting</li>
+                            <li><strong>Document your blocks</strong>: Create a component library or style guide</li>
+                        </ul>
+                        
+                        <h3>BEM with Sass</h3>
+                        <p>Sass can make BEM more manageable by using nesting and the <code>&</code> parent selector:</p>
+                        
+                        <pre><code class="language-scss">.card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  
+  // Block modifier
+  &--featured {
+    border-color: gold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  // Elements
+  &__header {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  &__title {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  &__body {
+    padding: 15px;
+  }
+  
+  &__text {
+    margin: 0;
+  }
+  
+  &__footer {
+    padding: 15px;
+    border-top: 1px solid #eee;
+  }
+  
+  &__button {
+    padding: 8px 12px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    
+    // Element modifier
+    &--primary {
+      background-color: #0066cc;
+      color: white;
+      border-color: #0055aa;
+    }
+  }
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>BEM Variations</h4>
+                            <p>Several variations of BEM exist, including:</p>
+                            <ul>
+                                <li><strong>Classic BEM</strong>: .block__element--modifier</li>
+                                <li><strong>Two Dashes</strong>: .block__element--modifier (most common)</li>
+                                <li><strong>CamelCase</strong>: .blockName__elementName--modifierName</li>
+                                <li><strong>React-style BEM</strong>: .BlockName__elementName--modifierName</li>
+                            </ul>
+                            <p>Choose a variation that works best for your team and stick with it consistently.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>SMACSS Methodology</h2>
+                        <p>SMACSS (Scalable and Modular Architecture for CSS) is a style guide and methodology developed by Jonathan Snook. Unlike BEM, which focuses primarily on naming conventions, SMACSS provides a broader framework for organizing your CSS into distinct categories.</p>
+                        
+                        <h3>The Five Categories of SMACSS</h3>
+                        <p>SMACSS divides CSS rules into five categories:</p>
+                        
+                        <h4>1. Base</h4>
+                        <p>Base rules are the defaults. They are applied to elements using element selectors, attribute selectors, pseudo-class selectors, child selectors, or sibling selectors.</p>
+                        
+                        <pre><code class="language-css">/* Base rules */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}</code></pre>
+                        
+                        <h4>2. Layout</h4>
+                        <p>Layout rules divide the page into sections. Layouts hold one or more modules together.</p>
+                        
+                        <pre><code class="language-css">/* Layout rules */
+.l-header, .l-footer, .l-sidebar, .l-main {
+  padding: 20px;
+}
+
+.l-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.l-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.l-sidebar {
+  grid-column: span 3;
+}
+
+.l-main {
+  grid-column: span 9;
+}</code></pre>
+                        
+                        <p>Note the <code>l-</code> prefix for layout classes, which is a common SMACSS convention.</p>
+                        
+                        <h4>3. Module</h4>
+                        <p>Modules are the reusable, modular parts of our design. They are the callouts, the sidebar sections, the product lists, and so on.</p>
+                        
+                        <pre><code class="language-css">/* Module rules */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.card-header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: #0066cc;
+  color: white;
+}</code></pre>
+                        
+                        <h4>4. State</h4>
+                        <p>State rules are ways to describe how our modules or layouts will look when in a particular state. Is it hidden or expanded? Is it active or inactive?</p>
+                        
+                        <pre><code class="language-css">/* State rules */
+.is-hidden {
+  display: none;
+}
+
+.is-active {
+  font-weight: bold;
+  color: #0066cc;
+}
+
+.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.is-expanded {
+  height: auto;
+  overflow: visible;
+}</code></pre>
+                        
+                        <p>Note the <code>is-</code> prefix for state classes, which is a common SMACSS convention.</p>
+                        
+                        <h4>5. Theme</h4>
+                        <p>Theme rules are similar to state rules in that they describe how modules or layouts might look. Most sites don't require a theme layer.</p>
+                        
+                        <pre><code class="language-css">/* Theme rules */
+.theme-dark {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+.theme-light {
+  background-color: #f5f5f5;
+  color: #121212;
+}
+
+.theme-holiday .card {
+  border-color: red;
+  background-color: #fff9f9;
+}</code></pre>
+                        
+                        <h3>SMACSS Naming Conventions</h3>
+                        <p>SMACSS suggests using prefixes to distinguish between different categories:</p>
+                        
+                        <ul>
+                            <li><code>l-</code> or <code>layout-</code> for layout rules</li>
+                            <li><code>is-</code> or <code>has-</code> for state rules</li>
+                            <li><code>theme-</code> for theme rules</li>
+                            <li>No prefix for module rules (though some developers use <code>m-</code>)</li>
+                        </ul>
+                        
+                        <h3>SMACSS File Organization</h3>
+                        <p>SMACSS suggests organizing your CSS files according to the five categories:</p>
+                        
+                        <pre><code class="language-text">css/
+├── base/
+│   ├── _reset.css
+│   ├── _typography.css
+│   └── _base.css
+├── layout/
+│   ├── _grid.css
+│   ├── _header.css
+│   └── _footer.css
+├── modules/
+│   ├── _card.css
+│   ├── _button.css
+│   └── _form.css
+├── state/
+│   └── _states.css
+├── theme/
+│   └── _theme.css
+└── main.css</code></pre>
+                        
+                        <h3>Benefits of SMACSS</h3>
+                        <ul>
+                            <li><strong>Organized Structure</strong>: Clear categorization of CSS rules</li>
+                            <li><strong>Scalability</strong>: Easy to add new modules without affecting existing ones</li>
+                            <li><strong>Maintainability</strong>: Each category has a specific purpose and location</li>
+                            <li><strong>Flexibility</strong>: Less rigid than BEM, allowing for adaptation to project needs</li>
+                            <li><strong>Reduced Specificity</strong>: Encourages low-specificity selectors</li>
+                        </ul>
+                        
+                        <h3>Challenges with SMACSS</h3>
+                        <ul>
+                            <li><strong>Less Prescriptive</strong>: More decisions left to the developer</li>
+                            <li><strong>Category Overlap</strong>: Sometimes unclear which category a rule belongs to</li>
+                            <li><strong>Learning Curve</strong>: Understanding the categories and their purposes</li>
+                            <li><strong>Naming Consistency</strong>: Requires discipline to maintain consistent naming</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>SMACSS vs. BEM</h4>
+                            <p>SMACSS and BEM can be complementary:</p>
+                            <ul>
+                                <li>SMACSS provides a framework for organizing your CSS files and rules into categories</li>
+                                <li>BEM provides a naming convention for your modules and their elements</li>
+                            </ul>
+                            <p>You can use SMACSS for overall organization and BEM for naming your module classes:</p>
+                            <pre><code class="language-css">/* Layout (SMACSS) */
+.l-header {
+  /* ... */
+}
+
+/* Module (SMACSS) with BEM naming */
+.card {
+  /* Block */
+}
+
+.card__header {
+  /* Element */
+}
+
+.card--featured {
+  /* Modifier */
+}
+
+/* State (SMACSS) */
+.is-hidden {
+  /* ... */
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>ITCSS Methodology</h2>
+                        <p>ITCSS (Inverted Triangle CSS) is a methodology developed by Harry Roberts that organizes CSS by specificity and reach, rather than by function. It's designed to help manage the cascade and specificity in large projects.</p>
+                        
+                        <h3>The Inverted Triangle</h3>
+                        <p>ITCSS organizes CSS into layers, forming an inverted triangle:</p>
+                        
+                        <ul>
+                            <li>At the top are the most far-reaching, low-specificity selectors</li>
+                            <li>At the bottom are the most specific, localized selectors</li>
+                        </ul>
+                        
+                        <h3>The Seven Layers of ITCSS</h3>
+                        
+                        <h4>1. Settings</h4>
+                        <p>Global variables, config switches, brand colors, etc. These don't output any CSS on their own.</p>
+                        
+                        <pre><code class="language-scss">// settings/_variables.scss
+$color-primary: #0066cc;
+$color-secondary: #ff6600;
+$font-family-base: 'Poppins', sans-serif;
+$spacing-unit: 8px;
+$border-radius: 4px;
+$breakpoints: (
+  'small': 576px,
+  'medium': 768px,
+  'large': 992px,
+  'xlarge': 1200px
+);</code></pre>
+                        
+                        <h4>2. Tools</h4>
+                        <p>Globally used mixins and functions. Still doesn't output any CSS.</p>
+                        
+                        <pre><code class="language-scss">// tools/_mixins.scss
+@mixin media-query($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+  
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@function spacing($multiplier) {
+  @return $spacing-unit * $multiplier;
+}</code></pre>
+                        
+                        <h4>3. Generic</h4>
+                        <p>Ground-zero styles like resets, normalize.css, box-sizing, etc. First layer that outputs CSS.</p>
+                        
+                        <pre><code class="language-scss">// generic/_reset.scss
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// generic/_normalize.scss
+// (Normalize.css content)</code></pre>
+                        
+                        <h4>4. Elements</h4>
+                        <p>Styling for bare HTML elements (like H1, A, etc.). These are the last selectors where we use type selectors.</p>
+                        
+                        <pre><code class="language-scss">// elements/_headings.scss
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-base;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: spacing(3);
+}
+
+// elements/_links.scss
+a {
+  color: $color-primary;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}</code></pre>
+                        
+                        <h4>5. Objects</h4>
+                        <p>Class-based selectors that define undecorated design patterns, like containers, grids, etc. These are structure-focused with no cosmetic styling.</p>
+                        
+                        <pre><code class="language-scss">// objects/_container.scss
+.o-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: spacing(2);
+  padding-right: spacing(2);
+}
+
+// objects/_grid.scss
+.o-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -#{spacing(2)};
+  margin-right: -#{spacing(2)};
+  
+  &__item {
+    padding-left: spacing(2);
+    padding-right: spacing(2);
+    flex: 0 0 100%;
+    
+    @include media-query('medium') {
+      flex: 0 0 50%;
+    }
+    
+    @include media-query('large') {
+      flex: 0 0 33.333%;
+    }
+  }
+}</code></pre>
+                        
+                        <p>Note the <code>o-</code> prefix for object classes, which is a common ITCSS convention.</p>
+                        
+                        <h4>6. Components</h4>
+                        <p>Specific UI components with cosmetic styling. This is where the majority of our work takes place.</p>
+                        
+                        <pre><code class="language-scss">// components/_card.scss
+.c-card {
+  border: 1px solid #ddd;
+  border-radius: $border-radius;
+  overflow: hidden;
+  
+  &__header {
+    padding: spacing(2);
+    border-bottom: 1px solid #eee;
+  }
+  
+  &__title {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  
+  &__body {
+    padding: spacing(2);
+  }
+  
+  &__footer {
+    padding: spacing(2);
+    border-top: 1px solid #eee;
+  }
+}
+
+// components/_button.scss
+.c-button {
+  display: inline-block;
+  padding: spacing(1) spacing(2);
+  background-color: $color-primary;
+  color: white;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: darken($color-primary, 10%);
+  }
+  
+  &--secondary {
+    background-color: $color-secondary;
+    
+    &:hover {
+      background-color: darken($color-secondary, 10%);
+    }
+  }
+}</code></pre>
+                        
+                        <p>Note the <code>c-</code> prefix for component classes, which is a common ITCSS convention.</p>
+                        
+                        <h4>7. Utilities</h4>
+                        <p>High-specificity, very explicit selectors that trump everything else. Usually for helper classes.</p>
+                        
+                        <pre><code class="language-scss">// utilities/_spacing.scss
+.u-margin-top {
+  margin-top: spacing(2) !important;
+}
+
+.u-margin-bottom {
+  margin-bottom: spacing(2) !important;
+}
+
+// utilities/_text.scss
+.u-text-center {
+  text-align: center !important;
+}
+
+.u-text-bold {
+  font-weight: 700 !important;
+}
+
+// utilities/_visibility.scss
+.u-hidden {
+  display: none !important;
+}</code></pre>
+                        
+                        <p>Note the <code>u-</code> prefix for utility classes and the use of <code>!important</code>, which is acceptable in this context.</p>
+                        
+                        <h3>ITCSS File Organization</h3>
+                        <p>ITCSS suggests organizing your CSS files according to the seven layers:</p>
+                        
+                        <pre><code class="language-text">scss/
+├── settings/
+│   ├── _variables.scss
+│   └── _config.scss
+├── tools/
+│   ├── _mixins.scss
+│   └── _functions.scss
+├── generic/
+│   ├── _reset.scss
+│   └── _normalize.scss
+├── elements/
+│   ├── _headings.scss
+│   ├── _links.scss
+│   └── _forms.scss
+├── objects/
+│   ├── _container.scss
+│   ├── _grid.scss
+│   └── _media.scss
+├── components/
+│   ├── _card.scss
+│   ├── _button.scss
+│   └── _navbar.scss
+├── utilities/
+│   ├── _spacing.scss
+│   ├── _text.scss
+│   └── _visibility.scss
+└── main.scss</code></pre>
+                        
+                        <p>And the main.scss file would import all the partials in the correct order:</p>
+                        
+                        <pre><code class="language-scss">// Settings
+@import 'settings/variables';
+@import 'settings/config';
+
+// Tools
+@import 'tools/mixins';
+@import 'tools/functions';
+
+// Generic
+@import 'generic/reset';
+@import 'generic/normalize';
+
+// Elements
+@import 'elements/headings';
+@import 'elements/links';
+@import 'elements/forms';
+
+// Objects
+@import 'objects/container';
+@import 'objects/grid';
+@import 'objects/media';
+
+// Components
+@import 'components/card';
+@import 'components/button';
+@import 'components/navbar';
+
+// Utilities
+@import 'utilities/spacing';
+@import 'utilities/text';
+@import 'utilities/visibility';</code></pre>
+                        
+                        <h3>Benefits of ITCSS</h3>
+                        <ul>
+                            <li><strong>Manages Specificity</strong>: Prevents specificity issues by organizing CSS from least to most specific</li>
+                            <li><strong>Scalable</strong>: Works well for projects of any size</li>
+                            <li><strong>Predictable</strong>: Clear organization makes it easy to find and modify styles</li>
+                            <li><strong>Maintainable</strong>: Each layer has a specific purpose and location</li>
+                            <li><strong>Compatible</strong>: Works well with preprocessors and other methodologies like BEM</li>
+                        </ul>
+                        
+                        <h3>Challenges with ITCSS</h3>
+                        <ul>
+                            <li><strong>Learning Curve</strong>: Understanding the layers and their purposes</li>
+                            <li><strong>Initial Setup</strong>: Requires more upfront planning and organization</li>
+                            <li><strong>Documentation</strong>: Less documentation available compared to other methodologies</li>
+                            <li><strong>Discipline</strong>: Requires team discipline to maintain the structure</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>ITCSS with BEM</h4>
+                            <p>ITCSS and BEM work very well together:</p>
+                            <ul>
+                                <li>ITCSS provides the overall architecture and file organization</li>
+                                <li>BEM provides the naming convention for components and objects</li>
+                            </ul>
+                            <p>Example of combining ITCSS and BEM:</p>
+                            <pre><code class="language-scss">// objects/_media.scss
+.o-media {
+  display: flex;
+  align-items: flex-start;
+  
+  &__image {
+    margin-right: spacing(2);
+  }
+  
+  &__body {
+    flex: 1;
+  }
+}
+
+// components/_card.scss
+.c-card {
+  border: 1px solid #ddd;
+  
+  &__header {
+    padding: spacing(2);
+  }
+  
+  &--featured {
+    border-color: gold;
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Atomic CSS Methodology</h2>
+                        <p>Atomic CSS (also known as Functional CSS or Utility-first CSS) is a different approach to CSS architecture that focuses on small, single-purpose classes. Instead of grouping styles by component, Atomic CSS creates a large number of utility classes that each do one thing.</p>
+                        
+                        <h3>The Atomic Approach</h3>
+                        <p>In Atomic CSS, you apply multiple utility classes directly to HTML elements rather than creating custom component classes:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Traditional approach --&gt;
+&lt;div class="card"&gt;
+  &lt;div class="card-header"&gt;
+    &lt;h2 class="card-title"&gt;Card Title&lt;/h2&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;p&gt;Card content goes here.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Atomic CSS approach --&gt;
+&lt;div class="border rounded shadow-sm bg-white"&gt;
+  &lt;div class="p-4 border-bottom"&gt;
+    &lt;h2 class="text-xl font-bold m-0"&gt;Card Title&lt;/h2&gt;
+  &lt;/div&gt;
+  &lt;div class="p-4"&gt;
+    &lt;p class="m-0"&gt;Card content goes here.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>Common Utility Classes</h3>
+                        <p>Atomic CSS frameworks typically include utilities for:</p>
+                        
+                        <h4>Layout</h4>
+                        <pre><code class="language-css">/* Display */
+.block { display: block; }
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+.flex { display: flex; }
+.grid { display: grid; }
+.hidden { display: none; }
+
+/* Flexbox */
+.flex-row { flex-direction: row; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+/* Positioning */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+/* Width/Height */
+.w-full { width: 100%; }
+.w-1/2 { width: 50%; }
+.w-1/3 { width: 33.333%; }
+.h-full { height: 100%; }
+.h-screen { height: 100vh; }</code></pre>
+                        
+                        <h4>Spacing</h4>
+                        <pre><code class="language-css">/* Margin */
+.m-0 { margin: 0; }
+.m-1 { margin: 0.25rem; }
+.m-2 { margin: 0.5rem; }
+.m-4 { margin: 1rem; }
+.m-8 { margin: 2rem; }
+
+.mt-4 { margin-top: 1rem; }
+.mr-4 { margin-right: 1rem; }
+.mb-4 { margin-bottom: 1rem; }
+.ml-4 { margin-left: 1rem; }
+.mx-4 { margin-left: 1rem; margin-right: 1rem; }
+.my-4 { margin-top: 1rem; margin-bottom: 1rem; }
+
+/* Padding (similar pattern) */
+.p-0 { padding: 0; }
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-4 { padding: 1rem; }
+.p-8 { padding: 2rem; }
+
+.pt-4 { padding-top: 1rem; }
+/* ... and so on */</code></pre>
+                        
+                        <h4>Typography</h4>
+                        <pre><code class="language-css">/* Font Size */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+
+/* Font Weight */
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-bold { font-weight: 700; }
+
+/* Text Alignment */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* Text Color */
+.text-black { color: #000; }
+.text-white { color: #fff; }
+.text-gray-500 { color: #6b7280; }
+.text-blue-500 { color: #3b82f6; }</code></pre>
+                        
+                        <h4>Borders and Backgrounds</h4>
+                        <pre><code class="language-css">/* Borders */
+.border { border: 1px solid #e5e7eb; }
+.border-0 { border: 0; }
+.border-t { border-top: 1px solid #e5e7eb; }
+.border-r { border-right: 1px solid #e5e7eb; }
+.border-b { border-bottom: 1px solid #e5e7eb; }
+.border-l { border-left: 1px solid #e5e7eb; }
+
+.rounded { border-radius: 0.25rem; }
+.rounded-full { border-radius: 9999px; }
+
+/* Backgrounds */
+.bg-white { background-color: #fff; }
+.bg-black { background-color: #000; }
+.bg-gray-100 { background-color: #f3f4f6; }
+.bg-blue-500 { background-color: #3b82f6; }</code></pre>
+                        
+                        <h3>Popular Atomic CSS Frameworks</h3>
+                        <p>Several frameworks implement the Atomic CSS approach:</p>
+                        
+                        <h4>Tailwind CSS</h4>
+                        <p>The most popular utility-first CSS framework, with a comprehensive set of utilities and a robust ecosystem.</p>
+                        
+                        <pre><code class="language-html">&lt;button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"&gt;
+  Button
+&lt;/button&gt;</code></pre>
+                        
+                        <h4>Tachyons</h4>
+                        <p>One of the original atomic CSS frameworks, focused on readability and performance.</p>
+                        
+                        <pre><code class="language-html">&lt;button class="bg-blue white fw6 pv2 ph3 br2 pointer"&gt;
+  Button
+&lt;/button&gt;</code></pre>
+                        
+                        <h4>Basscss</h4>
+                        <p>A lightweight collection of base element styles and immutable utilities.</p>
+                        
+                        <pre><code class="language-html">&lt;button class="bg-blue white bold py1 px2 rounded"&gt;
+  Button
+&lt;/button&gt;</code></pre>
+                        
+                        <h3>Benefits of Atomic CSS</h3>
+                        <ul>
+                            <li><strong>Reduced CSS Size</strong>: No duplication of styles across components</li>
+                            <li><strong>Faster Development</strong>: No need to write custom CSS for most UI elements</li>
+                            <li><strong>Consistent Design System</strong>: Enforces consistent spacing, colors, etc.</li>
+                            <li><strong>No Naming Problems</strong>: No need to come up with component class names</li>
+                            <li><strong>Highly Reusable</strong>: Utilities can be combined in countless ways</li>
+                            <li><strong>Responsive Design</strong>: Many frameworks include responsive variants</li>
+                        </ul>
+                        
+                        <h3>Challenges with Atomic CSS</h3>
+                        <ul>
+                            <li><strong>HTML Bloat</strong>: HTML can become cluttered with many utility classes</li>
+                            <li><strong>Learning Curve</strong>: Developers need to learn the utility class names</li>
+                            <li><strong>Lack of Semantics</strong>: Class names don't describe what the element is</li>
+                            <li><strong>Difficult Refactoring</strong>: Changes need to be made in HTML rather than CSS</li>
+                            <li><strong>Team Adoption</strong>: May face resistance from developers used to traditional CSS</li>
+                        </ul>
+                        
+                        <h3>Hybrid Approach</h3>
+                        <p>Many projects use a hybrid approach, combining component-based CSS with utility classes:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Component class for structure, utilities for customization --&gt;
+&lt;div class="card bg-gray-100 mb-4"&gt;
+  &lt;div class="card__header text-center"&gt;
+    &lt;h2 class="card__title text-xl text-blue-500"&gt;Card Title&lt;/h2&gt;
+  &lt;/div&gt;
+  &lt;div class="card__body"&gt;
+    &lt;p class="mb-2"&gt;Card content goes here.&lt;/p&gt;
+    &lt;button class="btn btn--primary mt-4"&gt;Read More&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <p>This approach:</p>
+                        <ul>
+                            <li>Uses component classes for structure and core styles</li>
+                            <li>Uses utility classes for one-off customizations</li>
+                            <li>Maintains semantic meaning while providing flexibility</li>
+                            <li>Reduces the need for custom CSS for minor variations</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>When to Use Atomic CSS</h4>
+                            <p>Atomic CSS works well for:</p>
+                            <ul>
+                                <li>Rapid prototyping and development</li>
+                                <li>Projects with consistent design systems</li>
+                                <li>Teams that prefer working in HTML over CSS</li>
+                                <li>Projects where reducing CSS file size is critical</li>
+                            </ul>
+                            <p>Consider a different approach when:</p>
+                            <ul>
+                                <li>Semantic HTML is a priority</li>
+                                <li>You need to maintain a large number of similar components</li>
+                                <li>Your team is more comfortable with traditional CSS</li>
+                                <li>You're working with a CMS where content editors need simple classes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS Architecture in Practice</h2>
+                        <p>Let's explore how to implement CSS architecture in real-world projects, including file organization, naming conventions, and documentation.</p>
+                        
+                        <h3>File Organization</h3>
+                        <p>Regardless of the methodology you choose, organizing your CSS files is crucial for maintainability. Here's a general approach that works with most methodologies:</p>
+                        
+                        <pre><code class="language-text">src/
+├── styles/
+│   ├── abstracts/           # Variables, mixins, functions (no CSS output)
+│   │   ├── _variables.scss
+│   │   ├── _mixins.scss
+│   │   ├── _functions.scss
+│   │   └── _index.scss      # Forwards all abstracts
+│   │
+│   ├── base/                # Base styles, resets, typography
+│   │   ├── _reset.scss
+│   │   ├── _typography.scss
+│   │   ├── _animations.scss
+│   │   └── _index.scss
+│   │
+│   ├── layout/              # Layout components (header, footer, grid)
+│   │   ├── _header.scss
+│   │   ├── _footer.scss
+│   │   ├── _grid.scss
+│   │   ├── _sidebar.scss
+│   │   └── _index.scss
+│   │
+│   ├── components/          # Reusable UI components
+│   │   ├── _button.scss
+│   │   ├── _card.scss
+│   │   ├── _form.scss
+│   │   ├── _modal.scss
+│   │   └── _index.scss
+│   │
+│   ├── pages/               # Page-specific styles
+│   │   ├── _home.scss
+│   │   ├── _about.scss
+│   │   ├── _contact.scss
+│   │   └── _index.scss
+│   │
+│   ├── themes/              # Theme variations
+│   │   ├── _light.scss
+│   │   ├── _dark.scss
+│   │   └── _index.scss
+│   │
+│   ├── utilities/           # Utility classes
+│   │   ├── _spacing.scss
+│   │   ├── _text.scss
+│   │   ├── _visibility.scss
+│   │   └── _index.scss
+│   │
+│   └── main.scss            # Main file that imports all others</code></pre>
+                        
+                        <p>And the main.scss file would import everything in the correct order:</p>
+                        
+                        <pre><code class="language-scss">// Abstracts (no CSS output)
+@use 'abstracts';
+
+// Base styles
+@use 'base';
+
+// Layout components
+@use 'layout';
+
+// UI components
+@use 'components';
+
+// Page-specific styles
+@use 'pages';
+
+// Theme variations
+@use 'themes';
+
+// Utility classes (often come last to override other styles)
+@use 'utilities';</code></pre>
+                        
+                        <h3>Naming Conventions</h3>
+                        <p>Consistent naming is crucial for maintainable CSS. Here's a hybrid approach that combines elements from different methodologies:</p>
+                        
+                        <h4>Prefixes</h4>
+                        <ul>
+                            <li><code>l-</code> or <code>layout-</code> for layout components</li>
+                            <li><code>c-</code> for UI components</li>
+                            <li><code>o-</code> for objects or structural patterns</li>
+                            <li><code>u-</code> for utility classes</li>
+                            <li><code>is-</code> or <code>has-</code> for state classes</li>
+                            <li><code>t-</code> for theme classes</li>
+                            <li><code>js-</code> for classes used as JavaScript hooks (no styles)</li>
+                        </ul>
+                        
+                        <h4>BEM for Components</h4>
+                        <p>Use BEM naming for components:</p>
+                        
+                        <pre><code class="language-scss">.c-card {
+  &__header {}
+  &__title {}
+  &__body {}
+  &__footer {}
+  
+  &--featured {}
+}</code></pre>
+                        
+                        <h4>Namespace Separation</h4>
+                        <p>Use double hyphens to separate namespaces from the rest of the class name:</p>
+                        
+                        <pre><code class="language-scss">.l-header {}      // Layout component
+.c-button {}      // UI component
+.o-grid {}        // Object/structure
+.u-hidden {}      // Utility
+.is-active {}     // State
+.t-dark {}        // Theme
+.js-toggle {}     // JavaScript hook</code></pre>
+                        
+                        <h3>Documentation</h3>
+                        <p>Document your CSS architecture to help team members understand and follow the conventions:</p>
+                        
+                        <h4>README File</h4>
+                        <p>Create a README.md file in your styles directory explaining:</p>
+                        <ul>
+                            <li>The architecture methodology being used</li>
+                            <li>File organization and purpose of each directory</li>
+                            <li>Naming conventions and prefixes</li>
+                            <li>How to contribute new styles</li>
+                            <li>Examples of common patterns</li>
+                        </ul>
+                        
+                        <h4>Code Comments</h4>
+                        <p>Use comments to explain complex or non-obvious code:</p>
+                        
+                        <pre><code class="language-scss">// Button component
+// 
+// A versatile button component with multiple variants and states.
+// 
+// Usage:
+// &lt;button class="c-button c-button--primary"&gt;Button Text&lt;/button&gt;
+// 
+// Variants:
+// - c-button--primary: Primary action button
+// - c-button--secondary: Secondary action button
+// - c-button--danger: Dangerous action button
+// 
+// States:
+// - is-disabled: Disabled state
+// - is-loading: Loading state with spinner
+.c-button {
+  // Base button styles
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  
+  // Primary variant
+  &--primary {
+    background-color: $color-primary;
+    color: white;
+    
+    &:hover {
+      background-color: darken($color-primary, 10%);
+    }
+  }
+  
+  // Secondary variant
+  &--secondary {
+    // ...
+  }
+  
+  // Disabled state
+  &.is-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}</code></pre>
+                        
+                        <h4>Style Guide</h4>
+                        <p>Create a living style guide or component library that showcases your components and documents their usage:</p>
+                        <ul>
+                            <li>Use tools like Storybook, Styleguidist, or Pattern Lab</li>
+                            <li>Include examples of each component with code snippets</li>
+                            <li>Document available variants and states</li>
+                            <li>Show responsive behavior</li>
+                            <li>Include accessibility guidelines</li>
+                        </ul>
+                        
+                        <h3>Practical Tips for CSS Architecture</h3>
+                        <ul>
+                            <li><strong>Start Simple</strong>: Begin with a basic architecture and evolve as needed</li>
+                            <li><strong>Be Consistent</strong>: Follow your conventions consistently</li>
+                            <li><strong>Avoid Deep Nesting</strong>: Keep selector specificity low</li>
+                            <li><strong>Use Variables</strong>: Define colors, spacing, etc. as variables</li>
+                            <li><strong>Component-First</strong>: Think in terms of reusable components</li>
+                            <li><strong>Mobile-First</strong>: Start with mobile styles and use media queries to enhance for larger screens</li>
+                            <li><strong>Separate Structure from Skin</strong>: Separate positioning/layout from visual styling</li>
+                            <li><strong>Separate Container from Content</strong>: Components should look the same regardless of their container</li>
+                            <li><strong>Use Linting</strong>: Tools like stylelint can enforce your conventions</li>
+                            <li><strong>Regular Refactoring</strong>: Periodically review and refactor your CSS</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Choosing the Right Architecture</h4>
+                            <p>There's no one-size-fits-all solution. Consider these factors when choosing a CSS architecture:</p>
+                            <ul>
+                                <li><strong>Project Size</strong>: Larger projects benefit from more structured approaches like ITCSS</li>
+                                <li><strong>Team Size</strong>: Larger teams need clearer conventions and documentation</li>
+                                <li><strong>Project Lifespan</strong>: Long-lived projects need more maintainable architectures</li>
+                                <li><strong>Team Experience</strong>: Consider the team's familiarity with different methodologies</li>
+                                <li><strong>Development Process</strong>: Match your architecture to your development workflow</li>
+                            </ul>
+                            <p>Many projects use a hybrid approach, combining elements from different methodologies to suit their specific needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Implementing CSS Architecture</h2>
+                        <p>Let's practice implementing a CSS architecture by refactoring a simple project.</p>
+                        
+                        <h3>Exercise: Refactor a Blog Layout</h3>
+                        <p>In this exercise, you'll refactor a blog layout using BEM and ITCSS principles.</p>
+                        
+                        <h4>Step 1: Set Up Your Project</h4>
+                        <pre><code class="language-bash"># Create project folders
+mkdir -p css-architecture/scss/{settings,tools,generic,elements,objects,components,utilities}
+mkdir -p css-architecture/css
+touch css-architecture/index.html</code></pre>
+                        
+                        <h4>Step 2: Create the HTML Structure</h4>
+                        <p>Create a basic blog layout in index.html:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;CSS Architecture Blog&lt;/title&gt;
+  &lt;link rel="stylesheet" href="css/main.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class="site-header"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="logo"&gt;My Blog&lt;/div&gt;
+      &lt;nav class="main-nav"&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#" class="active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+  
+  &lt;main&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="content-sidebar-layout"&gt;
+        &lt;div class="content"&gt;
+          &lt;article class="post"&gt;
+            &lt;h1 class="post-title"&gt;Getting Started with CSS Architecture&lt;/h1&gt;
+            &lt;div class="post-meta"&gt;
+              &lt;span class="post-date"&gt;April 15, 2025&lt;/span&gt;
+              &lt;span class="post-author"&gt;by John Doe&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="post-content"&gt;
+              &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl sit amet nisl.&lt;/p&gt;
+              &lt;p&gt;Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl sit amet nisl.&lt;/p&gt;
+              &lt;blockquote&gt;
+                &lt;p&gt;Good CSS architecture is all about organization and naming.&lt;/p&gt;
+              &lt;/blockquote&gt;
+              &lt;p&gt;Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl sit amet nisl.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="post-tags"&gt;
+              &lt;span class="tag"&gt;CSS&lt;/span&gt;
+              &lt;span class="tag"&gt;Architecture&lt;/span&gt;
+              &lt;span class="tag"&gt;BEM&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/article&gt;
+          
+          &lt;div class="post-navigation"&gt;
+            &lt;a href="#" class="prev-post"&gt;← Previous Post&lt;/a&gt;
+            &lt;a href="#" class="next-post"&gt;Next Post →&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;aside class="sidebar"&gt;
+          &lt;div class="widget"&gt;
+            &lt;h3 class="widget-title"&gt;About&lt;/h3&gt;
+            &lt;div class="widget-content"&gt;
+              &lt;p&gt;A blog about CSS architecture and best practices.&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          
+          &lt;div class="widget"&gt;
+            &lt;h3 class="widget-title"&gt;Categories&lt;/h3&gt;
+            &lt;div class="widget-content"&gt;
+              &lt;ul class="category-list"&gt;
+                &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Design&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          
+          &lt;div class="widget featured-posts"&gt;
+            &lt;h3 class="widget-title"&gt;Featured Posts&lt;/h3&gt;
+            &lt;div class="widget-content"&gt;
+              &lt;div class="featured-post"&gt;
+                &lt;h4 class="featured-post-title"&gt;&lt;a href="#"&gt;Introduction to BEM&lt;/a&gt;&lt;/h4&gt;
+                &lt;span class="featured-post-date"&gt;April 10, 2025&lt;/span&gt;
+              &lt;/div&gt;
+              &lt;div class="featured-post"&gt;
+                &lt;h4 class="featured-post-title"&gt;&lt;a href="#"&gt;ITCSS Explained&lt;/a&gt;&lt;/h4&gt;
+                &lt;span class="featured-post-date"&gt;April 5, 2025&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/aside&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+  
+  &lt;footer class="site-footer"&gt;
+    &lt;div class="container"&gt;
+      &lt;p&gt;© 2025 CSS Architecture Blog. All rights reserved.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <h4>Step 3: Refactor the HTML with BEM</h4>
+                        <p>Refactor the HTML to use BEM naming conventions:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;CSS Architecture Blog&lt;/title&gt;
+  &lt;link rel="stylesheet" href="css/main.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class="c-header"&gt;
+    &lt;div class="o-container"&gt;
+      &lt;div class="c-header__logo"&gt;My Blog&lt;/div&gt;
+      &lt;nav class="c-nav"&gt;
+        &lt;ul class="c-nav__list"&gt;
+          &lt;li class="c-nav__item"&gt;&lt;a href="#" class="c-nav__link c-nav__link--active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="c-nav__item"&gt;&lt;a href="#" class="c-nav__link"&gt;About&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="c-nav__item"&gt;&lt;a href="#" class="c-nav__link"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="c-nav__item"&gt;&lt;a href="#" class="c-nav__link"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+  
+  &lt;main&gt;
+    &lt;div class="o-container"&gt;
+      &lt;div class="o-layout o-layout--sidebar"&gt;
+        &lt;div class="o-layout__main"&gt;
+          &lt;article class="c-post"&gt;
+            &lt;h1 class="c-post__title"&gt;Getting Started with CSS Architecture&lt;/h1&gt;
+            &lt;div class="c-post__meta"&gt;
+              &lt;span class="c-post__date"&gt;April 15, 2025&lt;/span&gt;
+              &lt;span class="c-post__author"&gt;by John Doe&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="c-post__content"&gt;
+              &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl sit amet nisl.&lt;/p&gt;
+              &lt;p&gt;Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl sit amet nisl.&lt;/p&gt;
+              &lt;blockquote&gt;
+                &lt;p&gt;Good CSS architecture is all about organization and naming.&lt;/p&gt;
+              &lt;/blockquote&gt;
+              &lt;p&gt;Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl sit amet nisl.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="c-post__tags"&gt;
+              &lt;span class="c-tag"&gt;CSS&lt;/span&gt;
+              &lt;span class="c-tag"&gt;Architecture&lt;/span&gt;
+              &lt;span class="c-tag"&gt;BEM&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/article&gt;
+          
+          &lt;div class="c-post-nav"&gt;
+            &lt;a href="#" class="c-post-nav__link c-post-nav__link--prev"&gt;← Previous Post&lt;/a&gt;
+            &lt;a href="#" class="c-post-nav__link c-post-nav__link--next"&gt;Next Post →&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;aside class="o-layout__sidebar"&gt;
+          &lt;div class="c-widget"&gt;
+            &lt;h3 class="c-widget__title"&gt;About&lt;/h3&gt;
+            &lt;div class="c-widget__content"&gt;
+              &lt;p&gt;A blog about CSS architecture and best practices.&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          
+          &lt;div class="c-widget"&gt;
+            &lt;h3 class="c-widget__title"&gt;Categories&lt;/h3&gt;
+            &lt;div class="c-widget__content"&gt;
+              &lt;ul class="c-category-list"&gt;
+                &lt;li class="c-category-list__item"&gt;&lt;a href="#" class="c-category-list__link"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="c-category-list__item"&gt;&lt;a href="#" class="c-category-list__link"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="c-category-list__item"&gt;&lt;a href="#" class="c-category-list__link"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="c-category-list__item"&gt;&lt;a href="#" class="c-category-list__link"&gt;Design&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          
+          &lt;div class="c-widget c-widget--featured"&gt;
+            &lt;h3 class="c-widget__title"&gt;Featured Posts&lt;/h3&gt;
+            &lt;div class="c-widget__content"&gt;
+              &lt;div class="c-featured-post"&gt;
+                &lt;h4 class="c-featured-post__title"&gt;&lt;a href="#" class="c-featured-post__link"&gt;Introduction to BEM&lt;/a&gt;&lt;/h4&gt;
+                &lt;span class="c-featured-post__date"&gt;April 10, 2025&lt;/span&gt;
+              &lt;/div&gt;
+              &lt;div class="c-featured-post"&gt;
+                &lt;h4 class="c-featured-post__title"&gt;&lt;a href="#" class="c-featured-post__link"&gt;ITCSS Explained&lt;/a&gt;&lt;/h4&gt;
+                &lt;span class="c-featured-post__date"&gt;April 5, 2025&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/aside&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+  
+  &lt;footer class="c-footer"&gt;
+    &lt;div class="o-container"&gt;
+      &lt;p class="c-footer__copyright"&gt;© 2025 CSS Architecture Blog. All rights reserved.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <h4>Step 4: Create SCSS Files Following ITCSS</h4>
+                        <p>Create the following SCSS files:</p>
+                        
+                        <p>1. settings/_variables.scss</p>
+                        <pre><code class="language-scss">// Colors
+$color-primary: #0066cc;
+$color-secondary: #ff6600;
+$color-text: #333333;
+$color-text-light: #666666;
+$color-border: #dddddd;
+$color-background: #ffffff;
+$color-background-light: #f5f5f5;
+
+// Typography
+$font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-family-heading: 'Georgia', serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+
+// Spacing
+$spacing-unit: 8px;
+$spacing-small: $spacing-unit;
+$spacing-medium: $spacing-unit * 2;
+$spacing-large: $spacing-unit * 3;
+$spacing-xlarge: $spacing-unit * 4;
+
+// Breakpoints
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+
+// Container
+$container-max-width: 1140px;
+$container-padding: $spacing-medium;</code></pre>
+                        
+                        <p>2. tools/_mixins.scss</p>
+                        <pre><code class="language-scss">// Media queries
+@mixin media-up($breakpoint) {
+  @if $breakpoint == small {
+    @media (min-width: $breakpoint-small) { @content; }
+  } @else if $breakpoint == medium {
+    @media (min-width: $breakpoint-medium) { @content; }
+  } @else if $breakpoint == large {
+    @media (min-width: $breakpoint-large) { @content; }
+  } @else if $breakpoint == xlarge {
+    @media (min-width: $breakpoint-xlarge) { @content; }
+  }
+}
+
+// Clearfix
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}</code></pre>
+                        
+                        <p>3. generic/_reset.scss</p>
+                        <pre><code class="language-scss">// Simple reset
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+body {
+  font-family: $font-family-base;
+  color: $color-text;
+  background-color: $color-background;
+}</code></pre>
+                        
+                        <p>4. elements/_headings.scss</p>
+                        <pre><code class="language-scss">// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-heading;
+  margin-bottom: $spacing-medium;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}</code></pre>
+                        
+                        <p>5. elements/_links.scss</p>
+                        <pre><code class="language-scss">// Links
+a {
+  color: $color-primary;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}</code></pre>
+                        
+                        <p>6. objects/_container.scss</p>
+                        <pre><code class="language-scss">// Container object
+.o-container {
+  max-width: $container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+}</code></pre>
+                        
+                        <p>7. objects/_layout.scss</p>
+                        <pre><code class="language-scss">// Layout object
+.o-layout {
+  display: flex;
+  flex-direction: column;
+  
+  &--sidebar {
+    @include media-up(medium) {
+      flex-direction: row;
+      gap: $spacing-xlarge;
+    }
+  }
+  
+  &__main {
+    flex: 1;
+  }
+  
+  &__sidebar {
+    width: 100%;
+    
+    @include media-up(medium) {
+      width: 300px;
+      flex-shrink: 0;
+    }
+  }
+}</code></pre>
+                        
+                        <p>8. components/_header.scss</p>
+                        <pre><code class="language-scss">// Header component
+.c-header {
+  background-color: $color-background-light;
+  padding: $spacing-medium 0;
+  border-bottom: 1px solid $color-border;
+  margin-bottom: $spacing-xlarge;
+  
+  .o-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    @include media-up(medium) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  &__logo {
+    font-family: $font-family-heading;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $color-primary;
+    margin-bottom: $spacing-medium;
+    
+    @include media-up(medium) {
+      margin-bottom: 0;
+    }
+  }
+}</code></pre>
+                        
+                        <p>9. components/_nav.scss</p>
+                        <pre><code class="language-scss">// Navigation component
+.c-nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: $spacing-medium;
+  }
+  
+  &__link {
+    padding: $spacing-small;
+    
+    &--active {
+      font-weight: bold;
+      color: $color-secondary;
+    }
+  }
+}</code></pre>
+                        
+                        <p>10. components/_post.scss</p>
+                        <pre><code class="language-scss">// Post component
+.c-post {
+  margin-bottom: $spacing-xlarge;
+  
+  &__title {
+    margin-bottom: $spacing-small;
+  }
+  
+  &__meta {
+    color: $color-text-light;
+    margin-bottom: $spacing-large;
+    font-size: 0.875rem;
+  }
+  
+  &__date {
+    margin-right: $spacing-medium;
+  }
+  
+  &__content {
+    margin-bottom: $spacing-large;
+    
+    p {
+      margin-bottom: $spacing-medium;
+    }
+    
+    blockquote {
+      border-left: 4px solid $color-primary;
+      padding-left: $spacing-medium;
+      font-style: italic;
+      margin: $spacing-large 0;
+    }
+  }
+  
+  &__tags {
+    display: flex;
+    gap: $spacing-small;
+  }
+}</code></pre>
+                        
+                        <p>11. components/_tag.scss</p>
+                        <pre><code class="language-scss">// Tag component
+.c-tag {
+  display: inline-block;
+  padding: $spacing-small $spacing-medium;
+  background-color: $color-background-light;
+  border-radius: 20px;
+  font-size: 0.875rem;
+}</code></pre>
+                        
+                        <p>12. components/_post-nav.scss</p>
+                        <pre><code class="language-scss">// Post navigation component
+.c-post-nav {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid $color-border;
+  padding-top: $spacing-large;
+  
+  &__link {
+    &--prev {
+      margin-right: auto;
+    }
+    
+    &--next {
+      margin-left: auto;
+    }
+  }
+}</code></pre>
+                        
+                        <p>13. components/_widget.scss</p>
+                        <pre><code class="language-scss">// Widget component
+.c-widget {
+  margin-bottom: $spacing-xlarge;
+  
+  &__title {
+    border-bottom: 2px solid $color-primary;
+    padding-bottom: $spacing-small;
+    margin-bottom: $spacing-medium;
+  }
+  
+  &__content {
+    font-size: 0.9375rem;
+  }
+  
+  &--featured {
+    background-color: $color-background-light;
+    padding: $spacing-medium;
+    border-radius: 4px;
+  }
+}</code></pre>
+                        
+                        <p>14. components/_category-list.scss</p>
+                        <pre><code class="language-scss">// Category list component
+.c-category-list {
+  list-style: none;
+  
+  &__item {
+    border-bottom: 1px solid $color-border;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  &__link {
+    display: block;
+    padding: $spacing-small 0;
+  }
+}</code></pre>
+                        
+                        <p>15. components/_featured-post.scss</p>
+                        <pre><code class="language-scss">// Featured post component
+.c-featured-post {
+  margin-bottom: $spacing-medium;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  &__title {
+    font-size: 1rem;
+    margin-bottom: $spacing-small;
+  }
+  
+  &__date {
+    font-size: 0.875rem;
+    color: $color-text-light;
+  }
+}</code></pre>
+                        
+                        <p>16. components/_footer.scss</p>
+                        <pre><code class="language-scss">// Footer component
+.c-footer {
+  background-color: $color-background-light;
+  padding: $spacing-large 0;
+  border-top: 1px solid $color-border;
+  margin-top: $spacing-xlarge;
+  
+  &__copyright {
+    text-align: center;
+    font-size: 0.875rem;
+    color: $color-text-light;
+  }
+}</code></pre>
+                        
+                        <p>17. utilities/_spacing.scss</p>
+                        <pre><code class="language-scss">// Spacing utilities
+.u-margin-top {
+  margin-top: $spacing-medium !important;
+}
+
+.u-margin-bottom {
+  margin-bottom: $spacing-medium !important;
+}
+
+.u-padding {
+  padding: $spacing-medium !important;
+}</code></pre>
+                        
+                        <p>18. main.scss</p>
+                        <pre><code class="language-scss">// Settings
+@import 'settings/variables';
+
+// Tools
+@import 'tools/mixins';
+
+// Generic
+@import 'generic/reset';
+
+// Elements
+@import 'elements/headings';
+@import 'elements/links';
+
+// Objects
+@import 'objects/container';
+@import 'objects/layout';
+
+// Components
+@import 'components/header';
+@import 'components/nav';
+@import 'components/post';
+@import 'components/tag';
+@import 'components/post-nav';
+@import 'components/widget';
+@import 'components/category-list';
+@import 'components/featured-post';
+@import 'components/footer';
+
+// Utilities
+@import 'utilities/spacing';</code></pre>
+                        
+                        <h4>Step 5: Compile the SCSS</h4>
+                        <pre><code class="language-bash"># Compile SCSS to CSS
+sass css-architecture/scss/main.scss css-architecture/css/main.css</code></pre>
+                        
+                        <h4>Step 6: Open the HTML File in a Browser</h4>
+                        <p>Open the index.html file in your browser to see your refactored blog layout.</p>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Extend your refactored blog with these additional features:</p>
+                            <ol>
+                                <li>Add a dark theme using CSS variables and a theme toggle button</li>
+                                <li>Create a responsive navigation menu that collapses on mobile</li>
+                                <li>Add a search component in the header</li>
+                                <li>Create a comment section for the blog post</li>
+                                <li>Add a newsletter signup form in the sidebar</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>CSS architecture is essential for creating maintainable, scalable, and organized stylesheets. In this lesson, we've explored:</p>
+                        <ul>
+                            <li><strong>BEM Methodology</strong>: A naming convention that divides UI into blocks, elements, and modifiers, providing clear structure and low specificity</li>
+                            <li><strong>SMACSS Methodology</strong>: A style guide that categorizes CSS rules into base, layout, module, state, and theme</li>
+                            <li><strong>ITCSS Methodology</strong>: An architecture that organizes CSS by specificity and reach, forming an inverted triangle from generic to specific</li>
+                            <li><strong>Atomic CSS</strong>: A utility-first approach that uses small, single-purpose classes instead of component-based CSS</li>
+                            <li><strong>Practical Implementation</strong>: File organization, naming conventions, documentation, and best practices for real-world projects</li>
+                        </ul>
+                        
+                        <p>Remember that there's no one-size-fits-all solution for CSS architecture. The best approach depends on your project's size, team, and requirements. Many projects use a hybrid approach, combining elements from different methodologies to create a custom architecture that suits their specific needs.</p>
+                        
+                        <p>By implementing a solid CSS architecture, you'll create more maintainable stylesheets, reduce specificity issues, improve collaboration, and make your codebase more scalable as your project grows.</p>
+                        
+                        <p>In the next lesson, we'll explore CSS Frameworks, including popular options like Bootstrap, Tailwind CSS, and Material UI, and learn how to customize and extend them for your projects.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page39.html" class="btn">Previous: CSS Preprocessors</a>
+                        <a href="page41.html" class="btn">Next: CSS Frameworks</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Layouts | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Master advanced CSS layout techniques including CSS Grid, Flexbox, Multi-column layouts, and modern positioning methods.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="42">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html" class="active">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional CSS</h3>
+                <ul>
+                    <li><a href="page38.html">38. Advanced CSS Features</a></li>
+                    <li><a href="page39.html">39. CSS Preprocessors</a></li>
+                    <li><a href="page40.html">40. CSS Architecture</a></li>
+                    <li><a href="page41.html">41. CSS Frameworks</a></li>
+                    <li><a href="page42.html" class="active">42. Advanced Layouts</a></li>
+                    <li><a href="page43.html">43. Advanced Animations</a></li>
+                    <li><a href="page44.html">44. CSS-in-JS</a></li>
+                    <li><a href="page45.html">45. CSS Houdini</a></li>
+                    <li><a href="page46.html">46. CSS Performance</a></li>
+                    <li><a href="page47.html">47. CSS Testing</a></li>
+                    <li><a href="page48.html">48. CSS for Print</a></li>
+                    <li><a href="page49.html">49. Future of CSS</a></li>
+                    <li><a href="page50.html">50. Building a Portfolio</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 84%;"></div>
+                </div>
+                <p style="text-align: center;">Page 42 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Advanced Layouts</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to Advanced Layouts</h2>
+                        <p>CSS layout techniques have evolved dramatically over the years, from table-based layouts to floats, and now to modern approaches like Flexbox and CSS Grid. In this lesson, we'll explore advanced layout techniques that allow you to create complex, responsive, and dynamic layouts with clean, maintainable code.</p>
+                        
+                        <p>We'll dive deep into CSS Grid and Flexbox, explore multi-column layouts, and learn about modern positioning techniques. By the end of this lesson, you'll have the skills to implement virtually any layout design, no matter how complex.</p>
+                        
+                        <h3>Evolution of CSS Layouts</h3>
+                        <p>Let's briefly review how CSS layouts have evolved:</p>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1996</div>
+                                <div class="timeline-content">
+                                    <h4>Table-based Layouts</h4>
+                                    <p>Before CSS was widely supported, developers used HTML tables for layout. This approach mixed content and presentation, making websites difficult to maintain and inaccessible.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2000s</div>
+                                <div class="timeline-content">
+                                    <h4>Float-based Layouts</h4>
+                                    <p>As CSS support improved, developers started using floats for layout. This technique was never intended for page layouts but became the standard approach for many years.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2010s</div>
+                                <div class="timeline-content">
+                                    <h4>Flexbox</h4>
+                                    <p>Flexbox introduced a more intuitive way to create one-dimensional layouts, making it easier to align, distribute, and reorder elements within a container.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2017</div>
+                                <div class="timeline-content">
+                                    <h4>CSS Grid</h4>
+                                    <p>CSS Grid brought true two-dimensional layout capabilities to the web, allowing for complex grid-based designs that were previously difficult or impossible to achieve.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">Present</div>
+                                <div class="timeline-content">
+                                    <h4>Modern Layout Techniques</h4>
+                                    <p>Today, we have a powerful combination of layout tools including Grid, Flexbox, Multi-column Layout, and new features like Subgrid and Container Queries.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>Choosing the Right Layout Technique</h3>
+                        <p>Each layout technique has its strengths and ideal use cases:</p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Technique</th>
+                                    <th>Dimensionality</th>
+                                    <th>Best For</th>
+                                    <th>Limitations</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Flexbox</td>
+                                    <td>One-dimensional</td>
+                                    <td>Navigation bars, card layouts, centering content, distributing space</td>
+                                    <td>Complex grid layouts, especially when items need to align in both dimensions</td>
+                                </tr>
+                                <tr>
+                                    <td>CSS Grid</td>
+                                    <td>Two-dimensional</td>
+                                    <td>Page layouts, complex grid systems, magazine-style layouts</td>
+                                    <td>More complex to learn, might be overkill for simple layouts</td>
+                                </tr>
+                                <tr>
+                                    <td>Multi-column</td>
+                                    <td>One-dimensional</td>
+                                    <td>Text-heavy content, newspaper-style columns</td>
+                                    <td>Limited control over individual items</td>
+                                </tr>
+                                <tr>
+                                    <td>Positioning</td>
+                                    <td>Individual elements</td>
+                                    <td>UI elements that need to be placed precisely, overlays, tooltips</td>
+                                    <td>Not ideal for responsive layouts or content flow</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="info-box">
+                            <h4>Modern Layout Philosophy</h4>
+                            <p>The most effective approach to modern layouts is to combine techniques:</p>
+                            <ul>
+                                <li><strong>CSS Grid</strong> for the overall page layout</li>
+                                <li><strong>Flexbox</strong> for component-level layouts</li>
+                                <li><strong>Multi-column</strong> for text-heavy content</li>
+                                <li><strong>Positioning</strong> for specific UI elements that need precise placement</li>
+                            </ul>
+                            <p>This combination provides the flexibility and power to create virtually any layout while keeping your code clean and maintainable.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced CSS Grid Techniques</h2>
+                        <p>CSS Grid is a powerful layout system that allows for two-dimensional layouts with rows and columns. While we covered the basics in an earlier lesson, let's now explore more advanced techniques.</p>
+                        
+                        <h3>Grid Template Areas</h3>
+                        <p>Grid template areas provide a visual way to define your layout using named areas:</p>
+                        
+                        <pre><code class="language-css">.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header header"
+    "sidebar main main main"
+    "footer footer footer footer";
+  min-height: 100vh;
+  gap: 1rem;
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+  }
+}</code></pre>
+                        
+                        <p>This approach makes it easy to visualize and modify your layout, especially for responsive designs.</p>
+                        
+                        <h3>Grid Auto Flow and Dense Packing</h3>
+                        <p>The <code>grid-auto-flow</code> property controls how the auto-placement algorithm works. The <code>dense</code> value can help fill in gaps in your grid:</p>
+                        
+                        <pre><code class="language-css">.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense; /* Fills in gaps */
+  gap: 1rem;
+}
+
+/* Some items span multiple cells */
+.item-wide {
+  grid-column: span 2;
+}
+
+.item-tall {
+  grid-row: span 2;
+}</code></pre>
+                        
+                        <p>This is particularly useful for masonry-like layouts or image galleries where items have different sizes.</p>
+                        
+                        <h3>Subgrid</h3>
+                        <p>Subgrid is a newer feature that allows a grid item that is also a grid container to inherit the grid tracks from its parent:</p>
+                        
+                        <pre><code class="language-css">.container {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: auto auto;
+  gap: 1rem;
+}
+
+.card {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+}
+
+.card-header {
+  grid-column: 1 / -1;
+}
+
+.card-image {
+  grid-column: 1 / 2;
+  grid-row: 2;
+}
+
+.card-content {
+  grid-column: 2 / -1;
+  grid-row: 2;
+}</code></pre>
+                        
+                        <p>Subgrid is particularly useful for maintaining alignment across nested grids, such as in card layouts where you want elements to align across different cards.</p>
+                        
+                        <div class="note">
+                            <p><strong>Note:</strong> As of 2025, subgrid is supported in all major browsers, but if you need to support older browsers, you may need to use a fallback approach.</p>
+                        </div>
+                        
+                        <h3>Grid Alignment and Spacing</h3>
+                        <p>CSS Grid provides powerful alignment capabilities for both the grid container and individual items:</p>
+                        
+                        <pre><code class="language-css">/* Container alignment properties */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 100px);
+  
+  /* Align grid tracks within the container */
+  justify-content: space-between; /* Horizontal alignment of the grid */
+  align-content: center; /* Vertical alignment of the grid */
+  
+  /* Align items within their grid cells */
+  justify-items: center; /* Horizontal alignment of items */
+  align-items: start; /* Vertical alignment of items */
+}
+
+/* Individual item alignment */
+.item {
+  /* Override container alignment for this item */
+  justify-self: end; /* Horizontal alignment */
+  align-self: center; /* Vertical alignment */
+}</code></pre>
+                        
+                        <p>These alignment properties give you precise control over how your grid and its items are positioned.</p>
+                        
+                        <h3>Advanced Grid Sizing</h3>
+                        <p>CSS Grid offers several advanced sizing techniques:</p>
+                        
+                        <h4>The minmax() Function</h4>
+                        <pre><code class="language-css">.container {
+  display: grid;
+  /* Columns that are at least 200px wide but can grow to 1fr */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}</code></pre>
+                        
+                        <h4>The fit-content() Function</h4>
+                        <pre><code class="language-css">.container {
+  display: grid;
+  /* First column is sized to its content but won't exceed 300px */
+  grid-template-columns: fit-content(300px) 1fr 1fr;
+}</code></pre>
+                        
+                        <h4>The auto-fill and auto-fit Keywords</h4>
+                        <pre><code class="language-css">/* auto-fill: creates as many tracks as possible */
+.container-fill {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+/* auto-fit: creates as many tracks as needed and collapses empty ones */
+.container-fit {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}</code></pre>
+                        
+                        <p>The difference between <code>auto-fill</code> and <code>auto-fit</code> is subtle but important:</p>
+                        <ul>
+                            <li><code>auto-fill</code> creates as many tracks as can fit in the container, even if some are empty</li>
+                            <li><code>auto-fit</code> creates as many tracks as needed for the content and collapses empty tracks to zero width</li>
+                        </ul>
+                        
+                        <h3>Grid Layout Patterns</h3>
+                        <p>Let's explore some common advanced grid layout patterns:</p>
+                        
+                        <h4>Holy Grail Layout</h4>
+                        <pre><code class="language-css">.holy-grail {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "left main right"
+    "footer footer footer";
+  min-height: 100vh;
+}
+
+.header { grid-area: header; }
+.left-sidebar { grid-area: left; }
+.main-content { grid-area: main; }
+.right-sidebar { grid-area: right; }
+.footer { grid-area: footer; }
+
+@media (max-width: 768px) {
+  .holy-grail {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "left"
+      "right"
+      "footer";
+  }
+}</code></pre>
+                        
+                        <h4>Magazine Layout</h4>
+                        <pre><code class="language-css">.magazine-layout {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  gap: 1rem;
+}
+
+.headline {
+  grid-column: 1 / -1;
+  grid-row: 1 / 3;
+}
+
+.main-story {
+  grid-column: 1 / 5;
+  grid-row: 3 / 6;
+}
+
+.sidebar-story {
+  grid-column: 5 / 7;
+  grid-row: 3 / 5;
+}
+
+.featured-story {
+  grid-column: 5 / 7;
+  grid-row: 5 / 6;
+}
+
+.story-1 {
+  grid-column: 1 / 3;
+  grid-row: 6 / 7;
+}
+
+.story-2 {
+  grid-column: 3 / 5;
+  grid-row: 6 / 7;
+}
+
+.story-3 {
+  grid-column: 5 / 7;
+  grid-row: 6 / 7;
+}</code></pre>
+                        
+                        <h4>Masonry-like Layout</h4>
+                        <pre><code class="language-css">.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 20px;
+  grid-auto-flow: dense;
+  gap: 1rem;
+}
+
+.masonry-item {
+  grid-row: span var(--rows);
+}
+
+/* JavaScript to calculate and set --rows based on item height */
+document.querySelectorAll('.masonry-item').forEach(item => {
+  const rowSpan = Math.ceil(item.querySelector('img').height / 20);
+  item.style.setProperty('--rows', rowSpan);
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>True CSS Masonry</h4>
+                            <p>As of 2025, native CSS masonry layout is available in most browsers using:</p>
+                            <pre><code class="language-css">.masonry-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: masonry;
+  gap: 1rem;
+}</code></pre>
+                            <p>This creates a true masonry layout without JavaScript, though you may still need fallbacks for older browsers.</p>
+                        </div>
+                        
+                        <h3>Grid Animations and Transitions</h3>
+                        <p>You can animate grid layouts for dynamic interfaces:</p>
+                        
+                        <pre><code class="language-css">.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 150px);
+  gap: 1rem;
+  transition: grid-template-columns 0.5s ease;
+}
+
+.grid-container:hover {
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.grid-item {
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+  z-index: 1;
+}</code></pre>
+                        
+                        <p>Not all grid properties are animatable, but you can animate:</p>
+                        <ul>
+                            <li>grid-template-columns</li>
+                            <li>grid-template-rows</li>
+                            <li>grid-gap</li>
+                            <li>Individual item properties like transform</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Flexbox Techniques</h2>
+                        <p>Flexbox is ideal for one-dimensional layouts and component-level design. Let's explore some advanced techniques that go beyond the basics.</p>
+                        
+                        <h3>Nested Flexbox Layouts</h3>
+                        <p>Combining multiple flex containers allows for complex layouts:</p>
+                        
+                        <pre><code class="language-css">.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  flex: 1; /* Takes up remaining space */
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.card-content {
+  flex: 1; /* Pushes footer to bottom */
+}
+
+.card-footer {
+  margin-top: auto; /* Alternative way to push to bottom */
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}</code></pre>
+                        
+                        <p>This pattern is particularly useful for card layouts where you want the footer to always be at the bottom, regardless of content height.</p>
+                        
+                        <h3>Flexbox Order Property</h3>
+                        <p>The <code>order</code> property allows you to change the visual order of flex items without changing the HTML:</p>
+                        
+                        <pre><code class="language-css">.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  /* Default order is 0 */
+  order: 0;
+}
+
+.first {
+  order: -1; /* Appears first */
+}
+
+.last {
+  order: 1; /* Appears last */
+}
+
+/* Responsive reordering */
+@media (max-width: 768px) {
+  .sidebar {
+    order: 1; /* Move sidebar below content on mobile */
+  }
+}</code></pre>
+                        
+                        <p>This is particularly useful for responsive layouts where you might want to change the order of elements at different screen sizes.</p>
+                        
+                        <div class="note">
+                            <p><strong>Note:</strong> While the <code>order</code> property changes the visual order, it does not change the tab order or how screen readers interpret the content. Always ensure your layout makes sense for accessibility.</p>
+                        </div>
+                        
+                        <h3>Advanced Alignment Techniques</h3>
+                        <p>Flexbox provides powerful alignment capabilities:</p>
+                        
+                        <pre><code class="language-css">.flex-container {
+  display: flex;
+  height: 400px;
+  
+  /* Main axis alignment (horizontal in row direction) */
+  justify-content: space-between;
+  
+  /* Cross axis alignment (vertical in row direction) */
+  align-items: center;
+  
+  /* Multi-line alignment */
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+/* Individual item alignment */
+.flex-item {
+  align-self: flex-start;
+}</code></pre>
+                        
+                        <h4>Centering with Auto Margins</h4>
+                        <p>Auto margins in flexbox create powerful alignment possibilities:</p>
+                        
+                        <pre><code class="language-css">/* Push item to the right */
+.push-right {
+  margin-left: auto;
+}
+
+/* Push item to the left */
+.push-left {
+  margin-right: auto;
+}
+
+/* Center item horizontally */
+.center-horizontal {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Space between two groups of items */
+.navbar {
+  display: flex;
+}
+
+.navbar-brand {
+  /* Brand on the left */
+}
+
+.navbar-links {
+  /* Links on the right */
+  margin-left: auto;
+}</code></pre>
+                        
+                        <p>This technique is commonly used in navigation bars to push some items to the right.</p>
+                        
+                        <h3>Flexbox Sizing Strategies</h3>
+                        <p>Understanding the <code>flex</code> property is key to mastering flexbox:</p>
+                        
+                        <pre><code class="language-css">/* flex: [flex-grow] [flex-shrink] [flex-basis] */
+
+/* Equal width columns that don't grow or shrink */
+.column {
+  flex: 0 0 25%;
+}
+
+/* Columns that grow and shrink equally */
+.column {
+  flex: 1 1 0%;
+}
+
+/* Column that takes up twice as much space as others */
+.column-double {
+  flex: 2 1 0%;
+}
+
+/* Column with minimum width that can grow */
+.column-min {
+  flex: 1 1 300px;
+}
+
+/* Column that doesn't shrink below its content size */
+.column-content {
+  flex: 1 0 auto;
+}</code></pre>
+                        
+                        <h3>Flexbox Patterns</h3>
+                        <p>Let's explore some common flexbox layout patterns:</p>
+                        
+                        <h4>Holy Grail Layout with Flexbox</h4>
+                        <pre><code class="language-css">.holy-grail {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header, .footer {
+  flex: 0 0 auto;
+}
+
+.main-container {
+  flex: 1 0 auto;
+  display: flex;
+}
+
+.main-content {
+  flex: 1 0 auto;
+}
+
+.left-sidebar, .right-sidebar {
+  flex: 0 0 200px;
+}
+
+.left-sidebar {
+  order: -1;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+  
+  .left-sidebar, .right-sidebar {
+    flex: 0 0 auto;
+  }
+}</code></pre>
+                        
+                        <h4>Sticky Footer</h4>
+                        <pre><code class="language-css">.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+}</code></pre>
+                        
+                        <h4>Card Grid with Flexbox</h4>
+                        <pre><code class="language-css">.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  max-width: calc(33.333% - 1rem);
+}
+
+@media (max-width: 992px) {
+  .card {
+    max-width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    max-width: 100%;
+  }
+}</code></pre>
+                        
+                        <h3>Combining Flexbox and Grid</h3>
+                        <p>For many layouts, combining Flexbox and Grid provides the best of both worlds:</p>
+                        
+                        <pre><code class="language-css">/* Page layout with Grid */
+.page {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    ". main ."
+    "footer footer footer";
+  min-height: 100vh;
+}
+
+.header { grid-area: header; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }
+
+/* Component layout with Flexbox */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  /* Component parts with Flexbox */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>When to Use Grid vs. Flexbox</h4>
+                            <p>A good rule of thumb:</p>
+                            <ul>
+                                <li><strong>Use Grid when:</strong>
+                                    <ul>
+                                        <li>You need to align items in two dimensions (rows and columns)</li>
+                                        <li>You're creating the overall page layout</li>
+                                        <li>You need precise control over both rows and columns</li>
+                                        <li>You're creating a complex grid system</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Use Flexbox when:</strong>
+                                    <ul>
+                                        <li>You need to align items in one dimension (row OR column)</li>
+                                        <li>You're creating component-level layouts</li>
+                                        <li>You need flexible item sizes</li>
+                                        <li>You need to distribute space between items</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Multi-Column Layout</h2>
+                        <p>CSS Multi-column Layout is a module that allows you to create multiple columns of text, similar to newspaper or magazine layouts. It's particularly useful for text-heavy content.</p>
+                        
+                        <h3>Basic Multi-Column Layout</h3>
+                        <p>Creating a basic multi-column layout is straightforward:</p>
+                        
+                        <pre><code class="language-css">.multi-column {
+  column-count: 3; /* Creates 3 columns */
+  column-gap: 2rem; /* Space between columns */
+  column-rule: 1px solid #ddd; /* Line between columns */
+}</code></pre>
+                        
+                        <p>You can also specify the width of columns instead of the count:</p>
+                        
+                        <pre><code class="language-css">.multi-column {
+  column-width: 300px; /* Browser will create as many columns as fit */
+  column-gap: 2rem;
+  column-rule: 1px solid #ddd;
+}</code></pre>
+                        
+                        <h3>Spanning Columns</h3>
+                        <p>Sometimes you want elements to span across all columns:</p>
+                        
+                        <pre><code class="language-css">.multi-column {
+  column-count: 3;
+  column-gap: 2rem;
+}
+
+.column-span-all {
+  column-span: all; /* Element spans across all columns */
+  margin: 1rem 0;
+}</code></pre>
+                        
+                        <p>This is useful for headings or images that should break the column flow.</p>
+                        
+                        <h3>Column Balancing</h3>
+                        <p>By default, browsers try to balance the content across columns. You can change this behavior:</p>
+                        
+                        <pre><code class="language-css">.multi-column {
+  column-count: 3;
+  column-fill: auto; /* Fills columns sequentially instead of balancing */
+  height: 500px; /* Height is required for column-fill: auto to work */
+}</code></pre>
+                        
+                        <h3>Preventing Breaks Within Elements</h3>
+                        <p>You can control how elements break across columns:</p>
+                        
+                        <pre><code class="language-css">.no-break {
+  break-inside: avoid; /* Prevents this element from breaking across columns */
+}
+
+.force-break {
+  break-after: column; /* Forces a column break after this element */
+}
+
+.avoid-break-before {
+  break-before: avoid-column; /* Avoids a column break before this element */
+}</code></pre>
+                        
+                        <h3>Responsive Multi-Column Layout</h3>
+                        <p>Multi-column layouts can be made responsive:</p>
+                        
+                        <pre><code class="language-css">.multi-column {
+  column-width: 300px; /* Creates as many columns as fit */
+  column-gap: 2rem;
+  column-rule: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+  .multi-column {
+    column-count: 2; /* Force 2 columns on medium screens */
+    column-width: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .multi-column {
+    column-count: 1; /* Single column on small screens */
+  }
+}</code></pre>
+                        
+                        <h3>Practical Multi-Column Examples</h3>
+                        
+                        <h4>Magazine Article</h4>
+                        <pre><code class="language-css">.article {
+  column-count: 2;
+  column-gap: 2rem;
+  column-rule: 1px solid #ddd;
+}
+
+.article h1 {
+  column-span: all;
+  margin-bottom: 1rem;
+}
+
+.article figure {
+  break-inside: avoid;
+  margin: 1rem 0;
+}
+
+.article blockquote {
+  break-inside: avoid;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-left: 4px solid #ddd;
+  margin: 1rem 0;
+}</code></pre>
+                        
+                        <h4>Form Fields in Columns</h4>
+                        <pre><code class="language-css">.form-fields {
+  column-count: 2;
+  column-gap: 2rem;
+}
+
+.form-group {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}</code></pre>
+                        
+                        <h4>Footer Links</h4>
+                        <pre><code class="language-css">.footer-links {
+  column-count: 4;
+  column-gap: 2rem;
+}
+
+@media (max-width: 992px) {
+  .footer-links {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-links {
+    column-count: 1;
+  }
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Multi-Column Best Practices</h4>
+                            <ul>
+                                <li>Use <code>break-inside: avoid</code> for elements that should stay together</li>
+                                <li>Consider readability when setting column width (45-75 characters per line is ideal)</li>
+                                <li>Be cautious with very tall columns as they can require excessive scrolling</li>
+                                <li>Test on different screen sizes to ensure content remains readable</li>
+                                <li>Consider using <code>column-width</code> instead of <code>column-count</code> for more flexible layouts</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Positioning Techniques</h2>
+                        <p>CSS positioning allows for precise control over element placement. Let's explore some advanced positioning techniques that go beyond the basics.</p>
+                        
+                        <h3>Sticky Positioning</h3>
+                        <p>Sticky positioning is a hybrid of relative and fixed positioning:</p>
+                        
+                        <pre><code class="language-css">.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sticky sidebar that starts after the header */
+.sticky-sidebar {
+  position: sticky;
+  top: 80px; /* Height of header + some space */
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}</code></pre>
+                        
+                        <p>Sticky positioning is particularly useful for:</p>
+                        <ul>
+                            <li>Navigation bars that stick to the top when scrolling</li>
+                            <li>Section headers in long lists</li>
+                            <li>Sidebars that follow the user as they scroll</li>
+                            <li>Table headers that remain visible</li>
+                        </ul>
+                        
+                        <h4>Sticky Table Headers</h4>
+                        <pre><code class="language-css">.table-container {
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+}
+
+/* For tables with both sticky headers and first column */
+.table th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 20; /* Higher than other headers */
+}
+
+/* Corner cell needs highest z-index */
+.table thead th:first-child {
+  z-index: 30;
+}</code></pre>
+                        
+                        <h3>Fixed Positioning with Transforms</h3>
+                        <p>Fixed positioning combined with transforms can create interesting UI elements:</p>
+                        
+                        <pre><code class="language-css">/* Fixed element that's centered horizontally */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+/* Fixed side panel that slides in */
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 300px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.side-panel.open {
+  transform: translateX(0);
+}</code></pre>
+                        
+                        <h3>Absolute Positioning with Constraints</h3>
+                        <p>You can create flexible absolute positioning by setting multiple position properties:</p>
+                        
+                        <pre><code class="language-css">/* Element that fills its container */
+.fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* Element that's centered with specific dimensions */
+.centered-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 300px;
+  height: 200px;
+}
+
+/* Element that's anchored to bottom-right with padding */
+.bottom-right {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}</code></pre>
+                        
+                        <h3>Stacking Context and Z-Index</h3>
+                        <p>Understanding stacking context is crucial for complex layouts:</p>
+                        
+                        <pre><code class="language-css">/* Creating a new stacking context */
+.stacking-context {
+  position: relative;
+  z-index: 1;
+}
+
+/* Elements within the stacking context */
+.stacking-context .element-1 {
+  position: relative;
+  z-index: 2; /* Higher than siblings but contained within parent */
+}
+
+.stacking-context .element-2 {
+  position: relative;
+  z-index: 1;
+}
+
+/* Element outside the stacking context */
+.outside-element {
+  position: relative;
+  z-index: 0; /* Lower than .stacking-context but will still appear above its children */
+}</code></pre>
+                        
+                        <p>A stacking context is created by:</p>
+                        <ul>
+                            <li>Elements with a position value other than <code>static</code> and a <code>z-index</code> value other than <code>auto</code></li>
+                            <li>Elements with <code>opacity</code> less than 1</li>
+                            <li>Elements with <code>transform</code>, <code>filter</code>, <code>clip-path</code>, or <code>perspective</code> values other than <code>none</code></li>
+                            <li>Elements with <code>isolation: isolate</code></li>
+                            <li>Elements with <code>will-change</code> properties that create a stacking context</li>
+                            <li>Elements with <code>contain: layout</code>, <code>paint</code>, or <code>strict</code></li>
+                        </ul>
+                        
+                        <h3>Positioning for Responsive Design</h3>
+                        <p>Positioning can be adjusted for different screen sizes:</p>
+                        
+                        <pre><code class="language-css">.floating-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+@media (max-width: 768px) {
+  .floating-button {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* Repositioning elements on mobile */
+.sidebar {
+  position: relative;
+  float: right;
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    float: none;
+    width: 100%;
+  }
+}</code></pre>
+                        
+                        <h3>Advanced Positioning Patterns</h3>
+                        
+                        <h4>Tooltip</h4>
+                        <pre><code class="language-css">.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
+  background-color: #333;
+  color: white;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}</code></pre>
+                        
+                        <h4>Dropdown Menu</h4>
+                        <pre><code class="language-css">.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+  z-index: 100;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Right-aligned dropdown */
+.dropdown-menu-right {
+  left: auto;
+  right: 0;
+}</code></pre>
+                        
+                        <h4>Modal Dialog</h4>
+                        <pre><code class="language-css">.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-dialog {
+  background-color: white;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.9);
+  transition: transform 0.3s;
+}
+
+.modal-overlay.active .modal-dialog {
+  transform: scale(1);
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Positioning Best Practices</h4>
+                            <ul>
+                                <li>Use positioning sparingly; prefer modern layout techniques like Flexbox and Grid for most layouts</li>
+                                <li>Be cautious with fixed and absolute positioning in responsive designs</li>
+                                <li>Always consider the impact on accessibility when using positioning</li>
+                                <li>Use z-index values sparingly and consistently (consider using variables)</li>
+                                <li>Test positioned elements across different screen sizes and browsers</li>
+                                <li>Remember that positioned elements can affect document flow and cause unexpected layout issues</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Modern Layout Techniques</h2>
+                        <p>Beyond the core layout methods, several modern techniques have emerged to solve specific layout challenges. Let's explore some of these advanced approaches.</p>
+                        
+                        <h3>Aspect Ratio Boxes</h3>
+                        <p>Creating elements with a specific aspect ratio is now easier than ever:</p>
+                        
+                        <h4>Using aspect-ratio Property</h4>
+                        <pre><code class="language-css">.video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+}
+
+.square {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.card {
+  aspect-ratio: 3 / 4; /* Portrait card */
+  width: 300px;
+}</code></pre>
+                        
+                        <h4>Fallback for Older Browsers</h4>
+                        <pre><code class="language-css">.aspect-ratio-box {
+  position: relative;
+  width: 100%;
+}
+
+.aspect-ratio-box::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
+}
+
+.aspect-ratio-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}</code></pre>
+                        
+                        <h3>Container Queries</h3>
+                        <p>Container queries allow you to style elements based on their container's size, not just the viewport:</p>
+                        
+                        <pre><code class="language-css">.container {
+  container-type: inline-size;
+  container-name: card-container;
+}
+
+/* Styles based on container width */
+@container card-container (min-width: 400px) {
+  .card {
+    display: flex;
+  }
+  
+  .card-image {
+    width: 40%;
+  }
+  
+  .card-content {
+    width: 60%;
+  }
+}
+
+@container card-container (max-width: 399px) {
+  .card {
+    flex-direction: column;
+  }
+  
+  .card-image {
+    width: 100%;
+  }
+}</code></pre>
+                        
+                        <p>Container queries are particularly useful for component-based design, where the same component might appear in different contexts with different available space.</p>
+                        
+                        <h3>Scroll Snap</h3>
+                        <p>Scroll snap provides a way to create smooth, controlled scrolling experiences:</p>
+                        
+                        <pre><code class="language-css">/* Basic horizontal scroll snap */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+}
+
+.scroll-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  height: 300px;
+}
+
+/* Vertical scroll snap with proximity */
+.vertical-scroll {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y proximity;
+}
+
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+/* Scroll snap with stop points */
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always; /* Forces scrolling to stop at this item */
+}</code></pre>
+                        
+                        <h3>CSS Shapes</h3>
+                        <p>CSS Shapes allow content to flow around non-rectangular shapes:</p>
+                        
+                        <pre><code class="language-css">/* Text flowing around a circle */
+.circle-float {
+  float: left;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  shape-outside: circle(50%);
+  margin-right: 1rem;
+}
+
+/* Text flowing around a polygon */
+.polygon-float {
+  float: right;
+  width: 300px;
+  height: 300px;
+  shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+  margin-left: 1rem;
+}
+
+/* Text flowing around an image */
+.image-float {
+  float: left;
+  shape-outside: url(image.png);
+  shape-image-threshold: 0.5; /* Transparency threshold */
+  shape-margin: 1rem; /* Margin around the shape */
+}</code></pre>
+                        
+                        <h3>CSS Exclusions</h3>
+                        <p>CSS Exclusions extend the concept of CSS Shapes to allow content to flow around positioned elements:</p>
+                        
+                        <pre><code class="language-css">.content {
+  flow-into: main-content;
+}
+
+.container {
+  flow-from: main-content;
+}
+
+.exclusion {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 200px;
+  height: 200px;
+  wrap-flow: both; /* Content flows around this element */
+}</code></pre>
+                        
+                        <div class="note">
+                            <p><strong>Note:</strong> CSS Exclusions are still experimental and not widely supported as of 2025. Check browser compatibility before using in production.</p>
+                        </div>
+                        
+                        <h3>Logical Properties</h3>
+                        <p>Logical properties allow you to create layouts that adapt to different writing modes and text directions:</p>
+                        
+                        <pre><code class="language-css">/* Traditional physical properties */
+.box-physical {
+  margin-left: 1rem;
+  padding-right: 1rem;
+  border-top: 1px solid black;
+  width: 200px;
+  height: 100px;
+}
+
+/* Logical properties */
+.box-logical {
+  margin-inline-start: 1rem; /* Left in LTR, right in RTL */
+  padding-inline-end: 1rem; /* Right in LTR, left in RTL */
+  border-block-start: 1px solid black; /* Top in horizontal writing mode */
+  inline-size: 200px; /* Width in horizontal writing mode */
+  block-size: 100px; /* Height in horizontal writing mode */
+}</code></pre>
+                        
+                        <p>Logical properties are particularly important for internationalization and supporting multiple writing modes.</p>
+                        
+                        <h3>Subgrid</h3>
+                        <p>Subgrid allows grid items that are also grid containers to inherit the grid tracks from their parent:</p>
+                        
+                        <pre><code class="language-css">.main-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+.card-container {
+  grid-column: span 4;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.card-header {
+  grid-column: 1 / -1;
+}
+
+.card-image {
+  grid-column: 1 / -1;
+}
+
+.card-content {
+  grid-column: 1 / -1;
+}</code></pre>
+                        
+                        <p>Subgrid is particularly useful for maintaining alignment across nested grids, such as in card layouts where you want elements to align across different cards.</p>
+                        
+                        <h3>Masonry Layout</h3>
+                        <p>Native CSS masonry layout is now available in most browsers:</p>
+                        
+                        <pre><code class="language-css">.masonry-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: masonry;
+  gap: 1rem;
+}</code></pre>
+                        
+                        <p>For browsers that don't support native masonry, you can use a JavaScript-based approach or a CSS-only fallback:</p>
+                        
+                        <pre><code class="language-css">/* CSS-only masonry-like layout */
+.masonry-fallback {
+  columns: 4 250px;
+  column-gap: 1rem;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Advanced Layout Challenge</h2>
+                        <p>Let's put your advanced layout skills to the test with a comprehensive exercise that combines multiple techniques.</p>
+                        
+                        <h3>Exercise: Build a Magazine Layout</h3>
+                        <p>In this exercise, you'll create a responsive magazine-style layout that uses CSS Grid, Flexbox, Multi-column Layout, and advanced positioning techniques.</p>
+                        
+                        <h4>Step 1: Set Up the HTML Structure</h4>
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Magazine Layout&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class="site-header"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="logo"&gt;Modern Magazine&lt;/div&gt;
+      &lt;nav class="main-nav"&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#" class="active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Features&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Style&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Tech&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Culture&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+  
+  &lt;main class="container"&gt;
+    &lt;section class="hero"&gt;
+      &lt;article class="feature-article"&gt;
+        &lt;div class="article-image"&gt;
+          &lt;img src="https://via.placeholder.com/1200x600" alt="Feature Article"&gt;
+        &lt;/div&gt;
+        &lt;div class="article-content"&gt;
+          &lt;span class="category"&gt;Technology&lt;/span&gt;
+          &lt;h1&gt;The Future of Web Layouts: What's Coming in 2026&lt;/h1&gt;
+          &lt;p class="excerpt"&gt;Exploring the cutting-edge layout techniques that will shape the web in the coming year.&lt;/p&gt;
+          &lt;div class="article-meta"&gt;
+            &lt;span class="author"&gt;By Jane Smith&lt;/span&gt;
+            &lt;span class="date"&gt;April 21, 2025&lt;/span&gt;
+            &lt;span class="read-time"&gt;8 min read&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+    &lt;/section&gt;
+    
+    &lt;section class="trending-section"&gt;
+      &lt;h2 class="section-title"&gt;Trending Now&lt;/h2&gt;
+      &lt;div class="trending-grid"&gt;
+        &lt;article class="trending-article"&gt;
+          &lt;div class="article-image"&gt;
+            &lt;img src="https://via.placeholder.com/400x300" alt="Article 1"&gt;
+          &lt;/div&gt;
+          &lt;div class="article-content"&gt;
+            &lt;span class="category"&gt;Design&lt;/span&gt;
+            &lt;h3&gt;Minimalist Design Trends for 2025&lt;/h3&gt;
+            &lt;p class="excerpt"&gt;How less continues to be more in modern web design.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/article&gt;
+        
+        &lt;article class="trending-article"&gt;
+          &lt;div class="article-image"&gt;
+            &lt;img src="https://via.placeholder.com/400x300" alt="Article 2"&gt;
+          &lt;/div&gt;
+          &lt;div class="article-content"&gt;
+            &lt;span class="category"&gt;Development&lt;/span&gt;
+            &lt;h3&gt;The Rise of WebAssembly in Frontend Development&lt;/h3&gt;
+            &lt;p class="excerpt"&gt;How this technology is changing the performance game.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/article&gt;
+        
+        &lt;article class="trending-article"&gt;
+          &lt;div class="article-image"&gt;
+            &lt;img src="https://via.placeholder.com/400x300" alt="Article 3"&gt;
+          &lt;/div&gt;
+          &lt;div class="article-content"&gt;
+            &lt;span class="category"&gt;CSS&lt;/span&gt;
+            &lt;h3&gt;Container Queries: The Future of Responsive Design&lt;/h3&gt;
+            &lt;p class="excerpt"&gt;Moving beyond media queries for truly component-based design.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/article&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    
+    &lt;div class="main-content-layout"&gt;
+      &lt;section class="main-content"&gt;
+        &lt;article class="featured-story"&gt;
+          &lt;h2&gt;The Evolution of CSS Layout: From Tables to Grid&lt;/h2&gt;
+          &lt;div class="article-meta"&gt;
+            &lt;span class="author"&gt;By John Doe&lt;/span&gt;
+            &lt;span class="date"&gt;April 20, 2025&lt;/span&gt;
+            &lt;span class="read-time"&gt;12 min read&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class="multi-column-content"&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.&lt;/p&gt;
+            
+            &lt;p&gt;Suspendisse in orci enim. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.&lt;/p&gt;
+            
+            &lt;h3&gt;The Table Era&lt;/h3&gt;
+            
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.&lt;/p&gt;
+            
+            &lt;blockquote class="pull-quote"&gt;
+              "CSS Grid has revolutionized how we think about page layout, making previously complex designs straightforward to implement."
+            &lt;/blockquote&gt;
+            
+            &lt;p&gt;Suspendisse in orci enim. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.&lt;/p&gt;
+            
+            &lt;h3&gt;The Flexbox Revolution&lt;/h3&gt;
+            
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.&lt;/p&gt;
+            
+            &lt;p&gt;Suspendisse in orci enim. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.&lt;/p&gt;
+            
+            &lt;h3&gt;Enter CSS Grid&lt;/h3&gt;
+            
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.&lt;/p&gt;
+            
+            &lt;p&gt;Suspendisse in orci enim. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/article&gt;
+        
+        &lt;div class="article-grid"&gt;
+          &lt;article class="grid-article"&gt;
+            &lt;div class="article-image"&gt;
+              &lt;img src="https://via.placeholder.com/400x300" alt="Article 4"&gt;
+            &lt;/div&gt;
+            &lt;div class="article-content"&gt;
+              &lt;span class="category"&gt;JavaScript&lt;/span&gt;
+              &lt;h3&gt;Understanding the Modern JS Ecosystem&lt;/h3&gt;
+              &lt;p class="excerpt"&gt;Navigating the complex world of JavaScript frameworks and tools.&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/article&gt;
+          
+          &lt;article class="grid-article"&gt;
+            &lt;div class="article-image"&gt;
+              &lt;img src="https://via.placeholder.com/400x300" alt="Article 5"&gt;
+            &lt;/div&gt;
+            &lt;div class="article-content"&gt;
+              &lt;span class="category"&gt;Accessibility&lt;/span&gt;
+              &lt;h3&gt;Building Truly Inclusive Web Experiences&lt;/h3&gt;
+              &lt;p class="excerpt"&gt;How to ensure your websites work for everyone.&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/article&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+      
+      &lt;aside class="sidebar"&gt;
+        &lt;div class="sidebar-widget newsletter"&gt;
+          &lt;h3&gt;Subscribe to Our Newsletter&lt;/h3&gt;
+          &lt;p&gt;Get the latest articles delivered straight to your inbox.&lt;/p&gt;
+          &lt;form class="newsletter-form"&gt;
+            &lt;input type="email" placeholder="Your email address" required&gt;
+            &lt;button type="submit"&gt;Subscribe&lt;/button&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="sidebar-widget popular-posts"&gt;
+          &lt;h3&gt;Popular Posts&lt;/h3&gt;
+          &lt;ul class="post-list"&gt;
+            &lt;li&gt;
+              &lt;a href="#"&gt;
+                &lt;span class="post-number"&gt;01&lt;/span&gt;
+                &lt;span class="post-title"&gt;The Complete Guide to Flexbox&lt;/span&gt;
+              &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href="#"&gt;
+                &lt;span class="post-number"&gt;02&lt;/span&gt;
+                &lt;span class="post-title"&gt;CSS Grid: A Game Changer for Web Layout&lt;/span&gt;
+              &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href="#"&gt;
+                &lt;span class="post-number"&gt;03&lt;/span&gt;
+                &lt;span class="post-title"&gt;Responsive Design in 2025&lt;/span&gt;
+              &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href="#"&gt;
+                &lt;span class="post-number"&gt;04&lt;/span&gt;
+                &lt;span class="post-title"&gt;The Future of Web Typography&lt;/span&gt;
+              &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href="#"&gt;
+                &lt;span class="post-number"&gt;05&lt;/span&gt;
+                &lt;span class="post-title"&gt;Mastering CSS Animations&lt;/span&gt;
+              &lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="sidebar-widget categories"&gt;
+          &lt;h3&gt;Categories&lt;/h3&gt;
+          &lt;ul class="category-list"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;CSS &lt;span&gt;(24)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;JavaScript &lt;span&gt;(19)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;HTML &lt;span&gt;(15)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Design &lt;span&gt;(32)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Accessibility &lt;span&gt;(8)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Performance &lt;span&gt;(12)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/aside&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+  
+  &lt;footer class="site-footer"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="footer-grid"&gt;
+        &lt;div class="footer-about"&gt;
+          &lt;h3&gt;About Modern Magazine&lt;/h3&gt;
+          &lt;p&gt;A publication dedicated to modern web development techniques, design trends, and technology insights.&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="footer-links"&gt;
+          &lt;h3&gt;Quick Links&lt;/h3&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Features&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Style&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Tech&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Culture&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;About Us&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="footer-social"&gt;
+          &lt;h3&gt;Follow Us&lt;/h3&gt;
+          &lt;div class="social-icons"&gt;
+            &lt;a href="#" class="social-icon"&gt;Twitter&lt;/a&gt;
+            &lt;a href="#" class="social-icon"&gt;Facebook&lt;/a&gt;
+            &lt;a href="#" class="social-icon"&gt;Instagram&lt;/a&gt;
+            &lt;a href="#" class="social-icon"&gt;LinkedIn&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;div class="copyright"&gt;
+        &lt;p&gt;&copy; 2025 Modern Magazine. All rights reserved.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <h4>Step 2: Create the CSS</h4>
+                        <pre><code class="language-css">/* Base Styles */
+:root {
+  --color-primary: #3a86ff;
+  --color-secondary: #ff006e;
+  --color-text: #333;
+  --color-text-light: #666;
+  --color-background: #fff;
+  --color-background-light: #f8f9fa;
+  --color-border: #e9ecef;
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --border-radius: 0.25rem;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  line-height: 1.6;
+  background-color: var(--color-background);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.3;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Header Styles */
+.site-header {
+  background-color: var(--color-background);
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.main-nav ul {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.main-nav a {
+  color: var(--color-text);
+  font-weight: 500;
+  padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  margin: var(--spacing-lg) 0;
+}
+
+.feature-article {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+@media (min-width: 768px) {
+  .feature-article {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.feature-article .article-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.feature-article .article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-article .article-content {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.category {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.article-meta {
+  display: flex;
+  gap: var(--spacing-md);
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  margin-top: var(--spacing-md);
+}
+
+/* Trending Section */
+.section-title {
+  position: relative;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
+  font-size: 1.75rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-primary);
+}
+
+.trending-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.trending-article {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease;
+}
+
+.trending-article:hover {
+  transform: translateY(-5px);
+}
+
+.trending-article .article-image {
+  aspect-ratio: 4 / 3;
+}
+
+.trending-article .article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trending-article .article-content {
+  padding: var(--spacing-md);
+}
+
+.trending-article h3 {
+  font-size: 1.25rem;
+  margin: var(--spacing-sm) 0;
+}
+
+.trending-article .excerpt {
+  color: var(--color-text-light);
+  font-size: 0.9375rem;
+  margin-bottom: 0;
+}
+
+/* Main Content Layout */
+.main-content-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (min-width: 992px) {
+  .main-content-layout {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Featured Story */
+.featured-story {
+  margin-bottom: var(--spacing-xl);
+}
+
+.featured-story h2 {
+  font-size: 2rem;
+}
+
+.multi-column-content {
+  column-count: 1;
+  column-gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .multi-column-content {
+    column-count: 2;
+  }
+}
+
+.multi-column-content h3 {
+  margin-top: var(--spacing-lg);
+  break-after: avoid;
+}
+
+.pull-quote {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: var(--color-primary);
+  padding: var(--spacing-md) 0;
+  margin: var(--spacing-lg) 0;
+  border-top: 2px solid var(--color-border);
+  border-bottom: 2px solid var(--color-border);
+  break-inside: avoid;
+  column-span: all;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Article Grid */
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.grid-article {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.grid-article .article-content {
+  padding: var(--spacing-md);
+}
+
+.grid-article h3 {
+  font-size: 1.125rem;
+  margin: var(--spacing-sm) 0;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.sidebar-widget {
+  background-color: var(--color-background-light);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  box-shadow: var(--box-shadow);
+}
+
+.sidebar-widget h3 {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.25rem;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.newsletter-form input {
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+
+.newsletter-form button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Popular Posts */
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.post-list li a {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.post-list li a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.post-number {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  opacity: 0.7;
+  line-height: 1;
+}
+
+.post-title {
+  font-weight: 500;
+}
+
+/* Categories */
+.category-list li {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.category-list li:last-child {
+  border-bottom: none;
+}
+
+.category-list a {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-sm) 0;
+  color: var(--color-text);
+}
+
+.category-list a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.category-list span {
+  color: var(--color-text-light);
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--color-background-light);
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-xl) 0;
+  margin-top: var(--spacing-xl);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.footer-about p {
+  color: var(--color-text-light);
+}
+
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.social-icons {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.copyright {
+  text-align: center;
+  color: var(--color-text-light);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}</code></pre>
+                        
+                        <h4>Step 3: Enhance the Layout</h4>
+                        <p>Now that you have the basic layout, try enhancing it with these advanced techniques:</p>
+                        
+                        <ol>
+                            <li>Add a sticky sidebar that follows the user as they scroll</li>
+                            <li>Implement a masonry layout for a photo gallery section</li>
+                            <li>Create a featured content slider using scroll snap</li>
+                            <li>Add CSS shapes for text flow around images</li>
+                            <li>Implement container queries for component-based responsive design</li>
+                        </ol>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Extend your magazine layout with these additional features:</p>
+                            <ol>
+                                <li>Create a "dark mode" toggle using CSS custom properties</li>
+                                <li>Implement a responsive navigation menu that collapses on mobile</li>
+                                <li>Add animations for page transitions and hover effects</li>
+                                <li>Create a "reading progress" indicator that shows how far the user has scrolled</li>
+                                <li>Implement a "related articles" section using CSS Grid with auto-placement</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored advanced layout techniques that allow you to create complex, responsive, and dynamic layouts with clean, maintainable code. We've covered:</p>
+                        <ul>
+                            <li><strong>Advanced CSS Grid</strong>: Grid template areas, auto flow, subgrid, alignment, and complex grid patterns</li>
+                            <li><strong>Advanced Flexbox</strong>: Nested layouts, order property, alignment techniques, and common flexbox patterns</li>
+                            <li><strong>Multi-Column Layout</strong>: Creating newspaper-style columns, spanning columns, and controlling breaks</li>
+                            <li><strong>Advanced Positioning</strong>: Sticky positioning, fixed positioning with transforms, stacking context, and z-index</li>
+                            <li><strong>Modern Layout Techniques</strong>: Aspect ratio, container queries, scroll snap, CSS shapes, and logical properties</li>
+                        </ul>
+                        
+                        <p>By combining these techniques, you can create virtually any layout design, no matter how complex. Remember that the most effective approach is often to use a combination of techniques:</p>
+                        <ul>
+                            <li>CSS Grid for the overall page layout</li>
+                            <li>Flexbox for component-level layouts</li>
+                            <li>Multi-column for text-heavy content</li>
+                            <li>Positioning for specific UI elements that need precise placement</li>
+                        </ul>
+                        
+                        <p>In the next lesson, we'll explore Advanced Animations, including keyframe animations, transitions, motion paths, and scroll-based animations.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page41.html" class="btn">Previous: CSS Frameworks</a>
+                        <a href="page43.html" class="btn">Next: Advanced Animations</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to style text with CSS typography properties to create beautiful, readable content.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="29">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html" class="active">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>CSS Basics</h3>
+                <ul>
+                    <li><a href="page26.html">26. Introduction to CSS</a></li>
+                    <li><a href="page27.html">27. CSS Selectors</a></li>
+                    <li><a href="page28.html">28. CSS Box Model</a></li>
+                    <li><a href="page29.html" class="active">29. Typography</a></li>
+                    <li><a href="page30.html">30. Colors & Backgrounds</a></li>
+                    <li><a href="page31.html">31. Layout Basics</a></li>
+                    <li><a href="page32.html">32. Flexbox</a></li>
+                    <li><a href="page33.html">33. CSS Grid</a></li>
+                    <li><a href="page34.html">34. Responsive Design</a></li>
+                    <li><a href="page35.html">35. Transitions & Animations</a></li>
+                    <li><a href="page36.html">36. CSS Variables</a></li>
+                    <li><a href="page37.html">37. CSS Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 58%;"></div>
+                </div>
+                <p style="text-align: center;">Page 29 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Typography</h1>
+                    
+                    <div class="card">
+                        <h2>The Importance of Typography</h2>
+                        <p>Typography is the art and technique of arranging type to make written language legible, readable, and appealing. In web design, typography plays a crucial role in communication, user experience, and brand identity.</p>
+                        
+                        <p>Good typography enhances readability, establishes hierarchy, creates visual interest, and conveys the right tone and mood. Poor typography can make content difficult to read, create visual confusion, and undermine your design's effectiveness.</p>
+                        
+                        <p>CSS provides a wide range of properties to control typography, allowing you to create beautiful, readable text that enhances your web pages.</p>
+                        
+                        <div class="info-box">
+                            <h4>Typography Terminology</h4>
+                            <p>Understanding typography terminology helps when working with CSS text properties:</p>
+                            <ul>
+                                <li><strong>Typeface</strong>: A set of fonts designed with common characteristics (e.g., Helvetica, Times New Roman)</li>
+                                <li><strong>Font</strong>: A specific weight, width, and style of a typeface (e.g., Helvetica Bold Italic)</li>
+                                <li><strong>Serif</strong>: Small lines or strokes at the ends of characters (e.g., Times New Roman)</li>
+                                <li><strong>Sans-serif</strong>: Fonts without serifs (e.g., Arial, Helvetica)</li>
+                                <li><strong>Monospace</strong>: Fonts where each character occupies the same width (e.g., Courier, Consolas)</li>
+                                <li><strong>Weight</strong>: The thickness of character strokes (e.g., light, regular, bold)</li>
+                                <li><strong>Style</strong>: Variations like italic or oblique</li>
+                                <li><strong>Leading</strong>: The vertical space between lines of text (line-height in CSS)</li>
+                                <li><strong>Kerning</strong>: The space between specific character pairs</li>
+                                <li><strong>Tracking</strong>: The overall spacing between characters (letter-spacing in CSS)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Font Properties</h2>
+                        <p>CSS provides several properties to control the appearance of fonts.</p>
+                        
+                        <h3>Font Family</h3>
+                        <p>The <code>font-family</code> property specifies the typeface to use for text. You can provide a list of font families as fallbacks in case the preferred font isn't available:</p>
+                        
+                        <pre><code class="language-css">/* Single font family with generic fallback */
+p {
+  font-family: Arial, sans-serif;
+}
+
+/* Multiple fallback fonts */
+h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}</code></pre>
+                        
+                        <p>Generic font families can be used as a last resort:</p>
+                        <ul>
+                            <li><code>serif</code>: Fonts with small lines at the ends of characters</li>
+                            <li><code>sans-serif</code>: Fonts without serifs</li>
+                            <li><code>monospace</code>: Fonts where all characters have the same width</li>
+                            <li><code>cursive</code>: Fonts that mimic handwriting</li>
+                            <li><code>fantasy</code>: Decorative fonts</li>
+                            <li><code>system-ui</code>: The default user interface font</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Font Names with Spaces</h4>
+                            <p>If a font name contains spaces, it must be enclosed in quotes:</p>
+                            <pre><code class="language-css">h1 {
+  font-family: "Times New Roman", Times, serif;
+}</code></pre>
+                        </div>
+                        
+                        <h3>Font Size</h3>
+                        <p>The <code>font-size</code> property sets the size of the text. There are several units you can use:</p>
+                        
+                        <pre><code class="language-css">/* Absolute units */
+h1 {
+  font-size: 32px;
+}
+
+/* Relative to parent element */
+p {
+  font-size: 1.2em; /* 1.2 times the parent's font size */
+}
+
+/* Relative to root element */
+h2 {
+  font-size: 1.5rem; /* 1.5 times the root element's font size */
+}
+
+/* Percentage */
+small {
+  font-size: 80%; /* 80% of the parent's font size */
+}
+
+/* Viewport units */
+.hero-text {
+  font-size: 5vw; /* 5% of the viewport width */
+}</code></pre>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Unit</th>
+                                        <th>Description</th>
+                                        <th>Use Case</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>px</code></td>
+                                        <td>Pixels (fixed unit)</td>
+                                        <td>Precise control, but doesn't scale with user preferences</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>em</code></td>
+                                        <td>Relative to parent element's font size</td>
+                                        <td>Nested elements, component-based design</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rem</code></td>
+                                        <td>Relative to root element's font size</td>
+                                        <td>Consistent scaling across the document</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>%</code></td>
+                                        <td>Percentage of parent element's font size</td>
+                                        <td>Similar to em, good for nested elements</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vw</code></td>
+                                        <td>Percentage of viewport width</td>
+                                        <td>Responsive headlines that scale with screen size</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vh</code></td>
+                                        <td>Percentage of viewport height</td>
+                                        <td>Text that scales with viewport height</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h4>Best Practice: Use Relative Units</h4>
+                            <p>For most text, it's best to use relative units like <code>rem</code> or <code>em</code> rather than fixed units like <code>px</code>. This allows text to scale based on user preferences and device characteristics, improving accessibility and responsiveness.</p>
+                        </div>
+                        
+                        <h3>Font Weight</h3>
+                        <p>The <code>font-weight</code> property sets the thickness or boldness of the text:</p>
+                        
+                        <pre><code class="language-css">/* Keyword values */
+p {
+  font-weight: normal;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+/* Numeric values (100-900) */
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400; /* Same as normal */
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700; /* Same as bold */
+}
+
+.extra-bold {
+  font-weight: 800;
+}
+
+.black {
+  font-weight: 900;
+}</code></pre>
+                        
+                        <p>Not all fonts support all weight values. If a specific weight isn't available, the browser will use the closest available weight.</p>
+                        
+                        <h3>Font Style</h3>
+                        <p>The <code>font-style</code> property sets whether text is italic or normal:</p>
+                        
+                        <pre><code class="language-css">p {
+  font-style: normal;
+}
+
+em {
+  font-style: italic;
+}
+
+.slanted {
+  font-style: oblique; /* Similar to italic but mechanically slanted */
+}</code></pre>
+                        
+                        <h3>Font Variant</h3>
+                        <p>The <code>font-variant</code> property can be used to display text in small caps:</p>
+                        
+                        <pre><code class="language-css">.small-caps {
+  font-variant: small-caps;
+}</code></pre>
+                        
+                        <h3>Font Stretch</h3>
+                        <p>The <code>font-stretch</code> property allows you to make text narrower or wider:</p>
+                        
+                        <pre><code class="language-css">.condensed {
+  font-stretch: condensed;
+}
+
+.normal-width {
+  font-stretch: normal;
+}
+
+.expanded {
+  font-stretch: expanded;
+}
+
+/* Percentage values */
+.slightly-condensed {
+  font-stretch: 90%;
+}
+
+.slightly-expanded {
+  font-stretch: 110%;
+}</code></pre>
+                        
+                        <p>Support for this property depends on the font family. Many fonts don't include condensed or expanded variants.</p>
+                        
+                        <h3>Font Shorthand</h3>
+                        <p>The <code>font</code> shorthand property allows you to set multiple font properties at once:</p>
+                        
+                        <pre><code class="language-css">/* font: font-style font-variant font-weight font-size/line-height font-family */
+p {
+  font: italic small-caps bold 16px/1.5 Arial, sans-serif;
+}
+
+/* Minimum required properties are font-size and font-family */
+h1 {
+  font: 24px Arial, sans-serif;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Font Shorthand Order</h4>
+                            <p>When using the <code>font</code> shorthand, the order matters:</p>
+                            <ol>
+                                <li><code>font-style</code></li>
+                                <li><code>font-variant</code></li>
+                                <li><code>font-weight</code></li>
+                                <li><code>font-size</code> (required)</li>
+                                <li><code>line-height</code> (optional, follows font-size with a slash)</li>
+                                <li><code>font-family</code> (required, must be last)</li>
+                            </ol>
+                            <p>Any omitted values will be set to their initial values.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Web Fonts</h2>
+                        <p>Web fonts allow you to use custom fonts that aren't installed on users' devices. This gives you more design flexibility while ensuring consistent typography across different platforms.</p>
+                        
+                        <h3>@font-face Rule</h3>
+                        <p>The <code>@font-face</code> rule allows you to define custom fonts:</p>
+                        
+                        <pre><code class="language-css">@font-face {
+  font-family: 'MyCustomFont';
+  src: url('fonts/mycustomfont.woff2') format('woff2'),
+       url('fonts/mycustomfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Using the custom font */
+body {
+  font-family: 'MyCustomFont', Arial, sans-serif;
+}</code></pre>
+                        
+                        <h3>Font Formats</h3>
+                        <p>Several font formats are supported by modern browsers:</p>
+                        <ul>
+                            <li><code>.woff2</code>: Web Open Font Format 2.0 (best compression, modern browsers)</li>
+                            <li><code>.woff</code>: Web Open Font Format (good compression, wide support)</li>
+                            <li><code>.ttf</code>: TrueType Font (older format, larger file size)</li>
+                            <li><code>.eot</code>: Embedded OpenType (for older IE browsers)</li>
+                            <li><code>.svg</code>: SVG Font (rarely used now)</li>
+                        </ul>
+                        
+                        <p>For modern websites, <code>.woff2</code> and <code>.woff</code> formats are sufficient.</p>
+                        
+                        <h3>Google Fonts</h3>
+                        <p>Google Fonts is a popular service that provides free web fonts. You can include Google Fonts in your project by adding a link in your HTML:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- HTML method --&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"&gt;</code></pre>
+                        
+                        <p>Or by using the <code>@import</code> rule in your CSS:</p>
+                        
+                        <pre><code class="language-css">/* CSS method */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}</code></pre>
+                        
+                        <h3>Variable Fonts</h3>
+                        <p>Variable fonts are a newer font technology that allows a single font file to behave like multiple fonts. They can dynamically adjust weight, width, slant, and other attributes:</p>
+                        
+                        <pre><code class="language-css">@font-face {
+  font-family: 'MyVariableFont';
+  src: url('fonts/myvariablefont.woff2') format('woff2-variations');
+  font-weight: 100 900; /* Range of weights supported */
+}
+
+.light-text {
+  font-family: 'MyVariableFont';
+  font-weight: 200;
+}
+
+.bold-text {
+  font-family: 'MyVariableFont';
+  font-weight: 800;
+}
+
+/* Using font-variation-settings for custom axes */
+.custom-variation {
+  font-family: 'MyVariableFont';
+  font-variation-settings: 'wght' 375, 'wdth' 80;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Font Loading Performance</h4>
+                            <p>Web fonts can impact performance if not handled properly. Consider these best practices:</p>
+                            <ul>
+                                <li>Use <code>font-display</code> to control how fonts load and render</li>
+                                <li>Limit the number of font weights and styles</li>
+                                <li>Use modern formats like WOFF2 for better compression</li>
+                                <li>Consider preloading critical fonts</li>
+                            </ul>
+                            <pre><code class="language-css">@font-face {
+  font-family: 'MyCustomFont';
+  src: url('fonts/mycustomfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Shows fallback font until custom font loads */
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Text Properties</h2>
+                        <p>CSS provides numerous properties to control the appearance and layout of text.</p>
+                        
+                        <h3>Text Color</h3>
+                        <p>The <code>color</code> property sets the color of text:</p>
+                        
+                        <pre><code class="language-css">/* Named color */
+p {
+  color: blue;
+}
+
+/* Hexadecimal */
+h1 {
+  color: #ff0000;
+}
+
+/* RGB */
+.subtitle {
+  color: rgb(0, 128, 0);
+}
+
+/* RGBA (with alpha/transparency) */
+.faded-text {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* HSL (hue, saturation, lightness) */
+.accent {
+  color: hsl(240, 100%, 50%);
+}</code></pre>
+                        
+                        <h3>Text Alignment</h3>
+                        <p>The <code>text-align</code> property controls the horizontal alignment of text:</p>
+                        
+                        <pre><code class="language-css">.left-aligned {
+  text-align: left; /* Default for languages that read left-to-right */
+}
+
+.centered {
+  text-align: center;
+}
+
+.right-aligned {
+  text-align: right;
+}
+
+.justified {
+  text-align: justify; /* Spreads text to align with both left and right edges */
+}</code></pre>
+                        
+                        <h3>Text Decoration</h3>
+                        <p>The <code>text-decoration</code> property adds lines to text:</p>
+                        
+                        <pre><code class="language-css">a {
+  text-decoration: none; /* Removes the default underline from links */
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.overlined {
+  text-decoration: overline;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+/* Combined decorations */
+.fancy {
+  text-decoration: underline overline;
+}
+
+/* With color and style */
+.custom-underline {
+  text-decoration: underline dotted red;
+}</code></pre>
+                        
+                        <p>You can also use individual properties for more control:</p>
+                        
+                        <pre><code class="language-css">.detailed {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: blue;
+  text-decoration-thickness: 2px;
+}</code></pre>
+                        
+                        <h3>Text Transform</h3>
+                        <p>The <code>text-transform</code> property changes the capitalization of text:</p>
+                        
+                        <pre><code class="language-css">.uppercase {
+  text-transform: uppercase; /* ALL CAPS */
+}
+
+.lowercase {
+  text-transform: lowercase; /* all lowercase */
+}
+
+.capitalize {
+  text-transform: capitalize; /* First Letter Of Each Word */
+}
+
+.normal-case {
+  text-transform: none; /* No transformation */
+}</code></pre>
+                        
+                        <h3>Text Indent</h3>
+                        <p>The <code>text-indent</code> property indents the first line of a block of text:</p>
+                        
+                        <pre><code class="language-css">p {
+  text-indent: 2em; /* Indents the first line by 2em */
+}
+
+.negative-indent {
+  text-indent: -20px; /* Creates a hanging indent */
+  padding-left: 20px; /* Ensures text doesn't overflow */
+}</code></pre>
+                        
+                        <h3>Letter Spacing</h3>
+                        <p>The <code>letter-spacing</code> property adjusts the space between characters:</p>
+                        
+                        <pre><code class="language-css">.tight {
+  letter-spacing: -0.5px;
+}
+
+.normal {
+  letter-spacing: normal;
+}
+
+.spaced {
+  letter-spacing: 2px;
+}
+
+.very-spaced {
+  letter-spacing: 0.5em;
+}</code></pre>
+                        
+                        <h3>Word Spacing</h3>
+                        <p>The <code>word-spacing</code> property adjusts the space between words:</p>
+                        
+                        <pre><code class="language-css">.tight-words {
+  word-spacing: -2px;
+}
+
+.normal-words {
+  word-spacing: normal;
+}
+
+.spaced-words {
+  word-spacing: 5px;
+}</code></pre>
+                        
+                        <h3>White Space</h3>
+                        <p>The <code>white-space</code> property controls how white space inside an element is handled:</p>
+                        
+                        <pre><code class="language-css">.normal-wrap {
+  white-space: normal; /* Default: collapses white space and wraps text */
+}
+
+.no-wrap {
+  white-space: nowrap; /* Prevents text from wrapping to a new line */
+}
+
+.preserve-space {
+  white-space: pre; /* Preserves white space like the HTML &lt;pre&gt; element */
+}
+
+.preserve-wrap {
+  white-space: pre-wrap; /* Preserves white space but allows wrapping */
+}
+
+.collapse-wrap {
+  white-space: pre-line; /* Collapses white space but preserves line breaks */
+}</code></pre>
+                        
+                        <h3>Text Overflow</h3>
+                        <p>The <code>text-overflow</code> property specifies how overflowed content is signaled to users:</p>
+                        
+                        <pre><code class="language-css">.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Shows "..." for overflowed text */
+}
+
+.clip {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip; /* Simply clips the text */
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Multi-line Ellipsis</h4>
+                            <p>The standard <code>text-overflow: ellipsis</code> only works for single lines. For multi-line ellipsis, you can use the following technique:</p>
+                            <pre><code class="language-css">.multiline-ellipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}</code></pre>
+                            <p>Note that this is not a standard CSS property and may not work in all browsers.</p>
+                        </div>
+                        
+                        <h3>Word Break</h3>
+                        <p>The <code>word-break</code> property specifies how words should break when reaching the end of a line:</p>
+                        
+                        <pre><code class="language-css">.normal-break {
+  word-break: normal; /* Default behavior */
+}
+
+.break-all {
+  word-break: break-all; /* May break words at any character */
+}
+
+.keep-all {
+  word-break: keep-all; /* Prevents breaking words */
+}
+
+.break-word {
+  overflow-wrap: break-word; /* Breaks words only when necessary */
+}</code></pre>
+                        
+                        <h3>Writing Mode</h3>
+                        <p>The <code>writing-mode</code> property sets whether lines of text are laid out horizontally or vertically:</p>
+                        
+                        <pre><code class="language-css">.horizontal {
+  writing-mode: horizontal-tb; /* Default: top-to-bottom, left-to-right */
+}
+
+.vertical-right-to-left {
+  writing-mode: vertical-rl; /* Vertical, right-to-left */
+}
+
+.vertical-left-to-right {
+  writing-mode: vertical-lr; /* Vertical, left-to-right */
+}</code></pre>
+                        
+                        <p>This property is particularly useful for languages that can be written vertically, like Japanese or Chinese.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Line and Paragraph Properties</h2>
+                        <p>These properties control the spacing and layout of lines and paragraphs.</p>
+                        
+                        <h3>Line Height</h3>
+                        <p>The <code>line-height</code> property sets the height of a line of text, also known as leading:</p>
+                        
+                        <pre><code class="language-css">/* Unitless value (recommended) */
+p {
+  line-height: 1.5; /* 1.5 times the font size */
+}
+
+/* With units */
+.specific {
+  line-height: 24px;
+}
+
+.percentage {
+  line-height: 150%;
+}
+
+/* Normal is typically around 1.2 */
+.normal {
+  line-height: normal;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Unitless Line Height</h4>
+                            <p>It's generally best to use unitless values for <code>line-height</code>. This way, the line height scales proportionally when the font size changes, especially in nested elements.</p>
+                            <p>A line height of 1.5-1.6 is often recommended for body text to improve readability.</p>
+                        </div>
+                        
+                        <h3>Vertical Alignment</h3>
+                        <p>The <code>vertical-align</code> property aligns inline or table-cell elements vertically:</p>
+                        
+                        <pre><code class="language-css">/* For inline elements */
+img {
+  vertical-align: middle;
+}
+
+.superscript {
+  vertical-align: super;
+}
+
+.subscript {
+  vertical-align: sub;
+}
+
+/* Other values */
+.top {
+  vertical-align: top;
+}
+
+.bottom {
+  vertical-align: bottom;
+}
+
+.text-top {
+  vertical-align: text-top;
+}
+
+.text-bottom {
+  vertical-align: text-bottom;
+}
+
+/* With length */
+.custom {
+  vertical-align: 5px; /* Shifts the element 5px upward */
+}</code></pre>
+                        
+                        <p>Note that <code>vertical-align</code> only works on inline or table-cell elements, not on block-level elements.</p>
+                        
+                        <h3>Text Direction</h3>
+                        <p>The <code>direction</code> property sets the text direction:</p>
+                        
+                        <pre><code class="language-css">.left-to-right {
+  direction: ltr; /* Left to right (default) */
+}
+
+.right-to-left {
+  direction: rtl; /* Right to left (for languages like Arabic or Hebrew) */
+}</code></pre>
+                        
+                        <p>This is often used with the <code>unicode-bidi</code> property for bidirectional text:</p>
+                        
+                        <pre><code class="language-css">.bidi-override {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}</code></pre>
+                        
+                        <h3>Columns</h3>
+                        <p>CSS provides properties to create multi-column text layouts:</p>
+                        
+                        <pre><code class="language-css">.multi-column {
+  column-count: 3; /* Creates 3 columns */
+  column-gap: 2em; /* Space between columns */
+  column-rule: 1px solid #ccc; /* Line between columns */
+}
+
+/* Alternatively, specify column width and let the browser determine the count */
+.flexible-columns {
+  column-width: 200px; /* Preferred column width */
+  column-gap: 2em;
+  column-rule: 1px solid #ccc;
+}
+
+/* Prevent an element from breaking across columns */
+.no-break {
+  break-inside: avoid-column;
+}
+
+/* Force a column break before an element */
+.new-column {
+  break-before: column;
+}</code></pre>
+                        
+                        <h3>Hyphens</h3>
+                        <p>The <code>hyphens</code> property controls hyphenation of text:</p>
+                        
+                        <pre><code class="language-css">.no-hyphens {
+  hyphens: none;
+}
+
+.auto-hyphens {
+  hyphens: auto; /* Browser determines hyphenation */
+}
+
+.manual-hyphens {
+  hyphens: manual; /* Only hyphenates at &shy; or - characters */
+}</code></pre>
+                        
+                        <p>For <code>hyphens: auto</code> to work properly, the <code>lang</code> attribute should be set on the HTML element:</p>
+                        
+                        <pre><code class="language-html">&lt;html lang="en"&gt;
+  &lt;!-- Content --&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Text Effects</h2>
+                        <p>CSS provides several properties for creating special text effects.</p>
+                        
+                        <h3>Text Shadow</h3>
+                        <p>The <code>text-shadow</code> property adds shadow effects to text:</p>
+                        
+                        <pre><code class="language-css">/* Basic shadow */
+h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* horizontal offset, vertical offset, blur radius, color */
+}
+
+/* Multiple shadows (separated by commas) */
+.glow {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6;
+}
+
+/* Outline effect using multiple shadows */
+.outline {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}</code></pre>
+                        
+                        <h3>Text Stroke</h3>
+                        <p>The <code>-webkit-text-stroke</code> property (non-standard but widely supported) creates an outline around text:</p>
+                        
+                        <pre><code class="language-css">.outlined-text {
+  -webkit-text-stroke: 1px black;
+  color: white;
+}
+
+/* Can also be specified separately */
+.detailed-outline {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: red;
+}</code></pre>
+                        
+                        <h3>Background Clip</h3>
+                        <p>The <code>background-clip</code> property with <code>text</code> value allows you to fill text with a background image or gradient:</p>
+                        
+                        <pre><code class="language-css">.gradient-text {
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}</code></pre>
+                        
+                        <h3>Mask Image</h3>
+                        <p>CSS masks can create interesting text effects by masking an element with text:</p>
+                        
+                        <pre><code class="language-css">.masked-image {
+  mask-image: url('text-mask.svg');
+  mask-size: cover;
+  -webkit-mask-image: url('text-mask.svg');
+  -webkit-mask-size: cover;
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Typography Best Practices</h2>
+                        <p>Here are some guidelines for creating effective typography on the web:</p>
+                        
+                        <h3>Readability</h3>
+                        <ul>
+                            <li><strong>Font size</strong>: Use at least 16px for body text</li>
+                            <li><strong>Line height</strong>: Set line-height to 1.5-1.6 for body text</li>
+                            <li><strong>Line length</strong>: Aim for 45-75 characters per line (about 2-3 alphabets)</li>
+                            <li><strong>Contrast</strong>: Ensure sufficient contrast between text and background</li>
+                            <li><strong>Font choice</strong>: Use readable fonts, especially for body text</li>
+                        </ul>
+                        
+                        <h3>Hierarchy</h3>
+                        <ul>
+                            <li>Create clear visual hierarchy using size, weight, and spacing</li>
+                            <li>Use consistent heading styles throughout your site</li>
+                            <li>Don't rely solely on color to convey information</li>
+                            <li>Use whitespace to group related content and separate sections</li>
+                        </ul>
+                        
+                        <h3>Responsive Typography</h3>
+                        <ul>
+                            <li>Use relative units like rem or em for font sizes</li>
+                            <li>Consider using viewport units for headings</li>
+                            <li>Test typography at different screen sizes</li>
+                            <li>Adjust line length for different devices</li>
+                        </ul>
+                        
+                        <h3>Performance</h3>
+                        <ul>
+                            <li>Limit the number of font weights and styles</li>
+                            <li>Use modern font formats like WOFF2</li>
+                            <li>Consider using system fonts for better performance</li>
+                            <li>Use <code>font-display</code> to control font loading behavior</li>
+                        </ul>
+                        
+                        <h3>Accessibility</h3>
+                        <ul>
+                            <li>Ensure text can be resized without breaking the layout</li>
+                            <li>Maintain sufficient color contrast (WCAG recommends at least 4.5:1 for normal text)</li>
+                            <li>Don't use justified text, as it can create uneven spacing and make text harder to read</li>
+                            <li>Avoid using too many different fonts and styles</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>System Font Stack</h4>
+                            <p>For better performance, consider using a system font stack that uses the default fonts on each operating system:</p>
+                            <pre><code class="language-css">body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}</code></pre>
+                            <p>This approach provides a native look and feel while avoiding the performance cost of loading web fonts.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Typography</h2>
+                        <p>Let's practice applying typography concepts with a hands-on exercise.</p>
+                        
+                        <h3>Exercise: Style a Blog Post</h3>
+                        <p>Create an HTML file with the following content:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Typography Practice&lt;/title&gt;
+  &lt;link rel="stylesheet" href="typography.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;article class="blog-post"&gt;
+    &lt;header&gt;
+      &lt;h1&gt;The Art of Typography in Web Design&lt;/h1&gt;
+      &lt;p class="meta"&gt;Published on &lt;time datetime="2025-04-15"&gt;April 15, 2025&lt;/time&gt; by &lt;a href="#"&gt;Jane Smith&lt;/a&gt;&lt;/p&gt;
+    &lt;/header&gt;
+    
+    &lt;div class="post-content"&gt;
+      &lt;p class="lead"&gt;Typography is one of the most important aspects of web design. It affects readability, user experience, and the overall aesthetic of your website.&lt;/p&gt;
+      
+      &lt;p&gt;Good typography can make the difference between a website that's pleasant to read and one that users quickly abandon. In this article, we'll explore the principles of effective web typography and how to implement them using CSS.&lt;/p&gt;
+      
+      &lt;h2&gt;The Importance of Font Selection&lt;/h2&gt;
+      
+      &lt;p&gt;Choosing the right fonts for your website is crucial. Different fonts convey different moods and personalities:&lt;/p&gt;
+      
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;Serif fonts&lt;/strong&gt; like Times New Roman or Georgia often convey tradition, reliability, and formality.&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;Sans-serif fonts&lt;/strong&gt; like Arial or Helvetica tend to feel modern, clean, and straightforward.&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;Monospace fonts&lt;/strong&gt; like Courier are functional and are often used for code.&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;Display fonts&lt;/strong&gt; are decorative and should be used sparingly for headlines or special elements.&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;blockquote&gt;
+        &lt;p&gt;Typography is what language looks like.&lt;/p&gt;
+        &lt;cite&gt;— Ellen Lupton&lt;/cite&gt;
+      &lt;/blockquote&gt;
+      
+      &lt;h2&gt;Hierarchy and Readability&lt;/h2&gt;
+      
+      &lt;p&gt;Creating a clear hierarchy helps users scan and understand your content. Use size, weight, and spacing to differentiate between different levels of information.&lt;/p&gt;
+      
+      &lt;p&gt;For optimal readability:&lt;/p&gt;
+      
+      &lt;ol&gt;
+        &lt;li&gt;Use a font size of at least 16px for body text&lt;/li&gt;
+        &lt;li&gt;Set line height to 1.5-1.6 times the font size&lt;/li&gt;
+        &lt;li&gt;Keep line length between 45-75 characters&lt;/li&gt;
+        &lt;li&gt;Ensure sufficient contrast between text and background&lt;/li&gt;
+      &lt;/ol&gt;
+      
+      &lt;h2&gt;Responsive Typography&lt;/h2&gt;
+      
+      &lt;p&gt;Typography should adapt to different screen sizes. Use relative units like &lt;code&gt;rem&lt;/code&gt; or &lt;code&gt;em&lt;/code&gt; instead of fixed &lt;code&gt;px&lt;/code&gt; values to allow text to scale appropriately.&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code&gt;body {
+  font-size: 16px; /* Base size */
+}
+
+h1 {
+  font-size: 2rem; /* 2 times the root font size */
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem; /* Larger on bigger screens */
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;p&gt;By following these principles, you can create typography that enhances your design and improves the user experience of your website.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>Now, create a CSS file named <code>typography.css</code> and style the blog post using typography properties:</p>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Apply the following styles to create a well-designed blog post:</p>
+                            <ol>
+                                <li>Set up a base font family, size, and line height for the body</li>
+                                <li>Create a typographic hierarchy with different styles for h1 and h2</li>
+                                <li>Style the lead paragraph to stand out from regular paragraphs</li>
+                                <li>Add appropriate spacing between paragraphs and sections</li>
+                                <li>Style the blockquote with a distinctive design</li>
+                                <li>Format the lists (ul and ol) for better readability</li>
+                                <li>Style the code and pre elements for code snippets</li>
+                                <li>Add special styling to the meta information (publication date and author)</li>
+                                <li>Use text effects like text-shadow or gradient text for headings</li>
+                                <li>Make the typography responsive using media queries</li>
+                            </ol>
+                            <p>Try to create a visually appealing and readable blog post using the typography properties we've learned in this lesson.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored CSS typography, which is essential for creating readable, accessible, and visually appealing content:</p>
+                        <ul>
+                            <li><strong>Font Properties</strong>: Controlling typefaces, sizes, weights, and styles</li>
+                            <li><strong>Web Fonts</strong>: Using custom fonts with @font-face, Google Fonts, and variable fonts</li>
+                            <li><strong>Text Properties</strong>: Styling text with color, alignment, decoration, transformation, and spacing</li>
+                            <li><strong>Line and Paragraph Properties</strong>: Managing line height, vertical alignment, text direction, and multi-column layouts</li>
+                            <li><strong>Text Effects</strong>: Creating shadows, outlines, and gradient text</li>
+                            <li><strong>Typography Best Practices</strong>: Guidelines for readability, hierarchy, responsiveness, performance, and accessibility</li>
+                        </ul>
+                        
+                        <p>Good typography is fundamental to effective web design. It enhances readability, establishes hierarchy, creates visual interest, and conveys the right tone and mood. By mastering CSS typography properties, you can create content that's both beautiful and functional.</p>
+                        
+                        <p>In the next lesson, we'll explore CSS Colors & Backgrounds, where you'll learn how to create vibrant, visually rich designs with color schemes, gradients, and background images.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page28.html" class="btn">Previous: CSS Box Model</a>
+                        <a href="page30.html" class="btn">Next: Colors & Backgrounds</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

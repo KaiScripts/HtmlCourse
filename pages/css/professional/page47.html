@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Testing | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to test your CSS code to ensure it works correctly across different browsers, devices, and scenarios.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="47">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html" class="active">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional CSS</h3>
+                <ul>
+                    <li><a href="page38.html">38. Advanced CSS Features</a></li>
+                    <li><a href="page39.html">39. CSS Preprocessors</a></li>
+                    <li><a href="page40.html">40. CSS Architecture</a></li>
+                    <li><a href="page41.html">41. CSS Frameworks</a></li>
+                    <li><a href="page42.html">42. Advanced Layouts</a></li>
+                    <li><a href="page43.html">43. Advanced Animations</a></li>
+                    <li><a href="page44.html">44. CSS-in-JS</a></li>
+                    <li><a href="page45.html">45. CSS Houdini</a></li>
+                    <li><a href="page46.html">46. CSS Performance</a></li>
+                    <li><a href="page47.html" class="active">47. CSS Testing</a></li>
+                    <li><a href="page48.html">48. CSS for Print</a></li>
+                    <li><a href="page49.html">49. Future of CSS</a></li>
+                    <li><a href="page50.html">50. Building a Portfolio</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 94%;"></div>
+                </div>
+                <p style="text-align: center;">Page 47 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>CSS Testing</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to CSS Testing</h2>
+                        <p>CSS testing is a critical but often overlooked aspect of web development. While JavaScript testing has become standard practice, CSS testing remains less formalized. However, as web applications grow in complexity, ensuring that your CSS works correctly across different browsers, devices, and scenarios becomes increasingly important.</p>
+                        
+                        <p>In this lesson, we'll explore various approaches to CSS testing, from manual techniques to automated tools, and learn how to integrate CSS testing into your development workflow.</p>
+                        
+                        <h3>Why Test CSS?</h3>
+                        <p>CSS testing helps you:</p>
+                        <ul>
+                            <li>Ensure consistent appearance across browsers and devices</li>
+                            <li>Prevent regressions when making changes</li>
+                            <li>Verify that layouts respond correctly to different screen sizes</li>
+                            <li>Confirm that animations and transitions work as expected</li>
+                            <li>Validate accessibility requirements</li>
+                            <li>Catch performance issues</li>
+                        </ul>
+                        
+                        <h3>Types of CSS Testing</h3>
+                        <p>CSS testing can be categorized into several types:</p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Test Type</th>
+                                    <th>Description</th>
+                                    <th>Examples</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Visual Regression Testing</td>
+                                    <td>Compares screenshots to detect visual changes</td>
+                                    <td>BackstopJS, Percy, Chromatic</td>
+                                </tr>
+                                <tr>
+                                    <td>Unit Testing</td>
+                                    <td>Tests individual CSS rules or components</td>
+                                    <td>Jest with styled-components, CSS Modules</td>
+                                </tr>
+                                <tr>
+                                    <td>Integration Testing</td>
+                                    <td>Tests how CSS components work together</td>
+                                    <td>Cypress, Playwright</td>
+                                </tr>
+                                <tr>
+                                    <td>Cross-browser Testing</td>
+                                    <td>Tests appearance across different browsers</td>
+                                    <td>BrowserStack, Sauce Labs, LambdaTest</td>
+                                </tr>
+                                <tr>
+                                    <td>Responsive Testing</td>
+                                    <td>Tests appearance across different screen sizes</td>
+                                    <td>Responsive Design Mode, Device Emulators</td>
+                                </tr>
+                                <tr>
+                                    <td>Accessibility Testing</td>
+                                    <td>Tests compliance with accessibility standards</td>
+                                    <td>axe, WAVE, Lighthouse</td>
+                                </tr>
+                                <tr>
+                                    <td>Performance Testing</td>
+                                    <td>Tests CSS impact on page performance</td>
+                                    <td>Lighthouse, WebPageTest</td>
+                                </tr>
+                                <tr>
+                                    <td>Linting</td>
+                                    <td>Checks CSS for errors and enforces conventions</td>
+                                    <td>Stylelint, CSS Lint</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h3>CSS Testing Challenges</h3>
+                        <p>Testing CSS presents unique challenges compared to testing other code:</p>
+                        <ul>
+                            <li><strong>Visual Nature</strong>: CSS output is primarily visual, making automated testing more difficult</li>
+                            <li><strong>Browser Differences</strong>: Different browsers may render CSS differently</li>
+                            <li><strong>Context Dependency</strong>: CSS behavior often depends on the DOM structure and viewport size</li>
+                            <li><strong>Cascading Effects</strong>: Changes in one part of CSS can affect other parts due to the cascade</li>
+                            <li><strong>Specificity Issues</strong>: Selector specificity can cause unexpected overrides</li>
+                            <li><strong>Dynamic States</strong>: Testing hover, focus, and other states requires special handling</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>CSS Testing Maturity Model</h4>
+                            <p>CSS testing typically evolves through these stages in an organization:</p>
+                            <ol>
+                                <li><strong>Manual Testing</strong>: Developers visually check changes in browsers</li>
+                                <li><strong>Linting & Validation</strong>: Automated checks for syntax and conventions</li>
+                                <li><strong>Cross-browser Testing</strong>: Systematic testing across browsers</li>
+                                <li><strong>Visual Regression Testing</strong>: Automated screenshot comparison</li>
+                                <li><strong>Component Testing</strong>: Testing CSS within component frameworks</li>
+                                <li><strong>Continuous Integration</strong>: Automated CSS tests in CI/CD pipeline</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Manual CSS Testing Techniques</h2>
+                        <p>Before diving into automated testing, it's important to understand effective manual testing techniques for CSS.</p>
+                        
+                        <h3>Browser Developer Tools</h3>
+                        <p>Browser developer tools are essential for manual CSS testing:</p>
+                        
+                        <h4>1. Element Inspector</h4>
+                        <p>Use the element inspector to examine and modify CSS properties in real-time:</p>
+                        <ul>
+                            <li>Right-click an element and select "Inspect" (or press F12)</li>
+                            <li>View and modify CSS properties in the Styles panel</li>
+                            <li>See the computed styles and box model</li>
+                            <li>Check which CSS rules are being applied and which are being overridden</li>
+                        </ul>
+                        
+                        <div class="image-container">
+                            <img src="../../../assets/images/element-inspector.svg" alt="Browser Element Inspector" class="full-width">
+                            <p class="caption">Using the browser's element inspector to examine CSS properties</p>
+                        </div>
+                        
+                        <h4>2. Responsive Design Mode</h4>
+                        <p>Test how your design responds to different screen sizes:</p>
+                        <ul>
+                            <li>In Chrome: Press F12, then Ctrl+Shift+M (or click the device icon)</li>
+                            <li>In Firefox: Press F12, then Ctrl+Shift+M (or click the responsive design mode icon)</li>
+                            <li>Select predefined device sizes or set custom dimensions</li>
+                            <li>Test different orientations (portrait/landscape)</li>
+                        </ul>
+                        
+                        <h4>3. State Emulation</h4>
+                        <p>Test different element states:</p>
+                        <ul>
+                            <li>In Chrome: Right-click an element, select "Inspect", then use the :hov button in the Styles panel</li>
+                            <li>In Firefox: Right-click an element, select "Inspect Element", then use the :hov button in the Rules panel</li>
+                            <li>Toggle states like :hover, :active, :focus, and :visited</li>
+                        </ul>
+                        
+                        <h4>4. CSS Coverage</h4>
+                        <p>Identify unused CSS:</p>
+                        <ul>
+                            <li>In Chrome: Press F12, open the Command Menu (Ctrl+Shift+P), type "Show Coverage", and press Enter</li>
+                            <li>Click the record button and interact with your page</li>
+                            <li>See which CSS is used and which is unused</li>
+                        </ul>
+                        
+                        <h3>Cross-Browser Testing</h3>
+                        <p>Test your CSS across different browsers to ensure consistent appearance:</p>
+                        
+                        <h4>1. Testing on Real Devices</h4>
+                        <p>The most reliable approach is to test on actual devices:</p>
+                        <ul>
+                            <li>Maintain a device lab with different browsers and operating systems</li>
+                            <li>Test on both older and newer versions of browsers</li>
+                            <li>Include mobile devices with different screen sizes</li>
+                        </ul>
+                        
+                        <h4>2. Browser Testing Services</h4>
+                        <p>When physical devices aren't available, use browser testing services:</p>
+                        <ul>
+                            <li><strong>BrowserStack</strong>: Provides access to real browsers and devices</li>
+                            <li><strong>Sauce Labs</strong>: Offers automated and manual testing on multiple browsers</li>
+                            <li><strong>LambdaTest</strong>: Allows testing on 2000+ browsers and operating systems</li>
+                            <li><strong>CrossBrowserTesting</strong>: Provides screenshots and live testing</li>
+                        </ul>
+                        
+                        <h3>Systematic Manual Testing</h3>
+                        <p>Create a systematic approach to manual CSS testing:</p>
+                        
+                        <h4>1. CSS Testing Checklist</h4>
+                        <pre><code class="language-markdown"># CSS Testing Checklist
+
+## Layout
+- [ ] Layout works at all standard breakpoints (320px, 768px, 1024px, 1440px)
+- [ ] No horizontal scrollbars appear unexpectedly
+- [ ] Elements align properly
+- [ ] Spacing is consistent
+- [ ] Grid systems work as expected
+
+## Typography
+- [ ] Text is readable at all screen sizes
+- [ ] Font sizes scale appropriately
+- [ ] Line heights are appropriate
+- [ ] Text doesn't overflow containers
+
+## Colors and Contrast
+- [ ] Color scheme is consistent
+- [ ] Text has sufficient contrast against backgrounds
+- [ ] Active/hover states are visible
+- [ ] Color meaning is not the only way information is conveyed
+
+## Interactions
+- [ ] Hover states work correctly
+- [ ] Focus states are visible
+- [ ] Active states provide feedback
+- [ ] Transitions and animations work smoothly
+
+## Browser Compatibility
+- [ ] Test in Chrome, Firefox, Safari, Edge
+- [ ] Test in mobile browsers (iOS Safari, Android Chrome)
+- [ ] Check for browser-specific issues
+
+## Accessibility
+- [ ] Focus order is logical
+- [ ] Focus indicators are visible
+- [ ] Color contrast meets WCAG standards
+- [ ] Text can be resized up to 200% without breaking layout
+
+## Performance
+- [ ] Animations are smooth (60fps)
+- [ ] No layout thrashing
+- [ ] CSS file size is reasonable</code></pre>
+                        
+                        <h4>2. Visual Comparison Technique</h4>
+                        <p>When making CSS changes, use these techniques to compare before and after:</p>
+                        <ul>
+                            <li><strong>Side-by-side comparison</strong>: Open the old and new versions in separate windows</li>
+                            <li><strong>Screenshot comparison</strong>: Take screenshots before and after changes</li>
+                            <li><strong>Overlay comparison</strong>: Use tools like Overlay to compare designs</li>
+                        </ul>
+                        
+                        <h4>3. User Flow Testing</h4>
+                        <p>Test CSS in the context of user flows:</p>
+                        <ul>
+                            <li>Define common user journeys through your site</li>
+                            <li>Follow each journey, checking CSS at each step</li>
+                            <li>Test both mouse and keyboard navigation</li>
+                            <li>Check how CSS behaves during form submission, page transitions, etc.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS Linting and Static Analysis</h2>
+                        <p>CSS linting and static analysis tools help catch errors and enforce coding standards before your code reaches the browser.</p>
+                        
+                        <h3>Introduction to CSS Linting</h3>
+                        <p>CSS linters analyze your code for potential errors, enforce coding conventions, and help maintain consistent style. They can catch issues like:</p>
+                        <ul>
+                            <li>Syntax errors</li>
+                            <li>Invalid properties or values</li>
+                            <li>Vendor prefix issues</li>
+                            <li>Duplicate selectors or properties</li>
+                            <li>Specificity problems</li>
+                            <li>Accessibility issues</li>
+                            <li>Unused CSS</li>
+                        </ul>
+                        
+                        <h3>Popular CSS Linting Tools</h3>
+                        
+                        <h4>1. Stylelint</h4>
+                        <p>Stylelint is a modern, flexible CSS linter with extensive configuration options:</p>
+                        
+                        <pre><code class="language-bash"># Install Stylelint
+npm install --save-dev stylelint stylelint-config-standard
+
+# Create a configuration file (.stylelintrc.json)
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "indentation": 2,
+    "color-hex-case": "lower",
+    "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
+    "max-nesting-depth": 3,
+    "no-duplicate-selectors": true,
+    "no-descending-specificity": true
+  }
+}
+
+# Run Stylelint
+npx stylelint "**/*.css"</code></pre>
+                        
+                        <h4>2. CSS Lint</h4>
+                        <p>CSS Lint is an older but still useful tool for checking CSS code:</p>
+                        
+                        <pre><code class="language-bash"># Install CSS Lint
+npm install --save-dev csslint
+
+# Create a configuration file (.csslintrc)
+{
+  "important": 2,
+  "adjoining-classes": false,
+  "box-sizing": false,
+  "box-model": 2,
+  "overqualified-elements": 1,
+  "display-property-grouping": 2,
+  "duplicate-properties": 2,
+  "empty-rules": 2
+}
+
+# Run CSS Lint
+npx csslint src/css/</code></pre>
+                        
+                        <h4>3. VS Code Extensions</h4>
+                        <p>Several VS Code extensions provide real-time CSS linting:</p>
+                        <ul>
+                            <li><strong>Stylelint</strong>: Integrates Stylelint into VS Code</li>
+                            <li><strong>CSS Peek</strong>: Allows peeking and jumping to CSS definitions</li>
+                            <li><strong>IntelliSense for CSS</strong>: Provides CSS class name completion</li>
+                        </ul>
+                        
+                        <h3>Common Linting Rules</h3>
+                        <p>Here are some common CSS linting rules to consider:</p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Rule Category</th>
+                                    <th>Example Rules</th>
+                                    <th>Benefits</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Formatting</td>
+                                    <td>Indentation, whitespace, line length</td>
+                                    <td>Consistent code style, improved readability</td>
+                                </tr>
+                                <tr>
+                                    <td>Naming Conventions</td>
+                                    <td>Class naming patterns, ID usage</td>
+                                    <td>Consistent naming, easier maintenance</td>
+                                </tr>
+                                <tr>
+                                    <td>Best Practices</td>
+                                    <td>No !important, limit nesting depth</td>
+                                    <td>Prevents specificity issues, improves maintainability</td>
+                                </tr>
+                                <tr>
+                                    <td>Error Prevention</td>
+                                    <td>No duplicate properties, valid values</td>
+                                    <td>Catches errors before runtime</td>
+                                </tr>
+                                <tr>
+                                    <td>Performance</td>
+                                    <td>Efficient selectors, no universal selectors</td>
+                                    <td>Improves rendering performance</td>
+                                </tr>
+                                <tr>
+                                    <td>Accessibility</td>
+                                    <td>Color contrast, focus visibility</td>
+                                    <td>Ensures accessible design</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h3>Integrating Linting into Your Workflow</h3>
+                        
+                        <h4>1. Pre-commit Hooks</h4>
+                        <p>Use tools like Husky to run linters before committing code:</p>
+                        
+                        <pre><code class="language-bash"># Install Husky and lint-staged
+npm install --save-dev husky lint-staged
+
+# Configure in package.json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.css": "stylelint --fix"
+  }
+}</code></pre>
+                        
+                        <h4>2. Continuous Integration</h4>
+                        <p>Run CSS linting in your CI/CD pipeline:</p>
+                        
+                        <pre><code class="language-yaml"># Example GitHub Actions workflow
+name: CSS Linting
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
+      - run: npm run lint:css</code></pre>
+                        
+                        <h4>3. Editor Integration</h4>
+                        <p>Configure your code editor to show linting errors in real-time:</p>
+                        <ul>
+                            <li>Install the Stylelint extension for VS Code</li>
+                            <li>Configure settings to run linting on save</li>
+                            <li>Set up auto-fix for certain rules</li>
+                        </ul>
+                        
+                        <pre><code class="language-json"># VS Code settings.json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+  "stylelint.validate": ["css", "scss"]
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Visual Regression Testing</h2>
+                        <p>Visual regression testing helps detect unintended visual changes by comparing screenshots before and after code changes.</p>
+                        
+                        <h3>Introduction to Visual Regression Testing</h3>
+                        <p>Visual regression testing works by:</p>
+                        <ol>
+                            <li>Taking screenshots of your UI in a baseline state</li>
+                            <li>Taking new screenshots after changes</li>
+                            <li>Comparing the screenshots to identify visual differences</li>
+                            <li>Highlighting areas that have changed</li>
+                        </ol>
+                        
+                        <p>This approach is particularly effective for CSS testing because it directly tests the visual output rather than the code.</p>
+                        
+                        <h3>Popular Visual Regression Testing Tools</h3>
+                        
+                        <h4>1. BackstopJS</h4>
+                        <p>BackstopJS is a popular open-source visual regression testing tool:</p>
+                        
+                        <pre><code class="language-bash"># Install BackstopJS
+npm install -g backstopjs
+
+# Initialize a BackstopJS project
+backstop init
+
+# Run tests
+backstop test
+
+# Approve new reference images
+backstop approve</code></pre>
+                        
+                        <p>BackstopJS configuration example:</p>
+                        
+                        <pre><code class="language-javascript">// backstop.json
+{
+  "id": "project_css_test",
+  "viewports": [
+    {
+      "label": "phone",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "label": "tablet",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "label": "desktop",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "Homepage",
+      "url": "http://localhost:3000",
+      "delay": 500,
+      "hideSelectors": [],
+      "removeSelectors": [
+        ".date-time", // Dynamic content to ignore
+        ".ad-banner"
+      ],
+      "selectors": [
+        "header",
+        "main",
+        "footer"
+      ],
+      "readyEvent": null,
+      "readySelector": null,
+      "delay": 1000,
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Product Page",
+      "url": "http://localhost:3000/products/1",
+      "selectors": [
+        ".product-details",
+        ".product-gallery",
+        ".related-products"
+      ]
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "./backstop_data/bitmaps_reference",
+    "bitmaps_test": "./backstop_data/bitmaps_test",
+    "engine_scripts": "./backstop_data/engine_scripts",
+    "html_report": "./backstop_data/html_report",
+    "ci_report": "./backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}</code></pre>
+                        
+                        <h4>2. Percy</h4>
+                        <p>Percy is a cloud-based visual testing service that integrates with your CI/CD pipeline:</p>
+                        
+                        <pre><code class="language-bash"># Install Percy CLI
+npm install --save-dev @percy/cli
+
+# Run Percy with Cypress
+npx percy exec -- cypress run</code></pre>
+                        
+                        <p>Percy with React example:</p>
+                        
+                        <pre><code class="language-javascript">// Example with React and Percy
+import { render } from '@testing-library/react';
+import '@percy/cypress';
+
+describe('Button Component', () => {
+  it('renders correctly', () => {
+    cy.visit('/components/button');
+    cy.percySnapshot('Button Component');
+  });
+  
+  it('shows hover state', () => {
+    cy.visit('/components/button');
+    cy.get('.button').trigger('mouseover');
+    cy.percySnapshot('Button Component - Hover State');
+  });
+});</code></pre>
+                        
+                        <h4>3. Chromatic</h4>
+                        <p>Chromatic is a visual testing tool specifically designed for Storybook:</p>
+                        
+                        <pre><code class="language-bash"># Install Chromatic
+npm install --save-dev chromatic
+
+# Run Chromatic
+npx chromatic --project-token=your-project-token</code></pre>
+                        
+                        <h3>Best Practices for Visual Regression Testing</h3>
+                        
+                        <h4>1. Handle Dynamic Content</h4>
+                        <p>Dynamic content can cause false positives in visual tests:</p>
+                        <ul>
+                            <li>Use CSS to hide dynamic elements during testing</li>
+                            <li>Configure your testing tool to ignore specific areas</li>
+                            <li>Use mock data to ensure consistent content</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">/* Add a class for elements to ignore in tests */
+.visual-test-ignore {
+  visibility: hidden !important;
+}
+
+/* Apply during testing */
+body.visual-testing .date-display,
+body.visual-testing .random-quote {
+  visibility: hidden !important;
+}</code></pre>
+                        
+                        <h4>2. Test Different States</h4>
+                        <p>Test various UI states:</p>
+                        <ul>
+                            <li>Default state</li>
+                            <li>Hover, focus, and active states</li>
+                            <li>Error states</li>
+                            <li>Loading states</li>
+                            <li>Empty states</li>
+                        </ul>
+                        
+                        <pre><code class="language-javascript">// Example of testing different states with BackstopJS
+"scenarios": [
+  {
+    "label": "Button - Default",
+    "url": "http://localhost:3000/components/button",
+    "selectors": [".button"]
+  },
+  {
+    "label": "Button - Hover",
+    "url": "http://localhost:3000/components/button",
+    "hoverSelector": ".button",
+    "selectors": [".button"]
+  },
+  {
+    "label": "Button - Active",
+    "url": "http://localhost:3000/components/button",
+    "clickSelector": ".button",
+    "selectors": [".button"]
+  },
+  {
+    "label": "Button - Disabled",
+    "url": "http://localhost:3000/components/button?state=disabled",
+    "selectors": [".button"]
+  }
+]</code></pre>
+                        
+                        <h4>3. Test Responsive Breakpoints</h4>
+                        <p>Test across different viewport sizes:</p>
+                        <ul>
+                            <li>Define key breakpoints (mobile, tablet, desktop)</li>
+                            <li>Test both portrait and landscape orientations</li>
+                            <li>Consider testing extreme sizes (very small or very large)</li>
+                        </ul>
+                        
+                        <h4>4. Set Appropriate Thresholds</h4>
+                        <p>Configure tolerance for differences:</p>
+                        <ul>
+                            <li>Set a mismatch threshold (e.g., 0.1% to 2%)</li>
+                            <li>Adjust thresholds based on component volatility</li>
+                            <li>Consider different thresholds for different areas</li>
+                        </ul>
+                        
+                        <h4>5. Integrate with CI/CD</h4>
+                        <p>Run visual tests as part of your continuous integration pipeline:</p>
+                        
+                        <pre><code class="language-yaml"># Example GitHub Actions workflow for BackstopJS
+name: Visual Regression Tests
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  visual-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: npm install
+      - name: Build project
+        run: npm run build
+      - name: Start server
+        run: npm run serve &
+      - name: Wait for server
+        run: sleep 5
+      - name: Run BackstopJS tests
+        run: npx backstop test
+      - name: Upload report if tests fail
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: backstop-report
+          path: backstop_data/html_report/</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Component-Based CSS Testing</h2>
+                        <p>Modern web development often uses component-based architectures, which enables more focused CSS testing approaches.</p>
+                        
+                        <h3>Testing CSS in Component Libraries</h3>
+                        <p>Component libraries like Storybook provide an isolated environment for testing UI components:</p>
+                        
+                        <h4>1. Storybook for Component Testing</h4>
+                        <pre><code class="language-bash"># Install Storybook
+npx sb init</code></pre>
+                        
+                        <p>Example Storybook story with CSS testing focus:</p>
+                        
+                        <pre><code class="language-javascript">// Button.stories.js
+import React from 'react';
+import { Button } from './Button';
+
+export default {
+  title: 'Components/Button',
+  component: Button,
+  parameters: {
+    // Highlight CSS-related information
+    cssLayout: {
+      show: true
+    }
+  },
+  // Test different states
+  argTypes: {
+    variant: {
+      control: { type: 'select', options: ['primary', 'secondary', 'danger'] }
+    },
+    size: {
+      control: { type: 'select', options: ['small', 'medium', 'large'] }
+    },
+    disabled: {
+      control: 'boolean'
+    }
+  }
+};
+
+// Default state
+export const Default = (args) => <Button {...args}>Click Me</Button>;
+Default.args = {
+  variant: 'primary',
+  size: 'medium',
+  disabled: false
+};
+
+// Test responsive behavior
+export const Responsive = () => (
+  <div style={{ resize: 'horizontal', overflow: 'auto', maxWidth: '100%', minWidth: '200px' }}>
+    <Button variant="primary">Resize Container</Button>
+  </div>
+);
+
+// Test CSS transitions
+export const WithTransition = () => {
+  const [active, setActive] = React.useState(false);
+  return (
+    <Button 
+      variant={active ? 'primary' : 'secondary'}
+      onClick={() => setActive(!active)}
+    >
+      Toggle Me
+    </Button>
+  );
+};</code></pre>
+                        
+                        <h4>2. Integrating Visual Tests with Storybook</h4>
+                        <p>Combine Storybook with visual testing tools:</p>
+                        
+                        <pre><code class="language-javascript">// Example integration with Chromatic
+// package.json
+{
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "chromatic": "chromatic --project-token=your-token"
+  }
+}</code></pre>
+                        
+                        <h3>Testing CSS-in-JS</h3>
+                        <p>CSS-in-JS libraries enable different testing approaches:</p>
+                        
+                        <h4>1. Snapshot Testing with Jest</h4>
+                        <pre><code class="language-javascript">// Button.test.js with styled-components
+import React from 'react';
+import renderer from 'react-test-renderer';
+import 'jest-styled-components';
+import { Button } from './Button';
+
+describe('Button', () => {
+  test('renders correctly with default props', () => {
+    const tree = renderer.create(<Button>Click Me</Button>).toJSON();
+    expect(tree).toMatchSnapshot();
+    // jest-styled-components adds CSS assertions
+    expect(tree).toHaveStyleRule('background-color', '#3498db');
+    expect(tree).toHaveStyleRule('color', 'white');
+  });
+  
+  test('renders correctly when disabled', () => {
+    const tree = renderer.create(<Button disabled>Click Me</Button>).toJSON();
+    expect(tree).toMatchSnapshot();
+    expect(tree).toHaveStyleRule('background-color', '#cccccc');
+    expect(tree).toHaveStyleRule('cursor', 'not-allowed');
+  });
+  
+  test('applies hover styles', () => {
+    const tree = renderer.create(<Button>Click Me</Button>).toJSON();
+    expect(tree).toHaveStyleRule('background-color', '#2980b9', {
+      modifier: ':hover'
+    });
+  });
+});</code></pre>
+                        
+                        <h4>2. Testing Emotion with Jest</h4>
+                        <pre><code class="language-javascript">// Button.test.js with Emotion
+import React from 'react';
+import { render } from '@testing-library/react';
+import { matchers } from '@emotion/jest';
+import { Button } from './Button';
+
+// Add Emotion matchers
+expect.extend(matchers);
+
+describe('Button', () => {
+  test('renders with correct styles', () => {
+    const { getByText } = render(<Button>Click Me</Button>);
+    const button = getByText('Click Me');
+    
+    expect(button).toHaveStyleRule('background-color', '#3498db');
+    expect(button).toHaveStyleRule('padding', '10px 20px');
+    
+    // Test media queries
+    expect(button).toHaveStyleRule('padding', '8px 16px', {
+      media: '(max-width: 768px)'
+    });
+  });
+});</code></pre>
+                        
+                        <h3>Testing CSS Modules</h3>
+                        <p>CSS Modules can be tested with specialized approaches:</p>
+                        
+                        <pre><code class="language-javascript">// Button.test.js with CSS Modules
+import React from 'react';
+import { render } from '@testing-library/react';
+import Button from './Button';
+import styles from './Button.module.css';
+
+describe('Button', () => {
+  test('applies correct CSS classes', () => {
+    const { getByText } = render(<Button variant="primary">Click Me</Button>);
+    const button = getByText('Click Me');
+    
+    // Check that the correct classes are applied
+    expect(button).toHaveClass(styles.button);
+    expect(button).toHaveClass(styles.primary);
+    expect(button).not.toHaveClass(styles.secondary);
+  });
+  
+  test('applies disabled styles when disabled', () => {
+    const { getByText } = render(<Button disabled>Click Me</Button>);
+    const button = getByText('Click Me');
+    
+    expect(button).toHaveClass(styles.disabled);
+  });
+});</code></pre>
+                        
+                        <h3>Component CSS Testing Best Practices</h3>
+                        
+                        <h4>1. Test in Isolation</h4>
+                        <p>Test components in isolation to focus on their specific CSS:</p>
+                        <ul>
+                            <li>Use tools like Storybook to isolate components</li>
+                            <li>Reset global styles that might interfere</li>
+                            <li>Mock parent components when necessary</li>
+                        </ul>
+                        
+                        <h4>2. Test Component Variations</h4>
+                        <p>Test all component variants and states:</p>
+                        <ul>
+                            <li>Different sizes (small, medium, large)</li>
+                            <li>Different themes or variants (primary, secondary, danger)</li>
+                            <li>Different states (default, hover, active, disabled)</li>
+                        </ul>
+                        
+                        <h4>3. Test Component Composition</h4>
+                        <p>Test how components work together:</p>
+                        <ul>
+                            <li>Test nested components</li>
+                            <li>Test component spacing and alignment</li>
+                            <li>Test component interactions</li>
+                        </ul>
+                        
+                        <h4>4. Test Responsive Behavior</h4>
+                        <p>Test how components respond to different viewport sizes:</p>
+                        <ul>
+                            <li>Test at standard breakpoints</li>
+                            <li>Test resizing behavior</li>
+                            <li>Test orientation changes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>End-to-End CSS Testing</h2>
+                        <p>End-to-end testing tools can be used to test CSS in the context of complete user flows.</p>
+                        
+                        <h3>Using Cypress for CSS Testing</h3>
+                        <p>Cypress is a powerful end-to-end testing framework that can be used for CSS testing:</p>
+                        
+                        <pre><code class="language-bash"># Install Cypress
+npm install --save-dev cypress</code></pre>
+                        
+                        <p>Example Cypress test for CSS:</p>
+                        
+                        <pre><code class="language-javascript">// cypress/integration/navigation.spec.js
+describe('Navigation', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+  
+  it('has correct styles for navigation items', () => {
+    cy.get('.nav-item').should('have.css', 'padding', '10px 15px');
+    cy.get('.nav-item').should('have.css', 'color', 'rgb(51, 51, 51)');
+  });
+  
+  it('changes styles on hover', () => {
+    cy.get('.nav-item').first()
+      .trigger('mouseover')
+      .should('have.css', 'background-color', 'rgb(240, 240, 240)');
+  });
+  
+  it('shows active state for current page', () => {
+    cy.get('.nav-item.active')
+      .should('have.css', 'font-weight', '700')
+      .should('have.css', 'border-bottom', '2px solid rgb(52, 152, 219)');
+  });
+  
+  it('is responsive at different viewport sizes', () => {
+    // Test desktop view
+    cy.viewport(1200, 800);
+    cy.get('.nav-container').should('have.css', 'display', 'flex');
+    cy.get('.mobile-menu-button').should('not.be.visible');
+    
+    // Test mobile view
+    cy.viewport(375, 667);
+    cy.get('.nav-container').should('have.css', 'display', 'none');
+    cy.get('.mobile-menu-button').should('be.visible');
+    
+    // Test mobile menu interaction
+    cy.get('.mobile-menu-button').click();
+    cy.get('.nav-container').should('have.css', 'display', 'block');
+  });
+});</code></pre>
+                        
+                        <h3>Using Playwright for CSS Testing</h3>
+                        <p>Playwright is another end-to-end testing tool with good support for CSS testing:</p>
+                        
+                        <pre><code class="language-bash"># Install Playwright
+npm install --save-dev @playwright/test</code></pre>
+                        
+                        <p>Example Playwright test for CSS:</p>
+                        
+                        <pre><code class="language-javascript">// tests/navigation.spec.js
+const { test, expect } = require('@playwright/test');
+
+test.describe('Navigation', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/');
+  });
+  
+  test('has correct styles for navigation items', async ({ page }) => {
+    const navItem = page.locator('.nav-item').first();
+    
+    // Check CSS properties
+    expect(await navItem.evaluate(el => {
+      const styles = window.getComputedStyle(el);
+      return {
+        padding: styles.padding,
+        color: styles.color,
+        fontFamily: styles.fontFamily
+      };
+    })).toEqual({
+      padding: '10px 15px',
+      color: 'rgb(51, 51, 51)',
+      fontFamily: 'Poppins, sans-serif'
+    });
+  });
+  
+  test('changes styles on hover', async ({ page }) => {
+    const navItem = page.locator('.nav-item').first();
+    
+    // Check before hover
+    let bgColor = await navItem.evaluate(el => 
+      window.getComputedStyle(el).backgroundColor);
+    expect(bgColor).toBe('rgba(0, 0, 0, 0)');
+    
+    // Hover and check again
+    await navItem.hover();
+    bgColor = await navItem.evaluate(el => 
+      window.getComputedStyle(el).backgroundColor);
+    expect(bgColor).toBe('rgb(240, 240, 240)');
+  });
+  
+  test('is responsive at different viewport sizes', async ({ page }) => {
+    // Test desktop view
+    await page.setViewportSize({ width: 1200, height: 800 });
+    expect(await page.locator('.nav-container').evaluate(el => 
+      window.getComputedStyle(el).display)).toBe('flex');
+    expect(await page.locator('.mobile-menu-button').isVisible()).toBe(false);
+    
+    // Test mobile view
+    await page.setViewportSize({ width: 375, height: 667 });
+    expect(await page.locator('.nav-container').evaluate(el => 
+      window.getComputedStyle(el).display)).toBe('none');
+    expect(await page.locator('.mobile-menu-button').isVisible()).toBe(true);
+  });
+});</code></pre>
+                        
+                        <h3>Testing Accessibility with End-to-End Tools</h3>
+                        <p>End-to-end testing tools can also test CSS-related accessibility issues:</p>
+                        
+                        <pre><code class="language-javascript">// Cypress with axe for accessibility testing
+// cypress/integration/accessibility.spec.js
+describe('Accessibility', () => {
+  beforeEach(() => {
+    cy.visit('/');
+    cy.injectAxe();
+  });
+  
+  it('has no accessibility violations', () => {
+    cy.checkA11y();
+  });
+  
+  it('has sufficient color contrast', () => {
+    cy.checkA11y('.text-content', {
+      runOnly: ['color-contrast']
+    });
+  });
+  
+  it('has visible focus indicators', () => {
+    cy.get('.nav-item').first().focus();
+    cy.get('.nav-item:focus').should('have.css', 'outline', 'rgb(52, 152, 219) solid 2px');
+  });
+});</code></pre>
+                        
+                        <h3>Testing CSS Animations and Transitions</h3>
+                        <p>End-to-end tools can test CSS animations and transitions:</p>
+                        
+                        <pre><code class="language-javascript">// Cypress test for animations
+describe('Animations', () => {
+  beforeEach(() => {
+    cy.visit('/components/modal');
+  });
+  
+  it('animates modal opening', () => {
+    // Check initial state
+    cy.get('.modal').should('have.css', 'opacity', '0');
+    
+    // Trigger animation
+    cy.get('.open-modal-button').click();
+    
+    // Check intermediate state (during animation)
+    cy.get('.modal').should('have.css', 'opacity', '0.5', { timeout: 100 });
+    
+    // Check final state
+    cy.get('.modal').should('have.css', 'opacity', '1', { timeout: 500 });
+  });
+  
+  it('applies transition to button hover', () => {
+    // Get initial background color
+    cy.get('.animated-button').then($button => {
+      const initialBgColor = window.getComputedStyle($button[0]).backgroundColor;
+      
+      // Hover and check that color changes gradually
+      cy.get('.animated-button').trigger('mouseover');
+      
+      // Check intermediate state
+      cy.wait(50); // Wait for transition to start
+      cy.get('.animated-button').should($button => {
+        const currentBgColor = window.getComputedStyle($button[0]).backgroundColor;
+        expect(currentBgColor).not.to.eq(initialBgColor);
+      });
+      
+      // Check final state
+      cy.get('.animated-button').should('have.css', 'background-color', 'rgb(41, 128, 185)', { timeout: 300 });
+    });
+  });
+});</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS Performance Testing</h2>
+                        <p>CSS can significantly impact performance, so it's important to test its performance impact.</p>
+                        
+                        <h3>Testing CSS Rendering Performance</h3>
+                        <p>Test how CSS affects rendering performance:</p>
+                        
+                        <pre><code class="language-javascript">// Example using Puppeteer to measure rendering performance
+const puppeteer = require('puppeteer');
+
+async function measureCSSPerformance(url) {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  
+  // Enable performance metrics
+  await page.coverage.startCSSCoverage();
+  
+  // Navigate to page
+  await page.goto(url, { waitUntil: 'networkidle0' });
+  
+  // Measure layout and paint times
+  const performanceMetrics = await page.evaluate(() => {
+    const perfEntries = performance.getEntriesByType('paint');
+    return {
+      firstPaint: perfEntries.find(entry => entry.name === 'first-paint').startTime,
+      firstContentfulPaint: perfEntries.find(entry => entry.name === 'first-contentful-paint').startTime
+    };
+  });
+  
+  // Get CSS coverage
+  const cssCoverage = await page.coverage.stopCSSCoverage();
+  
+  // Calculate unused CSS
+  let totalBytes = 0;
+  let usedBytes = 0;
+  
+  for (const entry of cssCoverage) {
+    totalBytes += entry.text.length;
+    for (const range of entry.ranges) {
+      usedBytes += range.end - range.start;
+    }
+  }
+  
+  await browser.close();
+  
+  return {
+    performanceMetrics,
+    cssMetrics: {
+      totalBytes,
+      usedBytes,
+      unusedBytes: totalBytes - usedBytes,
+      percentageUnused: ((totalBytes - usedBytes) / totalBytes) * 100
+    }
+  };
+}</code></pre>
+                        
+                        <h3>Testing Animation Performance</h3>
+                        <p>Test the performance of CSS animations:</p>
+                        
+                        <pre><code class="language-javascript">// Example using Puppeteer to measure animation performance
+async function measureAnimationPerformance(url, selector, action) {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  
+  // Navigate to page
+  await page.goto(url, { waitUntil: 'networkidle0' });
+  
+  // Start tracing
+  await page.tracing.start({ path: 'trace.json', screenshots: true });
+  
+  // Perform action to trigger animation
+  if (action === 'hover') {
+    await page.hover(selector);
+  } else if (action === 'click') {
+    await page.click(selector);
+  }
+  
+  // Wait for animation to complete
+  await page.waitForTimeout(1000);
+  
+  // Stop tracing
+  await page.tracing.stop();
+  
+  // Analyze trace for frame rate
+  const traceData = JSON.parse(fs.readFileSync('trace.json', 'utf8'));
+  const frames = traceData.traceEvents.filter(event => 
+    event.name === 'Screenshot'
+  );
+  
+  // Calculate frame rate
+  const frameTimes = frames.map(frame => frame.ts);
+  const frameIntervals = [];
+  
+  for (let i = 1; i < frameTimes.length; i++) {
+    frameIntervals.push(frameTimes[i] - frameTimes[i-1]);
+  }
+  
+  const avgFrameInterval = frameIntervals.reduce((sum, interval) => sum + interval, 0) / frameIntervals.length;
+  const frameRate = 1000000 / avgFrameInterval; // Convert microseconds to fps
+  
+  await browser.close();
+  
+  return {
+    frameRate,
+    frameCount: frames.length,
+    smoothness: frameRate >= 60 ? 'Good' : frameRate >= 30 ? 'Acceptable' : 'Poor'
+  };
+}</code></pre>
+                        
+                        <h3>Lighthouse for CSS Performance Testing</h3>
+                        <p>Use Lighthouse to test CSS performance:</p>
+                        
+                        <pre><code class="language-javascript">// Example using Lighthouse for CSS performance testing
+const lighthouse = require('lighthouse');
+const chromeLauncher = require('chrome-launcher');
+
+async function runLighthouseTest(url) {
+  const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless'] });
+  const options = {
+    port: chrome.port,
+    output: 'json',
+    onlyCategories: ['performance']
+  };
+  
+  const result = await lighthouse(url, options);
+  await chrome.kill();
+  
+  // Extract CSS-related metrics
+  const cssMetrics = {
+    firstContentfulPaint: result.lhr.audits['first-contentful-paint'].numericValue,
+    largestContentfulPaint: result.lhr.audits['largest-contentful-paint'].numericValue,
+    totalBlockingTime: result.lhr.audits['total-blocking-time'].numericValue,
+    cumulativeLayoutShift: result.lhr.audits['cumulative-layout-shift'].numericValue,
+    unusedCSS: result.lhr.audits['unused-css-rules'].numericValue,
+    renderBlockingResources: result.lhr.audits['render-blocking-resources'].numericValue
+  };
+  
+  return cssMetrics;
+}</code></pre>
+                        
+                        <h3>Setting Performance Budgets for CSS</h3>
+                        <p>Define performance budgets for your CSS:</p>
+                        
+                        <pre><code class="language-javascript">// Example performance budget for CSS
+const cssBudget = {
+  totalSize: 50 * 1024, // 50KB max total CSS
+  unusedCSS: 20, // Max 20% unused CSS
+  firstContentfulPaint: 1800, // 1.8s max FCP
+  layoutShift: 0.1, // Max CLS of 0.1
+  selectorComplexity: 4 // Max selector nesting depth
+};
+
+// Check if CSS meets the budget
+function checkCSSBudget(metrics, budget) {
+  const results = {
+    totalSize: {
+      value: metrics.totalSize,
+      passes: metrics.totalSize <= budget.totalSize,
+      budget: budget.totalSize
+    },
+    unusedCSS: {
+      value: metrics.unusedCSS,
+      passes: metrics.unusedCSS <= budget.unusedCSS,
+      budget: budget.unusedCSS
+    },
+    firstContentfulPaint: {
+      value: metrics.firstContentfulPaint,
+      passes: metrics.firstContentfulPaint <= budget.firstContentfulPaint,
+      budget: budget.firstContentfulPaint
+    },
+    layoutShift: {
+      value: metrics.layoutShift,
+      passes: metrics.layoutShift <= budget.layoutShift,
+      budget: budget.layoutShift
+    },
+    selectorComplexity: {
+      value: metrics.selectorComplexity,
+      passes: metrics.selectorComplexity <= budget.selectorComplexity,
+      budget: budget.selectorComplexity
+    }
+  };
+  
+  return {
+    results,
+    passes: Object.values(results).every(result => result.passes)
+  };
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Setting Up CSS Testing</h2>
+                        <p>Let's put your CSS testing knowledge to practice by setting up a testing environment for a web project.</p>
+                        
+                        <h3>Exercise: Implement a CSS Testing Strategy</h3>
+                        <p>In this exercise, you'll implement a comprehensive CSS testing strategy for a web project.</p>
+                        
+                        <h4>Step 1: Set Up Linting</h4>
+                        <p>First, set up Stylelint to catch CSS errors and enforce coding standards:</p>
+                        
+                        <pre><code class="language-bash"># Create a new project directory
+mkdir css-testing-project
+cd css-testing-project
+
+# Initialize npm
+npm init -y
+
+# Install Stylelint and configuration
+npm install --save-dev stylelint stylelint-config-standard
+
+# Create Stylelint configuration file
+touch .stylelintrc.json</code></pre>
+                        
+                        <p>Add the following configuration to .stylelintrc.json:</p>
+                        
+                        <pre><code class="language-json">{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "indentation": 2,
+    "color-hex-case": "lower",
+    "selector-class-pattern": "^[a-z][a-zA-Z0-9-_]+$",
+    "max-nesting-depth": 3,
+    "no-duplicate-selectors": true,
+    "no-descending-specificity": true,
+    "declaration-block-no-duplicate-properties": true,
+    "color-no-invalid-hex": true,
+    "comment-no-empty": true,
+    "no-empty-source": true,
+    "no-extra-semicolons": true,
+    "function-calc-no-unspaced-operator": true,
+    "property-no-unknown": true
+  }
+}</code></pre>
+                        
+                        <h4>Step 2: Set Up Visual Regression Testing</h4>
+                        <p>Next, set up BackstopJS for visual regression testing:</p>
+                        
+                        <pre><code class="language-bash"># Install BackstopJS
+npm install --save-dev backstopjs
+
+# Initialize BackstopJS
+npx backstop init</code></pre>
+                        
+                        <p>Update the backstop.json file:</p>
+                        
+                        <pre><code class="language-json">{
+  "id": "css_testing_project",
+  "viewports": [
+    {
+      "label": "phone",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "label": "tablet",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "label": "desktop",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "Homepage",
+      "url": "http://localhost:3000",
+      "delay": 500,
+      "selectors": ["header", "main", "footer"]
+    },
+    {
+      "label": "Button Component",
+      "url": "http://localhost:3000/components/button",
+      "selectors": [".button-primary", ".button-secondary", ".button-danger"]
+    },
+    {
+      "label": "Button Hover State",
+      "url": "http://localhost:3000/components/button",
+      "hoverSelector": ".button-primary",
+      "selectors": [".button-primary"]
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "./backstop_data/bitmaps_reference",
+    "bitmaps_test": "./backstop_data/bitmaps_test",
+    "engine_scripts": "./backstop_data/engine_scripts",
+    "html_report": "./backstop_data/html_report",
+    "ci_report": "./backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  }
+}</code></pre>
+                        
+                        <h4>Step 3: Set Up End-to-End Testing</h4>
+                        <p>Set up Cypress for end-to-end CSS testing:</p>
+                        
+                        <pre><code class="language-bash"># Install Cypress
+npm install --save-dev cypress
+
+# Initialize Cypress
+npx cypress open</code></pre>
+                        
+                        <p>Create a CSS test file in cypress/integration/css.spec.js:</p>
+                        
+                        <pre><code class="language-javascript">describe('CSS Testing', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+  
+  it('has correct header styles', () => {
+    cy.get('header').should('have.css', 'background-color', 'rgb(52, 152, 219)');
+    cy.get('header').should('have.css', 'padding', '20px');
+  });
+  
+  it('has responsive navigation', () => {
+    // Desktop view
+    cy.viewport(1200, 800);
+    cy.get('nav ul').should('have.css', 'display', 'flex');
+    cy.get('.mobile-menu').should('not.be.visible');
+    
+    // Mobile view
+    cy.viewport(375, 667);
+    cy.get('nav ul').should('have.css', 'display', 'none');
+    cy.get('.mobile-menu').should('be.visible');
+    
+    // Test mobile menu interaction
+    cy.get('.mobile-menu').click();
+    cy.get('nav ul').should('be.visible');
+  });
+  
+  it('has correct button styles', () => {
+    cy.get('.button-primary').should('have.css', 'background-color', 'rgb(52, 152, 219)');
+    cy.get('.button-primary').should('have.css', 'color', 'rgb(255, 255, 255)');
+    cy.get('.button-primary').should('have.css', 'border-radius', '4px');
+    
+    // Test hover state
+    cy.get('.button-primary').trigger('mouseover');
+    cy.get('.button-primary').should('have.css', 'background-color', 'rgb(41, 128, 185)');
+  });
+});</code></pre>
+                        
+                        <h4>Step 4: Set Up Performance Testing</h4>
+                        <p>Set up Lighthouse for CSS performance testing:</p>
+                        
+                        <pre><code class="language-bash"># Install Lighthouse CLI
+npm install --save-dev lighthouse chrome-launcher</code></pre>
+                        
+                        <p>Create a performance test script in performance-test.js:</p>
+                        
+                        <pre><code class="language-javascript">const lighthouse = require('lighthouse');
+const chromeLauncher = require('chrome-launcher');
+const fs = require('fs');
+
+async function runPerformanceTest() {
+  const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless'] });
+  const options = {
+    port: chrome.port,
+    output: 'json',
+    onlyCategories: ['performance']
+  };
+  
+  const result = await lighthouse('http://localhost:3000', options);
+  await chrome.kill();
+  
+  // Extract CSS-related metrics
+  const cssMetrics = {
+    firstContentfulPaint: result.lhr.audits['first-contentful-paint'].numericValue,
+    largestContentfulPaint: result.lhr.audits['largest-contentful-paint'].numericValue,
+    totalBlockingTime: result.lhr.audits['total-blocking-time'].numericValue,
+    cumulativeLayoutShift: result.lhr.audits['cumulative-layout-shift'].numericValue,
+    unusedCSS: result.lhr.audits['unused-css-rules'].numericValue,
+    renderBlockingResources: result.lhr.audits['render-blocking-resources'].numericValue
+  };
+  
+  // Check against budget
+  const budget = {
+    firstContentfulPaint: 1800,
+    largestContentfulPaint: 2500,
+    totalBlockingTime: 300,
+    cumulativeLayoutShift: 0.1,
+    unusedCSS: 20,
+    renderBlockingResources: 1
+  };
+  
+  const results = Object.entries(cssMetrics).map(([metric, value]) => ({
+    metric,
+    value,
+    budget: budget[metric],
+    passes: value <= budget[metric]
+  }));
+  
+  // Save results
+  fs.writeFileSync('performance-results.json', JSON.stringify({
+    timestamp: new Date().toISOString(),
+    results
+  }, null, 2));
+  
+  console.log('Performance test completed. Results saved to performance-results.json');
+}
+
+runPerformanceTest().catch(console.error);</code></pre>
+                        
+                        <h4>Step 5: Set Up CI/CD Integration</h4>
+                        <p>Create a GitHub Actions workflow file in .github/workflows/css-testing.yml:</p>
+                        
+                        <pre><code class="language-yaml">name: CSS Testing
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: npm install
+      - name: Run Stylelint
+        run: npx stylelint "**/*.css"
+  
+  visual-regression:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: npm install
+      - name: Start server
+        run: npm start & npx wait-on http://localhost:3000
+      - name: Run BackstopJS tests
+        run: npx backstop test
+      - name: Upload report if tests fail
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: backstop-report
+          path: backstop_data/html_report/
+  
+  e2e:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: npm install
+      - name: Start server
+        run: npm start & npx wait-on http://localhost:3000
+      - name: Run Cypress tests
+        run: npx cypress run
+      - name: Upload screenshots if tests fail
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots/
+  
+  performance:
+    runs-on: ubuntu-latest
+    needs: [lint, visual-regression, e2e]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: npm install
+      - name: Start server
+        run: npm start & npx wait-on http://localhost:3000
+      - name: Run performance tests
+        run: node performance-test.js
+      - name: Upload performance results
+        uses: actions/upload-artifact@v2
+        with:
+          name: performance-results
+          path: performance-results.json</code></pre>
+                        
+                        <h4>Step 6: Update package.json with Test Scripts</h4>
+                        <p>Update the package.json file with test scripts:</p>
+                        
+                        <pre><code class="language-json">{
+  "name": "css-testing-project",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "serve -s dist -p 3000",
+    "lint:css": "stylelint \"**/*.css\"",
+    "test:visual": "backstop test",
+    "test:visual:approve": "backstop approve",
+    "test:e2e": "cypress run",
+    "test:performance": "node performance-test.js",
+    "test": "npm run lint:css && npm run test:visual && npm run test:e2e && npm run test:performance"
+  },
+  "devDependencies": {
+    "backstopjs": "^5.0.1",
+    "chrome-launcher": "^0.15.0",
+    "cypress": "^9.1.0",
+    "lighthouse": "^9.0.0",
+    "serve": "^13.0.2",
+    "stylelint": "^14.0.1",
+    "stylelint-config-standard": "^24.0.0",
+    "wait-on": "^6.0.0"
+  }
+}</code></pre>
+                        
+                        <h4>Step 7: Create a CSS Testing Documentation</h4>
+                        <p>Create a CSS-TESTING.md file to document your testing strategy:</p>
+                        
+                        <pre><code class="language-markdown"># CSS Testing Strategy
+
+This document outlines our approach to CSS testing.
+
+## Testing Levels
+
+### 1. Linting and Static Analysis
+- We use Stylelint with a custom configuration
+- Enforces coding standards and catches common errors
+- Run with `npm run lint:css`
+
+### 2. Visual Regression Testing
+- We use BackstopJS to capture and compare screenshots
+- Tests UI components across different viewports
+- Run with `npm run test:visual`
+- Approve changes with `npm run test:visual:approve`
+
+### 3. End-to-End Testing
+- We use Cypress to test CSS in the context of user flows
+- Tests responsive behavior and interactive states
+- Run with `npm run test:e2e`
+
+### 4. Performance Testing
+- We use Lighthouse to measure CSS performance impact
+- Tests against defined performance budgets
+- Run with `npm run test:performance`
+
+## Continuous Integration
+
+All tests run automatically on:
+- Pull requests to main branch
+- Pushes to main branch
+
+## Test Coverage
+
+Our CSS tests cover:
+- Component styling
+- Responsive behavior
+- Interactive states (hover, focus, active)
+- Layout and alignment
+- Performance impact
+- Cross-browser compatibility
+
+## Adding New Tests
+
+When adding new CSS:
+1. Add Cypress tests for new components
+2. Update BackstopJS scenarios if needed
+3. Run all tests locally before pushing
+4. Update reference images if changes are intentional</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored various approaches to CSS testing, from manual techniques to automated tools. Here's a summary of what we've covered:</p>
+                        
+                        <ul>
+                            <li><strong>Manual CSS Testing</strong>: Using browser developer tools, responsive design mode, and systematic testing approaches</li>
+                            <li><strong>CSS Linting</strong>: Using tools like Stylelint to catch errors and enforce coding standards</li>
+                            <li><strong>Visual Regression Testing</strong>: Using tools like BackstopJS, Percy, and Chromatic to detect visual changes</li>
+                            <li><strong>Component-Based Testing</strong>: Testing CSS in component libraries, CSS-in-JS, and CSS Modules</li>
+                            <li><strong>End-to-End Testing</strong>: Using tools like Cypress and Playwright to test CSS in user flows</li>
+                            <li><strong>Performance Testing</strong>: Testing CSS impact on rendering performance and animation smoothness</li>
+                        </ul>
+                        
+                        <p>Implementing a comprehensive CSS testing strategy helps ensure that your styles work correctly across different browsers, devices, and scenarios. It also helps prevent regressions when making changes and ensures that your CSS meets performance and accessibility requirements.</p>
+                        
+                        <p>Remember that CSS testing is an evolving field, and the best approach depends on your project's specific needs. Start with simple techniques like linting and manual testing, then gradually add more sophisticated approaches like visual regression testing and end-to-end testing as your project grows.</p>
+                        
+                        <p>In the next lesson, we'll explore CSS for Print, focusing on techniques for creating print-friendly stylesheets and optimizing web content for printing.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page46.html" class="btn">Previous: CSS Performance</a>
+                        <a href="page48.html" class="btn">Next: CSS for Print</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

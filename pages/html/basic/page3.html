@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Elements & Tags | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn about HTML elements and tags, the building blocks of web pages, and how to use them effectively.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="3">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html" class="active">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>HTML Basics</h3>
+                <ul>
+                    <li><a href="page1.html">1. Introduction to HTML</a></li>
+                    <li><a href="page2.html">2. HTML Document Structure</a></li>
+                    <li><a href="page3.html" class="active">3. HTML Elements & Tags</a></li>
+                    <li><a href="page4.html">4. Text Formatting</a></li>
+                    <li><a href="page5.html">5. Links & Navigation</a></li>
+                    <li><a href="page6.html">6. Images & Multimedia</a></li>
+                    <li><a href="page7.html">7. Lists</a></li>
+                    <li><a href="page8.html">8. Tables</a></li>
+                    <li><a href="page9.html">9. Forms Basics</a></li>
+                    <li><a href="page10.html">10. Semantic HTML</a></li>
+                    <li><a href="page11.html">11. HTML Attributes</a></li>
+                    <li><a href="page12.html">12. HTML Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 6%;"></div>
+                </div>
+                <p style="text-align: center;">Page 3 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>HTML Elements & Tags</h1>
+                    
+                    <div class="card">
+                        <h2>Understanding HTML Elements</h2>
+                        <p>HTML elements are the building blocks of web pages. They define the structure and content that users see in their browsers. An HTML element typically consists of a start tag, content, and an end tag.</p>
+                        
+                        <div class="info-box">
+                            <h4>Element Structure</h4>
+                            <pre><code class="language-html">&lt;tagname&gt;Content goes here...&lt;/tagname&gt;</code></pre>
+                            <p>Where:</p>
+                            <ul>
+                                <li><code>&lt;tagname&gt;</code> is the opening tag</li>
+                                <li>"Content goes here..." is the content</li>
+                                <li><code>&lt;/tagname&gt;</code> is the closing tag</li>
+                            </ul>
+                        </div>
+                        
+                        <p>For example, a paragraph element looks like this:</p>
+                        <pre><code class="language-html">&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</code></pre>
+                        
+                        <p>The browser uses these tags to determine how to display the content. The tags themselves are not displayed.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Types of HTML Elements</h2>
+                        <p>HTML elements can be categorized in several ways. Let's explore some of the most important distinctions:</p>
+                        
+                        <h3>Block-Level vs. Inline Elements</h3>
+                        <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                            <div class="mini-card">
+                                <h4>Block-Level Elements</h4>
+                                <p>Block-level elements start on a new line and take up the full width available. They create a "block" in the flow of the document.</p>
+                                <p>Examples: <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code></p>
+                            </div>
+                            <div class="mini-card">
+                                <h4>Inline Elements</h4>
+                                <p>Inline elements do not start on a new line and only take up as much width as necessary. They flow within the text.</p>
+                                <p>Examples: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;img&gt;</code></p>
+                            </div>
+                        </div>
+                        
+                        <p>Here's a visual example of how block and inline elements behave:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;This is a block-level paragraph element.&lt;/p&gt;
+&lt;p&gt;This is another paragraph with &lt;strong&gt;inline&lt;/strong&gt; elements inside it.&lt;/p&gt;</code></pre>
+                        
+                        <p>In this example, each <code>&lt;p&gt;</code> element starts on a new line (block-level), while the <code>&lt;strong&gt;</code> element flows within the text of the paragraph (inline).</p>
+                        
+                        <h3>Empty Elements vs. Container Elements</h3>
+                        <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                            <div class="mini-card">
+                                <h4>Container Elements</h4>
+                                <p>Most HTML elements are container elements, meaning they have both opening and closing tags with content in between.</p>
+                                <p>Examples: <code>&lt;p&gt;&lt;/p&gt;</code>, <code>&lt;div&gt;&lt;/div&gt;</code>, <code>&lt;span&gt;&lt;/span&gt;</code></p>
+                            </div>
+                            <div class="mini-card">
+                                <h4>Empty Elements</h4>
+                                <p>Empty elements (also called self-closing elements) don't have closing tags because they don't contain content.</p>
+                                <p>Examples: <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;input&gt;</code></p>
+                            </div>
+                        </div>
+                        
+                        <p>Empty elements are written in one of two ways:</p>
+                        <pre><code class="language-html">&lt;!-- HTML5 style --&gt;
+&lt;img src="image.jpg" alt="Description"&gt;
+
+&lt;!-- XHTML style (also valid in HTML5) --&gt;
+&lt;img src="image.jpg" alt="Description" /&gt;</code></pre>
+                        
+                        <p>Both styles are valid in HTML5, but the first style is more common.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Essential HTML Elements</h2>
+                        <p>Let's explore some of the most commonly used HTML elements that every web developer should know:</p>
+                        
+                        <h3>Headings</h3>
+                        <p>HTML provides six levels of headings, from <code>&lt;h1&gt;</code> (most important) to <code>&lt;h6&gt;</code> (least important):</p>
+                        
+                        <pre><code class="language-html">&lt;h1&gt;This is a Level 1 Heading&lt;/h1&gt;
+&lt;h2&gt;This is a Level 2 Heading&lt;/h2&gt;
+&lt;h3&gt;This is a Level 3 Heading&lt;/h3&gt;
+&lt;h4&gt;This is a Level 4 Heading&lt;/h4&gt;
+&lt;h5&gt;This is a Level 5 Heading&lt;/h5&gt;
+&lt;h6&gt;This is a Level 6 Heading&lt;/h6&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Heading Best Practices</h4>
+                            <ul>
+                                <li>Use only one <code>&lt;h1&gt;</code> per page (typically for the main title)</li>
+                                <li>Don't skip heading levels (e.g., don't go from <code>&lt;h2&gt;</code> to <code>&lt;h4&gt;</code>)</li>
+                                <li>Use headings to create a logical document outline</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Paragraphs</h3>
+                        <p>The <code>&lt;p&gt;</code> element represents a paragraph of text:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;This is a paragraph of text. Paragraphs are block-level elements that automatically add space before and after the content.&lt;/p&gt;
+&lt;p&gt;This is another paragraph. Notice how it starts on a new line.&lt;/p&gt;</code></pre>
+                        
+                        <h3>Divisions</h3>
+                        <p>The <code>&lt;div&gt;</code> element is a generic container used to group content for styling and layout purposes:</p>
+                        
+                        <pre><code class="language-html">&lt;div class="container"&gt;
+    &lt;h2&gt;Section Title&lt;/h2&gt;
+    &lt;p&gt;This content is grouped together in a div.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <p>Divs have no semantic meaning by themselves but are extremely useful for organizing and styling content.</p>
+                        
+                        <h3>Spans</h3>
+                        <p>The <code>&lt;span&gt;</code> element is an inline container used to style or manipulate a specific portion of text:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;This paragraph has &lt;span style="color: blue;"&gt;some blue text&lt;/span&gt; in it.&lt;/p&gt;</code></pre>
+                        
+                        <h3>Line Breaks</h3>
+                        <p>The <code>&lt;br&gt;</code> element creates a line break within text:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;This text will be on one line.&lt;br&gt;This text will be on a new line.&lt;/p&gt;</code></pre>
+                        
+                        <p>Unlike paragraphs, line breaks don't add extra spacing.</p>
+                        
+                        <h3>Horizontal Rules</h3>
+                        <p>The <code>&lt;hr&gt;</code> element creates a horizontal line, often used to separate content sections:</p>
+                        
+                        <pre><code class="language-html">&lt;h2&gt;Section 1&lt;/h2&gt;
+&lt;p&gt;Content for section 1...&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Section 2&lt;/h2&gt;
+&lt;p&gt;Content for section 2...&lt;/p&gt;</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Text Formatting Elements</h2>
+                        <p>HTML provides several elements for formatting text:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;&lt;strong&gt;Bold text&lt;/strong&gt; indicates importance.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Italic text&lt;/em&gt; adds emphasis.&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Underlined text&lt;/u&gt; (use sparingly, as it can be confused with links).&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;Highlighted text&lt;/mark&gt; draws attention.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Smaller text&lt;/small&gt; for fine print.&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Deleted text&lt;/del&gt; shows removed content.&lt;/p&gt;
+&lt;p&gt;&lt;ins&gt;Inserted text&lt;/ins&gt; shows added content.&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O (subscript) and 10&lt;sup&gt;2&lt;/sup&gt; (superscript).&lt;/p&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Semantic vs. Presentational</h4>
+                            <p>Modern HTML emphasizes semantic elements (which describe their meaning) over presentational ones (which only describe appearance).</p>
+                            <p>For example, use <code>&lt;strong&gt;</code> (semantic: important text) instead of <code>&lt;b&gt;</code> (presentational: bold text).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Nested Elements</h2>
+                        <p>HTML elements can be nested inside other elements, creating a hierarchical structure. This is a fundamental concept in HTML.</p>
+                        
+                        <pre><code class="language-html">&lt;div class="card"&gt;
+    &lt;h2&gt;Card Title&lt;/h2&gt;
+    &lt;p&gt;This paragraph is inside the card. It contains &lt;strong&gt;bold text&lt;/strong&gt; and a &lt;a href="https://example.com"&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <p>In this example:</p>
+                        <ul>
+                            <li>The <code>&lt;h2&gt;</code> and <code>&lt;p&gt;</code> elements are nested inside the <code>&lt;div&gt;</code></li>
+                            <li>The <code>&lt;strong&gt;</code> and <code>&lt;a&gt;</code> elements are nested inside the <code>&lt;p&gt;</code></li>
+                        </ul>
+                        
+                        <p>This nesting creates a parent-child relationship between elements. In the example above:</p>
+                        <ul>
+                            <li>The <code>&lt;div&gt;</code> is the parent of <code>&lt;h2&gt;</code> and <code>&lt;p&gt;</code></li>
+                            <li>The <code>&lt;p&gt;</code> is the parent of <code>&lt;strong&gt;</code> and <code>&lt;a&gt;</code></li>
+                            <li>The <code>&lt;h2&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;strong&gt;</code>, and <code>&lt;a&gt;</code> are all descendants of <code>&lt;div&gt;</code></li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Proper Nesting</h4>
+                            <p>Elements must be properly nested. This means that if element B starts inside element A, then element B must end before element A ends.</p>
+                            <p>Correct: <code>&lt;a&gt;&lt;strong&gt;Text&lt;/strong&gt;&lt;/a&gt;</code></p>
+                            <p>Incorrect: <code>&lt;a&gt;&lt;strong&gt;Text&lt;/a&gt;&lt;/strong&gt;</code></p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Comments in HTML</h2>
+                        <p>HTML comments allow you to add notes to your code that are not displayed in the browser. They're useful for documenting your code or temporarily disabling parts of it.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- This is an HTML comment --&gt;
+
+&lt;!-- 
+    This is a multi-line comment.
+    It can span multiple lines.
+--&gt;
+
+&lt;!-- This section needs to be updated
+&lt;div class="outdated"&gt;
+    &lt;p&gt;This content is temporarily disabled.&lt;/p&gt;
+&lt;/div&gt;
+--&gt;</code></pre>
+                        
+                        <p>Comments are visible in the source code but not on the rendered page. They're invaluable for collaboration and maintenance.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>HTML Element Reference</h2>
+                        <p>There are over 100 HTML elements available, each with its specific purpose. Here's a quick reference of some commonly used elements grouped by category:</p>
+                        
+                        <h3>Document Structure</h3>
+                        <ul>
+                            <li><code>&lt;html&gt;</code> - Root element</li>
+                            <li><code>&lt;head&gt;</code> - Container for metadata</li>
+                            <li><code>&lt;body&gt;</code> - Container for visible content</li>
+                            <li><code>&lt;header&gt;</code> - Page or section header</li>
+                            <li><code>&lt;footer&gt;</code> - Page or section footer</li>
+                            <li><code>&lt;main&gt;</code> - Main content area</li>
+                            <li><code>&lt;section&gt;</code> - Thematic grouping of content</li>
+                            <li><code>&lt;article&gt;</code> - Self-contained composition</li>
+                            <li><code>&lt;aside&gt;</code> - Related but tangential content</li>
+                            <li><code>&lt;nav&gt;</code> - Navigation links</li>
+                        </ul>
+                        
+                        <h3>Text Content</h3>
+                        <ul>
+                            <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> - Headings</li>
+                            <li><code>&lt;p&gt;</code> - Paragraph</li>
+                            <li><code>&lt;ul&gt;</code> - Unordered list</li>
+                            <li><code>&lt;ol&gt;</code> - Ordered list</li>
+                            <li><code>&lt;li&gt;</code> - List item</li>
+                            <li><code>&lt;dl&gt;</code> - Description list</li>
+                            <li><code>&lt;dt&gt;</code> - Term in a description list</li>
+                            <li><code>&lt;dd&gt;</code> - Description in a description list</li>
+                            <li><code>&lt;blockquote&gt;</code> - Block quotation</li>
+                            <li><code>&lt;figure&gt;</code> - Self-contained content with optional caption</li>
+                            <li><code>&lt;figcaption&gt;</code> - Caption for a figure</li>
+                        </ul>
+                        
+                        <h3>Inline Text</h3>
+                        <ul>
+                            <li><code>&lt;a&gt;</code> - Hyperlink</li>
+                            <li><code>&lt;strong&gt;</code> - Important text</li>
+                            <li><code>&lt;em&gt;</code> - Emphasized text</li>
+                            <li><code>&lt;span&gt;</code> - Generic inline container</li>
+                            <li><code>&lt;code&gt;</code> - Computer code</li>
+                            <li><code>&lt;q&gt;</code> - Inline quotation</li>
+                            <li><code>&lt;abbr&gt;</code> - Abbreviation</li>
+                            <li><code>&lt;cite&gt;</code> - Citation</li>
+                            <li><code>&lt;time&gt;</code> - Time</li>
+                        </ul>
+                        
+                        <h3>Multimedia</h3>
+                        <ul>
+                            <li><code>&lt;img&gt;</code> - Image</li>
+                            <li><code>&lt;audio&gt;</code> - Audio content</li>
+                            <li><code>&lt;video&gt;</code> - Video content</li>
+                            <li><code>&lt;source&gt;</code> - Media resource</li>
+                            <li><code>&lt;track&gt;</code> - Text track for media</li>
+                            <li><code>&lt;canvas&gt;</code> - Drawing area</li>
+                            <li><code>&lt;svg&gt;</code> - Scalable Vector Graphics</li>
+                        </ul>
+                        
+                        <h3>Forms</h3>
+                        <ul>
+                            <li><code>&lt;form&gt;</code> - Form container</li>
+                            <li><code>&lt;input&gt;</code> - Input control</li>
+                            <li><code>&lt;textarea&gt;</code> - Multiline text input</li>
+                            <li><code>&lt;button&gt;</code> - Clickable button</li>
+                            <li><code>&lt;select&gt;</code> - Dropdown list</li>
+                            <li><code>&lt;option&gt;</code> - Option in a select element</li>
+                            <li><code>&lt;label&gt;</code> - Label for a form control</li>
+                            <li><code>&lt;fieldset&gt;</code> - Group of form controls</li>
+                            <li><code>&lt;legend&gt;</code> - Caption for a fieldset</li>
+                        </ul>
+                        
+                        <p>We'll explore many of these elements in more detail in the upcoming lessons.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise</h2>
+                        <p>Let's put what we've learned into practice by creating a simple HTML document that uses various elements:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;HTML Elements Practice&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;My HTML Elements Practice&lt;/h1&gt;
+    
+    &lt;h2&gt;About Me&lt;/h2&gt;
+    &lt;p&gt;Hello! I'm learning &lt;strong&gt;HTML&lt;/strong&gt; and finding it &lt;em&gt;very&lt;/em&gt; interesting.&lt;/p&gt;
+    
+    &lt;h2&gt;My Favorite Foods&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Pizza&lt;/li&gt;
+        &lt;li&gt;Ice Cream&lt;/li&gt;
+        &lt;li&gt;Sushi&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;My Daily Schedule&lt;/h2&gt;
+    &lt;ol&gt;
+        &lt;li&gt;Wake up&lt;/li&gt;
+        &lt;li&gt;Eat breakfast&lt;/li&gt;
+        &lt;li&gt;Study HTML&lt;/li&gt;
+        &lt;li&gt;Practice coding&lt;/li&gt;
+        &lt;li&gt;Sleep&lt;/li&gt;
+    &lt;/ol&gt;
+    
+    &lt;hr&gt;
+    
+    &lt;h2&gt;Contact Me&lt;/h2&gt;
+    &lt;p&gt;Email me at: &lt;a href="mailto:example@example.com"&gt;example@example.com&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Try It Yourself</h4>
+                            <p>Create the HTML document above and view it in your browser. Then try to:</p>
+                            <ol>
+                                <li>Add another section with a heading</li>
+                                <li>Include a blockquote with your favorite quote</li>
+                                <li>Add an image (you can use a placeholder like <code>&lt;img src="https://via.placeholder.com/150" alt="Placeholder"&gt;</code>)</li>
+                                <li>Create a table with at least 2 rows and 2 columns</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored HTML elements and tags, the building blocks of web pages:</p>
+                        <ul>
+                            <li>HTML elements consist of opening tags, content, and closing tags</li>
+                            <li>Elements can be block-level (start on a new line) or inline (flow within text)</li>
+                            <li>Some elements are empty (self-closing) and don't have closing tags</li>
+                            <li>Elements can be nested to create a hierarchical structure</li>
+                            <li>HTML provides elements for headings, paragraphs, text formatting, lists, and more</li>
+                            <li>Comments allow you to add notes to your code that aren't displayed in the browser</li>
+                        </ul>
+                        
+                        <p>Understanding HTML elements is fundamental to web development. In the next lesson, we'll dive deeper into text formatting elements and how to structure content effectively.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page2.html" class="btn">Previous: HTML Document Structure</a>
+                        <a href="page4.html" class="btn">Next: Text Formatting</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop API | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to use the HTML5 Drag and Drop API to create interactive drag and drop interfaces.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="20">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html" class="active">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional HTML</h3>
+                <ul>
+                    <li><a href="page13.html">13. Advanced HTML Concepts</a></li>
+                    <li><a href="page14.html">14. HTML5 Semantic Elements</a></li>
+                    <li><a href="page15.html">15. HTML Forms Advanced</a></li>
+                    <li><a href="page16.html">16. HTML Media & Graphics</a></li>
+                    <li><a href="page17.html">17. HTML APIs</a></li>
+                    <li><a href="page18.html">18. Web Storage</a></li>
+                    <li><a href="page19.html">19. Geolocation API</a></li>
+                    <li><a href="page20.html" class="active">20. Drag & Drop API</a></li>
+                    <li><a href="page21.html">21. Web Workers</a></li>
+                    <li><a href="page22.html">22. Server-Sent Events</a></li>
+                    <li><a href="page23.html">23. WebSockets</a></li>
+                    <li><a href="page24.html">24. Responsive HTML</a></li>
+                    <li><a href="page25.html">25. HTML Accessibility</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 40%;"></div>
+                </div>
+                <p style="text-align: center;">Page 20 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Drag & Drop API</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to Drag and Drop</h2>
+                        <p>The HTML5 Drag and Drop (DnD) API allows users to click and hold on an element, drag it to a different location, and release the mouse button to drop it there. This intuitive interaction pattern is widely used in modern web applications for tasks like rearranging items, file uploads, and interactive games.</p>
+                        
+                        <p>The Drag and Drop API provides a standardized way to implement drag and drop functionality across browsers, making it easier to create consistent user experiences.</p>
+                        
+                        <div class="info-box">
+                            <h4>Key Benefits of the Drag and Drop API</h4>
+                            <ul>
+                                <li><strong>Intuitive Interaction</strong>: Drag and drop is a natural interaction pattern that users understand intuitively</li>
+                                <li><strong>Improved Efficiency</strong>: It can make tasks like reordering lists or moving items between containers faster and more efficient</li>
+                                <li><strong>Cross-Browser Support</strong>: The HTML5 Drag and Drop API is supported by all modern browsers</li>
+                                <li><strong>Native Integration</strong>: It integrates with the operating system's drag and drop functionality, allowing for file uploads and cross-application interactions</li>
+                                <li><strong>Accessibility</strong>: When implemented correctly, drag and drop can be made accessible to keyboard users and screen readers</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Basic Drag and Drop</h2>
+                        <p>To implement basic drag and drop functionality, you need to understand the core events and attributes involved.</p>
+                        
+                        <h3>Making Elements Draggable</h3>
+                        <p>To make an element draggable, you need to add the <code>draggable</code> attribute and set it to <code>true</code>:</p>
+                        
+                        <pre><code class="language-html">&lt;div draggable="true" id="draggable-element"&gt;Drag me!&lt;/div&gt;</code></pre>
+                        
+                        <p>By default, text selections, images, and links are draggable without needing this attribute, but other elements require it.</p>
+                        
+                        <h3>Drag Events</h3>
+                        <p>The Drag and Drop API defines several events that fire during a drag and drop operation:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Event</th>
+                                        <th>Fires On</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>dragstart</code></td>
+                                        <td>Draggable element</td>
+                                        <td>Fires when the user starts dragging an element</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>drag</code></td>
+                                        <td>Draggable element</td>
+                                        <td>Fires repeatedly while the element is being dragged</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dragend</code></td>
+                                        <td>Draggable element</td>
+                                        <td>Fires when the drag operation ends (whether successful or not)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dragenter</code></td>
+                                        <td>Drop target</td>
+                                        <td>Fires when a dragged element enters a valid drop target</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dragover</code></td>
+                                        <td>Drop target</td>
+                                        <td>Fires repeatedly while a dragged element is over a valid drop target</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dragleave</code></td>
+                                        <td>Drop target</td>
+                                        <td>Fires when a dragged element leaves a valid drop target</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>drop</code></td>
+                                        <td>Drop target</td>
+                                        <td>Fires when a dragged element is dropped on a valid drop target</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3>Basic Implementation</h3>
+                        <p>Here's a simple example of implementing drag and drop functionality:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;div class="container"&gt;
+    &lt;div id="draggable" draggable="true" class="draggable-item"&gt;Drag me!&lt;/div&gt;
+    &lt;div id="droptarget" class="drop-target"&gt;Drop here!&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <pre><code class="language-css">/* CSS */
+.draggable-item {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    cursor: move;
+    margin-bottom: 20px;
+}
+
+.drop-target {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #2ecc71;
+    background-color: #f1f1f1;
+    text-align: center;
+    line-height: 200px;
+}
+
+.drop-target.dragover {
+    background-color: #e0f7fa;
+    border-color: #00bcd4;
+}</code></pre>
+                        
+                        <pre><code class="language-javascript">// JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const draggable = document.getElementById('draggable');
+    const dropTarget = document.getElementById('droptarget');
+    
+    // Events for draggable element
+    draggable.addEventListener('dragstart', function(event) {
+        // Set data to be transferred
+        event.dataTransfer.setData('text/plain', event.target.id);
+        
+        // Add a class to style the dragged element
+        this.classList.add('dragging');
+    });
+    
+    draggable.addEventListener('dragend', function(event) {
+        // Remove the dragging class
+        this.classList.remove('dragging');
+    });
+    
+    // Events for drop target
+    dropTarget.addEventListener('dragover', function(event) {
+        // Prevent default to allow drop
+        event.preventDefault();
+        
+        // Add visual feedback
+        this.classList.add('dragover');
+    });
+    
+    dropTarget.addEventListener('dragleave', function(event) {
+        // Remove visual feedback
+        this.classList.remove('dragover');
+    });
+    
+    dropTarget.addEventListener('drop', function(event) {
+        // Prevent default action (open as link for some elements)
+        event.preventDefault();
+        
+        // Remove visual feedback
+        this.classList.remove('dragover');
+        
+        // Get the dragged element's ID from the data transfer
+        const id = event.dataTransfer.getData('text/plain');
+        const draggedElement = document.getElementById(id);
+        
+        // Append the dragged element to the drop target
+        this.appendChild(draggedElement);
+        
+        // Optional: Update text to show success
+        this.textContent = 'Dropped successfully!';
+    });
+});</code></pre>
+                        
+                        <h3>Understanding the DataTransfer Object</h3>
+                        <p>The <code>dataTransfer</code> object is a key part of the Drag and Drop API. It holds data that is being dragged during a drag and drop operation and has several important methods and properties:</p>
+                        
+                        <pre><code class="language-javascript">// Setting data during dragstart
+element.addEventListener('dragstart', function(event) {
+    // Store data as key-value pairs
+    event.dataTransfer.setData('text/plain', 'This is text data');
+    event.dataTransfer.setData('application/json', JSON.stringify({ id: 123, name: 'Item' }));
+    
+    // Set a drag image (optional)
+    const img = new Image();
+    img.src = 'drag-icon.png';
+    event.dataTransfer.setDragImage(img, 10, 10); // image, offsetX, offsetY
+    
+    // Set allowed effects (copy, move, link, or combinations)
+    event.dataTransfer.effectAllowed = 'move';
+});
+
+// Getting data during drop
+element.addEventListener('drop', function(event) {
+    // Get data by format
+    const textData = event.dataTransfer.getData('text/plain');
+    const jsonData = JSON.parse(event.dataTransfer.getData('application/json'));
+    
+    console.log('Text data:', textData);
+    console.log('JSON data:', jsonData);
+    
+    // Get the actual effect that occurred
+    console.log('Drop effect:', event.dataTransfer.dropEffect);
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>DataTransfer Properties and Methods</h4>
+                            <ul>
+                                <li><strong>setData(format, data)</strong>: Sets data for a given format (e.g., 'text/plain', 'text/html')</li>
+                                <li><strong>getData(format)</strong>: Retrieves data for a given format</li>
+                                <li><strong>clearData([format])</strong>: Removes data for a specific format or all formats if no format is specified</li>
+                                <li><strong>setDragImage(element, x, y)</strong>: Sets a custom image to be displayed during dragging</li>
+                                <li><strong>types</strong>: A list of formats that were set in the dragstart event</li>
+                                <li><strong>files</strong>: A FileList of files being dragged, if applicable</li>
+                                <li><strong>effectAllowed</strong>: Specifies which operations are allowed ('none', 'copy', 'move', 'link', 'copyMove', 'copyLink', 'linkMove', 'all')</li>
+                                <li><strong>dropEffect</strong>: Controls the feedback the user is given during a drag operation ('none', 'copy', 'move', 'link')</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Drag and Drop Techniques</h2>
+                        <p>Let's explore some more advanced drag and drop techniques that you can use to create sophisticated interactions.</p>
+                        
+                        <h3>Drag and Drop Lists</h3>
+                        <p>One common use case for drag and drop is reordering items in a list. Here's how to implement a sortable list:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;ul id="sortable-list" class="sortable"&gt;
+    &lt;li draggable="true" data-id="1" class="list-item"&gt;Item 1&lt;/li&gt;
+    &lt;li draggable="true" data-id="2" class="list-item"&gt;Item 2&lt;/li&gt;
+    &lt;li draggable="true" data-id="3" class="list-item"&gt;Item 3&lt;/li&gt;
+    &lt;li draggable="true" data-id="4" class="list-item"&gt;Item 4&lt;/li&gt;
+    &lt;li draggable="true" data-id="5" class="list-item"&gt;Item 5&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        
+                        <pre><code class="language-css">/* CSS */
+.sortable {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-item {
+    padding: 15px;
+    margin: 5px 0;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    cursor: move;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.list-item.dragging {
+    opacity: 0.5;
+    background-color: #e9ecef;
+}
+
+.list-item.dragover {
+    border-top: 2px solid #007bff;
+}</code></pre>
+                        
+                        <pre><code class="language-javascript">// JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const sortableList = document.getElementById('sortable-list');
+    let draggedItem = null;
+    
+    // Add event listeners to all list items
+    sortableList.querySelectorAll('.list-item').forEach(item => {
+        // Dragstart event
+        item.addEventListener('dragstart', function(e) {
+            draggedItem = this;
+            
+            // Store the item's ID
+            e.dataTransfer.setData('text/plain', this.getAttribute('data-id'));
+            
+            // Add a class for styling
+            setTimeout(() => {
+                this.classList.add('dragging');
+            }, 0);
+        });
+        
+        // Dragend event
+        item.addEventListener('dragend', function() {
+            this.classList.remove('dragging');
+            draggedItem = null;
+            
+            // Remove all dragover classes
+            sortableList.querySelectorAll('.dragover').forEach(item => {
+                item.classList.remove('dragover');
+            });
+        });
+        
+        // Dragover event
+        item.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            
+            // Don't do anything if dragging over itself
+            if (this === draggedItem) return;
+            
+            // Get the middle of the item
+            const rect = this.getBoundingClientRect();
+            const y = e.clientY - rect.top;
+            const height = rect.height;
+            
+            // Determine if we should place the dragged item before or after this item
+            if (y < height / 2) {
+                // Before this item
+                this.classList.add('dragover');
+                this.classList.remove('dragover-bottom');
+            } else {
+                // After this item
+                this.classList.add('dragover-bottom');
+                this.classList.remove('dragover');
+            }
+        });
+        
+        // Dragleave event
+        item.addEventListener('dragleave', function() {
+            this.classList.remove('dragover', 'dragover-bottom');
+        });
+        
+        // Drop event
+        item.addEventListener('drop', function(e) {
+            e.preventDefault();
+            
+            // Don't do anything if dropping on itself
+            if (this === draggedItem) return;
+            
+            // Get the middle of the item
+            const rect = this.getBoundingClientRect();
+            const y = e.clientY - rect.top;
+            const height = rect.height;
+            
+            // Remove dragover classes
+            this.classList.remove('dragover', 'dragover-bottom');
+            
+            // Determine if we should place the dragged item before or after this item
+            if (y < height / 2) {
+                // Insert before this item
+                sortableList.insertBefore(draggedItem, this);
+            } else {
+                // Insert after this item
+                sortableList.insertBefore(draggedItem, this.nextSibling);
+            }
+            
+            // Update the order in your data model
+            updateItemOrder();
+        });
+    });
+    
+    // Function to update the order in your data model
+    function updateItemOrder() {
+        const newOrder = [];
+        sortableList.querySelectorAll('.list-item').forEach(item => {
+            newOrder.push(item.getAttribute('data-id'));
+        });
+        
+        console.log('New order:', newOrder);
+        
+        // Here you would typically send the new order to your server
+        // saveOrderToServer(newOrder);
+    }
+});</code></pre>
+                        
+                        <h3>Drag Between Containers</h3>
+                        <p>Another common use case is dragging items between different containers, such as in a kanban board or a shopping cart:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;div class="container"&gt;
+    &lt;div class="drop-container" id="container1"&gt;
+        &lt;h3&gt;Container 1&lt;/h3&gt;
+        &lt;div class="item" draggable="true" data-id="item1"&gt;Item 1&lt;/div&gt;
+        &lt;div class="item" draggable="true" data-id="item2"&gt;Item 2&lt;/div&gt;
+        &lt;div class="item" draggable="true" data-id="item3"&gt;Item 3&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="drop-container" id="container2"&gt;
+        &lt;h3&gt;Container 2&lt;/h3&gt;
+        &lt;div class="item" draggable="true" data-id="item4"&gt;Item 4&lt;/div&gt;
+        &lt;div class="item" draggable="true" data-id="item5"&gt;Item 5&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <pre><code class="language-css">/* CSS */
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.drop-container {
+    flex: 1;
+    min-height: 300px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+.drop-container.dragover {
+    background-color: #e9ecef;
+    border: 2px dashed #007bff;
+}
+
+.item {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    cursor: move;
+}
+
+.item.dragging {
+    opacity: 0.5;
+}</code></pre>
+                        
+                        <pre><code class="language-javascript">// JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all containers and items
+    const containers = document.querySelectorAll('.drop-container');
+    const items = document.querySelectorAll('.item');
+    
+    // Add event listeners to all items
+    items.forEach(item => {
+        item.addEventListener('dragstart', function(e) {
+            // Store the item's ID and container ID
+            e.dataTransfer.setData('text/plain', this.getAttribute('data-id'));
+            e.dataTransfer.setData('source-container', this.parentElement.id);
+            
+            // Add a class for styling
+            setTimeout(() => {
+                this.classList.add('dragging');
+            }, 0);
+        });
+        
+        item.addEventListener('dragend', function() {
+            this.classList.remove('dragging');
+        });
+    });
+    
+    // Add event listeners to all containers
+    containers.forEach(container => {
+        container.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.classList.add('dragover');
+        });
+        
+        container.addEventListener('dragleave', function() {
+            this.classList.remove('dragover');
+        });
+        
+        container.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.classList.remove('dragover');
+            
+            // Get the dragged item's ID and source container
+            const itemId = e.dataTransfer.getData('text/plain');
+            const sourceContainerId = e.dataTransfer.getData('source-container');
+            
+            // Get the dragged item
+            const draggedItem = document.querySelector(`[data-id="${itemId}"]`);
+            
+            // Move the item to this container
+            this.appendChild(draggedItem);
+            
+            // Update your data model
+            updateItemContainer(itemId, sourceContainerId, this.id);
+        });
+    });
+    
+    // Function to update your data model
+    function updateItemContainer(itemId, sourceContainerId, targetContainerId) {
+        console.log(`Item ${itemId} moved from ${sourceContainerId} to ${targetContainerId}`);
+        
+        // Here you would typically update your data model and possibly send the change to your server
+        // updateItemContainerOnServer(itemId, targetContainerId);
+    }
+});</code></pre>
+                        
+                        <h3>Custom Drag Images</h3>
+                        <p>You can customize the image that appears during dragging using the <code>setDragImage</code> method:</p>
+                        
+                        <pre><code class="language-javascript">// Set a custom drag image
+element.addEventListener('dragstart', function(event) {
+    // Create a custom drag image
+    const dragImage = document.createElement('div');
+    dragImage.textContent = 'Dragging: ' + this.textContent;
+    dragImage.style.backgroundColor = '#007bff';
+    dragImage.style.color = 'white';
+    dragImage.style.padding = '10px';
+    dragImage.style.borderRadius = '4px';
+    dragImage.style.position = 'absolute';
+    dragImage.style.top = '-1000px'; // Hide it initially
+    document.body.appendChild(dragImage);
+    
+    // Set the drag image
+    event.dataTransfer.setDragImage(dragImage, 0, 0);
+    
+    // Store a reference to the drag image so we can remove it later
+    this.dragImage = dragImage;
+    
+    // Set the data being transferred
+    event.dataTransfer.setData('text/plain', this.getAttribute('data-id'));
+});
+
+// Clean up the custom drag image after dragging
+element.addEventListener('dragend', function() {
+    if (this.dragImage) {
+        document.body.removeChild(this.dragImage);
+        this.dragImage = null;
+    }
+});</code></pre>
+                        
+                        <h3>Drag Effects</h3>
+                        <p>You can control the visual feedback during drag operations using the <code>effectAllowed</code> and <code>dropEffect</code> properties:</p>
+                        
+                        <pre><code class="language-javascript">// On the draggable element
+element.addEventListener('dragstart', function(event) {
+    // Set which effects are allowed
+    event.dataTransfer.effectAllowed = 'copyMove'; // Allow copy or move
+    
+    // Set the data
+    event.dataTransfer.setData('text/plain', this.getAttribute('data-id'));
+});
+
+// On the drop target
+dropTarget.addEventListener('dragover', function(event) {
+    event.preventDefault();
+    
+    // Set the effect based on a condition (e.g., key modifier)
+    if (event.ctrlKey) {
+        // Copy if Ctrl key is pressed
+        event.dataTransfer.dropEffect = 'copy';
+    } else {
+        // Otherwise move
+        event.dataTransfer.dropEffect = 'move';
+    }
+});
+
+dropTarget.addEventListener('drop', function(event) {
+    event.preventDefault();
+    
+    // Get the effect that was used
+    const effect = event.dataTransfer.dropEffect;
+    
+    if (effect === 'copy') {
+        // Clone the element
+        const itemId = event.dataTransfer.getData('text/plain');
+        const originalItem = document.querySelector(`[data-id="${itemId}"]`);
+        const newItem = originalItem.cloneNode(true);
+        
+        // Generate a new ID for the clone
+        newItem.setAttribute('data-id', 'item-' + Date.now());
+        
+        // Add the clone to the drop target
+        this.appendChild(newItem);
+        
+        // Add event listeners to the new item
+        addDragListeners(newItem);
+    } else if (effect === 'move') {
+        // Move the element
+        const itemId = event.dataTransfer.getData('text/plain');
+        const item = document.querySelector(`[data-id="${itemId}"]`);
+        this.appendChild(item);
+    }
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Drag Effects Explained</h4>
+                            <p>The drag and drop API supports several visual effects:</p>
+                            <ul>
+                                <li><strong>copy</strong>: Indicates that the data being dragged will be copied to the drop location</li>
+                                <li><strong>move</strong>: Indicates that the data being dragged will be moved to the drop location</li>
+                                <li><strong>link</strong>: Indicates that a link will be established to the data at the drop location</li>
+                                <li><strong>none</strong>: Indicates that the data cannot be dropped at the current location</li>
+                            </ul>
+                            <p>The cursor changes based on the effect, providing visual feedback to the user about what will happen when they drop.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>File Drag and Drop</h2>
+                        <p>One of the most powerful features of the Drag and Drop API is the ability to handle file uploads by allowing users to drag files from their computer directly into your web application.</p>
+                        
+                        <h3>Basic File Drop Zone</h3>
+                        <pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;div id="drop-zone" class="file-drop-zone"&gt;
+    &lt;p&gt;Drag and drop files here&lt;/p&gt;
+    &lt;p&gt;or&lt;/p&gt;
+    &lt;label for="file-input" class="file-input-label"&gt;Select Files&lt;/label&gt;
+    &lt;input type="file" id="file-input" multiple style="display: none;"&gt;
+&lt;/div&gt;
+&lt;div id="file-list" class="file-list"&gt;&lt;/div&gt;</code></pre>
+                        
+                        <pre><code class="language-css">/* CSS */
+.file-drop-zone {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: all 0.3s;
+}
+
+.file-drop-zone.dragover {
+    background-color: #e3f2fd;
+    border-color: #2196f3;
+}
+
+.file-input-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2196f3;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.file-input-label:hover {
+    background-color: #0d8bf2;
+}
+
+.file-list {
+    margin-top: 20px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.file-icon {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.file-info {
+    flex-grow: 1;
+}
+
+.file-name {
+    font-weight: bold;
+}
+
+.file-size {
+    color: #666;
+    font-size: 0.8em;
+}
+
+.file-remove {
+    color: #f44336;
+    cursor: pointer;
+    padding: 5px;
+}</code></pre>
+                        
+                        <pre><code class="language-javascript">// JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const fileList = document.getElementById('file-list');
+    
+    // Prevent default drag behaviors
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, preventDefaults, false);
+        document.body.addEventListener(eventName, preventDefaults, false);
+    });
+    
+    // Highlight drop zone when item is dragged over it
+    ['dragenter', 'dragover'].forEach(eventName => {
+        dropZone.addEventListener(eventName, highlight, false);
+    });
+    
+    // Remove highlight when item is dragged out or dropped
+    ['dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, unhighlight, false);
+    });
+    
+    // Handle dropped files
+    dropZone.addEventListener('drop', handleDrop, false);
+    
+    // Handle selected files from file input
+    fileInput.addEventListener('change', function() {
+        handleFiles(this.files);
+    });
+    
+    function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    
+    function highlight() {
+        dropZone.classList.add('dragover');
+    }
+    
+    function unhighlight() {
+        dropZone.classList.remove('dragover');
+    }
+    
+    function handleDrop(e) {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        
+        handleFiles(files);
+    }
+    
+    function handleFiles(files) {
+        files = [...files]; // Convert FileList to array
+        
+        // Clear the file list if needed
+        // fileList.innerHTML = '';
+        
+        // Process each file
+        files.forEach(file => {
+            // Display file info
+            displayFile(file);
+            
+            // Upload file if needed
+            // uploadFile(file);
+        });
+    }
+    
+    function displayFile(file) {
+        // Create file item element
+        const fileItem = document.createElement('div');
+        fileItem.className = 'file-item';
+        
+        // Add file icon based on type
+        const fileIcon = document.createElement('div');
+        fileIcon.className = 'file-icon';
+        fileIcon.textContent = getFileIcon(file.type);
+        fileItem.appendChild(fileIcon);
+        
+        // Add file info
+        const fileInfo = document.createElement('div');
+        fileInfo.className = 'file-info';
+        
+        const fileName = document.createElement('div');
+        fileName.className = 'file-name';
+        fileName.textContent = file.name;
+        fileInfo.appendChild(fileName);
+        
+        const fileSize = document.createElement('div');
+        fileSize.className = 'file-size';
+        fileSize.textContent = formatFileSize(file.size);
+        fileInfo.appendChild(fileSize);
+        
+        fileItem.appendChild(fileInfo);
+        
+        // Add remove button
+        const removeButton = document.createElement('div');
+        removeButton.className = 'file-remove';
+        removeButton.textContent = '×';
+        removeButton.addEventListener('click', function() {
+            fileItem.remove();
+        });
+        fileItem.appendChild(removeButton);
+        
+        // Add to file list
+        fileList.appendChild(fileItem);
+    }
+    
+    function getFileIcon(fileType) {
+        if (fileType.startsWith('image/')) {
+            return '🖼️';
+        } else if (fileType.startsWith('video/')) {
+            return '🎬';
+        } else if (fileType.startsWith('audio/')) {
+            return '🎵';
+        } else if (fileType === 'application/pdf') {
+            return '📄';
+        } else if (fileType.includes('word')) {
+            return '📝';
+        } else if (fileType.includes('excel') || fileType.includes('spreadsheet')) {
+            return '📊';
+        } else if (fileType.includes('zip') || fileType.includes('compressed')) {
+            return '🗜️';
+        } else {
+            return '📁';
+        }
+    }
+    
+    function formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+    
+    function uploadFile(file) {
+        // Create FormData
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        // Upload using fetch or XMLHttpRequest
+        fetch('your-upload-url', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('File uploaded successfully:', data);
+        })
+        .catch(error => {
+            console.error('Error uploading file:', error);
+        });
+    }
+});</code></pre>
+                        
+                        <h3>Reading Dropped Files</h3>
+                        <p>You can read the contents of dropped files using the FileReader API:</p>
+                        
+                        <pre><code class="language-javascript">// Read file contents
+function readFile(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        
+        reader.onload = function(event) {
+            resolve(event.target.result);
+        };
+        
+        reader.onerror = function(event) {
+            reject(new Error('File could not be read: ' + event.target.error));
+        };
+        
+        // Read as text, data URL, or array buffer depending on file type
+        if (file.type.startsWith('text/')) {
+            reader.readAsText(file);
+        } else if (file.type.startsWith('image/')) {
+            reader.readAsDataURL(file);
+        } else {
+            reader.readAsArrayBuffer(file);
+        }
+    });
+}
+
+// Example usage
+async function handleImageDrop(file) {
+    try {
+        // Read the file as a data URL
+        const dataUrl = await readFile(file);
+        
+        // Create an image element
+        const img = document.createElement('img');
+        img.src = dataUrl;
+        img.alt = file.name;
+        img.className = 'preview-image';
+        
+        // Add the image to the preview container
+        document.getElementById('image-preview').appendChild(img);
+    } catch (error) {
+        console.error('Error reading image:', error);
+    }
+}
+
+async function handleTextDrop(file) {
+    try {
+        // Read the file as text
+        const text = await readFile(file);
+        
+        // Display the text
+        document.getElementById('text-preview').textContent = text;
+    } catch (error) {
+        console.error('Error reading text:', error);
+    }
+}</code></pre>
+                        
+                        <h3>Handling Multiple File Types</h3>
+                        <p>You can filter and handle different file types based on their MIME type:</p>
+                        
+                        <pre><code class="language-javascript">// Process files based on type
+function processFiles(files) {
+    [...files].forEach(file => {
+        if (file.type.startsWith('image/')) {
+            processImage(file);
+        } else if (file.type === 'application/pdf') {
+            processPDF(file);
+        } else if (file.type.startsWith('text/')) {
+            processText(file);
+        } else if (file.type.startsWith('video/')) {
+            processVideo(file);
+        } else {
+            console.log('Unsupported file type:', file.type);
+            alert(`Unsupported file type: ${file.type}`);
+        }
+    });
+}
+
+// Example image processing
+function processImage(file) {
+    readFile(file).then(dataUrl => {
+        // Create image preview
+        const img = document.createElement('img');
+        img.src = dataUrl;
+        img.alt = file.name;
+        img.className = 'image-preview';
+        
+        // Add to preview container
+        document.getElementById('preview-container').appendChild(img);
+        
+        // You might also want to upload the image
+        uploadFile(file);
+    });
+}
+
+// Example PDF processing
+function processPDF(file) {
+    // Create PDF preview (could use PDF.js for actual rendering)
+    const preview = document.createElement('div');
+    preview.className = 'pdf-preview';
+    preview.innerHTML = `
+        <div class="pdf-icon">📄</div>
+        <div class="pdf-name">${file.name}</div>
+        <a href="${URL.createObjectURL(file)}" target="_blank" class="pdf-view-btn">View PDF</a>
+    `;
+    
+    // Add to preview container
+    document.getElementById('preview-container').appendChild(preview);
+    
+    // You might also want to upload the PDF
+    uploadFile(file);
+}</code></pre>
+                        
+                        <h3>Drag and Drop Progress Indicators</h3>
+                        <p>For large file uploads, it's important to show progress to the user:</p>
+                        
+                        <pre><code class="language-javascript">// Upload with progress
+function uploadFileWithProgress(file) {
+    // Create progress element
+    const progressContainer = document.createElement('div');
+    progressContainer.className = 'progress-container';
+    
+    const progressBar = document.createElement('div');
+    progressBar.className = 'progress-bar';
+    progressBar.style.width = '0%';
+    
+    const progressText = document.createElement('div');
+    progressText.className = 'progress-text';
+    progressText.textContent = '0%';
+    
+    progressContainer.appendChild(progressBar);
+    progressContainer.appendChild(progressText);
+    
+    // Add to file list
+    const fileItem = document.querySelector(`.file-item[data-name="${file.name}"]`);
+    fileItem.appendChild(progressContainer);
+    
+    // Create FormData
+    const formData = new FormData();
+    formData.append('file', file);
+    
+    // Create XMLHttpRequest to track progress
+    const xhr = new XMLHttpRequest();
+    
+    // Track upload progress
+    xhr.upload.addEventListener('progress', function(event) {
+        if (event.lengthComputable) {
+            const percentComplete = Math.round((event.loaded / event.total) * 100);
+            
+            // Update progress bar
+            progressBar.style.width = percentComplete + '%';
+            progressText.textContent = percentComplete + '%';
+            
+            // Add a class when complete
+            if (percentComplete === 100) {
+                progressContainer.classList.add('complete');
+                setTimeout(() => {
+                    progressText.textContent = 'Uploaded';
+                }, 500);
+            }
+        }
+    });
+    
+    // Handle completion
+    xhr.addEventListener('load', function() {
+        if (xhr.status === 200) {
+            // Success
+            progressContainer.classList.add('success');
+            fileItem.classList.add('uploaded');
+        } else {
+            // Error
+            progressContainer.classList.add('error');
+            progressText.textContent = 'Error';
+        }
+    });
+    
+    // Handle errors
+    xhr.addEventListener('error', function() {
+        progressContainer.classList.add('error');
+        progressText.textContent = 'Failed';
+    });
+    
+    // Open and send the request
+    xhr.open('POST', 'your-upload-url', true);
+    xhr.send(formData);
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>File Drag and Drop Best Practices</h4>
+                            <ul>
+                                <li><strong>Validate file types</strong> before processing to ensure security and proper handling</li>
+                                <li><strong>Provide clear feedback</strong> about which file types are accepted</li>
+                                <li><strong>Show progress indicators</strong> for uploads, especially for large files</li>
+                                <li><strong>Include a fallback</strong> file input for browsers that don't support drag and drop</li>
+                                <li><strong>Handle errors gracefully</strong> and provide clear error messages</li>
+                                <li><strong>Consider file size limits</strong> and inform users about them</li>
+                                <li><strong>Provide previews</strong> when possible (images, PDFs, etc.)</li>
+                                <li><strong>Allow multiple files</strong> to be dropped at once for better user experience</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Accessibility Considerations</h2>
+                        <p>Drag and drop interfaces can be challenging for users who rely on keyboards or screen readers. It's important to ensure that your drag and drop functionality is accessible to all users.</p>
+                        
+                        <h3>Keyboard Accessibility</h3>
+                        <p>Provide keyboard alternatives for drag and drop operations:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- HTML with keyboard accessibility --&gt;
+&lt;ul id="sortable-list" class="sortable" role="list"&gt;
+    &lt;li class="list-item" draggable="true" tabindex="0" aria-grabbed="false" data-id="1"&gt;
+        Item 1
+        &lt;div class="item-controls"&gt;
+            &lt;button class="move-up" aria-label="Move item 1 up"&gt;↑&lt;/button&gt;
+            &lt;button class="move-down" aria-label="Move item 1 down"&gt;↓&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="list-item" draggable="true" tabindex="0" aria-grabbed="false" data-id="2"&gt;
+        Item 2
+        &lt;div class="item-controls"&gt;
+            &lt;button class="move-up" aria-label="Move item 2 up"&gt;↑&lt;/button&gt;
+            &lt;button class="move-down" aria-label="Move item 2 down"&gt;↓&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="list-item" draggable="true" tabindex="0" aria-grabbed="false" data-id="3"&gt;
+        Item 3
+        &lt;div class="item-controls"&gt;
+            &lt;button class="move-up" aria-label="Move item 3 up"&gt;↑&lt;/button&gt;
+            &lt;button class="move-down" aria-label="Move item 3 down"&gt;↓&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        
+                        <pre><code class="language-javascript">// JavaScript for keyboard accessibility
+document.addEventListener('DOMContentLoaded', function() {
+    const sortableList = document.getElementById('sortable-list');
+    const items = sortableList.querySelectorAll('.list-item');
+    
+    // Add keyboard support for list items
+    items.forEach(item => {
+        // Handle keyboard events for draggable items
+        item.addEventListener('keydown', function(e) {
+            switch (e.key) {
+                case ' ':
+                case 'Enter':
+                    // Toggle "grabbed" state
+                    const isGrabbed = this.getAttribute('aria-grabbed') === 'true';
+                    
+                    if (isGrabbed) {
+                        // If already grabbed, release it
+                        this.setAttribute('aria-grabbed', 'false');
+                        this.classList.remove('keyboard-dragging');
+                        
+                        // Announce to screen readers
+                        announceToScreenReader(`Item ${this.textContent.trim()} released`);
+                    } else {
+                        // If not grabbed, grab it
+                        // First, make sure no other item is grabbed
+                        items.forEach(i => {
+                            i.setAttribute('aria-grabbed', 'false');
+                            i.classList.remove('keyboard-dragging');
+                        });
+                        
+                        this.setAttribute('aria-grabbed', 'true');
+                        this.classList.add('keyboard-dragging');
+                        
+                        // Announce to screen readers
+                        announceToScreenReader(`Item ${this.textContent.trim()} grabbed. Use arrow keys to move.`);
+                    }
+                    
+                    e.preventDefault();
+                    break;
+                    
+                case 'ArrowUp':
+                    if (this.getAttribute('aria-grabbed') === 'true') {
+                        // Move the grabbed item up
+                        const prev = this.previousElementSibling;
+                        if (prev) {
+                            sortableList.insertBefore(this, prev);
+                            this.focus();
+                            
+                            // Announce to screen readers
+                            announceToScreenReader(`Item ${this.textContent.trim()} moved up`);
+                            
+                            // Update your data model
+                            updateItemOrder();
+                        }
+                        e.preventDefault();
+                    }
+                    break;
+                    
+                case 'ArrowDown':
+                    if (this.getAttribute('aria-grabbed') === 'true') {
+                        // Move the grabbed item down
+                        const next = this.nextElementSibling;
+                        if (next) {
+                            sortableList.insertBefore(this, next.nextElementSibling);
+                            this.focus();
+                            
+                            // Announce to screen readers
+                            announceToScreenReader(`Item ${this.textContent.trim()} moved down`);
+                            
+                            // Update your data model
+                            updateItemOrder();
+                        }
+                        e.preventDefault();
+                    }
+                    break;
+                    
+                case 'Escape':
+                    // Cancel the grab operation
+                    if (this.getAttribute('aria-grabbed') === 'true') {
+                        this.setAttribute('aria-grabbed', 'false');
+                        this.classList.remove('keyboard-dragging');
+                        
+                        // Announce to screen readers
+                        announceToScreenReader('Grab operation canceled');
+                    }
+                    break;
+            }
+        });
+    });
+    
+    // Add click handlers for move buttons
+    sortableList.querySelectorAll('.move-up').forEach(button => {
+        button.addEventListener('click', function(e) {
+            const item = this.closest('.list-item');
+            const prev = item.previousElementSibling;
+            
+            if (prev) {
+                sortableList.insertBefore(item, prev);
+                
+                // Announce to screen readers
+                announceToScreenReader(`Item ${item.textContent.trim()} moved up`);
+                
+                // Update your data model
+                updateItemOrder();
+            }
+            
+            e.preventDefault();
+        });
+    });
+    
+    sortableList.querySelectorAll('.move-down').forEach(button => {
+        button.addEventListener('click', function(e) {
+            const item = this.closest('.list-item');
+            const next = item.nextElementSibling;
+            
+            if (next) {
+                sortableList.insertBefore(item, next.nextElementSibling);
+                
+                // Announce to screen readers
+                announceToScreenReader(`Item ${item.textContent.trim()} moved down`);
+                
+                // Update your data model
+                updateItemOrder();
+            }
+            
+            e.preventDefault();
+        });
+    });
+    
+    // Function to announce messages to screen readers
+    function announceToScreenReader(message) {
+        const announcer = document.getElementById('sr-announcer') || createAnnouncer();
+        announcer.textContent = message;
+    }
+    
+    // Create a screen reader announcer if it doesn't exist
+    function createAnnouncer() {
+        const announcer = document.createElement('div');
+        announcer.id = 'sr-announcer';
+        announcer.setAttribute('aria-live', 'assertive');
+        announcer.setAttribute('aria-atomic', 'true');
+        announcer.className = 'sr-only';
+        document.body.appendChild(announcer);
+        return announcer;
+    }
+    
+    // Function to update the order in your data model
+    function updateItemOrder() {
+        const newOrder = [];
+        sortableList.querySelectorAll('.list-item').forEach(item => {
+            newOrder.push(item.getAttribute('data-id'));
+        });
+        
+        console.log('New order:', newOrder);
+        
+        // Here you would typically send the new order to your server
+        // saveOrderToServer(newOrder);
+    }
+});</code></pre>
+                        
+                        <pre><code class="language-css">/* CSS for accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.list-item {
+    position: relative;
+    padding: 15px;
+    margin: 5px 0;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    cursor: move;
+}
+
+.list-item:focus {
+    outline: 2px solid #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.list-item.keyboard-dragging {
+    background-color: #e9ecef;
+    border: 2px dashed #007bff;
+}
+
+.item-controls {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.move-up, .move-down {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.move-up:hover, .move-down:hover {
+    background-color: #e9ecef;
+}
+
+.move-up:focus, .move-down:focus {
+    outline: 2px solid #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}</code></pre>
+                        
+                        <h3>ARIA Attributes for Drag and Drop</h3>
+                        <p>Use ARIA attributes to improve the accessibility of drag and drop interfaces:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- HTML with ARIA attributes --&gt;
+&lt;div id="kanban-board" role="application" aria-label="Kanban Board"&gt;
+    &lt;div id="todo-column" class="column" role="region" aria-label="To Do"&gt;
+        &lt;h3 id="todo-heading"&gt;To Do&lt;/h3&gt;
+        &lt;ul class="task-list" role="list" aria-labelledby="todo-heading"&gt;
+            &lt;li class="task" draggable="true" tabindex="0" role="listitem" 
+                aria-grabbed="false" aria-dropeffect="move" data-id="task1"&gt;
+                Task 1
+                &lt;span class="task-controls"&gt;
+                    &lt;button class="move-btn" aria-label="Move Task 1"&gt;Move&lt;/button&gt;
+                &lt;/span&gt;
+            &lt;/li&gt;
+            &lt;li class="task" draggable="true" tabindex="0" role="listitem" 
+                aria-grabbed="false" aria-dropeffect="move" data-id="task2"&gt;
+                Task 2
+                &lt;span class="task-controls"&gt;
+                    &lt;button class="move-btn" aria-label="Move Task 2"&gt;Move&lt;/button&gt;
+                &lt;/span&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div id="in-progress-column" class="column" role="region" aria-label="In Progress"&gt;
+        &lt;h3 id="progress-heading"&gt;In Progress&lt;/h3&gt;
+        &lt;ul class="task-list" role="list" aria-labelledby="progress-heading"&gt;
+            &lt;li class="task" draggable="true" tabindex="0" role="listitem" 
+                aria-grabbed="false" aria-dropeffect="move" data-id="task3"&gt;
+                Task 3
+                &lt;span class="task-controls"&gt;
+                    &lt;button class="move-btn" aria-label="Move Task 3"&gt;Move&lt;/button&gt;
+                &lt;/span&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div id="done-column" class="column" role="region" aria-label="Done"&gt;
+        &lt;h3 id="done-heading"&gt;Done&lt;/h3&gt;
+        &lt;ul class="task-list" role="list" aria-labelledby="done-heading"&gt;
+            &lt;li class="task" draggable="true" tabindex="0" role="listitem" 
+                aria-grabbed="false" aria-dropeffect="move" data-id="task4"&gt;
+                Task 4
+                &lt;span class="task-controls"&gt;
+                    &lt;button class="move-btn" aria-label="Move Task 4"&gt;Move&lt;/button&gt;
+                &lt;/span&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Modal for keyboard users to move items --&gt;
+    &lt;div id="move-modal" class="modal" role="dialog" aria-labelledby="move-modal-title" aria-hidden="true"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;h4 id="move-modal-title"&gt;Move Task&lt;/h4&gt;
+            &lt;p&gt;Select destination:&lt;/p&gt;
+            &lt;div class="modal-options"&gt;
+                &lt;button class="move-option" data-target="todo-column"&gt;To Do&lt;/button&gt;
+                &lt;button class="move-option" data-target="in-progress-column"&gt;In Progress&lt;/button&gt;
+                &lt;button class="move-option" data-target="done-column"&gt;Done&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;button class="modal-close" aria-label="Cancel"&gt;Cancel&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <pre><code class="language-javascript">// JavaScript with accessibility enhancements
+document.addEventListener('DOMContentLoaded', function() {
+    const tasks = document.querySelectorAll('.task');
+    const columns = document.querySelectorAll('.column');
+    const moveModal = document.getElementById('move-modal');
+    let currentTask = null;
+    
+    // Set up drag and drop for tasks
+    tasks.forEach(task => {
+        // Drag events
+        task.addEventListener('dragstart', handleDragStart);
+        task.addEventListener('dragend', handleDragEnd);
+        
+        // Keyboard events
+        task.addEventListener('keydown', handleTaskKeydown);
+        
+        // Move button click
+        task.querySelector('.move-btn').addEventListener('click', function() {
+            showMoveModal(task);
+        });
+    });
+    
+    // Set up drop targets
+    columns.forEach(column => {
+        column.addEventListener('dragover', handleDragOver);
+        column.addEventListener('dragleave', handleDragLeave);
+        column.addEventListener('drop', handleDrop);
+    });
+    
+    // Modal move options
+    document.querySelectorAll('.move-option').forEach(option => {
+        option.addEventListener('click', function() {
+            if (currentTask) {
+                const targetColumn = document.getElementById(this.getAttribute('data-target'));
+                const taskList = targetColumn.querySelector('.task-list');
+                
+                // Move the task
+                taskList.appendChild(currentTask);
+                
+                // Announce to screen readers
+                announceToScreenReader(`Task ${currentTask.textContent.trim()} moved to ${targetColumn.getAttribute('aria-label')}`);
+                
+                // Close the modal
+                closeModal();
+            }
+        });
+    });
+    
+    // Close modal button
+    document.querySelector('.modal-close').addEventListener('click', closeModal);
+    
+    // Drag event handlers
+    function handleDragStart(e) {
+        // Set data transfer
+        e.dataTransfer.setData('text/plain', this.getAttribute('data-id'));
+        
+        // Add styling
+        this.classList.add('dragging');
+        
+        // Set ARIA attributes
+        this.setAttribute('aria-grabbed', 'true');
+        
+        // Set current task
+        currentTask = this;
+    }
+    
+    function handleDragEnd() {
+        // Remove styling
+        this.classList.remove('dragging');
+        
+        // Reset ARIA attributes
+        this.setAttribute('aria-grabbed', 'false');
+    }
+    
+    function handleDragOver(e) {
+        // Prevent default to allow drop
+        e.preventDefault();
+        
+        // Add styling
+        this.classList.add('dragover');
+    }
+    
+    function handleDragLeave() {
+        // Remove styling
+        this.classList.remove('dragover');
+    }
+    
+    function handleDrop(e) {
+        // Prevent default action
+        e.preventDefault();
+        
+        // Remove styling
+        this.classList.remove('dragover');
+        
+        // Get the dragged task ID
+        const taskId = e.dataTransfer.getData('text/plain');
+        const draggedTask = document.querySelector(`[data-id="${taskId}"]`);
+        
+        // Get the task list in this column
+        const taskList = this.querySelector('.task-list');
+        
+        // Move the task
+        taskList.appendChild(draggedTask);
+        
+        // Announce to screen readers
+        announceToScreenReader(`Task ${draggedTask.textContent.trim()} moved to ${this.getAttribute('aria-label')}`);
+    }
+    
+    // Keyboard event handler for tasks
+    function handleTaskKeydown(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            // Show the move modal
+            showMoveModal(this);
+            e.preventDefault();
+        }
+    }
+    
+    // Show the move modal
+    function showMoveModal(task) {
+        currentTask = task;
+        
+        // Update modal title
+        document.getElementById('move-modal-title').textContent = `Move ${task.textContent.trim()}`;
+        
+        // Show the modal
+        moveModal.setAttribute('aria-hidden', 'false');
+        moveModal.style.display = 'block';
+        
+        // Focus the first option
+        moveModal.querySelector('.move-option').focus();
+        
+        // Disable other elements from being focused
+        document.querySelectorAll('body > *:not(#move-modal)').forEach(el => {
+            if (el !== moveModal) {
+                el.setAttribute('aria-hidden', 'true');
+            }
+        });
+    }
+    
+    // Close the modal
+    function closeModal() {
+        moveModal.setAttribute('aria-hidden', 'true');
+        moveModal.style.display = 'none';
+        
+        // Re-enable other elements
+        document.querySelectorAll('[aria-hidden="true"]').forEach(el => {
+            if (el !== moveModal) {
+                el.removeAttribute('aria-hidden');
+            }
+        });
+        
+        // Focus back on the task
+        if (currentTask) {
+            currentTask.focus();
+        }
+        
+        currentTask = null;
+    }
+    
+    // Function to announce messages to screen readers
+    function announceToScreenReader(message) {
+        const announcer = document.getElementById('sr-announcer') || createAnnouncer();
+        announcer.textContent = message;
+    }
+    
+    // Create a screen reader announcer if it doesn't exist
+    function createAnnouncer() {
+        const announcer = document.createElement('div');
+        announcer.id = 'sr-announcer';
+        announcer.setAttribute('aria-live', 'assertive');
+        announcer.setAttribute('aria-atomic', 'true');
+        announcer.className = 'sr-only';
+        document.body.appendChild(announcer);
+        return announcer;
+    }
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Accessibility Best Practices</h4>
+                            <ul>
+                                <li><strong>Provide keyboard alternatives</strong> for all drag and drop operations</li>
+                                <li><strong>Use ARIA attributes</strong> to communicate the state of draggable elements</li>
+                                <li><strong>Announce changes</strong> to screen readers using aria-live regions</li>
+                                <li><strong>Ensure focus management</strong> is handled properly during drag operations</li>
+                                <li><strong>Provide clear instructions</strong> for keyboard users</li>
+                                <li><strong>Test with screen readers</strong> and keyboard-only navigation</li>
+                                <li><strong>Consider alternative interfaces</strong> for complex drag and drop operations</li>
+                                <li><strong>Use high contrast</strong> for visual feedback during drag operations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Browser Compatibility and Polyfills</h2>
+                        <p>While the HTML5 Drag and Drop API is supported by all modern browsers, there are some inconsistencies and limitations to be aware of.</p>
+                        
+                        <h3>Browser Support</h3>
+                        <p>The Drag and Drop API is supported in:</p>
+                        <ul>
+                            <li>Chrome 4+</li>
+                            <li>Firefox 3.5+</li>
+                            <li>Safari 3.1+</li>
+                            <li>Edge 12+</li>
+                            <li>Opera 12+</li>
+                            <li>Internet Explorer 9+</li>
+                        </ul>
+                        
+                        <h3>Common Issues and Workarounds</h3>
+                        <pre><code class="language-javascript">// Feature detection
+function dragAndDropSupported() {
+    const div = document.createElement('div');
+    return ('draggable' in div) || ('ondragstart' in div && 'ondrop' in div);
+}
+
+// Check support and provide fallback if needed
+if (!dragAndDropSupported()) {
+    console.log('Drag and drop not supported, using fallback');
+    setupFallbackDragAndDrop();
+}
+
+// Mobile touch support
+function addTouchSupport(element) {
+    let touchStartX, touchStartY;
+    let elementBeingDragged = null;
+    
+    element.addEventListener('touchstart', function(e) {
+        const touch = e.targetTouches[0];
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+        
+        // Store the element being touched
+        elementBeingDragged = this;
+        
+        // Create a clone for visual feedback
+        const clone = this.cloneNode(true);
+        clone.style.position = 'absolute';
+        clone.style.zIndex = 1000;
+        clone.style.opacity = 0.7;
+        clone.style.pointerEvents = 'none';
+        document.body.appendChild(clone);
+        
+        // Store reference to the clone
+        this._clone = clone;
+        
+        // Prevent scrolling
+        e.preventDefault();
+    });
+    
+    element.addEventListener('touchmove', function(e) {
+        if (!elementBeingDragged) return;
+        
+        const touch = e.targetTouches[0];
+        
+        // Move the clone
+        if (this._clone) {
+            this._clone.style.left = touch.clientX + 'px';
+            this._clone.style.top = touch.clientY + 'px';
+        }
+        
+        // Find potential drop targets
+        const dropTargets = document.querySelectorAll('.drop-target');
+        let potentialTarget = null;
+        
+        dropTargets.forEach(target => {
+            const rect = target.getBoundingClientRect();
+            
+            if (touch.clientX >= rect.left && touch.clientX <= rect.right &&
+                touch.clientY >= rect.top && touch.clientY <= rect.bottom) {
+                potentialTarget = target;
+            }
+            
+            // Remove any previous highlighting
+            target.classList.remove('touch-dragover');
+        });
+        
+        // Highlight the potential drop target
+        if (potentialTarget) {
+            potentialTarget.classList.add('touch-dragover');
+        }
+        
+        // Prevent scrolling
+        e.preventDefault();
+    });
+    
+    element.addEventListener('touchend', function(e) {
+        if (!elementBeingDragged) return;
+        
+        const touch = e.changedTouches[0];
+        
+        // Find the drop target
+        const dropTargets = document.querySelectorAll('.drop-target');
+        let dropTarget = null;
+        
+        dropTargets.forEach(target => {
+            const rect = target.getBoundingClientRect();
+            
+            if (touch.clientX >= rect.left && touch.clientX <= rect.right &&
+                touch.clientY >= rect.top && touch.clientY <= rect.bottom) {
+                dropTarget = target;
+            }
+            
+            // Remove any highlighting
+            target.classList.remove('touch-dragover');
+        });
+        
+        // Handle the drop
+        if (dropTarget) {
+            // Create a synthetic drop event
+            const dropEvent = new Event('drop');
+            
+            // Create a synthetic dataTransfer object
+            dropEvent.dataTransfer = {
+                getData: function() {
+                    return elementBeingDragged.getAttribute('data-id');
+                }
+            };
+            
+            // Dispatch the event
+            dropTarget.dispatchEvent(dropEvent);
+        }
+        
+        // Clean up
+        if (this._clone) {
+            document.body.removeChild(this._clone);
+            this._clone = null;
+        }
+        
+        elementBeingDragged = null;
+    });
+}</code></pre>
+                        
+                        <h3>Using Libraries for Complex Drag and Drop</h3>
+                        <p>For complex drag and drop interactions, consider using a library that handles cross-browser issues and provides additional features:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Include a library like SortableJS --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- HTML --&gt;
+&lt;div id="kanban-board" class="kanban-board"&gt;
+    &lt;div class="column"&gt;
+        &lt;h3&gt;To Do&lt;/h3&gt;
+        &lt;ul id="todo-list" class="task-list"&gt;
+            &lt;li class="task" data-id="task1"&gt;Task 1&lt;/li&gt;
+            &lt;li class="task" data-id="task2"&gt;Task 2&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="column"&gt;
+        &lt;h3&gt;In Progress&lt;/h3&gt;
+        &lt;ul id="progress-list" class="task-list"&gt;
+            &lt;li class="task" data-id="task3"&gt;Task 3&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="column"&gt;
+        &lt;h3&gt;Done&lt;/h3&gt;
+        &lt;ul id="done-list" class="task-list"&gt;
+            &lt;li class="task" data-id="task4"&gt;Task 4&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <pre><code class="language-javascript">// JavaScript using SortableJS
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize sortable lists
+    const todoList = document.getElementById('todo-list');
+    const progressList = document.getElementById('progress-list');
+    const doneList = document.getElementById('done-list');
+    
+    // Options for all lists
+    const options = {
+        group: 'tasks', // Set the same group for all lists to allow dragging between them
+        animation: 150, // Animation speed in ms
+        ghostClass: 'task-ghost', // Class for the drop placeholder
+        chosenClass: 'task-chosen', // Class for the chosen item
+        dragClass: 'task-drag', // Class for the dragging item
+        
+        // Called when an item is moved
+        onEnd: function(evt) {
+            const itemId = evt.item.getAttribute('data-id');
+            const fromList = evt.from.id;
+            const toList = evt.to.id;
+            
+            console.log(`Item ${itemId} moved from ${fromList} to ${toList}`);
+            
+            // Here you would typically update your data model
+            // updateTaskStatus(itemId, getStatusFromListId(toList));
+        }
+    };
+    
+    // Initialize Sortable for each list
+    new Sortable(todoList, options);
+    new Sortable(progressList, options);
+    new Sortable(doneList, options);
+    
+    // Helper function to get status from list ID
+    function getStatusFromListId(listId) {
+        switch (listId) {
+            case 'todo-list':
+                return 'todo';
+            case 'progress-list':
+                return 'in-progress';
+            case 'done-list':
+                return 'done';
+            default:
+                return 'unknown';
+        }
+    }
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Popular Drag and Drop Libraries</h4>
+                            <ul>
+                                <li><strong>SortableJS</strong>: A lightweight library for reorderable drag and drop lists</li>
+                                <li><strong>react-beautiful-dnd</strong>: A drag and drop library for React</li>
+                                <li><strong>vue-draggable</strong>: A drag and drop component for Vue.js</li>
+                                <li><strong>dragula</strong>: A drag and drop library with minimal dependencies</li>
+                                <li><strong>interact.js</strong>: A library for drag and drop, resizing, and multi-touch gestures</li>
+                                <li><strong>jQuery UI Draggable/Droppable</strong>: jQuery UI's drag and drop components</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Building a Kanban Board</h2>
+                        <p>Let's create a practical application that uses the Drag and Drop API to build a simple Kanban board for task management.</p>
+                        
+                        <h3>Exercise: Create a Kanban Board</h3>
+                        <p>Build a Kanban board with the following features:</p>
+                        <ul>
+                            <li>Three columns: "To Do", "In Progress", and "Done"</li>
+                            <li>Ability to drag tasks between columns</li>
+                            <li>Add new tasks to any column</li>
+                            <li>Delete tasks</li>
+                            <li>Persist tasks using localStorage</li>
+                            <li>Ensure keyboard accessibility</li>
+                        </ul>
+                        
+                        <p>Start with this template and enhance it:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Kanban Board&lt;/title&gt;
+    &lt;style&gt;
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        h1, h2, h3 {
+            color: #3366ff;
+        }
+        
+        .kanban-board {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 250px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        
+        .task-list {
+            min-height: 100px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .task {
+            background-color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            cursor: move;
+        }
+        
+        /* Add more styles for your app */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Kanban Board&lt;/h1&gt;
+    
+    &lt;div class="controls"&gt;
+        &lt;input type="text" id="new-task-input" placeholder="New task..."&gt;
+        &lt;button id="add-task-btn"&gt;Add Task&lt;/button&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="kanban-board"&gt;
+        &lt;div class="column"&gt;
+            &lt;h3&gt;To Do&lt;/h3&gt;
+            &lt;ul id="todo-list" class="task-list"&gt;
+                &lt;li class="task" draggable="true" data-id="task1"&gt;Task 1&lt;/li&gt;
+                &lt;li class="task" draggable="true" data-id="task2"&gt;Task 2&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="column"&gt;
+            &lt;h3&gt;In Progress&lt;/h3&gt;
+            &lt;ul id="progress-list" class="task-list"&gt;
+                &lt;li class="task" draggable="true" data-id="task3"&gt;Task 3&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="column"&gt;
+            &lt;h3&gt;Done&lt;/h3&gt;
+            &lt;ul id="done-list" class="task-list"&gt;
+                &lt;li class="task" draggable="true" data-id="task4"&gt;Task 4&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script&gt;
+        // Add your JavaScript here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the app
+            initApp();
+            
+            // Add event listeners
+            document.getElementById('add-task-btn').addEventListener('click', addTask);
+        });
+        
+        function initApp() {
+            // Initialize your app
+        }
+        
+        function addTask() {
+            // Add a new task
+        }
+        
+        function setupDragAndDrop() {
+            // Set up drag and drop functionality
+        }
+        
+        function saveToLocalStorage() {
+            // Save tasks to localStorage
+        }
+        
+        function loadFromLocalStorage() {
+            // Load tasks from localStorage
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Enhance the template with:</p>
+                            <ol>
+                                <li>Complete drag and drop implementation for moving tasks between columns</li>
+                                <li>Add, edit, and delete task functionality</li>
+                                <li>Persistent storage using localStorage</li>
+                                <li>Visual feedback during drag operations</li>
+                                <li>Keyboard accessibility for all operations</li>
+                                <li>Touch support for mobile devices</li>
+                                <li>Task details like due dates, priority, or descriptions</li>
+                                <li>Filtering and sorting options</li>
+                                <li>Responsive design that works well on both desktop and mobile devices</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored the HTML5 Drag and Drop API, which provides a standardized way to implement drag and drop functionality in web applications:</p>
+                        <ul>
+                            <li><strong>Basic Drag and Drop</strong>: Making elements draggable, handling drag events, and using the dataTransfer object</li>
+                            <li><strong>Advanced Techniques</strong>: Implementing sortable lists, dragging between containers, and customizing drag images</li>
+                            <li><strong>File Drag and Drop</strong>: Handling file uploads through drag and drop, reading file contents, and showing progress</li>
+                            <li><strong>Accessibility</strong>: Making drag and drop interfaces accessible to keyboard users and screen readers</li>
+                            <li><strong>Browser Compatibility</strong>: Handling cross-browser issues and using libraries for complex interactions</li>
+                        </ul>
+                        
+                        <p>The Drag and Drop API enables intuitive interactions that can significantly improve the user experience of your web applications. By understanding how to implement drag and drop functionality properly, you can create more engaging and efficient interfaces for your users.</p>
+                        
+                        <p>Remember these key points:</p>
+                        <ul>
+                            <li><strong>Always provide visual feedback</strong> during drag operations</li>
+                            <li><strong>Ensure keyboard accessibility</strong> for all drag and drop functionality</li>
+                            <li><strong>Handle touch events</strong> for mobile device support</li>
+                            <li><strong>Use the dataTransfer object</strong> to pass data between drag and drop events</li>
+                            <li><strong>Consider using libraries</strong> for complex drag and drop interactions</li>
+                            <li><strong>Test across different browsers</strong> to ensure consistent behavior</li>
+                        </ul>
+                        
+                        <p>In the next lesson, we'll explore Web Workers, which allow you to run JavaScript in background threads for improved performance.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page19.html" class="btn">Previous: Geolocation API</a>
+                        <a href="page21.html" class="btn">Next: Web Workers</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

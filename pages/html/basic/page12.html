@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Best Practices | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn essential HTML best practices for writing clean, efficient, and maintainable code that works across all browsers and devices.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="12">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html" class="active">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>HTML Basics</h3>
+                <ul>
+                    <li><a href="page1.html">1. Introduction to HTML</a></li>
+                    <li><a href="page2.html">2. HTML Document Structure</a></li>
+                    <li><a href="page3.html">3. HTML Elements & Tags</a></li>
+                    <li><a href="page4.html">4. Text Formatting</a></li>
+                    <li><a href="page5.html">5. Links & Navigation</a></li>
+                    <li><a href="page6.html">6. Images & Multimedia</a></li>
+                    <li><a href="page7.html">7. Lists</a></li>
+                    <li><a href="page8.html">8. Tables</a></li>
+                    <li><a href="page9.html">9. Forms Basics</a></li>
+                    <li><a href="page10.html">10. Semantic HTML</a></li>
+                    <li><a href="page11.html">11. HTML Attributes</a></li>
+                    <li><a href="page12.html" class="active">12. HTML Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 24%;"></div>
+                </div>
+                <p style="text-align: center;">Page 12 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>HTML Best Practices</h1>
+                    
+                    <div class="card">
+                        <h2>Why Best Practices Matter</h2>
+                        <p>Following HTML best practices is essential for creating websites that are accessible, maintainable, performant, and compatible across different browsers and devices. Best practices help you:</p>
+                        
+                        <ul>
+                            <li><strong>Improve code quality</strong> - Write cleaner, more efficient code that's easier to maintain</li>
+                            <li><strong>Enhance accessibility</strong> - Make your website usable by people with disabilities</li>
+                            <li><strong>Boost SEO</strong> - Help search engines better understand and index your content</li>
+                            <li><strong>Ensure cross-browser compatibility</strong> - Create consistent experiences across different browsers</li>
+                            <li><strong>Increase performance</strong> - Optimize page load times and responsiveness</li>
+                            <li><strong>Future-proof your code</strong> - Prepare for evolving web standards and technologies</li>
+                        </ul>
+                        
+                        <p>In this lesson, we'll explore essential HTML best practices that will help you write better code and create more effective websites.</p>
+                        
+                        <div class="info-box">
+                            <h4>The Evolution of Best Practices</h4>
+                            <p>HTML best practices have evolved significantly since the early days of the web. What was once considered good practice (like using tables for layout or inline styles) may now be discouraged. It's important to stay updated with current standards and recommendations from organizations like the W3C (World Wide Web Consortium) and WHATWG (Web Hypertext Application Technology Working Group).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Document Structure Best Practices</h2>
+                        
+                        <h3>1. Always Use the Correct DOCTYPE</h3>
+                        <p>The DOCTYPE declaration should be the first thing in your HTML document. It tells browsers which version of HTML you're using.</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;!-- head content --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- body content --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>For HTML5, the simple <code>&lt;!DOCTYPE html&gt;</code> is all you need. Older HTML versions required more complex DOCTYPE declarations.</p>
+                        
+                        <h3>2. Specify the Language</h3>
+                        <p>Always specify the language of your document using the <code>lang</code> attribute on the <code>&lt;html&gt;</code> element. This helps screen readers pronounce content correctly and improves SEO.</p>
+                        
+                        <pre><code class="language-html">&lt;html lang="en"&gt;</code></pre>
+                        
+                        <p>For content in different languages within the page, use the <code>lang</code> attribute on specific elements:</p>
+                        
+                        <pre><code class="language-html">&lt;p lang="fr"&gt;Bonjour le monde&lt;/p&gt;</code></pre>
+                        
+                        <h3>3. Include Essential Meta Tags</h3>
+                        <p>Include important meta tags in the <code>&lt;head&gt;</code> section:</p>
+                        
+                        <pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta name="description" content="A brief, accurate description of the page content"&gt;
+    &lt;title&gt;Descriptive Page Title | Site Name&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+                        
+                        <ul>
+                            <li>The <code>charset</code> meta tag specifies the character encoding (UTF-8 is recommended)</li>
+                            <li>The <code>viewport</code> meta tag ensures proper rendering on mobile devices</li>
+                            <li>The <code>description</code> meta tag provides a summary for search engines</li>
+                            <li>The <code>title</code> element should be descriptive and unique for each page</li>
+                        </ul>
+                        
+                        <h3>4. Organize Your Code with Proper Indentation</h3>
+                        <p>Use consistent indentation to make your code more readable and maintainable. Each nested element should be indented by 2 or 4 spaces (or a tab, depending on your team's convention).</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good indentation --&gt;
+&lt;article&gt;
+    &lt;h2&gt;Article Title&lt;/h2&gt;
+    &lt;p&gt;Article content...&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Item 1&lt;/li&gt;
+        &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/article&gt;
+
+&lt;!-- Poor indentation --&gt;
+&lt;article&gt;
+&lt;h2&gt;Article Title&lt;/h2&gt;
+&lt;p&gt;Article content...&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Item 1&lt;/li&gt;
+&lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/article&gt;</code></pre>
+                        
+                        <h3>5. Use Semantic Document Outline</h3>
+                        <p>Structure your document with a logical hierarchy using semantic elements. This creates a clear document outline that helps browsers, search engines, and assistive technologies understand your content.</p>
+                        
+                        <pre><code class="language-html">&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Website Title&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;!-- Navigation links --&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Article Title&lt;/h2&gt;
+            &lt;section&gt;
+                &lt;h3&gt;Section Heading&lt;/h3&gt;
+                &lt;p&gt;Section content...&lt;/p&gt;
+            &lt;/section&gt;
+        &lt;/article&gt;
+        
+        &lt;aside&gt;
+            &lt;h2&gt;Related Information&lt;/h2&gt;
+            &lt;!-- Sidebar content --&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;!-- Footer content --&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>HTML Elements and Attributes Best Practices</h2>
+                        
+                        <h3>1. Use Lowercase for Element Names and Attributes</h3>
+                        <p>While HTML is not case-sensitive, it's best practice to use lowercase for all element names and attributes for consistency and compatibility with stricter standards like XHTML.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good --&gt;
+&lt;a href="https://example.com" title="Visit Example"&gt;Example&lt;/a&gt;
+
+&lt;!-- Avoid --&gt;
+&lt;A HREF="https://example.com" TITLE="Visit Example"&gt;Example&lt;/A&gt;</code></pre>
+                        
+                        <h3>2. Always Quote Attribute Values</h3>
+                        <p>Always use quotes (either single or double) around attribute values, even when they're not strictly required. This improves readability and prevents errors.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good --&gt;
+&lt;input type="text" name="username" required="required"&gt;
+
+&lt;!-- Avoid --&gt;
+&lt;input type=text name=username required&gt;</code></pre>
+                        
+                        <h3>3. Close All Elements Properly</h3>
+                        <p>Make sure all elements are properly closed. Void elements (like <code>&lt;img&gt;</code>, <code>&lt;input&gt;</code>, and <code>&lt;br&gt;</code>) don't need closing tags, but should include a trailing slash in XHTML.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- HTML5 --&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;img src="image.jpg" alt="Description"&gt;
+&lt;br&gt;
+
+&lt;!-- XHTML --&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;img src="image.jpg" alt="Description" /&gt;
+&lt;br /&gt;</code></pre>
+                        
+                        <h3>4. Use Semantic Elements Instead of Generic Ones</h3>
+                        <p>Use semantic elements that describe their purpose rather than generic <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> elements whenever possible.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good --&gt;
+&lt;header&gt;
+    &lt;h1&gt;Website Title&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;!-- Avoid --&gt;
+&lt;div class="header"&gt;
+    &lt;h1&gt;Website Title&lt;/h1&gt;
+    &lt;div class="nav"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>5. Use Appropriate Heading Hierarchy</h3>
+                        <p>Use heading elements (<code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>) to create a logical hierarchy. Don't skip heading levels, and use only one <code>&lt;h1&gt;</code> per page.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good --&gt;
+&lt;h1&gt;Main Page Title&lt;/h1&gt;
+&lt;section&gt;
+    &lt;h2&gt;Section Title&lt;/h2&gt;
+    &lt;h3&gt;Subsection Title&lt;/h3&gt;
+&lt;/section&gt;
+
+&lt;!-- Avoid --&gt;
+&lt;h1&gt;Main Page Title&lt;/h1&gt;
+&lt;section&gt;
+    &lt;h3&gt;Section Title&lt;/h3&gt; &lt;!-- Skipped h2 --&gt;
+    &lt;h5&gt;Subsection Title&lt;/h5&gt; &lt;!-- Skipped h4 --&gt;
+&lt;/section&gt;</code></pre>
+                        
+                        <h3>6. Don't Use Elements Solely for Styling</h3>
+                        <p>Don't use HTML elements for their visual effects. Use CSS for styling instead.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Avoid --&gt;
+&lt;b&gt;Bold text&lt;/b&gt;
+&lt;i&gt;Italic text&lt;/i&gt;
+&lt;u&gt;Underlined text&lt;/u&gt;
+
+&lt;!-- Better (with semantic meaning) --&gt;
+&lt;strong&gt;Important text&lt;/strong&gt;
+&lt;em&gt;Emphasized text&lt;/em&gt;
+&lt;mark&gt;Highlighted text&lt;/mark&gt;
+
+&lt;!-- Or use CSS --&gt;
+&lt;span class="bold"&gt;Bold text&lt;/span&gt;
+&lt;span class="italic"&gt;Italic text&lt;/span&gt;
+&lt;span class="underline"&gt;Underlined text&lt;/span&gt;</code></pre>
+                        
+                        <h3>7. Use Meaningful Class and ID Names</h3>
+                        <p>Choose class and ID names that describe the purpose or content of the element, not its appearance.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good --&gt;
+&lt;div class="product-card"&gt;
+    &lt;h3 class="product-title"&gt;Product Name&lt;/h3&gt;
+    &lt;p class="product-description"&gt;Description...&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Avoid --&gt;
+&lt;div class="blue-box"&gt;
+    &lt;h3 class="large-text"&gt;Product Name&lt;/h3&gt;
+    &lt;p class="gray-text"&gt;Description...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>8. Avoid Inline Styles</h3>
+                        <p>Avoid using the <code>style</code> attribute for inline styles. Use external CSS files or <code>&lt;style&gt;</code> elements in the <code>&lt;head&gt;</code> instead.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Avoid --&gt;
+&lt;p style="color: blue; font-size: 16px; margin-top: 20px;"&gt;Paragraph text&lt;/p&gt;
+
+&lt;!-- Better --&gt;
+&lt;p class="highlight"&gt;Paragraph text&lt;/p&gt;
+
+/* In CSS */
+.highlight {
+    color: blue;
+    font-size: 16px;
+    margin-top: 20px;
+}</code></pre>
+                        
+                        <h3>9. Use the Appropriate Input Types for Forms</h3>
+                        <p>Use the appropriate <code>type</code> attribute for <code>&lt;input&gt;</code> elements to provide better user experience and built-in validation.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good --&gt;
+&lt;input type="email" name="email"&gt;
+&lt;input type="tel" name="phone"&gt;
+&lt;input type="url" name="website"&gt;
+&lt;input type="number" name="age"&gt;
+&lt;input type="date" name="birthdate"&gt;
+
+&lt;!-- Avoid --&gt;
+&lt;input type="text" name="email"&gt;
+&lt;input type="text" name="phone"&gt;
+&lt;input type="text" name="website"&gt;
+&lt;input type="text" name="age"&gt;
+&lt;input type="text" name="birthdate"&gt;</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Accessibility Best Practices</h2>
+                        
+                        <h3>1. Always Include Alternative Text for Images</h3>
+                        <p>Always use the <code>alt</code> attribute for <code>&lt;img&gt;</code> elements to provide alternative text for screen readers. The text should describe the image's content and function.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good --&gt;
+&lt;img src="logo.png" alt="Company Logo"&gt;
+&lt;img src="chart.png" alt="Sales growth chart showing 15% increase in Q2"&gt;
+
+&lt;!-- For decorative images --&gt;
+&lt;img src="decorative-line.png" alt=""&gt;</code></pre>
+                        
+                        <p>For decorative images that don't add meaning to the content, use an empty <code>alt</code> attribute (<code>alt=""</code>) so screen readers will skip them.</p>
+                        
+                        <h3>2. Use Proper Form Labels</h3>
+                        <p>Always associate form controls with labels using the <code>for</code> attribute that matches the control's <code>id</code>.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good --&gt;
+&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" name="username"&gt;
+
+&lt;!-- Alternative method --&gt;
+&lt;label&gt;
+    Username:
+    &lt;input type="text" name="username"&gt;
+&lt;/label&gt;</code></pre>
+                        
+                        <h3>3. Use ARIA Attributes When Necessary</h3>
+                        <p>Use ARIA (Accessible Rich Internet Applications) attributes to enhance accessibility when HTML alone isn't sufficient.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Example: Custom checkbox --&gt;
+&lt;div role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="check-label"&gt;
+    &lt;!-- Custom checkbox styling --&gt;
+&lt;/div&gt;
+&lt;span id="check-label"&gt;Subscribe to newsletter&lt;/span&gt;
+
+&lt;!-- Example: Required field --&gt;
+&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email" aria-required="true"&gt;</code></pre>
+                        
+                        <p>However, always prefer native HTML elements with built-in accessibility when possible.</p>
+                        
+                        <h3>4. Ensure Keyboard Accessibility</h3>
+                        <p>Ensure all interactive elements are accessible via keyboard navigation. This includes proper focus states and logical tab order.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good: Using native button element --&gt;
+&lt;button type="button"&gt;Click Me&lt;/button&gt;
+
+&lt;!-- If using a div as a button (not recommended but sometimes necessary) --&gt;
+&lt;div role="button" tabindex="0" onclick="handleClick()" onkeydown="handleKeydown(event)"&gt;
+    Click Me
+&lt;/div&gt;
+
+&lt;script&gt;
+function handleKeydown(event) {
+    // Handle Enter or Space key to activate the button
+    if (event.key === 'Enter' || event.key === ' ') {
+        handleClick();
+        event.preventDefault();
+    }
+}
+
+function handleClick() {
+    // Button action
+    console.log('Button clicked');
+}
+&lt;/script&gt;</code></pre>
+                        
+                        <h3>5. Use Appropriate Heading Structure</h3>
+                        <p>Use heading elements (<code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>) to create a logical document outline. Screen reader users often navigate by headings.</p>
+                        
+                        <h3>6. Provide Text Alternatives for Multimedia</h3>
+                        <p>Provide captions, transcripts, or descriptions for audio and video content.</p>
+                        
+                        <pre><code class="language-html">&lt;video controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;track src="captions.vtt" kind="subtitles" srclang="en" label="English"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+                        
+                        <h3>7. Use Appropriate Color Contrast</h3>
+                        <p>Ensure sufficient color contrast between text and background for readability. While this is primarily a CSS concern, it's an important accessibility consideration.</p>
+                        
+                        <div class="info-box">
+                            <h4>Testing Accessibility</h4>
+                            <p>Use tools like WAVE, axe, or Lighthouse to test your website's accessibility. Also, try navigating your website using only the keyboard and test with screen readers like NVDA, JAWS, or VoiceOver.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Performance Best Practices</h2>
+                        
+                        <h3>1. Minimize HTML Size</h3>
+                        <p>Keep your HTML as lean as possible by removing unnecessary comments, whitespace, and elements. However, don't sacrifice readability in development code—use build tools to minify for production.</p>
+                        
+                        <h3>2. Load JavaScript Efficiently</h3>
+                        <p>Place <code>&lt;script&gt;</code> elements at the end of the <code>&lt;body&gt;</code> or use <code>defer</code> or <code>async</code> attributes to prevent blocking page rendering.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- At the end of body --&gt;
+&lt;body&gt;
+    &lt;!-- Content --&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;!-- Or in head with defer --&gt;
+&lt;head&gt;
+    &lt;script src="script.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;!-- For scripts that don't affect page content --&gt;
+&lt;head&gt;
+    &lt;script src="analytics.js" async&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+                        
+                        <h3>3. Optimize Images</h3>
+                        <p>Use appropriate image formats, sizes, and compression. Include <code>width</code> and <code>height</code> attributes to help the browser allocate space before the image loads, reducing layout shifts.</p>
+                        
+                        <pre><code class="language-html">&lt;img src="image.jpg" alt="Description" width="800" height="600"&gt;</code></pre>
+                        
+                        <p>Consider using the <code>loading="lazy"</code> attribute for images below the fold to defer loading until they're near the viewport.</p>
+                        
+                        <pre><code class="language-html">&lt;img src="below-fold-image.jpg" alt="Description" loading="lazy"&gt;</code></pre>
+                        
+                        <h3>4. Use Resource Hints</h3>
+                        <p>Use resource hints like <code>preload</code>, <code>prefetch</code>, <code>preconnect</code>, and <code>dns-prefetch</code> to optimize resource loading.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Preconnect to important third-party domains --&gt;
+&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+
+&lt;!-- Preload critical resources --&gt;
+&lt;link rel="preload" href="critical.css" as="style"&gt;
+&lt;link rel="preload" href="hero-image.jpg" as="image"&gt;
+
+&lt;!-- Prefetch resources for the next page --&gt;
+&lt;link rel="prefetch" href="next-page.html"&gt;</code></pre>
+                        
+                        <h3>5. Avoid Inline Frames When Possible</h3>
+                        <p>Minimize the use of <code>&lt;iframe&gt;</code> elements, as they can impact performance. When necessary, use the <code>loading="lazy"</code> attribute for iframes below the fold.</p>
+                        
+                        <pre><code class="language-html">&lt;iframe src="embedded-content.html" loading="lazy" title="Embedded Content"&gt;&lt;/iframe&gt;</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>SEO Best Practices</h2>
+                        
+                        <h3>1. Use Descriptive Title Tags</h3>
+                        <p>Create unique, descriptive title tags for each page. Include important keywords near the beginning.</p>
+                        
+                        <pre><code class="language-html">&lt;title&gt;Beginner's Guide to HTML5 | Web Development Tutorials&lt;/title&gt;</code></pre>
+                        
+                        <h3>2. Write Meaningful Meta Descriptions</h3>
+                        <p>Include a meta description that accurately summarizes the page content and encourages clicks from search results.</p>
+                        
+                        <pre><code class="language-html">&lt;meta name="description" content="Learn HTML5 fundamentals with our step-by-step guide for beginners. Includes examples, exercises, and best practices for modern web development."&gt;</code></pre>
+                        
+                        <h3>3. Use Semantic Headings</h3>
+                        <p>Structure your content with semantic heading elements (<code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>) that include relevant keywords.</p>
+                        
+                        <h3>4. Optimize Images</h3>
+                        <p>Use descriptive filenames and alt text for images.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good --&gt;
+&lt;img src="html5-structure-diagram.jpg" alt="HTML5 document structure diagram showing header, main, and footer elements"&gt;
+
+&lt;!-- Avoid --&gt;
+&lt;img src="img001.jpg" alt="diagram"&gt;</code></pre>
+                        
+                        <h3>5. Use Structured Data</h3>
+                        <p>Implement structured data (Schema.org) to help search engines understand your content better.</p>
+                        
+                        <pre><code class="language-html">&lt;article itemscope itemtype="https://schema.org/BlogPosting"&gt;
+    &lt;h1 itemprop="headline"&gt;Article Title&lt;/h1&gt;
+    &lt;p&gt;Published on &lt;time itemprop="datePublished" datetime="2025-04-20"&gt;April 20, 2025&lt;/time&gt;&lt;/p&gt;
+    &lt;div itemprop="articleBody"&gt;
+        &lt;!-- Article content --&gt;
+    &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+                        
+                        <h3>6. Use Descriptive Link Text</h3>
+                        <p>Use descriptive link text that indicates where the link leads, rather than generic phrases like "click here" or "read more."</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good --&gt;
+&lt;a href="html-tutorial.html"&gt;Learn HTML basics with our comprehensive tutorial&lt;/a&gt;
+
+&lt;!-- Avoid --&gt;
+&lt;a href="html-tutorial.html"&gt;Click here&lt;/a&gt; to learn HTML basics.</code></pre>
+                        
+                        <h3>7. Implement Canonical URLs</h3>
+                        <p>Use the <code>rel="canonical"</code> link element to specify the preferred version of a page when multiple URLs might contain similar content.</p>
+                        
+                        <pre><code class="language-html">&lt;link rel="canonical" href="https://example.com/preferred-page-url"&gt;</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Compatibility Best Practices</h2>
+                        
+                        <h3>1. Test Across Multiple Browsers</h3>
+                        <p>Test your HTML in different browsers (Chrome, Firefox, Safari, Edge) and on different devices (desktop, tablet, mobile) to ensure compatibility.</p>
+                        
+                        <h3>2. Use Feature Detection</h3>
+                        <p>Use feature detection rather than browser detection when implementing JavaScript functionality.</p>
+                        
+                        <pre><code class="language-javascript">// Good: Feature detection
+if ('IntersectionObserver' in window) {
+    // Use IntersectionObserver
+} else {
+    // Fallback behavior
+}
+
+// Avoid: Browser detection
+if (navigator.userAgent.indexOf('Chrome') !== -1) {
+    // Chrome-specific code
+}</code></pre>
+                        
+                        <h3>3. Provide Fallbacks for Newer Features</h3>
+                        <p>When using newer HTML features, provide fallbacks for older browsers.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Example: Video with fallbacks --&gt;
+&lt;video controls&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;p&gt;Your browser doesn't support HTML5 video. Here's a &lt;a href="video.mp4"&gt;link to the video&lt;/a&gt; instead.&lt;/p&gt;
+&lt;/video&gt;</code></pre>
+                        
+                        <h3>4. Use Progressive Enhancement</h3>
+                        <p>Build your website with a solid foundation of semantic HTML that works without CSS or JavaScript, then enhance the experience with these technologies.</p>
+                        
+                        <h3>5. Validate Your HTML</h3>
+                        <p>Use the W3C Validator to check your HTML for errors and warnings that might cause compatibility issues.</p>
+                        
+                        <div class="info-box">
+                            <h4>Browser Support Resources</h4>
+                            <p>Use resources like <a href="https://caniuse.com/" target="_blank">Can I Use</a> to check browser support for HTML features before implementing them.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Maintainability Best Practices</h2>
+                        
+                        <h3>1. Use Consistent Formatting</h3>
+                        <p>Maintain consistent formatting throughout your HTML code, including indentation, spacing, and line breaks.</p>
+                        
+                        <h3>2. Add Comments for Clarity</h3>
+                        <p>Use comments to explain complex sections of code or to provide context for other developers.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Navigation for mobile devices - toggles with hamburger menu --&gt;
+&lt;nav class="mobile-nav"&gt;
+    &lt;!-- Navigation items --&gt;
+&lt;/nav&gt;
+
+&lt;!-- Main content area with sidebar layout --&gt;
+&lt;div class="content-wrapper"&gt;
+    &lt;!-- Content goes here --&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <p>However, avoid excessive comments that merely restate what the code already clearly shows.</p>
+                        
+                        <h3>3. Modularize Your Code</h3>
+                        <p>Break your HTML into logical, reusable components or modules. This is especially important in larger projects or when using templating systems.</p>
+                        
+                        <h3>4. Follow a Style Guide</h3>
+                        <p>Adopt or create a style guide for your HTML code and follow it consistently. This helps maintain code quality across teams and over time.</p>
+                        
+                        <h3>5. Use Version Control</h3>
+                        <p>Use a version control system like Git to track changes to your HTML files, making it easier to collaborate and revert changes if necessary.</p>
+                        
+                        <h3>6. Document Your Code</h3>
+                        <p>Maintain documentation for your HTML structure, especially for complex layouts or custom components.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Security Best Practices</h2>
+                        
+                        <h3>1. Sanitize User Input</h3>
+                        <p>Always sanitize and validate user input before displaying it in HTML to prevent cross-site scripting (XSS) attacks.</p>
+                        
+                        <h3>2. Use HTTPS</h3>
+                        <p>Serve your website over HTTPS and ensure all resources are loaded securely.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good --&gt;
+&lt;script src="https://example.com/script.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="https://example.com/styles.css"&gt;
+
+&lt;!-- Avoid --&gt;
+&lt;script src="http://example.com/script.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="http://example.com/styles.css"&gt;</code></pre>
+                        
+                        <h3>3. Implement Content Security Policy</h3>
+                        <p>Use Content Security Policy (CSP) headers to restrict the sources from which content can be loaded.</p>
+                        
+                        <pre><code class="language-html">&lt;meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://trusted-scripts.com"&gt;</code></pre>
+                        
+                        <h3>4. Be Careful with iframes</h3>
+                        <p>Use the <code>sandbox</code> attribute and other security measures when embedding third-party content in iframes.</p>
+                        
+                        <pre><code class="language-html">&lt;iframe src="https://example.com" sandbox="allow-scripts allow-same-origin" title="Embedded Content"&gt;&lt;/iframe&gt;</code></pre>
+                        
+                        <h3>5. Protect Sensitive Information</h3>
+                        <p>Never include sensitive information (like API keys or passwords) directly in your HTML.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Common HTML Mistakes to Avoid</h2>
+                        
+                        <h3>1. Missing DOCTYPE Declaration</h3>
+                        <p>Always include the DOCTYPE declaration at the beginning of your HTML document to ensure the browser renders the page in standards mode.</p>
+                        
+                        <h3>2. Improper Nesting of Elements</h3>
+                        <p>Ensure elements are properly nested and closed in the correct order.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Incorrect nesting --&gt;
+&lt;p&gt;This is &lt;strong&gt;important&lt;/p&gt;&lt;/strong&gt;
+
+&lt;!-- Correct nesting --&gt;
+&lt;p&gt;This is &lt;strong&gt;important&lt;/strong&gt;&lt;/p&gt;</code></pre>
+                        
+                        <h3>3. Using Deprecated Elements and Attributes</h3>
+                        <p>Avoid using deprecated elements and attributes like <code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, or <code>align</code>.</p>
+                        
+                        <h3>4. Missing Alt Text for Images</h3>
+                        <p>Always include alternative text for images to improve accessibility.</p>
+                        
+                        <h3>5. Using Tables for Layout</h3>
+                        <p>Don't use tables for page layout. Use CSS grid, flexbox, or other layout techniques instead.</p>
+                        
+                        <h3>6. Overusing Divs (Div Soup)</h3>
+                        <p>Avoid excessive use of generic <code>&lt;div&gt;</code> elements when semantic elements would be more appropriate.</p>
+                        
+                        <h3>7. Ignoring Mobile Responsiveness</h3>
+                        <p>Always include the viewport meta tag and design with mobile devices in mind.</p>
+                        
+                        <pre><code class="language-html">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+                        
+                        <h3>8. Using Inline Styles and Scripts</h3>
+                        <p>Avoid inline styles and scripts. Use external CSS and JavaScript files instead.</p>
+                        
+                        <h3>9. Not Using Semantic Elements</h3>
+                        <p>Use semantic HTML5 elements like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, and <code>&lt;footer&gt;</code> to give meaning to your content.</p>
+                        
+                        <h3>10. Forgetting to Validate HTML</h3>
+                        <p>Always validate your HTML using tools like the W3C Validator to catch errors and ensure standards compliance.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>HTML Validation</h2>
+                        <p>Validating your HTML is an important step in ensuring your code follows standards and will work correctly across different browsers.</p>
+                        
+                        <h3>Why Validate Your HTML?</h3>
+                        <ul>
+                            <li>Catch syntax errors and typos</li>
+                            <li>Ensure standards compliance</li>
+                            <li>Improve cross-browser compatibility</li>
+                            <li>Identify accessibility issues</li>
+                            <li>Enhance search engine optimization</li>
+                            <li>Improve code maintainability</li>
+                        </ul>
+                        
+                        <h3>How to Validate Your HTML</h3>
+                        <p>The most common way to validate HTML is using the W3C Markup Validation Service:</p>
+                        <ol>
+                            <li>Go to <a href="https://validator.w3.org/" target="_blank">https://validator.w3.org/</a></li>
+                            <li>Enter the URL of your page, upload your HTML file, or paste your HTML code</li>
+                            <li>Click "Check" to validate</li>
+                            <li>Review and fix any errors or warnings</li>
+                        </ol>
+                        
+                        <p>Many code editors and development tools also include HTML validation features:</p>
+                        <ul>
+                            <li>VS Code extensions like "HTML Hint" or "W3C Validation"</li>
+                            <li>Browser developer tools</li>
+                            <li>Build tools like Gulp or Webpack with HTML validation plugins</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Common Validation Errors</h4>
+                            <ul>
+                                <li>Missing required attributes (like <code>alt</code> for images)</li>
+                                <li>Unclosed elements or improper nesting</li>
+                                <li>Invalid attribute values</li>
+                                <li>Duplicate IDs</li>
+                                <li>Using elements in contexts where they're not allowed</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Fixing HTML Code</h2>
+                        <p>Let's practice identifying and fixing HTML issues by improving the following code:</p>
+                        
+                        <h3>Original Code (with Issues)</h3>
+                        <pre><code class="language-html">&lt;!-- No DOCTYPE declaration --&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+    &lt;TITLE&gt;My Webpage&lt;/TITLE&gt;
+    &lt;style&gt;
+        .header {
+            background-color: blue;
+            color: white;
+            text-align: center;
+        }
+        .content {
+            margin: 20px;
+        }
+    &lt;/style&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+    &lt;DIV class="header"&gt;
+        &lt;H1&gt;Welcome to My Website&lt;/H1&gt;
+        &lt;DIV class="nav"&gt;
+            &lt;A href="#"&gt;Home&lt;/A&gt;
+            &lt;A href="#"&gt;About&lt;/A&gt;
+            &lt;A href="#"&gt;Contact&lt;/A&gt;
+        &lt;/DIV&gt;
+    &lt;/DIV&gt;
+    
+    &lt;DIV class="content"&gt;
+        &lt;H3&gt;About Me&lt;/H3&gt; &lt;!-- Skipped H2 --&gt;
+        &lt;P&gt;This is a paragraph about me. I am a &lt;B&gt;web developer&lt;/B&gt; with experience in HTML and CSS.&lt;/P&gt;
+        
+        &lt;IMG src="profile.jpg"&gt; &lt;!-- Missing alt attribute --&gt;
+        
+        &lt;H2&gt;My Skills&lt;/H2&gt; &lt;!-- Heading hierarchy issue --&gt;
+        &lt;UL&gt;
+            &lt;LI&gt;HTML
+            &lt;LI&gt;CSS
+            &lt;LI&gt;JavaScript &lt;!-- Unclosed list items --&gt;
+        &lt;/UL&gt;
+        
+        &lt;TABLE border=1 width=100%&gt; &lt;!-- Deprecated attributes --&gt;
+            &lt;TR&gt;
+                &lt;TD&gt;Skill&lt;/TD&gt;
+                &lt;TD&gt;Level&lt;/TD&gt;
+            &lt;/TR&gt;
+            &lt;TR&gt;
+                &lt;TD&gt;HTML&lt;/TD&gt;
+                &lt;TD&gt;Advanced&lt;/TD&gt;
+            &lt;/TR&gt;
+        &lt;/TABLE&gt;
+        
+        &lt;BR&gt;
+        &lt;CENTER&gt;Contact me at: info@example.com&lt;/CENTER&gt; &lt;!-- Deprecated element --&gt;
+        
+        &lt;DIV id="footer" style="background-color: gray; color: white; padding: 10px; text-align: center;"&gt; &lt;!-- Inline styles --&gt;
+            Copyright 2025
+        &lt;/DIV&gt;
+    &lt;/DIV&gt;
+    
+    &lt;script&gt;
+        function showAlert() {
+            alert('Button clicked!');
+        }
+    &lt;/script&gt;
+    &lt;button onclick="showAlert()"&gt;Click Me&lt;/button&gt; &lt;!-- Inline event handler --&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</code></pre>
+                        
+                        <h3>Improved Code</h3>
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Webpage&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;h2&gt;About Me&lt;/h2&gt;
+            &lt;p&gt;This is a paragraph about me. I am a &lt;strong&gt;web developer&lt;/strong&gt; with experience in HTML and CSS.&lt;/p&gt;
+            
+            &lt;img src="profile.jpg" alt="Profile photo of a web developer"&gt;
+        &lt;/section&gt;
+        
+        &lt;section&gt;
+            &lt;h2&gt;My Skills&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;li&gt;HTML&lt;/li&gt;
+                &lt;li&gt;CSS&lt;/li&gt;
+                &lt;li&gt;JavaScript&lt;/li&gt;
+            &lt;/ul&gt;
+            
+            &lt;table&gt;
+                &lt;caption&gt;Skill Levels&lt;/caption&gt;
+                &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Skill&lt;/th&gt;
+                        &lt;th&gt;Level&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;HTML&lt;/td&gt;
+                        &lt;td&gt;Advanced&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/section&gt;
+        
+        &lt;section&gt;
+            &lt;h2&gt;Contact&lt;/h2&gt;
+            &lt;p&gt;Contact me at: &lt;a href="mailto:info@example.com"&gt;info@example.com&lt;/a&gt;&lt;/p&gt;
+            
+            &lt;button id="contact-button" type="button"&gt;Click Me&lt;/button&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;Copyright 2025&lt;/p&gt;
+    &lt;/footer&gt;
+    
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <h3>External CSS (styles.css)</h3>
+                        <pre><code class="language-css">/* styles.css */
+header {
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+footer {
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}</code></pre>
+                        
+                        <h3>External JavaScript (script.js)</h3>
+                        <pre><code class="language-javascript">// script.js
+document.getElementById('contact-button').addEventListener('click', function() {
+    alert('Button clicked!');
+});</code></pre>
+                        
+                        <h3>Improvements Made</h3>
+                        <ol>
+                            <li>Added DOCTYPE declaration</li>
+                            <li>Added language attribute to html element</li>
+                            <li>Added meta charset and viewport tags</li>
+                            <li>Changed all element names to lowercase</li>
+                            <li>Replaced div elements with semantic elements (header, nav, main, section, footer)</li>
+                            <li>Fixed heading hierarchy (h1 → h2)</li>
+                            <li>Replaced b element with semantic strong element</li>
+                            <li>Added alt attribute to img element</li>
+                            <li>Properly closed list items</li>
+                            <li>Removed deprecated attributes (border, width) from table</li>
+                            <li>Added thead and tbody to table for better structure</li>
+                            <li>Added caption to table for accessibility</li>
+                            <li>Replaced center element with CSS</li>
+                            <li>Moved styles to external CSS file</li>
+                            <li>Moved JavaScript to external file</li>
+                            <li>Removed inline event handler and used addEventListener instead</li>
+                            <li>Added proper email link with mailto</li>
+                            <li>Added type attribute to button</li>
+                        </ol>
+                        
+                        <div class="try-it-box">
+                            <h4>Try It Yourself</h4>
+                            <p>Practice identifying and fixing HTML issues:</p>
+                            <ol>
+                                <li>Find a simple HTML page (or create one with intentional issues)</li>
+                                <li>Validate it using the W3C Validator</li>
+                                <li>Fix any errors or warnings</li>
+                                <li>Improve the semantic structure</li>
+                                <li>Move styles and scripts to external files</li>
+                                <li>Validate again to ensure all issues are resolved</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored HTML best practices that will help you write better, more efficient, and more maintainable code:</p>
+                        <ul>
+                            <li><strong>Document Structure</strong>: Use the correct DOCTYPE, specify language, include essential meta tags, and organize your code with proper indentation and semantic structure.</li>
+                            <li><strong>Elements and Attributes</strong>: Use lowercase for element names and attributes, quote attribute values, close elements properly, use semantic elements, maintain proper heading hierarchy, and use meaningful class and ID names.</li>
+                            <li><strong>Accessibility</strong>: Include alternative text for images, use proper form labels, ensure keyboard accessibility, and use ARIA attributes when necessary.</li>
+                            <li><strong>Performance</strong>: Minimize HTML size, load JavaScript efficiently, optimize images, and use resource hints.</li>
+                            <li><strong>SEO</strong>: Use descriptive title tags and meta descriptions, implement structured data, and use descriptive link text.</li>
+                            <li><strong>Compatibility</strong>: Test across multiple browsers, use feature detection, provide fallbacks for newer features, and validate your HTML.</li>
+                            <li><strong>Maintainability</strong>: Use consistent formatting, add comments for clarity, modularize your code, and follow a style guide.</li>
+                            <li><strong>Security</strong>: Sanitize user input, use HTTPS, implement Content Security Policy, and be careful with iframes.</li>
+                        </ul>
+                        
+                        <p>Following these best practices will help you create websites that are accessible, performant, maintainable, and compatible across different browsers and devices. As you continue your journey in web development, regularly revisit these practices and stay updated with evolving standards and recommendations.</p>
+                        
+                        <p>This concludes our HTML basics section. In the next section, we'll explore more advanced HTML topics and techniques that will take your skills to the professional level.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page11.html" class="btn">Previous: HTML Attributes</a>
+                        <a href="../professional/page13.html" class="btn">Next: Advanced HTML Concepts</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

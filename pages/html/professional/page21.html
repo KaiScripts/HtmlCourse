@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Workers | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to use Web Workers to run JavaScript in background threads for improved performance.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="21">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html" class="active">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional HTML</h3>
+                <ul>
+                    <li><a href="page13.html">13. Advanced HTML Concepts</a></li>
+                    <li><a href="page14.html">14. HTML5 Semantic Elements</a></li>
+                    <li><a href="page15.html">15. HTML Forms Advanced</a></li>
+                    <li><a href="page16.html">16. HTML Media & Graphics</a></li>
+                    <li><a href="page17.html">17. HTML APIs</a></li>
+                    <li><a href="page18.html">18. Web Storage</a></li>
+                    <li><a href="page19.html">19. Geolocation API</a></li>
+                    <li><a href="page20.html">20. Drag & Drop API</a></li>
+                    <li><a href="page21.html" class="active">21. Web Workers</a></li>
+                    <li><a href="page22.html">22. Server-Sent Events</a></li>
+                    <li><a href="page23.html">23. WebSockets</a></li>
+                    <li><a href="page24.html">24. Responsive HTML</a></li>
+                    <li><a href="page25.html">25. HTML Accessibility</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 42%;"></div>
+                </div>
+                <p style="text-align: center;">Page 21 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Web Workers</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to Web Workers</h2>
+                        <p>JavaScript traditionally runs in a single thread, which means that long-running or computationally intensive tasks can block the user interface, making your web application unresponsive. Web Workers provide a solution to this problem by allowing you to run JavaScript code in background threads, separate from the main UI thread.</p>
+                        
+                        <p>With Web Workers, you can perform complex calculations, process large data sets, or make network requests without affecting the responsiveness of your web application. This leads to a smoother user experience, especially for applications that require significant processing power.</p>
+                        
+                        <div class="info-box">
+                            <h4>Key Benefits of Web Workers</h4>
+                            <ul>
+                                <li><strong>Improved Performance</strong>: Run CPU-intensive tasks without blocking the UI</li>
+                                <li><strong>Better Responsiveness</strong>: Keep your application responsive even during heavy processing</li>
+                                <li><strong>Parallel Processing</strong>: Utilize multiple CPU cores for better performance</li>
+                                <li><strong>Background Processing</strong>: Perform tasks in the background while users interact with your application</li>
+                                <li><strong>Isolation</strong>: Workers run in an isolated context, which can prevent certain types of errors from affecting the main application</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Types of Web Workers</h2>
+                        <p>There are three main types of Web Workers, each with its own use cases and capabilities:</p>
+                        
+                        <h3>1. Dedicated Workers</h3>
+                        <p>Dedicated Workers are the most common type of Web Worker. They are linked to their creator (the script that created them) and can only communicate with it. When the main script terminates, the worker is terminated as well.</p>
+                        
+                        <h3>2. Shared Workers</h3>
+                        <p>Shared Workers can be accessed by multiple scripts running in different windows, iframes, or workers, as long as they are in the same origin (domain). This allows for communication between different parts of your application.</p>
+                        
+                        <h3>3. Service Workers</h3>
+                        <p>Service Workers act as proxy servers that sit between web applications, the browser, and the network. They are primarily used for caching and offline functionality, push notifications, and background sync. Service Workers have a different lifecycle and capabilities compared to other workers.</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>Dedicated Worker</th>
+                                        <th>Shared Worker</th>
+                                        <th>Service Worker</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Scope</td>
+                                        <td>Single script</td>
+                                        <td>Multiple scripts in same origin</td>
+                                        <td>Entire origin or subset</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lifespan</td>
+                                        <td>Tied to creating script</td>
+                                        <td>Persists until all connections close</td>
+                                        <td>Can persist after page closes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Communication</td>
+                                        <td>Direct messaging</td>
+                                        <td>Via ports</td>
+                                        <td>Via messages and events</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Primary Use Case</td>
+                                        <td>Offloading heavy computation</td>
+                                        <td>Shared resources between windows</td>
+                                        <td>Offline functionality, caching</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Browser Support</td>
+                                        <td>Excellent</td>
+                                        <td>Good</td>
+                                        <td>Good</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <p>In this lesson, we'll focus primarily on Dedicated Workers, as they are the most commonly used and provide the foundation for understanding the other types of workers.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Creating and Using Dedicated Workers</h2>
+                        <p>Let's start by creating a simple Dedicated Worker and learning how to communicate with it.</p>
+                        
+                        <h3>Creating a Worker</h3>
+                        <p>To create a Dedicated Worker, you need to provide the URL of a JavaScript file that contains the worker code:</p>
+                        
+                        <pre><code class="language-javascript">// In your main script (e.g., main.js)
+// Create a new worker
+const worker = new Worker('worker.js');
+
+// Now the worker is running in the background</code></pre>
+                        
+                        <p>The worker script (worker.js) should be a separate file that contains the code to be executed in the worker thread:</p>
+                        
+                        <pre><code class="language-javascript">// In worker.js
+console.log('Worker started');
+
+// Listen for messages from the main script
+self.addEventListener('message', function(e) {
+    console.log('Worker received message:', e.data);
+    
+    // Do some work with the data
+    const result = processData(e.data);
+    
+    // Send the result back to the main script
+    self.postMessage(result);
+});
+
+function processData(data) {
+    // This is where you would put your CPU-intensive code
+    return data.map(x => x * x);
+}</code></pre>
+                        
+                        <h3>Communicating with Workers</h3>
+                        <p>Communication between the main thread and workers is done through a messaging system. You send messages using <code>postMessage()</code> and receive them by listening for <code>message</code> events:</p>
+                        
+                        <pre><code class="language-javascript">// In your main script
+// Send a message to the worker
+worker.postMessage([1, 2, 3, 4, 5]);
+
+// Listen for messages from the worker
+worker.addEventListener('message', function(e) {
+    console.log('Main script received result:', e.data);
+    // e.data would be [1, 4, 9, 16, 25] in this example
+});
+
+// You can also listen for errors
+worker.addEventListener('error', function(e) {
+    console.error('Worker error:', e.message);
+});</code></pre>
+                        
+                        <h3>Terminating a Worker</h3>
+                        <p>When you're done with a worker, you should terminate it to free up resources:</p>
+                        
+                        <pre><code class="language-javascript">// In your main script
+// Terminate the worker
+worker.terminate();
+
+// In the worker script, the worker can terminate itself
+self.close();</code></pre>
+                        
+                        <h3>Complete Example</h3>
+                        <p>Here's a complete example of using a Dedicated Worker to perform a CPU-intensive task:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Web Worker Example&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        button {
+            padding: 10px 15px;
+            margin: 10px 0;
+        }
+        
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 100px;
+        }
+        
+        .progress {
+            margin-top: 10px;
+            height: 20px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: #4CAF50;
+            width: 0%;
+            transition: width 0.3s;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Web Worker Example&lt;/h1&gt;
+    
+    &lt;p&gt;This example demonstrates how to use Web Workers to perform CPU-intensive tasks without blocking the UI.&lt;/p&gt;
+    
+    &lt;div&gt;
+        &lt;button id="run-main-thread"&gt;Run in Main Thread&lt;/button&gt;
+        &lt;button id="run-worker"&gt;Run in Worker&lt;/button&gt;
+        &lt;button id="animate"&gt;Animate (Test UI Responsiveness)&lt;/button&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="progress"&gt;
+        &lt;div id="progress-bar" class="progress-bar"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div id="result"&gt;Results will appear here&lt;/div&gt;
+    
+    &lt;script&gt;
+        // Animation to test UI responsiveness
+        let animating = false;
+        
+        document.getElementById('animate').addEventListener('click', function() {
+            if (animating) {
+                animating = false;
+                this.textContent = 'Animate (Test UI Responsiveness)';
+                return;
+            }
+            
+            animating = true;
+            this.textContent = 'Stop Animation';
+            
+            const progressBar = document.getElementById('progress-bar');
+            let width = 0;
+            
+            function animate() {
+                if (!animating) return;
+                
+                width = (width + 1) % 100;
+                progressBar.style.width = width + '%';
+                requestAnimationFrame(animate);
+            }
+            
+            animate();
+        });
+        
+        // Function to calculate prime numbers (CPU-intensive)
+        function calculatePrimes(iterations, multiplier) {
+            const primes = [];
+            
+            // Adjust the workload based on the multiplier
+            const maxCount = iterations * multiplier;
+            
+            // Find prime numbers (inefficient algorithm for demonstration)
+            for (let i = 0; i < maxCount; i++) {
+                let isPrime = true;
+                
+                // Check if the number is prime
+                for (let j = 2; j < i; j++) {
+                    if (i % j === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                
+                if (isPrime && i > 1) {
+                    primes.push(i);
+                }
+            }
+            
+            return primes;
+        }
+        
+        // Run calculation in the main thread
+        document.getElementById('run-main-thread').addEventListener('click', function() {
+            const startTime = performance.now();
+            const resultElement = document.getElementById('result');
+            
+            resultElement.textContent = 'Calculating in main thread...';
+            
+            // Use setTimeout to allow the UI to update before starting the calculation
+            setTimeout(() => {
+                const primes = calculatePrimes(100, 1000);
+                const endTime = performance.now();
+                
+                resultElement.textContent = `Found ${primes.length} prime numbers in ${(endTime - startTime).toFixed(2)}ms. ` +
+                    `Last 5 primes: ${primes.slice(-5).join(', ')}`;
+            }, 10);
+        });
+        
+        // Run calculation in a worker
+        document.getElementById('run-worker').addEventListener('click', function() {
+            const startTime = performance.now();
+            const resultElement = document.getElementById('result');
+            
+            resultElement.textContent = 'Calculating in worker...';
+            
+            // Create a worker
+            const worker = new Worker('worker.js');
+            
+            // Send data to the worker
+            worker.postMessage({
+                iterations: 100,
+                multiplier: 1000
+            });
+            
+            // Receive result from the worker
+            worker.addEventListener('message', function(e) {
+                const endTime = performance.now();
+                const primes = e.data;
+                
+                resultElement.textContent = `Found ${primes.length} prime numbers in ${(endTime - startTime).toFixed(2)}ms. ` +
+                    `Last 5 primes: ${primes.slice(-5).join(', ')}`;
+                
+                // Terminate the worker
+                worker.terminate();
+            });
+            
+            // Handle errors
+            worker.addEventListener('error', function(e) {
+                resultElement.textContent = `Worker error: ${e.message}`;
+                worker.terminate();
+            });
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <pre><code class="language-javascript">// worker.js
+self.addEventListener('message', function(e) {
+    const { iterations, multiplier } = e.data;
+    
+    // Calculate prime numbers
+    const primes = calculatePrimes(iterations, multiplier);
+    
+    // Send the result back to the main script
+    self.postMessage(primes);
+});
+
+function calculatePrimes(iterations, multiplier) {
+    const primes = [];
+    
+    // Adjust the workload based on the multiplier
+    const maxCount = iterations * multiplier;
+    
+    // Find prime numbers (inefficient algorithm for demonstration)
+    for (let i = 0; i < maxCount; i++) {
+        let isPrime = true;
+        
+        // Check if the number is prime
+        for (let j = 2; j < i; j++) {
+            if (i % j === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        
+        if (isPrime && i > 1) {
+            primes.push(i);
+        }
+    }
+    
+    return primes;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Important Notes About Dedicated Workers</h4>
+                            <ul>
+                                <li><strong>Separate Context</strong>: Workers run in a separate context from the main thread, so they don't have access to the DOM, window object, or parent objects</li>
+                                <li><strong>Limited Access</strong>: Workers can only access a subset of JavaScript features, including Web Workers, XMLHttpRequest, Fetch, WebSockets, and IndexedDB</li>
+                                <li><strong>Same-Origin Policy</strong>: Worker scripts must be from the same origin as the main script</li>
+                                <li><strong>Data Cloning</strong>: Data passed between workers and the main thread is copied, not shared (except for transferable objects)</li>
+                                <li><strong>Error Handling</strong>: Errors in workers don't affect the main thread, but they can be caught using the error event</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Data Transfer and Performance</h2>
+                        <p>When you send data between the main thread and a worker using <code>postMessage()</code>, the data is copied rather than shared. This can be inefficient for large data structures. To address this, the Web Workers API provides a mechanism called "transferable objects" that allows you to transfer ownership of certain objects between threads without copying.</p>
+                        
+                        <h3>Transferable Objects</h3>
+                        <p>Transferable objects are objects that can be transferred between contexts with zero copying overhead. When a transferable object is transferred, it becomes unusable in the source context and becomes available in the destination context.</p>
+                        
+                        <p>The following types of objects are transferable:</p>
+                        <ul>
+                            <li><code>ArrayBuffer</code></li>
+                            <li><code>MessagePort</code></li>
+                            <li><code>ImageBitmap</code></li>
+                            <li><code>OffscreenCanvas</code></li>
+                            <li><code>ReadableStream</code></li>
+                            <li><code>WritableStream</code></li>
+                            <li><code>TransformStream</code></li>
+                        </ul>
+                        
+                        <h3>Using Transferable Objects</h3>
+                        <pre><code class="language-javascript">// In your main script
+// Create a large array buffer
+const buffer = new ArrayBuffer(100 * 1024 * 1024); // 100MB
+const view = new Uint8Array(buffer);
+
+// Fill the buffer with some data
+for (let i = 0; i < view.length; i++) {
+    view[i] = i % 256;
+}
+
+// Transfer the buffer to the worker
+worker.postMessage({ buffer }, [buffer]);
+
+// The buffer is now unusable in the main thread
+console.log('Buffer byteLength after transfer:', buffer.byteLength); // 0
+
+// In the worker script
+self.addEventListener('message', function(e) {
+    const { buffer } = e.data;
+    
+    // The buffer is now owned by the worker
+    console.log('Buffer received in worker, byteLength:', buffer.byteLength);
+    
+    // Process the buffer...
+    const view = new Uint8Array(buffer);
+    let sum = 0;
+    for (let i = 0; i < view.length; i++) {
+        sum += view[i];
+    }
+    
+    // Transfer the buffer back to the main thread
+    self.postMessage({ buffer, sum }, [buffer]);
+});</code></pre>
+                        
+                        <h3>Structured Clone Algorithm</h3>
+                        <p>When you pass data that is not transferable, the browser uses the "structured clone algorithm" to create a copy of the data. This algorithm can handle complex nested objects, but it has some limitations:</p>
+                        
+                        <pre><code class="language-javascript">// These types can be cloned
+worker.postMessage({
+    // Primitive values
+    number: 42,
+    string: 'Hello',
+    boolean: true,
+    null: null,
+    undefined: undefined,
+    
+    // Complex objects
+    date: new Date(),
+    regexp: /pattern/,
+    array: [1, 2, 3],
+    object: { key: 'value' },
+    map: new Map([['key', 'value']]),
+    set: new Set([1, 2, 3]),
+    
+    // Typed arrays and buffers
+    typedArray: new Uint8Array([1, 2, 3]),
+    arrayBuffer: new ArrayBuffer(10),
+    
+    // Nested structures
+    nested: {
+        array: [{ key: 'value' }]
+    }
+});
+
+// These types CANNOT be cloned and will cause errors
+worker.postMessage({
+    // Functions
+    function: function() { console.log('This will fail'); },
+    
+    // DOM nodes
+    element: document.getElementById('some-element'),
+    
+    // Error objects
+    error: new Error('This will fail'),
+    
+    // Objects with circular references
+    circular: (() => {
+        const obj = {};
+        obj.self = obj; // Circular reference
+        return obj;
+    })()
+});</code></pre>
+                        
+                        <h3>Performance Comparison</h3>
+                        <p>Here's a comparison of transferring vs. copying a large ArrayBuffer:</p>
+                        
+                        <pre><code class="language-javascript">// Create a large buffer for testing
+const bufferSize = 100 * 1024 * 1024; // 100MB
+const buffer = new ArrayBuffer(bufferSize);
+
+// Test copying (structured clone)
+function testCopy() {
+    const worker = new Worker('worker.js');
+    
+    console.time('Copy');
+    worker.postMessage({ buffer });
+    
+    worker.addEventListener('message', function() {
+        console.timeEnd('Copy');
+        worker.terminate();
+    });
+}
+
+// Test transferring
+function testTransfer() {
+    const worker = new Worker('worker.js');
+    
+    console.time('Transfer');
+    worker.postMessage({ buffer }, [buffer]);
+    
+    worker.addEventListener('message', function() {
+        console.timeEnd('Transfer');
+        worker.terminate();
+    });
+}
+
+// Run the tests
+testCopy();
+// After the first test completes
+setTimeout(testTransfer, 1000);
+
+// In worker.js
+self.addEventListener('message', function(e) {
+    // Just send the buffer back
+    if (e.data.buffer) {
+        self.postMessage({ done: true });
+    }
+});</code></pre>
+                        
+                        <p>The results will show that transferring is significantly faster than copying for large data structures.</p>
+                        
+                        <div class="info-box">
+                            <h4>Performance Best Practices</h4>
+                            <ul>
+                                <li><strong>Use transferable objects</strong> when working with large binary data</li>
+                                <li><strong>Minimize message frequency</strong> by batching data when possible</li>
+                                <li><strong>Structure your data</strong> to avoid sending unnecessary information</li>
+                                <li><strong>Consider using SharedArrayBuffer</strong> for shared memory (where supported)</li>
+                                <li><strong>Profile your application</strong> to identify bottlenecks in worker communication</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Importing Scripts in Workers</h2>
+                        <p>Workers can import additional scripts using the <code>importScripts()</code> function, which allows you to modularize your worker code and reuse existing libraries.</p>
+                        
+                        <h3>Basic Script Importing</h3>
+                        <pre><code class="language-javascript">// In worker.js
+// Import one or more scripts
+importScripts('helper.js');
+importScripts('library1.js', 'library2.js');
+
+// Now you can use functions and variables defined in those scripts
+console.log('Helper function result:', helperFunction());
+
+// Listen for messages
+self.addEventListener('message', function(e) {
+    // Use imported functionality
+    const result = processWithLibrary(e.data);
+    self.postMessage(result);
+});</code></pre>
+                        
+                        <h3>Using ES Modules in Workers</h3>
+                        <p>Modern browsers also support ES modules in workers. To use modules, you need to specify the <code>type: 'module'</code> option when creating the worker:</p>
+                        
+                        <pre><code class="language-javascript">// In your main script
+const worker = new Worker('worker.js', { type: 'module' });
+
+// In worker.js (as a module)
+import { helperFunction } from './helper.js';
+import * as library from './library.js';
+
+// Use imported functionality
+console.log('Helper function result:', helperFunction());
+
+// Listen for messages
+self.addEventListener('message', function(e) {
+    const result = library.process(e.data);
+    self.postMessage(result);
+});</code></pre>
+                        
+                        <h3>Dynamic Import in Workers</h3>
+                        <p>You can also use dynamic imports in workers to load modules conditionally:</p>
+                        
+                        <pre><code class="language-javascript">// In worker.js
+self.addEventListener('message', async function(e) {
+    const { type, data } = e.data;
+    
+    // Dynamically import the appropriate module based on the task type
+    if (type === 'image-processing') {
+        const imageModule = await import('./image-processor.js');
+        const result = imageModule.processImage(data);
+        self.postMessage(result);
+    } else if (type === 'data-analysis') {
+        const analysisModule = await import('./data-analyzer.js');
+        const result = analysisModule.analyzeData(data);
+        self.postMessage(result);
+    }
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Script Import Considerations</h4>
+                            <ul>
+                                <li><strong>Same-Origin Policy</strong>: Imported scripts must be from the same origin as the worker script</li>
+                                <li><strong>Synchronous Loading</strong>: <code>importScripts()</code> loads scripts synchronously, blocking the worker until all scripts are loaded</li>
+                                <li><strong>Caching</strong>: Browsers typically cache imported scripts, improving performance for subsequent loads</li>
+                                <li><strong>Error Handling</strong>: If a script fails to load, it will throw an error in the worker</li>
+                                <li><strong>Module Support</strong>: ES modules in workers have good but not universal browser support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Error Handling in Workers</h2>
+                        <p>Proper error handling is essential when working with Web Workers to ensure that errors in the worker don't silently fail or cause unexpected behavior.</p>
+                        
+                        <h3>Handling Errors in the Main Thread</h3>
+                        <pre><code class="language-javascript">// In your main script
+const worker = new Worker('worker.js');
+
+// Listen for errors
+worker.addEventListener('error', function(e) {
+    console.error('Worker error:', e.message);
+    console.error('Filename:', e.filename);
+    console.error('Line number:', e.lineno);
+    
+    // Notify the user
+    showErrorNotification('An error occurred in the background process. Please try again.');
+    
+    // Optionally terminate the worker
+    worker.terminate();
+});
+
+// You can also use onerror
+worker.onerror = function(e) {
+    console.error('Worker error (via onerror):', e.message);
+};</code></pre>
+                        
+                        <h3>Handling Errors in the Worker</h3>
+                        <pre><code class="language-javascript">// In worker.js
+// Global error handler
+self.addEventListener('error', function(e) {
+    console.error('Error in worker:', e.message);
+    
+    // Notify the main thread
+    self.postMessage({
+        type: 'error',
+        message: e.message,
+        stack: e.error ? e.error.stack : null
+    });
+    
+    // Prevent the error from propagating
+    e.preventDefault();
+});
+
+// Using try-catch for specific operations
+self.addEventListener('message', function(e) {
+    try {
+        // Attempt to process the data
+        const result = processData(e.data);
+        
+        // Send the result back
+        self.postMessage({
+            type: 'success',
+            result: result
+        });
+    } catch (error) {
+        // Handle the error
+        console.error('Error processing data:', error);
+        
+        // Send error information back to the main thread
+        self.postMessage({
+            type: 'error',
+            message: error.message,
+            stack: error.stack
+        });
+    }
+});</code></pre>
+                        
+                        <h3>Structured Error Handling</h3>
+                        <p>For more complex applications, it's a good practice to use a structured approach to error handling:</p>
+                        
+                        <pre><code class="language-javascript">// In your main script
+class WorkerManager {
+    constructor(scriptUrl) {
+        this.worker = new Worker(scriptUrl);
+        this.taskId = 0;
+        this.tasks = new Map();
+        
+        // Set up message handler
+        this.worker.addEventListener('message', this.handleMessage.bind(this));
+        
+        // Set up error handler
+        this.worker.addEventListener('error', this.handleError.bind(this));
+    }
+    
+    // Execute a task in the worker
+    executeTask(taskType, data) {
+        return new Promise((resolve, reject) => {
+            const id = this.taskId++;
+            
+            // Store the task callbacks
+            this.tasks.set(id, { resolve, reject });
+            
+            // Send the task to the worker
+            this.worker.postMessage({
+                id: id,
+                type: taskType,
+                data: data
+            });
+        });
+    }
+    
+    // Handle messages from the worker
+    handleMessage(e) {
+        const { id, type, result, error } = e.data;
+        
+        // Get the task callbacks
+        const task = this.tasks.get(id);
+        
+        if (task) {
+            // Remove the task from the map
+            this.tasks.delete(id);
+            
+            if (type === 'success') {
+                // Resolve the promise with the result
+                task.resolve(result);
+            } else if (type === 'error') {
+                // Create an error object from the error data
+                const errorObj = new Error(error.message);
+                errorObj.stack = error.stack;
+                errorObj.workerStack = error.workerStack;
+                
+                // Reject the promise with the error
+                task.reject(errorObj);
+            }
+        }
+    }
+    
+    // Handle worker errors
+    handleError(e) {
+        console.error('Worker error:', e.message);
+        
+        // Reject all pending tasks
+        for (const [id, task] of this.tasks) {
+            const error = new Error('Worker error: ' + e.message);
+            task.reject(error);
+        }
+        
+        // Clear all tasks
+        this.tasks.clear();
+    }
+    
+    // Terminate the worker
+    terminate() {
+        this.worker.terminate();
+        
+        // Reject all pending tasks
+        for (const [id, task] of this.tasks) {
+            const error = new Error('Worker terminated');
+            task.reject(error);
+        }
+        
+        // Clear all tasks
+        this.tasks.clear();
+    }
+}
+
+// Usage
+const workerManager = new WorkerManager('worker.js');
+
+// Execute tasks
+workerManager.executeTask('calculate', { numbers: [1, 2, 3, 4, 5] })
+    .then(result => {
+        console.log('Task completed:', result);
+    })
+    .catch(error => {
+        console.error('Task failed:', error);
+    });
+
+// In worker.js
+self.addEventListener('message', function(e) {
+    const { id, type, data } = e.data;
+    
+    try {
+        let result;
+        
+        // Process different task types
+        switch (type) {
+            case 'calculate':
+                result = calculateSum(data.numbers);
+                break;
+            case 'process':
+                result = processData(data);
+                break;
+            default:
+                throw new Error(`Unknown task type: ${type}`);
+        }
+        
+        // Send the result back
+        self.postMessage({
+            id: id,
+            type: 'success',
+            result: result
+        });
+    } catch (error) {
+        // Send the error back
+        self.postMessage({
+            id: id,
+            type: 'error',
+            error: {
+                message: error.message,
+                stack: error.stack,
+                workerStack: new Error().stack
+            }
+        });
+    }
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Error Handling Best Practices</h4>
+                            <ul>
+                                <li><strong>Always listen for errors</strong> on worker objects</li>
+                                <li><strong>Use try-catch blocks</strong> around code that might throw errors in workers</li>
+                                <li><strong>Include detailed error information</strong> when sending errors back to the main thread</li>
+                                <li><strong>Consider using a task ID system</strong> to match responses to requests</li>
+                                <li><strong>Implement a timeout mechanism</strong> for long-running tasks</li>
+                                <li><strong>Have a strategy for recovering</strong> from worker errors (e.g., restarting the worker)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Shared Workers</h2>
+                        <p>Shared Workers allow multiple scripts (in different windows, tabs, frames, or other workers) to communicate with a single worker instance. This is useful for sharing resources or coordinating between different parts of your application.</p>
+                        
+                        <h3>Creating a Shared Worker</h3>
+                        <pre><code class="language-javascript">// In your main scripts (can be in different windows/tabs)
+const sharedWorker = new SharedWorker('shared-worker.js');
+
+// Get the port for communication
+const port = sharedWorker.port;
+
+// Start the port (required in some browsers)
+port.start();
+
+// Send messages through the port
+port.postMessage({ action: 'register', clientId: 'client1' });
+
+// Listen for messages
+port.addEventListener('message', function(e) {
+    console.log('Message from shared worker:', e.data);
+});
+
+// You can also use onmessage
+port.onmessage = function(e) {
+    console.log('Message from shared worker (via onmessage):', e.data);
+};</code></pre>
+                        
+                        <h3>Implementing a Shared Worker</h3>
+                        <pre><code class="language-javascript">// In shared-worker.js
+// Keep track of connected ports
+const ports = new Set();
+
+// Listen for connections
+self.addEventListener('connect', function(e) {
+    const port = e.ports[0];
+    
+    // Add the port to the set
+    ports.add(port);
+    
+    // Start the port
+    port.start();
+    
+    // Listen for messages on this port
+    port.addEventListener('message', function(e) {
+        const { action, clientId, data } = e.data;
+        
+        if (action === 'register') {
+            // Send a welcome message to the new client
+            port.postMessage({
+                type: 'welcome',
+                message: `Welcome, ${clientId}!`,
+                clientCount: ports.size
+            });
+            
+            // Notify other clients about the new connection
+            broadcastExcept(port, {
+                type: 'client-joined',
+                clientId: clientId,
+                clientCount: ports.size
+            });
+        } else if (action === 'broadcast') {
+            // Broadcast a message to all clients
+            broadcast({
+                type: 'broadcast',
+                from: clientId,
+                message: data.message
+            });
+        }
+    });
+    
+    // Handle disconnection
+    port.addEventListener('messageerror', function() {
+        ports.delete(port);
+        
+        // Notify other clients
+        broadcast({
+            type: 'client-count',
+            clientCount: ports.size
+        });
+    });
+});
+
+// Function to broadcast a message to all ports
+function broadcast(message) {
+    for (const port of ports) {
+        port.postMessage(message);
+    }
+}
+
+// Function to broadcast a message to all ports except one
+function broadcastExcept(excludePort, message) {
+    for (const port of ports) {
+        if (port !== excludePort) {
+            port.postMessage(message);
+        }
+    }
+}</code></pre>
+                        
+                        <h3>Use Cases for Shared Workers</h3>
+                        <ul>
+                            <li><strong>Shared Resources</strong>: Maintain a shared cache or state across multiple tabs</li>
+                            <li><strong>Coordination</strong>: Coordinate actions between different parts of your application</li>
+                            <li><strong>Communication Channel</strong>: Implement a communication channel between different windows</li>
+                            <li><strong>Background Processing</strong>: Perform background tasks that need to continue even if some windows are closed</li>
+                        </ul>
+                        
+                        <pre><code class="language-javascript">// Example: Shared counter across tabs
+// In your main scripts (different tabs)
+const sharedWorker = new SharedWorker('counter-worker.js');
+const port = sharedWorker.port;
+port.start();
+
+// Increment the counter
+document.getElementById('increment').addEventListener('click', function() {
+    port.postMessage({ action: 'increment' });
+});
+
+// Listen for counter updates
+port.addEventListener('message', function(e) {
+    if (e.data.type === 'counter-update') {
+        document.getElementById('counter').textContent = e.data.value;
+    }
+});
+port.start();
+
+// In counter-worker.js
+let counter = 0;
+const ports = new Set();
+
+self.addEventListener('connect', function(e) {
+    const port = e.ports[0];
+    ports.add(port);
+    port.start();
+    
+    // Send the current counter value to the new client
+    port.postMessage({
+        type: 'counter-update',
+        value: counter
+    });
+    
+    port.addEventListener('message', function(e) {
+        if (e.data.action === 'increment') {
+            counter++;
+            
+            // Broadcast the new counter value to all clients
+            for (const p of ports) {
+                p.postMessage({
+                    type: 'counter-update',
+                    value: counter
+                });
+            }
+        }
+    });
+    
+    // Handle disconnection
+    port.addEventListener('messageerror', function() {
+        ports.delete(port);
+    });
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Shared Worker Considerations</h4>
+                            <ul>
+                                <li><strong>Browser Support</strong>: Shared Workers have good but not universal browser support</li>
+                                <li><strong>Port Management</strong>: You need to manage connections and disconnections carefully</li>
+                                <li><strong>Debugging</strong>: Debugging Shared Workers can be more challenging than Dedicated Workers</li>
+                                <li><strong>Same-Origin Policy</strong>: Shared Workers can only be accessed by scripts from the same origin</li>
+                                <li><strong>Lifecycle</strong>: A Shared Worker continues to run as long as at least one client is connected</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Service Workers</h2>
+                        <p>Service Workers are a special type of Web Worker that act as a proxy between web applications, the browser, and the network. They are primarily used for implementing offline functionality, caching resources, and handling push notifications.</p>
+                        
+                        <h3>Key Features of Service Workers</h3>
+                        <ul>
+                            <li><strong>Offline Support</strong>: Enable web applications to work offline by caching resources</li>
+                            <li><strong>Background Sync</strong>: Allow applications to defer actions until the user has a stable connection</li>
+                            <li><strong>Push Notifications</strong>: Enable web applications to receive push messages from a server</li>
+                            <li><strong>Lifecycle Management</strong>: Have a complex lifecycle that includes installation, activation, and termination phases</li>
+                            <li><strong>Network Proxy</strong>: Can intercept and modify network requests</li>
+                        </ul>
+                        
+                        <h3>Basic Service Worker Registration</h3>
+                        <pre><code class="language-javascript">// In your main script
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+        .then(function(registration) {
+            console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(function(error) {
+            console.error('Service Worker registration failed:', error);
+        });
+}</code></pre>
+                        
+                        <h3>Simple Caching Service Worker</h3>
+                        <pre><code class="language-javascript">// In service-worker.js
+const CACHE_NAME = 'my-site-cache-v1';
+const urlsToCache = [
+    '/',
+    '/styles/main.css',
+    '/scripts/main.js',
+    '/images/logo.png'
+];
+
+// Install event - cache resources
+self.addEventListener('install', function(event) {
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(function(cache) {
+                console.log('Opened cache');
+                return cache.addAll(urlsToCache);
+            })
+    );
+});
+
+// Fetch event - serve from cache or network
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+        caches.match(event.request)
+            .then(function(response) {
+                // Cache hit - return the response
+                if (response) {
+                    return response;
+                }
+                
+                // Clone the request because it's a stream and can only be consumed once
+                const fetchRequest = event.request.clone();
+                
+                return fetch(fetchRequest).then(function(response) {
+                    // Check if we received a valid response
+                    if (!response || response.status !== 200 || response.type !== 'basic') {
+                        return response;
+                    }
+                    
+                    // Clone the response because it's a stream and can only be consumed once
+                    const responseToCache = response.clone();
+                    
+                    caches.open(CACHE_NAME)
+                        .then(function(cache) {
+                            cache.put(event.request, responseToCache);
+                        });
+                    
+                    return response;
+                });
+            })
+    );
+});
+
+// Activate event - clean up old caches
+self.addEventListener('activate', function(event) {
+    const cacheWhitelist = [CACHE_NAME];
+    
+    event.waitUntil(
+        caches.keys().then(function(cacheNames) {
+            return Promise.all(
+                cacheNames.map(function(cacheName) {
+                    if (cacheWhitelist.indexOf(cacheName) === -1) {
+                        return caches.delete(cacheName);
+                    }
+                })
+            );
+        })
+    );
+});</code></pre>
+                        
+                        <p>Service Workers are a complex topic that deserves its own dedicated lesson. We've provided a brief overview here, but for a complete understanding, you should explore Service Workers in more depth.</p>
+                        
+                        <div class="info-box">
+                            <h4>Service Worker vs. Other Workers</h4>
+                            <table>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Dedicated Worker</th>
+                                    <th>Shared Worker</th>
+                                    <th>Service Worker</th>
+                                </tr>
+                                <tr>
+                                    <td>Lifespan</td>
+                                    <td>Tied to creating page</td>
+                                    <td>Tied to connected clients</td>
+                                    <td>Can outlive creating page</td>
+                                </tr>
+                                <tr>
+                                    <td>Network Proxy</td>
+                                    <td>No</td>
+                                    <td>No</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Push Notifications</td>
+                                    <td>No</td>
+                                    <td>No</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Background Sync</td>
+                                    <td>No</td>
+                                    <td>No</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Primary Use Case</td>
+                                    <td>Computation</td>
+                                    <td>Shared resources</td>
+                                    <td>Offline support</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Real-World Use Cases</h2>
+                        <p>Let's explore some practical applications of Web Workers in real-world scenarios.</p>
+                        
+                        <h3>1. Image Processing</h3>
+                        <p>Web Workers are ideal for image processing tasks, which can be computationally intensive:</p>
+                        
+                        <pre><code class="language-javascript">// In your main script
+const imageProcessor = new Worker('image-processor.js');
+
+// When the user selects an image
+document.getElementById('image-input').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    // Show loading indicator
+    document.getElementById('loading').style.display = 'block';
+    
+    // Read the image file
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        // Create an image element to get dimensions
+        const img = new Image();
+        img.onload = function() {
+            // Create a canvas to get image data
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+            
+            // Get the image data
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            
+            // Send the image data to the worker
+            imageProcessor.postMessage({
+                action: 'process',
+                imageData: imageData,
+                filter: document.getElementById('filter-select').value
+            }, [imageData.data.buffer]); // Transfer the buffer
+        };
+        img.src = event.target.result;
+    };
+    reader.readAsDataURL(file);
+});
+
+// Handle the processed image
+imageProcessor.addEventListener('message', function(e) {
+    const { action, imageData } = e.data;
+    
+    if (action === 'processed') {
+        // Create a canvas to display the processed image
+        const canvas = document.getElementById('output-canvas');
+        canvas.width = imageData.width;
+        canvas.height = imageData.height;
+        
+        const ctx = canvas.getContext('2d');
+        ctx.putImageData(imageData, 0, 0);
+        
+        // Hide loading indicator
+        document.getElementById('loading').style.display = 'none';
+    }
+});
+
+// In image-processor.js
+self.addEventListener('message', function(e) {
+    const { action, imageData, filter } = e.data;
+    
+    if (action === 'process') {
+        // Apply the selected filter
+        const processedData = applyFilter(imageData, filter);
+        
+        // Send the processed image data back
+        self.postMessage({
+            action: 'processed',
+            imageData: processedData
+        }, [processedData.data.buffer]); // Transfer the buffer
+    }
+});
+
+// Filter functions
+function applyFilter(imageData, filter) {
+    const data = imageData.data;
+    
+    switch (filter) {
+        case 'grayscale':
+            for (let i = 0; i < data.length; i += 4) {
+                const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+                data[i] = avg;     // Red
+                data[i + 1] = avg; // Green
+                data[i + 2] = avg; // Blue
+            }
+            break;
+            
+        case 'sepia':
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i];
+                const g = data[i + 1];
+                const b = data[i + 2];
+                
+                data[i] = Math.min(255, (r * 0.393) + (g * 0.769) + (b * 0.189));
+                data[i + 1] = Math.min(255, (r * 0.349) + (g * 0.686) + (b * 0.168));
+                data[i + 2] = Math.min(255, (r * 0.272) + (g * 0.534) + (b * 0.131));
+            }
+            break;
+            
+        case 'invert':
+            for (let i = 0; i < data.length; i += 4) {
+                data[i] = 255 - data[i];         // Red
+                data[i + 1] = 255 - data[i + 1]; // Green
+                data[i + 2] = 255 - data[i + 2]; // Blue
+            }
+            break;
+            
+        // Add more filters as needed
+    }
+    
+    return imageData;
+}</code></pre>
+                        
+                        <h3>2. Data Processing and Analysis</h3>
+                        <p>Web Workers can process and analyze large datasets without blocking the UI:</p>
+                        
+                        <pre><code class="language-javascript">// In your main script
+const dataProcessor = new Worker('data-processor.js');
+
+// When the user uploads a CSV file
+document.getElementById('csv-input').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    // Show loading indicator
+    document.getElementById('loading').style.display = 'block';
+    
+    // Read the CSV file
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        // Send the CSV data to the worker
+        dataProcessor.postMessage({
+            action: 'process',
+            data: event.target.result,
+            options: {
+                delimiter: document.getElementById('delimiter').value || ',',
+                analysis: document.getElementById('analysis-type').value
+            }
+        });
+    };
+    reader.readAsText(file);
+});
+
+// Handle the processed data
+dataProcessor.addEventListener('message', function(e) {
+    const { action, result, error } = e.data;
+    
+    // Hide loading indicator
+    document.getElementById('loading').style.display = 'none';
+    
+    if (action === 'processed') {
+        // Display the results
+        displayResults(result);
+    } else if (action === 'error') {
+        // Display the error
+        showError(error);
+    } else if (action === 'progress') {
+        // Update progress bar
+        updateProgress(e.data.progress);
+    }
+});
+
+// In data-processor.js
+importScripts('papaparse.min.js'); // Import CSV parsing library
+
+self.addEventListener('message', function(e) {
+    const { action, data, options } = e.data;
+    
+    if (action === 'process') {
+        try {
+            // Parse the CSV data
+            const parsedData = Papa.parse(data, {
+                header: true,
+                delimiter: options.delimiter
+            }).data;
+            
+            // Report progress
+            self.postMessage({
+                action: 'progress',
+                progress: 50
+            });
+            
+            // Perform the requested analysis
+            let result;
+            switch (options.analysis) {
+                case 'summary':
+                    result = generateSummary(parsedData);
+                    break;
+                case 'correlation':
+                    result = calculateCorrelations(parsedData);
+                    break;
+                case 'clustering':
+                    result = performClustering(parsedData);
+                    break;
+                default:
+                    throw new Error(`Unknown analysis type: ${options.analysis}`);
+            }
+            
+            // Send the result back
+            self.postMessage({
+                action: 'processed',
+                result: result
+            });
+        } catch (error) {
+            // Send the error back
+            self.postMessage({
+                action: 'error',
+                error: {
+                    message: error.message,
+                    stack: error.stack
+                }
+            });
+        }
+    }
+});
+
+// Analysis functions
+function generateSummary(data) {
+    // Generate summary statistics for each numeric column
+    const summary = {};
+    
+    // Get column names
+    const columns = Object.keys(data[0] || {});
+    
+    for (const column of columns) {
+        // Extract values for this column
+        const values = data.map(row => parseFloat(row[column])).filter(val => !isNaN(val));
+        
+        if (values.length > 0) {
+            // Calculate statistics
+            const sum = values.reduce((a, b) => a + b, 0);
+            const mean = sum / values.length;
+            const min = Math.min(...values);
+            const max = Math.max(...values);
+            
+            // Sort values for median and percentiles
+            values.sort((a, b) => a - b);
+            const median = values[Math.floor(values.length / 2)];
+            
+            summary[column] = {
+                count: values.length,
+                mean: mean,
+                median: median,
+                min: min,
+                max: max,
+                sum: sum
+            };
+        }
+    }
+    
+    return summary;
+}</code></pre>
+                        
+                        <h3>3. Real-time Data Visualization</h3>
+                        <p>Web Workers can process streaming data for real-time visualizations:</p>
+                        
+                        <pre><code class="language-javascript">// In your main script
+const dataVisualizer = new Worker('data-visualizer.js');
+let chart; // Assume we're using a charting library
+
+// Initialize the chart
+function initChart() {
+    const ctx = document.getElementById('chart').getContext('2d');
+    chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [{
+                label: 'Real-time Data',
+                data: [],
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        },
+        options: {
+            animation: false // Disable animations for better performance
+        }
+    });
+}
+
+// Start receiving data
+document.getElementById('start-button').addEventListener('click', function() {
+    // Start the worker
+    dataVisualizer.postMessage({
+        action: 'start',
+        config: {
+            dataSource: document.getElementById('data-source').value,
+            updateInterval: parseInt(document.getElementById('update-interval').value) || 1000,
+            bufferSize: parseInt(document.getElementById('buffer-size').value) || 100
+        }
+    });
+    
+    // Update UI
+    this.disabled = true;
+    document.getElementById('stop-button').disabled = false;
+});
+
+// Stop receiving data
+document.getElementById('stop-button').addEventListener('click', function() {
+    // Stop the worker
+    dataVisualizer.postMessage({
+        action: 'stop'
+    });
+    
+    // Update UI
+    this.disabled = true;
+    document.getElementById('start-button').disabled = false;
+});
+
+// Handle data updates
+dataVisualizer.addEventListener('message', function(e) {
+    const { action, data } = e.data;
+    
+    if (action === 'update') {
+        // Update the chart with new data
+        updateChart(data);
+    } else if (action === 'error') {
+        // Display the error
+        showError(data.message);
+    }
+});
+
+// Update the chart with new data
+function updateChart(data) {
+    // Add new data points
+    chart.data.labels.push(new Date().toLocaleTimeString());
+    chart.data.datasets[0].data.push(data.value);
+    
+    // Remove old data points if we have too many
+    if (chart.data.labels.length > 50) {
+        chart.data.labels.shift();
+        chart.data.datasets[0].data.shift();
+    }
+    
+    // Update the chart
+    chart.update();
+}
+
+// In data-visualizer.js
+let intervalId = null;
+let dataSource = null;
+let buffer = [];
+
+self.addEventListener('message', function(e) {
+    const { action, config } = e.data;
+    
+    if (action === 'start') {
+        // Stop any existing interval
+        if (intervalId) {
+            clearInterval(intervalId);
+        }
+        
+        // Initialize the data source
+        dataSource = config.dataSource;
+        buffer = [];
+        
+        // Start fetching data
+        fetchData(config);
+        
+        // Set up the interval for regular updates
+        intervalId = setInterval(() => {
+            fetchData(config);
+        }, config.updateInterval);
+    } else if (action === 'stop') {
+        // Stop the interval
+        if (intervalId) {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+    }
+});
+
+// Fetch data from the source
+function fetchData(config) {
+    // In a real application, this would fetch data from an API
+    // For this example, we'll generate random data
+    const value = Math.random() * 100;
+    
+    // Add the value to the buffer
+    buffer.push(value);
+    
+    // Keep the buffer at the specified size
+    if (buffer.length > config.bufferSize) {
+        buffer.shift();
+    }
+    
+    // Process the data
+    const processedData = processData(buffer);
+    
+    // Send the processed data back to the main thread
+    self.postMessage({
+        action: 'update',
+        data: processedData
+    });
+}
+
+// Process the data
+function processData(data) {
+    // In a real application, this would do more complex processing
+    // For this example, we'll just calculate a moving average
+    const sum = data.reduce((a, b) => a + b, 0);
+    const avg = sum / data.length;
+    
+    return {
+        value: avg,
+        raw: data[data.length - 1],
+        min: Math.min(...data),
+        max: Math.max(...data)
+    };
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Other Common Use Cases</h4>
+                            <ul>
+                                <li><strong>Encryption/Decryption</strong>: Perform cryptographic operations without blocking the UI</li>
+                                <li><strong>Text Processing</strong>: Parse and analyze large text documents</li>
+                                <li><strong>Machine Learning</strong>: Run inference with pre-trained models</li>
+                                <li><strong>Audio Processing</strong>: Analyze or generate audio data</li>
+                                <li><strong>Background Synchronization</strong>: Sync data with a server in the background</li>
+                                <li><strong>Complex Animations</strong>: Calculate animation frames in a worker</li>
+                                <li><strong>Game Physics</strong>: Run physics simulations in a separate thread</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Browser Support and Polyfills</h2>
+                        <p>Web Workers have good browser support in modern browsers, but it's still important to check for compatibility and provide fallbacks when necessary.</p>
+                        
+                        <h3>Browser Support</h3>
+                        <ul>
+                            <li><strong>Dedicated Workers</strong>: Supported in all modern browsers (Chrome, Firefox, Safari, Edge)</li>
+                            <li><strong>Shared Workers</strong>: Good support, but not universal (not supported in some mobile browsers)</li>
+                            <li><strong>Service Workers</strong>: Good support in modern browsers</li>
+                        </ul>
+                        
+                        <h3>Feature Detection</h3>
+                        <pre><code class="language-javascript">// Check for Dedicated Worker support
+if (typeof Worker !== 'undefined') {
+    // Workers are supported
+    const worker = new Worker('worker.js');
+} else {
+    // Workers are not supported
+    console.log('Web Workers are not supported in this browser.');
+    // Use a fallback approach
+    useFallback();
+}
+
+// Check for Shared Worker support
+if (typeof SharedWorker !== 'undefined') {
+    // Shared Workers are supported
+    const sharedWorker = new SharedWorker('shared-worker.js');
+} else {
+    // Shared Workers are not supported
+    console.log('Shared Workers are not supported in this browser.');
+    // Use a fallback approach
+    useSharedWorkerFallback();
+}
+
+// Check for Service Worker support
+if ('serviceWorker' in navigator) {
+    // Service Workers are supported
+    navigator.serviceWorker.register('/service-worker.js');
+} else {
+    // Service Workers are not supported
+    console.log('Service Workers are not supported in this browser.');
+    // Use a fallback approach
+    useServiceWorkerFallback();
+}</code></pre>
+                        
+                        <h3>Fallback Approaches</h3>
+                        <p>When Web Workers are not supported, you can use these fallback approaches:</p>
+                        
+                        <pre><code class="language-javascript">// Fallback for Dedicated Workers
+function createWorkerFallback(workerUrl) {
+    // Create a worker-like object
+    const workerFallback = {
+        listeners: {
+            message: [],
+            error: []
+        },
+        
+        addEventListener: function(type, listener) {
+            if (this.listeners[type]) {
+                this.listeners[type].push(listener);
+            }
+        },
+        
+        removeEventListener: function(type, listener) {
+            if (this.listeners[type]) {
+                const index = this.listeners[type].indexOf(listener);
+                if (index !== -1) {
+                    this.listeners[type].splice(index, 1);
+                }
+            }
+        },
+        
+        postMessage: function(data) {
+            // Use setTimeout to simulate asynchronous behavior
+            setTimeout(() => {
+                try {
+                    // Process the data in the main thread
+                    const result = processDataInMainThread(data);
+                    
+                    // Trigger message event
+                    this.listeners.message.forEach(listener => {
+                        listener({ data: result });
+                    });
+                } catch (error) {
+                    // Trigger error event
+                    this.listeners.error.forEach(listener => {
+                        listener({ message: error.message });
+                    });
+                }
+            }, 0);
+        },
+        
+        terminate: function() {
+            // Clean up resources
+            this.listeners = {
+                message: [],
+                error: []
+            };
+        }
+    };
+    
+    // Add onmessage and onerror properties
+    Object.defineProperty(workerFallback, 'onmessage', {
+        set: function(listener) {
+            this.listeners.message = [listener];
+        }
+    });
+    
+    Object.defineProperty(workerFallback, 'onerror', {
+        set: function(listener) {
+            this.listeners.error = [listener];
+        }
+    });
+    
+    // Load the worker script
+    fetch(workerUrl)
+        .then(response => response.text())
+        .then(workerCode => {
+            // Create a function from the worker code
+            // Note: This is a simplified approach and won't work for all worker scripts
+            const workerFunction = new Function('self', 'postMessage', 'onmessage', 'onmessageerror', 'close', 'importScripts', workerCode);
+            
+            // Store the function for later use
+            workerFallback.processFunction = workerFunction;
+        })
+        .catch(error => {
+            console.error('Error loading worker script:', error);
+        });
+    
+    return workerFallback;
+}
+
+// Function to process data in the main thread (fallback)
+function processDataInMainThread(data) {
+    // This would implement the same logic as the worker
+    // For example, if the worker calculates prime numbers:
+    if (data.action === 'calculatePrimes') {
+        return calculatePrimes(data.max);
+    }
+    
+    // Return a default response
+    return { error: 'Unknown action' };
+}
+
+// Usage
+let worker;
+if (typeof Worker !== 'undefined') {
+    // Use a real worker
+    worker = new Worker('worker.js');
+} else {
+    // Use the fallback
+    worker = createWorkerFallback('worker.js');
+}
+
+// Use the worker (or fallback) the same way
+worker.postMessage({ action: 'calculatePrimes', max: 1000 });
+worker.addEventListener('message', function(e) {
+    console.log('Result:', e.data);
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Fallback Limitations</h4>
+                            <p>Be aware of these limitations when using fallbacks:</p>
+                            <ul>
+                                <li><strong>Performance</strong>: Fallbacks run in the main thread, so they can still block the UI</li>
+                                <li><strong>Compatibility</strong>: Some worker features may not be easily replicated in a fallback</li>
+                                <li><strong>Security</strong>: Evaluating worker code in the main thread can have security implications</li>
+                                <li><strong>Complexity</strong>: Maintaining both worker and fallback code can be complex</li>
+                            </ul>
+                            <p>Consider whether a fallback is necessary based on your target audience and the importance of the worker functionality.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Building a Web Worker for Image Processing</h2>
+                        <p>Let's create a practical application that uses Web Workers to process images without blocking the UI.</p>
+                        
+                        <h3>Exercise: Create an Image Processing App</h3>
+                        <p>Build an image processing application with the following features:</p>
+                        <ul>
+                            <li>Allow users to upload an image</li>
+                            <li>Provide multiple image filters (grayscale, sepia, blur, etc.)</li>
+                            <li>Process the image in a Web Worker</li>
+                            <li>Show a preview of the processed image</li>
+                            <li>Allow users to download the processed image</li>
+                        </ul>
+                        
+                        <p>Start with this template and enhance it:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Image Processor&lt;/title&gt;
+    &lt;style&gt;
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        h1, h2 {
+            color: #3366ff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .image-preview {
+            max-width: 100%;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+        
+        .controls {
+            margin: 20px 0;
+        }
+        
+        /* Add more styles for your app */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Image Processor&lt;/h1&gt;
+        
+        &lt;div class="upload-container"&gt;
+            &lt;input type="file" id="image-input" accept="image/*"&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="controls"&gt;
+            &lt;select id="filter-select"&gt;
+                &lt;option value="grayscale"&gt;Grayscale&lt;/option&gt;
+                &lt;option value="sepia"&gt;Sepia&lt;/option&gt;
+                &lt;option value="invert"&gt;Invert&lt;/option&gt;
+                &lt;option value="blur"&gt;Blur&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;button id="apply-filter"&gt;Apply Filter&lt;/button&gt;
+            &lt;button id="download-image"&gt;Download Image&lt;/button&gt;
+        &lt;/div&gt;
+        
+        &lt;div id="loading" style="display: none;"&gt;Processing image...&lt;/div&gt;
+        
+        &lt;div class="preview-container"&gt;
+            &lt;canvas id="preview-canvas" class="image-preview"&gt;&lt;/canvas&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script&gt;
+        // Add your JavaScript here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the app
+            initApp();
+            
+            // Add event listeners
+            document.getElementById('image-input').addEventListener('change', loadImage);
+            document.getElementById('apply-filter').addEventListener('click', applyFilter);
+            document.getElementById('download-image').addEventListener('click', downloadImage);
+        });
+        
+        function initApp() {
+            // Initialize your app
+        }
+        
+        function loadImage(e) {
+            // Load the selected image
+        }
+        
+        function applyFilter() {
+            // Apply the selected filter
+        }
+        
+        function downloadImage() {
+            // Download the processed image
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Enhance the template with:</p>
+                            <ol>
+                                <li>Complete implementation of the image loading and display functionality</li>
+                                <li>A Web Worker that processes images with different filters</li>
+                                <li>Progress updates during processing</li>
+                                <li>Multiple filter options with adjustable parameters</li>
+                                <li>The ability to combine multiple filters</li>
+                                <li>A fallback for browsers that don't support Web Workers</li>
+                                <li>Optimized performance using transferable objects</li>
+                                <li>Error handling for various scenarios</li>
+                                <li>A responsive design that works well on both desktop and mobile devices</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored Web Workers, which allow you to run JavaScript code in background threads, separate from the main UI thread:</p>
+                        <ul>
+                            <li><strong>Types of Workers</strong>: Dedicated Workers, Shared Workers, and Service Workers, each with their own use cases and capabilities</li>
+                            <li><strong>Creating and Using Workers</strong>: How to create workers, communicate with them, and terminate them when they're no longer needed</li>
+                            <li><strong>Data Transfer</strong>: How to efficiently transfer data between threads using transferable objects</li>
+                            <li><strong>Importing Scripts</strong>: How to import additional scripts and modules in workers</li>
+                            <li><strong>Error Handling</strong>: Best practices for handling errors in workers</li>
+                            <li><strong>Real-World Use Cases</strong>: Practical applications of Web Workers in image processing, data analysis, and real-time visualization</li>
+                            <li><strong>Browser Support</strong>: Current browser support and fallback approaches</li>
+                        </ul>
+                        
+                        <p>Web Workers provide a powerful way to improve the performance and responsiveness of your web applications by moving CPU-intensive tasks to background threads. By understanding how to use Web Workers effectively, you can create more efficient and user-friendly web applications.</p>
+                        
+                        <p>Remember these key points:</p>
+                        <ul>
+                            <li><strong>Use workers for CPU-intensive tasks</strong> that might block the UI</li>
+                            <li><strong>Keep communication efficient</strong> by minimizing message frequency and size</li>
+                            <li><strong>Use transferable objects</strong> for large data transfers</li>
+                            <li><strong>Handle errors properly</strong> in both the worker and the main thread</li>
+                            <li><strong>Consider browser support</strong> and provide fallbacks when necessary</li>
+                            <li><strong>Choose the right type of worker</strong> for your specific use case</li>
+                        </ul>
+                        
+                        <p>In the next lesson, we'll explore Server-Sent Events, which allow servers to push updates to web clients over HTTP connections.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page20.html" class="btn">Previous: Drag & Drop API</a>
+                        <a href="page22.html" class="btn">Next: Server-Sent Events</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

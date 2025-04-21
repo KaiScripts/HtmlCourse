@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Formatting | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to format text in HTML using various elements to create engaging and well-structured content.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="4">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html" class="active">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>HTML Basics</h3>
+                <ul>
+                    <li><a href="page1.html">1. Introduction to HTML</a></li>
+                    <li><a href="page2.html">2. HTML Document Structure</a></li>
+                    <li><a href="page3.html">3. HTML Elements & Tags</a></li>
+                    <li><a href="page4.html" class="active">4. Text Formatting</a></li>
+                    <li><a href="page5.html">5. Links & Navigation</a></li>
+                    <li><a href="page6.html">6. Images & Multimedia</a></li>
+                    <li><a href="page7.html">7. Lists</a></li>
+                    <li><a href="page8.html">8. Tables</a></li>
+                    <li><a href="page9.html">9. Forms Basics</a></li>
+                    <li><a href="page10.html">10. Semantic HTML</a></li>
+                    <li><a href="page11.html">11. HTML Attributes</a></li>
+                    <li><a href="page12.html">12. HTML Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 8%;"></div>
+                </div>
+                <p style="text-align: center;">Page 4 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Text Formatting in HTML</h1>
+                    
+                    <div class="card">
+                        <h2>The Importance of Text Formatting</h2>
+                        <p>Text is the primary way we communicate information on the web. Well-formatted text improves readability, emphasizes important points, and creates visual hierarchy that guides users through your content.</p>
+                        
+                        <p>HTML provides a variety of elements specifically designed for text formatting. These elements help you structure your content in a way that's both visually appealing and semantically meaningful.</p>
+                        
+                        <div class="info-box">
+                            <h4>Semantic vs. Presentational</h4>
+                            <p>Modern HTML emphasizes <strong>semantic formatting</strong> (which describes the meaning or purpose of content) over <strong>presentational formatting</strong> (which only describes appearance).</p>
+                            <p>For example, use <code>&lt;strong&gt;</code> (semantic: important text) instead of <code>&lt;b&gt;</code> (presentational: bold text).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Headings: Creating Structure</h2>
+                        <p>Headings are one of the most important text formatting elements. They create a hierarchical structure for your content and help users and search engines understand the organization of your page.</p>
+                        
+                        <p>HTML provides six levels of headings, from <code>&lt;h1&gt;</code> (most important) to <code>&lt;h6&gt;</code> (least important):</p>
+                        
+                        <pre><code class="language-html">&lt;h1&gt;Main Page Title (H1)&lt;/h1&gt;
+&lt;h2&gt;Major Section Heading (H2)&lt;/h2&gt;
+&lt;h3&gt;Subsection Heading (H3)&lt;/h3&gt;
+&lt;h4&gt;Minor Heading (H4)&lt;/h4&gt;
+&lt;h5&gt;Small Heading (H5)&lt;/h5&gt;
+&lt;h6&gt;Smallest Heading (H6)&lt;/h6&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Heading Best Practices</h4>
+                            <ul>
+                                <li>Use only one <code>&lt;h1&gt;</code> per page (typically for the main title)</li>
+                                <li>Don't skip heading levels (e.g., don't go from <code>&lt;h2&gt;</code> to <code>&lt;h4&gt;</code>)</li>
+                                <li>Use headings to create a logical document outline</li>
+                                <li>Keep headings concise and descriptive</li>
+                                <li>Use headings for structure, not for styling (don't use an <code>&lt;h3&gt;</code> just because you like its size)</li>
+                            </ul>
+                        </div>
+                        
+                        <p>Headings are not just about appearance—they create an outline of your document that helps users (especially those using screen readers) navigate your content.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Paragraphs: The Building Blocks of Content</h2>
+                        <p>The paragraph element <code>&lt;p&gt;</code> is the workhorse of web content. It's used for blocks of text and automatically adds space before and after the content.</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;This is a paragraph of text. Paragraphs are block-level elements that automatically add space before and after the content.&lt;/p&gt;
+&lt;p&gt;This is another paragraph. Notice how it starts on a new line with space between paragraphs.&lt;/p&gt;</code></pre>
+                        
+                        <p>Paragraphs help break up your content into digestible chunks, making it easier for users to read and understand your message.</p>
+                        
+                        <h3>Line Breaks</h3>
+                        <p>Sometimes you need a line break without starting a new paragraph. The <code>&lt;br&gt;</code> element creates a line break within text:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;This text will be on one line.&lt;br&gt;This text will be on a new line without the extra spacing a new paragraph would create.&lt;/p&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>When to Use Line Breaks</h4>
+                            <p>Use line breaks sparingly and only when the content requires it, such as in:</p>
+                            <ul>
+                                <li>Poetry or song lyrics</li>
+                                <li>Addresses</li>
+                                <li>When you need a visual break without semantic separation</li>
+                            </ul>
+                            <p>Don't use multiple <code>&lt;br&gt;</code> elements to create spacing between paragraphs—use CSS for that purpose.</p>
+                        </div>
+                        
+                        <h3>Horizontal Rules</h3>
+                        <p>The <code>&lt;hr&gt;</code> element creates a horizontal line, often used to separate content sections:</p>
+                        
+                        <pre><code class="language-html">&lt;h2&gt;Section 1&lt;/h2&gt;
+&lt;p&gt;Content for section 1...&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Section 2&lt;/h2&gt;
+&lt;p&gt;Content for section 2...&lt;/p&gt;</code></pre>
+                        
+                        <p>Horizontal rules provide a visual separation between content sections, helping users understand when one topic ends and another begins.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Text Emphasis and Importance</h2>
+                        <p>HTML provides several elements for emphasizing text and indicating importance:</p>
+                        
+                        <h3>Strong Importance</h3>
+                        <p>The <code>&lt;strong&gt;</code> element indicates that text has strong importance, seriousness, or urgency. Browsers typically render it in bold:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; This action cannot be undone.&lt;/p&gt;</code></pre>
+                        
+                        <h3>Emphasis</h3>
+                        <p>The <code>&lt;em&gt;</code> element indicates emphasis that subtly changes the meaning of a sentence. Browsers typically render it in italics:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;I &lt;em&gt;really&lt;/em&gt; want to learn HTML.&lt;/p&gt;</code></pre>
+                        
+                        <h3>Bold and Italic (Presentational)</h3>
+                        <p>While semantic elements are preferred, HTML also provides presentational elements for bold and italic text:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Bold text (presentational) --&gt;
+&lt;p&gt;This is &lt;b&gt;bold text&lt;/b&gt; without semantic importance.&lt;/p&gt;
+
+&lt;!-- Italic text (presentational) --&gt;
+&lt;p&gt;This is &lt;i&gt;italic text&lt;/i&gt; without semantic emphasis.&lt;/p&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>When to Use Presentational Elements</h4>
+                            <p>Use <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> only when there's no semantic alternative, such as:</p>
+                            <ul>
+                                <li>Using <code>&lt;b&gt;</code> for keywords or product names</li>
+                                <li>Using <code>&lt;i&gt;</code> for technical terms, foreign phrases, or thoughts</li>
+                            </ul>
+                            <p>In most cases, <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> are better choices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Additional Text Formatting Elements</h2>
+                        <p>HTML provides several other elements for specific text formatting needs:</p>
+                        
+                        <h3>Marked Text</h3>
+                        <p>The <code>&lt;mark&gt;</code> element represents text that is highlighted for reference or notation purposes:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;The most important part is &lt;mark&gt;highlighted&lt;/mark&gt; for emphasis.&lt;/p&gt;</code></pre>
+                        
+                        <h3>Subscript and Superscript</h3>
+                        <p>The <code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code> elements represent subscript and superscript text:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Subscript for chemical formulas --&gt;
+&lt;p&gt;Water is H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
+
+&lt;!-- Superscript for mathematical expressions --&gt;
+&lt;p&gt;The area of a square is side&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+
+&lt;!-- Superscript for footnotes --&gt;
+&lt;p&gt;This statement needs a citation&lt;sup&gt;1&lt;/sup&gt;.&lt;/p&gt;</code></pre>
+                        
+                        <h3>Inserted and Deleted Text</h3>
+                        <p>The <code>&lt;ins&gt;</code> and <code>&lt;del&gt;</code> elements represent text that has been added to or removed from a document:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;The meeting is scheduled for &lt;del&gt;Monday&lt;/del&gt; &lt;ins&gt;Tuesday&lt;/ins&gt; at 3 PM.&lt;/p&gt;</code></pre>
+                        
+                        <h3>Small Text</h3>
+                        <p>The <code>&lt;small&gt;</code> element represents side comments or small print:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;This is a regular paragraph.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Copyright 2025. All rights reserved.&lt;/small&gt;&lt;/p&gt;</code></pre>
+                        
+                        <h3>Abbreviations</h3>
+                        <p>The <code>&lt;abbr&gt;</code> element represents an abbreviation or acronym:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; is the standard markup language for web pages.&lt;/p&gt;</code></pre>
+                        
+                        <p>When users hover over the abbreviation, they'll see the full title as a tooltip.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Quotations and Citations</h2>
+                        <p>HTML provides specific elements for quotations and citations:</p>
+                        
+                        <h3>Blockquotes</h3>
+                        <p>The <code>&lt;blockquote&gt;</code> element represents a section quoted from another source:</p>
+                        
+                        <pre><code class="language-html">&lt;blockquote&gt;
+    &lt;p&gt;The only way to learn a new programming language is by writing programs in it.&lt;/p&gt;
+    &lt;cite&gt;Dennis Ritchie&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+                        
+                        <h3>Inline Quotes</h3>
+                        <p>The <code>&lt;q&gt;</code> element represents a short inline quotation:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;As Einstein said, &lt;q&gt;Imagination is more important than knowledge.&lt;/q&gt;&lt;/p&gt;</code></pre>
+                        
+                        <p>Browsers typically add quotation marks around the content of a <code>&lt;q&gt;</code> element.</p>
+                        
+                        <h3>Citations</h3>
+                        <p>The <code>&lt;cite&gt;</code> element represents the title of a work:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;My favorite book is &lt;cite&gt;The Hitchhiker's Guide to the Galaxy&lt;/cite&gt; by Douglas Adams.&lt;/p&gt;</code></pre>
+                        
+                        <p>Browsers typically render the content of a <code>&lt;cite&gt;</code> element in italics.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Code and Preformatted Text</h2>
+                        <p>HTML provides elements specifically for displaying code and preserving formatting:</p>
+                        
+                        <h3>Code</h3>
+                        <p>The <code>&lt;code&gt;</code> element represents computer code:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;The &lt;code&gt;console.log()&lt;/code&gt; function outputs a message to the console.&lt;/p&gt;</code></pre>
+                        
+                        <h3>Preformatted Text</h3>
+                        <p>The <code>&lt;pre&gt;</code> element represents preformatted text, preserving both spaces and line breaks:</p>
+                        
+                        <pre><code class="language-html">&lt;pre&gt;
+function greet() {
+    console.log("Hello, world!");
+}
+&lt;/pre&gt;</code></pre>
+                        
+                        <p>The <code>&lt;pre&gt;</code> element is often used together with <code>&lt;code&gt;</code> for displaying code blocks:</p>
+                        
+                        <pre><code class="language-html">&lt;pre&gt;&lt;code&gt;
+function greet() {
+    console.log("Hello, world!");
+}
+&lt;/code&gt;&lt;/pre&gt;</code></pre>
+                        
+                        <h3>Keyboard Input</h3>
+                        <p>The <code>&lt;kbd&gt;</code> element represents keyboard input:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;To save the file, press &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;.&lt;/p&gt;</code></pre>
+                        
+                        <h3>Sample Output</h3>
+                        <p>The <code>&lt;samp&gt;</code> element represents sample output from a computer program:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;The program returned: &lt;samp&gt;Error: File not found&lt;/samp&gt;&lt;/p&gt;</code></pre>
+                        
+                        <h3>Variables</h3>
+                        <p>The <code>&lt;var&gt;</code> element represents a variable in a mathematical expression or programming context:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;The area of a circle is π × &lt;var&gt;r&lt;/var&gt;&lt;sup&gt;2&lt;/sup&gt;, where &lt;var&gt;r&lt;/var&gt; is the radius.&lt;/p&gt;</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Generic Text Containers</h2>
+                        <p>HTML provides generic container elements for when no specific semantic element is appropriate:</p>
+                        
+                        <h3>Span</h3>
+                        <p>The <code>&lt;span&gt;</code> element is an inline container used to style or manipulate a specific portion of text:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;This paragraph has &lt;span style="color: blue;"&gt;some blue text&lt;/span&gt; in it.&lt;/p&gt;</code></pre>
+                        
+                        <h3>Division</h3>
+                        <p>The <code>&lt;div&gt;</code> element is a block-level container used to group content for styling and layout purposes:</p>
+                        
+                        <pre><code class="language-html">&lt;div class="highlight-box"&gt;
+    &lt;h3&gt;Important Note&lt;/h3&gt;
+    &lt;p&gt;This content is grouped together in a div for styling purposes.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>When to Use Generic Containers</h4>
+                            <p>Use <code>&lt;span&gt;</code> and <code>&lt;div&gt;</code> when:</p>
+                            <ul>
+                                <li>No other semantic element is appropriate</li>
+                                <li>You need a container for styling purposes</li>
+                                <li>You need to group elements for JavaScript manipulation</li>
+                            </ul>
+                            <p>Always prefer semantic elements when they're available.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Character Entities</h2>
+                        <p>Sometimes you need to display characters that have special meaning in HTML or aren't easily typed. Character entities allow you to display these special characters:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Less than sign --&gt;
+&lt;p&gt;Use &amp;lt; for the less than symbol.&lt;/p&gt;
+
+&lt;!-- Greater than sign --&gt;
+&lt;p&gt;Use &amp;gt; for the greater than symbol.&lt;/p&gt;
+
+&lt;!-- Ampersand --&gt;
+&lt;p&gt;Use &amp;amp; for the ampersand symbol.&lt;/p&gt;
+
+&lt;!-- Non-breaking space --&gt;
+&lt;p&gt;This text has a non-breaking&amp;nbsp;space.&lt;/p&gt;
+
+&lt;!-- Copyright symbol --&gt;
+&lt;p&gt;&amp;copy; 2025 My Company&lt;/p&gt;
+
+&lt;!-- Registered trademark --&gt;
+&lt;p&gt;Product Name&amp;reg;&lt;/p&gt;
+
+&lt;!-- Trademark --&gt;
+&lt;p&gt;Product Name&amp;trade;&lt;/p&gt;
+
+&lt;!-- Euro sign --&gt;
+&lt;p&gt;Price: &amp;euro;99.99&lt;/p&gt;
+
+&lt;!-- Pound sign --&gt;
+&lt;p&gt;Price: &amp;pound;79.99&lt;/p&gt;
+
+&lt;!-- Yen sign --&gt;
+&lt;p&gt;Price: &amp;yen;9999&lt;/p&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Common Character Entities</h4>
+                            <table>
+                                <tr>
+                                    <th>Character</th>
+                                    <th>Entity</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>&lt;</td>
+                                    <td>&amp;lt;</td>
+                                    <td>Less than</td>
+                                </tr>
+                                <tr>
+                                    <td>&gt;</td>
+                                    <td>&amp;gt;</td>
+                                    <td>Greater than</td>
+                                </tr>
+                                <tr>
+                                    <td>&amp;</td>
+                                    <td>&amp;amp;</td>
+                                    <td>Ampersand</td>
+                                </tr>
+                                <tr>
+                                    <td>"</td>
+                                    <td>&amp;quot;</td>
+                                    <td>Double quotation mark</td>
+                                </tr>
+                                <tr>
+                                    <td>'</td>
+                                    <td>&amp;apos;</td>
+                                    <td>Single quotation mark (apostrophe)</td>
+                                </tr>
+                                <tr>
+                                    <td> </td>
+                                    <td>&amp;nbsp;</td>
+                                    <td>Non-breaking space</td>
+                                </tr>
+                                <tr>
+                                    <td>©</td>
+                                    <td>&amp;copy;</td>
+                                    <td>Copyright symbol</td>
+                                </tr>
+                                <tr>
+                                    <td>®</td>
+                                    <td>&amp;reg;</td>
+                                    <td>Registered trademark</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Text Formatting</h2>
+                        <p>Let's put what we've learned into practice by creating an HTML document that uses various text formatting elements:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Text Formatting Practice&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Text Formatting in HTML&lt;/h1&gt;
+    
+    &lt;h2&gt;Headings and Paragraphs&lt;/h2&gt;
+    &lt;p&gt;This is a regular paragraph with &lt;strong&gt;strong importance&lt;/strong&gt; and &lt;em&gt;emphasized&lt;/em&gt; text.&lt;/p&gt;
+    &lt;p&gt;This paragraph contains &lt;mark&gt;highlighted text&lt;/mark&gt; that stands out.&lt;/p&gt;
+    
+    &lt;h2&gt;Quotations&lt;/h2&gt;
+    &lt;blockquote&gt;
+        &lt;p&gt;The greatest glory in living lies not in never falling, but in rising every time we fall.&lt;/p&gt;
+        &lt;cite&gt;Nelson Mandela&lt;/cite&gt;
+    &lt;/blockquote&gt;
+    &lt;p&gt;As Shakespeare wrote, &lt;q&gt;All the world's a stage, and all the men and women merely players.&lt;/q&gt;&lt;/p&gt;
+    
+    &lt;h2&gt;Scientific Notation&lt;/h2&gt;
+    &lt;p&gt;Water is H&lt;sub&gt;2&lt;/sub&gt;O and the formula for the area of a circle is πr&lt;sup&gt;2&lt;/sup&gt;.&lt;/p&gt;
+    
+    &lt;h2&gt;Code Examples&lt;/h2&gt;
+    &lt;p&gt;The &lt;code&gt;alert()&lt;/code&gt; function displays a message to the user.&lt;/p&gt;
+    &lt;pre&gt;&lt;code&gt;
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+    &lt;/code&gt;&lt;/pre&gt;
+    
+    &lt;h2&gt;Keyboard Instructions&lt;/h2&gt;
+    &lt;p&gt;To save your work, press &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;.&lt;/p&gt;
+    
+    &lt;hr&gt;
+    
+    &lt;p&gt;&lt;small&gt;&amp;copy; 2025 Text Formatting Examples. All rights reserved.&lt;/small&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Try It Yourself</h4>
+                            <p>Create the HTML document above and view it in your browser. Then try to:</p>
+                            <ol>
+                                <li>Add a section with deleted and inserted text</li>
+                                <li>Create a paragraph with an abbreviation and its full form</li>
+                                <li>Add a sample output using the <code>&lt;samp&gt;</code> element</li>
+                                <li>Use a <code>&lt;span&gt;</code> to style a portion of text differently</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored text formatting in HTML:</p>
+                        <ul>
+                            <li>Headings (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>) create structure and hierarchy</li>
+                            <li>Paragraphs (<code>&lt;p&gt;</code>) are the building blocks of content</li>
+                            <li>Emphasis elements (<code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>) highlight important text</li>
+                            <li>Specialized elements exist for subscript, superscript, marked text, and more</li>
+                            <li>Quotation elements (<code>&lt;blockquote&gt;</code>, <code>&lt;q&gt;</code>, <code>&lt;cite&gt;</code>) properly format quoted content</li>
+                            <li>Code elements (<code>&lt;code&gt;</code>, <code>&lt;pre&gt;</code>) display computer code</li>
+                            <li>Generic containers (<code>&lt;span&gt;</code>, <code>&lt;div&gt;</code>) group content for styling</li>
+                            <li>Character entities display special characters</li>
+                        </ul>
+                        
+                        <p>Proper text formatting is essential for creating readable, accessible, and well-structured web content. In the next lesson, we'll explore links and navigation, which allow users to move between pages and sections of your website.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page3.html" class="btn">Previous: HTML Elements & Tags</a>
+                        <a href="page5.html" class="btn">Next: Links & Navigation</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

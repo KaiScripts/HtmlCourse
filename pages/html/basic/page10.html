@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn about semantic HTML elements that provide meaning to your web page structure and improve accessibility and SEO.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="10">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html" class="active">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>HTML Basics</h3>
+                <ul>
+                    <li><a href="page1.html">1. Introduction to HTML</a></li>
+                    <li><a href="page2.html">2. HTML Document Structure</a></li>
+                    <li><a href="page3.html">3. HTML Elements & Tags</a></li>
+                    <li><a href="page4.html">4. Text Formatting</a></li>
+                    <li><a href="page5.html">5. Links & Navigation</a></li>
+                    <li><a href="page6.html">6. Images & Multimedia</a></li>
+                    <li><a href="page7.html">7. Lists</a></li>
+                    <li><a href="page8.html">8. Tables</a></li>
+                    <li><a href="page9.html">9. Forms Basics</a></li>
+                    <li><a href="page10.html" class="active">10. Semantic HTML</a></li>
+                    <li><a href="page11.html">11. HTML Attributes</a></li>
+                    <li><a href="page12.html">12. HTML Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 20%;"></div>
+                </div>
+                <p style="text-align: center;">Page 10 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Semantic HTML</h1>
+                    
+                    <div class="card">
+                        <h2>What is Semantic HTML?</h2>
+                        <p>Semantic HTML refers to using HTML elements that clearly describe their meaning to both the browser and the developer. Instead of using generic containers like <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> for everything, semantic HTML uses elements that convey the purpose or meaning of the content they contain.</p>
+                        
+                        <p>For example, instead of creating a navigation menu with a <code>&lt;div class="nav"&gt;</code>, semantic HTML would use the <code>&lt;nav&gt;</code> element, which explicitly indicates that the content is navigation.</p>
+                        
+                        <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                            <div class="mini-card">
+                                <h4>Non-Semantic HTML</h4>
+                                <pre><code class="language-html">&lt;div class="header"&gt;
+    &lt;h1&gt;My Website&lt;/h1&gt;
+    &lt;div class="nav"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="main-content"&gt;
+    &lt;div class="article"&gt;
+        &lt;h2&gt;Article Title&lt;/h2&gt;
+        &lt;p&gt;Article content...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="sidebar"&gt;
+        &lt;h3&gt;Related Links&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="footer"&gt;
+    &lt;p&gt;Copyright 2025&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                            <div class="mini-card">
+                                <h4>Semantic HTML</h4>
+                                <pre><code class="language-html">&lt;header&gt;
+    &lt;h1&gt;My Website&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Article Title&lt;/h2&gt;
+        &lt;p&gt;Article content...&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;aside&gt;
+        &lt;h3&gt;Related Links&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+    &lt;p&gt;Copyright 2025&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+                            </div>
+                        </div>
+                        
+                        <h3>Why Use Semantic HTML?</h3>
+                        <p>Using semantic HTML provides several important benefits:</p>
+                        
+                        <ul>
+                            <li><strong>Accessibility</strong>: Screen readers and assistive technologies rely on semantic markup to help users navigate and understand web content.</li>
+                            <li><strong>SEO</strong>: Search engines better understand the content and structure of your pages, potentially improving rankings.</li>
+                            <li><strong>Maintainability</strong>: Code is more readable and easier to maintain when elements clearly describe their purpose.</li>
+                            <li><strong>Consistency</strong>: Encourages consistent document structures across different websites.</li>
+                            <li><strong>Device Compatibility</strong>: Helps content display appropriately across different devices and contexts.</li>
+                            <li><strong>Future-Proofing</strong>: As browsers evolve, semantic elements may receive special treatment or functionality.</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Historical Context</h4>
+                            <p>Before HTML5 introduced many semantic elements in 2014, developers often used <code>&lt;div&gt;</code> elements with descriptive class names to structure web pages. This approach worked visually but lacked the semantic meaning that modern HTML elements provide. The shift toward semantic HTML represents an important evolution in making the web more accessible and meaningful.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Document Structure Elements</h2>
+                        <p>HTML5 introduced several semantic elements specifically for defining the structure of a web page:</p>
+                        
+                        <h3>&lt;header&gt;</h3>
+                        <p>The <code>&lt;header&gt;</code> element represents introductory content, typically at the top of a page or section. It often contains headings, logos, navigation, and search forms.</p>
+                        
+                        <pre><code class="language-html">&lt;header&gt;
+    &lt;h1&gt;Website Title&lt;/h1&gt;
+    &lt;p&gt;Website tagline or description&lt;/p&gt;
+    &lt;nav&gt;
+        &lt;!-- Navigation links --&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+                        
+                        <p>Note that <code>&lt;header&gt;</code> is not the same as the <code>&lt;head&gt;</code> element, which contains metadata about the document.</p>
+                        
+                        <h3>&lt;nav&gt;</h3>
+                        <p>The <code>&lt;nav&gt;</code> element represents a section of navigation links, either for the current page or for the entire website.</p>
+                        
+                        <pre><code class="language-html">&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/services"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                        
+                        <p>Not all links on a page should be inside a <code>&lt;nav&gt;</code> element—only major navigation blocks. For example, a footer with a few links doesn't necessarily need to be in a <code>&lt;nav&gt;</code> element.</p>
+                        
+                        <h3>&lt;main&gt;</h3>
+                        <p>The <code>&lt;main&gt;</code> element represents the main content of the document. There should be only one <code>&lt;main&gt;</code> element per page, and it should not be inside an <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;header&gt;</code>, or <code>&lt;nav&gt;</code> element.</p>
+                        
+                        <pre><code class="language-html">&lt;main&gt;
+    &lt;h1&gt;Main Content Title&lt;/h1&gt;
+    &lt;p&gt;This is the main content of the page.&lt;/p&gt;
+    
+    &lt;article&gt;
+        &lt;!-- Article content --&gt;
+    &lt;/article&gt;
+    
+    &lt;section&gt;
+        &lt;!-- Section content --&gt;
+    &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+                        
+                        <h3>&lt;article&gt;</h3>
+                        <p>The <code>&lt;article&gt;</code> element represents a self-contained composition that could be distributed and reused independently, such as a news article, blog post, forum post, or comment.</p>
+                        
+                        <pre><code class="language-html">&lt;article&gt;
+    &lt;header&gt;
+        &lt;h2&gt;Article Title&lt;/h2&gt;
+        &lt;p&gt;Posted on &lt;time datetime="2025-04-20"&gt;April 20, 2025&lt;/time&gt; by Author Name&lt;/p&gt;
+    &lt;/header&gt;
+    
+    &lt;p&gt;Article content goes here...&lt;/p&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;Tags: HTML, Semantic, Web Development&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+                        
+                        <p>An <code>&lt;article&gt;</code> can contain its own <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> elements.</p>
+                        
+                        <h3>&lt;section&gt;</h3>
+                        <p>The <code>&lt;section&gt;</code> element represents a standalone section of content that is thematically related. It typically includes a heading.</p>
+                        
+                        <pre><code class="language-html">&lt;section&gt;
+    &lt;h2&gt;Features&lt;/h2&gt;
+    &lt;p&gt;Introduction to our features.&lt;/p&gt;
+    
+    &lt;div class="feature"&gt;
+        &lt;h3&gt;Feature 1&lt;/h3&gt;
+        &lt;p&gt;Description of feature 1.&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="feature"&gt;
+        &lt;h3&gt;Feature 2&lt;/h3&gt;
+        &lt;p&gt;Description of feature 2.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                        
+                        <p>The difference between <code>&lt;article&gt;</code> and <code>&lt;section&gt;</code> can be subtle. Generally, if the content could stand alone in a different context (like an RSS feed), use <code>&lt;article&gt;</code>. If it's a thematic grouping that's part of a larger whole, use <code>&lt;section&gt;</code>.</p>
+                        
+                        <h3>&lt;aside&gt;</h3>
+                        <p>The <code>&lt;aside&gt;</code> element represents content that is tangentially related to the content around it, such as sidebars, pull quotes, or advertising.</p>
+                        
+                        <pre><code class="language-html">&lt;aside&gt;
+    &lt;h3&gt;Related Articles&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Article 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Article 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Article 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;</code></pre>
+                        
+                        <h3>&lt;footer&gt;</h3>
+                        <p>The <code>&lt;footer&gt;</code> element represents a footer for its nearest sectioning content or sectioning root element. It typically contains information about the author, copyright data, links to related documents, and contact information.</p>
+                        
+                        <pre><code class="language-html">&lt;footer&gt;
+    &lt;p&gt;&copy; 2025 My Website. All rights reserved.&lt;/p&gt;
+    &lt;address&gt;
+        Contact: &lt;a href="mailto:info@example.com"&gt;info@example.com&lt;/a&gt;
+    &lt;/address&gt;
+    &lt;ul class="social-links"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/footer&gt;</code></pre>
+                        
+                        <p>Like <code>&lt;header&gt;</code>, a <code>&lt;footer&gt;</code> element can be used multiple times in a document, such as at the bottom of an <code>&lt;article&gt;</code> or <code>&lt;section&gt;</code>.</p>
+                        
+                        <div class="info-box">
+                            <h4>Nesting Structure Elements</h4>
+                            <p>Semantic elements can be nested within each other to create complex document structures. For example, an <code>&lt;article&gt;</code> can contain its own <code>&lt;header&gt;</code>, <code>&lt;section&gt;</code>s, and <code>&lt;footer&gt;</code>. This nesting helps create a clear document outline and improves accessibility.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Text Content Elements</h2>
+                        <p>In addition to document structure elements, HTML provides semantic elements for different types of text content:</p>
+                        
+                        <h3>&lt;figure&gt; and &lt;figcaption&gt;</h3>
+                        <p>The <code>&lt;figure&gt;</code> element represents self-contained content, often with a caption provided by the <code>&lt;figcaption&gt;</code> element. It's commonly used for images, diagrams, code snippets, etc.</p>
+                        
+                        <pre><code class="language-html">&lt;figure&gt;
+    &lt;img src="diagram.jpg" alt="System architecture diagram"&gt;
+    &lt;figcaption&gt;Figure 1: System architecture overview&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                        
+                        <p>The <code>&lt;figcaption&gt;</code> element can appear either before or after the content within <code>&lt;figure&gt;</code>.</p>
+                        
+                        <h3>&lt;time&gt;</h3>
+                        <p>The <code>&lt;time&gt;</code> element represents a specific period in time. It can include the <code>datetime</code> attribute to provide a machine-readable format.</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;The event starts at &lt;time datetime="2025-04-20T19:00"&gt;7:00 PM on April 20, 2025&lt;/time&gt;.&lt;/p&gt;</code></pre>
+                        
+                        <p>The <code>datetime</code> attribute follows a specific format: YYYY-MM-DDThh:mm:ss for date and time, or just YYYY-MM-DD for date only.</p>
+                        
+                        <h3>&lt;mark&gt;</h3>
+                        <p>The <code>&lt;mark&gt;</code> element represents text that is highlighted or marked for reference or notation purposes.</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;Search results for "HTML": &lt;mark&gt;HTML&lt;/mark&gt; is a markup language used for creating web pages.&lt;/p&gt;</code></pre>
+                        
+                        <h3>&lt;cite&gt;</h3>
+                        <p>The <code>&lt;cite&gt;</code> element represents the title of a creative work, such as a book, movie, painting, song, etc.</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;My favorite book is &lt;cite&gt;The Great Gatsby&lt;/cite&gt; by F. Scott Fitzgerald.&lt;/p&gt;</code></pre>
+                        
+                        <h3>&lt;blockquote&gt; and &lt;q&gt;</h3>
+                        <p>The <code>&lt;blockquote&gt;</code> element represents a section quoted from another source, while <code>&lt;q&gt;</code> is for shorter inline quotations.</p>
+                        
+                        <pre><code class="language-html">&lt;blockquote cite="https://example.com/source"&gt;
+    &lt;p&gt;This is a longer quote from another source that spans multiple lines or paragraphs.&lt;/p&gt;
+    &lt;footer&gt;— Author Name, &lt;cite&gt;Source Title&lt;/cite&gt;&lt;/footer&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As the famous saying goes, &lt;q&gt;To be or not to be, that is the question.&lt;/q&gt;&lt;/p&gt;</code></pre>
+                        
+                        <p>The <code>cite</code> attribute provides a URL to the source of the quotation.</p>
+                        
+                        <h3>&lt;address&gt;</h3>
+                        <p>The <code>&lt;address&gt;</code> element represents contact information for the nearest <code>&lt;article&gt;</code> or <code>&lt;body&gt;</code> element.</p>
+                        
+                        <pre><code class="language-html">&lt;address&gt;
+    Written by &lt;a href="mailto:john@example.com"&gt;John Doe&lt;/a&gt;.&lt;br&gt;
+    123 Main St, Anytown, USA&lt;br&gt;
+    Phone: (123) 456-7890
+&lt;/address&gt;</code></pre>
+                        
+                        <p>The <code>&lt;address&gt;</code> element is not for all addresses—it's specifically for contact information related to the document or article.</p>
+                        
+                        <h3>&lt;details&gt; and &lt;summary&gt;</h3>
+                        <p>The <code>&lt;details&gt;</code> element creates a disclosure widget that can be toggled open or closed. The <code>&lt;summary&gt;</code> element provides a visible heading for the details.</p>
+                        
+                        <pre><code class="language-html">&lt;details&gt;
+    &lt;summary&gt;Click to show more information&lt;/summary&gt;
+    &lt;p&gt;This is additional information that is hidden by default and can be toggled by the user.&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Detail item 1&lt;/li&gt;
+        &lt;li&gt;Detail item 2&lt;/li&gt;
+        &lt;li&gt;Detail item 3&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/details&gt;</code></pre>
+                        
+                        <p>This creates an interactive element that users can expand or collapse to show or hide content.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Semantic Elements for Specific Content</h2>
+                        <p>HTML includes semantic elements for specific types of content:</p>
+                        
+                        <h3>&lt;code&gt;, &lt;pre&gt;, and &lt;kbd&gt;</h3>
+                        <p>These elements are used for representing code and keyboard input:</p>
+                        <ul>
+                            <li><code>&lt;code&gt;</code>: Represents computer code</li>
+                            <li><code>&lt;pre&gt;</code>: Represents preformatted text (preserves whitespace)</li>
+                            <li><code>&lt;kbd&gt;</code>: Represents keyboard input</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;p&gt;The &lt;code&gt;console.log()&lt;/code&gt; function outputs a message to the console.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+console.log(greet('World'));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Press &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt; to copy the selected text.&lt;/p&gt;</code></pre>
+                        
+                        <h3>&lt;samp&gt; and &lt;var&gt;</h3>
+                        <p>These elements are used for representing program output and variables:</p>
+                        <ul>
+                            <li><code>&lt;samp&gt;</code>: Represents sample output from a computer program</li>
+                            <li><code>&lt;var&gt;</code>: Represents a variable in a mathematical expression or programming context</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;p&gt;When you run the program, you'll see: &lt;samp&gt;Hello, World!&lt;/samp&gt;&lt;/p&gt;
+
+&lt;p&gt;The area of a circle is calculated as: A = π × &lt;var&gt;r&lt;/var&gt;²&lt;/p&gt;</code></pre>
+                        
+                        <h3>&lt;meter&gt; and &lt;progress&gt;</h3>
+                        <p>These elements represent measurements and progress:</p>
+                        <ul>
+                            <li><code>&lt;meter&gt;</code>: Represents a scalar measurement within a known range</li>
+                            <li><code>&lt;progress&gt;</code>: Represents the completion progress of a task</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;p&gt;Disk usage: &lt;meter value="6" min="0" max="10" low="2" high="8" optimum="5"&gt;6 out of 10&lt;/meter&gt;&lt;/p&gt;
+
+&lt;p&gt;Download progress: &lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;&lt;/p&gt;</code></pre>
+                        
+                        <p>The <code>&lt;meter&gt;</code> element includes attributes to define the range and thresholds, while <code>&lt;progress&gt;</code> shows completion status.</p>
+                        
+                        <h3>&lt;abbr&gt; and &lt;dfn&gt;</h3>
+                        <p>These elements are used for abbreviations and definitions:</p>
+                        <ul>
+                            <li><code>&lt;abbr&gt;</code>: Represents an abbreviation or acronym</li>
+                            <li><code>&lt;dfn&gt;</code>: Represents the defining instance of a term</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;p&gt;The &lt;abbr title="World Health Organization"&gt;WHO&lt;/abbr&gt; was founded in 1948.&lt;/p&gt;
+
+&lt;p&gt;&lt;dfn&gt;HTML&lt;/dfn&gt; (HyperText Markup Language) is the standard markup language for creating web pages.&lt;/p&gt;</code></pre>
+                        
+                        <p>The <code>title</code> attribute in <code>&lt;abbr&gt;</code> provides the full expansion of the abbreviation, which may be displayed as a tooltip in browsers.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Creating a Semantic Document Outline</h2>
+                        <p>A well-structured semantic document creates a logical outline that helps browsers, search engines, and assistive technologies understand the content hierarchy. Here's an example of a complete semantic document structure:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Semantic HTML Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;My Website&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;header&gt;
+                &lt;h2&gt;Article Title&lt;/h2&gt;
+                &lt;p&gt;Posted on &lt;time datetime="2025-04-20"&gt;April 20, 2025&lt;/time&gt; by &lt;a href="#"&gt;Author Name&lt;/a&gt;&lt;/p&gt;
+            &lt;/header&gt;
+            
+            &lt;section&gt;
+                &lt;h3&gt;Introduction&lt;/h3&gt;
+                &lt;p&gt;This is the introduction to the article.&lt;/p&gt;
+            &lt;/section&gt;
+            
+            &lt;section&gt;
+                &lt;h3&gt;Main Content&lt;/h3&gt;
+                &lt;p&gt;This is the main content of the article.&lt;/p&gt;
+                
+                &lt;figure&gt;
+                    &lt;img src="image.jpg" alt="Descriptive image caption"&gt;
+                    &lt;figcaption&gt;Figure 1: Description of the image&lt;/figcaption&gt;
+                &lt;/figure&gt;
+                
+                &lt;p&gt;More content with a &lt;mark&gt;highlighted term&lt;/mark&gt; and a quote: &lt;q&gt;This is a quote&lt;/q&gt;.&lt;/p&gt;
+            &lt;/section&gt;
+            
+            &lt;section&gt;
+                &lt;h3&gt;Code Example&lt;/h3&gt;
+                &lt;pre&gt;&lt;code&gt;
+function example() {
+    return "This is a code example";
+}
+                &lt;/code&gt;&lt;/pre&gt;
+            &lt;/section&gt;
+            
+            &lt;section&gt;
+                &lt;h3&gt;Conclusion&lt;/h3&gt;
+                &lt;p&gt;This is the conclusion of the article.&lt;/p&gt;
+            &lt;/section&gt;
+            
+            &lt;footer&gt;
+                &lt;p&gt;Tags: &lt;a href="#"&gt;HTML&lt;/a&gt;, &lt;a href="#"&gt;Semantic&lt;/a&gt;, &lt;a href="#"&gt;Web Development&lt;/a&gt;&lt;/p&gt;
+            &lt;/footer&gt;
+        &lt;/article&gt;
+        
+        &lt;aside&gt;
+            &lt;h3&gt;Related Articles&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Article 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Article 2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Article 3&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            
+            &lt;details&gt;
+                &lt;summary&gt;More Information&lt;/summary&gt;
+                &lt;p&gt;Additional details that can be toggled open or closed.&lt;/p&gt;
+            &lt;/details&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2025 My Website. All rights reserved.&lt;/p&gt;
+        &lt;address&gt;
+            Contact: &lt;a href="mailto:info@example.com"&gt;info@example.com&lt;/a&gt;
+        &lt;/address&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>This example demonstrates how semantic elements can be combined to create a well-structured document with a clear hierarchy and meaning.</p>
+                        
+                        <div class="info-box">
+                            <h4>Document Outline Algorithm</h4>
+                            <p>Browsers and assistive technologies use the document outline algorithm to create a hierarchical representation of the content. This outline is determined by heading levels (<code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>) and sectioning elements. A well-structured document should have a logical heading hierarchy without skipping levels (e.g., don't jump from <code>&lt;h1&gt;</code> to <code>&lt;h3&gt;</code> without an <code>&lt;h2&gt;</code> in between).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>ARIA: Enhancing Semantics</h2>
+                        <p>While semantic HTML provides a good foundation, sometimes you need additional semantics that HTML alone doesn't provide. ARIA (Accessible Rich Internet Applications) is a set of attributes that can enhance the accessibility and semantics of web content.</p>
+                        
+                        <h3>ARIA Roles</h3>
+                        <p>ARIA roles define what an element is or does. They can be added to elements using the <code>role</code> attribute:</p>
+                        
+                        <pre><code class="language-html">&lt;div role="search"&gt;
+    &lt;input type="text" placeholder="Search..."&gt;
+    &lt;button&gt;Search&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <p>Common ARIA roles include:</p>
+                        <ul>
+                            <li><code>banner</code>: A region that contains site-oriented content</li>
+                            <li><code>navigation</code>: A collection of links for navigation</li>
+                            <li><code>main</code>: The main content of the document</li>
+                            <li><code>complementary</code>: Supporting content for the main content</li>
+                            <li><code>contentinfo</code>: Information about the parent document (like a footer)</li>
+                            <li><code>search</code>: A search feature</li>
+                            <li><code>form</code>: A form or form-like element</li>
+                            <li><code>region</code>: A perceivable section of the page</li>
+                        </ul>
+                        
+                        <h3>ARIA States and Properties</h3>
+                        <p>ARIA states and properties provide additional information about elements:</p>
+                        
+                        <pre><code class="language-html">&lt;button aria-expanded="false" aria-controls="menu"&gt;Toggle Menu&lt;/button&gt;
+&lt;div id="menu" aria-hidden="true"&gt;
+    &lt;!-- Menu content --&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <p>Common ARIA states and properties include:</p>
+                        <ul>
+                            <li><code>aria-label</code>: Provides a text label for an element</li>
+                            <li><code>aria-labelledby</code>: References another element that labels the current element</li>
+                            <li><code>aria-describedby</code>: References another element that describes the current element</li>
+                            <li><code>aria-expanded</code>: Indicates if a collapsible element is expanded or collapsed</li>
+                            <li><code>aria-hidden</code>: Indicates if an element is visible or hidden</li>
+                            <li><code>aria-required</code>: Indicates if a form field is required</li>
+                            <li><code>aria-invalid</code>: Indicates if a form field has an invalid value</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>ARIA Best Practices</h4>
+                            <p>When using ARIA, follow these best practices:</p>
+                            <ol>
+                                <li><strong>Use native HTML elements</strong> with built-in semantics whenever possible before resorting to ARIA.</li>
+                                <li><strong>Don't change the semantics</strong> of an element that already has meaning (e.g., don't add <code>role="button"</code> to an <code>&lt;a&gt;</code> element).</li>
+                                <li><strong>Keep it simple</strong> and only use ARIA when necessary.</li>
+                                <li><strong>Test with assistive technologies</strong> to ensure your ARIA implementation works as expected.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Semantic HTML and SEO</h2>
+                        <p>Search engines use the structure and semantics of your HTML to understand and index your content. Using semantic HTML can improve your search engine optimization (SEO) in several ways:</p>
+                        
+                        <h3>1. Improved Content Understanding</h3>
+                        <p>Search engines can better understand what your content is about when you use semantic elements. For example, content within an <code>&lt;article&gt;</code> element is recognized as the main content, while content in <code>&lt;aside&gt;</code> might be considered supplementary.</p>
+                        
+                        <h3>2. Featured Snippets</h3>
+                        <p>Properly structured content with semantic HTML increases the chances of your content being selected for featured snippets in search results. For example, using <code>&lt;ol&gt;</code> for steps or <code>&lt;table&gt;</code> for tabular data helps search engines identify and extract this information.</p>
+                        
+                        <h3>3. Accessibility and User Experience</h3>
+                        <p>Search engines consider accessibility and user experience as ranking factors. Semantic HTML improves both, potentially leading to better rankings.</p>
+                        
+                        <h3>4. Mobile Optimization</h3>
+                        <p>Semantic HTML helps create more adaptable content that works well on different devices, which is important for mobile-first indexing.</p>
+                        
+                        <h3>5. Rich Results</h3>
+                        <p>Semantic markup, especially when combined with structured data (like Schema.org), can enable rich results in search listings, such as star ratings, recipe information, or event details.</p>
+                        
+                        <div class="info-box">
+                            <h4>Schema.org and Structured Data</h4>
+                            <p>While semantic HTML provides basic meaning to your content, you can further enhance it for search engines using Schema.org vocabulary. This structured data can be added using JSON-LD, Microdata, or RDFa formats and helps search engines understand specific types of content like products, reviews, events, and more.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Semantic HTML and Accessibility</h2>
+                        <p>Semantic HTML is a cornerstone of web accessibility. It provides the structure and meaning that assistive technologies need to help users navigate and understand web content.</p>
+                        
+                        <h3>How Semantic HTML Improves Accessibility</h3>
+                        
+                        <h4>1. Screen Reader Navigation</h4>
+                        <p>Screen readers use semantic elements to provide navigation options. For example, users can jump between headings, landmarks (like <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;aside&gt;</code>), or links.</p>
+                        
+                        <h4>2. Landmark Roles</h4>
+                        <p>Semantic sectioning elements automatically create landmark roles that help users navigate the page:</p>
+                        <ul>
+                            <li><code>&lt;header&gt;</code> creates a "banner" landmark</li>
+                            <li><code>&lt;nav&gt;</code> creates a "navigation" landmark</li>
+                            <li><code>&lt;main&gt;</code> creates a "main" landmark</li>
+                            <li><code>&lt;aside&gt;</code> creates a "complementary" landmark</li>
+                            <li><code>&lt;footer&gt;</code> creates a "contentinfo" landmark</li>
+                        </ul>
+                        
+                        <h4>3. Context and Relationships</h4>
+                        <p>Semantic elements establish relationships between content. For example, <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> create a relationship between an image and its caption, which screen readers can announce together.</p>
+                        
+                        <h4>4. Form Accessibility</h4>
+                        <p>Semantic form elements like <code>&lt;label&gt;</code>, <code>&lt;fieldset&gt;</code>, and <code>&lt;legend&gt;</code> improve form accessibility by providing context and grouping related controls.</p>
+                        
+                        <h4>5. Keyboard Navigation</h4>
+                        <p>Semantic elements often have built-in keyboard accessibility. For example, <code>&lt;button&gt;</code> elements are focusable and can be activated with the Enter or Space key, while <code>&lt;div&gt;</code> elements with JavaScript click handlers might not have this behavior by default.</p>
+                        
+                        <div class="info-box">
+                            <h4>Testing Accessibility</h4>
+                            <p>To ensure your semantic HTML is providing good accessibility:</p>
+                            <ul>
+                                <li>Test with screen readers like NVDA, JAWS, or VoiceOver</li>
+                                <li>Navigate using only the keyboard</li>
+                                <li>Use accessibility testing tools like Lighthouse, axe, or WAVE</li>
+                                <li>Validate your HTML to ensure proper nesting and structure</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Converting Non-Semantic to Semantic HTML</h2>
+                        <p>Let's practice converting a non-semantic HTML document to a semantic one:</p>
+                        
+                        <h3>Non-Semantic Version</h3>
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Blog&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .top-bar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .site-title {
+            margin: 0;
+        }
+        
+        .menu {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        
+        .menu li {
+            margin-right: 20px;
+        }
+        
+        .content-area {
+            display: flex;
+        }
+        
+        .main-content {
+            flex: 3;
+            margin-right: 20px;
+        }
+        
+        .post {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .post-title {
+            margin-top: 0;
+        }
+        
+        .post-meta {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        .bottom-bar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="top-bar"&gt;
+        &lt;h1 class="site-title"&gt;My Blog&lt;/h1&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="menu"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="content-area"&gt;
+        &lt;div class="main-content"&gt;
+            &lt;div class="post"&gt;
+                &lt;h2 class="post-title"&gt;Getting Started with HTML&lt;/h2&gt;
+                &lt;div class="post-meta"&gt;Posted on January 15, 2025 by Admin&lt;/div&gt;
+                
+                &lt;div class="post-content"&gt;
+                    &lt;p&gt;HTML (HyperText Markup Language) is the standard markup language for creating web pages.&lt;/p&gt;
+                    
+                    &lt;div class="image-container"&gt;
+                        &lt;img src="html-code.jpg" alt="HTML code example"&gt;
+                        &lt;div class="image-caption"&gt;Example of HTML code&lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;p&gt;In this post, we'll cover the basics of HTML and how to create your first web page.&lt;/p&gt;
+                    
+                    &lt;div class="code-block"&gt;
+                        &lt;div class="code"&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;p&gt;Stay tuned for more tutorials!&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="post-tags"&gt;
+                    Tags: &lt;a href="#"&gt;HTML&lt;/a&gt;, &lt;a href="#"&gt;Web Development&lt;/a&gt;, &lt;a href="#"&gt;Beginner&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="post"&gt;
+                &lt;h2 class="post-title"&gt;CSS Fundamentals&lt;/h2&gt;
+                &lt;div class="post-meta"&gt;Posted on January 20, 2025 by Admin&lt;/div&gt;
+                
+                &lt;div class="post-content"&gt;
+                    &lt;p&gt;CSS (Cascading Style Sheets) is used to style and layout web pages.&lt;/p&gt;
+                    &lt;p&gt;In this post, we'll explore the basics of CSS and how to apply styles to your HTML.&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="post-tags"&gt;
+                    Tags: &lt;a href="#"&gt;CSS&lt;/a&gt;, &lt;a href="#"&gt;Web Development&lt;/a&gt;, &lt;a href="#"&gt;Styling&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="sidebar"&gt;
+            &lt;div class="widget"&gt;
+                &lt;h3&gt;Recent Posts&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Getting Started with HTML&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;CSS Fundamentals&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;JavaScript Basics&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Responsive Web Design&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="widget"&gt;
+                &lt;h3&gt;Categories&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Web Design&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="bottom-bar"&gt;
+        &lt;p&gt;&copy; 2025 My Blog. All rights reserved.&lt;/p&gt;
+        &lt;p&gt;Contact: info@myblog.com&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <h3>Semantic Version</h3>
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Blog&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        
+        nav li {
+            margin-right: 20px;
+        }
+        
+        .content-wrapper {
+            display: flex;
+        }
+        
+        main {
+            flex: 3;
+            margin-right: 20px;
+        }
+        
+        article {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        
+        article header h2 {
+            margin-top: 0;
+        }
+        
+        .post-meta {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        figure {
+            margin: 20px 0;
+        }
+        
+        figcaption {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+        }
+        
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        
+        aside {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;My Blog&lt;/h1&gt;
+    &lt;/header&gt;
+    
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    
+    &lt;div class="content-wrapper"&gt;
+        &lt;main&gt;
+            &lt;article&gt;
+                &lt;header&gt;
+                    &lt;h2&gt;Getting Started with HTML&lt;/h2&gt;
+                    &lt;p class="post-meta"&gt;Posted on &lt;time datetime="2025-01-15"&gt;January 15, 2025&lt;/time&gt; by Admin&lt;/p&gt;
+                &lt;/header&gt;
+                
+                &lt;p&gt;&lt;dfn&gt;HTML&lt;/dfn&gt; (HyperText Markup Language) is the standard markup language for creating web pages.&lt;/p&gt;
+                
+                &lt;figure&gt;
+                    &lt;img src="html-code.jpg" alt="HTML code example"&gt;
+                    &lt;figcaption&gt;Example of HTML code&lt;/figcaption&gt;
+                &lt;/figure&gt;
+                
+                &lt;p&gt;In this post, we'll cover the basics of HTML and how to create your first web page.&lt;/p&gt;
+                
+                &lt;pre&gt;&lt;code&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                &lt;/code&gt;&lt;/pre&gt;
+                
+                &lt;p&gt;Stay tuned for more tutorials!&lt;/p&gt;
+                
+                &lt;footer&gt;
+                    &lt;p&gt;Tags: &lt;a href="#"&gt;HTML&lt;/a&gt;, &lt;a href="#"&gt;Web Development&lt;/a&gt;, &lt;a href="#"&gt;Beginner&lt;/a&gt;&lt;/p&gt;
+                &lt;/footer&gt;
+            &lt;/article&gt;
+            
+            &lt;article&gt;
+                &lt;header&gt;
+                    &lt;h2&gt;CSS Fundamentals&lt;/h2&gt;
+                    &lt;p class="post-meta"&gt;Posted on &lt;time datetime="2025-01-20"&gt;January 20, 2025&lt;/time&gt; by Admin&lt;/p&gt;
+                &lt;/header&gt;
+                
+                &lt;p&gt;&lt;dfn&gt;CSS&lt;/dfn&gt; (Cascading Style Sheets) is used to style and layout web pages.&lt;/p&gt;
+                &lt;p&gt;In this post, we'll explore the basics of CSS and how to apply styles to your HTML.&lt;/p&gt;
+                
+                &lt;footer&gt;
+                    &lt;p&gt;Tags: &lt;a href="#"&gt;CSS&lt;/a&gt;, &lt;a href="#"&gt;Web Development&lt;/a&gt;, &lt;a href="#"&gt;Styling&lt;/a&gt;&lt;/p&gt;
+                &lt;/footer&gt;
+            &lt;/article&gt;
+        &lt;/main&gt;
+        
+        &lt;aside&gt;
+            &lt;section&gt;
+                &lt;h3&gt;Recent Posts&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Getting Started with HTML&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;CSS Fundamentals&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;JavaScript Basics&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Responsive Web Design&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/section&gt;
+            
+            &lt;section&gt;
+                &lt;h3&gt;Categories&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Web Design&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/section&gt;
+        &lt;/aside&gt;
+    &lt;/div&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2025 My Blog. All rights reserved.&lt;/p&gt;
+        &lt;address&gt;
+            Contact: &lt;a href="mailto:info@myblog.com"&gt;info@myblog.com&lt;/a&gt;
+        &lt;/address&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <h3>Key Changes Made</h3>
+                        <ul>
+                            <li>Replaced <code>&lt;div class="top-bar"&gt;</code> with <code>&lt;header&gt;</code></li>
+                            <li>Replaced <code>&lt;div class="menu"&gt;</code> with <code>&lt;nav&gt;</code></li>
+                            <li>Replaced <code>&lt;div class="main-content"&gt;</code> with <code>&lt;main&gt;</code></li>
+                            <li>Replaced <code>&lt;div class="post"&gt;</code> with <code>&lt;article&gt;</code></li>
+                            <li>Added <code>&lt;header&gt;</code> within each article</li>
+                            <li>Replaced <code>&lt;div class="image-container"&gt;</code> with <code>&lt;figure&gt;</code></li>
+                            <li>Replaced <code>&lt;div class="image-caption"&gt;</code> with <code>&lt;figcaption&gt;</code></li>
+                            <li>Replaced <code>&lt;div class="code-block"&gt;</code> with <code>&lt;pre&gt;&lt;code&gt;</code></li>
+                            <li>Replaced <code>&lt;div class="post-tags"&gt;</code> with <code>&lt;footer&gt;</code> within each article</li>
+                            <li>Replaced <code>&lt;div class="sidebar"&gt;</code> with <code>&lt;aside&gt;</code></li>
+                            <li>Replaced <code>&lt;div class="widget"&gt;</code> with <code>&lt;section&gt;</code></li>
+                            <li>Replaced <code>&lt;div class="bottom-bar"&gt;</code> with <code>&lt;footer&gt;</code></li>
+                            <li>Added <code>&lt;time&gt;</code> elements for dates</li>
+                            <li>Added <code>&lt;dfn&gt;</code> elements for term definitions</li>
+                            <li>Added <code>&lt;address&gt;</code> element for contact information</li>
+                        </ul>
+                        
+                        <div class="try-it-box">
+                            <h4>Try It Yourself</h4>
+                            <p>Practice converting non-semantic HTML to semantic HTML:</p>
+                            <ol>
+                                <li>Create a new HTML file with the non-semantic version</li>
+                                <li>Create another HTML file and rewrite it using semantic elements</li>
+                                <li>Compare the two versions and note the differences</li>
+                                <li>Test both versions with a screen reader to experience the accessibility improvements</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored semantic HTML:</p>
+                        <ul>
+                            <li>Semantic HTML uses elements that clearly describe their meaning and purpose</li>
+                            <li>Document structure elements like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, and <code>&lt;footer&gt;</code> define the overall structure of a page</li>
+                            <li>Text content elements like <code>&lt;figure&gt;</code>, <code>&lt;time&gt;</code>, <code>&lt;mark&gt;</code>, <code>&lt;cite&gt;</code>, <code>&lt;blockquote&gt;</code>, and <code>&lt;address&gt;</code> provide meaning to specific types of content</li>
+                            <li>Specialized elements like <code>&lt;code&gt;</code>, <code>&lt;pre&gt;</code>, <code>&lt;kbd&gt;</code>, <code>&lt;meter&gt;</code>, and <code>&lt;progress&gt;</code> represent specific content types</li>
+                            <li>ARIA attributes can enhance semantics when HTML alone isn't sufficient</li>
+                            <li>Semantic HTML improves accessibility, SEO, maintainability, and future-proofing of web content</li>
+                        </ul>
+                        
+                        <p>Using semantic HTML is a fundamental best practice in web development. It creates more meaningful, accessible, and maintainable code that benefits all users, including those with disabilities, and helps search engines better understand your content. In the next lesson, we'll explore HTML attributes, which provide additional information and functionality to HTML elements.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page9.html" class="btn">Previous: Forms Basics</a>
+                        <a href="page11.html" class="btn">Next: HTML Attributes</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

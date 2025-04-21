@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Attributes | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn about HTML attributes that provide additional information and functionality to HTML elements.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="11">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html" class="active">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>HTML Basics</h3>
+                <ul>
+                    <li><a href="page1.html">1. Introduction to HTML</a></li>
+                    <li><a href="page2.html">2. HTML Document Structure</a></li>
+                    <li><a href="page3.html">3. HTML Elements & Tags</a></li>
+                    <li><a href="page4.html">4. Text Formatting</a></li>
+                    <li><a href="page5.html">5. Links & Navigation</a></li>
+                    <li><a href="page6.html">6. Images & Multimedia</a></li>
+                    <li><a href="page7.html">7. Lists</a></li>
+                    <li><a href="page8.html">8. Tables</a></li>
+                    <li><a href="page9.html">9. Forms Basics</a></li>
+                    <li><a href="page10.html">10. Semantic HTML</a></li>
+                    <li><a href="page11.html" class="active">11. HTML Attributes</a></li>
+                    <li><a href="page12.html">12. HTML Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 22%;"></div>
+                </div>
+                <p style="text-align: center;">Page 11 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>HTML Attributes</h1>
+                    
+                    <div class="card">
+                        <h2>What Are HTML Attributes?</h2>
+                        <p>HTML attributes provide additional information about HTML elements and modify their behavior or appearance. They are always specified in the start tag and usually come in name/value pairs like <code>name="value"</code>.</p>
+                        
+                        <p>Attributes enhance HTML elements by:</p>
+                        <ul>
+                            <li>Providing additional information about an element</li>
+                            <li>Modifying an element's behavior</li>
+                            <li>Specifying appearance characteristics</li>
+                            <li>Establishing relationships with other elements</li>
+                            <li>Adding accessibility features</li>
+                            <li>Enabling JavaScript interactions</li>
+                        </ul>
+                        
+                        <h3>Attribute Syntax</h3>
+                        <p>HTML attributes follow a specific syntax:</p>
+                        <ul>
+                            <li>They are added to the opening tag of an element</li>
+                            <li>They consist of a name and a value, separated by an equals sign</li>
+                            <li>The value is enclosed in quotation marks (single or double)</li>
+                            <li>Multiple attributes are separated by spaces</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;element attribute1="value1" attribute2="value2"&gt;Content&lt;/element&gt;</code></pre>
+                        
+                        <p>For example:</p>
+                        
+                        <pre><code class="language-html">&lt;a href="https://example.com" target="_blank" title="Visit Example Website"&gt;Example Link&lt;/a&gt;</code></pre>
+                        
+                        <p>In this example, <code>href</code>, <code>target</code>, and <code>title</code> are all attributes of the <code>&lt;a&gt;</code> element.</p>
+                        
+                        <h3>Boolean Attributes</h3>
+                        <p>Some attributes don't require a value. These are called boolean attributes, and their presence indicates a "true" value. Their absence indicates a "false" value.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- With HTML5, these are equivalent: --&gt;
+&lt;input type="text" disabled&gt;
+&lt;input type="text" disabled="disabled"&gt;
+&lt;input type="text" disabled=""&gt;</code></pre>
+                        
+                        <p>Common boolean attributes include <code>disabled</code>, <code>checked</code>, <code>readonly</code>, <code>required</code>, <code>selected</code>, <code>multiple</code>, <code>autofocus</code>, and <code>hidden</code>.</p>
+                        
+                        <div class="info-box">
+                            <h4>Attribute Case Sensitivity</h4>
+                            <p>HTML attribute names are not case-sensitive, but XHTML and XML are case-sensitive. For consistency and compatibility with all standards, it's best practice to use lowercase attribute names.</p>
+                            <p>Attribute values, however, can be case-sensitive depending on the attribute. For example, ID and class values are case-sensitive, while the <code>href</code> attribute value is not.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Global Attributes</h2>
+                        <p>Global attributes are attributes that can be used on any HTML element. They provide functionality or information that's applicable to all elements.</p>
+                        
+                        <h3>Core Global Attributes</h3>
+                        
+                        <h4>id</h4>
+                        <p>The <code>id</code> attribute specifies a unique identifier for an element. It must be unique within the document and is often used for JavaScript manipulation or as an anchor for links.</p>
+                        
+                        <pre><code class="language-html">&lt;h2 id="section-2"&gt;Section 2&lt;/h2&gt;
+&lt;a href="#section-2"&gt;Jump to Section 2&lt;/a&gt;</code></pre>
+                        
+                        <h4>class</h4>
+                        <p>The <code>class</code> attribute specifies one or more class names for an element. Classes are used to apply CSS styles to elements and for JavaScript selection.</p>
+                        
+                        <pre><code class="language-html">&lt;p class="highlight important"&gt;This paragraph has two classes.&lt;/p&gt;</code></pre>
+                        
+                        <h4>style</h4>
+                        <p>The <code>style</code> attribute contains inline CSS styles for an element. While generally not recommended (external CSS is preferred), it can be useful for quick styling or dynamic styles.</p>
+                        
+                        <pre><code class="language-html">&lt;p style="color: blue; font-size: 18px;"&gt;This paragraph has inline styles.&lt;/p&gt;</code></pre>
+                        
+                        <h4>title</h4>
+                        <p>The <code>title</code> attribute provides additional information about an element. It's typically displayed as a tooltip when the user hovers over the element.</p>
+                        
+                        <pre><code class="language-html">&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code></pre>
+                        
+                        <h3>Language and Direction Attributes</h3>
+                        
+                        <h4>lang</h4>
+                        <p>The <code>lang</code> attribute specifies the language of the element's content. It's important for accessibility and search engines.</p>
+                        
+                        <pre><code class="language-html">&lt;html lang="en"&gt;
+    &lt;!-- English content --&gt;
+&lt;/html&gt;
+
+&lt;p lang="fr"&gt;Bonjour le monde&lt;/p&gt;</code></pre>
+                        
+                        <h4>dir</h4>
+                        <p>The <code>dir</code> attribute specifies the text direction of the element's content. It can be <code>ltr</code> (left to right) or <code>rtl</code> (right to left).</p>
+                        
+                        <pre><code class="language-html">&lt;p dir="rtl"&gt;This text will flow from right to left.&lt;/p&gt;</code></pre>
+                        
+                        <h3>Interactive Attributes</h3>
+                        
+                        <h4>hidden</h4>
+                        <p>The <code>hidden</code> attribute indicates that an element is not yet, or is no longer, relevant. Browsers won't display elements with the <code>hidden</code> attribute.</p>
+                        
+                        <pre><code class="language-html">&lt;p hidden&gt;This paragraph is hidden.&lt;/p&gt;</code></pre>
+                        
+                        <h4>tabindex</h4>
+                        <p>The <code>tabindex</code> attribute specifies the tab order of an element. It's important for keyboard navigation and accessibility.</p>
+                        
+                        <pre><code class="language-html">&lt;input type="text" tabindex="1"&gt;
+&lt;input type="text" tabindex="2"&gt;
+&lt;input type="text" tabindex="3"&gt;</code></pre>
+                        
+                        <p>A negative value (usually <code>tabindex="-1"</code>) means the element is not reachable via sequential keyboard navigation but can be focused with JavaScript.</p>
+                        
+                        <h4>contenteditable</h4>
+                        <p>The <code>contenteditable</code> attribute specifies whether the content of an element is editable by the user.</p>
+                        
+                        <pre><code class="language-html">&lt;div contenteditable="true"&gt;
+    This content can be edited by the user.
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>Event Handler Attributes</h3>
+                        <p>Event handler attributes specify JavaScript code to execute when certain events occur. While it's generally better to use JavaScript event listeners, these attributes can be useful for simple interactions.</p>
+                        
+                        <pre><code class="language-html">&lt;button onclick="alert('Button clicked!')"&gt;Click Me&lt;/button&gt;</code></pre>
+                        
+                        <p>Common event handler attributes include:</p>
+                        <ul>
+                            <li><code>onclick</code>: When the element is clicked</li>
+                            <li><code>onmouseover</code>: When the mouse moves over the element</li>
+                            <li><code>onmouseout</code>: When the mouse moves away from the element</li>
+                            <li><code>onkeydown</code>: When a key is pressed down</li>
+                            <li><code>onload</code>: When the element has finished loading</li>
+                            <li><code>onsubmit</code>: When a form is submitted</li>
+                            <li><code>onchange</code>: When an input element's value changes</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Best Practice</h4>
+                            <p>While event handler attributes work, it's generally better to separate HTML and JavaScript by using event listeners in your JavaScript code:</p>
+                            <pre><code class="language-javascript">document.getElementById('myButton').addEventListener('click', function() {
+    alert('Button clicked!');
+});</code></pre>
+                        </div>
+                        
+                        <h3>Data Attributes</h3>
+                        <p>Data attributes allow you to store custom data private to the page or application. They start with <code>data-</code> followed by a custom name.</p>
+                        
+                        <pre><code class="language-html">&lt;div id="user" data-id="123" data-user="john" data-role="admin"&gt;John Doe&lt;/div&gt;</code></pre>
+                        
+                        <p>These attributes can be accessed in JavaScript:</p>
+                        
+                        <pre><code class="language-javascript">const user = document.getElementById('user');
+console.log(user.dataset.id); // "123"
+console.log(user.dataset.user); // "john"
+console.log(user.dataset.role); // "admin"</code></pre>
+                        
+                        <p>Data attributes are useful for storing information that doesn't have a dedicated HTML attribute but needs to be accessible to JavaScript.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Element-Specific Attributes</h2>
+                        <p>Many HTML elements have specific attributes that apply only to them or to a small group of related elements. Let's explore some of the most important element-specific attributes.</p>
+                        
+                        <h3>Link Attributes (<code>&lt;a&gt;</code>)</h3>
+                        
+                        <h4>href</h4>
+                        <p>The <code>href</code> attribute specifies the URL of the page the link goes to.</p>
+                        
+                        <pre><code class="language-html">&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
+&lt;a href="about.html"&gt;About Us&lt;/a&gt;
+&lt;a href="#section-2"&gt;Jump to Section 2&lt;/a&gt;
+&lt;a href="mailto:info@example.com"&gt;Email Us&lt;/a&gt;
+&lt;a href="tel:+1234567890"&gt;Call Us&lt;/a&gt;</code></pre>
+                        
+                        <h4>target</h4>
+                        <p>The <code>target</code> attribute specifies where to open the linked document.</p>
+                        
+                        <pre><code class="language-html">&lt;a href="https://example.com" target="_blank"&gt;Opens in a new tab/window&lt;/a&gt;
+&lt;a href="about.html" target="_self"&gt;Opens in the same frame (default)&lt;/a&gt;
+&lt;a href="terms.html" target="_parent"&gt;Opens in the parent frame&lt;/a&gt;
+&lt;a href="privacy.html" target="_top"&gt;Opens in the full body of the window&lt;/a&gt;</code></pre>
+                        
+                        <h4>rel</h4>
+                        <p>The <code>rel</code> attribute specifies the relationship between the current document and the linked document.</p>
+                        
+                        <pre><code class="language-html">&lt;a href="https://example.com" rel="noopener noreferrer" target="_blank"&gt;
+    Secure external link
+&lt;/a&gt;
+
+&lt;a href="styles.css" rel="stylesheet"&gt;Stylesheet&lt;/a&gt;
+&lt;a href="next-page.html" rel="next"&gt;Next Page&lt;/a&gt;
+&lt;a href="prev-page.html" rel="prev"&gt;Previous Page&lt;/a&gt;</code></pre>
+                        
+                        <h4>download</h4>
+                        <p>The <code>download</code> attribute specifies that the target will be downloaded when a user clicks on the hyperlink. The value of the attribute will be the name of the downloaded file.</p>
+                        
+                        <pre><code class="language-html">&lt;a href="report.pdf" download&gt;Download Report&lt;/a&gt;
+&lt;a href="image.jpg" download="my-image.jpg"&gt;Download Image&lt;/a&gt;</code></pre>
+                        
+                        <h3>Image Attributes (<code>&lt;img&gt;</code>)</h3>
+                        
+                        <h4>src</h4>
+                        <p>The <code>src</code> attribute specifies the path to the image.</p>
+                        
+                        <pre><code class="language-html">&lt;img src="image.jpg" alt="Description"&gt;
+&lt;img src="https://example.com/image.jpg" alt="Description"&gt;</code></pre>
+                        
+                        <h4>alt</h4>
+                        <p>The <code>alt</code> attribute provides alternative text for the image, which is displayed if the image cannot be loaded and is read by screen readers.</p>
+                        
+                        <pre><code class="language-html">&lt;img src="logo.png" alt="Company Logo"&gt;</code></pre>
+                        
+                        <h4>width and height</h4>
+                        <p>The <code>width</code> and <code>height</code> attributes specify the width and height of the image in pixels.</p>
+                        
+                        <pre><code class="language-html">&lt;img src="image.jpg" alt="Description" width="500" height="300"&gt;</code></pre>
+                        
+                        <h4>loading</h4>
+                        <p>The <code>loading</code> attribute specifies whether the browser should load the image immediately or defer loading until certain conditions are met.</p>
+                        
+                        <pre><code class="language-html">&lt;img src="image.jpg" alt="Description" loading="lazy"&gt;</code></pre>
+                        
+                        <p>The <code>lazy</code> value defers loading the image until it's near the viewport, which can improve page load performance.</p>
+                        
+                        <h3>Form Attributes</h3>
+                        
+                        <h4>Form Element (<code>&lt;form&gt;</code>)</h4>
+                        
+                        <pre><code class="language-html">&lt;form action="/submit" method="post" enctype="multipart/form-data"&gt;
+    &lt;!-- Form controls --&gt;
+&lt;/form&gt;</code></pre>
+                        
+                        <ul>
+                            <li><code>action</code>: The URL where the form data is sent when submitted</li>
+                            <li><code>method</code>: The HTTP method to use when submitting the form (get or post)</li>
+                            <li><code>enctype</code>: The encoding type for form data (important for file uploads)</li>
+                            <li><code>autocomplete</code>: Whether the browser should autocomplete form fields</li>
+                            <li><code>novalidate</code>: Disables browser's built-in form validation</li>
+                        </ul>
+                        
+                        <h4>Input Element (<code>&lt;input&gt;</code>)</h4>
+                        
+                        <pre><code class="language-html">&lt;input type="text" name="username" id="username" placeholder="Enter username" 
+       required minlength="3" maxlength="20"&gt;</code></pre>
+                        
+                        <ul>
+                            <li><code>type</code>: The type of input (text, password, email, number, etc.)</li>
+                            <li><code>name</code>: The name of the input, used when submitting the form</li>
+                            <li><code>value</code>: The initial value of the input</li>
+                            <li><code>placeholder</code>: Hint text displayed when the field is empty</li>
+                            <li><code>required</code>: Specifies that the field must be filled out</li>
+                            <li><code>disabled</code>: Disables the input</li>
+                            <li><code>readonly</code>: Makes the input read-only (cannot be modified)</li>
+                            <li><code>min</code>/<code>max</code>: Minimum and maximum values for numeric inputs</li>
+                            <li><code>minlength</code>/<code>maxlength</code>: Minimum and maximum length for text inputs</li>
+                            <li><code>pattern</code>: Regular expression pattern for validation</li>
+                            <li><code>autocomplete</code>: Controls browser autocomplete behavior</li>
+                            <li><code>autofocus</code>: Automatically focuses the input when the page loads</li>
+                        </ul>
+                        
+                        <h4>Button Element (<code>&lt;button&gt;</code>)</h4>
+                        
+                        <pre><code class="language-html">&lt;button type="submit" disabled&gt;Submit&lt;/button&gt;</code></pre>
+                        
+                        <ul>
+                            <li><code>type</code>: The type of button (submit, reset, or button)</li>
+                            <li><code>disabled</code>: Disables the button</li>
+                            <li><code>form</code>: Associates the button with a form outside its hierarchy</li>
+                            <li><code>formaction</code>: Overrides the form's action attribute</li>
+                            <li><code>formmethod</code>: Overrides the form's method attribute</li>
+                        </ul>
+                        
+                        <h3>Table Attributes</h3>
+                        
+                        <h4>Table Element (<code>&lt;table&gt;</code>)</h4>
+                        
+                        <pre><code class="language-html">&lt;table border="1" cellpadding="5" cellspacing="0"&gt;
+    &lt;!-- Table content --&gt;
+&lt;/table&gt;</code></pre>
+                        
+                        <p>Note: While these attributes still work, they're considered obsolete in HTML5. CSS should be used instead.</p>
+                        
+                        <h4>Table Cell Elements (<code>&lt;th&gt;</code> and <code>&lt;td&gt;</code>)</h4>
+                        
+                        <pre><code class="language-html">&lt;th colspan="2" rowspan="3" scope="col"&gt;Header&lt;/th&gt;
+&lt;td colspan="2" rowspan="3"&gt;Data&lt;/td&gt;</code></pre>
+                        
+                        <ul>
+                            <li><code>colspan</code>: Number of columns the cell should span</li>
+                            <li><code>rowspan</code>: Number of rows the cell should span</li>
+                            <li><code>scope</code>: Associates header cells with data cells (col, row, colgroup, rowgroup)</li>
+                            <li><code>headers</code>: Associates data cells with header cells</li>
+                        </ul>
+                        
+                        <h3>Media Attributes</h3>
+                        
+                        <h4>Video Element (<code>&lt;video&gt;</code>)</h4>
+                        
+                        <pre><code class="language-html">&lt;video src="video.mp4" controls autoplay muted loop width="640" height="360"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;</code></pre>
+                        
+                        <ul>
+                            <li><code>src</code>: URL of the video file</li>
+                            <li><code>controls</code>: Displays video controls (play, pause, volume, etc.)</li>
+                            <li><code>autoplay</code>: Automatically starts playing the video</li>
+                            <li><code>muted</code>: Mutes the audio</li>
+                            <li><code>loop</code>: Plays the video repeatedly</li>
+                            <li><code>poster</code>: URL of an image to display before the video plays</li>
+                            <li><code>width</code>/<code>height</code>: Dimensions of the video player</li>
+                            <li><code>preload</code>: Hints how much of the video to preload</li>
+                        </ul>
+                        
+                        <h4>Audio Element (<code>&lt;audio&gt;</code>)</h4>
+                        
+                        <pre><code class="language-html">&lt;audio src="audio.mp3" controls autoplay muted loop&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+                        
+                        <p>The <code>&lt;audio&gt;</code> element supports many of the same attributes as the <code>&lt;video&gt;</code> element, except for <code>poster</code>, <code>width</code>, and <code>height</code>.</p>
+                        
+                        <h4>Iframe Element (<code>&lt;iframe&gt;</code>)</h4>
+                        
+                        <pre><code class="language-html">&lt;iframe src="https://example.com" width="600" height="400" 
+        frameborder="0" allowfullscreen sandbox="allow-scripts"&gt;
+    Your browser does not support iframes.
+&lt;/iframe&gt;</code></pre>
+                        
+                        <ul>
+                            <li><code>src</code>: URL of the content to embed</li>
+                            <li><code>width</code>/<code>height</code>: Dimensions of the iframe</li>
+                            <li><code>frameborder</code>: Whether to display a border (0 or 1)</li>
+                            <li><code>allowfullscreen</code>: Allows the iframe to be displayed in fullscreen mode</li>
+                            <li><code>sandbox</code>: Restricts capabilities of the iframe content</li>
+                            <li><code>loading</code>: Specifies when the iframe should be loaded</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Accessibility Attributes</h2>
+                        <p>Accessibility attributes help make web content more accessible to people with disabilities. They provide additional information to assistive technologies like screen readers.</p>
+                        
+                        <h3>ARIA Attributes</h3>
+                        <p>ARIA (Accessible Rich Internet Applications) attributes enhance accessibility when HTML alone isn't sufficient. They start with <code>aria-</code> or use the <code>role</code> attribute.</p>
+                        
+                        <h4>role</h4>
+                        <p>The <code>role</code> attribute defines what an element is or does.</p>
+                        
+                        <pre><code class="language-html">&lt;div role="button" tabindex="0" onclick="alert('Clicked!')"&gt;Click Me&lt;/div&gt;
+&lt;div role="alert"&gt;This is an important message!&lt;/div&gt;
+&lt;div role="search"&gt;
+    &lt;input type="text" placeholder="Search..."&gt;
+    &lt;button&gt;Search&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h4>aria-label</h4>
+                        <p>The <code>aria-label</code> attribute provides a text label for an element that doesn't have visible text.</p>
+                        
+                        <pre><code class="language-html">&lt;button aria-label="Close" onclick="closeModal()"&gt;×&lt;/button&gt;</code></pre>
+                        
+                        <h4>aria-labelledby</h4>
+                        <p>The <code>aria-labelledby</code> attribute references another element that labels the current element.</p>
+                        
+                        <pre><code class="language-html">&lt;h2 id="section-heading"&gt;Section Title&lt;/h2&gt;
+&lt;div aria-labelledby="section-heading"&gt;
+    &lt;!-- Section content --&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h4>aria-describedby</h4>
+                        <p>The <code>aria-describedby</code> attribute references another element that describes the current element.</p>
+                        
+                        <pre><code class="language-html">&lt;input type="text" aria-describedby="password-requirements"&gt;
+&lt;p id="password-requirements"&gt;
+    Password must be at least 8 characters and include a number.
+&lt;/p&gt;</code></pre>
+                        
+                        <h4>aria-expanded</h4>
+                        <p>The <code>aria-expanded</code> attribute indicates if a collapsible element is expanded or collapsed.</p>
+                        
+                        <pre><code class="language-html">&lt;button aria-expanded="false" aria-controls="menu"&gt;Toggle Menu&lt;/button&gt;
+&lt;div id="menu" hidden&gt;
+    &lt;!-- Menu content --&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h4>aria-hidden</h4>
+                        <p>The <code>aria-hidden</code> attribute indicates if an element is exposed to the accessibility API.</p>
+                        
+                        <pre><code class="language-html">&lt;div aria-hidden="true"&gt;
+    &lt;!-- This content is hidden from screen readers --&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h4>aria-required</h4>
+                        <p>The <code>aria-required</code> attribute indicates if a form field is required.</p>
+                        
+                        <pre><code class="language-html">&lt;input type="text" aria-required="true"&gt;</code></pre>
+                        
+                        <h4>aria-invalid</h4>
+                        <p>The <code>aria-invalid</code> attribute indicates if a form field has an invalid value.</p>
+                        
+                        <pre><code class="language-html">&lt;input type="email" aria-invalid="true"&gt;</code></pre>
+                        
+                        <h3>Other Accessibility Attributes</h3>
+                        
+                        <h4>alt (for images)</h4>
+                        <p>The <code>alt</code> attribute provides alternative text for images, which is essential for screen reader users.</p>
+                        
+                        <pre><code class="language-html">&lt;img src="logo.png" alt="Company Logo"&gt;</code></pre>
+                        
+                        <h4>for (for labels)</h4>
+                        <p>The <code>for</code> attribute associates a label with a form control, which improves accessibility and usability.</p>
+                        
+                        <pre><code class="language-html">&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" name="username"&gt;</code></pre>
+                        
+                        <h4>tabindex</h4>
+                        <p>The <code>tabindex</code> attribute controls the tab order of elements, which is important for keyboard navigation.</p>
+                        
+                        <pre><code class="language-html">&lt;div tabindex="0"&gt;This div is focusable&lt;/div&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Accessibility Best Practices</h4>
+                            <p>When using accessibility attributes:</p>
+                            <ol>
+                                <li>Use native HTML elements with built-in accessibility whenever possible</li>
+                                <li>Only use ARIA attributes when HTML alone isn't sufficient</li>
+                                <li>Test with screen readers to ensure your implementation works as expected</li>
+                                <li>Don't override the semantics of HTML elements with contradictory ARIA roles</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Custom Data Attributes</h2>
+                        <p>Custom data attributes allow you to store extra information on standard HTML elements without using non-standard attributes or extra properties in the DOM. They start with <code>data-</code> followed by a name you choose.</p>
+                        
+                        <h3>Syntax</h3>
+                        <p>Data attributes follow this pattern:</p>
+                        
+                        <pre><code class="language-html">&lt;element data-*="value"&gt;</code></pre>
+                        
+                        <p>Where <code>*</code> can be any name you choose (with some restrictions).</p>
+                        
+                        <h3>Examples</h3>
+                        
+                        <pre><code class="language-html">&lt;article
+    data-id="123"
+    data-category="technology"
+    data-tags="html,attributes,web"
+    data-date-published="2025-04-20"
+&gt;
+    &lt;h2&gt;Article Title&lt;/h2&gt;
+    &lt;p&gt;Article content...&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+                        
+                        <h3>Accessing Data Attributes with JavaScript</h3>
+                        <p>You can access data attributes in JavaScript using the <code>dataset</code> property:</p>
+                        
+                        <pre><code class="language-javascript">const article = document.querySelector('article');
+
+// Get data attributes
+console.log(article.dataset.id); // "123"
+console.log(article.dataset.category); // "technology"
+console.log(article.dataset.tags); // "html,attributes,web"
+console.log(article.dataset.datePublished); // "2025-04-20"
+
+// Set data attributes
+article.dataset.views = "1500";
+article.dataset.lastRead = new Date().toISOString();</code></pre>
+                        
+                        <p>Note that multi-word attribute names with hyphens are converted to camelCase in JavaScript. For example, <code>data-date-published</code> becomes <code>datePublished</code> in the <code>dataset</code> object.</p>
+                        
+                        <h3>Accessing Data Attributes with CSS</h3>
+                        <p>You can also use data attributes in CSS selectors:</p>
+                        
+                        <pre><code class="language-css">/* Select all articles in the technology category */
+article[data-category="technology"] {
+    background-color: #f0f8ff;
+}
+
+/* Select articles with specific tags */
+article[data-tags*="html"] {
+    border-left: 3px solid #e34c26;
+}
+
+/* Style based on data attribute values */
+article::before {
+    content: "ID: " attr(data-id);
+    display: block;
+    font-size: 12px;
+    color: #666;
+}</code></pre>
+                        
+                        <h3>Common Use Cases for Data Attributes</h3>
+                        
+                        <h4>1. Storing Configuration Data</h4>
+                        
+                        <pre><code class="language-html">&lt;div id="chart" 
+    data-type="bar" 
+    data-height="400" 
+    data-width="600"
+    data-labels="Jan,Feb,Mar,Apr,May"
+    data-values="10,25,15,30,20"
+&gt;&lt;/div&gt;</code></pre>
+                        
+                        <h4>2. Associating Elements</h4>
+                        
+                        <pre><code class="language-html">&lt;button data-target="modal-1" data-action="open"&gt;Open Modal&lt;/button&gt;
+&lt;div id="modal-1" class="modal" hidden&gt;Modal content&lt;/div&gt;</code></pre>
+                        
+                        <h4>3. State Management</h4>
+                        
+                        <pre><code class="language-html">&lt;div class="accordion" data-expanded="false"&gt;
+    &lt;h3&gt;Section Title&lt;/h3&gt;
+    &lt;div class="content" hidden&gt;Section content&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h4>4. Internationalization</h4>
+                        
+                        <pre><code class="language-html">&lt;span data-i18n="greeting"&gt;Hello&lt;/span&gt;
+&lt;span data-i18n="welcome"&gt;Welcome to our website&lt;/span&gt;</code></pre>
+                        
+                        <h4>5. Animation Control</h4>
+                        
+                        <pre><code class="language-html">&lt;div class="animate" 
+    data-animation="fade-in" 
+    data-duration="500" 
+    data-delay="200"
+&gt;Animated content&lt;/div&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Best Practices for Data Attributes</h4>
+                            <ol>
+                                <li>Use data attributes for data that's closely tied to the element but doesn't belong in a standard attribute</li>
+                                <li>Keep data attributes focused on presentation or behavior, not content</li>
+                                <li>Use camelCase or kebab-case consistently for multi-word attribute names</li>
+                                <li>Don't store sensitive information in data attributes (they're visible in the HTML)</li>
+                                <li>Consider using JSON for complex data structures (stored as strings)</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Microdata and Structured Data Attributes</h2>
+                        <p>Microdata attributes allow you to embed machine-readable data in HTML documents. They're particularly useful for search engines and other automated tools that need to understand the content of your pages.</p>
+                        
+                        <h3>Schema.org Vocabulary</h3>
+                        <p>Schema.org is a collaborative project that provides a collection of schemas (vocabulary) that webmasters can use to mark up their pages. The vocabulary includes entities, relationships between entities, and actions.</p>
+                        
+                        <h3>Microdata Attributes</h3>
+                        
+                        <h4>itemscope</h4>
+                        <p>The <code>itemscope</code> attribute creates an item and indicates that the HTML contained in the element is about a specific item.</p>
+                        
+                        <h4>itemtype</h4>
+                        <p>The <code>itemtype</code> attribute specifies the type of item being described, using a URL from Schema.org.</p>
+                        
+                        <h4>itemprop</h4>
+                        <p>The <code>itemprop</code> attribute specifies a property of the item.</p>
+                        
+                        <h3>Example: Person Markup</h3>
+                        
+                        <pre><code class="language-html">&lt;div itemscope itemtype="https://schema.org/Person"&gt;
+    &lt;h2&gt;&lt;span itemprop="name"&gt;John Doe&lt;/span&gt;&lt;/h2&gt;
+    &lt;p&gt;
+        &lt;span itemprop="jobTitle"&gt;Web Developer&lt;/span&gt; at 
+        &lt;span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization"&gt;
+            &lt;span itemprop="name"&gt;Example Company&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;Email: &lt;a href="mailto:john@example.com" itemprop="email"&gt;john@example.com&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;Website: &lt;a href="https://johndoe.example.com" itemprop="url"&gt;johndoe.example.com&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>Example: Product Markup</h3>
+                        
+                        <pre><code class="language-html">&lt;div itemscope itemtype="https://schema.org/Product"&gt;
+    &lt;h2 itemprop="name"&gt;Smartphone X&lt;/h2&gt;
+    &lt;img itemprop="image" src="smartphone-x.jpg" alt="Smartphone X"&gt;
+    &lt;p itemprop="description"&gt;A high-end smartphone with advanced features.&lt;/p&gt;
+    
+    &lt;div itemprop="offers" itemscope itemtype="https://schema.org/Offer"&gt;
+        &lt;p&gt;Price: &lt;span itemprop="price"&gt;599.99&lt;/span&gt; 
+           &lt;meta itemprop="priceCurrency" content="USD"&gt;USD
+        &lt;/p&gt;
+        &lt;p&gt;Availability: &lt;link itemprop="availability" href="https://schema.org/InStock"&gt;In Stock&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating"&gt;
+        &lt;p&gt;Rating: &lt;span itemprop="ratingValue"&gt;4.5&lt;/span&gt;/5 
+           based on &lt;span itemprop="reviewCount"&gt;123&lt;/span&gt; reviews
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>Benefits of Structured Data</h3>
+                        <ul>
+                            <li><strong>Rich Results</strong>: Search engines can display enhanced listings (rich snippets) in search results</li>
+                            <li><strong>Better Understanding</strong>: Search engines better understand the content of your pages</li>
+                            <li><strong>Voice Search</strong>: Structured data helps voice assistants provide more accurate answers</li>
+                            <li><strong>Data Portability</strong>: Other applications can extract and use your data</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Alternative Formats</h4>
+                            <p>Besides Microdata, there are other ways to include structured data in your HTML:</p>
+                            <ul>
+                                <li><strong>JSON-LD</strong>: JavaScript Object Notation for Linked Data, embedded in a <code>&lt;script&gt;</code> tag</li>
+                                <li><strong>RDFa</strong>: Resource Description Framework in Attributes, similar to Microdata</li>
+                            </ul>
+                            <p>JSON-LD is generally recommended by Google because it doesn't interfere with the HTML markup.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Deprecated and Obsolete Attributes</h2>
+                        <p>As HTML evolves, some attributes become deprecated or obsolete. Deprecated attributes are those that are being phased out but still work, while obsolete attributes are no longer supported and should not be used.</p>
+                        
+                        <h3>Common Deprecated/Obsolete Attributes</h3>
+                        
+                        <h4>Presentation Attributes</h4>
+                        <p>Many presentation-related attributes are now obsolete because CSS should be used instead:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Obsolete: --&gt;
+&lt;font size="3" color="red" face="Arial"&gt;Colored text&lt;/font&gt;
+&lt;table border="1" cellpadding="5" cellspacing="0" width="100%"&gt;...&lt;/table&gt;
+&lt;body bgcolor="lightblue" text="black" link="blue" vlink="purple"&gt;...&lt;/body&gt;
+&lt;hr width="50%" size="3" noshade&gt;
+&lt;img src="image.jpg" alt="Image" align="left" hspace="10" vspace="10"&gt;
+
+&lt;!-- Use CSS instead: --&gt;
+&lt;style&gt;
+    .colored-text {
+        font-size: 1.2em;
+        color: red;
+        font-family: Arial, sans-serif;
+    }
+    
+    table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    td, th {
+        padding: 5px;
+    }
+    
+    body {
+        background-color: lightblue;
+        color: black;
+    }
+    
+    a:link { color: blue; }
+    a:visited { color: purple; }
+    
+    hr {
+        width: 50%;
+        height: 3px;
+        background-color: black;
+        border: none;
+    }
+    
+    .left-image {
+        float: left;
+        margin: 10px;
+    }
+&lt;/style&gt;</code></pre>
+                        
+                        <h4>Event Handler Attributes</h4>
+                        <p>While event handler attributes like <code>onclick</code> still work, it's better to use JavaScript event listeners for separation of concerns:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Not recommended: --&gt;
+&lt;button onclick="alert('Clicked!')"&gt;Click Me&lt;/button&gt;
+
+&lt;!-- Better approach: --&gt;
+&lt;button id="myButton"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+    document.getElementById('myButton').addEventListener('click', function() {
+        alert('Clicked!');
+    });
+&lt;/script&gt;</code></pre>
+                        
+                        <h4>Frame-Related Attributes</h4>
+                        <p>Frames and framesets are obsolete in HTML5:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Obsolete: --&gt;
+&lt;frameset cols="25%,75%"&gt;
+    &lt;frame src="menu.html"&gt;
+    &lt;frame src="content.html"&gt;
+&lt;/frameset&gt;
+
+&lt;!-- Use iframes or CSS grid/flexbox instead: --&gt;
+&lt;div class="container"&gt;
+    &lt;div class="sidebar"&gt;
+        &lt;!-- Menu content --&gt;
+    &lt;/div&gt;
+    &lt;div class="main-content"&gt;
+        &lt;!-- Main content --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>Why Avoid Deprecated/Obsolete Attributes?</h3>
+                        <ul>
+                            <li><strong>Standards Compliance</strong>: They don't conform to current HTML standards</li>
+                            <li><strong>Future Compatibility</strong>: They may stop working in future browser versions</li>
+                            <li><strong>Separation of Concerns</strong>: HTML should define structure, CSS should define presentation, and JavaScript should define behavior</li>
+                            <li><strong>Accessibility</strong>: Modern attributes and techniques often provide better accessibility</li>
+                            <li><strong>Performance</strong>: Modern approaches are often more efficient</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Checking for Deprecated Attributes</h4>
+                            <p>You can use HTML validators like the <a href="https://validator.w3.org/" target="_blank">W3C Markup Validation Service</a> to check if your HTML contains deprecated or obsolete attributes. These tools will flag problematic code and suggest alternatives.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Working with HTML Attributes</h2>
+                        <p>Let's practice using various HTML attributes by creating a product page that incorporates many of the attributes we've learned about:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Product Page Example&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        
+        header {
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e63946;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #2a9d8f;
+            color: white;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        
+        .rating {
+            color: #ffb703;
+            font-size: 20px;
+        }
+        
+        .tabs {
+            margin-top: 30px;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .tab-button {
+            padding: 10px 20px;
+            background-color: #f4f4f4;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .tab-button[aria-selected="true"] {
+            background-color: #457b9d;
+            color: white;
+        }
+        
+        .tab-panel {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 0 5px 5px 5px;
+        }
+        
+        .tab-panel[hidden] {
+            display: none;
+        }
+        
+        form {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #457b9d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #2c6e91;
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        
+        .animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        
+        .animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;TechStore&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#" title="Browse our products"&gt;Products&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" title="Learn about our company"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" title="Get in touch with us"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" title="View your shopping cart"&gt;Cart (0)&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;!-- Product Information with Microdata --&gt;
+        &lt;div class="product-container" itemscope itemtype="https://schema.org/Product"&gt;
+            &lt;div class="product-image"&gt;
+                &lt;img src="https://via.placeholder.com/500x500" alt="Smartphone X" itemprop="image" loading="lazy"&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="product-details"&gt;
+                &lt;h2 itemprop="name"&gt;Smartphone X&lt;/h2&gt;
+                &lt;p itemprop="description"&gt;The latest flagship smartphone with cutting-edge features, including a high-resolution display, powerful processor, and advanced camera system.&lt;/p&gt;
+                
+                &lt;div class="badges"&gt;
+                    &lt;span class="badge" title="This product is in stock"&gt;In Stock&lt;/span&gt;
+                    &lt;span class="badge" title="Free shipping on this product"&gt;Free Shipping&lt;/span&gt;
+                &lt;/div&gt;
+                
+                &lt;div itemprop="offers" itemscope itemtype="https://schema.org/Offer"&gt;
+                    &lt;p class="price"&gt;
+                        &lt;span itemprop="price"&gt;599.99&lt;/span&gt;
+                        &lt;meta itemprop="priceCurrency" content="USD"&gt;USD
+                    &lt;/p&gt;
+                    &lt;link itemprop="availability" href="https://schema.org/InStock"&gt;
+                &lt;/div&gt;
+                
+                &lt;div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating"&gt;
+                    &lt;div class="rating" title="4.5 out of 5 stars"&gt;
+                        ★★★★☆ &lt;span itemprop="ratingValue"&gt;4.5&lt;/span&gt;/5
+                        (&lt;span itemprop="reviewCount"&gt;123&lt;/span&gt; reviews)
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="product-actions"&gt;
+                    &lt;form action="/add-to-cart" method="post"&gt;
+                        &lt;div class="form-group"&gt;
+                            &lt;label for="color"&gt;Color:&lt;/label&gt;
+                            &lt;select id="color" name="color" required&gt;
+                                &lt;option value=""&gt;-- Select Color --&lt;/option&gt;
+                                &lt;option value="black"&gt;Black&lt;/option&gt;
+                                &lt;option value="silver"&gt;Silver&lt;/option&gt;
+                                &lt;option value="gold"&gt;Gold&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class="form-group"&gt;
+                            &lt;label for="storage"&gt;Storage:&lt;/label&gt;
+                            &lt;select id="storage" name="storage" required&gt;
+                                &lt;option value=""&gt;-- Select Storage --&lt;/option&gt;
+                                &lt;option value="64"&gt;64GB (+$0)&lt;/option&gt;
+                                &lt;option value="128"&gt;128GB (+$100)&lt;/option&gt;
+                                &lt;option value="256"&gt;256GB (+$200)&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class="form-group"&gt;
+                            &lt;label for="quantity"&gt;Quantity:&lt;/label&gt;
+                            &lt;input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;input type="hidden" name="product_id" value="smartphone-x"&gt;
+                        
+                        &lt;button type="submit" aria-label="Add Smartphone X to your cart"&gt;Add to Cart&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- Product Tabs --&gt;
+        &lt;div class="tabs" role="tablist"&gt;
+            &lt;div class="tab-buttons"&gt;
+                &lt;button id="tab1-btn" class="tab-button" role="tab" aria-selected="true" aria-controls="tab1-panel"&gt;Description&lt;/button&gt;
+                &lt;button id="tab2-btn" class="tab-button" role="tab" aria-selected="false" aria-controls="tab2-panel"&gt;Specifications&lt;/button&gt;
+                &lt;button id="tab3-btn" class="tab-button" role="tab" aria-selected="false" aria-controls="tab3-panel"&gt;Reviews&lt;/button&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="tab1-panel" class="tab-panel" role="tabpanel" aria-labelledby="tab1-btn"&gt;
+                &lt;h3&gt;Product Description&lt;/h3&gt;
+                &lt;p&gt;Smartphone X is our latest flagship device, designed to provide an exceptional user experience with its cutting-edge technology and premium build quality.&lt;/p&gt;
+                
+                &lt;p&gt;The device features a stunning 6.5-inch AMOLED display with HDR10+ support, providing vibrant colors and deep blacks for an immersive viewing experience. Powered by our latest octa-core processor and up to 8GB of RAM, Smartphone X delivers smooth performance for even the most demanding applications and games.&lt;/p&gt;
+                
+                &lt;p&gt;The advanced camera system includes a 108MP main sensor, 12MP ultra-wide lens, and 8MP telephoto lens, allowing you to capture professional-quality photos in any situation. The 32MP front camera ensures your selfies look their best.&lt;/p&gt;
+                
+                &lt;p&gt;With a 4500mAh battery and 65W fast charging, you can power up quickly and stay connected all day long. The device also supports wireless charging and reverse wireless charging.&lt;/p&gt;
+                
+                &lt;p&gt;Smartphone X runs on the latest version of our operating system, with guaranteed updates for the next three years.&lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="tab2-panel" class="tab-panel" role="tabpanel" aria-labelledby="tab2-btn" hidden&gt;
+                &lt;h3&gt;Technical Specifications&lt;/h3&gt;
+                &lt;table&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Display&lt;/th&gt;
+                        &lt;td&gt;6.5-inch AMOLED, 120Hz, HDR10+&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Processor&lt;/th&gt;
+                        &lt;td&gt;Octa-core (1x3.0 GHz + 3x2.6 GHz + 4x2.0 GHz)&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;RAM&lt;/th&gt;
+                        &lt;td&gt;8GB LPDDR5&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Storage&lt;/th&gt;
+                        &lt;td&gt;64GB / 128GB / 256GB UFS 3.1&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Main Camera&lt;/th&gt;
+                        &lt;td&gt;108MP (f/1.8) + 12MP Ultra-wide (f/2.2) + 8MP Telephoto (f/2.4)&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Front Camera&lt;/th&gt;
+                        &lt;td&gt;32MP (f/2.0)&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Battery&lt;/th&gt;
+                        &lt;td&gt;4500mAh, 65W Fast Charging, Wireless Charging&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Dimensions&lt;/th&gt;
+                        &lt;td&gt;160.8 x 74.5 x 8.1 mm&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Weight&lt;/th&gt;
+                        &lt;td&gt;189g&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Water Resistance&lt;/th&gt;
+                        &lt;td&gt;IP68&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="tab3-panel" class="tab-panel" role="tabpanel" aria-labelledby="tab3-btn" hidden&gt;
+                &lt;h3&gt;Customer Reviews&lt;/h3&gt;
+                
+                &lt;div class="review" itemscope itemtype="https://schema.org/Review"&gt;
+                    &lt;meta itemprop="itemReviewed" content="Smartphone X"&gt;
+                    &lt;h4 itemprop="name"&gt;Excellent flagship phone&lt;/h4&gt;
+                    &lt;div class="rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"&gt;
+                        ★★★★★ &lt;meta itemprop="ratingValue" content="5"&gt;
+                    &lt;/div&gt;
+                    &lt;p itemprop="reviewBody"&gt;This is the best smartphone I've ever owned. The camera is outstanding, and the battery life is impressive. The display is bright and vibrant, and the performance is top-notch.&lt;/p&gt;
+                    &lt;p&gt;By &lt;span itemprop="author" itemscope itemtype="https://schema.org/Person"&gt;&lt;span itemprop="name"&gt;John Smith&lt;/span&gt;&lt;/span&gt; on &lt;time itemprop="datePublished" datetime="2025-03-15"&gt;March 15, 2025&lt;/time&gt;&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="review" itemscope itemtype="https://schema.org/Review"&gt;
+                    &lt;meta itemprop="itemReviewed" content="Smartphone X"&gt;
+                    &lt;h4 itemprop="name"&gt;Great phone, but expensive&lt;/h4&gt;
+                    &lt;div class="rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"&gt;
+                        ★★★★☆ &lt;meta itemprop="ratingValue" content="4"&gt;
+                    &lt;/div&gt;
+                    &lt;p itemprop="reviewBody"&gt;The Smartphone X is excellent in almost every way. The camera takes beautiful photos, the screen is gorgeous, and it's very fast. My only complaint is the price, which is a bit steep.&lt;/p&gt;
+                    &lt;p&gt;By &lt;span itemprop="author" itemscope itemtype="https://schema.org/Person"&gt;&lt;span itemprop="name"&gt;Jane Doe&lt;/span&gt;&lt;/span&gt; on &lt;time itemprop="datePublished" datetime="2025-03-10"&gt;March 10, 2025&lt;/time&gt;&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;form action="/submit-review" method="post" class="review-form"&gt;
+                    &lt;h4&gt;Write a Review&lt;/h4&gt;
+                    
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="review-title"&gt;Title:&lt;/label&gt;
+                        &lt;input type="text" id="review-title" name="title" required maxlength="100" placeholder="Summarize your review"&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="review-rating"&gt;Rating:&lt;/label&gt;
+                        &lt;select id="review-rating" name="rating" required&gt;
+                            &lt;option value=""&gt;-- Select Rating --&lt;/option&gt;
+                            &lt;option value="5"&gt;5 Stars - Excellent&lt;/option&gt;
+                            &lt;option value="4"&gt;4 Stars - Good&lt;/option&gt;
+                            &lt;option value="3"&gt;3 Stars - Average&lt;/option&gt;
+                            &lt;option value="2"&gt;2 Stars - Poor&lt;/option&gt;
+                            &lt;option value="1"&gt;1 Star - Very Poor&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="review-content"&gt;Review:&lt;/label&gt;
+                        &lt;textarea id="review-content" name="content" rows="5" required minlength="50" maxlength="1000" placeholder="Share your experience with this product"&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="review-name"&gt;Your Name:&lt;/label&gt;
+                        &lt;input type="text" id="review-name" name="name" required&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="review-email"&gt;Your Email:&lt;/label&gt;
+                        &lt;input type="email" id="review-email" name="email" required&gt;
+                        &lt;p class="help-text"&gt;Your email will not be published.&lt;/p&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;input type="hidden" name="product_id" value="smartphone-x"&gt;
+                    
+                    &lt;button type="submit"&gt;Submit Review&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- Related Products --&gt;
+        &lt;section class="related-products animate" data-animation="fade-in" data-delay="200"&gt;
+            &lt;h3&gt;Related Products&lt;/h3&gt;
+            &lt;div class="product-grid"&gt;
+                &lt;!-- Related products would go here --&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2025 TechStore. All rights reserved.&lt;/p&gt;
+        &lt;address&gt;
+            Contact: &lt;a href="mailto:info@techstore.example.com"&gt;info@techstore.example.com&lt;/a&gt;
+        &lt;/address&gt;
+    &lt;/footer&gt;
+    
+    &lt;script&gt;
+        // Tab functionality
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Update button states
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.setAttribute('aria-selected', 'false');
+                });
+                button.setAttribute('aria-selected', 'true');
+                
+                // Show the selected panel, hide others
+                document.querySelectorAll('.tab-panel').forEach(panel => {
+                    panel.hidden = true;
+                });
+                const panelId = button.getAttribute('aria-controls');
+                document.getElementById(panelId).hidden = false;
+            });
+        });
+        
+        // Animation
+        const animateElements = document.querySelectorAll('.animate');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const delay = element.dataset.delay || 0;
+                    
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                    }, delay);
+                    
+                    observer.unobserve(element);
+                }
+            });
+        });
+        
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Try It Yourself</h4>
+                            <p>Create the HTML document above and view it in your browser. Then try to:</p>
+                            <ol>
+                                <li>Add more data attributes to the product container for additional product information</li>
+                                <li>Add ARIA attributes to improve the accessibility of the form elements</li>
+                                <li>Add more structured data using Schema.org vocabulary</li>
+                                <li>Modify the JavaScript to use data attributes instead of ARIA attributes for the tabs</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored HTML attributes:</p>
+                        <ul>
+                            <li>HTML attributes provide additional information about elements and modify their behavior or appearance</li>
+                            <li>Global attributes like <code>id</code>, <code>class</code>, <code>style</code>, and <code>title</code> can be used on any HTML element</li>
+                            <li>Element-specific attributes like <code>href</code>, <code>src</code>, <code>alt</code>, and <code>type</code> apply to specific elements</li>
+                            <li>Accessibility attributes like ARIA attributes help make web content more accessible to people with disabilities</li>
+                            <li>Custom data attributes (<code>data-*</code>) allow you to store custom data private to the page or application</li>
+                            <li>Microdata attributes enable structured data that helps search engines understand your content</li>
+                            <li>Some attributes are deprecated or obsolete and should be avoided in favor of modern alternatives</li>
+                        </ul>
+                        
+                        <p>Understanding and properly using HTML attributes is essential for creating well-structured, accessible, and interactive web pages. Attributes enhance the functionality and meaning of HTML elements, enabling richer user experiences and better integration with various platforms and technologies. In the next lesson, we'll explore HTML best practices to help you write clean, efficient, and maintainable HTML code.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page10.html" class="btn">Previous: Semantic HTML</a>
+                        <a href="page12.html" class="btn">Next: HTML Best Practices</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

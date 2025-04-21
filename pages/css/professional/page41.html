@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Frameworks | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn about popular CSS frameworks like Bootstrap, Tailwind CSS, and Material UI, and how to customize them for your projects.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="41">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html" class="active">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional CSS</h3>
+                <ul>
+                    <li><a href="page38.html">38. Advanced CSS Features</a></li>
+                    <li><a href="page39.html">39. CSS Preprocessors</a></li>
+                    <li><a href="page40.html">40. CSS Architecture</a></li>
+                    <li><a href="page41.html" class="active">41. CSS Frameworks</a></li>
+                    <li><a href="page42.html">42. Advanced Layouts</a></li>
+                    <li><a href="page43.html">43. Advanced Animations</a></li>
+                    <li><a href="page44.html">44. CSS-in-JS</a></li>
+                    <li><a href="page45.html">45. CSS Houdini</a></li>
+                    <li><a href="page46.html">46. CSS Performance</a></li>
+                    <li><a href="page47.html">47. CSS Testing</a></li>
+                    <li><a href="page48.html">48. CSS for Print</a></li>
+                    <li><a href="page49.html">49. Future of CSS</a></li>
+                    <li><a href="page50.html">50. Building a Portfolio</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 82%;"></div>
+                </div>
+                <p style="text-align: center;">Page 41 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>CSS Frameworks</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to CSS Frameworks</h2>
+                        <p>CSS frameworks are pre-written, standardized code packages designed to help you build websites faster and easier. They provide a foundation of CSS styles and JavaScript components that you can build upon, rather than starting from scratch.</p>
+                        
+                        <p>In this lesson, we'll explore popular CSS frameworks, their features, benefits, and limitations. We'll also learn how to customize frameworks to match your project's design requirements and how to choose the right framework for your needs.</p>
+                        
+                        <h3>Why Use CSS Frameworks?</h3>
+                        <p>CSS frameworks offer several advantages that make them popular among developers:</p>
+                        
+                        <ul>
+                            <li><strong>Rapid Development</strong>: Frameworks provide ready-to-use components and styles, significantly reducing development time</li>
+                            <li><strong>Consistency</strong>: Built-in design systems ensure consistent styling across your project</li>
+                            <li><strong>Responsiveness</strong>: Most frameworks include responsive grid systems and components that work across devices</li>
+                            <li><strong>Browser Compatibility</strong>: Frameworks handle cross-browser compatibility issues</li>
+                            <li><strong>Community Support</strong>: Popular frameworks have large communities, extensive documentation, and regular updates</li>
+                            <li><strong>Accessibility</strong>: Many frameworks implement accessibility best practices by default</li>
+                            <li><strong>Team Collaboration</strong>: Standardized code makes it easier for teams to work together</li>
+                        </ul>
+                        
+                        <h3>Types of CSS Frameworks</h3>
+                        <p>CSS frameworks generally fall into three categories:</p>
+                        
+                        <div class="info-box">
+                            <h4>CSS Framework Categories</h4>
+                            <ol>
+                                <li><strong>Component-Based Frameworks</strong>: Provide pre-styled UI components like buttons, cards, and navigation bars (e.g., Bootstrap, Bulma)</li>
+                                <li><strong>Utility-First Frameworks</strong>: Offer low-level utility classes that you compose to build custom designs (e.g., Tailwind CSS)</li>
+                                <li><strong>CSS-in-JS Frameworks</strong>: Allow you to write CSS directly in your JavaScript code (e.g., Styled Components, Emotion)</li>
+                            </ol>
+                        </div>
+                        
+                        <h3>Popular CSS Frameworks</h3>
+                        <p>Let's take a look at some of the most popular CSS frameworks and what makes each one unique:</p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Framework</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th>Learning Curve</th>
+                                    <th>Best For</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Bootstrap</td>
+                                    <td>Component-based</td>
+                                    <td>Large</td>
+                                    <td>Low</td>
+                                    <td>Rapid prototyping, admin dashboards, enterprise applications</td>
+                                </tr>
+                                <tr>
+                                    <td>Tailwind CSS</td>
+                                    <td>Utility-first</td>
+                                    <td>Small (with purging)</td>
+                                    <td>Medium</td>
+                                    <td>Custom designs, unique interfaces, design systems</td>
+                                </tr>
+                                <tr>
+                                    <td>Bulma</td>
+                                    <td>Component-based</td>
+                                    <td>Medium</td>
+                                    <td>Low</td>
+                                    <td>Modern interfaces, flexbox-based layouts</td>
+                                </tr>
+                                <tr>
+                                    <td>Foundation</td>
+                                    <td>Component-based</td>
+                                    <td>Large</td>
+                                    <td>Medium</td>
+                                    <td>Complex, responsive applications, enterprise sites</td>
+                                </tr>
+                                <tr>
+                                    <td>Material UI</td>
+                                    <td>Component-based</td>
+                                    <td>Large</td>
+                                    <td>Medium</td>
+                                    <td>Google Material Design implementations, React applications</td>
+                                </tr>
+                                <tr>
+                                    <td>Semantic UI</td>
+                                    <td>Component-based</td>
+                                    <td>Large</td>
+                                    <td>Low</td>
+                                    <td>Human-friendly HTML, readable interfaces</td>
+                                </tr>
+                                <tr>
+                                    <td>Chakra UI</td>
+                                    <td>Component-based</td>
+                                    <td>Medium</td>
+                                    <td>Low</td>
+                                    <td>Accessible React applications, rapid development</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h3>Choosing the Right Framework</h3>
+                        <p>Selecting the appropriate CSS framework depends on several factors:</p>
+                        
+                        <ul>
+                            <li><strong>Project Requirements</strong>: Consider the complexity, design flexibility, and performance needs</li>
+                            <li><strong>Team Experience</strong>: Choose frameworks your team is familiar with or can learn quickly</li>
+                            <li><strong>Design Constraints</strong>: Some frameworks are more customizable than others</li>
+                            <li><strong>Performance Goals</strong>: Consider the framework's size and impact on load times</li>
+                            <li><strong>Browser Support</strong>: Ensure the framework supports your target browsers</li>
+                            <li><strong>Accessibility Requirements</strong>: Check if the framework follows accessibility best practices</li>
+                            <li><strong>Long-term Maintenance</strong>: Consider the framework's community support and update frequency</li>
+                        </ul>
+                        
+                        <p>In the following sections, we'll explore some of the most popular CSS frameworks in detail, starting with Bootstrap.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Bootstrap</h2>
+                        <p>Bootstrap is one of the most popular CSS frameworks, originally developed by Twitter. It provides a comprehensive set of components and utilities for building responsive, mobile-first websites and applications.</p>
+                        
+                        <h3>Getting Started with Bootstrap</h3>
+                        <p>There are several ways to include Bootstrap in your project:</p>
+                        
+                        <h4>1. Using CDN</h4>
+                        <pre><code class="language-html">&lt;!-- CSS only --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+&lt;!-- JavaScript Bundle with Popper --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+                        
+                        <h4>2. Using npm</h4>
+                        <pre><code class="language-bash">npm install bootstrap</code></pre>
+                        
+                        <p>Then import it in your JavaScript:</p>
+                        <pre><code class="language-javascript">// Import all of Bootstrap's JS
+import * as bootstrap from 'bootstrap'
+
+// Or import only what you need
+import { Modal, Tooltip } from 'bootstrap'</code></pre>
+                        
+                        <p>And import the CSS in your Sass file:</p>
+                        <pre><code class="language-scss">// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+
+// Or import only what you need
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/utilities";
+// etc.</code></pre>
+                        
+                        <h3>Bootstrap Grid System</h3>
+                        <p>One of Bootstrap's most powerful features is its responsive grid system, which uses a series of containers, rows, and columns to layout and align content.</p>
+                        
+                        <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-sm-12 col-md-6 col-lg-4"&gt;
+      &lt;!-- Content --&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-12 col-md-6 col-lg-4"&gt;
+      &lt;!-- Content --&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-12 col-md-12 col-lg-4"&gt;
+      &lt;!-- Content --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <p>The grid system is based on a 12-column layout and includes six responsive breakpoints:</p>
+                        
+                        <ul>
+                            <li><code>xs</code> - Extra small (< 576px)</li>
+                            <li><code>sm</code> - Small (≥ 576px)</li>
+                            <li><code>md</code> - Medium (≥ 768px)</li>
+                            <li><code>lg</code> - Large (≥ 992px)</li>
+                            <li><code>xl</code> - Extra large (≥ 1200px)</li>
+                            <li><code>xxl</code> - Extra extra large (≥ 1400px)</li>
+                        </ul>
+                        
+                        <h3>Bootstrap Components</h3>
+                        <p>Bootstrap includes dozens of reusable components for common UI patterns:</p>
+                        
+                        <h4>Buttons</h4>
+                        <pre><code class="language-html">&lt;button type="button" class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button type="button" class="btn btn-success"&gt;Success&lt;/button&gt;
+&lt;button type="button" class="btn btn-danger"&gt;Danger&lt;/button&gt;
+&lt;button type="button" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+&lt;button type="button" class="btn btn-info"&gt;Info&lt;/button&gt;
+&lt;button type="button" class="btn btn-light"&gt;Light&lt;/button&gt;
+&lt;button type="button" class="btn btn-dark"&gt;Dark&lt;/button&gt;
+&lt;button type="button" class="btn btn-link"&gt;Link&lt;/button&gt;</code></pre>
+                        
+                        <h4>Cards</h4>
+                        <pre><code class="language-html">&lt;div class="card" style="width: 18rem;"&gt;
+  &lt;img src="..." class="card-img-top" alt="..."&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Card title&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Go somewhere&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h4>Navbar</h4>
+                        <pre><code class="language-html">&lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;Navbar&lt;/a&gt;
+    &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"&gt;
+      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+      &lt;ul class="navbar-nav"&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link active" href="#"&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="#"&gt;Features&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="#"&gt;Pricing&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+                        
+                        <h4>Forms</h4>
+                        <pre><code class="language-html">&lt;form&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="exampleInputEmail1" class="form-label"&gt;Email address&lt;/label&gt;
+    &lt;input type="email" class="form-control" id="exampleInputEmail1"&gt;
+    &lt;div class="form-text"&gt;We'll never share your email with anyone else.&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="exampleInputPassword1" class="form-label"&gt;Password&lt;/label&gt;
+    &lt;input type="password" class="form-control" id="exampleInputPassword1"&gt;
+  &lt;/div&gt;
+  &lt;div class="mb-3 form-check"&gt;
+    &lt;input type="checkbox" class="form-check-input" id="exampleCheck1"&gt;
+    &lt;label class="form-check-label" for="exampleCheck1"&gt;Check me out&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        
+                        <h3>Bootstrap Utilities</h3>
+                        <p>Bootstrap provides utility classes for common CSS properties:</p>
+                        
+                        <h4>Spacing</h4>
+                        <pre><code class="language-html">&lt;!-- Margin --&gt;
+&lt;div class="mt-4"&gt;Margin top 4&lt;/div&gt;
+&lt;div class="mb-5"&gt;Margin bottom 5&lt;/div&gt;
+&lt;div class="ms-3"&gt;Margin start 3&lt;/div&gt;
+&lt;div class="me-2"&gt;Margin end 2&lt;/div&gt;
+&lt;div class="mx-auto"&gt;Margin x-axis auto&lt;/div&gt;
+&lt;div class="my-4"&gt;Margin y-axis 4&lt;/div&gt;
+
+&lt;!-- Padding --&gt;
+&lt;div class="p-3"&gt;Padding 3 all around&lt;/div&gt;
+&lt;div class="pt-4"&gt;Padding top 4&lt;/div&gt;
+&lt;div class="pb-5"&gt;Padding bottom 5&lt;/div&gt;</code></pre>
+                        
+                        <h4>Display</h4>
+                        <pre><code class="language-html">&lt;div class="d-none"&gt;Hidden on all&lt;/div&gt;
+&lt;div class="d-none d-md-block"&gt;Hidden on small, visible on medium and up&lt;/div&gt;
+&lt;div class="d-md-none d-lg-block"&gt;Hidden on medium, visible on large and up&lt;/div&gt;</code></pre>
+                        
+                        <h4>Flex</h4>
+                        <pre><code class="language-html">&lt;div class="d-flex"&gt;
+  &lt;div&gt;Flex item 1&lt;/div&gt;
+  &lt;div&gt;Flex item 2&lt;/div&gt;
+  &lt;div&gt;Flex item 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="d-flex justify-content-between"&gt;
+  &lt;div&gt;Flex item 1&lt;/div&gt;
+  &lt;div&gt;Flex item 2&lt;/div&gt;
+  &lt;div&gt;Flex item 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="d-flex align-items-center"&gt;
+  &lt;div&gt;Flex item 1&lt;/div&gt;
+  &lt;div&gt;Flex item 2&lt;/div&gt;
+  &lt;div&gt;Flex item 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>Customizing Bootstrap</h3>
+                        <p>Bootstrap can be customized in several ways:</p>
+                        
+                        <h4>1. Using Sass Variables</h4>
+                        <p>The most powerful way to customize Bootstrap is by overriding its Sass variables:</p>
+                        
+                        <pre><code class="language-scss">// Custom.scss
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$primary: #0074d9;
+$danger: #ff4136;
+$body-bg: #f8f9fa;
+$body-color: #212529;
+$border-radius: 0.5rem;
+$font-family-base: 'Poppins', sans-serif;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+// 4. Include any optional Bootstrap components as you like
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+// etc.</code></pre>
+                        
+                        <h4>2. Using CSS Variables</h4>
+                        <p>Bootstrap 5 uses CSS custom properties that you can override:</p>
+                        
+                        <pre><code class="language-css">:root {
+  --bs-primary: #0074d9;
+  --bs-danger: #ff4136;
+  --bs-body-bg: #f8f9fa;
+  --bs-body-color: #212529;
+  --bs-border-radius: 0.5rem;
+  --bs-font-sans-serif: 'Poppins', sans-serif;
+}</code></pre>
+                        
+                        <h4>3. Using the Bootstrap Customizer</h4>
+                        <p>Bootstrap provides an online customizer where you can select components and customize variables:</p>
+                        <p><a href="https://getbootstrap.com/docs/5.3/customize/overview/" target="_blank">Bootstrap Customizer</a></p>
+                        
+                        <h3>Bootstrap Pros and Cons</h3>
+                        
+                        <h4>Pros</h4>
+                        <ul>
+                            <li><strong>Comprehensive</strong>: Includes almost everything you need for a complete UI</li>
+                            <li><strong>Well-documented</strong>: Extensive documentation with examples</li>
+                            <li><strong>Responsive</strong>: Mobile-first approach with a powerful grid system</li>
+                            <li><strong>Community</strong>: Large community and ecosystem</li>
+                            <li><strong>Accessibility</strong>: Built with accessibility in mind</li>
+                            <li><strong>Browser Support</strong>: Works across all modern browsers</li>
+                        </ul>
+                        
+                        <h4>Cons</h4>
+                        <ul>
+                            <li><strong>File Size</strong>: Can be large if you use the full framework</li>
+                            <li><strong>Generic Look</strong>: Websites can look similar without customization</li>
+                            <li><strong>Learning Curve</strong>: Many classes and components to learn</li>
+                            <li><strong>Overriding Styles</strong>: Can be challenging to override default styles</li>
+                            <li><strong>JavaScript Dependency</strong>: Some components require JavaScript</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Bootstrap Best Practices</h4>
+                            <ul>
+                                <li>Only import the components you need to reduce file size</li>
+                                <li>Customize Bootstrap using Sass variables for a unique look</li>
+                                <li>Use utility classes for quick adjustments</li>
+                                <li>Create custom components that extend Bootstrap's base styles</li>
+                                <li>Keep your custom CSS separate from Bootstrap's CSS</li>
+                                <li>Use Bootstrap's built-in responsive utilities for different screen sizes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Tailwind CSS</h2>
+                        <p>Tailwind CSS is a utility-first CSS framework that provides low-level utility classes to build custom designs without leaving your HTML. Unlike component-based frameworks like Bootstrap, Tailwind doesn't provide pre-designed components but instead gives you the building blocks to create your own.</p>
+                        
+                        <h3>Getting Started with Tailwind CSS</h3>
+                        <p>There are several ways to include Tailwind in your project:</p>
+                        
+                        <h4>1. Using npm</h4>
+                        <pre><code class="language-bash">npm install -D tailwindcss
+npx tailwindcss init</code></pre>
+                        
+                        <p>Create a configuration file (tailwind.config.js):</p>
+                        <pre><code class="language-javascript">/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}</code></pre>
+                        
+                        <p>Add Tailwind directives to your CSS:</p>
+                        <pre><code class="language-css">@tailwind base;
+@tailwind components;
+@tailwind utilities;</code></pre>
+                        
+                        <p>Build your CSS:</p>
+                        <pre><code class="language-bash">npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch</code></pre>
+                        
+                        <h4>2. Using CDN (for development only)</h4>
+                        <pre><code class="language-html">&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</code></pre>
+                        
+                        <h3>Tailwind Utility Classes</h3>
+                        <p>Tailwind provides utility classes for almost every CSS property:</p>
+                        
+                        <h4>Layout</h4>
+                        <pre><code class="language-html">&lt;div class="container mx-auto px-4"&gt;
+  &lt;div class="flex flex-wrap -mx-4"&gt;
+    &lt;div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8"&gt;
+      &lt;!-- Content --&gt;
+    &lt;/div&gt;
+    &lt;div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8"&gt;
+      &lt;!-- Content --&gt;
+    &lt;/div&gt;
+    &lt;div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8"&gt;
+      &lt;!-- Content --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h4>Typography</h4>
+                        <pre><code class="language-html">&lt;h1 class="text-4xl font-bold text-gray-900 mb-4"&gt;Heading&lt;/h1&gt;
+&lt;p class="text-base text-gray-700 leading-relaxed mb-6"&gt;
+  This is a paragraph with some text. It has a relaxed line height and a gray color.
+&lt;/p&gt;
+&lt;a href="#" class="text-blue-600 hover:text-blue-800 underline"&gt;Read more&lt;/a&gt;</code></pre>
+                        
+                        <h4>Colors and Backgrounds</h4>
+                        <pre><code class="language-html">&lt;div class="bg-white shadow-md rounded-lg p-6 border border-gray-200"&gt;
+  &lt;h2 class="text-2xl font-semibold text-gray-800"&gt;Card Title&lt;/h2&gt;
+  &lt;p class="text-gray-600 mt-2"&gt;Card content goes here.&lt;/p&gt;
+  &lt;button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded"&gt;
+    Button
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h4>Spacing</h4>
+                        <pre><code class="language-html">&lt;!-- Margin --&gt;
+&lt;div class="mt-4"&gt;Margin top 4&lt;/div&gt;
+&lt;div class="mb-6"&gt;Margin bottom 6&lt;/div&gt;
+&lt;div class="ml-2"&gt;Margin left 2&lt;/div&gt;
+&lt;div class="mr-3"&gt;Margin right 3&lt;/div&gt;
+&lt;div class="mx-auto"&gt;Margin x-axis auto&lt;/div&gt;
+&lt;div class="my-8"&gt;Margin y-axis 8&lt;/div&gt;
+
+&lt;!-- Padding --&gt;
+&lt;div class="p-4"&gt;Padding 4 all around&lt;/div&gt;
+&lt;div class="pt-2"&gt;Padding top 2&lt;/div&gt;
+&lt;div class="pb-8"&gt;Padding bottom 8&lt;/div&gt;</code></pre>
+                        
+                        <h4>Flexbox</h4>
+                        <pre><code class="language-html">&lt;div class="flex items-center justify-between p-4 bg-gray-100 rounded-lg"&gt;
+  &lt;div class="flex-shrink-0"&gt;
+    &lt;img class="h-12 w-12 rounded-full" src="avatar.jpg" alt="Avatar"&gt;
+  &lt;/div&gt;
+  &lt;div class="ml-4 flex-grow"&gt;
+    &lt;h3 class="text-lg font-medium"&gt;John Doe&lt;/h3&gt;
+    &lt;p class="text-gray-600"&gt;Web Developer&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;button class="bg-blue-500 text-white px-4 py-2 rounded"&gt;Follow&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h4>Responsive Design</h4>
+                        <p>Tailwind includes responsive variants for all utility classes using prefixes:</p>
+                        
+                        <pre><code class="language-html">&lt;div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4"&gt;
+  &lt;!-- Full width on mobile, half width on medium screens, 
+       one-third on large screens, one-quarter on extra large screens --&gt;
+&lt;/div&gt;
+
+&lt;div class="block md:flex lg:grid lg:grid-cols-3"&gt;
+  &lt;!-- Block on mobile, flex on medium screens, 3-column grid on large screens --&gt;
+&lt;/div&gt;
+
+&lt;div class="text-sm md:text-base lg:text-lg"&gt;
+  &lt;!-- Small text on mobile, base size on medium screens, large on large screens --&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>Building Components with Tailwind</h3>
+                        <p>While Tailwind doesn't provide pre-built components, you can create your own using utility classes:</p>
+                        
+                        <h4>Button Component</h4>
+                        <pre><code class="language-html">&lt;button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow"&gt;
+  Button
+&lt;/button&gt;
+
+&lt;button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded shadow"&gt;
+  Secondary Button
+&lt;/button&gt;
+
+&lt;button class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded shadow"&gt;
+  Danger Button
+&lt;/button&gt;</code></pre>
+                        
+                        <h4>Card Component</h4>
+                        <pre><code class="language-html">&lt;div class="bg-white rounded-lg shadow-md overflow-hidden"&gt;
+  &lt;img class="w-full h-48 object-cover" src="image.jpg" alt="Card image"&gt;
+  &lt;div class="p-6"&gt;
+    &lt;h2 class="text-xl font-semibold text-gray-800 mb-2"&gt;Card Title&lt;/h2&gt;
+    &lt;p class="text-gray-600 mb-4"&gt;This is the card description. It can contain text and other elements.&lt;/p&gt;
+    &lt;div class="flex justify-between items-center"&gt;
+      &lt;span class="text-sm text-gray-500"&gt;April 21, 2025&lt;/span&gt;
+      &lt;button class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-1 px-3 rounded text-sm"&gt;
+        Read More
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h4>Form Component</h4>
+                        <pre><code class="language-html">&lt;form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"&gt;
+  &lt;div class="mb-4"&gt;
+    &lt;label class="block text-gray-700 text-sm font-bold mb-2" for="username"&gt;
+      Username
+    &lt;/label&gt;
+    &lt;input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username"&gt;
+  &lt;/div&gt;
+  &lt;div class="mb-6"&gt;
+    &lt;label class="block text-gray-700 text-sm font-bold mb-2" for="password"&gt;
+      Password
+    &lt;/label&gt;
+    &lt;input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************"&gt;
+    &lt;p class="text-red-500 text-xs italic"&gt;Please choose a password.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="flex items-center justify-between"&gt;
+    &lt;button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button"&gt;
+      Sign In
+    &lt;/button&gt;
+    &lt;a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#"&gt;
+      Forgot Password?
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+                        
+                        <h3>Extracting Components with @apply</h3>
+                        <p>To avoid repeating utility combinations, you can extract components using the <code>@apply</code> directive:</p>
+                        
+                        <pre><code class="language-css">@tailwind base;
+@tailwind components;
+
+@layer components {
+  .btn {
+    @apply py-2 px-4 font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-400;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-800 hover:bg-gray-300 focus:ring-gray-400;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+  }
+  
+  .card-body {
+    @apply p-6;
+  }
+  
+  .form-input {
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline;
+  }
+}
+
+@tailwind utilities;</code></pre>
+                        
+                        <p>Then you can use these classes in your HTML:</p>
+                        
+                        <pre><code class="language-html">&lt;button class="btn btn-primary"&gt;Primary Button&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Secondary Button&lt;/button&gt;
+
+&lt;div class="card"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h2 class="text-xl font-semibold mb-2"&gt;Card Title&lt;/h2&gt;
+    &lt;p&gt;Card content goes here.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>Customizing Tailwind</h3>
+                        <p>Tailwind is highly customizable through its configuration file (tailwind.config.js):</p>
+                        
+                        <pre><code class="language-javascript">/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    colors: {
+      // Customize your color palette
+      'primary': '#0074d9',
+      'secondary': '#6c757d',
+      'success': '#28a745',
+      'danger': '#dc3545',
+      'warning': '#ffc107',
+      'info': '#17a2b8',
+      'white': '#ffffff',
+      'black': '#000000',
+      'gray': {
+        100: '#f8f9fa',
+        200: '#e9ecef',
+        300: '#dee2e6',
+        400: '#ced4da',
+        500: '#adb5bd',
+        600: '#6c757d',
+        700: '#495057',
+        800: '#343a40',
+        900: '#212529',
+      },
+    },
+    fontFamily: {
+      // Customize your fonts
+      'sans': ['Poppins', 'sans-serif'],
+      'serif': ['Georgia', 'serif'],
+      'mono': ['Fira Code', 'monospace'],
+    },
+    extend: {
+      // Add new values without replacing defaults
+      spacing: {
+        '72': '18rem',
+        '84': '21rem',
+        '96': '24rem',
+      },
+      borderRadius: {
+        'xl': '1rem',
+        '2xl': '2rem',
+      },
+    },
+  },
+  plugins: [
+    // Add plugins for additional functionality
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+  ],
+}</code></pre>
+                        
+                        <h3>Tailwind Pros and Cons</h3>
+                        
+                        <h4>Pros</h4>
+                        <ul>
+                            <li><strong>Flexibility</strong>: Create custom designs without writing custom CSS</li>
+                            <li><strong>Productivity</strong>: Rapid development with utility classes</li>
+                            <li><strong>File Size</strong>: Small file size in production with PurgeCSS</li>
+                            <li><strong>Consistency</strong>: Design system built into the utility classes</li>
+                            <li><strong>No Naming</strong>: Avoid naming components and CSS classes</li>
+                            <li><strong>Responsive</strong>: Built-in responsive design system</li>
+                        </ul>
+                        
+                        <h4>Cons</h4>
+                        <ul>
+                            <li><strong>HTML Bloat</strong>: HTML can become verbose with many utility classes</li>
+                            <li><strong>Learning Curve</strong>: Need to learn many utility class names</li>
+                            <li><strong>Design Knowledge</strong>: Requires more design knowledge than component frameworks</li>
+                            <li><strong>Team Adoption</strong>: May face resistance from developers used to traditional CSS</li>
+                            <li><strong>Readability</strong>: Can be harder to understand what an element looks like from the class names</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Tailwind Best Practices</h4>
+                            <ul>
+                                <li>Use PurgeCSS to remove unused styles in production</li>
+                                <li>Extract common patterns into components with @apply</li>
+                                <li>Use consistent spacing and sizing scales</li>
+                                <li>Leverage responsive prefixes for adaptive designs</li>
+                                <li>Customize the theme to match your brand</li>
+                                <li>Consider using Tailwind plugins for additional functionality</li>
+                                <li>Use a code formatter like Prettier to keep utility classes organized</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Other Popular CSS Frameworks</h2>
+                        <p>Beyond Bootstrap and Tailwind CSS, there are several other CSS frameworks worth exploring. Let's take a look at some of the most popular alternatives:</p>
+                        
+                        <h3>Bulma</h3>
+                        <p>Bulma is a modern CSS framework based on Flexbox. It's lightweight, modular, and doesn't require JavaScript.</p>
+                        
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>100% responsive and mobile-first</li>
+                            <li>Modular architecture (import only what you need)</li>
+                            <li>Built with Sass/SCSS</li>
+                            <li>No JavaScript dependencies</li>
+                            <li>Modern, clean design</li>
+                            <li>Comprehensive documentation</li>
+                        </ul>
+                        
+                        <h4>Example</h4>
+                        <pre><code class="language-html">&lt;div class="columns is-mobile"&gt;
+  &lt;div class="column is-half is-offset-one-quarter"&gt;
+    &lt;div class="card"&gt;
+      &lt;div class="card-image"&gt;
+        &lt;figure class="image is-4by3"&gt;
+          &lt;img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image"&gt;
+        &lt;/figure&gt;
+      &lt;/div&gt;
+      &lt;div class="card-content"&gt;
+        &lt;div class="media"&gt;
+          &lt;div class="media-left"&gt;
+            &lt;figure class="image is-48x48"&gt;
+              &lt;img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image"&gt;
+            &lt;/figure&gt;
+          &lt;/div&gt;
+          &lt;div class="media-content"&gt;
+            &lt;p class="title is-4"&gt;John Smith&lt;/p&gt;
+            &lt;p class="subtitle is-6"&gt;@johnsmith&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="content"&gt;
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          &lt;a href="#"&gt;#css&lt;/a&gt; &lt;a href="#"&gt;#responsive&lt;/a&gt;
+          &lt;br&gt;
+          &lt;time datetime="2025-1-1"&gt;11:09 PM - 1 Jan 2025&lt;/time&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>Foundation</h3>
+                        <p>Foundation is a responsive front-end framework that provides a solid foundation for any web project. It's known for its enterprise-grade features and flexibility.</p>
+                        
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Advanced responsive grid system</li>
+                            <li>Enterprise-level support and documentation</li>
+                            <li>Semantic markup</li>
+                            <li>Accessibility built-in</li>
+                            <li>Extensive customization options</li>
+                            <li>Comprehensive UI components</li>
+                        </ul>
+                        
+                        <h4>Example</h4>
+                        <pre><code class="language-html">&lt;div class="grid-container"&gt;
+  &lt;div class="grid-x grid-margin-x"&gt;
+    &lt;div class="cell small-12 medium-6 large-4"&gt;
+      &lt;div class="card"&gt;
+        &lt;div class="card-divider"&gt;
+          &lt;h4&gt;Card Title&lt;/h4&gt;
+        &lt;/div&gt;
+        &lt;img src="https://foundation.zurb.com/sites/docs/assets/img/generic/rectangle-1.jpg"&gt;
+        &lt;div class="card-section"&gt;
+          &lt;p&gt;This is a simple card with an image.&lt;/p&gt;
+          &lt;button class="button primary"&gt;Button&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="cell small-12 medium-6 large-4"&gt;
+      &lt;!-- Another card --&gt;
+    &lt;/div&gt;
+    &lt;div class="cell small-12 medium-6 large-4"&gt;
+      &lt;!-- Another card --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>Material UI</h3>
+                        <p>Material UI is a popular React UI framework that implements Google's Material Design. It provides a set of React components that follow Material Design principles.</p>
+                        
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>React components for faster development</li>
+                            <li>Implements Google's Material Design</li>
+                            <li>Customizable theme system</li>
+                            <li>Responsive and mobile-first</li>
+                            <li>Accessibility support</li>
+                            <li>Active community and regular updates</li>
+                        </ul>
+                        
+                        <h4>Example</h4>
+                        <pre><code class="language-jsx">import React from 'react';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
+
+function MediaCard() {
+  return (
+    &lt;Card sx={{ maxWidth: 345 }}&gt;
+      &lt;CardMedia
+        component="img"
+        height="140"
+        image="/static/images/cards/contemplative-reptile.jpg"
+        alt="green iguana"
+      /&gt;
+      &lt;CardContent&gt;
+        &lt;Typography gutterBottom variant="h5" component="div"&gt;
+          Lizard
+        &lt;/Typography&gt;
+        &lt;Typography variant="body2" color="text.secondary"&gt;
+          Lizards are a widespread group of squamate reptiles, with over 6,000
+          species, ranging across all continents except Antarctica
+        &lt;/Typography&gt;
+      &lt;/CardContent&gt;
+      &lt;CardActions&gt;
+        &lt;Button size="small"&gt;Share&lt;/Button&gt;
+        &lt;Button size="small"&gt;Learn More&lt;/Button&gt;
+      &lt;/CardActions&gt;
+    &lt;/Card&gt;
+  );
+}</code></pre>
+                        
+                        <h3>Semantic UI</h3>
+                        <p>Semantic UI is a development framework that helps create beautiful, responsive layouts using human-friendly HTML.</p>
+                        
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Semantic class names (readable and intuitive)</li>
+                            <li>Comprehensive UI components</li>
+                            <li>Responsive design</li>
+                            <li>Theming system</li>
+                            <li>Integration with popular JavaScript frameworks</li>
+                            <li>Detailed documentation</li>
+                        </ul>
+                        
+                        <h4>Example</h4>
+                        <pre><code class="language-html">&lt;div class="ui card"&gt;
+  &lt;div class="image"&gt;
+    &lt;img src="/images/avatar/large/elliot.jpg"&gt;
+  &lt;/div&gt;
+  &lt;div class="content"&gt;
+    &lt;a class="header"&gt;Elliot Baker&lt;/a&gt;
+    &lt;div class="meta"&gt;
+      &lt;span class="date"&gt;Joined in 2021&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="description"&gt;
+      Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="extra content"&gt;
+    &lt;a&gt;
+      &lt;i class="user icon"&gt;&lt;/i&gt;
+      22 Friends
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>Chakra UI</h3>
+                        <p>Chakra UI is a simple, modular, and accessible component library for React applications with a focus on developer experience.</p>
+                        
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Accessible components by default</li>
+                            <li>Theme-based styling system</li>
+                            <li>Responsive styles with array syntax</li>
+                            <li>Dark mode support</li>
+                            <li>Composable components</li>
+                            <li>Strong TypeScript support</li>
+                        </ul>
+                        
+                        <h4>Example</h4>
+                        <pre><code class="language-jsx">import React from 'react';
+import { Box, Image, Badge, Flex, Spacer, Button, Text } from '@chakra-ui/react';
+
+function Example() {
+  return (
+    &lt;Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden"&gt;
+      &lt;Image src="https://bit.ly/2Z4KKcF" alt="Product image" /&gt;
+      
+      &lt;Box p="6"&gt;
+        &lt;Box display="flex" alignItems="baseline"&gt;
+          &lt;Badge borderRadius="full" px="2" colorScheme="teal"&gt;
+            New
+          &lt;/Badge&gt;
+          &lt;Box
+            color="gray.500"
+            fontWeight="semibold"
+            letterSpacing="wide"
+            fontSize="xs"
+            textTransform="uppercase"
+            ml="2"
+          &gt;
+            2 beds &bull; 2 baths
+          &lt;/Box&gt;
+        &lt;/Box&gt;
+        
+        &lt;Box
+          mt="1"
+          fontWeight="semibold"
+          as="h4"
+          lineHeight="tight"
+          isTruncated
+        &gt;
+          Modern Apartment in City Center
+        &lt;/Box&gt;
+        
+        &lt;Box&gt;
+          $1,900.00
+          &lt;Box as="span" color="gray.600" fontSize="sm"&gt;
+            / month
+          &lt;/Box&gt;
+        &lt;/Box&gt;
+        
+        &lt;Flex mt="2" alignItems="center"&gt;
+          &lt;Text&gt;4.8 stars&lt;/Text&gt;
+          &lt;Spacer /&gt;
+          &lt;Button colorScheme="teal" size="sm"&gt;
+            View Details
+          &lt;/Button&gt;
+        &lt;/Flex&gt;
+      &lt;/Box&gt;
+    &lt;/Box&gt;
+  );
+}</code></pre>
+                        
+                        <h3>Comparison of CSS Frameworks</h3>
+                        <p>Here's a comparison of the frameworks we've discussed:</p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Bootstrap</th>
+                                    <th>Tailwind CSS</th>
+                                    <th>Bulma</th>
+                                    <th>Foundation</th>
+                                    <th>Material UI</th>
+                                    <th>Semantic UI</th>
+                                    <th>Chakra UI</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Type</td>
+                                    <td>Component-based</td>
+                                    <td>Utility-first</td>
+                                    <td>Component-based</td>
+                                    <td>Component-based</td>
+                                    <td>React components</td>
+                                    <td>Component-based</td>
+                                    <td>React components</td>
+                                </tr>
+                                <tr>
+                                    <td>Size (minified)</td>
+                                    <td>~140KB</td>
+                                    <td>~10KB (purged)</td>
+                                    <td>~100KB</td>
+                                    <td>~150KB</td>
+                                    <td>Tree-shakable</td>
+                                    <td>~130KB</td>
+                                    <td>Tree-shakable</td>
+                                </tr>
+                                <tr>
+                                    <td>JavaScript Required</td>
+                                    <td>For some components</td>
+                                    <td>No</td>
+                                    <td>No</td>
+                                    <td>For some components</td>
+                                    <td>Yes (React)</td>
+                                    <td>For some components</td>
+                                    <td>Yes (React)</td>
+                                </tr>
+                                <tr>
+                                    <td>Customization</td>
+                                    <td>Moderate</td>
+                                    <td>High</td>
+                                    <td>Moderate</td>
+                                    <td>High</td>
+                                    <td>High</td>
+                                    <td>Moderate</td>
+                                    <td>High</td>
+                                </tr>
+                                <tr>
+                                    <td>Learning Curve</td>
+                                    <td>Low</td>
+                                    <td>Medium</td>
+                                    <td>Low</td>
+                                    <td>Medium</td>
+                                    <td>Medium</td>
+                                    <td>Low</td>
+                                    <td>Low</td>
+                                </tr>
+                                <tr>
+                                    <td>Accessibility</td>
+                                    <td>Good</td>
+                                    <td>Manual</td>
+                                    <td>Basic</td>
+                                    <td>Excellent</td>
+                                    <td>Good</td>
+                                    <td>Basic</td>
+                                    <td>Excellent</td>
+                                </tr>
+                                <tr>
+                                    <td>Design System</td>
+                                    <td>Bootstrap</td>
+                                    <td>Custom</td>
+                                    <td>Custom</td>
+                                    <td>Foundation</td>
+                                    <td>Material Design</td>
+                                    <td>Semantic UI</td>
+                                    <td>Chakra</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Choosing and Using CSS Frameworks</h2>
+                        <p>Now that we've explored various CSS frameworks, let's discuss how to choose the right one for your project and how to use it effectively.</p>
+                        
+                        <h3>Framework Selection Criteria</h3>
+                        <p>Consider these factors when choosing a CSS framework:</p>
+                        
+                        <h4>Project Requirements</h4>
+                        <ul>
+                            <li><strong>Project Type</strong>: Different frameworks excel at different types of projects</li>
+                            <li><strong>Design Freedom</strong>: How much customization do you need?</li>
+                            <li><strong>Performance Requirements</strong>: Is file size a critical concern?</li>
+                            <li><strong>Browser Support</strong>: Which browsers must your project support?</li>
+                            <li><strong>Accessibility Needs</strong>: How important is built-in accessibility?</li>
+                        </ul>
+                        
+                        <h4>Team Considerations</h4>
+                        <ul>
+                            <li><strong>Team Experience</strong>: What frameworks is your team familiar with?</li>
+                            <li><strong>Learning Curve</strong>: How quickly does your team need to be productive?</li>
+                            <li><strong>Development Workflow</strong>: How does the framework fit into your build process?</li>
+                            <li><strong>Team Size</strong>: Larger teams may benefit from more structured frameworks</li>
+                        </ul>
+                        
+                        <h4>Technical Factors</h4>
+                        <ul>
+                            <li><strong>JavaScript Framework</strong>: Some CSS frameworks integrate better with specific JS frameworks</li>
+                            <li><strong>Build System</strong>: How well does the framework work with your build tools?</li>
+                            <li><strong>Customization Options</strong>: How easily can you adapt the framework to your needs?</li>
+                            <li><strong>Documentation Quality</strong>: Is the documentation comprehensive and up-to-date?</li>
+                            <li><strong>Community Support</strong>: How active is the community? Are issues resolved quickly?</li>
+                        </ul>
+                        
+                        <h3>Framework Usage Best Practices</h3>
+                        <p>Once you've chosen a framework, follow these best practices to use it effectively:</p>
+                        
+                        <h4>1. Only Import What You Need</h4>
+                        <p>Most frameworks allow you to import only the components you need, which can significantly reduce file size:</p>
+                        
+                        <pre><code class="language-scss">// Bootstrap example - only import what you need
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/forms";
+// etc.</code></pre>
+                        
+                        <h4>2. Customize the Framework</h4>
+                        <p>Adapt the framework to your project's design requirements:</p>
+                        
+                        <pre><code class="language-scss">// Bootstrap customization example
+$primary: #0074d9;
+$border-radius: 0.5rem;
+$font-family-base: 'Poppins', sans-serif;
+
+@import "bootstrap/scss/bootstrap";</code></pre>
+                        
+                        <h4>3. Extend, Don't Override</h4>
+                        <p>Instead of overriding framework styles, extend them with your own classes:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Bad: Overriding framework styles --&gt;
+&lt;button class="btn btn-primary" style="background-color: #ff0000;"&gt;Button&lt;/button&gt;
+
+&lt;!-- Good: Extending with custom classes --&gt;
+&lt;button class="btn btn-primary custom-button"&gt;Button&lt;/button&gt;</code></pre>
+                        
+                        <pre><code class="language-css">/* Custom styles */
+.custom-button {
+  background-color: #ff0000;
+}</code></pre>
+                        
+                        <h4>4. Use a Consistent Naming Convention</h4>
+                        <p>When adding custom components, follow the framework's naming convention:</p>
+                        
+                        <pre><code class="language-css">/* Bootstrap-style custom component */
+.card-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card-gallery-item {
+  flex: 0 0 calc(33.333% - 1rem);
+}</code></pre>
+                        
+                        <h4>5. Organize Your Custom CSS</h4>
+                        <p>Keep your custom CSS organized and separate from the framework:</p>
+                        
+                        <pre><code class="language-text">styles/
+├── vendor/
+│   └── bootstrap/  # Framework files
+├── abstracts/
+│   ├── _variables.scss  # Custom variables
+│   └── _mixins.scss     # Custom mixins
+├── components/
+│   ├── _buttons.scss    # Custom button styles
+│   └── _cards.scss      # Custom card styles
+├── layouts/
+│   ├── _header.scss     # Custom header styles
+│   └── _footer.scss     # Custom footer styles
+└── main.scss            # Main file that imports everything</code></pre>
+                        
+                        <h4>6. Use Framework Utilities for Quick Adjustments</h4>
+                        <p>Most frameworks provide utility classes for common adjustments:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Bootstrap utilities example --&gt;
+&lt;div class="card mb-4 shadow-sm"&gt;
+  &lt;div class="card-body p-4"&gt;
+    &lt;h5 class="card-title mb-3"&gt;Card Title&lt;/h5&gt;
+    &lt;p class="card-text text-muted"&gt;Card content goes here.&lt;/p&gt;
+    &lt;div class="d-flex justify-content-between align-items-center mt-4"&gt;
+      &lt;button class="btn btn-primary"&gt;Button&lt;/button&gt;
+      &lt;small class="text-muted"&gt;9 mins&lt;/small&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h4>7. Create a Component Library</h4>
+                        <p>Document your custom components and how they extend the framework:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Component library example --&gt;
+&lt;div class="container my-5"&gt;
+  &lt;h2&gt;Buttons&lt;/h2&gt;
+  &lt;div class="row mb-4"&gt;
+    &lt;div class="col-md-6"&gt;
+      &lt;h3&gt;Standard Buttons&lt;/h3&gt;
+      &lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+      &lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+      &lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-6"&gt;
+      &lt;h3&gt;Custom Buttons&lt;/h3&gt;
+      &lt;button class="btn btn-primary btn-rounded"&gt;Rounded&lt;/button&gt;
+      &lt;button class="btn btn-primary btn-gradient"&gt;Gradient&lt;/button&gt;
+      &lt;button class="btn btn-primary btn-outline-thick"&gt;Thick Outline&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;h2&gt;Cards&lt;/h2&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-md-4"&gt;
+      &lt;h3&gt;Standard Card&lt;/h3&gt;
+      &lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+          &lt;h5 class="card-title"&gt;Card Title&lt;/h5&gt;
+          &lt;p class="card-text"&gt;Card content goes here.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4"&gt;
+      &lt;h3&gt;Custom Card&lt;/h3&gt;
+      &lt;div class="card card-hover"&gt;
+        &lt;div class="card-body"&gt;
+          &lt;h5 class="card-title"&gt;Hover Card&lt;/h5&gt;
+          &lt;p class="card-text"&gt;Hover over this card to see the effect.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>Common Pitfalls to Avoid</h3>
+                        <p>Be aware of these common mistakes when using CSS frameworks:</p>
+                        
+                        <ul>
+                            <li><strong>Framework Overload</strong>: Using multiple frameworks in the same project</li>
+                            <li><strong>Not Customizing</strong>: Using the framework's default styles without customization</li>
+                            <li><strong>Excessive Overrides</strong>: Writing too many overrides instead of extending the framework</li>
+                            <li><strong>Ignoring Mobile</strong>: Not testing and optimizing for mobile devices</li>
+                            <li><strong>Neglecting Accessibility</strong>: Assuming the framework handles all accessibility concerns</li>
+                            <li><strong>Not Updating</strong>: Sticking with outdated versions of the framework</li>
+                            <li><strong>Importing Everything</strong>: Including the entire framework when you only need a few components</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>When to Use a Framework vs. Custom CSS</h4>
+                            <p><strong>Use a CSS Framework when:</strong></p>
+                            <ul>
+                                <li>You need to develop quickly</li>
+                                <li>You're building a prototype or MVP</li>
+                                <li>Your project follows standard design patterns</li>
+                                <li>You have a small team with limited CSS expertise</li>
+                                <li>You need cross-browser compatibility</li>
+                            </ul>
+                            <p><strong>Consider custom CSS when:</strong></p>
+                            <ul>
+                                <li>You need a highly unique design</li>
+                                <li>Performance is critical (especially for mobile)</li>
+                                <li>Your project is small and focused</li>
+                                <li>You have strong CSS expertise on your team</li>
+                                <li>You want complete control over every aspect of styling</li>
+                            </ul>
+                            <p>Many projects use a hybrid approach, combining a lightweight framework with custom CSS for specific components.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Building a Dashboard with Bootstrap</h2>
+                        <p>Let's practice using a CSS framework by building a simple admin dashboard with Bootstrap.</p>
+                        
+                        <h3>Exercise: Admin Dashboard</h3>
+                        <p>In this exercise, you'll create a responsive admin dashboard with Bootstrap that includes a navigation bar, sidebar, cards, and a data table.</p>
+                        
+                        <h4>Step 1: Set Up Your Project</h4>
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Admin Dashboard&lt;/title&gt;
+  &lt;!-- Bootstrap CSS --&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+  &lt;!-- Font Awesome for icons --&gt;
+  &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"&gt;
+  &lt;!-- Custom CSS --&gt;
+  &lt;style&gt;
+    /* Custom styles for the dashboard */
+    body {
+      background-color: #f8f9fa;
+    }
+    
+    .sidebar {
+      min-height: calc(100vh - 56px);
+      background-color: #343a40;
+      padding-top: 20px;
+    }
+    
+    .sidebar .nav-link {
+      color: rgba(255, 255, 255, 0.75);
+      padding: 0.5rem 1rem;
+      margin-bottom: 5px;
+    }
+    
+    .sidebar .nav-link:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+    
+    .sidebar .nav-link.active {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .sidebar .nav-link i {
+      margin-right: 10px;
+    }
+    
+    .dashboard-card {
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+    
+    .dashboard-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    
+    .main-content {
+      padding: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .sidebar {
+        min-height: auto;
+      }
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Content will go here --&gt;
+  
+  &lt;!-- Bootstrap JS Bundle with Popper --&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+  &lt;!-- Chart.js for data visualization --&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;
+  &lt;!-- Custom JS --&gt;
+  &lt;script&gt;
+    // Custom JavaScript will go here
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <h4>Step 2: Create the Navigation Bar</h4>
+                        <pre><code class="language-html">&lt;!-- Navigation Bar --&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-dark bg-dark"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;Admin Dashboard&lt;/a&gt;
+    &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"&gt;
+      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+      &lt;ul class="navbar-nav me-auto"&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link active" href="#"&gt;Dashboard&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="#"&gt;Reports&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="#"&gt;Analytics&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;form class="d-flex"&gt;
+        &lt;input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"&gt;
+        &lt;button class="btn btn-outline-light" type="submit"&gt;Search&lt;/button&gt;
+      &lt;/form&gt;
+      &lt;ul class="navbar-nav ms-3"&gt;
+        &lt;li class="nav-item dropdown"&gt;
+          &lt;a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"&gt;
+            &lt;i class="fas fa-user-circle"&gt;&lt;/i&gt; Admin
+          &lt;/a&gt;
+          &lt;ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Settings&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;hr class="dropdown-divider"&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Logout&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+                        
+                        <h4>Step 3: Create the Main Layout with Sidebar</h4>
+                        <pre><code class="language-html">&lt;div class="container-fluid"&gt;
+  &lt;div class="row"&gt;
+    &lt;!-- Sidebar --&gt;
+    &lt;div class="col-md-3 col-lg-2 d-md-block sidebar collapse" id="sidebarMenu"&gt;
+      &lt;div class="position-sticky"&gt;
+        &lt;ul class="nav flex-column"&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a class="nav-link active" href="#"&gt;
+              &lt;i class="fas fa-home"&gt;&lt;/i&gt; Dashboard
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a class="nav-link" href="#"&gt;
+              &lt;i class="fas fa-chart-bar"&gt;&lt;/i&gt; Analytics
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a class="nav-link" href="#"&gt;
+              &lt;i class="fas fa-shopping-cart"&gt;&lt;/i&gt; Orders
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a class="nav-link" href="#"&gt;
+              &lt;i class="fas fa-users"&gt;&lt;/i&gt; Customers
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a class="nav-link" href="#"&gt;
+              &lt;i class="fas fa-box"&gt;&lt;/i&gt; Products
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a class="nav-link" href="#"&gt;
+              &lt;i class="fas fa-file-alt"&gt;&lt;/i&gt; Reports
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a class="nav-link" href="#"&gt;
+              &lt;i class="fas fa-cog"&gt;&lt;/i&gt; Settings
+            &lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Main Content --&gt;
+    &lt;main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content"&gt;
+      &lt;!-- Content will go here --&gt;
+    &lt;/main&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h4>Step 4: Add Dashboard Cards</h4>
+                        <pre><code class="language-html">&lt;!-- Inside main content --&gt;
+&lt;div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"&gt;
+  &lt;h1 class="h2"&gt;Dashboard&lt;/h1&gt;
+  &lt;div class="btn-toolbar mb-2 mb-md-0"&gt;
+    &lt;div class="btn-group me-2"&gt;
+      &lt;button type="button" class="btn btn-sm btn-outline-secondary"&gt;Share&lt;/button&gt;
+      &lt;button type="button" class="btn btn-sm btn-outline-secondary"&gt;Export&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle"&gt;
+      &lt;i class="fas fa-calendar"&gt;&lt;/i&gt; This week
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Dashboard Cards --&gt;
+&lt;div class="row mb-4"&gt;
+  &lt;div class="col-md-6 col-lg-3 mb-3"&gt;
+    &lt;div class="card dashboard-card bg-primary text-white"&gt;
+      &lt;div class="card-body text-center"&gt;
+        &lt;i class="fas fa-shopping-cart card-icon"&gt;&lt;/i&gt;
+        &lt;h5 class="card-title"&gt;Total Orders&lt;/h5&gt;
+        &lt;h2 class="mb-0"&gt;1,250&lt;/h2&gt;
+        &lt;p class="card-text mt-2"&gt;&lt;i class="fas fa-arrow-up"&gt;&lt;/i&gt; 15% increase&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="col-md-6 col-lg-3 mb-3"&gt;
+    &lt;div class="card dashboard-card bg-success text-white"&gt;
+      &lt;div class="card-body text-center"&gt;
+        &lt;i class="fas fa-dollar-sign card-icon"&gt;&lt;/i&gt;
+        &lt;h5 class="card-title"&gt;Revenue&lt;/h5&gt;
+        &lt;h2 class="mb-0"&gt;$24,500&lt;/h2&gt;
+        &lt;p class="card-text mt-2"&gt;&lt;i class="fas fa-arrow-up"&gt;&lt;/i&gt; 8% increase&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="col-md-6 col-lg-3 mb-3"&gt;
+    &lt;div class="card dashboard-card bg-warning text-dark"&gt;
+      &lt;div class="card-body text-center"&gt;
+        &lt;i class="fas fa-users card-icon"&gt;&lt;/i&gt;
+        &lt;h5 class="card-title"&gt;Customers&lt;/h5&gt;
+        &lt;h2 class="mb-0"&gt;850&lt;/h2&gt;
+        &lt;p class="card-text mt-2"&gt;&lt;i class="fas fa-arrow-up"&gt;&lt;/i&gt; 12% increase&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="col-md-6 col-lg-3 mb-3"&gt;
+    &lt;div class="card dashboard-card bg-danger text-white"&gt;
+      &lt;div class="card-body text-center"&gt;
+        &lt;i class="fas fa-box card-icon"&gt;&lt;/i&gt;
+        &lt;h5 class="card-title"&gt;Products&lt;/h5&gt;
+        &lt;h2 class="mb-0"&gt;450&lt;/h2&gt;
+        &lt;p class="card-text mt-2"&gt;&lt;i class="fas fa-arrow-up"&gt;&lt;/i&gt; 5% increase&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h4>Step 5: Add Charts and Tables</h4>
+                        <pre><code class="language-html">&lt;!-- Charts --&gt;
+&lt;div class="row mb-4"&gt;
+  &lt;div class="col-md-8 mb-4"&gt;
+    &lt;div class="card dashboard-card"&gt;
+      &lt;div class="card-header"&gt;
+        &lt;h5 class="card-title mb-0"&gt;Sales Overview&lt;/h5&gt;
+      &lt;/div&gt;
+      &lt;div class="card-body"&gt;
+        &lt;canvas id="salesChart" height="300"&gt;&lt;/canvas&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="col-md-4 mb-4"&gt;
+    &lt;div class="card dashboard-card"&gt;
+      &lt;div class="card-header"&gt;
+        &lt;h5 class="card-title mb-0"&gt;Traffic Sources&lt;/h5&gt;
+      &lt;/div&gt;
+      &lt;div class="card-body"&gt;
+        &lt;canvas id="trafficChart" height="300"&gt;&lt;/canvas&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Recent Orders Table --&gt;
+&lt;div class="card dashboard-card mb-4"&gt;
+  &lt;div class="card-header"&gt;
+    &lt;h5 class="card-title mb-0"&gt;Recent Orders&lt;/h5&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;div class="table-responsive"&gt;
+      &lt;table class="table table-striped table-hover"&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Order ID&lt;/th&gt;
+            &lt;th&gt;Customer&lt;/th&gt;
+            &lt;th&gt;Product&lt;/th&gt;
+            &lt;th&gt;Date&lt;/th&gt;
+            &lt;th&gt;Amount&lt;/th&gt;
+            &lt;th&gt;Status&lt;/th&gt;
+            &lt;th&gt;Actions&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;#ORD-0001&lt;/td&gt;
+            &lt;td&gt;John Doe&lt;/td&gt;
+            &lt;td&gt;Product A&lt;/td&gt;
+            &lt;td&gt;Apr 20, 2025&lt;/td&gt;
+            &lt;td&gt;$120.00&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge bg-success"&gt;Completed&lt;/span&gt;&lt;/td&gt;
+            &lt;td&gt;
+              &lt;button class="btn btn-sm btn-primary"&gt;&lt;i class="fas fa-eye"&gt;&lt;/i&gt;&lt;/button&gt;
+              &lt;button class="btn btn-sm btn-warning"&gt;&lt;i class="fas fa-edit"&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;#ORD-0002&lt;/td&gt;
+            &lt;td&gt;Jane Smith&lt;/td&gt;
+            &lt;td&gt;Product B&lt;/td&gt;
+            &lt;td&gt;Apr 19, 2025&lt;/td&gt;
+            &lt;td&gt;$85.00&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge bg-warning text-dark"&gt;Pending&lt;/span&gt;&lt;/td&gt;
+            &lt;td&gt;
+              &lt;button class="btn btn-sm btn-primary"&gt;&lt;i class="fas fa-eye"&gt;&lt;/i&gt;&lt;/button&gt;
+              &lt;button class="btn btn-sm btn-warning"&gt;&lt;i class="fas fa-edit"&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;#ORD-0003&lt;/td&gt;
+            &lt;td&gt;Robert Johnson&lt;/td&gt;
+            &lt;td&gt;Product C&lt;/td&gt;
+            &lt;td&gt;Apr 18, 2025&lt;/td&gt;
+            &lt;td&gt;$240.00&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge bg-success"&gt;Completed&lt;/span&gt;&lt;/td&gt;
+            &lt;td&gt;
+              &lt;button class="btn btn-sm btn-primary"&gt;&lt;i class="fas fa-eye"&gt;&lt;/i&gt;&lt;/button&gt;
+              &lt;button class="btn btn-sm btn-warning"&gt;&lt;i class="fas fa-edit"&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;#ORD-0004&lt;/td&gt;
+            &lt;td&gt;Emily Davis&lt;/td&gt;
+            &lt;td&gt;Product A&lt;/td&gt;
+            &lt;td&gt;Apr 17, 2025&lt;/td&gt;
+            &lt;td&gt;$120.00&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge bg-danger"&gt;Cancelled&lt;/span&gt;&lt;/td&gt;
+            &lt;td&gt;
+              &lt;button class="btn btn-sm btn-primary"&gt;&lt;i class="fas fa-eye"&gt;&lt;/i&gt;&lt;/button&gt;
+              &lt;button class="btn btn-sm btn-warning"&gt;&lt;i class="fas fa-edit"&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;#ORD-0005&lt;/td&gt;
+            &lt;td&gt;Michael Wilson&lt;/td&gt;
+            &lt;td&gt;Product D&lt;/td&gt;
+            &lt;td&gt;Apr 16, 2025&lt;/td&gt;
+            &lt;td&gt;$175.00&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge bg-info"&gt;Shipped&lt;/span&gt;&lt;/td&gt;
+            &lt;td&gt;
+              &lt;button class="btn btn-sm btn-primary"&gt;&lt;i class="fas fa-eye"&gt;&lt;/i&gt;&lt;/button&gt;
+              &lt;button class="btn btn-sm btn-warning"&gt;&lt;i class="fas fa-edit"&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+    &lt;nav aria-label="Page navigation"&gt;
+      &lt;ul class="pagination justify-content-end"&gt;
+        &lt;li class="page-item disabled"&gt;
+          &lt;a class="page-link" href="#" tabindex="-1"&gt;Previous&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="page-item active"&gt;&lt;a class="page-link" href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="page-item"&gt;
+          &lt;a class="page-link" href="#"&gt;Next&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h4>Step 6: Add JavaScript for Charts</h4>
+                        <pre><code class="language-javascript">// Initialize charts when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Sales Chart
+  const salesCtx = document.getElementById('salesChart').getContext('2d');
+  const salesChart = new Chart(salesCtx, {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [{
+        label: 'Sales',
+        data: [12500, 19200, 15000, 24500, 18300, 22100],
+        backgroundColor: 'rgba(13, 110, 253, 0.1)',
+        borderColor: 'rgba(13, 110, 253, 1)',
+        borderWidth: 2,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            callback: function(value) {
+              return '$' + value.toLocaleString();
+            }
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          display: false
+        }
+      }
+    }
+  });
+  
+  // Traffic Sources Chart
+  const trafficCtx = document.getElementById('trafficChart').getContext('2d');
+  const trafficChart = new Chart(trafficCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Direct', 'Social', 'Referral', 'Organic'],
+      datasets: [{
+        data: [35, 25, 20, 20],
+        backgroundColor: [
+          'rgba(13, 110, 253, 0.8)',
+          'rgba(220, 53, 69, 0.8)',
+          'rgba(255, 193, 7, 0.8)',
+          'rgba(25, 135, 84, 0.8)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  });
+});</code></pre>
+                        
+                        <h4>Step 7: Customize the Dashboard</h4>
+                        <p>Now that you have a basic dashboard, try customizing it by:</p>
+                        <ul>
+                            <li>Changing the color scheme to match your brand</li>
+                            <li>Adding more components like a calendar or notifications</li>
+                            <li>Creating a dark mode toggle</li>
+                            <li>Adding form components for data entry</li>
+                            <li>Implementing responsive behavior for mobile devices</li>
+                        </ul>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Extend your dashboard with these additional features:</p>
+                            <ol>
+                                <li>Create a collapsible sidebar for mobile devices</li>
+                                <li>Add a notification system with dropdown menu</li>
+                                <li>Implement a dark/light theme toggle</li>
+                                <li>Create a modal form for adding new orders</li>
+                                <li>Add more chart types (bar chart, radar chart)</li>
+                                <li>Implement form validation using Bootstrap's validation classes</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>CSS frameworks provide a solid foundation for building websites and applications quickly and efficiently. In this lesson, we've explored:</p>
+                        <ul>
+                            <li><strong>Framework Types</strong>: Component-based frameworks like Bootstrap, utility-first frameworks like Tailwind CSS, and specialized frameworks for specific use cases</li>
+                            <li><strong>Popular Frameworks</strong>: Bootstrap, Tailwind CSS, Bulma, Foundation, Material UI, Semantic UI, and Chakra UI</li>
+                            <li><strong>Framework Selection</strong>: Criteria for choosing the right framework based on project requirements, team considerations, and technical factors</li>
+                            <li><strong>Best Practices</strong>: How to use frameworks effectively, including customization, organization, and avoiding common pitfalls</li>
+                            <li><strong>Practical Application</strong>: Building a responsive admin dashboard with Bootstrap</li>
+                        </ul>
+                        
+                        <p>Remember that CSS frameworks are tools to help you build websites more efficiently, not replacements for understanding CSS. The best developers know when to use a framework and when to write custom CSS, often combining both approaches for optimal results.</p>
+                        
+                        <p>In the next lesson, we'll explore Advanced Layouts, including CSS Grid, Flexbox, and modern layout techniques for creating complex, responsive designs.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page40.html" class="btn">Previous: CSS Architecture</a>
+                        <a href="page42.html" class="btn">Next: Advanced Layouts</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

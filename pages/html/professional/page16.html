@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Media & Graphics | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn about HTML media elements and graphics capabilities for creating rich, interactive web content.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="16">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html" class="active">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional HTML</h3>
+                <ul>
+                    <li><a href="page13.html">13. Advanced HTML Concepts</a></li>
+                    <li><a href="page14.html">14. HTML5 Semantic Elements</a></li>
+                    <li><a href="page15.html">15. HTML Forms Advanced</a></li>
+                    <li><a href="page16.html" class="active">16. HTML Media & Graphics</a></li>
+                    <li><a href="page17.html">17. HTML APIs</a></li>
+                    <li><a href="page18.html">18. Web Storage</a></li>
+                    <li><a href="page19.html">19. Geolocation API</a></li>
+                    <li><a href="page20.html">20. Drag & Drop API</a></li>
+                    <li><a href="page21.html">21. Web Workers</a></li>
+                    <li><a href="page22.html">22. Server-Sent Events</a></li>
+                    <li><a href="page23.html">23. WebSockets</a></li>
+                    <li><a href="page24.html">24. Responsive HTML</a></li>
+                    <li><a href="page25.html">25. HTML Accessibility</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 32%;"></div>
+                </div>
+                <p style="text-align: center;">Page 16 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>HTML Media & Graphics</h1>
+                    
+                    <div class="card">
+                        <h2>Rich Media on the Web</h2>
+                        <p>HTML5 introduced powerful native support for multimedia and graphics, eliminating the need for plugins like Flash or Silverlight. In this lesson, we'll explore the various HTML elements and technologies for embedding and manipulating media and graphics on web pages.</p>
+                        
+                        <p>These capabilities allow developers to create rich, interactive experiences directly in the browser, from simple audio and video playback to complex animations and visualizations.</p>
+                        
+                        <div class="info-box">
+                            <h4>Why Native Media Matters</h4>
+                            <p>Native HTML media and graphics provide several advantages over plugin-based solutions:</p>
+                            <ul>
+                                <li><strong>Better performance</strong> with hardware acceleration</li>
+                                <li><strong>Improved security</strong> without third-party plugins</li>
+                                <li><strong>Better accessibility</strong> with built-in controls and features</li>
+                                <li><strong>Consistent experience</strong> across browsers and devices</li>
+                                <li><strong>Mobile compatibility</strong> without plugin dependencies</li>
+                                <li><strong>Deeper integration</strong> with JavaScript and CSS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Audio Element</h2>
+                        <p>The <code>&lt;audio&gt;</code> element allows you to embed sound content in your web pages without requiring a plugin.</p>
+                        
+                        <h3>Basic Audio Implementation</h3>
+                        <pre><code class="language-html">&lt;!-- Basic audio with controls --&gt;
+&lt;audio src="audio-file.mp3" controls&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+                        
+                        <h3>Audio with Multiple Sources</h3>
+                        <p>To ensure compatibility across browsers, you can provide multiple audio formats using the <code>&lt;source&gt;</code> element:</p>
+                        
+                        <pre><code class="language-html">&lt;audio controls&gt;
+    &lt;source src="audio-file.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio-file.ogg" type="audio/ogg"&gt;
+    &lt;source src="audio-file.wav" type="audio/wav"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+                        
+                        <h3>Audio Attributes</h3>
+                        <p>The <code>&lt;audio&gt;</code> element supports several attributes to control its behavior:</p>
+                        
+                        <pre><code class="language-html">&lt;audio 
+    controls     &lt;!-- Shows the audio player controls --&gt;
+    autoplay     &lt;!-- Starts playing automatically (use with caution) --&gt;
+    muted        &lt;!-- Mutes the audio initially --&gt;
+    loop         &lt;!-- Repeats the audio when finished --&gt;
+    preload="auto" &lt;!-- Preloads the audio file (auto, metadata, or none) --&gt;
+&gt;
+    &lt;source src="audio-file.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Autoplay Considerations</h4>
+                            <p>Modern browsers restrict autoplay of media with sound to improve user experience and reduce annoyance. To use autoplay:</p>
+                            <ul>
+                                <li>Always combine <code>autoplay</code> with <code>muted</code> for reliable autoplay</li>
+                                <li>Consider using JavaScript to play audio after user interaction</li>
+                                <li>Provide clear controls for users to start playback manually</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Controlling Audio with JavaScript</h3>
+                        <p>The <code>&lt;audio&gt;</code> element provides a rich JavaScript API for controlling playback:</p>
+                        
+                        <pre><code class="language-html">&lt;audio id="myAudio" src="audio-file.mp3"&gt;&lt;/audio&gt;
+
+&lt;button onclick="playAudio()"&gt;Play&lt;/button&gt;
+&lt;button onclick="pauseAudio()"&gt;Pause&lt;/button&gt;
+&lt;button onclick="setHalfVolume()"&gt;Volume 50%&lt;/button&gt;
+&lt;button onclick="setFullVolume()"&gt;Volume 100%&lt;/button&gt;
+
+&lt;script&gt;
+    const audio = document.getElementById('myAudio');
+    
+    function playAudio() {
+        audio.play();
+    }
+    
+    function pauseAudio() {
+        audio.pause();
+    }
+    
+    function setHalfVolume() {
+        audio.volume = 0.5;
+    }
+    
+    function setFullVolume() {
+        audio.volume = 1.0;
+    }
+    
+    // Listen for events
+    audio.addEventListener('play', function() {
+        console.log('Audio started playing');
+    });
+    
+    audio.addEventListener('ended', function() {
+        console.log('Audio playback finished');
+    });
+&lt;/script&gt;</code></pre>
+                        
+                        <h3>Common Audio Properties and Methods</h3>
+                        <p>Here are some of the most useful properties and methods for the audio element:</p>
+                        
+                        <h4>Properties:</h4>
+                        <ul>
+                            <li><code>currentTime</code>: Gets or sets the current playback position in seconds</li>
+                            <li><code>duration</code>: Returns the length of the audio in seconds</li>
+                            <li><code>paused</code>: Returns whether the audio is paused</li>
+                            <li><code>volume</code>: Gets or sets the volume (0.0 to 1.0)</li>
+                            <li><code>muted</code>: Gets or sets whether the audio is muted</li>
+                            <li><code>playbackRate</code>: Gets or sets the playback speed (1.0 is normal)</li>
+                            <li><code>ended</code>: Returns whether the audio has ended</li>
+                        </ul>
+                        
+                        <h4>Methods:</h4>
+                        <ul>
+                            <li><code>play()</code>: Starts playing the audio</li>
+                            <li><code>pause()</code>: Pauses the audio</li>
+                            <li><code>load()</code>: Reloads the audio element</li>
+                        </ul>
+                        
+                        <h4>Events:</h4>
+                        <ul>
+                            <li><code>play</code>: Fired when playback has begun</li>
+                            <li><code>pause</code>: Fired when playback is paused</li>
+                            <li><code>ended</code>: Fired when playback has completed</li>
+                            <li><code>timeupdate</code>: Fired when the current playback position changes</li>
+                            <li><code>volumechange</code>: Fired when the volume changes</li>
+                            <li><code>loadedmetadata</code>: Fired when metadata (like duration) has loaded</li>
+                        </ul>
+                        
+                        <h3>Creating a Custom Audio Player</h3>
+                        <p>You can create a custom audio player using the JavaScript API:</p>
+                        
+                        <pre><code class="language-html">&lt;div class="custom-audio-player"&gt;
+    &lt;audio id="customAudio" src="audio-file.mp3" preload="metadata"&gt;&lt;/audio&gt;
+    
+    &lt;button id="playPauseBtn" class="player-btn"&gt;Play&lt;/button&gt;
+    
+    &lt;div class="progress-container"&gt;
+        &lt;div id="progressBar" class="progress-bar"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;span id="currentTime"&gt;0:00&lt;/span&gt; / &lt;span id="duration"&gt;0:00&lt;/span&gt;
+    
+    &lt;div class="volume-container"&gt;
+        &lt;button id="muteBtn" class="player-btn"&gt;Mute&lt;/button&gt;
+        &lt;input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+    .custom-audio-player {
+        background: #222;
+        border-radius: 8px;
+        padding: 15px;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .player-btn {
+        background: #3366ff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    
+    .progress-container {
+        flex-grow: 1;
+        background: #444;
+        height: 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .progress-bar {
+        background: #3366ff;
+        height: 100%;
+        border-radius: 4px;
+        width: 0%;
+    }
+    
+    .volume-container {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+&lt;/style&gt;
+
+&lt;script&gt;
+    document.addEventListener('DOMContentLoaded', function() {
+        const audio = document.getElementById('customAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const muteBtn = document.getElementById('muteBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.querySelector('.progress-container');
+        const currentTimeDisplay = document.getElementById('currentTime');
+        const durationDisplay = document.getElementById('duration');
+        
+        // Format time in MM:SS format
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = Math.floor(seconds % 60);
+            return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+        }
+        
+        // Play/Pause button
+        playPauseBtn.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = 'Pause';
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = 'Play';
+            }
+        });
+        
+        // Mute button
+        muteBtn.addEventListener('click', function() {
+            audio.muted = !audio.muted;
+            muteBtn.textContent = audio.muted ? 'Unmute' : 'Mute';
+        });
+        
+        // Volume slider
+        volumeSlider.addEventListener('input', function() {
+            audio.volume = this.value;
+            if (audio.volume === 0) {
+                audio.muted = true;
+                muteBtn.textContent = 'Unmute';
+            } else {
+                audio.muted = false;
+                muteBtn.textContent = 'Mute';
+            }
+        });
+        
+        // Progress bar
+        audio.addEventListener('timeupdate', function() {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = `${progress}%`;
+            currentTimeDisplay.textContent = formatTime(audio.currentTime);
+        });
+        
+        // Click on progress bar to seek
+        progressContainer.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = pos * audio.duration;
+        });
+        
+        // Update duration display when metadata is loaded
+        audio.addEventListener('loadedmetadata', function() {
+            durationDisplay.textContent = formatTime(audio.duration);
+        });
+        
+        // Update button text when playback ends
+        audio.addEventListener('ended', function() {
+            playPauseBtn.textContent = 'Play';
+        });
+    });
+&lt;/script&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Audio Accessibility</h4>
+                            <p>To make audio content accessible:</p>
+                            <ul>
+                                <li>Always provide transcripts for audio content</li>
+                                <li>Ensure custom controls have proper keyboard support</li>
+                                <li>Use ARIA attributes for custom players</li>
+                                <li>Don't autoplay audio with sound without user consent</li>
+                                <li>Provide visible feedback for audio state changes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Video Element</h2>
+                        <p>The <code>&lt;video&gt;</code> element allows you to embed video content in your web pages without requiring a plugin.</p>
+                        
+                        <h3>Basic Video Implementation</h3>
+                        <pre><code class="language-html">&lt;!-- Basic video with controls --&gt;
+&lt;video src="video-file.mp4" controls width="640" height="360"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;</code></pre>
+                        
+                        <h3>Video with Multiple Sources</h3>
+                        <p>To ensure compatibility across browsers, you can provide multiple video formats:</p>
+                        
+                        <pre><code class="language-html">&lt;video controls width="640" height="360" poster="video-thumbnail.jpg"&gt;
+    &lt;source src="video-file.mp4" type="video/mp4"&gt;
+    &lt;source src="video-file.webm" type="video/webm"&gt;
+    &lt;source src="video-file.ogg" type="video/ogg"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;</code></pre>
+                        
+                        <h3>Video Attributes</h3>
+                        <p>The <code>&lt;video&gt;</code> element supports several attributes to control its behavior:</p>
+                        
+                        <pre><code class="language-html">&lt;video 
+    controls     &lt;!-- Shows the video player controls --&gt;
+    width="640"  &lt;!-- Sets the width of the video player --&gt;
+    height="360" &lt;!-- Sets the height of the video player --&gt;
+    poster="thumbnail.jpg" &lt;!-- Image to show before video plays --&gt;
+    autoplay     &lt;!-- Starts playing automatically (use with caution) --&gt;
+    muted        &lt;!-- Mutes the video initially --&gt;
+    loop         &lt;!-- Repeats the video when finished --&gt;
+    preload="auto" &lt;!-- Preloads the video file (auto, metadata, or none) --&gt;
+    playsinline  &lt;!-- Plays inline on iOS instead of fullscreen --&gt;
+&gt;
+    &lt;source src="video-file.mp4" type="video/mp4"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Video Format Considerations</h4>
+                            <p>Different browsers support different video formats:</p>
+                            <ul>
+                                <li><strong>MP4 (H.264)</strong>: Widely supported across all modern browsers</li>
+                                <li><strong>WebM (VP8/VP9)</strong>: Better quality at smaller file sizes, supported in most modern browsers</li>
+                                <li><strong>Ogg (Theora)</strong>: Open format, less widely supported</li>
+                            </ul>
+                            <p>For maximum compatibility, provide at least MP4 and WebM formats.</p>
+                        </div>
+                        
+                        <h3>Adding Captions and Subtitles</h3>
+                        <p>The <code>&lt;track&gt;</code> element allows you to add text tracks like subtitles, captions, descriptions, chapters, or metadata to videos:</p>
+                        
+                        <pre><code class="language-html">&lt;video controls width="640" height="360"&gt;
+    &lt;source src="video-file.mp4" type="video/mp4"&gt;
+    
+    &lt;!-- Subtitles in English --&gt;
+    &lt;track 
+        src="subtitles-en.vtt" 
+        kind="subtitles" 
+        srclang="en" 
+        label="English"
+        default
+    &gt;
+    
+    &lt;!-- Subtitles in Spanish --&gt;
+    &lt;track 
+        src="subtitles-es.vtt" 
+        kind="subtitles" 
+        srclang="es" 
+        label="Español"
+    &gt;
+    
+    &lt;!-- Closed captions (includes non-speech sounds) --&gt;
+    &lt;track 
+        src="captions.vtt" 
+        kind="captions" 
+        srclang="en" 
+        label="Captions"
+    &gt;
+    
+    Your browser does not support the video element.
+&lt;/video&gt;</code></pre>
+                        
+                        <p>The <code>kind</code> attribute can have the following values:</p>
+                        <ul>
+                            <li><code>subtitles</code>: Translation of foreign language dialogue</li>
+                            <li><code>captions</code>: Transcription of dialogue and non-speech sounds for the deaf or hard-of-hearing</li>
+                            <li><code>descriptions</code>: Text descriptions of the visual content for the blind or visually impaired</li>
+                            <li><code>chapters</code>: Chapter titles for navigation</li>
+                            <li><code>metadata</code>: Content used by scripts but not visible to users</li>
+                        </ul>
+                        
+                        <h4>WebVTT Format</h4>
+                        <p>Text tracks use the WebVTT (Web Video Text Tracks) format. Here's an example of a simple WebVTT file:</p>
+                        
+                        <pre><code class="language-text">WEBVTT
+
+00:00:01.000 --> 00:00:04.000
+Hello, welcome to our video tutorial.
+
+00:00:05.000 --> 00:00:08.000
+Today we'll learn about HTML5 video.
+
+00:00:10.000 --> 00:00:15.000
+The video element allows you to embed videos directly in your web pages.</code></pre>
+                        
+                        <h3>Controlling Video with JavaScript</h3>
+                        <p>Like the audio element, the video element provides a rich JavaScript API for controlling playback:</p>
+                        
+                        <pre><code class="language-html">&lt;video id="myVideo" src="video-file.mp4" width="640" height="360"&gt;&lt;/video&gt;
+
+&lt;div class="video-controls"&gt;
+    &lt;button onclick="playVideo()"&gt;Play&lt;/button&gt;
+    &lt;button onclick="pauseVideo()"&gt;Pause&lt;/button&gt;
+    &lt;button onclick="skipAhead()"&gt;Skip 10s&lt;/button&gt;
+    &lt;button onclick="toggleFullscreen()"&gt;Fullscreen&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    const video = document.getElementById('myVideo');
+    
+    function playVideo() {
+        video.play();
+    }
+    
+    function pauseVideo() {
+        video.pause();
+    }
+    
+    function skipAhead() {
+        video.currentTime += 10;
+    }
+    
+    function toggleFullscreen() {
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) { /* Safari */
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) { /* IE11 */
+            video.msRequestFullscreen();
+        }
+    }
+    
+    // Listen for events
+    video.addEventListener('play', function() {
+        console.log('Video started playing');
+    });
+    
+    video.addEventListener('ended', function() {
+        console.log('Video playback finished');
+    });
+&lt;/script&gt;</code></pre>
+                        
+                        <h3>Responsive Video</h3>
+                        <p>To make videos responsive, you can use CSS to ensure they scale properly on different screen sizes:</p>
+                        
+                        <pre><code class="language-html">&lt;div class="video-container"&gt;
+    &lt;video controls&gt;
+        &lt;source src="video-file.mp4" type="video/mp4"&gt;
+    &lt;/video&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+    }
+    
+    .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+&lt;/style&gt;</code></pre>
+                        
+                        <h3>Picture-in-Picture</h3>
+                        <p>Modern browsers support picture-in-picture mode for videos, allowing users to continue watching while browsing other content:</p>
+                        
+                        <pre><code class="language-html">&lt;video id="pipVideo" src="video-file.mp4" controls&gt;&lt;/video&gt;
+&lt;button id="pipButton"&gt;Picture-in-Picture&lt;/button&gt;
+
+&lt;script&gt;
+    const video = document.getElementById('pipVideo');
+    const pipButton = document.getElementById('pipButton');
+    
+    // Check if Picture-in-Picture is supported
+    if (document.pictureInPictureEnabled) {
+        pipButton.addEventListener('click', function() {
+            if (document.pictureInPictureElement) {
+                document.exitPictureInPicture();
+            } else {
+                video.requestPictureInPicture();
+            }
+        });
+    } else {
+        pipButton.disabled = true;
+        pipButton.textContent = 'Picture-in-Picture Not Supported';
+    }
+&lt;/script&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Video Performance Tips</h4>
+                            <ul>
+                                <li>Use the <code>poster</code> attribute to show an image while the video loads</li>
+                                <li>Set <code>preload="none"</code> or <code>preload="metadata"</code> for videos that aren't immediately needed</li>
+                                <li>Compress videos appropriately for web delivery</li>
+                                <li>Consider using adaptive streaming for longer videos</li>
+                                <li>Provide multiple resolutions for different devices and connections</li>
+                                <li>Use lazy loading techniques for videos further down the page</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Canvas Element</h2>
+                        <p>The <code>&lt;canvas&gt;</code> element provides a drawing surface that you can use to create dynamic graphics, animations, and interactive content using JavaScript.</p>
+                        
+                        <h3>Basic Canvas Setup</h3>
+                        <pre><code class="language-html">&lt;canvas id="myCanvas" width="600" height="400"&gt;
+    Your browser does not support the canvas element.
+&lt;/canvas&gt;
+
+&lt;script&gt;
+    // Get the canvas element
+    const canvas = document.getElementById('myCanvas');
+    
+    // Get the drawing context
+    const ctx = canvas.getContext('2d');
+    
+    // Now you can draw on the canvas using the context
+&lt;/script&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Canvas Dimensions</h4>
+                            <p>It's important to set the width and height attributes directly on the canvas element, not through CSS. Using CSS to resize a canvas will scale the rendered output, potentially causing blurriness.</p>
+                        </div>
+                        
+                        <h3>Drawing Basic Shapes</h3>
+                        <p>The canvas API provides methods for drawing various shapes:</p>
+                        
+                        <pre><code class="language-javascript">// Get the canvas context
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+
+// Set fill and stroke styles
+ctx.fillStyle = '#3366ff';
+ctx.strokeStyle = '#ff3366';
+ctx.lineWidth = 3;
+
+// Draw a rectangle
+ctx.fillRect(50, 50, 100, 80); // x, y, width, height
+
+// Draw a stroked rectangle
+ctx.strokeRect(200, 50, 100, 80);
+
+// Draw a circle
+ctx.beginPath();
+ctx.arc(100, 200, 50, 0, Math.PI * 2); // x, y, radius, startAngle, endAngle
+ctx.fill();
+
+// Draw a line
+ctx.beginPath();
+ctx.moveTo(200, 150);
+ctx.lineTo(300, 250);
+ctx.stroke();
+
+// Draw a path
+ctx.beginPath();
+ctx.moveTo(350, 50);
+ctx.lineTo(450, 50);
+ctx.lineTo(400, 150);
+ctx.closePath(); // Connects back to the starting point
+ctx.fill();
+ctx.stroke();</code></pre>
+                        
+                        <h3>Adding Text</h3>
+                        <p>You can add text to a canvas using the text drawing methods:</p>
+                        
+                        <pre><code class="language-javascript">// Set text properties
+ctx.font = 'bold 24px Arial';
+ctx.fillStyle = '#333';
+ctx.textAlign = 'center';
+ctx.textBaseline = 'middle';
+
+// Draw filled text
+ctx.fillText('Hello Canvas!', canvas.width / 2, 50);
+
+// Draw outlined text
+ctx.strokeText('Outlined Text', canvas.width / 2, 100);</code></pre>
+                        
+                        <h3>Working with Images</h3>
+                        <p>You can draw images onto a canvas:</p>
+                        
+                        <pre><code class="language-javascript">// Create an image object
+const img = new Image();
+img.src = 'image.jpg';
+
+// Wait for the image to load
+img.onload = function() {
+    // Draw the image
+    ctx.drawImage(img, 50, 50); // Draw at position x=50, y=50
+    
+    // Draw with specific dimensions
+    ctx.drawImage(img, 200, 50, 150, 100); // x, y, width, height
+    
+    // Draw a portion of the image (cropping)
+    // Parameters: image, sourceX, sourceY, sourceWidth, sourceHeight, 
+    //             destX, destY, destWidth, destHeight
+    ctx.drawImage(img, 100, 100, 200, 200, 400, 50, 150, 150);
+};</code></pre>
+                        
+                        <h3>Transformations</h3>
+                        <p>Canvas supports various transformations to manipulate the drawing context:</p>
+                        
+                        <pre><code class="language-javascript">// Save the current state
+ctx.save();
+
+// Translate (move) the origin
+ctx.translate(100, 100);
+
+// Rotate (in radians)
+ctx.rotate(Math.PI / 4); // 45 degrees
+
+// Scale
+ctx.scale(1.5, 0.5); // x scale, y scale
+
+// Draw a rectangle at the transformed position
+ctx.fillStyle = 'green';
+ctx.fillRect(-25, -25, 50, 50); // This will be rotated and scaled
+
+// Restore the original state
+ctx.restore();
+
+// The next drawing operations will use the original untransformed context
+ctx.fillStyle = 'purple';
+ctx.fillRect(200, 200, 50, 50);</code></pre>
+                        
+                        <h3>Animation</h3>
+                        <p>You can create animations by repeatedly clearing and redrawing the canvas:</p>
+                        
+                        <pre><code class="language-javascript">// Animation variables
+let x = 0;
+let y = canvas.height / 2;
+const radius = 20;
+let dx = 2; // x velocity
+
+function animate() {
+    // Clear the canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw the circle
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
+    ctx.fillStyle = '#3366ff';
+    ctx.fill();
+    
+    // Update position
+    x += dx;
+    
+    // Bounce off walls
+    if (x + radius > canvas.width || x - radius < 0) {
+        dx = -dx;
+    }
+    
+    // Request next frame
+    requestAnimationFrame(animate);
+}
+
+// Start the animation
+animate();</code></pre>
+                        
+                        <h3>Gradients and Patterns</h3>
+                        <p>Canvas supports gradients and patterns for filling shapes:</p>
+                        
+                        <pre><code class="language-javascript">// Linear gradient
+const linearGradient = ctx.createLinearGradient(0, 0, 200, 0);
+linearGradient.addColorStop(0, 'blue');
+linearGradient.addColorStop(0.5, 'purple');
+linearGradient.addColorStop(1, 'red');
+
+ctx.fillStyle = linearGradient;
+ctx.fillRect(50, 50, 200, 100);
+
+// Radial gradient
+const radialGradient = ctx.createRadialGradient(
+    400, 100, 10,  // Inner circle (x, y, radius)
+    400, 100, 80   // Outer circle (x, y, radius)
+);
+radialGradient.addColorStop(0, 'white');
+radialGradient.addColorStop(0.5, 'yellow');
+radialGradient.addColorStop(1, 'orange');
+
+ctx.fillStyle = radialGradient;
+ctx.beginPath();
+ctx.arc(400, 100, 80, 0, Math.PI * 2);
+ctx.fill();
+
+// Pattern
+const patternImg = new Image();
+patternImg.src = 'pattern.png';
+patternImg.onload = function() {
+    const pattern = ctx.createPattern(patternImg, 'repeat');
+    ctx.fillStyle = pattern;
+    ctx.fillRect(50, 200, 200, 150);
+};</code></pre>
+                        
+                        <h3>Compositing</h3>
+                        <p>Canvas allows you to control how new shapes are composited with existing content:</p>
+                        
+                        <pre><code class="language-javascript">// Draw a blue rectangle
+ctx.fillStyle = 'blue';
+ctx.fillRect(50, 50, 100, 100);
+
+// Set compositing operation
+ctx.globalCompositeOperation = 'source-over'; // Default - draw on top
+// Other values: source-in, source-out, source-atop, 
+//               destination-over, destination-in, destination-out, destination-atop,
+//               lighter, copy, xor, multiply, screen, overlay, darken, lighten, etc.
+
+// Draw a partially transparent red circle
+ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+ctx.beginPath();
+ctx.arc(100, 100, 50, 0, Math.PI * 2);
+ctx.fill();</code></pre>
+                        
+                        <h3>Saving Canvas Content</h3>
+                        <p>You can save the content of a canvas as an image:</p>
+                        
+                        <pre><code class="language-javascript">// Convert canvas to data URL
+const dataURL = canvas.toDataURL('image/png'); // Default is PNG
+// For JPEG: canvas.toDataURL('image/jpeg', 0.8); // 0.8 is quality (0-1)
+
+// Create a link to download the image
+const link = document.createElement('a');
+link.download = 'canvas-image.png';
+link.href = dataURL;
+link.click();</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Canvas Performance Tips</h4>
+                            <ul>
+                                <li>Minimize the number of state changes (fillStyle, strokeStyle, etc.)</li>
+                                <li>Group similar drawing operations together</li>
+                                <li>Use <code>requestAnimationFrame</code> instead of <code>setTimeout</code> for animations</li>
+                                <li>Avoid unnecessary canvas resizing</li>
+                                <li>For complex scenes, consider using multiple canvas layers</li>
+                                <li>Use canvas size appropriate for your needs (larger canvas = more memory)</li>
+                                <li>For static content, consider drawing once and using the result as an image</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Canvas Accessibility</h3>
+                        <p>Canvas content is not inherently accessible to screen readers. To improve accessibility:</p>
+                        
+                        <pre><code class="language-html">&lt;canvas id="pieChart" width="400" height="400" 
+        aria-label="Pie chart showing sales distribution" 
+        role="img"&gt;
+    &lt;p&gt;Sales Distribution: Electronics 45%, Clothing 30%, Books 15%, Other 10%&lt;/p&gt;
+&lt;/canvas&gt;</code></pre>
+                        
+                        <p>For interactive canvas applications, you should:</p>
+                        <ul>
+                            <li>Provide keyboard navigation alternatives</li>
+                            <li>Use ARIA live regions to announce changes</li>
+                            <li>Consider providing an alternative text-based view</li>
+                            <li>Add focus indicators for interactive elements</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>SVG (Scalable Vector Graphics)</h2>
+                        <p>SVG is an XML-based vector image format for two-dimensional graphics. Unlike canvas, SVG is resolution-independent and maintains its quality at any size.</p>
+                        
+                        <h3>Basic SVG Structure</h3>
+                        <pre><code class="language-html">&lt;svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;!-- SVG content goes here --&gt;
+&lt;/svg&gt;</code></pre>
+                        
+                        <h3>Drawing Basic Shapes</h3>
+                        <p>SVG provides elements for various shapes:</p>
+                        
+                        <pre><code class="language-html">&lt;svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;!-- Rectangle --&gt;
+    &lt;rect x="50" y="50" width="100" height="80" fill="#3366ff" stroke="#000" stroke-width="2" /&gt;
+    
+    &lt;!-- Circle --&gt;
+    &lt;circle cx="250" cy="90" r="40" fill="#ff3366" /&gt;
+    
+    &lt;!-- Ellipse --&gt;
+    &lt;ellipse cx="400" cy="90" rx="60" ry="30" fill="#33ff66" /&gt;
+    
+    &lt;!-- Line --&gt;
+    &lt;line x1="50" y1="150" x2="150" y2="200" stroke="#000" stroke-width="3" /&gt;
+    
+    &lt;!-- Polyline (open path) --&gt;
+    &lt;polyline points="200,150 250,180 300,150 350,200" 
+              fill="none" stroke="#000" stroke-width="2" /&gt;
+    
+    &lt;!-- Polygon (closed path) --&gt;
+    &lt;polygon points="400,150 450,150 450,200 400,200" 
+             fill="#ffcc00" stroke="#000" stroke-width="2" /&gt;
+    
+    &lt;!-- Path (complex shapes) --&gt;
+    &lt;path d="M50,250 L150,250 L100,300 Z" fill="#9933ff" /&gt;
+    
+    &lt;!-- Text --&gt;
+    &lt;text x="300" y="250" font-family="Arial" font-size="24" text-anchor="middle"&gt;
+        SVG Text
+    &lt;/text&gt;
+&lt;/svg&gt;</code></pre>
+                        
+                        <h3>Path Element</h3>
+                        <p>The <code>&lt;path&gt;</code> element is the most powerful SVG element, allowing you to create any shape using a series of commands:</p>
+                        
+                        <pre><code class="language-html">&lt;svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;path d="M100,100 L200,100 L200,200 L100,200 Z" 
+          fill="#3366ff" stroke="#000" stroke-width="2" /&gt;
+          
+    &lt;path d="M300,100 
+             C350,50 450,50 500,100 
+             C550,150 550,250 500,300 
+             C450,350 350,350 300,300 
+             C250,250 250,150 300,100 Z" 
+          fill="#ff3366" /&gt;
+&lt;/svg&gt;</code></pre>
+                        
+                        <p>Path commands:</p>
+                        <ul>
+                            <li><code>M x,y</code>: Move to (absolute)</li>
+                            <li><code>m dx,dy</code>: Move to (relative)</li>
+                            <li><code>L x,y</code>: Line to (absolute)</li>
+                            <li><code>l dx,dy</code>: Line to (relative)</li>
+                            <li><code>H x</code>: Horizontal line to (absolute)</li>
+                            <li><code>h dx</code>: Horizontal line to (relative)</li>
+                            <li><code>V y</code>: Vertical line to (absolute)</li>
+                            <li><code>v dy</code>: Vertical line to (relative)</li>
+                            <li><code>C x1,y1 x2,y2 x,y</code>: Cubic Bézier curve (absolute)</li>
+                            <li><code>c dx1,dy1 dx2,dy2 dx,dy</code>: Cubic Bézier curve (relative)</li>
+                            <li><code>Q x1,y1 x,y</code>: Quadratic Bézier curve (absolute)</li>
+                            <li><code>q dx1,dy1 dx,dy</code>: Quadratic Bézier curve (relative)</li>
+                            <li><code>A rx,ry rotation large-arc-flag sweep-flag x,y</code>: Arc (absolute)</li>
+                            <li><code>a rx,ry rotation large-arc-flag sweep-flag dx,dy</code>: Arc (relative)</li>
+                            <li><code>Z</code> or <code>z</code>: Close path</li>
+                        </ul>
+                        
+                        <h3>Styling SVG Elements</h3>
+                        <p>SVG elements can be styled with attributes or CSS:</p>
+                        
+                        <pre><code class="language-html">&lt;svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;!-- Styling with attributes --&gt;
+    &lt;rect x="50" y="50" width="100" height="80" 
+          fill="#3366ff" 
+          stroke="#000" 
+          stroke-width="2" 
+          opacity="0.8" 
+          rx="10" 
+          ry="10" /&gt;
+    
+    &lt;!-- Styling with CSS --&gt;
+    &lt;style&gt;
+        .styled-circle {
+            fill: #ff3366;
+            stroke: #000;
+            stroke-width: 2;
+            stroke-dasharray: 10 5; /* Dashed line pattern */
+        }
+        
+        .styled-circle:hover {
+            fill: #ffcc00;
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+    &lt;/style&gt;
+    
+    &lt;circle class="styled-circle" cx="250" cy="90" r="40" /&gt;
+&lt;/svg&gt;</code></pre>
+                        
+                        <h3>Gradients and Patterns</h3>
+                        <p>SVG supports gradients and patterns for filling shapes:</p>
+                        
+                        <pre><code class="language-html">&lt;svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;!-- Define a linear gradient --&gt;
+    &lt;defs&gt;
+        &lt;linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="0%"&gt;
+            &lt;stop offset="0%" stop-color="blue" /&gt;
+            &lt;stop offset="50%" stop-color="purple" /&gt;
+            &lt;stop offset="100%" stop-color="red" /&gt;
+        &lt;/linearGradient&gt;
+        
+        &lt;!-- Define a radial gradient --&gt;
+        &lt;radialGradient id="myRadialGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%"&gt;
+            &lt;stop offset="0%" stop-color="white" /&gt;
+            &lt;stop offset="50%" stop-color="yellow" /&gt;
+            &lt;stop offset="100%" stop-color="orange" /&gt;
+        &lt;/radialGradient&gt;
+        
+        &lt;!-- Define a pattern --&gt;
+        &lt;pattern id="myPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"&gt;
+            &lt;circle cx="10" cy="10" r="5" fill="#3366ff" /&gt;
+        &lt;/pattern&gt;
+    &lt;/defs&gt;
+    
+    &lt;!-- Use the linear gradient --&gt;
+    &lt;rect x="50" y="50" width="200" height="100" fill="url(#myGradient)" /&gt;
+    
+    &lt;!-- Use the radial gradient --&gt;
+    &lt;circle cx="400" cy="100" r="80" fill="url(#myRadialGradient)" /&gt;
+    
+    &lt;!-- Use the pattern --&gt;
+    &lt;rect x="50" y="200" width="200" height="150" fill="url(#myPattern)" /&gt;
+&lt;/svg&gt;</code></pre>
+                        
+                        <h3>Text and Typography</h3>
+                        <p>SVG provides rich text capabilities:</p>
+                        
+                        <pre><code class="language-html">&lt;svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;!-- Basic text --&gt;
+    &lt;text x="300" y="50" font-family="Arial" font-size="24" text-anchor="middle" fill="#333"&gt;
+        SVG Typography
+    &lt;/text&gt;
+    
+    &lt;!-- Styled text --&gt;
+    &lt;text x="300" y="100" font-family="Georgia" font-size="32" 
+          font-weight="bold" font-style="italic" 
+          text-anchor="middle" fill="#3366ff"&gt;
+        Styled Text
+    &lt;/text&gt;
+    
+    &lt;!-- Text on a path --&gt;
+    &lt;path id="curve" d="M100,200 C200,100 400,100 500,200" fill="none" stroke="#ccc" /&gt;
+    &lt;text&gt;
+        &lt;textPath href="#curve" font-family="Arial" font-size="20" fill="#333"&gt;
+            Text following a curved path
+        &lt;/textPath&gt;
+    &lt;/text&gt;
+    
+    &lt;!-- Text with tspan for individual styling --&gt;
+    &lt;text x="300" y="300" font-family="Arial" font-size="24" text-anchor="middle"&gt;
+        &lt;tspan fill="#3366ff"&gt;Multi&lt;/tspan&gt;
+        &lt;tspan fill="#ff3366"&gt;colored&lt;/tspan&gt;
+        &lt;tspan fill="#33ff66"&gt;text&lt;/tspan&gt;
+    &lt;/text&gt;
+&lt;/svg&gt;</code></pre>
+                        
+                        <h3>Animation</h3>
+                        <p>SVG supports declarative animations with SMIL (Synchronized Multimedia Integration Language):</p>
+                        
+                        <pre><code class="language-html">&lt;svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;!-- Animated circle --&gt;
+    &lt;circle cx="100" cy="100" r="40" fill="#3366ff"&gt;
+        &lt;!-- Animate position --&gt;
+        &lt;animate 
+            attributeName="cx" 
+            from="100" 
+            to="500" 
+            dur="3s" 
+            repeatCount="indefinite" 
+            fill="freeze" /&gt;
+            
+        &lt;!-- Animate color --&gt;
+        &lt;animate 
+            attributeName="fill" 
+            from="#3366ff" 
+            to="#ff3366" 
+            dur="3s" 
+            repeatCount="indefinite" 
+            fill="freeze" /&gt;
+    &lt;/circle&gt;
+    
+    &lt;!-- Animated rectangle --&gt;
+    &lt;rect x="100" y="200" width="100" height="50" fill="#33ff66"&gt;
+        &lt;!-- Animate transformation --&gt;
+        &lt;animateTransform 
+            attributeName="transform" 
+            type="rotate" 
+            from="0 150 225" 
+            to="360 150 225" 
+            dur="5s" 
+            repeatCount="indefinite" /&gt;
+    &lt;/rect&gt;
+&lt;/svg&gt;</code></pre>
+                        
+                        <p>You can also animate SVG with CSS or JavaScript:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- CSS Animation --&gt;
+&lt;style&gt;
+    .animated-circle {
+        animation: pulse 2s infinite alternate;
+    }
+    
+    @keyframes pulse {
+        from { r: 40; fill: #3366ff; }
+        to { r: 60; fill: #ff3366; }
+    }
+&lt;/style&gt;
+
+&lt;svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;circle class="animated-circle" cx="300" cy="200" r="40" /&gt;
+&lt;/svg&gt;
+
+&lt;!-- JavaScript Animation --&gt;
+&lt;svg id="jsSvg" width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;rect id="animatedRect" x="100" y="100" width="100" height="100" fill="#3366ff" /&gt;
+&lt;/svg&gt;
+
+&lt;script&gt;
+    const rect = document.getElementById('animatedRect');
+    let x = 100;
+    let direction = 1;
+    
+    function animate() {
+        x += direction * 2;
+        
+        if (x > 400 || x < 100) {
+            direction *= -1;
+        }
+        
+        rect.setAttribute('x', x);
+        requestAnimationFrame(animate);
+    }
+    
+    animate();
+&lt;/script&gt;</code></pre>
+                        
+                        <h3>Interactivity</h3>
+                        <p>SVG elements can respond to events:</p>
+                        
+                        <pre><code class="language-html">&lt;svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;!-- Click event --&gt;
+    &lt;circle id="clickableCircle" cx="100" cy="100" r="40" fill="#3366ff" 
+            onclick="alert('Circle clicked!')" /&gt;
+    
+    &lt;!-- Hover styles with CSS --&gt;
+    &lt;style&gt;
+        #hoverRect {
+            fill: #33ff66;
+            transition: fill 0.3s ease;
+        }
+        
+        #hoverRect:hover {
+            fill: #ff3366;
+            cursor: pointer;
+        }
+    &lt;/style&gt;
+    
+    &lt;rect id="hoverRect" x="200" y="60" width="100" height="80" /&gt;
+    
+    &lt;!-- JavaScript events --&gt;
+    &lt;polygon id="interactivePolygon" 
+             points="400,60 450,60 475,100 450,140 400,140 375,100" 
+             fill="#ffcc00" /&gt;
+&lt;/svg&gt;
+
+&lt;script&gt;
+    const polygon = document.getElementById('interactivePolygon');
+    
+    polygon.addEventListener('mouseenter', function() {
+        this.setAttribute('fill', '#ff3366');
+    });
+    
+    polygon.addEventListener('mouseleave', function() {
+        this.setAttribute('fill', '#ffcc00');
+    });
+    
+    polygon.addEventListener('click', function() {
+        const currentFill = this.getAttribute('fill');
+        const newFill = currentFill === '#ff3366' ? '#3366ff' : '#ff3366';
+        this.setAttribute('fill', newFill);
+    });
+&lt;/script&gt;</code></pre>
+                        
+                        <h3>SVG vs. Canvas</h3>
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>SVG</th>
+                                        <th>Canvas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Resolution</td>
+                                        <td>Vector-based, resolution-independent</td>
+                                        <td>Pixel-based, resolution-dependent</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DOM Integration</td>
+                                        <td>Part of the DOM, each element is accessible</td>
+                                        <td>Single HTML element, content not in DOM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Performance</td>
+                                        <td>Better for fewer, larger objects</td>
+                                        <td>Better for many small objects or pixel manipulation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Event Handling</td>
+                                        <td>Native event handling for each element</td>
+                                        <td>Manual event handling required</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Accessibility</td>
+                                        <td>Better accessibility with native text and ARIA support</td>
+                                        <td>Limited accessibility, requires additional work</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Animation</td>
+                                        <td>CSS, SMIL, or JavaScript</td>
+                                        <td>JavaScript only</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Best Use Cases</td>
+                                        <td>Icons, illustrations, infographics, interactive diagrams</td>
+                                        <td>Games, complex animations, image manipulation, data visualization</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h4>When to Use SVG vs. Canvas</h4>
+                            <p><strong>Use SVG when:</strong></p>
+                            <ul>
+                                <li>You need resolution independence</li>
+                                <li>You have a smaller number of larger objects</li>
+                                <li>You need accessibility</li>
+                                <li>You need to interact with individual elements</li>
+                                <li>You're creating icons, logos, or illustrations</li>
+                            </ul>
+                            <p><strong>Use Canvas when:</strong></p>
+                            <ul>
+                                <li>You need to render many objects</li>
+                                <li>You need pixel-level manipulation</li>
+                                <li>You're creating games or complex animations</li>
+                                <li>You need to process or generate images</li>
+                                <li>Performance is critical</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Responsive Images</h2>
+                        <p>HTML5 provides several features for implementing responsive images that adapt to different screen sizes and device capabilities.</p>
+                        
+                        <h3>The picture Element</h3>
+                        <p>The <code>&lt;picture&gt;</code> element allows you to specify multiple sources for an image based on media queries or image format support:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Different images based on viewport width --&gt;
+&lt;picture&gt;
+    &lt;source srcset="small.jpg" media="(max-width: 600px)"&gt;
+    &lt;source srcset="medium.jpg" media="(max-width: 1200px)"&gt;
+    &lt;source srcset="large.jpg"&gt;
+    &lt;img src="fallback.jpg" alt="Responsive image example"&gt;
+&lt;/picture&gt;
+
+&lt;!-- Different image formats based on browser support --&gt;
+&lt;picture&gt;
+    &lt;source srcset="image.webp" type="image/webp"&gt;
+    &lt;source srcset="image.avif" type="image/avif"&gt;
+    &lt;img src="image.jpg" alt="Image with format fallbacks"&gt;
+&lt;/picture&gt;</code></pre>
+                        
+                        <h3>The srcset and sizes Attributes</h3>
+                        <p>The <code>srcset</code> and <code>sizes</code> attributes allow the browser to choose the most appropriate image based on the device's characteristics:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Different resolutions based on device pixel ratio --&gt;
+&lt;img src="image-1x.jpg" 
+     srcset="image-1x.jpg 1x, image-2x.jpg 2x, image-3x.jpg 3x" 
+     alt="Image with different resolutions"&gt;
+
+&lt;!-- Different image sizes based on viewport width --&gt;
+&lt;img src="small.jpg" 
+     srcset="small.jpg 400w, medium.jpg 800w, large.jpg 1600w" 
+     sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px" 
+     alt="Image with different sizes"&gt;</code></pre>
+                        
+                        <p>In the second example:</p>
+                        <ul>
+                            <li><code>srcset</code> defines the available images and their widths (400w, 800w, 1600w)</li>
+                            <li><code>sizes</code> tells the browser what size the image will be displayed at in different scenarios</li>
+                            <li>The browser uses this information to download the most appropriate image</li>
+                        </ul>
+                        
+                        <h3>Loading Attribute</h3>
+                        <p>The <code>loading</code> attribute allows you to defer loading of off-screen images:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Lazy loading --&gt;
+&lt;img src="image.jpg" alt="Lazy loaded image" loading="lazy"&gt;
+
+&lt;!-- Eager loading (default) --&gt;
+&lt;img src="critical-image.jpg" alt="Critical image" loading="eager"&gt;</code></pre>
+                        
+                        <h3>Decoding Attribute</h3>
+                        <p>The <code>decoding</code> attribute provides a hint to the browser about how to decode the image:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Asynchronous decoding --&gt;
+&lt;img src="image.jpg" alt="Async decoded image" decoding="async"&gt;
+
+&lt;!-- Synchronous decoding --&gt;
+&lt;img src="critical-image.jpg" alt="Sync decoded image" decoding="sync"&gt;
+
+&lt;!-- Auto decoding (browser decides) --&gt;
+&lt;img src="another-image.jpg" alt="Auto decoded image" decoding="auto"&gt;</code></pre>
+                        
+                        <h3>CSS Background Images</h3>
+                        <p>CSS also provides options for responsive background images:</p>
+                        
+                        <pre><code class="language-html">&lt;style&gt;
+    .hero {
+        width: 100%;
+        height: 50vh;
+        background-image: url('large.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    
+    /* Responsive background images */
+    @media (max-width: 1200px) {
+        .hero {
+            background-image: url('medium.jpg');
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .hero {
+            background-image: url('small.jpg');
+            height: 30vh;
+        }
+    }
+    
+    /* Image-set for background images */
+    .high-res-bg {
+        background-image: url('image-1x.jpg');
+        background-image: -webkit-image-set(
+            url('image-1x.jpg') 1x,
+            url('image-2x.jpg') 2x,
+            url('image-3x.jpg') 3x
+        );
+        background-image: image-set(
+            url('image-1x.jpg') 1x,
+            url('image-2x.jpg') 2x,
+            url('image-3x.jpg') 3x
+        );
+    }
+&lt;/style&gt;
+
+&lt;div class="hero"&gt;&lt;/div&gt;
+&lt;div class="high-res-bg"&gt;&lt;/div&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Responsive Images Best Practices</h4>
+                            <ul>
+                                <li>Always include width and height attributes on images to prevent layout shifts</li>
+                                <li>Use modern image formats like WebP or AVIF with appropriate fallbacks</li>
+                                <li>Optimize images for each size to reduce file size</li>
+                                <li>Use lazy loading for images below the fold</li>
+                                <li>Consider art direction (different crops or compositions) for different screen sizes</li>
+                                <li>Test on various devices and screen sizes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Embedding External Content</h2>
+                        <p>HTML provides several ways to embed external content from other sources.</p>
+                        
+                        <h3>iframe Element</h3>
+                        <p>The <code>&lt;iframe&gt;</code> element allows you to embed another HTML document within your page:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Basic iframe --&gt;
+&lt;iframe src="https://example.com" width="600" height="400"&gt;
+    Your browser does not support iframes.
+&lt;/iframe&gt;
+
+&lt;!-- YouTube video embed --&gt;
+&lt;iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/VIDEO_ID" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen&gt;
+&lt;/iframe&gt;
+
+&lt;!-- Google Maps embed --&gt;
+&lt;iframe 
+    width="600" 
+    height="450" 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!..." 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade"&gt;
+&lt;/iframe&gt;</code></pre>
+                        
+                        <h3>iframe Security</h3>
+                        <p>iframes can pose security risks, so it's important to use security attributes:</p>
+                        
+                        <pre><code class="language-html">&lt;iframe 
+    src="https://example.com" 
+    width="600" 
+    height="400"
+    sandbox="allow-scripts allow-same-origin allow-forms"
+    referrerpolicy="no-referrer"
+    loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+                        
+                        <p>The <code>sandbox</code> attribute restricts the capabilities of the iframe. Values include:</p>
+                        <ul>
+                            <li><code>allow-scripts</code>: Allows JavaScript execution</li>
+                            <li><code>allow-same-origin</code>: Allows the content to be treated as same-origin</li>
+                            <li><code>allow-forms</code>: Allows form submission</li>
+                            <li><code>allow-popups</code>: Allows popups</li>
+                            <li><code>allow-top-navigation</code>: Allows navigation of the top-level browsing context</li>
+                        </ul>
+                        
+                        <h3>embed Element</h3>
+                        <p>The <code>&lt;embed&gt;</code> element is used to embed external content that requires a plugin:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- PDF embed --&gt;
+&lt;embed 
+    src="document.pdf" 
+    type="application/pdf"
+    width="600" 
+    height="400"&gt;
+
+&lt;!-- Flash embed (legacy) --&gt;
+&lt;embed 
+    src="animation.swf" 
+    type="application/x-shockwave-flash"
+    width="600" 
+    height="400"&gt;</code></pre>
+                        
+                        <h3>object Element</h3>
+                        <p>The <code>&lt;object&gt;</code> element is similar to <code>&lt;embed&gt;</code> but allows for fallback content:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- PDF object --&gt;
+&lt;object 
+    data="document.pdf" 
+    type="application/pdf"
+    width="600" 
+    height="400"&gt;
+    &lt;p&gt;Your browser doesn't support PDF viewing. &lt;a href="document.pdf"&gt;Download the PDF&lt;/a&gt; instead.&lt;/p&gt;
+&lt;/object&gt;
+
+&lt;!-- SVG object --&gt;
+&lt;object 
+    data="image.svg" 
+    type="image/svg+xml"
+    width="300" 
+    height="200"&gt;
+    &lt;img src="fallback.png" alt="Fallback image"&gt;
+&lt;/object&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Embedding Best Practices</h4>
+                            <ul>
+                                <li>Always use HTTPS URLs for embedded content</li>
+                                <li>Apply appropriate sandbox restrictions to iframes</li>
+                                <li>Use lazy loading for embedded content below the fold</li>
+                                <li>Provide fallback content for browsers that don't support the embedded content</li>
+                                <li>Consider the performance impact of embedded content</li>
+                                <li>Be aware of privacy implications when embedding third-party content</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Interactive Media Gallery</h2>
+                        <p>Let's create a comprehensive media gallery that incorporates many of the techniques we've learned in this lesson.</p>
+                        
+                        <h3>Exercise: Create a Media Gallery</h3>
+                        <p>Create a media gallery with the following features:</p>
+                        <ul>
+                            <li>Responsive image grid with lazy loading</li>
+                            <li>Audio player with custom controls</li>
+                            <li>Video player with captions</li>
+                            <li>Interactive SVG illustration</li>
+                            <li>Canvas-based drawing tool</li>
+                        </ul>
+                        
+                        <p>Start with this template and enhance it:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Interactive Media Gallery&lt;/title&gt;
+    &lt;style&gt;
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        h1, h2 {
+            color: #3366ff;
+        }
+        
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Add more styles for your gallery components */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="gallery-container"&gt;
+        &lt;h1&gt;Interactive Media Gallery&lt;/h1&gt;
+        
+        &lt;!-- Image Gallery Section --&gt;
+        &lt;section id="image-gallery"&gt;
+            &lt;h2&gt;Image Gallery&lt;/h2&gt;
+            &lt;div class="image-grid"&gt;
+                &lt;!-- Add responsive images here --&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        
+        &lt;!-- Audio Player Section --&gt;
+        &lt;section id="audio-player"&gt;
+            &lt;h2&gt;Audio Player&lt;/h2&gt;
+            &lt;div class="custom-audio-player"&gt;
+                &lt;!-- Add custom audio player here --&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        
+        &lt;!-- Video Player Section --&gt;
+        &lt;section id="video-player"&gt;
+            &lt;h2&gt;Video Player&lt;/h2&gt;
+            &lt;div class="video-container"&gt;
+                &lt;!-- Add video player with captions here --&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        
+        &lt;!-- SVG Illustration Section --&gt;
+        &lt;section id="svg-illustration"&gt;
+            &lt;h2&gt;Interactive SVG Illustration&lt;/h2&gt;
+            &lt;div class="svg-container"&gt;
+                &lt;!-- Add interactive SVG here --&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        
+        &lt;!-- Canvas Drawing Tool Section --&gt;
+        &lt;section id="canvas-drawing"&gt;
+            &lt;h2&gt;Canvas Drawing Tool&lt;/h2&gt;
+            &lt;div class="canvas-container"&gt;
+                &lt;!-- Add canvas drawing tool here --&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/div&gt;
+    
+    &lt;script&gt;
+        // Add your JavaScript here
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Enhance the template with:</p>
+                            <ol>
+                                <li>A responsive image grid with at least 6 images using srcset and sizes</li>
+                                <li>A custom audio player with play/pause, progress bar, and volume controls</li>
+                                <li>A video player with captions in at least two languages</li>
+                                <li>An interactive SVG illustration with hover effects and animations</li>
+                                <li>A canvas-based drawing tool with color selection and brush size options</li>
+                                <li>Ensure all components are accessible with appropriate ARIA attributes and keyboard support</li>
+                                <li>Add responsive design for all components</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored HTML media and graphics capabilities that allow you to create rich, interactive web content:</p>
+                        <ul>
+                            <li>The <code>&lt;audio&gt;</code> element for embedding sound content with controls and JavaScript API</li>
+                            <li>The <code>&lt;video&gt;</code> element for embedding video content with captions and customization options</li>
+                            <li>The <code>&lt;canvas&gt;</code> element for creating dynamic graphics and animations with JavaScript</li>
+                            <li>SVG (Scalable Vector Graphics) for resolution-independent vector graphics with interactivity</li>
+                            <li>Responsive images with <code>&lt;picture&gt;</code>, srcset, and sizes attributes</li>
+                            <li>Embedding external content with iframes and other embedding techniques</li>
+                        </ul>
+                        
+                        <p>These technologies provide powerful tools for creating engaging web experiences without relying on third-party plugins. By understanding when and how to use each technology, you can create optimized, accessible, and interactive media experiences for your users.</p>
+                        
+                        <p>Remember these key points:</p>
+                        <ul>
+                            <li><strong>Choose the right technology</strong> for your specific needs (SVG vs. Canvas, native controls vs. custom)</li>
+                            <li><strong>Optimize for performance</strong> with responsive techniques and appropriate file formats</li>
+                            <li><strong>Ensure accessibility</strong> with captions, transcripts, and ARIA attributes</li>
+                            <li><strong>Provide fallbacks</strong> for browsers that don't support certain features</li>
+                            <li><strong>Consider security implications</strong> when embedding external content</li>
+                        </ul>
+                        
+                        <p>In the next lesson, we'll explore HTML APIs, which provide powerful capabilities for creating interactive web applications.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page15.html" class="btn">Previous: HTML Forms Advanced</a>
+                        <a href="page17.html" class="btn">Next: HTML APIs</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

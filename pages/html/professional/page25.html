@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Accessibility | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to create accessible HTML content that works for all users, including those with disabilities.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="25">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html" class="active">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional HTML</h3>
+                <ul>
+                    <li><a href="page13.html">13. Advanced HTML Concepts</a></li>
+                    <li><a href="page14.html">14. HTML5 Semantic Elements</a></li>
+                    <li><a href="page15.html">15. HTML Forms Advanced</a></li>
+                    <li><a href="page16.html">16. HTML Media & Graphics</a></li>
+                    <li><a href="page17.html">17. HTML APIs</a></li>
+                    <li><a href="page18.html">18. Web Storage</a></li>
+                    <li><a href="page19.html">19. Geolocation API</a></li>
+                    <li><a href="page20.html">20. Drag & Drop API</a></li>
+                    <li><a href="page21.html">21. Web Workers</a></li>
+                    <li><a href="page22.html">22. Server-Sent Events</a></li>
+                    <li><a href="page23.html">23. WebSockets</a></li>
+                    <li><a href="page24.html">24. Responsive HTML</a></li>
+                    <li><a href="page25.html" class="active">25. HTML Accessibility</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 50%;"></div>
+                </div>
+                <p style="text-align: center;">Page 25 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>HTML Accessibility</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to Web Accessibility</h2>
+                        <p>Web accessibility means designing and developing websites that can be used by everyone, including people with disabilities. It's about creating an inclusive web that doesn't exclude anyone based on their abilities or the way they access the internet.</p>
+                        
+                        <p>According to the World Health Organization, over 1 billion people worldwide live with some form of disability. This represents about 15% of the global population. By making your websites accessible, you're not only doing the right thing ethically, but you're also expanding your potential audience significantly.</p>
+                        
+                        <div class="info-box">
+                            <h4>Key Benefits of Accessible Websites</h4>
+                            <ul>
+                                <li><strong>Inclusivity</strong>: Ensures all users can access and interact with your content</li>
+                                <li><strong>Improved User Experience</strong>: Accessibility improvements often benefit all users</li>
+                                <li><strong>SEO Advantages</strong>: Many accessibility practices improve search engine rankings</li>
+                                <li><strong>Legal Compliance</strong>: Meets requirements of laws like ADA, Section 508, and AODA</li>
+                                <li><strong>Broader Audience</strong>: Reaches the 15% of the population with disabilities</li>
+                                <li><strong>Better Code Quality</strong>: Accessible code is often cleaner and more maintainable</li>
+                                <li><strong>Positive Brand Image</strong>: Demonstrates social responsibility and inclusivity</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Understanding Different Types of Disabilities</h3>
+                        <p>To create truly accessible websites, it's important to understand the different types of disabilities and how they affect web usage:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Disability Type</th>
+                                        <th>Web Usage Challenges</th>
+                                        <th>Assistive Technologies</th>
+                                        <th>Key Accessibility Considerations</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Visual</strong><br>(Blindness, low vision, color blindness)</td>
+                                        <td>Cannot see images, videos, or text; difficulty with color-dependent information</td>
+                                        <td>Screen readers, screen magnifiers, braille displays, high-contrast modes</td>
+                                        <td>Alt text for images, keyboard navigation, proper heading structure, sufficient color contrast</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Auditory</strong><br>(Deafness, hard of hearing)</td>
+                                        <td>Cannot hear audio content or alerts</td>
+                                        <td>Captions, transcripts, visual alternatives for audio cues</td>
+                                        <td>Captions for videos, transcripts for audio, visual indicators for sounds</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Motor</strong><br>(Limited dexterity, paralysis, tremors)</td>
+                                        <td>Difficulty using mouse, clicking small targets, or performing precise movements</td>
+                                        <td>Adaptive keyboards, mouth sticks, eye tracking, voice recognition</td>
+                                        <td>Keyboard accessibility, large click targets, reduced motion requirements</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cognitive</strong><br>(Learning disabilities, ADHD, autism, memory issues)</td>
+                                        <td>Difficulty understanding complex content, remembering steps, or focusing</td>
+                                        <td>Text-to-speech, reading tools, simplified interfaces</td>
+                                        <td>Clear language, consistent navigation, minimal distractions, sufficient time to complete tasks</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Seizure Disorders</strong><br>(Photosensitive epilepsy)</td>
+                                        <td>Risk of seizures from flashing content or certain visual patterns</td>
+                                        <td>Content filters, reduced motion settings</td>
+                                        <td>Avoiding flashing content, providing warnings, respecting reduced motion preferences</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3>Web Content Accessibility Guidelines (WCAG)</h3>
+                        <p>The Web Content Accessibility Guidelines (WCAG) are the internationally recognized standards for web accessibility. They are organized around four main principles, often referred to as POUR:</p>
+                        
+                        <ul>
+                            <li><strong>Perceivable</strong>: Information and user interface components must be presentable to users in ways they can perceive</li>
+                            <li><strong>Operable</strong>: User interface components and navigation must be operable</li>
+                            <li><strong>Understandable</strong>: Information and the operation of the user interface must be understandable</li>
+                            <li><strong>Robust</strong>: Content must be robust enough to be interpreted reliably by a wide variety of user agents, including assistive technologies</li>
+                        </ul>
+                        
+                        <p>WCAG has three levels of conformance:</p>
+                        <ul>
+                            <li><strong>Level A</strong>: The minimum level of accessibility; addresses the most basic accessibility features</li>
+                            <li><strong>Level AA</strong>: The level that most organizations aim for; addresses the most common barriers for disabled users</li>
+                            <li><strong>Level AAA</strong>: The highest level of accessibility; provides enhanced accessibility for specific user groups</li>
+                        </ul>
+                        
+                        <p>In this lesson, we'll focus on HTML-specific techniques to meet WCAG requirements, primarily at the AA level, which is considered the standard for most websites.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Semantic HTML for Accessibility</h2>
+                        <p>Using semantic HTML is one of the most important aspects of creating accessible websites. Semantic HTML provides meaning to your content, which helps assistive technologies understand and navigate your page.</p>
+                        
+                        <h3>Document Structure</h3>
+                        <p>A well-structured HTML document provides a solid foundation for accessibility:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Accessible Page Title&lt;/title&gt;
+    &lt;meta name="description" content="Clear description of the page content"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;nav&gt;
+            &lt;!-- Navigation content --&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h1&gt;Main Page Heading&lt;/h1&gt;
+            &lt;section&gt;
+                &lt;h2&gt;Section Heading&lt;/h2&gt;
+                &lt;p&gt;Section content...&lt;/p&gt;
+            &lt;/section&gt;
+        &lt;/article&gt;
+        
+        &lt;aside&gt;
+            &lt;h2&gt;Related Information&lt;/h2&gt;
+            &lt;p&gt;Sidebar content...&lt;/p&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;Footer content...&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>Key elements for accessible document structure:</p>
+                        <ul>
+                            <li><code>&lt;html lang="en"&gt;</code>: Specifies the language of the document, helping screen readers pronounce content correctly</li>
+                            <li><code>&lt;title&gt;</code>: Provides a descriptive page title that appears in browser tabs and is announced by screen readers</li>
+                            <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>: Semantic elements that define the purpose of different page regions</li>
+                        </ul>
+                        
+                        <h3>Heading Hierarchy</h3>
+                        <p>Proper heading structure is crucial for accessibility as it helps screen reader users navigate your content:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good heading hierarchy --&gt;
+&lt;h1&gt;Main Page Title&lt;/h1&gt;
+&lt;section&gt;
+    &lt;h2&gt;Section Title&lt;/h2&gt;
+    &lt;p&gt;Section content...&lt;/p&gt;
+    
+    &lt;h3&gt;Subsection Title&lt;/h3&gt;
+    &lt;p&gt;Subsection content...&lt;/p&gt;
+    
+    &lt;h3&gt;Another Subsection Title&lt;/h3&gt;
+    &lt;p&gt;More subsection content...&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+    &lt;h2&gt;Another Section Title&lt;/h2&gt;
+    &lt;p&gt;More section content...&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;!-- Bad heading hierarchy (avoid this) --&gt;
+&lt;h3&gt;Page Title&lt;/h3&gt; &lt;!-- Should be h1 --&gt;
+&lt;h1&gt;Section Title&lt;/h1&gt; &lt;!-- Should be h2 --&gt;
+&lt;h4&gt;Subsection Title&lt;/h4&gt; &lt;!-- Should be h3 --&gt;</code></pre>
+                        
+                        <p>Best practices for heading hierarchy:</p>
+                        <ul>
+                            <li>Use only one <code>&lt;h1&gt;</code> per page, representing the main page title</li>
+                            <li>Don't skip heading levels (e.g., don't go from <code>&lt;h2&gt;</code> to <code>&lt;h4&gt;</code>)</li>
+                            <li>Use headings to create a logical outline of your content</li>
+                            <li>Don't use headings just for styling; they should represent actual section titles</li>
+                        </ul>
+                        
+                        <h3>Text-Level Semantics</h3>
+                        <p>Use appropriate elements to mark up text content:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Emphasis and importance --&gt;
+&lt;p&gt;This is &lt;em&gt;emphasized&lt;/em&gt; text.&lt;/p&gt;
+&lt;p&gt;This is &lt;strong&gt;important&lt;/strong&gt; text.&lt;/p&gt;
+
+&lt;!-- Abbreviations --&gt;
+&lt;p&gt;The &lt;abbr title="World Health Organization"&gt;WHO&lt;/abbr&gt; provides health guidelines.&lt;/p&gt;
+
+&lt;!-- Time and dates --&gt;
+&lt;p&gt;The event starts on &lt;time datetime="2025-05-15T19:00"&gt;May 15, 2025 at 7:00 PM&lt;/time&gt;.&lt;/p&gt;
+
+&lt;!-- Quotes --&gt;
+&lt;blockquote&gt;
+    &lt;p&gt;The Web is designed to work for all people, whatever their hardware, software, language, location, or ability.&lt;/p&gt;
+    &lt;cite&gt;Tim Berners-Lee, W3C Director and inventor of the World Wide Web&lt;/cite&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- Code --&gt;
+&lt;p&gt;Use the &lt;code&gt;alt&lt;/code&gt; attribute to provide text alternatives for images.&lt;/p&gt;
+
+&lt;!-- Definition --&gt;
+&lt;p&gt;&lt;dfn&gt;Web accessibility&lt;/dfn&gt; means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.&lt;/p&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Semantic HTML vs. Non-Semantic HTML</h4>
+                            <p>Compare these two approaches to creating a navigation menu:</p>
+                            
+                            <p><strong>Non-Semantic Approach:</strong></p>
+                            <pre><code class="language-html">&lt;div class="navigation"&gt;
+    &lt;div class="nav-item"&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="nav-item"&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="nav-item"&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            
+                            <p><strong>Semantic Approach:</strong></p>
+                            <pre><code class="language-html">&lt;nav aria-label="Main Navigation"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                            
+                            <p>The semantic approach:</p>
+                            <ul>
+                                <li>Clearly identifies the purpose of the element (navigation)</li>
+                                <li>Uses proper list markup for menu items</li>
+                                <li>Includes an ARIA label for additional context</li>
+                                <li>Is more accessible to screen reader users</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Lists</h3>
+                        <p>Use appropriate list elements to structure related items:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Unordered list for items with no specific order --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Apples&lt;/li&gt;
+    &lt;li&gt;Oranges&lt;/li&gt;
+    &lt;li&gt;Bananas&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered list for sequential items --&gt;
+&lt;ol&gt;
+    &lt;li&gt;Preheat the oven&lt;/li&gt;
+    &lt;li&gt;Mix the ingredients&lt;/li&gt;
+    &lt;li&gt;Bake for 20 minutes&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Description list for name-value pairs --&gt;
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language, the standard markup language for web pages&lt;/dd&gt;
+    
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets, used for describing the presentation of a document&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                        
+                        <p>Screen readers announce the list type and the number of items, providing valuable context to users.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Accessible Images and Media</h2>
+                        <p>Images, videos, and other media need special consideration to ensure they're accessible to all users.</p>
+                        
+                        <h3>Alternative Text for Images</h3>
+                        <p>The <code>alt</code> attribute provides a text alternative for images, which is essential for screen reader users:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Informative image with descriptive alt text --&gt;
+&lt;img src="chart-quarterly-sales.png" alt="Bar chart showing quarterly sales growth of 15% in Q1, 22% in Q2, 30% in Q3, and 25% in Q4"&gt;
+
+&lt;!-- Decorative image with empty alt text --&gt;
+&lt;img src="decorative-divider.png" alt=""&gt;
+
+&lt;!-- Image that is a link needs alt text describing the destination --&gt;
+&lt;a href="products.html"&gt;
+    &lt;img src="product-catalog.jpg" alt="View our product catalog"&gt;
+&lt;/a&gt;</code></pre>
+                        
+                        <p>Guidelines for writing effective alt text:</p>
+                        <ul>
+                            <li>Be specific and concise (typically 125 characters or less)</li>
+                            <li>Describe the purpose or content of the image, not just what it looks like</li>
+                            <li>Include any text that appears in the image</li>
+                            <li>For decorative images that don't add content, use empty alt text (<code>alt=""</code>)</li>
+                            <li>Don't start with "Image of" or "Picture of" (screen readers already announce it's an image)</li>
+                            <li>For complex images like charts or graphs, provide a more detailed description nearby</li>
+                        </ul>
+                        
+                        <h3>Complex Images</h3>
+                        <p>For complex images like charts, diagrams, or infographics, a short alt text might not be sufficient. In these cases, provide a more detailed description:</p>
+                        
+                        <pre><code class="language-html">&lt;figure&gt;
+    &lt;img src="complex-chart.png" 
+         alt="Chart showing relationship between temperature and productivity" 
+         aria-describedby="chart-description"&gt;
+    &lt;figcaption id="chart-description"&gt;
+        This chart illustrates how workplace productivity decreases as temperature increases 
+        beyond 72°F (22°C). Productivity peaks at 70-72°F and drops by approximately 
+        2% for every degree above 77°F, with a sharp decline above 85°F.
+    &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                        
+                        <h3>Accessible Video and Audio</h3>
+                        <p>Make multimedia content accessible with captions, transcripts, and audio descriptions:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Video with captions and audio description --&gt;
+&lt;figure&gt;
+    &lt;video controls&gt;
+        &lt;source src="video.mp4" type="video/mp4"&gt;
+        &lt;source src="video.webm" type="video/webm"&gt;
+        &lt;track kind="captions" src="captions.vtt" srclang="en" label="English" default&gt;
+        &lt;track kind="descriptions" src="descriptions.vtt" srclang="en" label="Audio Descriptions"&gt;
+        Your browser does not support the video tag.
+    &lt;/video&gt;
+    &lt;figcaption&gt;
+        &lt;a href="transcript.html"&gt;View transcript&lt;/a&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;!-- Audio with transcript --&gt;
+&lt;figure&gt;
+    &lt;audio controls&gt;
+        &lt;source src="podcast.mp3" type="audio/mpeg"&gt;
+        &lt;source src="podcast.ogg" type="audio/ogg"&gt;
+        Your browser does not support the audio tag.
+    &lt;/audio&gt;
+    &lt;figcaption&gt;
+        &lt;details&gt;
+            &lt;summary&gt;Transcript&lt;/summary&gt;
+            &lt;p&gt;Host: Welcome to our podcast about web accessibility...&lt;/p&gt;
+            &lt;p&gt;Guest: Thank you for having me...&lt;/p&gt;
+            &lt;!-- Full transcript content --&gt;
+        &lt;/details&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                        
+                        <p>Key accessibility features for multimedia:</p>
+                        <ul>
+                            <li><strong>Captions</strong>: Text versions of spoken content and important sounds, synchronized with the media</li>
+                            <li><strong>Transcripts</strong>: Text versions of all audio content, available separately from the media</li>
+                            <li><strong>Audio Descriptions</strong>: Narration describing important visual details that aren't conveyed through dialogue</li>
+                            <li><strong>Controls</strong>: Ensure media players have accessible controls for play, pause, volume, etc.</li>
+                            <li><strong>No Auto-Play</strong>: Avoid auto-playing media, which can interfere with screen readers</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>WebVTT Format for Captions</h4>
+                            <p>WebVTT (Web Video Text Tracks) is the standard format for captions and subtitles in HTML5 video:</p>
+                            
+                            <pre><code>WEBVTT
+
+00:00:01.000 --> 00:00:04.000
+Welcome to our tutorial on web accessibility.
+
+00:00:05.000 --> 00:00:09.000
+Today we'll learn how to make websites
+accessible to all users.
+
+00:00:10.000 --> 00:00:15.000
+[Background music playing]
+Let's start with the basics of semantic HTML.</code></pre>
+                            
+                            <p>Save this content in a file with a <code>.vtt</code> extension and reference it using the <code>&lt;track&gt;</code> element.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Accessible Forms</h2>
+                        <p>Forms are often critical interaction points on websites, and they need special attention to ensure accessibility.</p>
+                        
+                        <h3>Labeling Form Controls</h3>
+                        <p>Every form control should have a properly associated label:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Explicit label with for attribute (preferred method) --&gt;
+&lt;div class="form-group"&gt;
+    &lt;label for="name"&gt;Full Name&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+&lt;/div&gt;
+
+&lt;!-- Implicit label by wrapping the input --&gt;
+&lt;div class="form-group"&gt;
+    &lt;label&gt;
+        Email Address
+        &lt;input type="email" name="email" required&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;!-- Visually hidden label (still accessible to screen readers) --&gt;
+&lt;div class="form-group"&gt;
+    &lt;label for="search" class="visually-hidden"&gt;Search the website&lt;/label&gt;
+    &lt;input type="search" id="search" name="search" placeholder="Search..."&gt;
+    &lt;button type="submit"&gt;Search&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS for visually hidden elements --&gt;
+&lt;style&gt;
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+&lt;/style&gt;</code></pre>
+                        
+                        <p>Never rely solely on placeholder text as a label, as it disappears when the user starts typing and may not be announced by all screen readers.</p>
+                        
+                        <h3>Grouping Related Controls</h3>
+                        <p>Use <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> to group related form controls:</p>
+                        
+                        <pre><code class="language-html">&lt;fieldset&gt;
+    &lt;legend&gt;Shipping Address&lt;/legend&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="street"&gt;Street Address&lt;/label&gt;
+        &lt;input type="text" id="street" name="shipping_street" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="city"&gt;City&lt;/label&gt;
+        &lt;input type="text" id="city" name="shipping_city" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="zip"&gt;Postal Code&lt;/label&gt;
+        &lt;input type="text" id="zip" name="shipping_zip" required&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+
+&lt;fieldset&gt;
+    &lt;legend&gt;Preferred Contact Method&lt;/legend&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;input type="radio" id="contact-email" name="contact_method" value="email"&gt;
+        &lt;label for="contact-email"&gt;Email&lt;/label&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;input type="radio" id="contact-phone" name="contact_method" value="phone"&gt;
+        &lt;label for="contact-phone"&gt;Phone&lt;/label&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;input type="radio" id="contact-text" name="contact_method" value="text"&gt;
+        &lt;label for="contact-text"&gt;Text Message&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+                        
+                        <p>This approach is particularly important for radio buttons and checkboxes, as it provides context about the relationship between the options.</p>
+                        
+                        <h3>Form Instructions and Error Messages</h3>
+                        <p>Provide clear instructions and accessible error messages:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Instructions before the form --&gt;
+&lt;div class="form-instructions"&gt;
+    &lt;p&gt;All fields marked with an asterisk (*) are required.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Field-specific instructions --&gt;
+&lt;div class="form-group"&gt;
+    &lt;label for="password"&gt;Password *&lt;/label&gt;
+    &lt;input 
+        type="password" 
+        id="password" 
+        name="password" 
+        aria-describedby="password-requirements"
+        required
+    &gt;
+    &lt;div id="password-requirements" class="field-hint"&gt;
+        Password must be at least 8 characters and include a number and a special character.
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Inline error message --&gt;
+&lt;div class="form-group has-error"&gt;
+    &lt;label for="email"&gt;Email Address *&lt;/label&gt;
+    &lt;input 
+        type="email" 
+        id="email" 
+        name="email" 
+        aria-describedby="email-error"
+        aria-invalid="true"
+        required
+    &gt;
+    &lt;div id="email-error" class="error-message" role="alert"&gt;
+        Please enter a valid email address.
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <p>Key attributes for accessible form validation:</p>
+                        <ul>
+                            <li><code>aria-describedby</code>: Associates instructions or error messages with form controls</li>
+                            <li><code>aria-invalid="true"</code>: Indicates that a field has an invalid value</li>
+                            <li><code>role="alert"</code>: Makes error messages announced by screen readers when they appear</li>
+                            <li><code>required</code>: Indicates that a field is required</li>
+                        </ul>
+                        
+                        <h3>Accessible Form Controls</h3>
+                        <p>Use the most appropriate input types and attributes:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Use appropriate input types --&gt;
+&lt;input type="email" id="email" name="email"&gt; &lt;!-- Triggers email keyboard on mobile --&gt;
+&lt;input type="tel" id="phone" name="phone"&gt; &lt;!-- Triggers phone keyboard on mobile --&gt;
+&lt;input type="number" id="quantity" name="quantity" min="1" max="10"&gt; &lt;!-- Numeric input with constraints --&gt;
+&lt;input type="date" id="birthdate" name="birthdate"&gt; &lt;!-- Date picker --&gt;
+
+&lt;!-- Provide autocomplete hints --&gt;
+&lt;input type="text" id="name" name="name" autocomplete="name"&gt;
+&lt;input type="email" id="email" name="email" autocomplete="email"&gt;
+&lt;input type="tel" id="phone" name="phone" autocomplete="tel"&gt;
+
+&lt;!-- Use datalist for suggestions --&gt;
+&lt;label for="country"&gt;Country&lt;/label&gt;
+&lt;input type="text" id="country" name="country" list="country-list"&gt;
+&lt;datalist id="country-list"&gt;
+    &lt;option value="Australia"&gt;
+    &lt;option value="Canada"&gt;
+    &lt;option value="France"&gt;
+    &lt;option value="Germany"&gt;
+    &lt;option value="Japan"&gt;
+    &lt;option value="United Kingdom"&gt;
+    &lt;option value="United States"&gt;
+&lt;/datalist&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Best Practices for Accessible Forms</h4>
+                            <ul>
+                                <li><strong>Logical Tab Order</strong>: Ensure form controls can be navigated in a logical order using the Tab key</li>
+                                <li><strong>Keyboard Accessibility</strong>: All form interactions should be possible using only a keyboard</li>
+                                <li><strong>Error Prevention</strong>: Use client-side validation to catch errors before submission</li>
+                                <li><strong>Error Recovery</strong>: Provide clear error messages and focus on the first error when form submission fails</li>
+                                <li><strong>Sufficient Time</strong>: Avoid session timeouts or provide warnings and options to extend</li>
+                                <li><strong>No Reliance on Color</strong>: Don't use color alone to indicate required fields or errors</li>
+                                <li><strong>Large Touch Targets</strong>: Make form controls large enough to be easily tapped on touch screens</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Keyboard Accessibility</h2>
+                        <p>Many users navigate websites using only a keyboard, including people with motor disabilities, visual impairments, or those who simply prefer keyboard navigation.</p>
+                        
+                        <h3>Focus Management</h3>
+                        <p>Ensure all interactive elements can receive keyboard focus and that focus is visible:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Ensure all interactive elements are focusable --&gt;
+&lt;a href="page.html"&gt;Standard link (naturally focusable)&lt;/a&gt;
+
+&lt;button type="button"&gt;Standard button (naturally focusable)&lt;/button&gt;
+
+&lt;!-- For custom interactive elements, add tabindex="0" --&gt;
+&lt;div tabindex="0" role="button" aria-pressed="false" onclick="togglePanel()" onkeydown="handleKeydown(event)"&gt;
+    Custom button
+&lt;/div&gt;
+
+&lt;!-- CSS for visible focus styles --&gt;
+&lt;style&gt;
+    /* Enhance default focus styles */
+    :focus {
+        outline: 3px solid #4d90fe;
+        outline-offset: 2px;
+    }
+    
+    /* Only hide outline for mouse users, keep it for keyboard users */
+    :focus:not(:focus-visible) {
+        outline: none;
+    }
+    
+    :focus-visible {
+        outline: 3px solid #4d90fe;
+        outline-offset: 2px;
+    }
+&lt;/style&gt;
+
+&lt;!-- JavaScript for custom keyboard interaction --&gt;
+&lt;script&gt;
+    function handleKeydown(event) {
+        // Handle Enter or Space key to activate the element
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            togglePanel();
+        }
+    }
+    
+    function togglePanel() {
+        // Toggle panel logic here
+        const button = event.currentTarget;
+        const isPressed = button.getAttribute('aria-pressed') === 'true';
+        button.setAttribute('aria-pressed', !isPressed);
+    }
+&lt;/script&gt;</code></pre>
+                        
+                        <p>Key principles for keyboard accessibility:</p>
+                        <ul>
+                            <li>All interactive elements must be focusable and operable with a keyboard</li>
+                            <li>Focus order should follow a logical sequence, typically matching the visual order</li>
+                            <li>Focus should be visible at all times (don't remove focus outlines without providing alternatives)</li>
+                            <li>Custom interactive elements should mimic native behavior (e.g., respond to Enter and Space keys)</li>
+                        </ul>
+                        
+                        <h3>Skip Links</h3>
+                        <p>Provide skip links to help keyboard users bypass repetitive navigation:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Skip links at the beginning of the page --&gt;
+&lt;div class="skip-links"&gt;
+    &lt;a href="#main-content" class="skip-link"&gt;Skip to main content&lt;/a&gt;
+    &lt;a href="#footer" class="skip-link"&gt;Skip to footer&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;header&gt;
+    &lt;!-- Header content and navigation --&gt;
+&lt;/header&gt;
+
+&lt;main id="main-content" tabindex="-1"&gt;
+    &lt;!-- Main content --&gt;
+&lt;/main&gt;
+
+&lt;footer id="footer" tabindex="-1"&gt;
+    &lt;!-- Footer content --&gt;
+&lt;/footer&gt;
+
+&lt;!-- CSS for skip links --&gt;
+&lt;style&gt;
+    .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        padding: 8px;
+        background-color: #fff;
+        color: #000;
+        z-index: 100;
+        transition: top 0.3s;
+    }
+    
+    .skip-link:focus {
+        top: 0;
+    }
+&lt;/style&gt;</code></pre>
+                        
+                        <p>Skip links are typically visually hidden until they receive focus, allowing keyboard users to bypass repetitive content while remaining invisible to mouse users.</p>
+                        
+                        <h3>Keyboard Traps</h3>
+                        <p>Avoid keyboard traps, where users can't navigate away from an element using the keyboard:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Bad example: Keyboard trap in a modal --&gt;
+&lt;div class="modal" role="dialog" aria-labelledby="modal-title"&gt;
+    &lt;h2 id="modal-title"&gt;Modal Title&lt;/h2&gt;
+    &lt;p&gt;Modal content...&lt;/p&gt;
+    &lt;button onclick="closeModal()"&gt;Close&lt;/button&gt;
+    &lt;!-- No way to exit with keyboard if closeModal() doesn't work --&gt;
+&lt;/div&gt;
+
+&lt;!-- Good example: Modal with keyboard accessibility --&gt;
+&lt;div class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true"&gt;
+    &lt;h2 id="modal-title"&gt;Modal Title&lt;/h2&gt;
+    &lt;p&gt;Modal content...&lt;/p&gt;
+    &lt;button onclick="closeModal()" aria-label="Close modal"&gt;Close&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    // When modal opens, store the element that had focus
+    let previousFocus;
+    
+    function openModal() {
+        const modal = document.querySelector('.modal');
+        previousFocus = document.activeElement;
+        
+        // Show modal
+        modal.style.display = 'block';
+        
+        // Focus the first focusable element in the modal
+        const firstFocusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        firstFocusable.focus();
+        
+        // Add event listener for Escape key
+        document.addEventListener('keydown', handleEscapeKey);
+    }
+    
+    function closeModal() {
+        const modal = document.querySelector('.modal');
+        
+        // Hide modal
+        modal.style.display = 'none';
+        
+        // Restore focus to the element that had focus before the modal opened
+        if (previousFocus) {
+            previousFocus.focus();
+        }
+        
+        // Remove event listener for Escape key
+        document.removeEventListener('keydown', handleEscapeKey);
+    }
+    
+    function handleEscapeKey(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    }
+    
+    // Trap focus within the modal
+    function trapFocus(event) {
+        const modal = document.querySelector('.modal');
+        if (!modal.contains(event.target)) {
+            event.stopPropagation();
+            
+            const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+            
+            if (event.shiftKey && event.target === firstElement) {
+                lastElement.focus();
+                event.preventDefault();
+            } else if (!event.shiftKey && event.target === lastElement) {
+                firstElement.focus();
+                event.preventDefault();
+            }
+        }
+    }
+&lt;/script&gt;</code></pre>
+                        
+                        <p>The only acceptable keyboard traps are those that are temporary and necessary for functionality, such as a modal dialog where focus should be trapped until the dialog is closed.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>ARIA (Accessible Rich Internet Applications)</h2>
+                        <p>ARIA is a set of attributes that define ways to make web content and applications more accessible to people with disabilities.</p>
+                        
+                        <h3>ARIA Roles</h3>
+                        <p>ARIA roles define what an element is or does:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Landmark roles (most should use semantic HTML instead) --&gt;
+&lt;div role="navigation"&gt;...&lt;/div&gt; &lt;!-- Better: &lt;nav&gt;...&lt;/nav&gt; --&gt;
+&lt;div role="main"&gt;...&lt;/div&gt; &lt;!-- Better: &lt;main&gt;...&lt;/main&gt; --&gt;
+
+&lt;!-- Widget roles --&gt;
+&lt;div role="button" tabindex="0"&gt;Click me&lt;/div&gt;
+&lt;div role="tab" tabindex="0" aria-selected="true"&gt;Tab 1&lt;/div&gt;
+&lt;div role="tabpanel"&gt;Tab 1 content&lt;/div&gt;
+
+&lt;!-- Document structure roles --&gt;
+&lt;div role="heading" aria-level="2"&gt;Heading&lt;/div&gt; &lt;!-- Better: &lt;h2&gt;Heading&lt;/h2&gt; --&gt;
+&lt;div role="list"&gt;
+    &lt;div role="listitem"&gt;Item 1&lt;/div&gt;
+    &lt;div role="listitem"&gt;Item 2&lt;/div&gt;
+&lt;/div&gt; &lt;!-- Better: &lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;/ul&gt; --&gt;</code></pre>
+                        
+                        <p>Important: Always prefer native HTML elements with built-in semantics over ARIA roles when possible. ARIA should be used to enhance accessibility, not replace proper HTML.</p>
+                        
+                        <h3>ARIA States and Properties</h3>
+                        <p>ARIA states and properties provide additional information about elements:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Labels and descriptions --&gt;
+&lt;button aria-label="Close"&gt;×&lt;/button&gt;
+&lt;div aria-labelledby="title"&gt;...&lt;/div&gt;
+&lt;h2 id="title"&gt;Section Title&lt;/h2&gt;
+&lt;button aria-describedby="tooltip"&gt;Help&lt;/button&gt;
+&lt;div id="tooltip" hidden&gt;Click for assistance&lt;/div&gt;
+
+&lt;!-- States --&gt;
+&lt;button aria-pressed="true"&gt;Toggle&lt;/button&gt;
+&lt;div role="checkbox" tabindex="0" aria-checked="false"&gt;Accept terms&lt;/div&gt;
+&lt;div aria-expanded="false"&gt;Show more&lt;/div&gt;
+&lt;input aria-invalid="true"&gt;
+
+&lt;!-- Relationships --&gt;
+&lt;div role="combobox" aria-controls="dropdown" aria-expanded="false"&gt;Select&lt;/div&gt;
+&lt;div id="dropdown" hidden&gt;...&lt;/div&gt;
+&lt;div aria-owns="child"&gt;Parent&lt;/div&gt;
+&lt;div id="child"&gt;Child&lt;/div&gt;</code></pre>
+                        
+                        <p>Common ARIA attributes and their purposes:</p>
+                        <ul>
+                            <li><code>aria-label</code>: Provides a text label for an element</li>
+                            <li><code>aria-labelledby</code>: References another element that serves as the label</li>
+                            <li><code>aria-describedby</code>: References another element that provides additional description</li>
+                            <li><code>aria-expanded</code>: Indicates if a collapsible element is expanded or collapsed</li>
+                            <li><code>aria-hidden</code>: Hides content from assistive technologies</li>
+                            <li><code>aria-live</code>: Defines an area that will be updated dynamically</li>
+                            <li><code>aria-required</code>: Indicates that user input is required</li>
+                            <li><code>aria-selected</code>: Indicates the current selection state of elements</li>
+                        </ul>
+                        
+                        <h3>Live Regions</h3>
+                        <p>ARIA live regions announce dynamic content changes to screen reader users:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Polite live region (waits for user idle) --&gt;
+&lt;div aria-live="polite" aria-atomic="true"&gt;
+    &lt;p id="status-message"&gt;Your changes have been saved.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Assertive live region (interrupts immediately) --&gt;
+&lt;div aria-live="assertive" aria-atomic="true"&gt;
+    &lt;p id="error-message"&gt;An error occurred. Please try again.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Live region with additional attributes --&gt;
+&lt;div 
+    aria-live="polite" 
+    aria-atomic="true" 
+    aria-relevant="additions text"
+    class="notification-area"&gt;
+    &lt;!-- Dynamic content will be inserted here --&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    // Update a live region
+    function showNotification(message) {
+        const notificationArea = document.querySelector('.notification-area');
+        
+        // Clear existing content
+        notificationArea.innerHTML = '';
+        
+        // Add new message
+        const notification = document.createElement('div');
+        notification.textContent = message;
+        notificationArea.appendChild(notification);
+        
+        // Remove after 5 seconds
+        setTimeout(() => {
+            notification.remove();
+        }, 5000);
+    }
+&lt;/script&gt;</code></pre>
+                        
+                        <p>Live region attributes:</p>
+                        <ul>
+                            <li><code>aria-live="polite"</code>: Announces changes when the user is idle (use for most updates)</li>
+                            <li><code>aria-live="assertive"</code>: Announces changes immediately (use only for critical information)</li>
+                            <li><code>aria-atomic="true"</code>: Announces the entire region when any part changes</li>
+                            <li><code>aria-relevant="additions text"</code>: Specifies what types of changes should be announced</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>The First Rule of ARIA</h4>
+                            <p>The first rule of ARIA is: <strong>Don't use ARIA if you don't need to.</strong></p>
+                            <p>Native HTML elements have built-in semantics and behavior that are well-supported by browsers and assistive technologies. Only use ARIA when:</p>
+                            <ul>
+                                <li>You're creating a custom widget that doesn't have a native HTML equivalent</li>
+                                <li>You need to fix accessibility issues in existing code that can't be rewritten</li>
+                                <li>You need to provide additional information that can't be conveyed through native HTML</li>
+                            </ul>
+                            <p>Using ARIA incorrectly can actually make accessibility worse, not better.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Accessible Navigation and Links</h2>
+                        <p>Navigation is a critical part of any website, and it needs to be accessible to all users.</p>
+                        
+                        <h3>Accessible Navigation Menus</h3>
+                        <p>Create navigation menus that work for all users:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Basic accessible navigation --&gt;
+&lt;nav aria-label="Main Navigation"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="/" aria-current="page"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/services"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Dropdown navigation --&gt;
+&lt;nav aria-label="Main Navigation"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;
+            &lt;button 
+                aria-expanded="false" 
+                aria-controls="services-dropdown"&gt;
+                Services
+                &lt;span aria-hidden="true"&gt;▼&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;ul id="services-dropdown" hidden&gt;
+                &lt;li&gt;&lt;a href="/services/web-design"&gt;Web Design&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/services/development"&gt;Development&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/services/consulting"&gt;Consulting&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;script&gt;
+    // Toggle dropdown menu
+    document.querySelectorAll('nav button').forEach(button => {
+        button.addEventListener('click', () => {
+            const expanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !expanded);
+            
+            const dropdown = document.getElementById(button.getAttribute('aria-controls'));
+            dropdown.hidden = expanded;
+            
+            // If opening the dropdown, set focus to the first link
+            if (!expanded) {
+                setTimeout(() => {
+                    dropdown.querySelector('a').focus();
+                }, 10);
+            }
+        });
+    });
+    
+    // Close dropdown when Escape key is pressed
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+            document.querySelectorAll('nav button[aria-expanded="true"]').forEach(button => {
+                button.click();
+                button.focus();
+            });
+        }
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', event => {
+        if (!event.target.closest('nav li')) {
+            document.querySelectorAll('nav button[aria-expanded="true"]').forEach(button => {
+                button.setAttribute('aria-expanded', 'false');
+                document.getElementById(button.getAttribute('aria-controls')).hidden = true;
+            });
+        }
+    });
+&lt;/script&gt;</code></pre>
+                        
+                        <p>Key features of accessible navigation:</p>
+                        <ul>
+                            <li>Use proper semantic structure (<code>&lt;nav&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>)</li>
+                            <li>Provide an <code>aria-label</code> for each navigation section</li>
+                            <li>Use <code>aria-current="page"</code> to indicate the current page</li>
+                            <li>For dropdowns, use <code>aria-expanded</code> and <code>aria-controls</code> to manage state</li>
+                            <li>Ensure keyboard accessibility for all navigation interactions</li>
+                            <li>Provide a way to close dropdowns using the Escape key</li>
+                        </ul>
+                        
+                        <h3>Accessible Links</h3>
+                        <p>Create links that provide clear information about their destination:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Good link text --&gt;
+&lt;a href="accessibility-guidelines.html"&gt;Web Content Accessibility Guidelines&lt;/a&gt;
+
+&lt;!-- Bad link text (avoid) --&gt;
+&lt;a href="accessibility-guidelines.html"&gt;Click here&lt;/a&gt; to read the Web Content Accessibility Guidelines.
+
+&lt;!-- Link with additional context for screen readers --&gt;
+&lt;a href="report.pdf"&gt;
+    Annual Report 
+    &lt;span class="file-info"&gt;(PDF, 2.5MB)&lt;/span&gt;
+&lt;/a&gt;
+
+&lt;!-- Link that opens in a new window --&gt;
+&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;
+    Example Website
+    &lt;span class="visually-hidden"&gt;(opens in a new window)&lt;/span&gt;
+&lt;/a&gt;
+
+&lt;!-- Skip link for keyboard users --&gt;
+&lt;a href="#main-content" class="skip-link"&gt;Skip to main content&lt;/a&gt;</code></pre>
+                        
+                        <p>Best practices for accessible links:</p>
+                        <ul>
+                            <li>Use descriptive link text that makes sense out of context</li>
+                            <li>Avoid generic phrases like "click here" or "read more"</li>
+                            <li>Indicate when links open in a new window or download files</li>
+                            <li>Ensure sufficient color contrast between link text and background</li>
+                            <li>Make sure links are visually distinguishable from surrounding text (not by color alone)</li>
+                            <li>Provide skip links to help keyboard users bypass repetitive content</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Testing for Accessibility</h2>
+                        <p>Testing is a crucial part of ensuring your website is accessible to all users.</p>
+                        
+                        <h3>Automated Testing Tools</h3>
+                        <p>Automated tools can help identify many accessibility issues:</p>
+                        <ul>
+                            <li><strong>WAVE</strong>: Web Accessibility Evaluation Tool by WebAIM</li>
+                            <li><strong>axe</strong>: Accessibility testing engine by Deque Systems</li>
+                            <li><strong>Lighthouse</strong>: Built into Chrome DevTools</li>
+                            <li><strong>NVDA</strong>: Free screen reader for Windows</li>
+                            <li><strong>VoiceOver</strong>: Built-in screen reader for macOS and iOS</li>
+                            <li><strong>Color Contrast Analyzers</strong>: Tools to check color contrast ratios</li>
+                        </ul>
+                        
+                        <h3>Manual Testing Checklist</h3>
+                        <p>Automated tools can't catch everything. Use this checklist for manual testing:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Test</th>
+                                        <th>How to Test</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3">Keyboard Accessibility</td>
+                                        <td>Tab Navigation</td>
+                                        <td>Navigate the entire page using only the Tab key. Ensure all interactive elements are focusable and in a logical order.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Focus Visibility</td>
+                                        <td>Ensure focus is clearly visible on all interactive elements.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Keyboard Traps</td>
+                                        <td>Verify that no element traps keyboard focus (except for modal dialogs).</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="3">Screen Reader Testing</td>
+                                        <td>Content Reading</td>
+                                        <td>Use a screen reader to navigate the page. Ensure all content is announced correctly.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Image Descriptions</td>
+                                        <td>Verify that images have appropriate alt text that conveys their purpose.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Form Labels</td>
+                                        <td>Ensure all form controls have properly associated labels that are announced by screen readers.</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">Visual Testing</td>
+                                        <td>Color Contrast</td>
+                                        <td>Check that text has sufficient contrast against its background (4.5:1 for normal text, 3:1 for large text).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Text Zoom</td>
+                                        <td>Zoom text to 200% and ensure the page remains usable without horizontal scrolling.</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">Content Testing</td>
+                                        <td>Heading Structure</td>
+                                        <td>Verify that headings create a logical outline of the page content.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Link Purpose</td>
+                                        <td>Ensure all links have descriptive text that makes sense out of context.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3>User Testing</h3>
+                        <p>The most valuable accessibility testing involves real users with disabilities:</p>
+                        <ul>
+                            <li>Recruit users with different disabilities (visual, motor, cognitive, etc.)</li>
+                            <li>Provide specific tasks for users to complete</li>
+                            <li>Observe their interactions and note any difficulties</li>
+                            <li>Ask for feedback on their experience</li>
+                            <li>Address issues identified during testing</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Accessibility Statement</h4>
+                            <p>Consider including an accessibility statement on your website that:</p>
+                            <ul>
+                                <li>States your commitment to accessibility</li>
+                                <li>Specifies which guidelines you follow (e.g., WCAG 2.1 Level AA)</li>
+                                <li>Lists any known accessibility issues and workarounds</li>
+                                <li>Provides contact information for users to report accessibility problems</li>
+                                <li>Outlines your plan for ongoing accessibility improvements</li>
+                            </ul>
+                            <p>An accessibility statement demonstrates your commitment to inclusivity and provides valuable information for users with disabilities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Making a Web Page Accessible</h2>
+                        <p>Let's apply what we've learned by improving the accessibility of a web page.</p>
+                        
+                        <h3>Exercise: Fix Accessibility Issues</h3>
+                        <p>Below is a web page with several accessibility issues. Your task is to identify and fix these issues:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Original page with accessibility issues --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page&lt;/title&gt;
+    &lt;style&gt;
+        .nav {
+            background: #333;
+            padding: 10px;
+        }
+        .nav a {
+            color: #999;
+            margin-right: 10px;
+        }
+        .btn {
+            background: green;
+            color: darkgreen;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .required {
+            color: red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="nav"&gt;
+        &lt;a href="#"&gt;Home&lt;/a&gt;
+        &lt;a href="#"&gt;About&lt;/a&gt;
+        &lt;a href="#"&gt;Services&lt;/a&gt;
+        &lt;a href="#"&gt;Contact&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;h3&gt;Welcome to Our Website&lt;/h3&gt;
+        &lt;img src="hero.jpg"&gt;
+        &lt;p&gt;Click &lt;a href="details.html"&gt;here&lt;/a&gt; to learn more about our services.&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;h3&gt;Our Services&lt;/h3&gt;
+        &lt;div&gt;
+            &lt;h3&gt;Web Design&lt;/h3&gt;
+            &lt;p&gt;We create beautiful websites.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;h3&gt;Development&lt;/h3&gt;
+            &lt;p&gt;We build robust applications.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;h3&gt;Contact Us&lt;/h3&gt;
+        &lt;form&gt;
+            &lt;div&gt;
+                &lt;input type="text" placeholder="Name" required&gt;
+                &lt;span class="required"&gt;*&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;input type="text" placeholder="Email" required&gt;
+                &lt;span class="required"&gt;*&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;textarea placeholder="Message"&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;div class="btn" onclick="submitForm()"&gt;Submit&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;p&gt;© 2025 Our Company&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;script&gt;
+        function submitForm() {
+            // Form submission logic
+            alert('Form submitted!');
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>Here are some of the accessibility issues in this page:</p>
+                        <ul>
+                            <li>Missing language attribute on the HTML element</li>
+                            <li>Inadequate page title</li>
+                            <li>Missing viewport meta tag</li>
+                            <li>Poor color contrast in navigation and buttons</li>
+                            <li>Non-semantic document structure</li>
+                            <li>Inconsistent heading hierarchy</li>
+                            <li>Missing alt text for image</li>
+                            <li>Non-descriptive link text ("click here")</li>
+                            <li>Missing form labels</li>
+                            <li>Using color alone to indicate required fields</li>
+                            <li>Non-semantic button implementation</li>
+                        </ul>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Fix the accessibility issues in the example code. Your solution should:</p>
+                            <ol>
+                                <li>Use proper semantic HTML elements</li>
+                                <li>Include appropriate ARIA attributes where needed</li>
+                                <li>Provide proper labels for all form controls</li>
+                                <li>Ensure adequate color contrast</li>
+                                <li>Create a logical heading structure</li>
+                                <li>Make all interactive elements keyboard accessible</li>
+                                <li>Provide descriptive text for links and buttons</li>
+                                <li>Include appropriate alt text for images</li>
+                                <li>Use proper document metadata</li>
+                                <li>Ensure the page is responsive and works well at different zoom levels</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored HTML accessibility, which is essential for creating websites that can be used by everyone, including people with disabilities:</p>
+                        <ul>
+                            <li><strong>Introduction to Web Accessibility</strong>: What accessibility is, its benefits, and the different types of disabilities that affect web usage</li>
+                            <li><strong>Semantic HTML for Accessibility</strong>: Using proper document structure, heading hierarchy, and text-level semantics</li>
+                            <li><strong>Accessible Images and Media</strong>: Providing alternative text, captions, transcripts, and audio descriptions</li>
+                            <li><strong>Accessible Forms</strong>: Labeling form controls, grouping related fields, and providing clear instructions and error messages</li>
+                            <li><strong>Keyboard Accessibility</strong>: Ensuring all interactive elements can be used with a keyboard, managing focus, and avoiding keyboard traps</li>
+                            <li><strong>ARIA (Accessible Rich Internet Applications)</strong>: Using ARIA roles, states, properties, and live regions to enhance accessibility</li>
+                            <li><strong>Accessible Navigation and Links</strong>: Creating navigation menus and links that work for all users</li>
+                            <li><strong>Testing for Accessibility</strong>: Using automated tools, manual testing, and user testing to identify and fix accessibility issues</li>
+                        </ul>
+                        
+                        <p>Accessibility is not just a technical requirement but a fundamental aspect of creating an inclusive web that works for everyone. By implementing the techniques covered in this lesson, you can ensure that your websites are accessible to all users, regardless of their abilities or how they access the web.</p>
+                        
+                        <p>Remember these key points:</p>
+                        <ul>
+                            <li><strong>Use semantic HTML</strong> as the foundation of accessibility</li>
+                            <li><strong>Provide text alternatives</strong> for non-text content</li>
+                            <li><strong>Ensure keyboard accessibility</strong> for all interactive elements</li>
+                            <li><strong>Create a logical structure</strong> with proper heading hierarchy</li>
+                            <li><strong>Label all form controls</strong> and provide clear instructions</li>
+                            <li><strong>Use ARIA attributes</strong> to enhance accessibility when needed</li>
+                            <li><strong>Test with assistive technologies</strong> to ensure a good user experience</li>
+                            <li><strong>Consider accessibility from the beginning</strong> of the design and development process</li>
+                        </ul>
+                        
+                        <p>This concludes our exploration of professional HTML topics. In the next section, we'll begin exploring CSS basics, which will build on the HTML knowledge you've gained and allow you to create visually appealing and accessible websites.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page24.html" class="btn">Previous: Responsive HTML</a>
+                        <a href="../../css/basic/page26.html" class="btn">Next: Introduction to CSS</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

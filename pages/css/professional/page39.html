@@ -1,0 +1,1846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Preprocessors | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn about CSS preprocessors like Sass, Less, and Stylus to enhance your CSS workflow.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="39">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html" class="active">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional CSS</h3>
+                <ul>
+                    <li><a href="page38.html">38. Advanced CSS Features</a></li>
+                    <li><a href="page39.html" class="active">39. CSS Preprocessors</a></li>
+                    <li><a href="page40.html">40. CSS Architecture</a></li>
+                    <li><a href="page41.html">41. CSS Frameworks</a></li>
+                    <li><a href="page42.html">42. Advanced Layouts</a></li>
+                    <li><a href="page43.html">43. Advanced Animations</a></li>
+                    <li><a href="page44.html">44. CSS-in-JS</a></li>
+                    <li><a href="page45.html">45. CSS Houdini</a></li>
+                    <li><a href="page46.html">46. CSS Performance</a></li>
+                    <li><a href="page47.html">47. CSS Testing</a></li>
+                    <li><a href="page48.html">48. CSS for Print</a></li>
+                    <li><a href="page49.html">49. Future of CSS</a></li>
+                    <li><a href="page50.html">50. Building a Portfolio</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 78%;"></div>
+                </div>
+                <p style="text-align: center;">Page 39 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>CSS Preprocessors</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to CSS Preprocessors</h2>
+                        <p>CSS preprocessors are scripting languages that extend CSS with programming features, making stylesheets more powerful, maintainable, and efficient. They compile into standard CSS that browsers can understand, while providing developers with advanced capabilities that aren't available in plain CSS.</p>
+                        
+                        <p>In this lesson, we'll explore the most popular CSS preprocessors—Sass, Less, and Stylus—and learn how they can enhance your CSS workflow with features like variables, nesting, mixins, functions, and more.</p>
+                        
+                        <h3>Why Use CSS Preprocessors?</h3>
+                        <p>CSS preprocessors offer several advantages over writing plain CSS:</p>
+                        
+                        <ul>
+                            <li><strong>Improved Organization</strong>: Features like nesting and partials help organize code more logically</li>
+                            <li><strong>Enhanced Maintainability</strong>: Variables and mixins reduce repetition and make updates easier</li>
+                            <li><strong>Increased Productivity</strong>: Built-in functions and operations save time and reduce errors</li>
+                            <li><strong>Advanced Capabilities</strong>: Conditionals, loops, and mathematical operations add programming power</li>
+                            <li><strong>Better Collaboration</strong>: Modular structure makes it easier for teams to work together</li>
+                        </ul>
+                        
+                        <h3>Popular CSS Preprocessors</h3>
+                        <p>While there are several CSS preprocessors available, three have emerged as the most widely used:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Preprocessor</th>
+                                        <th>Syntax</th>
+                                        <th>Learning Curve</th>
+                                        <th>Popularity</th>
+                                        <th>Key Features</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Sass</strong></td>
+                                        <td>SCSS (.scss) or Sass (.sass)</td>
+                                        <td>Moderate</td>
+                                        <td>Very High</td>
+                                        <td>Most mature, two syntax options, extensive libraries</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Less</strong></td>
+                                        <td>Less (.less)</td>
+                                        <td>Low</td>
+                                        <td>High</td>
+                                        <td>JavaScript-based, CSS-like syntax, easy to learn</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Stylus</strong></td>
+                                        <td>Stylus (.styl)</td>
+                                        <td>High</td>
+                                        <td>Moderate</td>
+                                        <td>Flexible syntax, powerful features, highly expressive</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <p>In this lesson, we'll focus primarily on Sass (specifically the SCSS syntax) as it's the most widely used preprocessor, but we'll also cover key differences in Less and Stylus.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Getting Started with Sass</h2>
+                        <p>Sass (Syntactically Awesome Style Sheets) is the most mature and widely used CSS preprocessor. It offers two syntax options: SCSS (Sassy CSS), which is a superset of CSS, and the original Sass syntax, which uses indentation instead of braces and semicolons.</p>
+                        
+                        <h3>Installation and Setup</h3>
+                        <p>There are several ways to use Sass in your projects:</p>
+                        
+                        <h4>1. Command Line</h4>
+                        <pre><code class="language-bash"># Install Sass globally using npm
+npm install -g sass
+
+# Compile a single file
+sass input.scss output.css
+
+# Watch for changes
+sass --watch input.scss:output.css
+
+# Watch a directory
+sass --watch scss:css</code></pre>
+                        
+                        <h4>2. Build Tools</h4>
+                        <p>Sass can be integrated with build tools like Webpack, Gulp, or Grunt:</p>
+                        
+                        <pre><code class="language-javascript">// Example with Webpack and sass-loader
+module.exports = {
+  // ...
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      }
+    ]
+  }
+};</code></pre>
+                        
+                        <h4>3. GUI Applications</h4>
+                        <p>Several applications provide a graphical interface for working with Sass:</p>
+                        <ul>
+                            <li>Prepros</li>
+                            <li>Koala</li>
+                            <li>Scout-App</li>
+                        </ul>
+                        
+                        <h3>SCSS vs Sass Syntax</h3>
+                        <p>Sass offers two syntax options:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>SCSS Syntax (.scss)</th>
+                                        <th>Sass Syntax (.sass)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+<pre><code class="language-scss">.button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+  
+  &:hover {
+    background-color: darken(#3498db, 10%);
+  }
+}</code></pre>
+                                        </td>
+                                        <td>
+<pre><code class="language-sass">.button
+  background-color: #3498db
+  color: white
+  padding: 10px 15px
+  
+  &:hover
+    background-color: darken(#3498db, 10%)</code></pre>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <p>We'll focus on the SCSS syntax in this lesson as it's more widely used and easier for CSS developers to adopt since it's a superset of CSS (valid CSS is also valid SCSS).</p>
+                        
+                        <h3>Basic Project Structure</h3>
+                        <p>A typical Sass project structure might look like this:</p>
+                        
+                        <pre><code class="language-text">project/
+├── scss/
+│   ├── main.scss             # Main file that imports all others
+│   ├── _variables.scss       # Variables
+│   ├── _mixins.scss          # Mixins and functions
+│   ├── _base.scss            # Base styles
+│   ├── _typography.scss      # Typography styles
+│   ├── _buttons.scss         # Button styles
+│   ├── _forms.scss           # Form styles
+│   └── _layout.scss          # Layout styles
+└── css/
+    └── main.css              # Compiled CSS output</code></pre>
+                        
+                        <p>Note the underscore prefix (_) for partial files. These are files meant to be imported into other Sass files and not compiled directly to CSS.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Sass Features: Variables and Calculations</h2>
+                        <p>One of the most powerful features of Sass is the ability to define and use variables, making your stylesheets more maintainable and consistent.</p>
+                        
+                        <h3>Variables</h3>
+                        <p>Variables in Sass are defined with the <code>$</code> symbol:</p>
+                        
+                        <pre><code class="language-scss">// Defining variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-stack: 'Poppins', sans-serif;
+$base-spacing: 1rem;
+$border-radius: 4px;
+
+// Using variables
+body {
+  font-family: $font-stack;
+  line-height: 1.6;
+}
+
+.button {
+  background-color: $primary-color;
+  border-radius: $border-radius;
+  padding: $base-spacing;
+}
+
+.alert {
+  border: 1px solid $secondary-color;
+  margin-bottom: $base-spacing * 2;
+}</code></pre>
+                        
+                        <h3>Variable Scope</h3>
+                        <p>Variables in Sass have scope, meaning they're only available within the block they're defined in, unless they're defined at the root level:</p>
+                        
+                        <pre><code class="language-scss">$global-color: blue;  // Global variable
+
+.container {
+  $local-padding: 20px;  // Local variable
+  padding: $local-padding;
+  color: $global-color;
+}
+
+.other-element {
+  // This works
+  color: $global-color;
+  
+  // This would cause an error
+  // padding: $local-padding;
+}</code></pre>
+                        
+                        <h3>Default Values</h3>
+                        <p>You can set default values for variables using the <code>!default</code> flag, which only assigns the value if the variable isn't already defined:</p>
+                        
+                        <pre><code class="language-scss">// _variables.scss
+$primary-color: blue !default;
+$secondary-color: green !default;
+
+// main.scss
+$primary-color: purple;  // Override the default
+@import 'variables';
+
+.element {
+  // Will be purple, not blue
+  color: $primary-color;
+  
+  // Will be green (the default)
+  background-color: $secondary-color;
+}</code></pre>
+                        
+                        <p>This is particularly useful for creating configurable libraries or frameworks.</p>
+                        
+                        <h3>Calculations and Operations</h3>
+                        <p>Sass allows you to perform mathematical operations directly in your stylesheets:</p>
+                        
+                        <pre><code class="language-scss">$base-spacing: 1rem;
+
+.container {
+  // Basic arithmetic
+  padding: $base-spacing * 2;
+  margin-bottom: $base-spacing + 0.5rem;
+  width: 100% - 20px;
+  
+  // More complex calculations
+  line-height: (18px / 16px);
+  font-size: calc(1rem + 0.5vw);
+}</code></pre>
+                        
+                        <h3>Color Operations</h3>
+                        <p>Sass provides powerful functions for manipulating colors:</p>
+                        
+                        <pre><code class="language-scss">$primary-color: #3498db;
+
+.button {
+  background-color: $primary-color;
+  
+  &:hover {
+    // Darken by 10%
+    background-color: darken($primary-color, 10%);
+  }
+  
+  &:active {
+    // Darken by 15%
+    background-color: darken($primary-color, 15%);
+  }
+  
+  &.light {
+    // Lighten by 20%
+    background-color: lighten($primary-color, 20%);
+    
+    // Adjust saturation
+    border-color: saturate($primary-color, 20%);
+  }
+  
+  &.disabled {
+    // Reduce opacity
+    background-color: rgba($primary-color, 0.5);
+    
+    // Desaturate (make more gray)
+    border-color: desaturate($primary-color, 30%);
+  }
+}</code></pre>
+                        
+                        <h3>Other Color Functions</h3>
+                        <pre><code class="language-scss">$base-color: #3498db;
+
+.color-variations {
+  // Adjust hue (shift color while maintaining lightness/saturation)
+  --color-1: adjust-hue($base-color, 30deg);
+  
+  // Mix colors
+  --color-2: mix($base-color, #ff0000, 70%);
+  
+  // Complement (opposite on color wheel)
+  --color-3: complement($base-color);
+  
+  // Invert
+  --color-4: invert($base-color);
+  
+  // Grayscale
+  --color-5: grayscale($base-color);
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>CSS Custom Properties vs. Sass Variables</h4>
+                            <p>While both serve similar purposes, they have important differences:</p>
+                            <ul>
+                                <li><strong>Sass variables</strong> are processed at compile time and can't be changed in the browser</li>
+                                <li><strong>CSS Custom Properties</strong> (variables) are processed at runtime and can be changed with JavaScript</li>
+                                <li>Sass variables support more operations and can be used in more contexts</li>
+                                <li>CSS Custom Properties cascade and inherit like other CSS properties</li>
+                            </ul>
+                            <p>A common approach is to use Sass variables for values that won't change (like a color palette) and CSS Custom Properties for values that might change dynamically.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Sass Features: Nesting and Parent Selectors</h2>
+                        <p>Nesting is one of the most popular features of Sass, allowing you to write more concise and readable CSS by nesting selectors within one another.</p>
+                        
+                        <h3>Basic Nesting</h3>
+                        <p>Nesting allows you to structure your CSS to match the HTML hierarchy:</p>
+                        
+                        <pre><code class="language-scss">// Without nesting (CSS)
+.card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.card-header {
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-footer {
+  border-top: 1px solid #ddd;
+  padding: 10px;
+}
+
+// With nesting (SCSS)
+.card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  
+  .card-header {
+    background-color: #f5f5f5;
+    padding: 10px;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-footer {
+    border-top: 1px solid #ddd;
+    padding: 10px;
+  }
+}</code></pre>
+                        
+                        <p>The nested SCSS compiles to the same CSS as the non-nested version, but it's more organized and easier to read.</p>
+                        
+                        <h3>Parent Selector (&)</h3>
+                        <p>The ampersand (<code>&</code>) symbol represents the parent selector, allowing you to reference the parent within a nested rule:</p>
+                        
+                        <pre><code class="language-scss">.button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+  
+  // Hover state
+  &:hover {
+    background-color: darken(#3498db, 10%);
+  }
+  
+  // Active state
+  &:active {
+    transform: translateY(1px);
+  }
+  
+  // Disabled state
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  // Modifiers
+  &--large {
+    padding: 15px 20px;
+    font-size: 1.2em;
+  }
+  
+  &--small {
+    padding: 5px 10px;
+    font-size: 0.8em;
+  }
+  
+  // Contextual styling
+  .dark-theme & {
+    background-color: #2c3e50;
+    
+    &:hover {
+      background-color: lighten(#2c3e50, 10%);
+    }
+  }
+}</code></pre>
+                        
+                        <p>This compiles to:</p>
+                        
+                        <pre><code class="language-css">.button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+}
+
+.button:hover {
+  background-color: #217dbb;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.button--large {
+  padding: 15px 20px;
+  font-size: 1.2em;
+}
+
+.button--small {
+  padding: 5px 10px;
+  font-size: 0.8em;
+}
+
+.dark-theme .button {
+  background-color: #2c3e50;
+}
+
+.dark-theme .button:hover {
+  background-color: #3e5771;
+}</code></pre>
+                        
+                        <h3>Nesting Properties</h3>
+                        <p>Sass also allows you to nest properties that share a namespace:</p>
+                        
+                        <pre><code class="language-scss">// Without property nesting
+.element {
+  margin-top: 10px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+// With property nesting
+.element {
+  margin: {
+    top: 10px;
+    right: 15px;
+    bottom: 10px;
+    left: 15px;
+  }
+  padding: {
+    top: 20px;
+    right: 10px;
+    bottom: 20px;
+    left: 10px;
+  }
+}</code></pre>
+                        
+                        <h3>Media Query Nesting</h3>
+                        <p>One of the most powerful uses of nesting is with media queries, allowing you to keep responsive styles with the selectors they modify:</p>
+                        
+                        <pre><code class="language-scss">// Without media query nesting
+.container {
+  width: 100%;
+  padding: 10px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+// With media query nesting
+.container {
+  width: 100%;
+  padding: 10px;
+  
+  @media (min-width: 768px) {
+    width: 750px;
+    padding: 20px;
+  }
+  
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Avoiding Excessive Nesting</h4>
+                            <p>While nesting is powerful, excessive nesting can lead to:</p>
+                            <ul>
+                                <li>Overly specific selectors that are hard to override</li>
+                                <li>CSS bloat with unnecessarily long selectors</li>
+                                <li>Styles that are too tightly coupled to HTML structure</li>
+                            </ul>
+                            <p>Best practice is to limit nesting to 3-4 levels deep and use nesting primarily for:</p>
+                            <ul>
+                                <li>Parent-child relationships that are unlikely to change</li>
+                                <li>Pseudo-classes and pseudo-elements</li>
+                                <li>Media queries</li>
+                                <li>State variations (using the & operator)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Sass Features: Mixins and Functions</h2>
+                        <p>Mixins and functions are powerful features in Sass that allow you to reuse styles and logic throughout your stylesheets.</p>
+                        
+                        <h3>Mixins</h3>
+                        <p>Mixins are reusable blocks of styles that can be included in other selectors. They're defined with <code>@mixin</code> and included with <code>@include</code>:</p>
+                        
+                        <pre><code class="language-scss">// Define a mixin
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Use the mixin
+.container {
+  @include center-flex;
+  height: 100vh;
+}
+
+.card-content {
+  @include center-flex;
+  height: 200px;
+}</code></pre>
+                        
+                        <h3>Mixins with Parameters</h3>
+                        <p>Mixins can accept parameters, making them more flexible:</p>
+                        
+                        <pre><code class="language-scss">// Mixin with parameters
+@mixin box-shadow($x, $y, $blur, $color) {
+  -webkit-box-shadow: $x $y $blur $color;
+  -moz-box-shadow: $x $y $blur $color;
+  box-shadow: $x $y $blur $color;
+}
+
+// Use the mixin with different values
+.card {
+  @include box-shadow(0, 2px, 5px, rgba(0, 0, 0, 0.1));
+}
+
+.modal {
+  @include box-shadow(0, 5px, 15px, rgba(0, 0, 0, 0.3));
+}</code></pre>
+                        
+                        <h3>Default Parameter Values</h3>
+                        <p>You can set default values for mixin parameters:</p>
+                        
+                        <pre><code class="language-scss">@mixin border-radius($radius: 4px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// Use default value
+.button {
+  @include border-radius; // Uses 4px
+}
+
+// Override default
+.button-rounded {
+  @include border-radius(20px);
+}</code></pre>
+                        
+                        <h3>Variable Arguments</h3>
+                        <p>Mixins can accept variable numbers of arguments using the ellipsis (<code>...</code>) syntax:</p>
+                        
+                        <pre><code class="language-scss">@mixin transition($properties...) {
+  -webkit-transition: $properties;
+  -moz-transition: $properties;
+  transition: $properties;
+}
+
+// Use with different numbers of arguments
+.button {
+  @include transition(background-color 0.3s ease);
+}
+
+.card {
+  @include transition(transform 0.2s ease, box-shadow 0.2s ease);
+}</code></pre>
+                        
+                        <h3>Content Blocks</h3>
+                        <p>Mixins can accept content blocks using <code>@content</code>, which is useful for things like media queries:</p>
+                        
+                        <pre><code class="language-scss">@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+}
+
+// Use the mixin with content
+.container {
+  width: 1200px;
+  
+  @include respond-to(large) {
+    width: 900px;
+  }
+  
+  @include respond-to(medium) {
+    width: 700px;
+  }
+  
+  @include respond-to(small) {
+    width: 100%;
+  }
+}</code></pre>
+                        
+                        <h3>Functions</h3>
+                        <p>While mixins output CSS, functions return values that can be used in property values. Functions are defined with <code>@function</code> and return values with <code>@return</code>:</p>
+                        
+                        <pre><code class="language-scss">// Define a function to convert pixels to rem
+@function rem($pixels, $context: 16) {
+  @return ($pixels / $context) * 1rem;
+}
+
+// Use the function
+body {
+  font-size: rem(16);
+}
+
+h1 {
+  font-size: rem(32);
+  margin-bottom: rem(24);
+}</code></pre>
+                        
+                        <h3>More Function Examples</h3>
+                        <pre><code class="language-scss">// Calculate contrast color
+@function contrast-color($color) {
+  $luminance: (0.2126 * red($color) + 0.7152 * green($color) + 0.0722 * blue($color)) / 255;
+  
+  @return if($luminance > 0.5, #000, #fff);
+}
+
+// Calculate grid column width
+@function column-width($columns, $total-columns: 12, $gap: 20px) {
+  $total-gap: ($total-columns - 1) * $gap;
+  $column-width: (100% - $total-gap) / $total-columns;
+  
+  @return $column-width * $columns + ($columns - 1) * $gap;
+}
+
+// Usage
+.button {
+  background-color: #3498db;
+  color: contrast-color(#3498db); // Returns white
+}
+
+.column {
+  width: column-width(4); // 4 columns out of 12
+}</code></pre>
+                        
+                        <h3>Built-in Functions</h3>
+                        <p>Sass provides many built-in functions for working with colors, numbers, strings, lists, and maps:</p>
+                        
+                        <pre><code class="language-scss">// Color functions
+$primary: #3498db;
+$light-primary: lighten($primary, 20%);
+$dark-primary: darken($primary, 20%);
+$desaturated: desaturate($primary, 30%);
+$complementary: complement($primary);
+
+// List functions
+$sizes: 10px 20px 30px 40px;
+$first-size: nth($sizes, 1); // 10px
+$list-length: length($sizes); // 4
+$has-size: index($sizes, 30px); // 3
+$reversed: list.reverse($sizes); // 40px 30px 20px 10px
+
+// Map functions
+$theme: (
+  'primary': #3498db,
+  'secondary': #2ecc71,
+  'text': #333
+);
+
+$primary-color: map-get($theme, 'primary');
+$has-key: map-has-key($theme, 'text'); // true
+$all-keys: map-keys($theme); // 'primary', 'secondary', 'text'</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Mixins vs. Functions</h4>
+                            <p>Understanding when to use each:</p>
+                            <ul>
+                                <li><strong>Use mixins</strong> when you need to generate CSS rules</li>
+                                <li><strong>Use functions</strong> when you need to compute and return values</li>
+                            </ul>
+                            <p>For example:</p>
+                            <ul>
+                                <li>A border-radius mixin would output vendor prefixes and the standard property</li>
+                                <li>A contrast-color function would calculate and return a color value</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Sass Features: Control Directives and Modules</h2>
+                        <p>Sass provides programming-like control directives and a module system for organizing your code.</p>
+                        
+                        <h3>Conditionals (@if, @else)</h3>
+                        <p>Sass allows you to use conditional logic in your stylesheets:</p>
+                        
+                        <pre><code class="language-scss">$theme: 'dark';
+
+body {
+  @if $theme == 'dark' {
+    background-color: #121212;
+    color: #f5f5f5;
+  } @else if $theme == 'light' {
+    background-color: #f5f5f5;
+    color: #121212;
+  } @else {
+    background-color: white;
+    color: black;
+  }
+}
+
+@mixin button-variant($color, $background) {
+  color: $color;
+  background-color: $background;
+  
+  @if lightness($background) > 50% {
+    border: 1px solid darken($background, 10%);
+  } @else {
+    border: 1px solid lighten($background, 10%);
+  }
+}</code></pre>
+                        
+                        <h3>Loops (@for, @each, @while)</h3>
+                        <p>Sass provides several types of loops for generating repetitive styles:</p>
+                        
+                        <h4>@for Loop</h4>
+                        <pre><code class="language-scss">// Generate grid columns
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: percentage($i / 12);
+  }
+}
+
+// Generate heading sizes
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: 3rem - ($i * 0.4rem);
+  }
+}</code></pre>
+                        
+                        <h4>@each Loop</h4>
+                        <pre><code class="language-scss">// Loop through a list
+$colors: (primary, #3498db), (secondary, #2ecc71), (danger, #e74c3c);
+
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: $color;
+  }
+  
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+
+// Loop through a map
+$breakpoints: (
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  xlarge: 1200px
+);
+
+@each $name, $size in $breakpoints {
+  .visible-#{$name} {
+    display: none;
+    
+    @media (min-width: $size) {
+      display: block;
+    }
+  }
+}</code></pre>
+                        
+                        <h4>@while Loop</h4>
+                        <pre><code class="language-scss">// Generate decreasing opacity variants
+$opacity: 1;
+$i: 10;
+
+@while $i > 0 {
+  .opacity-#{$i * 10} {
+    opacity: $opacity;
+  }
+  
+  $opacity: $opacity - 0.1;
+  $i: $i - 1;
+}</code></pre>
+                        
+                        <h3>Modules and Partials</h3>
+                        <p>Sass allows you to split your code into multiple files (partials) and import them using the <code>@import</code> or <code>@use</code> directives.</p>
+                        
+                        <h4>Partials</h4>
+                        <p>Partials are Sass files that start with an underscore (_) and aren't compiled to CSS on their own. They're meant to be imported into other files.</p>
+                        
+                        <pre><code class="language-scss">// _variables.scss
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-stack: 'Poppins', sans-serif;
+
+// _mixins.scss
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// main.scss
+@import 'variables';
+@import 'mixins';
+
+body {
+  font-family: $font-stack;
+}
+
+.container {
+  @include flex-center;
+}</code></pre>
+                        
+                        <h4>The @use Rule (Modern Approach)</h4>
+                        <p>The <code>@use</code> rule is the modern replacement for <code>@import</code> in Sass, providing better encapsulation and namespace control:</p>
+                        
+                        <pre><code class="language-scss">// _colors.scss
+$primary: #3498db;
+$secondary: #2ecc71;
+
+@function contrast($color) {
+  @return if(lightness($color) > 50%, black, white);
+}
+
+// _typography.scss
+$font-stack: 'Poppins', sans-serif;
+$base-size: 16px;
+
+@mixin heading($level) {
+  font-weight: bold;
+  font-size: $base-size * (2 - ($level - 1) * 0.2);
+}
+
+// main.scss
+@use 'colors';
+@use 'typography' as type;
+
+body {
+  font-family: type.$font-stack;
+  color: colors.$primary;
+}
+
+h1 {
+  @include type.heading(1);
+  color: colors.contrast(colors.$primary);
+}</code></pre>
+                        
+                        <h4>Namespaces and Aliases</h4>
+                        <p>With <code>@use</code>, you can control namespaces or create aliases:</p>
+                        
+                        <pre><code class="language-scss">// Default namespace (filename)
+@use 'colors';
+.element { color: colors.$primary; }
+
+// Custom namespace
+@use 'colors' as c;
+.element { color: c.$primary; }
+
+// No namespace
+@use 'colors' as *;
+.element { color: $primary; } // Not recommended for large projects</code></pre>
+                        
+                        <h3>The @forward Rule</h3>
+                        <p>The <code>@forward</code> rule lets you combine multiple Sass files while maintaining their namespaces:</p>
+                        
+                        <pre><code class="language-scss">// _base-variables.scss
+$font-stack: 'Poppins', sans-serif;
+$base-size: 16px;
+
+// _theme-variables.scss
+$primary: #3498db;
+$secondary: #2ecc71;
+
+// _variables.scss (combines both)
+@forward 'base-variables';
+@forward 'theme-variables';
+
+// main.scss
+@use 'variables';
+body {
+  font-family: variables.$font-stack;
+  color: variables.$primary;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>@import vs. @use</h4>
+                            <p>While <code>@import</code> is still widely used, <code>@use</code> is recommended for new projects because it:</p>
+                            <ul>
+                                <li>Only imports each file once, regardless of how many times it's used</li>
+                                <li>Creates namespaces to avoid variable name collisions</li>
+                                <li>Makes dependencies explicit and easier to track</li>
+                                <li>Allows private members with a leading underscore (_)</li>
+                            </ul>
+                            <p>Note that <code>@import</code> is being deprecated and will eventually be removed from Sass.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Other CSS Preprocessors</h2>
+                        <p>While Sass is the most popular CSS preprocessor, Less and Stylus are also widely used and offer their own unique features and syntax.</p>
+                        
+                        <h3>Less</h3>
+                        <p>Less (Leaner Style Sheets) is a JavaScript-based preprocessor that's known for its simplicity and CSS-like syntax.</p>
+                        
+                        <h4>Variables in Less</h4>
+                        <pre><code class="language-less">// Variables use @ symbol
+@primary-color: #3498db;
+@secondary-color: #2ecc71;
+@base-padding: 15px;
+
+.button {
+  background-color: @primary-color;
+  padding: @base-padding;
+  
+  &:hover {
+    background-color: darken(@primary-color, 10%);
+  }
+}</code></pre>
+                        
+                        <h4>Mixins in Less</h4>
+                        <pre><code class="language-less">// Simple mixin
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+// Using the mixin
+.button {
+  .border-radius(4px);
+}
+
+// Mixins with default parameters
+.box-shadow(@x: 0, @y: 1px, @blur: 2px, @color: rgba(0, 0, 0, 0.1)) {
+  box-shadow: @x @y @blur @color;
+}
+
+// Using with defaults
+.card {
+  .box-shadow();
+}
+
+// Overriding defaults
+.modal {
+  .box-shadow(0, 5px, 15px, rgba(0, 0, 0, 0.3));
+}</code></pre>
+                        
+                        <h4>Operations in Less</h4>
+                        <pre><code class="language-less">@base-size: 16px;
+@line-height: 1.5;
+
+body {
+  font-size: @base-size;
+  line-height: @line-height;
+}
+
+h1 {
+  font-size: @base-size * 2;
+  margin-bottom: @base-size * @line-height;
+}</code></pre>
+                        
+                        <h4>Nesting in Less</h4>
+                        <pre><code class="language-less">.navbar {
+  background-color: #333;
+  
+  .nav-item {
+    display: inline-block;
+    
+    a {
+      color: white;
+      padding: 10px 15px;
+      
+      &:hover {
+        color: #ddd;
+      }
+    }
+  }
+}</code></pre>
+                        
+                        <h3>Stylus</h3>
+                        <p>Stylus is known for its flexible syntax, allowing you to write CSS with or without punctuation.</p>
+                        
+                        <h4>Variables in Stylus</h4>
+                        <pre><code class="language-stylus">// Variables don't need $ or @ prefix
+primary-color = #3498db
+secondary-color = #2ecc71
+base-padding = 15px
+
+.button
+  background-color primary-color
+  padding base-padding
+  
+  &:hover
+    background-color darken(primary-color, 10%)</code></pre>
+                        
+                        <h4>Mixins in Stylus</h4>
+                        <pre><code class="language-stylus">// Define a mixin
+border-radius(radius)
+  -webkit-border-radius radius
+  -moz-border-radius radius
+  border-radius radius
+
+// Use the mixin
+.button
+  border-radius(4px)
+
+// Mixin with default values
+box-shadow(x = 0, y = 1px, blur = 2px, color = rgba(0, 0, 0, 0.1))
+  box-shadow x y blur color
+
+// Use with defaults
+.card
+  box-shadow()
+
+// Override defaults
+.modal
+  box-shadow(0, 5px, 15px, rgba(0, 0, 0, 0.3))</code></pre>
+                        
+                        <h4>Optional Syntax in Stylus</h4>
+                        <p>Stylus allows you to write CSS with or without braces, colons, and semicolons:</p>
+                        
+                        <pre><code class="language-stylus">// Full CSS-style syntax
+.element {
+  color: #333;
+  font-size: 16px;
+}
+
+// Without braces
+.element
+  color: #333
+  font-size: 16px
+
+// Without colons
+.element
+  color #333
+  font-size 16px
+
+// Without parentheses in function calls
+.element
+  background-color darken(#3498db, 10%)
+  // or
+  background-color darken #3498db, 10%</code></pre>
+                        
+                        <h4>Iteration in Stylus</h4>
+                        <pre><code class="language-stylus">// Generate grid columns
+for i in (1..12)
+  .col-{i}
+    width (i / 12 * 100)%
+
+// Loop through a list
+sizes = 'small' 'medium' 'large'
+for size in sizes
+  .btn-{size}
+    if size == 'small'
+      padding 5px 10px
+    else if size == 'medium'
+      padding 10px 15px
+    else
+      padding 15px 20px</code></pre>
+                        
+                        <h3>Comparison of Preprocessors</h3>
+                        <p>Here's a quick comparison of the three main preprocessors:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>Sass (SCSS)</th>
+                                        <th>Less</th>
+                                        <th>Stylus</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Variables</td>
+                                        <td><code>$variable: value;</code></td>
+                                        <td><code>@variable: value;</code></td>
+                                        <td><code>variable = value</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nesting</td>
+                                        <td>Yes</td>
+                                        <td>Yes</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mixins</td>
+                                        <td><code>@mixin name() {...}</code><br><code>@include name();</code></td>
+                                        <td><code>.name() {...}</code><br><code>.name();</code></td>
+                                        <td><code>name()</code><br><code>name()</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Functions</td>
+                                        <td><code>@function name() {...}</code></td>
+                                        <td>Limited</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Conditionals</td>
+                                        <td><code>@if/@else</code></td>
+                                        <td>Guards & when()</td>
+                                        <td>if/else</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loops</td>
+                                        <td><code>@for/@each/@while</code></td>
+                                        <td>Limited</td>
+                                        <td>for/each</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Imports</td>
+                                        <td><code>@import/@use</code></td>
+                                        <td><code>@import</code></td>
+                                        <td><code>@import</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Syntax Flexibility</td>
+                                        <td>Moderate</td>
+                                        <td>Low</td>
+                                        <td>High</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Learning Curve</td>
+                                        <td>Moderate</td>
+                                        <td>Low</td>
+                                        <td>High</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h4>Choosing a Preprocessor</h4>
+                            <p>When deciding which preprocessor to use, consider:</p>
+                            <ul>
+                                <li><strong>Team familiarity</strong>: Which one does your team already know?</li>
+                                <li><strong>Project requirements</strong>: Do you need specific features?</li>
+                                <li><strong>Ecosystem</strong>: What libraries and frameworks are available?</li>
+                                <li><strong>Build process</strong>: How does it integrate with your build tools?</li>
+                            </ul>
+                            <p>Sass is generally the most feature-rich and widely used, Less is the easiest to learn, and Stylus offers the most flexibility in syntax.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Modern Workflow with Sass</h2>
+                        <p>In modern web development, Sass is typically integrated into a build process using tools like Webpack, Gulp, or npm scripts.</p>
+                        
+                        <h3>Setting Up a Sass Project</h3>
+                        <p>Here's a basic setup for a Sass project using npm scripts:</p>
+                        
+                        <pre><code class="language-bash"># Initialize a new project
+npm init -y
+
+# Install Sass
+npm install --save-dev sass</code></pre>
+                        
+                        <p>Add scripts to your package.json:</p>
+                        
+                        <pre><code class="language-json">{
+  "name": "my-sass-project",
+  "version": "1.0.0",
+  "scripts": {
+    "sass": "sass src/scss:dist/css",
+    "sass:watch": "sass --watch src/scss:dist/css",
+    "start": "npm run sass:watch"
+  },
+  "devDependencies": {
+    "sass": "^1.32.8"
+  }
+}</code></pre>
+                        
+                        <h3>Folder Structure</h3>
+                        <p>A typical Sass project structure might look like this:</p>
+                        
+                        <pre><code class="language-text">project/
+├── src/
+│   └── scss/
+│       ├── abstracts/
+│       │   ├── _variables.scss
+│       │   ├── _functions.scss
+│       │   ├── _mixins.scss
+│       │   └── _index.scss
+│       ├── base/
+│       │   ├── _reset.scss
+│       │   ├── _typography.scss
+│       │   ├── _utilities.scss
+│       │   └── _index.scss
+│       ├── components/
+│       │   ├── _buttons.scss
+│       │   ├── _cards.scss
+│       │   ├── _forms.scss
+│       │   └── _index.scss
+│       ├── layout/
+│       │   ├── _header.scss
+│       │   ├── _footer.scss
+│       │   ├── _grid.scss
+│       │   └── _index.scss
+│       ├── pages/
+│       │   ├── _home.scss
+│       │   ├── _about.scss
+│       │   └── _index.scss
+│       ├── vendors/
+│       │   └── _normalize.scss
+│       └── main.scss
+└── dist/
+    └── css/
+        ├── main.css
+        └── main.css.map</code></pre>
+                        
+                        <h3>Main Sass File</h3>
+                        <p>The main.scss file imports all other files:</p>
+                        
+                        <pre><code class="language-scss">// Vendors
+@use 'vendors/normalize';
+
+// Abstracts
+@use 'abstracts';
+
+// Base
+@use 'base';
+
+// Layout
+@use 'layout';
+
+// Components
+@use 'components';
+
+// Pages
+@use 'pages';</code></pre>
+                        
+                        <p>And each _index.scss file forwards its folder's partials:</p>
+                        
+                        <pre><code class="language-scss">// abstracts/_index.scss
+@forward 'variables';
+@forward 'functions';
+@forward 'mixins';</code></pre>
+                        
+                        <h3>Integration with Build Tools</h3>
+                        <h4>Webpack</h4>
+                        <pre><code class="language-javascript">// webpack.config.js
+module.exports = {
+  // ...
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader', // Injects styles into DOM
+          'css-loader',   // Translates CSS into CommonJS
+          'sass-loader'   // Compiles Sass to CSS
+        ]
+      }
+    ]
+  }
+};</code></pre>
+                        
+                        <h4>Gulp</h4>
+                        <pre><code class="language-javascript">// gulpfile.js
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
+
+function styles() {
+  return gulp.src('./src/scss/**/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./dist/css'));
+}
+
+exports.styles = styles;
+exports.watch = function() {
+  gulp.watch('./src/scss/**/*.scss', styles);
+};</code></pre>
+                        
+                        <h3>PostCSS Integration</h3>
+                        <p>Sass is often used alongside PostCSS for additional transformations:</p>
+                        
+                        <pre><code class="language-javascript">// postcss.config.js
+module.exports = {
+  plugins: [
+    require('autoprefixer'),
+    require('cssnano')
+  ]
+};</code></pre>
+                        
+                        <p>With npm scripts:</p>
+                        
+                        <pre><code class="language-json">{
+  "scripts": {
+    "sass": "sass src/scss:dist/css",
+    "postcss": "postcss dist/css/*.css --use autoprefixer cssnano --replace",
+    "build": "npm run sass && npm run postcss"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "cssnano": "^5.0.1",
+    "postcss": "^8.2.10",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.32.8"
+  }
+}</code></pre>
+                        
+                        <h3>Source Maps</h3>
+                        <p>Source maps help with debugging by mapping compiled CSS back to the original Sass files:</p>
+                        
+                        <pre><code class="language-bash"># Generate source maps
+sass --source-map src/scss:dist/css</code></pre>
+                        
+                        <p>With npm scripts:</p>
+                        
+                        <pre><code class="language-json">{
+  "scripts": {
+    "sass": "sass --source-map src/scss:dist/css"
+  }
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Best Practices for Sass Projects</h4>
+                            <ul>
+                                <li><strong>Follow a consistent architecture</strong> like 7-1 pattern (7 folders, 1 main file)</li>
+                                <li><strong>Use partials</strong> to organize code into logical chunks</li>
+                                <li><strong>Adopt a naming convention</strong> like BEM for classes</li>
+                                <li><strong>Keep nesting shallow</strong> (3-4 levels max)</li>
+                                <li><strong>Document your code</strong> with comments</li>
+                                <li><strong>Create a style guide</strong> for your project</li>
+                                <li><strong>Use source maps</strong> for easier debugging</li>
+                                <li><strong>Optimize for production</strong> with minification and autoprefixing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Building with Sass</h2>
+                        <p>Let's practice using Sass by creating a simple component library.</p>
+                        
+                        <h3>Exercise: Create a Button Component System</h3>
+                        <p>In this exercise, you'll create a flexible button system using Sass features like variables, mixins, functions, and control directives.</p>
+                        
+                        <h4>Step 1: Set Up Your Project</h4>
+                        <pre><code class="language-bash"># Create project folders
+mkdir -p sass-buttons/scss sass-buttons/css
+
+# Create Sass files
+touch sass-buttons/scss/_variables.scss
+touch sass-buttons/scss/_mixins.scss
+touch sass-buttons/scss/_functions.scss
+touch sass-buttons/scss/buttons.scss
+touch sass-buttons/index.html</code></pre>
+                        
+                        <h4>Step 2: Define Variables</h4>
+                        <p>In _variables.scss:</p>
+                        
+                        <pre><code class="language-scss">// Colors
+$colors: (
+  'primary': #3498db,
+  'secondary': #2ecc71,
+  'success': #27ae60,
+  'danger': #e74c3c,
+  'warning': #f39c12,
+  'info': #3498db,
+  'light': #f5f5f5,
+  'dark': #2c3e50
+);
+
+// Sizes
+$sizes: (
+  'small': (
+    'padding': 0.25rem 0.5rem,
+    'font-size': 0.875rem
+  ),
+  'medium': (
+    'padding': 0.5rem 1rem,
+    'font-size': 1rem
+  ),
+  'large': (
+    'padding': 0.75rem 1.5rem,
+    'font-size': 1.25rem
+  )
+);
+
+// Border radius
+$border-radius: 0.25rem;
+
+// Transition
+$transition-speed: 0.3s;</code></pre>
+                        
+                        <h4>Step 3: Create Functions</h4>
+                        <p>In _functions.scss:</p>
+                        
+                        <pre><code class="language-scss">// Get color from map
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+// Calculate contrast color (black or white)
+@function contrast-color($color) {
+  $luminance: (0.2126 * red($color) + 0.7152 * green($color) + 0.0722 * blue($color)) / 255;
+  
+  @return if($luminance > 0.5, #000, #fff);
+}
+
+// Get size property
+@function size($size-name, $property) {
+  $size-map: map-get($sizes, $size-name);
+  @return map-get($size-map, $property);
+}</code></pre>
+                        
+                        <h4>Step 4: Create Mixins</h4>
+                        <p>In _mixins.scss:</p>
+                        
+                        <pre><code class="language-scss">// Button base styles
+@mixin button-base {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  transition: all $transition-speed ease-in-out;
+  cursor: pointer;
+  
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(color('primary'), 0.25);
+  }
+  
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+}
+
+// Button variant
+@mixin button-variant($color-name) {
+  $background: color($color-name);
+  $text-color: contrast-color($background);
+  $hover-background: darken($background, 10%);
+  $active-background: darken($background, 15%);
+  
+  background-color: $background;
+  color: $text-color;
+  
+  &:hover {
+    background-color: $hover-background;
+    color: $text-color;
+  }
+  
+  &:active {
+    background-color: $active-background;
+    transform: translateY(1px);
+  }
+}
+
+// Button outline variant
+@mixin button-outline-variant($color-name) {
+  $color: color($color-name);
+  
+  background-color: transparent;
+  color: $color;
+  border-color: $color;
+  
+  &:hover {
+    background-color: $color;
+    color: contrast-color($color);
+  }
+}
+
+// Button size
+@mixin button-size($size-name) {
+  padding: size($size-name, 'padding');
+  font-size: size($size-name, 'font-size');
+}</code></pre>
+                        
+                        <h4>Step 5: Create Button Styles</h4>
+                        <p>In buttons.scss:</p>
+                        
+                        <pre><code class="language-scss">@use 'variables';
+@use 'functions';
+@use 'mixins';
+
+// Base button class
+.btn {
+  @include mixins.button-base;
+  border-radius: variables.$border-radius;
+  @include mixins.button-size('medium');
+}
+
+// Button variants
+@each $name, $color in variables.$colors {
+  .btn-#{$name} {
+    @include mixins.button-variant($name);
+  }
+  
+  .btn-outline-#{$name} {
+    @include mixins.button-outline-variant($name);
+  }
+}
+
+// Button sizes
+@each $name, $size in variables.$sizes {
+  .btn-#{$name} {
+    @include mixins.button-size($name);
+  }
+}
+
+// Button shapes
+.btn-rounded {
+  border-radius: 50px;
+}
+
+.btn-square {
+  border-radius: 0;
+}
+
+// Button with icon
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  i, svg {
+    margin-right: 0.5rem;
+  }
+  
+  &.btn-icon-right {
+    i, svg {
+      margin-right: 0;
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+// Block button
+.btn-block {
+  display: block;
+  width: 100%;
+}</code></pre>
+                        
+                        <h4>Step 6: Create HTML File</h4>
+                        <p>In index.html:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Sass Button System&lt;/title&gt;
+  &lt;link rel="stylesheet" href="css/buttons.css"&gt;
+  &lt;style&gt;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1, h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Sass Button System&lt;/h1&gt;
+  
+  &lt;h2&gt;Button Variants&lt;/h2&gt;
+  &lt;div class="button-group"&gt;
+    &lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+    &lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+    &lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+    &lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+    &lt;button class="btn btn-warning"&gt;Warning&lt;/button&gt;
+    &lt;button class="btn btn-info"&gt;Info&lt;/button&gt;
+    &lt;button class="btn btn-light"&gt;Light&lt;/button&gt;
+    &lt;button class="btn btn-dark"&gt;Dark&lt;/button&gt;
+  &lt;/div&gt;
+  
+  &lt;h2&gt;Outline Buttons&lt;/h2&gt;
+  &lt;div class="button-group"&gt;
+    &lt;button class="btn btn-outline-primary"&gt;Primary&lt;/button&gt;
+    &lt;button class="btn btn-outline-secondary"&gt;Secondary&lt;/button&gt;
+    &lt;button class="btn btn-outline-success"&gt;Success&lt;/button&gt;
+    &lt;button class="btn btn-outline-danger"&gt;Danger&lt;/button&gt;
+    &lt;button class="btn btn-outline-warning"&gt;Warning&lt;/button&gt;
+    &lt;button class="btn btn-outline-info"&gt;Info&lt;/button&gt;
+    &lt;button class="btn btn-outline-light"&gt;Light&lt;/button&gt;
+    &lt;button class="btn btn-outline-dark"&gt;Dark&lt;/button&gt;
+  &lt;/div&gt;
+  
+  &lt;h2&gt;Button Sizes&lt;/h2&gt;
+  &lt;div class="button-group"&gt;
+    &lt;button class="btn btn-primary btn-small"&gt;Small&lt;/button&gt;
+    &lt;button class="btn btn-primary"&gt;Medium (Default)&lt;/button&gt;
+    &lt;button class="btn btn-primary btn-large"&gt;Large&lt;/button&gt;
+  &lt;/div&gt;
+  
+  &lt;h2&gt;Button Shapes&lt;/h2&gt;
+  &lt;div class="button-group"&gt;
+    &lt;button class="btn btn-primary btn-square"&gt;Square&lt;/button&gt;
+    &lt;button class="btn btn-primary"&gt;Default&lt;/button&gt;
+    &lt;button class="btn btn-primary btn-rounded"&gt;Rounded&lt;/button&gt;
+  &lt;/div&gt;
+  
+  &lt;h2&gt;Block Button&lt;/h2&gt;
+  &lt;button class="btn btn-primary btn-block"&gt;Block Button&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <h4>Step 7: Compile Sass to CSS</h4>
+                        <pre><code class="language-bash"># Compile Sass to CSS
+sass sass-buttons/scss/buttons.scss sass-buttons/css/buttons.css</code></pre>
+                        
+                        <h4>Step 8: Open the HTML File in a Browser</h4>
+                        <p>Open the index.html file in your browser to see your button system in action.</p>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Extend your button system with these additional features:</p>
+                            <ol>
+                                <li>Add a toggle button style that changes appearance when active</li>
+                                <li>Create a gradient variant for each button color</li>
+                                <li>Add animation effects for hover and active states</li>
+                                <li>Implement a dark mode theme using a Sass mixin</li>
+                                <li>Create a button group component that styles adjacent buttons</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>CSS preprocessors like Sass, Less, and Stylus extend CSS with programming features that make stylesheets more powerful, maintainable, and efficient. In this lesson, we've explored:</p>
+                        <ul>
+                            <li><strong>Variables and Calculations</strong>: Store and reuse values, perform mathematical operations, and manipulate colors</li>
+                            <li><strong>Nesting and Parent Selectors</strong>: Write more concise and readable CSS that mirrors HTML structure</li>
+                            <li><strong>Mixins and Functions</strong>: Create reusable blocks of styles and logic to reduce repetition</li>
+                            <li><strong>Control Directives and Modules</strong>: Use programming constructs like conditionals and loops, and organize code into modular files</li>
+                            <li><strong>Different Preprocessors</strong>: Compare Sass, Less, and Stylus to understand their unique features and syntax</li>
+                            <li><strong>Modern Workflow</strong>: Integrate Sass into a build process with tools like npm scripts, Webpack, or Gulp</li>
+                        </ul>
+                        
+                        <p>CSS preprocessors remain a vital part of modern web development, even as native CSS continues to evolve with features like custom properties and calculations. By leveraging preprocessors, you can write more maintainable, scalable, and efficient stylesheets while maintaining compatibility with all browsers through the compiled CSS output.</p>
+                        
+                        <p>In the next lesson, we'll explore CSS Architecture, including methodologies like BEM, SMACSS, and ITCSS that help organize and scale CSS in large projects.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page38.html" class="btn">Previous: Advanced CSS Features</a>
+                        <a href="page40.html" class="btn">Next: CSS Architecture</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

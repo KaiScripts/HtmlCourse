@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server-Sent Events | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to use Server-Sent Events (SSE) to receive real-time updates from a server.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="22">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html" class="active">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional HTML</h3>
+                <ul>
+                    <li><a href="page13.html">13. Advanced HTML Concepts</a></li>
+                    <li><a href="page14.html">14. HTML5 Semantic Elements</a></li>
+                    <li><a href="page15.html">15. HTML Forms Advanced</a></li>
+                    <li><a href="page16.html">16. HTML Media & Graphics</a></li>
+                    <li><a href="page17.html">17. HTML APIs</a></li>
+                    <li><a href="page18.html">18. Web Storage</a></li>
+                    <li><a href="page19.html">19. Geolocation API</a></li>
+                    <li><a href="page20.html">20. Drag & Drop API</a></li>
+                    <li><a href="page21.html">21. Web Workers</a></li>
+                    <li><a href="page22.html" class="active">22. Server-Sent Events</a></li>
+                    <li><a href="page23.html">23. WebSockets</a></li>
+                    <li><a href="page24.html">24. Responsive HTML</a></li>
+                    <li><a href="page25.html">25. HTML Accessibility</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 44%;"></div>
+                </div>
+                <p style="text-align: center;">Page 22 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Server-Sent Events</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to Server-Sent Events</h2>
+                        <p>Server-Sent Events (SSE) is a technology that allows a web server to push real-time updates to a client over a single HTTP connection. Unlike WebSockets, which provide full-duplex communication, SSE is designed specifically for server-to-client communication, making it simpler to implement for many use cases.</p>
+                        
+                        <p>SSE is ideal for scenarios where you need to receive continuous updates from a server, such as:</p>
+                        <ul>
+                            <li>Live news feeds or social media updates</li>
+                            <li>Stock price or cryptocurrency updates</li>
+                            <li>Real-time notifications</li>
+                            <li>Live sports scores or event updates</li>
+                            <li>System monitoring dashboards</li>
+                            <li>Collaborative editing tools</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Key Benefits of Server-Sent Events</h4>
+                            <ul>
+                                <li><strong>Simplicity</strong>: SSE is built on standard HTTP, making it easier to implement than WebSockets</li>
+                                <li><strong>Automatic Reconnection</strong>: Browsers automatically attempt to reconnect if the connection is lost</li>
+                                <li><strong>Message IDs</strong>: Support for message IDs allows clients to resume where they left off after a disconnection</li>
+                                <li><strong>Event Types</strong>: Messages can be categorized into different event types</li>
+                                <li><strong>Text-Based Protocol</strong>: Simple text-based protocol that's easy to debug</li>
+                                <li><strong>Wide Browser Support</strong>: Supported in all modern browsers (with polyfills available for older browsers)</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>SSE vs. Other Real-Time Technologies</h3>
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>Server-Sent Events</th>
+                                        <th>WebSockets</th>
+                                        <th>Long Polling</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Communication Direction</td>
+                                        <td>Server to Client</td>
+                                        <td>Bidirectional</td>
+                                        <td>Primarily Server to Client</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Protocol</td>
+                                        <td>HTTP</td>
+                                        <td>WebSocket Protocol (ws:// or wss://)</td>
+                                        <td>HTTP</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Connection</td>
+                                        <td>Persistent HTTP</td>
+                                        <td>Upgraded HTTP to WebSocket</td>
+                                        <td>Multiple HTTP Requests</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Auto-Reconnection</td>
+                                        <td>Built-in</td>
+                                        <td>Manual Implementation</td>
+                                        <td>Manual Implementation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Message Types</td>
+                                        <td>Text-based with event types</td>
+                                        <td>Text and Binary</td>
+                                        <td>Any HTTP Response</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Complexity</td>
+                                        <td>Low</td>
+                                        <td>Medium</td>
+                                        <td>Low</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Best For</td>
+                                        <td>Server updates to client</td>
+                                        <td>Interactive applications</td>
+                                        <td>Simple polling needs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Client-Side Implementation</h2>
+                        <p>Implementing Server-Sent Events on the client side is straightforward using the <code>EventSource</code> interface provided by browsers.</p>
+                        
+                        <h3>Basic Usage</h3>
+                        <pre><code class="language-javascript">// Create a new EventSource object
+const eventSource = new EventSource('/events');
+
+// Listen for messages
+eventSource.onmessage = function(event) {
+    const data = JSON.parse(event.data);
+    console.log('Received message:', data);
+    updateUI(data);
+};
+
+// Listen for connection open
+eventSource.onopen = function() {
+    console.log('Connection to server opened');
+};
+
+// Listen for errors
+eventSource.onerror = function(error) {
+    console.error('EventSource error:', error);
+    
+    if (eventSource.readyState === EventSource.CLOSED) {
+        console.log('Connection closed');
+    }
+};</code></pre>
+                        
+                        <h3>Event Types</h3>
+                        <p>SSE supports custom event types, allowing you to categorize different types of messages:</p>
+                        
+                        <pre><code class="language-javascript">// Create a new EventSource object
+const eventSource = new EventSource('/events');
+
+// Listen for a specific event type
+eventSource.addEventListener('update', function(event) {
+    const data = JSON.parse(event.data);
+    console.log('Received update:', data);
+    updateContent(data);
+});
+
+// Listen for another event type
+eventSource.addEventListener('notification', function(event) {
+    const data = JSON.parse(event.data);
+    console.log('Received notification:', data);
+    showNotification(data);
+});
+
+// Listen for yet another event type
+eventSource.addEventListener('error-event', function(event) {
+    const data = JSON.parse(event.data);
+    console.log('Received error event:', data);
+    showError(data);
+});</code></pre>
+                        
+                        <h3>Handling Reconnection</h3>
+                        <p>One of the advantages of SSE is that browsers automatically handle reconnection if the connection is lost. However, you can customize this behavior:</p>
+                        
+                        <pre><code class="language-javascript">// Create a new EventSource with custom retry time (in milliseconds)
+const eventSource = new EventSource('/events');
+
+// The server can also specify a retry time in the event stream
+// retry: 10000
+
+// Manual reconnection with exponential backoff
+let retryTime = 1000;
+const maxRetryTime = 60000; // 1 minute
+
+eventSource.onerror = function(error) {
+    console.error('EventSource error:', error);
+    
+    if (eventSource.readyState === EventSource.CLOSED) {
+        console.log('Connection closed, attempting to reconnect...');
+        
+        // Close the current connection
+        eventSource.close();
+        
+        // Wait and try to reconnect
+        setTimeout(() => {
+            console.log(`Reconnecting after ${retryTime}ms...`);
+            
+            // Create a new connection
+            const newEventSource = new EventSource('/events');
+            
+            // Update the event source reference
+            eventSource = newEventSource;
+            
+            // Increase retry time for next attempt (exponential backoff)
+            retryTime = Math.min(retryTime * 2, maxRetryTime);
+        }, retryTime);
+    }
+};</code></pre>
+                        
+                        <h3>Using Last Event ID for Resuming</h3>
+                        <p>SSE supports message IDs, which allow clients to resume where they left off after a disconnection:</p>
+                        
+                        <pre><code class="language-javascript">// Create a new EventSource object
+const eventSource = new EventSource('/events');
+
+// Track the last event ID
+let lastEventId = '';
+
+eventSource.onmessage = function(event) {
+    // Store the last event ID if provided
+    if (event.lastEventId) {
+        lastEventId = event.lastEventId;
+        
+        // Optionally store in localStorage for persistence across page reloads
+        localStorage.setItem('lastEventId', lastEventId);
+    }
+    
+    const data = JSON.parse(event.data);
+    console.log(`Received message (ID: ${event.lastEventId}):`, data);
+    updateUI(data);
+};
+
+// When reconnecting, include the last event ID
+function reconnect() {
+    // Close the current connection
+    eventSource.close();
+    
+    // Get the last event ID (from variable or localStorage)
+    const storedId = localStorage.getItem('lastEventId') || lastEventId;
+    
+    // Create a new connection with the last event ID
+    const newEventSource = new EventSource(`/events?lastEventId=${storedId}`);
+    
+    // Update the event source reference and set up event handlers
+    eventSource = newEventSource;
+    setupEventHandlers(eventSource);
+}</code></pre>
+                        
+                        <h3>Closing the Connection</h3>
+                        <p>When you no longer need the SSE connection, you should close it to free up resources:</p>
+                        
+                        <pre><code class="language-javascript">// Close the connection
+eventSource.close();
+
+// Check if the connection is closed
+if (eventSource.readyState === EventSource.CLOSED) {
+    console.log('Connection is closed');
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>EventSource ReadyState Values</h4>
+                            <ul>
+                                <li><code>EventSource.CONNECTING (0)</code>: Connection is being established or reconnecting</li>
+                                <li><code>EventSource.OPEN (1)</code>: Connection is open and receiving events</li>
+                                <li><code>EventSource.CLOSED (2)</code>: Connection is closed</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Server-Side Implementation</h2>
+                        <p>To implement Server-Sent Events on the server side, you need to set up an endpoint that follows the SSE protocol. Here are examples in different server-side technologies:</p>
+                        
+                        <h3>Node.js with Express</h3>
+                        <pre><code class="language-javascript">const express = require('express');
+const app = express();
+
+app.get('/events', (req, res) => {
+    // Set headers for SSE
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    
+    // Send an initial message
+    res.write('data: {"message": "Connected to event stream"}\n\n');
+    
+    // Send a message every 5 seconds
+    const intervalId = setInterval(() => {
+        const data = {
+            time: new Date().toISOString(),
+            value: Math.random()
+        };
+        
+        res.write(`data: ${JSON.stringify(data)}\n\n`);
+    }, 5000);
+    
+    // Handle client disconnect
+    req.on('close', () => {
+        clearInterval(intervalId);
+        console.log('Client disconnected');
+    });
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});</code></pre>
+                        
+                        <h3>Using Event Types and IDs</h3>
+                        <pre><code class="language-javascript">const express = require('express');
+const app = express();
+
+// Keep track of connected clients
+const clients = new Set();
+let eventId = 1;
+
+app.get('/events', (req, res) => {
+    // Set headers for SSE
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    
+    // Check for last event ID
+    const lastEventId = req.headers['last-event-id'] || req.query.lastEventId;
+    
+    if (lastEventId) {
+        // Send any missed events (in a real app, you would fetch these from a database)
+        const missedEvents = getMissedEvents(lastEventId);
+        for (const event of missedEvents) {
+            sendEvent(res, event.type, event.data, event.id);
+        }
+    }
+    
+    // Send a welcome message
+    sendEvent(res, 'connection', { message: 'Connected to event stream' }, eventId++);
+    
+    // Add this client to the set
+    clients.add(res);
+    
+    // Handle client disconnect
+    req.on('close', () => {
+        clients.delete(res);
+        console.log('Client disconnected');
+    });
+});
+
+// Function to send an event
+function sendEvent(res, eventType, data, id) {
+    res.write(`id: ${id}\n`);
+    if (eventType) {
+        res.write(`event: ${eventType}\n`);
+    }
+    res.write(`data: ${JSON.stringify(data)}\n\n`);
+}
+
+// Function to broadcast an event to all connected clients
+function broadcastEvent(eventType, data) {
+    const id = eventId++;
+    for (const client of clients) {
+        sendEvent(client, eventType, data, id);
+    }
+    return id;
+}
+
+// Example: Broadcast updates every 10 seconds
+setInterval(() => {
+    const data = {
+        time: new Date().toISOString(),
+        value: Math.random()
+    };
+    
+    broadcastEvent('update', data);
+}, 10000);
+
+// Example: Broadcast notifications occasionally
+setInterval(() => {
+    if (Math.random() > 0.7) {
+        const data = {
+            title: 'New Notification',
+            message: 'Something important happened!',
+            timestamp: new Date().toISOString()
+        };
+        
+        broadcastEvent('notification', data);
+    }
+}, 15000);
+
+// Function to get missed events (simplified example)
+function getMissedEvents(lastEventId) {
+    // In a real app, you would fetch these from a database
+    return []; // Return an empty array for this example
+}
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});</code></pre>
+                        
+                        <h3>PHP Implementation</h3>
+                        <pre><code class="language-php">&lt;?php
+// Set headers for SSE
+header('Content-Type: text/event-stream');
+header('Cache-Control: no-cache');
+header('Connection: keep-alive');
+
+// Disable output buffering
+if (ob_get_level()) ob_end_clean();
+
+// Send an initial message
+echo "data: " . json_encode(['message' => 'Connected to event stream']) . "\n\n";
+flush();
+
+// Send a message every 5 seconds
+$eventId = 1;
+while (true) {
+    // Check if client is still connected
+    if (connection_aborted()) break;
+    
+    $data = [
+        'time' => date('Y-m-d H:i:s'),
+        'value' => rand(1, 100) / 100
+    ];
+    
+    // Send the event with ID
+    echo "id: " . $eventId++ . "\n";
+    echo "data: " . json_encode($data) . "\n\n";
+    flush();
+    
+    // Sleep for 5 seconds
+    sleep(5);
+}
+?&gt;</code></pre>
+                        
+                        <h3>Python with Flask</h3>
+                        <pre><code class="language-python">from flask import Flask, Response, request
+import json
+import time
+import datetime
+
+app = Flask(__name__)
+
+@app.route('/events')
+def events():
+    def generate():
+        event_id = 1
+        
+        # Send an initial message
+        yield f"id: {event_id}\n"
+        yield f"data: {json.dumps({'message': 'Connected to event stream'})}\n\n"
+        event_id += 1
+        
+        # Send a message every 5 seconds
+        while True:
+            data = {
+                'time': datetime.datetime.now().isoformat(),
+                'value': time.time() % 1  # A value between 0 and 1
+            }
+            
+            yield f"id: {event_id}\n"
+            yield f"data: {json.dumps(data)}\n\n"
+            event_id += 1
+            
+            time.sleep(5)
+    
+    return Response(generate(), mimetype='text/event-stream')
+
+if __name__ == '__main__':
+    app.run(debug=True)</code></pre>
+                        
+                        <h3>ASP.NET Core</h3>
+                        <pre><code class="language-csharp">using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+[Route("api/[controller]")]
+[ApiController]
+public class EventsController : ControllerBase
+{
+    [HttpGet]
+    public async Task Get(CancellationToken cancellationToken)
+    {
+        Response.Headers.Add("Content-Type", "text/event-stream");
+        Response.Headers.Add("Cache-Control", "no-cache");
+        Response.Headers.Add("Connection", "keep-alive");
+        
+        // Send an initial message
+        await SendEventAsync("connection", new { message = "Connected to event stream" }, 1);
+        
+        var eventId = 2;
+        
+        // Send a message every 5 seconds
+        while (!cancellationToken.IsCancellationRequested)
+        {
+            var data = new
+            {
+                time = DateTime.UtcNow,
+                value = new Random().NextDouble()
+            };
+            
+            await SendEventAsync("update", data, eventId++);
+            
+            await Task.Delay(5000, cancellationToken);
+        }
+    }
+    
+    private async Task SendEventAsync(string eventType, object data, int id)
+    {
+        await Response.WriteAsync($"id: {id}\n");
+        if (!string.IsNullOrEmpty(eventType))
+        {
+            await Response.WriteAsync($"event: {eventType}\n");
+        }
+        await Response.WriteAsync($"data: {System.Text.Json.JsonSerializer.Serialize(data)}\n\n");
+        await Response.Body.FlushAsync();
+    }
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Server-Side Considerations</h4>
+                            <ul>
+                                <li><strong>Connection Limits</strong>: Be aware of connection limits in your server environment</li>
+                                <li><strong>Proxies and Load Balancers</strong>: Some proxies might buffer responses or close idle connections</li>
+                                <li><strong>Memory Usage</strong>: Each connected client consumes server resources</li>
+                                <li><strong>Scaling</strong>: For high-traffic applications, consider using a message queue or pub/sub system</li>
+                                <li><strong>Timeouts</strong>: Some environments have request timeouts that need to be configured</li>
+                                <li><strong>CORS</strong>: If your client and server are on different domains, you'll need to configure CORS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>SSE Protocol Format</h2>
+                        <p>The Server-Sent Events protocol is text-based and follows a simple format. Each message consists of one or more fields, followed by a blank line:</p>
+                        
+                        <pre><code class="language-text">field: value
+field: value
+
+field: value
+field: value
+
+</code></pre>
+                        
+                        <h3>Field Types</h3>
+                        <ul>
+                            <li><code>data</code>: The message payload (can span multiple lines)</li>
+                            <li><code>event</code>: The event type (optional)</li>
+                            <li><code>id</code>: The event ID (optional)</li>
+                            <li><code>retry</code>: The reconnection time in milliseconds (optional)</li>
+                            <li>Comment lines start with a colon (<code>:</code>) and are ignored</li>
+                        </ul>
+                        
+                        <h3>Examples</h3>
+                        <pre><code class="language-text">: This is a comment and will be ignored
+
+data: This is a simple message
+</code></pre>
+                        
+                        <pre><code class="language-text">event: update
+data: {"time": "2023-05-15T12:34:56Z", "value": 42}
+</code></pre>
+                        
+                        <pre><code class="language-text">id: 123
+event: notification
+data: {"title": "New Message", "content": "Hello, world!"}
+</code></pre>
+                        
+                        <pre><code class="language-text">retry: 10000
+</code></pre>
+                        
+                        <h3>Multi-line Data</h3>
+                        <p>For multi-line data, each line should start with <code>data:</code>:</p>
+                        
+                        <pre><code class="language-text">data: {
+data:   "name": "John Doe",
+data:   "age": 30,
+data:   "email": "john@example.com"
+data: }
+</code></pre>
+                        
+                        <p>The client will receive this as a single message with newlines between the lines:</p>
+                        
+                        <pre><code class="language-javascript">{
+  "name": "John Doe",
+  "age": 30,
+  "email": "john@example.com"
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Protocol Rules</h4>
+                            <ul>
+                                <li>Each field is a line of text (name, colon, value)</li>
+                                <li>Field names are case-sensitive</li>
+                                <li>Multiple consecutive <code>data</code> fields are concatenated with newlines</li>
+                                <li>A blank line (two consecutive newlines) marks the end of a message</li>
+                                <li>Lines starting with a colon are comments and are ignored</li>
+                                <li>Unknown fields are ignored</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced SSE Techniques</h2>
+                        <p>Let's explore some advanced techniques for working with Server-Sent Events.</p>
+                        
+                        <h3>Authentication and Authorization</h3>
+                        <p>You can secure your SSE endpoint using standard authentication methods:</p>
+                        
+                        <pre><code class="language-javascript">// Client-side: Include authentication token
+const token = getAuthToken(); // Get token from your auth system
+const eventSource = new EventSource(`/events?token=${token}`);
+
+// Or using headers (requires a polyfill or custom implementation)
+const eventSource = new EventSourceWithCredentials('/events', {
+    headers: {
+        'Authorization': `Bearer ${token}`
+    }
+});</code></pre>
+                        
+                        <pre><code class="language-javascript">// Server-side (Node.js/Express)
+app.get('/events', (req, res) => {
+    // Verify authentication
+    const token = req.query.token;
+    if (!isValidToken(token)) {
+        return res.status(401).send('Unauthorized');
+    }
+    
+    // Get user from token
+    const user = getUserFromToken(token);
+    
+    // Set up SSE connection
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    
+    // Send user-specific events
+    // ...
+});</code></pre>
+                        
+                        <h3>Filtering and Subscriptions</h3>
+                        <p>Allow clients to subscribe to specific types of events:</p>
+                        
+                        <pre><code class="language-javascript">// Client-side: Subscribe to specific topics
+const topics = ['news', 'sports', 'weather'];
+const eventSource = new EventSource(`/events?topics=${topics.join(',')}`);
+
+// Server-side (Node.js/Express)
+app.get('/events', (req, res) => {
+    // Set up SSE headers
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    
+    // Get requested topics
+    const topics = (req.query.topics || '').split(',').filter(Boolean);
+    
+    // Send events only for the requested topics
+    const intervalIds = topics.map(topic => {
+        return setInterval(() => {
+            const data = generateDataForTopic(topic);
+            sendEvent(res, topic, data, getNextId());
+        }, 5000);
+    });
+    
+    // Clean up on disconnect
+    req.on('close', () => {
+        intervalIds.forEach(clearInterval);
+    });
+});</code></pre>
+                        
+                        <h3>Scaling with Redis</h3>
+                        <p>For applications that need to scale across multiple servers, you can use Redis pub/sub:</p>
+                        
+                        <pre><code class="language-javascript">const express = require('express');
+const Redis = require('ioredis');
+const app = express();
+
+// Create Redis clients
+const subscriber = new Redis();
+const publisher = new Redis();
+
+// Keep track of connected clients
+const clients = new Map();
+let eventId = 1;
+
+app.get('/events', (req, res) => {
+    // Set headers for SSE
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    
+    // Generate a unique client ID
+    const clientId = Date.now().toString();
+    
+    // Store the client
+    clients.set(clientId, res);
+    
+    // Subscribe to channels based on user permissions
+    const channels = getChannelsForUser(req.user);
+    
+    // Handle messages from Redis
+    const messageHandler = (channel, message) => {
+        try {
+            const { type, data } = JSON.parse(message);
+            sendEvent(res, type, data, eventId++);
+        } catch (error) {
+            console.error('Error parsing message:', error);
+        }
+    };
+    
+    // Subscribe to channels
+    subscriber.subscribe(...channels);
+    subscriber.on('message', messageHandler);
+    
+    // Handle client disconnect
+    req.on('close', () => {
+        // Remove client
+        clients.delete(clientId);
+        
+        // Unsubscribe from channels
+        subscriber.unsubscribe(...channels);
+        subscriber.removeListener('message', messageHandler);
+        
+        console.log(`Client ${clientId} disconnected`);
+    });
+});
+
+// Function to send an event
+function sendEvent(res, eventType, data, id) {
+    res.write(`id: ${id}\n`);
+    if (eventType) {
+        res.write(`event: ${eventType}\n`);
+    }
+    res.write(`data: ${JSON.stringify(data)}\n\n`);
+}
+
+// Function to publish an event
+function publishEvent(channel, type, data) {
+    const message = JSON.stringify({ type, data });
+    publisher.publish(channel, message);
+}
+
+// Example: Publish events from another part of the application
+app.post('/api/news', (req, res) => {
+    // Create a new news item
+    const newsItem = {
+        id: generateId(),
+        title: req.body.title,
+        content: req.body.content,
+        timestamp: new Date().toISOString()
+    };
+    
+    // Save to database
+    saveNewsItem(newsItem);
+    
+    // Publish to Redis
+    publishEvent('news', 'news-update', newsItem);
+    
+    res.status(201).json(newsItem);
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});</code></pre>
+                        
+                        <h3>Handling Backpressure</h3>
+                        <p>When dealing with high-frequency events, you might need to handle backpressure to prevent overwhelming clients:</p>
+                        
+                        <pre><code class="language-javascript">// Server-side (Node.js/Express)
+app.get('/events', (req, res) => {
+    // Set up SSE headers
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    
+    // Create a buffer for events
+    const eventBuffer = [];
+    const maxBufferSize = 100;
+    let bufferTimer = null;
+    
+    // Function to flush the buffer
+    const flushBuffer = () => {
+        if (eventBuffer.length === 0) return;
+        
+        // Send all events in the buffer
+        for (const event of eventBuffer) {
+            sendEvent(res, event.type, event.data, event.id);
+        }
+        
+        // Clear the buffer
+        eventBuffer.length = 0;
+    };
+    
+    // Set up a timer to flush the buffer periodically
+    bufferTimer = setInterval(flushBuffer, 1000);
+    
+    // Subscribe to high-frequency events
+    const handleEvent = (event) => {
+        // Add the event to the buffer
+        eventBuffer.push(event);
+        
+        // If the buffer is full, flush it immediately
+        if (eventBuffer.length >= maxBufferSize) {
+            flushBuffer();
+        }
+    };
+    
+    // Subscribe to event source
+    const unsubscribe = subscribeToEvents(handleEvent);
+    
+    // Handle client disconnect
+    req.on('close', () => {
+        clearInterval(bufferTimer);
+        unsubscribe();
+    });
+});</code></pre>
+                        
+                        <h3>Monitoring and Debugging</h3>
+                        <p>Implement monitoring and debugging for your SSE connections:</p>
+                        
+                        <pre><code class="language-javascript">// Server-side (Node.js/Express)
+// Keep track of connected clients
+const clients = new Map();
+let totalEvents = 0;
+
+app.get('/events', (req, res) => {
+    // Set up SSE headers
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    
+    // Generate a unique client ID
+    const clientId = Date.now().toString();
+    
+    // Store client info
+    const clientInfo = {
+        id: clientId,
+        ip: req.ip,
+        userAgent: req.headers['user-agent'],
+        connectedAt: new Date(),
+        eventsSent: 0,
+        res: res
+    };
+    
+    clients.set(clientId, clientInfo);
+    
+    console.log(`Client connected: ${clientId} (${clients.size} total)`);
+    
+    // Wrap the response write method to count events
+    const originalWrite = res.write;
+    res.write = function(chunk) {
+        // Count events (each double newline is an event)
+        const newEvents = (chunk.toString().match(/\n\n/g) || []).length;
+        clientInfo.eventsSent += newEvents;
+        totalEvents += newEvents;
+        
+        return originalWrite.apply(this, arguments);
+    };
+    
+    // Handle client disconnect
+    req.on('close', () => {
+        const client = clients.get(clientId);
+        const duration = new Date() - client.connectedAt;
+        
+        console.log(`Client disconnected: ${clientId}`);
+        console.log(`  Connected for: ${duration}ms`);
+        console.log(`  Events sent: ${client.eventsSent}`);
+        
+        clients.delete(clientId);
+    });
+    
+    // Set up the SSE connection
+    // ...
+});
+
+// Expose monitoring endpoint
+app.get('/admin/sse-stats', (req, res) => {
+    // Check admin authentication
+    if (!isAdmin(req)) {
+        return res.status(403).send('Forbidden');
+    }
+    
+    const stats = {
+        connectedClients: clients.size,
+        totalEventsSent: totalEvents,
+        clients: Array.from(clients.values()).map(client => ({
+            id: client.id,
+            ip: client.ip,
+            userAgent: client.userAgent,
+            connectedAt: client.connectedAt,
+            eventsSent: client.eventsSent,
+            connectionDuration: new Date() - client.connectedAt
+        }))
+    };
+    
+    res.json(stats);
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Advanced SSE Best Practices</h4>
+                            <ul>
+                                <li><strong>Rate Limiting</strong>: Implement rate limiting to prevent abuse</li>
+                                <li><strong>Compression</strong>: Consider using compression for high-volume data</li>
+                                <li><strong>Batching</strong>: Batch multiple events together when appropriate</li>
+                                <li><strong>Heartbeats</strong>: Send periodic heartbeat messages to keep connections alive</li>
+                                <li><strong>Graceful Shutdown</strong>: Implement graceful shutdown procedures for server maintenance</li>
+                                <li><strong>Monitoring</strong>: Monitor connection counts, event rates, and resource usage</li>
+                                <li><strong>Testing</strong>: Test with various network conditions and client behaviors</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Browser Support and Polyfills</h2>
+                        <p>Server-Sent Events are supported in all modern browsers, but there are some considerations for older browsers and certain edge cases.</p>
+                        
+                        <h3>Browser Compatibility</h3>
+                        <ul>
+                            <li><strong>Chrome</strong>: Full support since version 6</li>
+                            <li><strong>Firefox</strong>: Full support since version 6</li>
+                            <li><strong>Safari</strong>: Full support since version 5</li>
+                            <li><strong>Edge</strong>: Full support since version 79 (Chromium-based)</li>
+                            <li><strong>Internet Explorer</strong>: No support (requires polyfill)</li>
+                            <li><strong>Opera</strong>: Full support since version 11</li>
+                            <li><strong>iOS Safari</strong>: Full support since iOS 4</li>
+                            <li><strong>Android Browser</strong>: Full support since Android 4.4</li>
+                        </ul>
+                        
+                        <h3>Feature Detection</h3>
+                        <pre><code class="language-javascript">// Check if EventSource is supported
+if (typeof EventSource !== 'undefined') {
+    // EventSource is supported
+    const eventSource = new EventSource('/events');
+    // Set up event handlers...
+} else {
+    // EventSource is not supported
+    console.log('Server-Sent Events are not supported in this browser.');
+    // Use a polyfill or fallback approach
+    usePolyfill();
+}</code></pre>
+                        
+                        <h3>Polyfills</h3>
+                        <p>For browsers that don't support SSE natively, you can use a polyfill:</p>
+                        
+                        <pre><code class="language-javascript">// Using the event-source-polyfill package
+import EventSourcePolyfill from 'event-source-polyfill';
+
+// Use the polyfill
+const EventSource = window.EventSource || EventSourcePolyfill;
+const eventSource = new EventSource('/events');</code></pre>
+                        
+                        <p>Or you can implement a simple polyfill using long polling:</p>
+                        
+                        <pre><code class="language-javascript">// Simple EventSource polyfill using long polling
+if (!window.EventSource) {
+    window.EventSource = function(url) {
+        this.url = url;
+        this.readyState = 0; // CONNECTING
+        this.listeners = {
+            message: [],
+            open: [],
+            error: [],
+            close: []
+        };
+        
+        // Start polling
+        this.poll();
+        
+        // Set readyState to OPEN
+        this.readyState = 1;
+        this.dispatchEvent({ type: 'open' });
+    };
+    
+    window.EventSource.prototype = {
+        CONNECTING: 0,
+        OPEN: 1,
+        CLOSED: 2,
+        
+        addEventListener: function(type, listener) {
+            if (this.listeners[type]) {
+                this.listeners[type].push(listener);
+            }
+        },
+        
+        removeEventListener: function(type, listener) {
+            if (this.listeners[type]) {
+                const index = this.listeners[type].indexOf(listener);
+                if (index !== -1) {
+                    this.listeners[type].splice(index, 1);
+                }
+            }
+        },
+        
+        dispatchEvent: function(event) {
+            const listeners = this.listeners[event.type] || [];
+            for (const listener of listeners) {
+                listener(event);
+            }
+            
+            // Also call onX handler if defined
+            const handlerName = 'on' + event.type;
+            if (typeof this[handlerName] === 'function') {
+                this[handlerName](event);
+            }
+        },
+        
+        close: function() {
+            this.readyState = 2; // CLOSED
+            this.dispatchEvent({ type: 'close' });
+            this.listeners = {
+                message: [],
+                open: [],
+                error: [],
+                close: []
+            };
+        },
+        
+        poll: function() {
+            if (this.readyState === 2) return; // Don't poll if closed
+            
+            const xhr = new XMLHttpRequest();
+            const that = this;
+            
+            xhr.open('GET', this.url + (this.url.indexOf('?') === -1 ? '?' : '&') + '_=' + Date.now(), true);
+            xhr.timeout = 60000; // 1 minute timeout
+            
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    // Process the response
+                    const data = xhr.responseText;
+                    
+                    // Create a message event
+                    const event = {
+                        type: 'message',
+                        data: data,
+                        origin: location.origin,
+                        lastEventId: ''
+                    };
+                    
+                    that.dispatchEvent(event);
+                    
+                    // Poll again
+                    setTimeout(function() {
+                        that.poll();
+                    }, 1000);
+                } else {
+                    // Handle error
+                    that.dispatchEvent({
+                        type: 'error',
+                        message: 'Error: ' + xhr.status
+                    });
+                    
+                    // Try again after a delay
+                    setTimeout(function() {
+                        that.poll();
+                    }, 5000);
+                }
+            };
+            
+            xhr.onerror = function() {
+                // Handle error
+                that.dispatchEvent({
+                    type: 'error',
+                    message: 'Network error'
+                });
+                
+                // Try again after a delay
+                setTimeout(function() {
+                    that.poll();
+                }, 5000);
+            };
+            
+            xhr.ontimeout = function() {
+                // Handle timeout
+                that.dispatchEvent({
+                    type: 'error',
+                    message: 'Timeout'
+                });
+                
+                // Try again immediately
+                that.poll();
+            };
+            
+            xhr.send();
+        }
+    };
+    
+    // Define onX properties
+    ['message', 'open', 'error', 'close'].forEach(function(type) {
+        Object.defineProperty(window.EventSource.prototype, 'on' + type, {
+            get: function() {
+                return this['_on' + type];
+            },
+            set: function(handler) {
+                this['_on' + type] = handler;
+            }
+        });
+    });
+}</code></pre>
+                        
+                        <h3>Fallback Approaches</h3>
+                        <p>Instead of using a polyfill, you might choose to implement a fallback approach:</p>
+                        
+                        <pre><code class="language-javascript">// Fallback to polling
+function createEventSource(url, options) {
+    if (typeof EventSource !== 'undefined') {
+        // Use native EventSource
+        return new EventSource(url);
+    } else {
+        // Use polling fallback
+        return createPollingFallback(url, options);
+    }
+}
+
+function createPollingFallback(url, options) {
+    const interval = options?.interval || 3000;
+    let lastEventId = '';
+    
+    // Create an EventSource-like object
+    const fallback = {
+        readyState: 0, // CONNECTING
+        listeners: {
+            message: [],
+            open: [],
+            error: [],
+            close: []
+        },
+        
+        addEventListener: function(type, listener) {
+            if (this.listeners[type]) {
+                this.listeners[type].push(listener);
+            }
+        },
+        
+        removeEventListener: function(type, listener) {
+            if (this.listeners[type]) {
+                const index = this.listeners[type].indexOf(listener);
+                if (index !== -1) {
+                    this.listeners[type].splice(index, 1);
+                }
+            }
+        },
+        
+        dispatchEvent: function(event) {
+            const listeners = this.listeners[event.type] || [];
+            for (const listener of listeners) {
+                listener(event);
+            }
+            
+            // Also call onX handler if defined
+            const handlerName = 'on' + event.type;
+            if (typeof this[handlerName] === 'function') {
+                this[handlerName](event);
+            }
+        },
+        
+        close: function() {
+            this.readyState = 2; // CLOSED
+            clearInterval(this.intervalId);
+            this.dispatchEvent({ type: 'close' });
+        }
+    };
+    
+    // Define onX properties
+    ['message', 'open', 'error', 'close'].forEach(function(type) {
+        Object.defineProperty(fallback, 'on' + type, {
+            get: function() {
+                return this['_on' + type];
+            },
+            set: function(handler) {
+                this['_on' + type] = handler;
+            }
+        });
+    });
+    
+    // Set readyState to OPEN
+    fallback.readyState = 1;
+    fallback.dispatchEvent({ type: 'open' });
+    
+    // Start polling
+    fallback.intervalId = setInterval(function() {
+        fetch(url + (url.includes('?') ? '&' : '?') + 'lastEventId=' + lastEventId)
+            .then(response => response.text())
+            .then(data => {
+                // Process the data
+                const lines = data.split('\n');
+                let eventData = '';
+                let eventType = 'message';
+                let id = '';
+                
+                for (const line of lines) {
+                    if (line.startsWith('data:')) {
+                        eventData += line.substring(5).trim() + '\n';
+                    } else if (line.startsWith('event:')) {
+                        eventType = line.substring(6).trim();
+                    } else if (line.startsWith('id:')) {
+                        id = line.substring(3).trim();
+                    } else if (line === '') {
+                        // End of event
+                        if (eventData) {
+                            // Remove trailing newline
+                            eventData = eventData.substring(0, eventData.length - 1);
+                            
+                            // Create event object
+                            const event = {
+                                type: eventType,
+                                data: eventData,
+                                lastEventId: id
+                            };
+                            
+                            // Update lastEventId
+                            if (id) {
+                                lastEventId = id;
+                            }
+                            
+                            // Dispatch event
+                            fallback.dispatchEvent(event);
+                            
+                            // Reset for next event
+                            eventData = '';
+                            eventType = 'message';
+                            id = '';
+                        }
+                    }
+                }
+            })
+            .catch(error => {
+                fallback.dispatchEvent({
+                    type: 'error',
+                    error: error
+                });
+            });
+    }, interval);
+    
+    return fallback;
+}
+
+// Usage
+const eventSource = createEventSource('/events', { interval: 5000 });
+
+eventSource.addEventListener('message', function(event) {
+    console.log('Received message:', event.data);
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Polyfill Limitations</h4>
+                            <ul>
+                                <li><strong>Performance</strong>: Polyfills typically use polling, which is less efficient than native SSE</li>
+                                <li><strong>Reconnection</strong>: Automatic reconnection behavior might differ from native implementations</li>
+                                <li><strong>Event Parsing</strong>: Polyfills might not handle all SSE protocol features correctly</li>
+                                <li><strong>Server Load</strong>: Polling creates more server requests than persistent connections</li>
+                                <li><strong>Latency</strong>: Polling introduces latency in event delivery</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Real-World Use Cases</h2>
+                        <p>Let's explore some practical applications of Server-Sent Events in real-world scenarios.</p>
+                        
+                        <h3>1. Live Dashboard</h3>
+                        <p>Create a real-time dashboard that displays system metrics:</p>
+                        
+                        <pre><code class="language-javascript">// Client-side
+document.addEventListener('DOMContentLoaded', function() {
+    // Create charts
+    const cpuChart = createChart('cpu-chart', 'CPU Usage');
+    const memoryChart = createChart('memory-chart', 'Memory Usage');
+    const networkChart = createChart('network-chart', 'Network Traffic');
+    
+    // Connect to SSE endpoint
+    const eventSource = new EventSource('/api/metrics');
+    
+    // Handle metrics updates
+    eventSource.addEventListener('metrics', function(event) {
+        const metrics = JSON.parse(event.data);
+        
+        // Update charts
+        updateChart(cpuChart, metrics.cpu);
+        updateChart(memoryChart, metrics.memory);
+        updateChart(networkChart, metrics.network);
+        
+        // Update other dashboard elements
+        document.getElementById('active-users').textContent = metrics.activeUsers;
+        document.getElementById('requests-per-second').textContent = metrics.requestsPerSecond;
+        document.getElementById('error-rate').textContent = metrics.errorRate.toFixed(2) + '%';
+        
+        // Update status indicators
+        updateStatusIndicators(metrics.services);
+    });
+    
+    // Handle alerts
+    eventSource.addEventListener('alert', function(event) {
+        const alert = JSON.parse(event.data);
+        showAlert(alert);
+    });
+    
+    // Handle connection errors
+    eventSource.onerror = function() {
+        showConnectionError();
+        
+        // Try to reconnect after a delay
+        setTimeout(function() {
+            eventSource.close();
+            location.reload();
+        }, 10000);
+    };
+});
+
+// Server-side (Node.js/Express)
+app.get('/api/metrics', (req, res) => {
+    // Set up SSE headers
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    
+    // Send initial metrics
+    sendMetrics(res);
+    
+    // Send metrics every 5 seconds
+    const intervalId = setInterval(() => {
+        sendMetrics(res);
+    }, 5000);
+    
+    // Set up alert monitoring
+    const alertHandler = (alert) => {
+        sendEvent(res, 'alert', alert);
+    };
+    
+    // Subscribe to alerts
+    alertSystem.on('alert', alertHandler);
+    
+    // Handle client disconnect
+    req.on('close', () => {
+        clearInterval(intervalId);
+        alertSystem.off('alert', alertHandler);
+    });
+});
+
+function sendMetrics(res) {
+    // Collect metrics from various systems
+    const metrics = {
+        timestamp: new Date().toISOString(),
+        cpu: {
+            usage: Math.random() * 100,
+            cores: getCpuCoreUsage()
+        },
+        memory: {
+            used: Math.random() * 16,
+            total: 16,
+            swap: Math.random() * 8
+        },
+        network: {
+            incoming: Math.random() * 100,
+            outgoing: Math.random() * 50
+        },
+        activeUsers: Math.floor(Math.random() * 1000),
+        requestsPerSecond: Math.floor(Math.random() * 500),
+        errorRate: Math.random() * 5,
+        services: getServiceStatuses()
+    };
+    
+    // Send the metrics
+    sendEvent(res, 'metrics', metrics);
+}</code></pre>
+                        
+                        <h3>2. Live Sports Updates</h3>
+                        <p>Provide real-time updates for a sports match:</p>
+                        
+                        <pre><code class="language-javascript">// Client-side
+document.addEventListener('DOMContentLoaded', function() {
+    // Connect to SSE endpoint
+    const matchId = getMatchIdFromUrl();
+    const eventSource = new EventSource(`/api/matches/${matchId}/live`);
+    
+    // Handle score updates
+    eventSource.addEventListener('score', function(event) {
+        const data = JSON.parse(event.data);
+        
+        // Update the scoreboard
+        document.getElementById('home-score').textContent = data.homeScore;
+        document.getElementById('away-score').textContent = data.awayScore;
+    });
+    
+    // Handle play-by-play updates
+    eventSource.addEventListener('play', function(event) {
+        const play = JSON.parse(event.data);
+        
+        // Add the play to the feed
+        const playElement = document.createElement('div');
+        playElement.className = 'play';
+        playElement.innerHTML = `
+            <div class="play-time">${play.time}'</div>
+            <div class="play-icon ${play.type}"></div>
+            <div class="play-description">${play.description}</div>
+        `;
+        
+        // Add to the feed
+        const feed = document.getElementById('play-by-play-feed');
+        feed.insertBefore(playElement, feed.firstChild);
+        
+        // Highlight if it's a key event
+        if (play.isKey) {
+            playElement.classList.add('key-play');
+            showNotification(play);
+        }
+    });
+    
+    // Handle match status updates
+    eventSource.addEventListener('status', function(event) {
+        const status = JSON.parse(event.data);
+        
+        // Update the match status
+        document.getElementById('match-status').textContent = status.label;
+        document.getElementById('match-time').textContent = status.time;
+        
+        // Handle period changes
+        if (status.period !== currentPeriod) {
+            showPeriodChange(status.period);
+            currentPeriod = status.period;
+        }
+    });
+    
+    // Handle connection errors
+    eventSource.onerror = function() {
+        showConnectionError();
+    };
+});
+
+// Server-side (Node.js/Express)
+app.get('/api/matches/:id/live', (req, res) => {
+    const matchId = req.params.id;
+    
+    // Verify the match exists and is live
+    const match = getMatch(matchId);
+    if (!match || match.status !== 'live') {
+        return res.status(404).send('Match not found or not live');
+    }
+    
+    // Set up SSE headers
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    
+    // Send initial match state
+    sendEvent(res, 'score', {
+        homeScore: match.homeScore,
+        awayScore: match.awayScore
+    });
+    
+    sendEvent(res, 'status', {
+        label: match.statusLabel,
+        time: match.matchTime,
+        period: match.period
+    });
+    
+    // Send recent plays
+    const recentPlays = getRecentPlays(matchId, 10);
+    for (const play of recentPlays) {
+        sendEvent(res, 'play', play);
+    }
+    
+    // Subscribe to match events
+    const eventHandler = (event) => {
+        if (event.matchId === matchId) {
+            sendEvent(res, event.type, event.data);
+        }
+    };
+    
+    matchEventEmitter.on('event', eventHandler);
+    
+    // Handle client disconnect
+    req.on('close', () => {
+        matchEventEmitter.off('event', eventHandler);
+    });
+});</code></pre>
+                        
+                        <h3>3. Collaborative Editing</h3>
+                        <p>Implement a simple collaborative document editor:</p>
+                        
+                        <pre><code class="language-javascript">// Client-side
+document.addEventListener('DOMContentLoaded', function() {
+    const editor = document.getElementById('editor');
+    const documentId = getDocumentIdFromUrl();
+    let lastEventId = '';
+    let isApplyingRemoteChanges = false;
+    
+    // Load the initial document
+    fetch(`/api/documents/${documentId}`)
+        .then(response => response.json())
+        .then(document => {
+            editor.value = document.content;
+            lastEventId = document.version;
+            
+            // Connect to SSE endpoint
+            connectToEventSource();
+        });
+    
+    function connectToEventSource() {
+        const eventSource = new EventSource(`/api/documents/${documentId}/changes?lastEventId=${lastEventId}`);
+        
+        // Handle document changes
+        eventSource.addEventListener('change', function(event) {
+            const change = JSON.parse(event.data);
+            
+            // Update lastEventId
+            lastEventId = event.lastEventId || lastEventId;
+            
+            // Apply the change to the editor
+            applyChange(change);
+        });
+        
+        // Handle presence updates
+        eventSource.addEventListener('presence', function(event) {
+            const presence = JSON.parse(event.data);
+            updatePresence(presence);
+        });
+        
+        // Handle connection errors
+        eventSource.onerror = function() {
+            console.error('Connection error, reconnecting...');
+            eventSource.close();
+            
+            // Try to reconnect after a delay
+            setTimeout(connectToEventSource, 3000);
+        };
+    }
+    
+    // Handle local changes
+    editor.addEventListener('input', function() {
+        // Don't send changes that are being applied from remote updates
+        if (isApplyingRemoteChanges) return;
+        
+        // Create a change object
+        const change = {
+            documentId: documentId,
+            content: editor.value,
+            timestamp: new Date().toISOString()
+        };
+        
+        // Send the change to the server
+        fetch(`/api/documents/${documentId}/changes`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(change)
+        });
+    });
+    
+    // Apply a change to the editor
+    function applyChange(change) {
+        isApplyingRemoteChanges = true;
+        
+        // Simple implementation: replace the entire content
+        // In a real app, you would use operational transformation or CRDT
+        editor.value = change.content;
+        
+        isApplyingRemoteChanges = false;
+    }
+    
+    // Update the presence indicator
+    function updatePresence(presence) {
+        const presenceContainer = document.getElementById('presence');
+        presenceContainer.innerHTML = '';
+        
+        for (const user of presence.users) {
+            const userElement = document.createElement('div');
+            userElement.className = 'user-presence';
+            userElement.style.backgroundColor = user.color;
+            userElement.textContent = user.name;
+            presenceContainer.appendChild(userElement);
+        }
+    }
+});
+
+// Server-side (Node.js/Express)
+// Keep track of document changes and connected clients
+const documents = new Map();
+const documentClients = new Map();
+
+app.get('/api/documents/:id/changes', (req, res) => {
+    const documentId = req.params.id;
+    const lastEventId = req.query.lastEventId || '0';
+    
+    // Set up SSE headers
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    
+    // Get or create document
+    let document = documents.get(documentId);
+    if (!document) {
+        document = {
+            id: documentId,
+            content: '',
+            version: '0',
+            changes: []
+        };
+        documents.set(documentId, document);
+    }
+    
+    // Get or create client list
+    let clients = documentClients.get(documentId);
+    if (!clients) {
+        clients = new Set();
+        documentClients.set(documentId, clients);
+    }
+    
+    // Add this client
+    clients.add(res);
+    
+    // Send missed changes
+    const missedChanges = document.changes.filter(change => change.version > lastEventId);
+    for (const change of missedChanges) {
+        sendEvent(res, 'change', change.data, change.version);
+    }
+    
+    // Send current presence
+    sendPresenceUpdate(documentId);
+    
+    // Handle client disconnect
+    req.on('close', () => {
+        clients.delete(res);
+        sendPresenceUpdate(documentId);
+    });
+});
+
+app.post('/api/documents/:id/changes', (req, res) => {
+    const documentId = req.params.id;
+    const change = req.body;
+    
+    // Get or create document
+    let document = documents.get(documentId);
+    if (!document) {
+        document = {
+            id: documentId,
+            content: '',
+            version: '0',
+            changes: []
+        };
+        documents.set(documentId, document);
+    }
+    
+    // Update document
+    document.content = change.content;
+    document.version = (parseInt(document.version) + 1).toString();
+    
+    // Store the change
+    document.changes.push({
+        version: document.version,
+        data: change
+    });
+    
+    // Limit the number of stored changes
+    if (document.changes.length > 100) {
+        document.changes.shift();
+    }
+    
+    // Broadcast the change to all clients
+    const clients = documentClients.get(documentId) || new Set();
+    for (const client of clients) {
+        sendEvent(client, 'change', change, document.version);
+    }
+    
+    res.status(200).json({ success: true, version: document.version });
+});
+
+function sendPresenceUpdate(documentId) {
+    const clients = documentClients.get(documentId) || new Set();
+    
+    // In a real app, you would track actual users
+    const presence = {
+        documentId: documentId,
+        users: Array.from(clients).map((_, index) => ({
+            id: `user-${index + 1}`,
+            name: `User ${index + 1}`,
+            color: getRandomColor()
+        }))
+    };
+    
+    // Broadcast presence to all clients
+    for (const client of clients) {
+        sendEvent(client, 'presence', presence);
+    }
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Other Common Use Cases</h4>
+                            <ul>
+                                <li><strong>Chat Applications</strong>: Deliver messages in real-time</li>
+                                <li><strong>Auction Platforms</strong>: Update bid information as it happens</li>
+                                <li><strong>Financial Dashboards</strong>: Stream stock prices and market data</li>
+                                <li><strong>IoT Monitoring</strong>: Display sensor data in real-time</li>
+                                <li><strong>Social Media Feeds</strong>: Push new posts and interactions</li>
+                                <li><strong>Notification Systems</strong>: Deliver alerts and notifications</li>
+                                <li><strong>Progress Tracking</strong>: Monitor long-running operations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Building a Real-Time News Feed</h2>
+                        <p>Let's create a practical application that uses Server-Sent Events to deliver real-time news updates.</p>
+                        
+                        <h3>Exercise: Create a Live News Feed</h3>
+                        <p>Build a news feed application with the following features:</p>
+                        <ul>
+                            <li>Display a list of news articles</li>
+                            <li>Receive real-time updates when new articles are published</li>
+                            <li>Allow users to filter articles by category</li>
+                            <li>Show notifications for breaking news</li>
+                            <li>Implement a "read more" feature for article details</li>
+                        </ul>
+                        
+                        <p>Start with this template and enhance it:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Live News Feed&lt;/title&gt;
+    &lt;style&gt;
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        h1, h2 {
+            color: #3366ff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .news-feed {
+            margin-top: 20px;
+        }
+        
+        .article {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        .article h2 {
+            margin-top: 0;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .category-filter {
+            margin: 20px 0;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #3366ff;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transform: translateX(120%);
+            transition: transform 0.3s ease-out;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        /* Add more styles for your app */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Live News Feed&lt;/h1&gt;
+        
+        &lt;div class="category-filter"&gt;
+            &lt;label for="category-select"&gt;Filter by category:&lt;/label&gt;
+            &lt;select id="category-select"&gt;
+                &lt;option value="all"&gt;All Categories&lt;/option&gt;
+                &lt;option value="politics"&gt;Politics&lt;/option&gt;
+                &lt;option value="technology"&gt;Technology&lt;/option&gt;
+                &lt;option value="sports"&gt;Sports&lt;/option&gt;
+                &lt;option value="entertainment"&gt;Entertainment&lt;/option&gt;
+                &lt;option value="science"&gt;Science&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+        
+        &lt;div id="news-feed" class="news-feed"&gt;
+            &lt;!-- Articles will be added here --&gt;
+        &lt;/div&gt;
+        
+        &lt;div id="notification" class="notification"&gt;
+            &lt;h3 id="notification-title"&gt;&lt;/h3&gt;
+            &lt;p id="notification-message"&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script&gt;
+        // Add your JavaScript here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the app
+            initApp();
+            
+            // Add event listeners
+            document.getElementById('category-select').addEventListener('change', filterArticles);
+        });
+        
+        function initApp() {
+            // Load initial articles
+            loadArticles();
+            
+            // Connect to SSE endpoint
+            connectToEventSource();
+        }
+        
+        function loadArticles() {
+            // Load initial articles from the server
+        }
+        
+        function connectToEventSource() {
+            // Connect to SSE endpoint
+        }
+        
+        function filterArticles() {
+            // Filter articles by category
+        }
+        
+        function addArticle(article) {
+            // Add an article to the news feed
+        }
+        
+        function showNotification(title, message) {
+            // Show a notification
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Enhance the template with:</p>
+                            <ol>
+                                <li>Complete implementation of the news feed functionality</li>
+                                <li>Server-side code to generate and send news updates</li>
+                                <li>Different event types for regular news and breaking news</li>
+                                <li>A feature to mark articles as read</li>
+                                <li>Persistence of read status across page reloads</li>
+                                <li>Infinite scrolling to load older articles</li>
+                                <li>A search feature to find articles by keyword</li>
+                                <li>Responsive design that works well on both desktop and mobile devices</li>
+                                <li>A fallback for browsers that don't support SSE</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored Server-Sent Events (SSE), a technology that allows servers to push real-time updates to clients over a single HTTP connection:</p>
+                        <ul>
+                            <li><strong>Introduction to SSE</strong>: What SSE is, its benefits, and how it compares to other real-time technologies</li>
+                            <li><strong>Client-Side Implementation</strong>: How to use the EventSource API to receive server-sent events</li>
+                            <li><strong>Server-Side Implementation</strong>: How to set up SSE endpoints in various server-side technologies</li>
+                            <li><strong>SSE Protocol Format</strong>: The text-based format used for SSE messages</li>
+                            <li><strong>Advanced SSE Techniques</strong>: Authentication, filtering, scaling, and monitoring</li>
+                            <li><strong>Browser Support and Polyfills</strong>: Current browser support and fallback approaches</li>
+                            <li><strong>Real-World Use Cases</strong>: Practical applications of SSE in various scenarios</li>
+                        </ul>
+                        
+                        <p>Server-Sent Events provide a simple and efficient way to implement real-time updates from servers to clients. By understanding how to use SSE effectively, you can create more interactive and responsive web applications.</p>
+                        
+                        <p>Remember these key points:</p>
+                        <ul>
+                            <li><strong>SSE is unidirectional</strong> (server to client only)</li>
+                            <li><strong>SSE uses standard HTTP</strong>, making it simpler than WebSockets</li>
+                            <li><strong>Browsers handle reconnection</strong> automatically</li>
+                            <li><strong>Event IDs</strong> allow clients to resume where they left off</li>
+                            <li><strong>Event types</strong> let you categorize different kinds of messages</li>
+                            <li><strong>SSE is text-based</strong>, making it easy to debug</li>
+                            <li><strong>Consider scaling solutions</strong> for high-traffic applications</li>
+                        </ul>
+                        
+                        <p>In the next lesson, we'll explore WebSockets, which provide full-duplex communication between clients and servers for even more interactive applications.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page21.html" class="btn">Previous: Web Workers</a>
+                        <a href="page23.html" class="btn">Next: WebSockets</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

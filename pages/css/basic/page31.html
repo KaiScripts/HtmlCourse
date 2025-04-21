@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Basics | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn the fundamentals of CSS layout techniques to position and arrange elements on your web pages.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="31">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html" class="active">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>CSS Basics</h3>
+                <ul>
+                    <li><a href="page26.html">26. Introduction to CSS</a></li>
+                    <li><a href="page27.html">27. CSS Selectors</a></li>
+                    <li><a href="page28.html">28. CSS Box Model</a></li>
+                    <li><a href="page29.html">29. Typography</a></li>
+                    <li><a href="page30.html">30. Colors & Backgrounds</a></li>
+                    <li><a href="page31.html" class="active">31. Layout Basics</a></li>
+                    <li><a href="page32.html">32. Flexbox</a></li>
+                    <li><a href="page33.html">33. CSS Grid</a></li>
+                    <li><a href="page34.html">34. Responsive Design</a></li>
+                    <li><a href="page35.html">35. Transitions & Animations</a></li>
+                    <li><a href="page36.html">36. CSS Variables</a></li>
+                    <li><a href="page37.html">37. CSS Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 62%;"></div>
+                </div>
+                <p style="text-align: center;">Page 31 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Layout Basics</h1>
+                    
+                    <div class="card">
+                        <h2>Understanding CSS Layout</h2>
+                        <p>Layout is one of the most important aspects of web design. It determines how elements are positioned and arranged on the page, affecting both the visual appearance and user experience of your website.</p>
+                        
+                        <p>CSS offers several layout methods, from traditional techniques like normal flow, floats, and positioning to modern approaches like Flexbox and Grid. In this lesson, we'll focus on the fundamental layout concepts that form the basis for all CSS layouts.</p>
+                        
+                        <p>Understanding these basics will help you create well-structured, responsive layouts and prepare you for the more advanced layout techniques we'll cover in subsequent lessons.</p>
+                        
+                        <div class="info-box">
+                            <h4>Layout Evolution</h4>
+                            <p>CSS layout techniques have evolved significantly over the years:</p>
+                            <ul>
+                                <li><strong>Early days (1990s)</strong>: Table-based layouts, limited CSS support</li>
+                                <li><strong>CSS2 era (2000s)</strong>: Float-based layouts, positioning, clearfix hacks</li>
+                                <li><strong>Modern era (2010s+)</strong>: Flexbox, Grid, and other purpose-built layout tools</li>
+                            </ul>
+                            <p>While modern techniques like Flexbox and Grid are preferred for new projects, understanding the fundamentals is still important for maintaining legacy code and building a solid foundation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>The CSS Visual Formatting Model</h2>
+                        <p>The CSS Visual Formatting Model is the algorithm that browsers use to process and display documents. It determines how elements are laid out based on several factors:</p>
+                        
+                        <ul>
+                            <li>The box model (content, padding, border, margin)</li>
+                            <li>The display property (block, inline, inline-block, etc.)</li>
+                            <li>The position property (static, relative, absolute, fixed)</li>
+                            <li>The float property</li>
+                            <li>The containing block (parent element)</li>
+                            <li>The document flow</li>
+                        </ul>
+                        
+                        <h3>Normal Flow</h3>
+                        <p>By default, elements are laid out according to normal flow, where:</p>
+                        <ul>
+                            <li>Block-level elements (like <code>div</code>, <code>p</code>, <code>h1</code>-<code>h6</code>) create a new line and take up the full width available</li>
+                            <li>Inline elements (like <code>span</code>, <code>a</code>, <code>strong</code>) flow within the text and only take up as much width as necessary</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">/* Block-level elements */
+div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, section, article, header, footer, nav {
+  display: block;
+}
+
+/* Inline elements */
+span, a, strong, em, img, br, input, button {
+  display: inline;
+}</code></pre>
+                        
+                        <h3>The Display Property</h3>
+                        <p>The <code>display</code> property determines how an element is treated in the layout flow:</p>
+                        
+                        <pre><code class="language-css">/* Block: Creates a new line, takes full width available */
+.block {
+  display: block;
+}
+
+/* Inline: Flows within text, takes only necessary width */
+.inline {
+  display: inline;
+}
+
+/* Inline-block: Flows within text but can have width/height */
+.inline-block {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+/* None: Removes the element from the document flow */
+.hidden {
+  display: none;
+}
+
+/* Table-related display values */
+.table {
+  display: table;
+}
+.table-row {
+  display: table-row;
+}
+.table-cell {
+  display: table-cell;
+}
+
+/* Flex and Grid (covered in detail in later lessons) */
+.flex-container {
+  display: flex;
+}
+.grid-container {
+  display: grid;
+}</code></pre>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Display Value</th>
+                                        <th>Description</th>
+                                        <th>Common Use Cases</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>block</code></td>
+                                        <td>Creates a block-level element</td>
+                                        <td>Page sections, paragraphs, headings</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>inline</code></td>
+                                        <td>Creates an inline element</td>
+                                        <td>Text-level elements, links, spans</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>inline-block</code></td>
+                                        <td>Creates an inline-level block container</td>
+                                        <td>Buttons, input fields, navigation items</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>none</code></td>
+                                        <td>Removes the element from the layout</td>
+                                        <td>Hiding elements, toggling visibility</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>flex</code></td>
+                                        <td>Creates a flex container</td>
+                                        <td>One-dimensional layouts (rows or columns)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>grid</code></td>
+                                        <td>Creates a grid container</td>
+                                        <td>Two-dimensional layouts (rows and columns)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h4>Visibility vs. Display: None</h4>
+                            <p>There's an important difference between <code>display: none</code> and <code>visibility: hidden</code>:</p>
+                            <ul>
+                                <li><code>display: none</code> removes the element from the document flow, and it takes up no space</li>
+                                <li><code>visibility: hidden</code> hides the element but preserves its space in the layout</li>
+                            </ul>
+                            <pre><code class="language-css">.removed {
+  display: none; /* Element disappears completely */
+}
+
+.invisible {
+  visibility: hidden; /* Element is invisible but still takes up space */
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS Positioning</h2>
+                        <p>The <code>position</code> property determines how an element is positioned in the document. It works together with the <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties to place elements precisely.</p>
+                        
+                        <h3>Static Positioning</h3>
+                        <p>The default positioning mode is <code>static</code>, where elements follow the normal document flow:</p>
+                        
+                        <pre><code class="language-css">.static {
+  position: static; /* Default value */
+}
+
+/* The top, right, bottom, and left properties have no effect on static elements */
+.static {
+  position: static;
+  top: 20px; /* This will be ignored */
+  left: 20px; /* This will be ignored */
+}</code></pre>
+                        
+                        <h3>Relative Positioning</h3>
+                        <p>With <code>relative</code> positioning, an element is positioned relative to its normal position:</p>
+                        
+                        <pre><code class="language-css">.relative {
+  position: relative;
+  top: 20px;   /* Moves down 20px from normal position */
+  left: 20px;  /* Moves right 20px from normal position */
+}
+
+/* Negative values move in the opposite direction */
+.relative-negative {
+  position: relative;
+  top: -20px;  /* Moves up 20px from normal position */
+  right: 20px; /* Moves left 20px from normal position */
+}</code></pre>
+                        
+                        <p>Key points about relative positioning:</p>
+                        <ul>
+                            <li>The element still occupies its original space in the document flow</li>
+                            <li>Other elements are not affected by the repositioning</li>
+                            <li>The element is offset relative to itself</li>
+                            <li>Relative positioning also creates a new containing block for absolutely positioned children</li>
+                        </ul>
+                        
+                        <h3>Absolute Positioning</h3>
+                        <p>With <code>absolute</code> positioning, an element is positioned relative to its nearest positioned ancestor (or the document body if none exists):</p>
+                        
+                        <pre><code class="language-css">.container {
+  position: relative; /* Creates a positioning context */
+  height: 200px;
+  width: 200px;
+}
+
+.absolute {
+  position: absolute;
+  top: 20px;    /* 20px from the top of the container */
+  right: 20px;  /* 20px from the right of the container */
+}
+
+/* Centering with absolute positioning */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Adjusts for the element's dimensions */
+}</code></pre>
+                        
+                        <p>Key points about absolute positioning:</p>
+                        <ul>
+                            <li>The element is removed from the normal document flow</li>
+                            <li>Other elements act as if the absolutely positioned element doesn't exist</li>
+                            <li>The element is positioned relative to its nearest positioned ancestor (an element with <code>position</code> set to anything other than <code>static</code>)</li>
+                            <li>If no positioned ancestor exists, it's positioned relative to the initial containing block (usually the viewport)</li>
+                        </ul>
+                        
+                        <h3>Fixed Positioning</h3>
+                        <p>With <code>fixed</code> positioning, an element is positioned relative to the viewport and doesn't move when the page is scrolled:</p>
+                        
+                        <pre><code class="language-css">.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.fixed-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}</code></pre>
+                        
+                        <p>Key points about fixed positioning:</p>
+                        <ul>
+                            <li>The element is removed from the normal document flow</li>
+                            <li>It's positioned relative to the viewport</li>
+                            <li>It stays in the same position even when the page is scrolled</li>
+                            <li>Common uses include fixed headers, footers, and "back to top" buttons</li>
+                        </ul>
+                        
+                        <h3>Sticky Positioning</h3>
+                        <p>With <code>sticky</code> positioning, an element is treated as <code>relative</code> until it crosses a specified threshold, then it's treated as <code>fixed</code>:</p>
+                        
+                        <pre><code class="language-css">.sticky-header {
+  position: sticky;
+  top: 0; /* Sticks to the top when scrolled to this position */
+  background-color: white;
+  z-index: 100;
+}
+
+.sticky-sidebar {
+  position: sticky;
+  top: 20px; /* Starts sticking when the top is 20px from the viewport top */
+}</code></pre>
+                        
+                        <p>Key points about sticky positioning:</p>
+                        <ul>
+                            <li>The element is treated as relatively positioned until it crosses a specified threshold</li>
+                            <li>Then it's treated as fixed until its parent is out of view</li>
+                            <li>It requires at least one threshold value (<code>top</code>, <code>right</code>, <code>bottom</code>, or <code>left</code>)</li>
+                            <li>Common uses include sticky headers, navigation, and section headings</li>
+                        </ul>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Position Value</th>
+                                        <th>Positioned Relative To</th>
+                                        <th>In Document Flow</th>
+                                        <th>Common Use Cases</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>static</code></td>
+                                        <td>Normal flow</td>
+                                        <td>Yes</td>
+                                        <td>Default positioning for most elements</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>relative</code></td>
+                                        <td>Its normal position</td>
+                                        <td>Yes</td>
+                                        <td>Small adjustments, creating positioning context</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>absolute</code></td>
+                                        <td>Nearest positioned ancestor</td>
+                                        <td>No</td>
+                                        <td>Tooltips, modals, badges, precise positioning</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>fixed</code></td>
+                                        <td>Viewport</td>
+                                        <td>No</td>
+                                        <td>Fixed headers/footers, floating buttons</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>sticky</code></td>
+                                        <td>Normal flow, then viewport</td>
+                                        <td>Yes, until "stuck"</td>
+                                        <td>Sticky headers, persistent navigation</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Z-Index and Stacking Context</h2>
+                        <p>The <code>z-index</code> property controls the vertical stacking order of elements that overlap. It only works on positioned elements (those with a <code>position</code> value other than <code>static</code>).</p>
+                        
+                        <pre><code class="language-css">.behind {
+  position: relative;
+  z-index: 1;
+}
+
+.middle {
+  position: relative;
+  z-index: 2; /* Higher z-index appears on top */
+}
+
+.front {
+  position: relative;
+  z-index: 3;
+}</code></pre>
+                        
+                        <p>Elements with higher z-index values appear in front of elements with lower values. If elements have the same z-index, the one that appears later in the HTML code is displayed on top.</p>
+                        
+                        <h3>Stacking Context</h3>
+                        <p>A stacking context is formed by certain CSS properties, creating a hierarchy that affects how z-index works:</p>
+                        
+                        <pre><code class="language-css">/* These properties create a new stacking context */
+.new-context {
+  position: relative; /* or absolute, fixed, sticky */
+  z-index: 1;
+}
+
+.also-new-context {
+  opacity: 0.9; /* Values less than 1 create a stacking context */
+}
+
+.another-context {
+  transform: scale(1); /* Any transform creates a stacking context */
+}</code></pre>
+                        
+                        <p>Other properties that create a stacking context include:</p>
+                        <ul>
+                            <li><code>filter</code></li>
+                            <li><code>mix-blend-mode</code> (other than <code>normal</code>)</li>
+                            <li><code>isolation: isolate</code></li>
+                            <li><code>will-change</code> (for certain properties)</li>
+                            <li><code>contain: layout</code>, <code>paint</code>, or <code>strict</code></li>
+                        </ul>
+                        
+                        <p>Z-index only works within the same stacking context. An element with a lower z-index in a higher stacking context will appear above an element with a higher z-index in a lower stacking context.</p>
+                        
+                        <pre><code class="language-css">.parent1 {
+  position: relative;
+  z-index: 1;
+}
+
+.child1 {
+  position: relative;
+  z-index: 100; /* High value, but in a lower stacking context */
+}
+
+.parent2 {
+  position: relative;
+  z-index: 2; /* Higher than parent1 */
+}
+
+.child2 {
+  position: relative;
+  z-index: 1; /* Low value, but in a higher stacking context */
+  /* This will appear above child1 despite having a lower z-index */
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Z-Index Best Practices</h4>
+                            <p>To maintain manageable z-index values:</p>
+                            <ul>
+                                <li>Use small, incremental values (1, 2, 3) instead of large numbers (999, 9999)</li>
+                                <li>Create a z-index scale in your CSS variables or comments</li>
+                                <li>Be aware of stacking contexts when debugging z-index issues</li>
+                                <li>Use the minimum z-index necessary to achieve the desired stacking</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Float-Based Layouts</h2>
+                        <p>The <code>float</code> property was one of the primary layout tools before Flexbox and Grid. It moves an element to the left or right, allowing text and inline elements to wrap around it.</p>
+                        
+                        <h3>Basic Floating</h3>
+                        <pre><code class="language-css">.float-left {
+  float: left;
+  margin-right: 15px; /* Space between the floated element and the text */
+}
+
+.float-right {
+  float: right;
+  margin-left: 15px;
+}
+
+/* Clear floats */
+.clear {
+  clear: both; /* Can also be 'left' or 'right' */
+}</code></pre>
+                        
+                        <p>Floated elements are removed from the normal flow, but still affect the flow of text and inline elements around them.</p>
+                        
+                        <h3>Clearing Floats</h3>
+                        <p>When elements are floated, their containers may collapse if they contain only floated elements. There are several ways to clear floats:</p>
+                        
+                        <pre><code class="language-css">/* Method 1: Clear element */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Method 2: Overflow */
+.container {
+  overflow: auto; /* or hidden */
+}
+
+/* Method 3: Display flow-root */
+.modern-clearfix {
+  display: flow-root;
+}</code></pre>
+                        
+                        <h3>Float-Based Grid Systems</h3>
+                        <p>Before Flexbox and Grid, float-based grid systems were common for creating multi-column layouts:</p>
+                        
+                        <pre><code class="language-css">/* Simple float-based grid */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col {
+  float: left;
+  padding: 0 15px;
+}
+
+.col-1 { width: 8.33%; }
+.col-2 { width: 16.66%; }
+.col-3 { width: 25%; }
+.col-4 { width: 33.33%; }
+.col-5 { width: 41.66%; }
+.col-6 { width: 50%; }
+.col-7 { width: 58.33%; }
+.col-8 { width: 66.66%; }
+.col-9 { width: 75%; }
+.col-10 { width: 83.33%; }
+.col-11 { width: 91.66%; }
+.col-12 { width: 100%; }</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Modern Alternatives to Floats</h4>
+                            <p>While floats are still useful for specific cases (like wrapping text around images), modern layout techniques are preferred for overall page layout:</p>
+                            <ul>
+                                <li>Use <code>display: flex</code> for one-dimensional layouts (rows or columns)</li>
+                                <li>Use <code>display: grid</code> for two-dimensional layouts (rows and columns)</li>
+                                <li>Use <code>position: absolute</code> for precise positioning of elements</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Multi-Column Layout</h2>
+                        <p>CSS Multi-column Layout is a module that allows you to create multiple columns of text, similar to newspaper layouts.</p>
+                        
+                        <pre><code class="language-css">/* Specify the number of columns */
+.multi-column {
+  column-count: 3;
+}
+
+/* Or specify the width of columns */
+.multi-column-width {
+  column-width: 200px; /* Browser determines the number of columns */
+}
+
+/* Both together (browser will use the maximum number of columns that fit) */
+.multi-column-both {
+  column-count: 4;
+  column-width: 200px;
+}
+
+/* Add space between columns */
+.multi-column-gap {
+  column-gap: 40px;
+}
+
+/* Add a line between columns */
+.multi-column-rule {
+  column-rule: 1px solid #ccc;
+}</code></pre>
+                        
+                        <h3>Spanning Columns</h3>
+                        <p>You can make elements span across all columns:</p>
+                        
+                        <pre><code class="language-css">.column-span {
+  column-span: all;
+}</code></pre>
+                        
+                        <h3>Controlling Breaks</h3>
+                        <p>You can control how content breaks across columns:</p>
+                        
+                        <pre><code class="language-css">/* Prevent an element from breaking across columns */
+.no-break {
+  break-inside: avoid-column;
+}
+
+/* Force a column break before an element */
+.new-column {
+  break-before: column;
+}
+
+/* Force a column break after an element */
+.end-column {
+  break-after: column;
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Box Sizing and Layout</h2>
+                        <p>The <code>box-sizing</code> property affects how element dimensions are calculated, which is crucial for layout:</p>
+                        
+                        <pre><code class="language-css">/* Default box sizing */
+.content-box {
+  box-sizing: content-box;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  /* Total width: 300px + 20px*2 + 1px*2 = 342px */
+}
+
+/* Alternative box sizing */
+.border-box {
+  box-sizing: border-box;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  /* Total width: 300px (includes content, padding, and border) */
+}</code></pre>
+                        
+                        <p>For consistent and predictable layouts, it's common to set <code>box-sizing: border-box</code> for all elements:</p>
+                        
+                        <pre><code class="language-css">*, *::before, *::after {
+  box-sizing: border-box;
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Centering Elements</h2>
+                        <p>Centering elements is a common layout task. Here are various techniques for different scenarios:</p>
+                        
+                        <h3>Horizontal Centering</h3>
+                        
+                        <pre><code class="language-css">/* Center a block element */
+.center-block {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; /* Must have a width */
+}
+
+/* Center text */
+.center-text {
+  text-align: center;
+}
+
+/* Center an inline or inline-block element */
+.center-inline-parent {
+  text-align: center;
+}
+.center-inline-child {
+  display: inline-block;
+}</code></pre>
+                        
+                        <h3>Vertical Centering</h3>
+                        
+                        <pre><code class="language-css">/* Center with line-height (for single-line text) */
+.center-line {
+  line-height: 100px; /* Same as the height of the container */
+}
+
+/* Center with padding */
+.center-padding {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Center with absolute positioning and transform */
+.center-absolute-parent {
+  position: relative;
+}
+.center-absolute {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}</code></pre>
+                        
+                        <h3>Both Horizontal and Vertical Centering</h3>
+                        
+                        <pre><code class="language-css">/* Center with absolute positioning and transform */
+.center-both-parent {
+  position: relative;
+}
+.center-both {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Center with flexbox (modern approach) */
+.center-flex {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */
+}
+
+/* Center with grid (modern approach) */
+.center-grid {
+  display: grid;
+  place-items: center; /* Shorthand for align-items and justify-items */
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Modern Centering</h4>
+                            <p>While all these techniques work, modern approaches using Flexbox or Grid are generally preferred:</p>
+                            <ul>
+                                <li>They require less code</li>
+                                <li>They're more intuitive</li>
+                                <li>They work for multiple elements</li>
+                                <li>They handle dynamic content better</li>
+                            </ul>
+                            <p>We'll cover these in detail in the Flexbox and Grid lessons.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Viewport Units and Layout</h2>
+                        <p>Viewport units are relative to the browser viewport dimensions, making them useful for responsive layouts:</p>
+                        
+                        <pre><code class="language-css">/* Full viewport height */
+.full-height {
+  height: 100vh; /* 100% of viewport height */
+}
+
+/* Full viewport width */
+.full-width {
+  width: 100vw; /* 100% of viewport width */
+}
+
+/* Half viewport */
+.half {
+  width: 50vw;
+  height: 50vh;
+}
+
+/* Minimum of viewport width or height */
+.square {
+  width: 50vmin; /* 50% of the smaller viewport dimension */
+  height: 50vmin;
+}
+
+/* Maximum of viewport width or height */
+.responsive-size {
+  width: 50vmax; /* 50% of the larger viewport dimension */
+}</code></pre>
+                        
+                        <p>Viewport units are particularly useful for:</p>
+                        <ul>
+                            <li>Full-screen sections</li>
+                            <li>Hero areas</li>
+                            <li>Maintaining aspect ratios</li>
+                            <li>Responsive typography</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Mobile Viewport Considerations</h4>
+                            <p>On mobile devices, viewport units can behave differently due to the dynamic viewport size when the address bar shows/hides or when the keyboard appears. Modern browsers now support additional viewport units to address these issues:</p>
+                            <ul>
+                                <li><code>svh</code>: Small Viewport Height (when UI elements are shown)</li>
+                                <li><code>lvh</code>: Large Viewport Height (when UI elements are hidden)</li>
+                                <li><code>dvh</code>: Dynamic Viewport Height (automatically adjusts)</li>
+                            </ul>
+                            <pre><code class="language-css">.modern-full-height {
+  height: 100dvh; /* Adjusts dynamically as viewport changes */
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Aspect Ratio</h2>
+                        <p>The <code>aspect-ratio</code> property allows you to maintain a specific width-to-height ratio for elements:</p>
+                        
+                        <pre><code class="language-css">/* Square (1:1 ratio) */
+.square {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+/* 16:9 ratio (common for videos) */
+.widescreen {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+/* 4:3 ratio */
+.standard {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+}</code></pre>
+                        
+                        <p>This property is particularly useful for:</p>
+                        <ul>
+                            <li>Responsive images and videos</li>
+                            <li>Cards and UI elements that need to maintain proportions</li>
+                            <li>Creating consistent grid items</li>
+                        </ul>
+                        
+                        <h3>Legacy Aspect Ratio Technique</h3>
+                        <p>Before <code>aspect-ratio</code> was widely supported, developers used the padding trick:</p>
+                        
+                        <pre><code class="language-css">/* 16:9 aspect ratio using padding trick */
+.aspect-ratio-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 9/16 = 0.5625 = 56.25% */
+}
+
+.aspect-ratio-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Container Queries</h2>
+                        <p>Container queries allow you to style elements based on the size of their container rather than the viewport:</p>
+                        
+                        <pre><code class="language-css">/* Define a container */
+.card-container {
+  container-type: inline-size;
+  container-name: card;
+}
+
+/* Apply styles based on container width */
+@container card (min-width: 400px) {
+  .card-title {
+    font-size: 1.5rem;
+  }
+}
+
+@container card (max-width: 399px) {
+  .card-title {
+    font-size: 1.2rem;
+  }
+}</code></pre>
+                        
+                        <p>Container queries are particularly useful for:</p>
+                        <ul>
+                            <li>Component-based design</li>
+                            <li>Reusable UI elements that appear in different contexts</li>
+                            <li>Creating truly responsive components regardless of viewport size</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Browser Support</h4>
+                            <p>Container queries are a newer feature and may not be supported in all browsers. Check current browser support before using in production, and consider providing fallbacks for older browsers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Common Layout Patterns</h2>
+                        <p>Here are some common layout patterns and how to implement them using the techniques we've covered:</p>
+                        
+                        <h3>Holy Grail Layout</h3>
+                        <p>A classic layout with header, footer, and three columns (left sidebar, main content, right sidebar):</p>
+                        
+                        <pre><code class="language-css">/* Traditional approach with floats */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header, .footer {
+  clear: both;
+}
+
+.left-sidebar {
+  float: left;
+  width: 20%;
+}
+
+.main-content {
+  float: left;
+  width: 60%;
+}
+
+.right-sidebar {
+  float: left;
+  width: 20%;
+}
+
+/* Clear the floats */
+.container::after {
+  content: "";
+  display: table;
+  clear: both;
+}</code></pre>
+                        
+                        <h3>Card Layout</h3>
+                        <p>A grid of cards, commonly used for products, blog posts, etc.:</p>
+                        
+                        <pre><code class="language-css">/* Using floats */
+.card-container {
+  margin: 0 -15px; /* Compensate for card padding */
+}
+
+.card-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card {
+  float: left;
+  width: 33.33%;
+  padding: 0 15px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}</code></pre>
+                        
+                        <h3>Sticky Footer</h3>
+                        <p>A footer that sticks to the bottom of the viewport when content is short:</p>
+                        
+                        <pre><code class="language-css">/* Using minimum height and flexbox */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto; /* Grow to fill available space */
+}
+
+.footer {
+  flex-shrink: 0; /* Don't shrink */
+}</code></pre>
+                        
+                        <h3>Split Screen</h3>
+                        <p>A layout that divides the screen into two equal parts:</p>
+                        
+                        <pre><code class="language-css">/* Using floats */
+.split-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.split-left, .split-right {
+  float: left;
+  width: 50%;
+  height: 100vh;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .split-left, .split-right {
+    float: none;
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+  }
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Layout Basics</h2>
+                        <p>Let's practice applying layout concepts with a hands-on exercise.</p>
+                        
+                        <h3>Exercise: Create a Basic Page Layout</h3>
+                        <p>Create an HTML file with the following content:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Layout Practice&lt;/title&gt;
+  &lt;link rel="stylesheet" href="layout.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class="site-header"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1 class="logo"&gt;Layout Demo&lt;/h1&gt;
+      &lt;nav class="main-nav"&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#" class="active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+  
+  &lt;div class="hero"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="hero-content"&gt;
+        &lt;h2&gt;Welcome to Our Website&lt;/h2&gt;
+        &lt;p&gt;This is a demonstration of CSS layout techniques.&lt;/p&gt;
+        &lt;a href="#" class="button"&gt;Learn More&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;main class="main-content"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="content-wrapper"&gt;
+        &lt;article class="primary-content"&gt;
+          &lt;h2&gt;Main Content Area&lt;/h2&gt;
+          &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.&lt;/p&gt;
+          
+          &lt;p&gt;Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio.&lt;/p&gt;
+          
+          &lt;div class="feature-boxes"&gt;
+            &lt;div class="feature-box"&gt;
+              &lt;h3&gt;Feature 1&lt;/h3&gt;
+              &lt;p&gt;Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.&lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="feature-box"&gt;
+              &lt;h3&gt;Feature 2&lt;/h3&gt;
+              &lt;p&gt;Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.&lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="feature-box"&gt;
+              &lt;h3&gt;Feature 3&lt;/h3&gt;
+              &lt;p&gt;Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          
+          &lt;p&gt;Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.&lt;/p&gt;
+        &lt;/article&gt;
+        
+        &lt;aside class="sidebar"&gt;
+          &lt;div class="widget"&gt;
+            &lt;h3&gt;About Us&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.&lt;/p&gt;
+          &lt;/div&gt;
+          
+          &lt;div class="widget"&gt;
+            &lt;h3&gt;Categories&lt;/h3&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Category 1&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Category 2&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Category 3&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Category 4&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+          
+          &lt;div class="widget"&gt;
+            &lt;h3&gt;Recent Posts&lt;/h3&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Post Title 1&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Post Title 2&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Post Title 3&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/aside&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+  
+  &lt;div class="cta-section"&gt;
+    &lt;div class="container"&gt;
+      &lt;h2&gt;Ready to Get Started?&lt;/h2&gt;
+      &lt;p&gt;Join thousands of satisfied customers using our services.&lt;/p&gt;
+      &lt;a href="#" class="button"&gt;Sign Up Now&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;footer class="site-footer"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="footer-content"&gt;
+        &lt;div class="footer-section"&gt;
+          &lt;h3&gt;About Us&lt;/h3&gt;
+          &lt;p&gt;We are a company dedicated to providing quality services to our customers.&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="footer-section"&gt;
+          &lt;h3&gt;Quick Links&lt;/h3&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="footer-section"&gt;
+          &lt;h3&gt;Contact Us&lt;/h3&gt;
+          &lt;p&gt;Email: info@example.com&lt;/p&gt;
+          &lt;p&gt;Phone: (123) 456-7890&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;div class="copyright"&gt;
+        &lt;p&gt;&copy; 2025 Layout Demo. All rights reserved.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>Now, create a CSS file named <code>layout.css</code> and style the page using the layout techniques we've covered:</p>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Apply the following styles to create a complete page layout:</p>
+                            <ol>
+                                <li>Set up a container with a maximum width and center it on the page</li>
+                                <li>Create a sticky header that stays at the top when scrolling</li>
+                                <li>Style the navigation as a horizontal menu using inline-block or floats</li>
+                                <li>Create a full-width hero section with centered content</li>
+                                <li>Set up a two-column layout for the main content area (main content and sidebar)</li>
+                                <li>Create a three-column layout for the feature boxes using floats</li>
+                                <li>Style the call-to-action section with centered content</li>
+                                <li>Create a three-column footer layout</li>
+                                <li>Add a sticky footer that stays at the bottom when content is short</li>
+                                <li>Use z-index to control stacking order where needed</li>
+                                <li>Add basic responsive adjustments using media queries</li>
+                            </ol>
+                            <p>Try to create a visually appealing and functional layout using the techniques we've learned in this lesson. In the next lessons, we'll see how to simplify many of these layouts using Flexbox and Grid.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored the fundamental concepts of CSS layout:</p>
+                        <ul>
+                            <li><strong>Visual Formatting Model</strong>: How browsers process and display elements</li>
+                            <li><strong>Display Property</strong>: Controlling how elements behave in the layout flow</li>
+                            <li><strong>Positioning</strong>: Placing elements precisely with static, relative, absolute, fixed, and sticky positioning</li>
+                            <li><strong>Z-Index and Stacking Context</strong>: Managing the vertical stacking order of elements</li>
+                            <li><strong>Float-Based Layouts</strong>: Using floats for text wrapping and basic layouts</li>
+                            <li><strong>Multi-Column Layout</strong>: Creating newspaper-style columns of text</li>
+                            <li><strong>Centering Techniques</strong>: Various methods for centering elements horizontally and vertically</li>
+                            <li><strong>Viewport Units</strong>: Using viewport-relative measurements for responsive layouts</li>
+                            <li><strong>Aspect Ratio</strong>: Maintaining proportional dimensions for elements</li>
+                            <li><strong>Container Queries</strong>: Styling elements based on their container's size</li>
+                            <li><strong>Common Layout Patterns</strong>: Implementing frequently used layout structures</li>
+                        </ul>
+                        
+                        <p>These layout fundamentals form the foundation for more advanced techniques. While some of these methods (like floats for layout) are considered legacy approaches, understanding them is valuable for maintaining existing code and appreciating the evolution of CSS layout.</p>
+                        
+                        <p>In the next lessons, we'll explore modern layout techniques like Flexbox and Grid, which provide more powerful and intuitive ways to create complex layouts with less code.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page30.html" class="btn">Previous: Colors & Backgrounds</a>
+                        <a href="page32.html" class="btn">Next: Flexbox</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,2141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS for Print | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to create print-friendly stylesheets and optimize your web content for printing.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="48">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html" class="active">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional CSS</h3>
+                <ul>
+                    <li><a href="page38.html">38. Advanced CSS Features</a></li>
+                    <li><a href="page39.html">39. CSS Preprocessors</a></li>
+                    <li><a href="page40.html">40. CSS Architecture</a></li>
+                    <li><a href="page41.html">41. CSS Frameworks</a></li>
+                    <li><a href="page42.html">42. Advanced Layouts</a></li>
+                    <li><a href="page43.html">43. Advanced Animations</a></li>
+                    <li><a href="page44.html">44. CSS-in-JS</a></li>
+                    <li><a href="page45.html">45. CSS Houdini</a></li>
+                    <li><a href="page46.html">46. CSS Performance</a></li>
+                    <li><a href="page47.html">47. CSS Testing</a></li>
+                    <li><a href="page48.html" class="active">48. CSS for Print</a></li>
+                    <li><a href="page49.html">49. Future of CSS</a></li>
+                    <li><a href="page50.html">50. Building a Portfolio</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 96%;"></div>
+                </div>
+                <p style="text-align: center;">Page 48 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>CSS for Print</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to Print Stylesheets</h2>
+                        <p>While web design often focuses on screen display, creating print-friendly versions of web content remains an important consideration. Users still print web pages for various reasons: reading offline, archiving information, sharing physical copies, or completing paper forms. A well-designed print stylesheet ensures that your content remains usable and attractive when printed.</p>
+                        
+                        <p>In this lesson, we'll explore techniques for creating effective print stylesheets, optimizing web content for printing, and addressing common print-specific challenges.</p>
+                        
+                        <h3>Why Print Stylesheets Matter</h3>
+                        <p>Print stylesheets offer several important benefits:</p>
+                        <ul>
+                            <li><strong>Improved User Experience</strong>: Users who print your content will appreciate a version optimized for paper</li>
+                            <li><strong>Resource Conservation</strong>: Properly formatted print layouts use less ink and paper</li>
+                            <li><strong>Accessibility</strong>: Some users prefer or need physical copies for various reasons</li>
+                            <li><strong>Professional Appearance</strong>: Well-designed print versions reflect positively on your brand</li>
+                            <li><strong>Content Preservation</strong>: Print versions can serve as backups or archives</li>
+                        </ul>
+                        
+                        <h3>Print vs. Screen: Key Differences</h3>
+                        <p>Print and screen media have fundamental differences that affect design decisions:</p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Characteristic</th>
+                                    <th>Screen</th>
+                                    <th>Print</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dimensions</td>
+                                    <td>Variable, fluid</td>
+                                    <td>Fixed, typically standard paper sizes (Letter, A4, etc.)</td>
+                                </tr>
+                                <tr>
+                                    <td>Color</td>
+                                    <td>RGB, wide gamut</td>
+                                    <td>CMYK, limited gamut, potential for grayscale</td>
+                                </tr>
+                                <tr>
+                                    <td>Resolution</td>
+                                    <td>Typically 72-300 PPI</td>
+                                    <td>Typically 300-600 DPI</td>
+                                </tr>
+                                <tr>
+                                    <td>Interactivity</td>
+                                    <td>Interactive elements, hover states, animations</td>
+                                    <td>Static, no interactivity</td>
+                                </tr>
+                                <tr>
+                                    <td>Navigation</td>
+                                    <td>Links, menus, infinite scrolling</td>
+                                    <td>Page numbers, table of contents, physical page turns</td>
+                                </tr>
+                                <tr>
+                                    <td>Content Flow</td>
+                                    <td>Single continuous document</td>
+                                    <td>Discrete pages with breaks</td>
+                                </tr>
+                                <tr>
+                                    <td>Background</td>
+                                    <td>Often colored or textured</td>
+                                    <td>Usually white to save ink</td>
+                                </tr>
+                                <tr>
+                                    <td>Typography</td>
+                                    <td>Sans-serif often preferred for readability</td>
+                                    <td>Serif often preferred for readability</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h3>Basic Print Stylesheet Setup</h3>
+                        <p>There are several ways to include print-specific CSS:</p>
+                        
+                        <h4>1. Using Media Queries</h4>
+                        <p>The most common approach is to use media queries within your main CSS file:</p>
+                        
+                        <pre><code class="language-css">/* Regular styles for screen */
+body {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Print-specific styles */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+}</code></pre>
+                        
+                        <h4>2. Using a Separate Print Stylesheet</h4>
+                        <p>You can also create a separate CSS file specifically for print:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Main stylesheet for screens -->
+&lt;link rel="stylesheet" href="styles.css" media="screen">
+
+&lt;!-- Print-specific stylesheet -->
+&lt;link rel="stylesheet" href="print.css" media="print"></code></pre>
+                        
+                        <h4>3. Using the CSS @import Rule</h4>
+                        <p>You can import a print stylesheet within your main CSS file:</p>
+                        
+                        <pre><code class="language-css">/* In your main CSS file */
+@import url('print.css') print;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Best Practice</h4>
+                            <p>Using media queries within your main CSS file is generally preferred for several reasons:</p>
+                            <ul>
+                                <li>Reduces HTTP requests</li>
+                                <li>Keeps related styles together</li>
+                                <li>Makes maintenance easier</li>
+                                <li>Allows for sharing variables and utility classes</li>
+                            </ul>
+                            <p>However, for very complex print styles or large projects, a separate print stylesheet might be more manageable.</p>
+                        </div>
+                        
+                        <h3>Testing Print Stylesheets</h3>
+                        <p>You don't need to waste paper to test print stylesheets. Modern browsers provide tools for previewing print layouts:</p>
+                        
+                        <h4>Chrome</h4>
+                        <ul>
+                            <li>Press Ctrl+P (Windows/Linux) or Cmd+P (Mac)</li>
+                            <li>Or go to Menu > Print</li>
+                            <li>Use the preview pane to see how your page will print</li>
+                            <li>In DevTools, you can also use the Rendering tab to emulate the print media type</li>
+                        </ul>
+                        
+                        <h4>Firefox</h4>
+                        <ul>
+                            <li>Press Ctrl+P (Windows/Linux) or Cmd+P (Mac)</li>
+                            <li>Or go to Menu > Print</li>
+                            <li>Click "Preview" to see the print layout</li>
+                            <li>In DevTools, you can use the "print" media simulation</li>
+                        </ul>
+                        
+                        <h4>Safari</h4>
+                        <ul>
+                            <li>Press Cmd+P</li>
+                            <li>Or go to File > Print</li>
+                            <li>The print dialog shows a preview</li>
+                        </ul>
+                        
+                        <h4>Using DevTools</h4>
+                        <p>For more detailed testing and debugging:</p>
+                        <ol>
+                            <li>Open DevTools (F12 or Ctrl+Shift+I)</li>
+                            <li>In Chrome, open the Command Menu (Ctrl+Shift+P) and type "Rendering"</li>
+                            <li>In the Rendering tab, find "Emulate CSS media type" and select "print"</li>
+                            <li>Your page will now render using print styles while allowing you to use DevTools</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Essential Print Stylesheet Techniques</h2>
+                        <p>Let's explore the fundamental techniques for creating effective print stylesheets.</p>
+                        
+                        <h3>Hiding Unnecessary Elements</h3>
+                        <p>Many elements that are useful on screen become unnecessary or distracting in print:</p>
+                        
+                        <pre><code class="language-css">@media print {
+  /* Hide navigation, sidebars, ads, and other non-essential elements */
+  nav,
+  .sidebar,
+  .ads,
+  .social-buttons,
+  .comments,
+  .footer-links,
+  .video-player,
+  button,
+  .search-box,
+  #cookie-notice {
+    display: none !important;
+  }
+}</code></pre>
+                        
+                        <p>Consider hiding these common elements in print stylesheets:</p>
+                        <ul>
+                            <li>Navigation menus</li>
+                            <li>Sidebars</li>
+                            <li>Advertisements</li>
+                            <li>Social media widgets</li>
+                            <li>Comment sections</li>
+                            <li>Video players</li>
+                            <li>Interactive elements (buttons, forms, etc.)</li>
+                            <li>Search boxes</li>
+                            <li>Cookie notices and popups</li>
+                        </ul>
+                        
+                        <h3>Optimizing Layout for Paper</h3>
+                        <p>Adjust your layout to work well on paper:</p>
+                        
+                        <pre><code class="language-css">@media print {
+  /* Reset page margins */
+  @page {
+    margin: 2cm;
+  }
+  
+  /* Make content full-width */
+  .container,
+  main,
+  article {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Adjust typography for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  h1 {
+    font-size: 24pt;
+    margin-bottom: 0.5cm;
+  }
+  
+  h2 {
+    font-size: 18pt;
+    margin-bottom: 0.3cm;
+  }
+  
+  /* Ensure dark text on white background */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}</code></pre>
+                        
+                        <h3>Managing Page Breaks</h3>
+                        <p>Control where page breaks occur to improve readability:</p>
+                        
+                        <pre><code class="language-css">@media print {
+  /* Avoid breaking inside these elements */
+  h1, h2, h3, h4, h5, h6,
+  img, figure, table {
+    break-inside: avoid;
+  }
+  
+  /* Avoid breaking after headings */
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+  }
+  
+  /* Force page breaks before new sections */
+  section, .chapter {
+    break-before: page;
+  }
+  
+  /* Allow breaking inside paragraphs, but not after the first or before the last line */
+  p {
+    orphans: 3; /* Minimum lines at bottom of page */
+    widows: 3;  /* Minimum lines at top of page */
+  }
+}</code></pre>
+                        
+                        <p>The CSS properties for controlling page breaks include:</p>
+                        <ul>
+                            <li><code>break-inside</code>: Controls whether a break should occur inside an element</li>
+                            <li><code>break-before</code>: Controls whether a break should occur before an element</li>
+                            <li><code>break-after</code>: Controls whether a break should occur after an element</li>
+                            <li><code>orphans</code>: Minimum number of lines that must be left at the bottom of a page</li>
+                            <li><code>widows</code>: Minimum number of lines that must appear at the top of a page</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Legacy Properties</h4>
+                            <p>For better browser compatibility, you may want to include the older page break properties alongside the newer ones:</p>
+                            <pre><code class="language-css">h2 {
+  /* Modern syntax */
+  break-inside: avoid;
+  break-after: avoid;
+  
+  /* Legacy syntax for older browsers */
+  page-break-inside: avoid;
+  page-break-after: avoid;
+}</code></pre>
+                        </div>
+                        
+                        <h3>Handling Links and URLs</h3>
+                        <p>Make links useful in printed format:</p>
+                        
+                        <pre><code class="language-css">@media print {
+  /* Make link text black but keep underline for visibility */
+  a {
+    color: black !important;
+    text-decoration: underline;
+  }
+  
+  /* Display the URL after link text */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    font-style: italic;
+  }
+  
+  /* Don't display URL for internal page links */
+  a[href^="#"]:after {
+    content: "";
+  }
+  
+  /* Don't display URL for images that are links */
+  a[href^="http"] img:after {
+    content: "";
+  }
+}</code></pre>
+                        
+                        <h3>Optimizing Images and Media</h3>
+                        <p>Ensure images print well and don't waste ink:</p>
+                        
+                        <pre><code class="language-css">@media print {
+  /* Ensure images don't get cut off */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Make dark images print better */
+  img {
+    -webkit-filter: brightness(1.1) contrast(1.3);
+    filter: brightness(1.1) contrast(1.3);
+  }
+  
+  /* Hide background images to save ink */
+  body, div, section, header, footer, nav, article {
+    background-image: none !important;
+  }
+  
+  /* Replace video players with a message */
+  .video-container:before {
+    content: "Video available at: " attr(data-video-url);
+    display: block;
+    padding: 1em;
+    border: 1px solid #ccc;
+    font-style: italic;
+  }
+}</code></pre>
+                        
+                        <h3>Adding Print-Only Content</h3>
+                        <p>Some content should appear only in the printed version:</p>
+                        
+                        <pre><code class="language-css">/* Hide in normal view */
+.print-only {
+  display: none;
+}
+
+@media print {
+  /* Show in print view */
+  .print-only {
+    display: block;
+  }
+  
+  /* Add URL to the header */
+  @top-center {
+    content: "Printed from: " attr(data-url);
+    font-size: 10pt;
+    color: #666;
+  }
+  
+  /* Add page numbers to the footer */
+  @bottom-right {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 10pt;
+  }
+  
+  /* Add a print timestamp */
+  .article-footer:after {
+    content: "Printed on " attr(data-print-date);
+    display: block;
+    text-align: center;
+    font-size: 10pt;
+    margin-top: 2em;
+  }
+}</code></pre>
+                        
+                        <p>HTML for print-only elements:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Print-only header with logo -->
+&lt;div class="print-only print-header">
+  &lt;img src="logo-print.png" alt="Company Logo">
+  &lt;h1>Company Name&lt;/h1>
+&lt;/div>
+
+&lt;!-- Print-only footer with contact info -->
+&lt;div class="print-only print-footer">
+  &lt;p>For more information, visit www.example.com or call 123-456-7890&lt;/p>
+&lt;/div>
+
+&lt;!-- Print-only QR code -->
+&lt;div class="print-only qr-code">
+  &lt;img src="qr-code.png" alt="Scan to visit our website">
+  &lt;p>Scan to visit our website&lt;/p>
+&lt;/div>
+
+&lt;!-- JavaScript to add current date for printing -->
+&lt;script>
+  document.querySelector('.article-footer').setAttribute(
+    'data-print-date', 
+    new Date().toLocaleDateString()
+  );
+  document.querySelector('html').setAttribute(
+    'data-url', 
+    window.location.href
+  );
+&lt;/script></code></pre>
+                        
+                        <h3>Handling Tables</h3>
+                        <p>Ensure tables print clearly and completely:</p>
+                        
+                        <pre><code class="language-css">@media print {
+  /* Ensure tables print completely */
+  table {
+    break-inside: avoid;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Add borders for clarity */
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  /* Repeat table headers on multi-page tables */
+  thead {
+    display: table-header-group;
+  }
+  
+  /* Prevent orphaned table footers */
+  tfoot {
+    display: table-footer-group;
+  }
+  
+  /* For very wide tables, scale them down */
+  .wide-table {
+    font-size: 9pt;
+    transform: scale(0.9);
+    transform-origin: top left;
+  }
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Print Stylesheet Techniques</h2>
+                        <p>Beyond the basics, there are several advanced techniques to enhance your print stylesheets.</p>
+                        
+                        <h3>Using the @page Rule</h3>
+                        <p>The <code>@page</code> rule allows you to control page-specific aspects of printing:</p>
+                        
+                        <pre><code class="language-css">@media print {
+  /* Basic page setup */
+  @page {
+    size: letter; /* Can be letter, legal, A4, A5, etc. */
+    margin: 2cm; /* Uniform margin */
+  }
+  
+  /* Different margins for different sides */
+  @page {
+    margin-top: 3cm;
+    margin-bottom: 2.5cm;
+    margin-left: 2cm;
+    margin-right: 2cm;
+  }
+  
+  /* First page special formatting */
+  @page :first {
+    margin-top: 4cm; /* Extra space at top of first page */
+  }
+  
+  /* Left pages (even-numbered) */
+  @page :left {
+    margin-left: 3cm;
+    margin-right: 2cm;
+  }
+  
+  /* Right pages (odd-numbered) */
+  @page :right {
+    margin-left: 2cm;
+    margin-right: 3cm;
+  }
+  
+  /* Named pages for different sections */
+  .chapter {
+    page: chapter;
+  }
+  
+  @page chapter {
+    margin-bottom: 3cm;
+    @bottom-center {
+      content: "Chapter " counter(chapter);
+    }
+  }
+}</code></pre>
+                        
+                        <h3>Page Margin Boxes</h3>
+                        <p>The <code>@page</code> rule allows you to add content to the margins of printed pages:</p>
+                        
+                        <pre><code class="language-css">@media print {
+  /* Add content to page margins */
+  @page {
+    @top-left {
+      content: "Company Name";
+    }
+    
+    @top-center {
+      content: "Confidential Document";
+    }
+    
+    @top-right {
+      content: "Page " counter(page);
+    }
+    
+    @bottom-left {
+      content: "Printed by: " attr(data-user);
+    }
+    
+    @bottom-center {
+      content: "Copyright © 2025";
+    }
+    
+    @bottom-right {
+      content: "Printed on: " attr(data-print-date);
+    }
+  }
+}</code></pre>
+                        
+                        <p>The 16 page margin boxes are:</p>
+                        <ul>
+                            <li><code>@top-left-corner</code>, <code>@top-left</code>, <code>@top-center</code>, <code>@top-right</code>, <code>@top-right-corner</code></li>
+                            <li><code>@left-top</code>, <code>@left-middle</code>, <code>@left-bottom</code></li>
+                            <li><code>@right-top</code>, <code>@right-middle</code>, <code>@right-bottom</code></li>
+                            <li><code>@bottom-left-corner</code>, <code>@bottom-left</code>, <code>@bottom-center</code>, <code>@bottom-right</code>, <code>@bottom-right-corner</code></li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Browser Support Note</h4>
+                            <p>Page margin boxes have limited browser support. As of 2025, they work in Firefox but not in Chrome or Safari. For better compatibility, consider using print-only header and footer elements instead.</p>
+                        </div>
+                        
+                        <h3>Generated Content for Print</h3>
+                        <p>Use CSS generated content to add useful information to printed pages:</p>
+                        
+                        <pre><code class="language-css">@media print {
+  /* Add chapter numbers before headings */
+  h1 {
+    counter-increment: chapter;
+  }
+  
+  h1::before {
+    content: "Chapter " counter(chapter) ": ";
+  }
+  
+  /* Add section numbers before subheadings */
+  h2 {
+    counter-increment: section;
+  }
+  
+  h2::before {
+    content: counter(chapter) "." counter(section) " ";
+  }
+  
+  /* Add "continued" notice for tables that break across pages */
+  table::after {
+    content: "(Continued on next page)";
+    display: block;
+    text-align: right;
+    font-style: italic;
+    font-size: 90%;
+    padding-top: 0.5em;
+  }
+  
+  /* Only show "continued" notice if the table actually breaks */
+  table:last-child::after {
+    content: none;
+  }
+  
+  /* Add footnote references */
+  .footnote-ref {
+    counter-increment: footnote;
+  }
+  
+  .footnote-ref::after {
+    content: "[" counter(footnote) "]";
+    vertical-align: super;
+    font-size: 75%;
+  }
+  
+  /* Create a footnotes section at the end */
+  .footnotes::before {
+    content: "Footnotes:";
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1em;
+    border-top: 1px solid #ccc;
+    padding-top: 1em;
+  }
+}</code></pre>
+                        
+                        <h3>Print-Specific Color Adjustments</h3>
+                        <p>Optimize colors for printing:</p>
+                        
+                        <pre><code class="language-css">@media print {
+  /* Ensure good contrast for printing */
+  body {
+    color: black !important;
+    background: white !important;
+  }
+  
+  /* Darken light text */
+  .light-text, .subtle-text {
+    color: #333 !important;
+  }
+  
+  /* Convert colored backgrounds to grayscale patterns */
+  .primary-bg {
+    background-color: white !important;
+    background-image: repeating-linear-gradient(
+      45deg,
+      #000,
+      #000 1px,
+      #fff 1px,
+      #fff 10px
+    ) !important;
+  }
+  
+  .secondary-bg {
+    background-color: white !important;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      #000,
+      #000 1px,
+      #fff 1px,
+      #fff 10px
+    ) !important;
+  }
+  
+  /* Add borders to replace background colors */
+  .card, .panel, .box {
+    border: 1px solid #999 !important;
+    box-shadow: none !important;
+  }
+  
+  /* Improve contrast for links */
+  a {
+    color: #000 !important;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}</code></pre>
+                        
+                        <h3>Print-Specific Layout Adjustments</h3>
+                        <p>Modify layouts specifically for print:</p>
+                        
+                        <pre><code class="language-css">@media print {
+  /* Convert multi-column layout to single column */
+  .grid, .columns, .flex-container {
+    display: block !important;
+  }
+  
+  /* Expand collapsed sections */
+  .accordion-content, .collapsible, .tab-content {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+  }
+  
+  /* Show all tabs */
+  .tab-panel {
+    display: block !important;
+    margin-bottom: 2em;
+  }
+  
+  .tab-panel::before {
+    content: attr(data-tab-title);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Adjust card layouts */
+  .card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 1cm;
+  }
+  
+  /* Ensure proper spacing between elements */
+  p, h1, h2, h3, h4, h5, h6, ul, ol, dl, table {
+    margin-bottom: 0.5cm;
+  }
+}</code></pre>
+                        
+                        <h3>Print-Specific Typography</h3>
+                        <p>Adjust typography for optimal print readability:</p>
+                        
+                        <pre><code class="language-css">@media print {
+  /* Use serif fonts for body text */
+  body {
+    font-family: "Times New Roman", Times, Georgia, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+  
+  /* Keep sans-serif for headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Adjust font sizes for print */
+  h1 { font-size: 24pt; }
+  h2 { font-size: 18pt; }
+  h3 { font-size: 14pt; }
+  h4 { font-size: 12pt; }
+  
+  /* Ensure proper line length for readability */
+  p, li {
+    max-width: 65ch;
+  }
+  
+  /* Adjust letter and word spacing */
+  p {
+    text-align: justify;
+    word-spacing: 0.1em;
+    letter-spacing: 0.01em;
+  }
+  
+  /* Use proper quotes */
+  blockquote {
+    quotes: """ """ "'" "'";
+  }
+  
+  blockquote::before {
+    content: open-quote;
+  }
+  
+  blockquote::after {
+    content: close-quote;
+  }
+}</code></pre>
+                        
+                        <h3>Handling SVG for Print</h3>
+                        <p>Ensure SVG graphics print correctly:</p>
+                        
+                        <pre><code class="language-css">@media print {
+  /* Ensure SVGs print with correct dimensions */
+  svg {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+  }
+  
+  /* Ensure thin SVG lines are visible when printed */
+  svg path, svg line, svg rect, svg circle, svg ellipse {
+    stroke-width: 0.5pt !important;
+  }
+  
+  /* Ensure SVG text is readable */
+  svg text {
+    font-size: 10pt !important;
+    fill: black !important;
+  }
+  
+  /* Ensure SVG backgrounds are visible */
+  svg[fill="none"] {
+    fill: white !important;
+  }
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Creating Printable Documents</h2>
+                        <p>Sometimes you need to create web pages specifically designed for printing, such as invoices, tickets, or certificates.</p>
+                        
+                        <h3>Printable Invoice Example</h3>
+                        <p>Here's an example of CSS for a printable invoice:</p>
+                        
+                        <pre><code class="language-css">/* invoice-print.css */
+@media print {
+  /* Page setup */
+  @page {
+    size: letter portrait;
+    margin: 1.5cm;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+  
+  /* Invoice header */
+  .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2cm;
+  }
+  
+  .company-logo {
+    max-width: 4cm;
+    height: auto;
+  }
+  
+  .company-info {
+    text-align: right;
+  }
+  
+  /* Invoice details */
+  .invoice-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1cm;
+  }
+  
+  .invoice-details-left,
+  .invoice-details-right {
+    width: 48%;
+  }
+  
+  .invoice-id {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 0.5cm;
+  }
+  
+  /* Invoice table */
+  .invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1cm;
+  }
+  
+  .invoice-table th {
+    background-color: #f0f0f0;
+    border-bottom: 1pt solid #000;
+    padding: 0.2cm;
+    text-align: left;
+  }
+  
+  .invoice-table td {
+    border-bottom: 1pt solid #ddd;
+    padding: 0.2cm;
+  }
+  
+  .invoice-table .amount {
+    text-align: right;
+  }
+  
+  /* Invoice totals */
+  .invoice-totals {
+    width: 50%;
+    margin-left: auto;
+  }
+  
+  .invoice-totals table {
+    width: 100%;
+  }
+  
+  .invoice-totals td {
+    padding: 0.2cm;
+  }
+  
+  .invoice-totals .total-row {
+    font-weight: bold;
+    border-top: 1pt solid #000;
+  }
+  
+  .invoice-totals .amount {
+    text-align: right;
+  }
+  
+  /* Invoice footer */
+  .invoice-footer {
+    margin-top: 2cm;
+    padding-top: 0.5cm;
+    border-top: 1pt solid #ddd;
+    font-size: 10pt;
+    color: #666;
+  }
+  
+  /* QR code */
+  .invoice-qr {
+    position: absolute;
+    bottom: 2cm;
+    right: 0;
+    width: 2.5cm;
+    height: 2.5cm;
+  }
+}</code></pre>
+                        
+                        <p>Corresponding HTML structure:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+  &lt;title>Invoice #INV-2025-001&lt;/title>
+  &lt;link rel="stylesheet" href="invoice-print.css">
+&lt;/head>
+&lt;body>
+  &lt;div class="invoice-container">
+    &lt;div class="invoice-header">
+      &lt;div class="company-logo">
+        &lt;img src="logo.png" alt="Company Logo">
+      &lt;/div>
+      &lt;div class="company-info">
+        &lt;h1>Company Name&lt;/h1>
+        &lt;p>123 Business Street&lt;/p>
+        &lt;p>City, State 12345&lt;/p>
+        &lt;p>Phone: (123) 456-7890&lt;/p>
+        &lt;p>Email: info@company.com&lt;/p>
+      &lt;/div>
+    &lt;/div>
+    
+    &lt;div class="invoice-details">
+      &lt;div class="invoice-details-left">
+        &lt;div class="invoice-id">Invoice #INV-2025-001&lt;/div>
+        &lt;p>&lt;strong>Date:&lt;/strong> January 15, 2025&lt;/p>
+        &lt;p>&lt;strong>Due Date:&lt;/strong> February 15, 2025&lt;/p>
+      &lt;/div>
+      &lt;div class="invoice-details-right">
+        &lt;h3>Bill To:&lt;/h3>
+        &lt;p>Client Name&lt;/p>
+        &lt;p>456 Client Avenue&lt;/p>
+        &lt;p>Client City, State 67890&lt;/p>
+        &lt;p>client@example.com&lt;/p>
+      &lt;/div>
+    &lt;/div>
+    
+    &lt;table class="invoice-table">
+      &lt;thead>
+        &lt;tr>
+          &lt;th>Item&lt;/th>
+          &lt;th>Description&lt;/th>
+          &lt;th>Quantity&lt;/th>
+          &lt;th>Unit Price&lt;/th>
+          &lt;th class="amount">Amount&lt;/th>
+        &lt;/tr>
+      &lt;/thead>
+      &lt;tbody>
+        &lt;tr>
+          &lt;td>1&lt;/td>
+          &lt;td>Web Design Services&lt;/td>
+          &lt;td>1&lt;/td>
+          &lt;td>$1,500.00&lt;/td>
+          &lt;td class="amount">$1,500.00&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td>2&lt;/td>
+          &lt;td>Hosting (Annual)&lt;/td>
+          &lt;td>1&lt;/td>
+          &lt;td>$200.00&lt;/td>
+          &lt;td class="amount">$200.00&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td>3&lt;/td>
+          &lt;td>Content Creation&lt;/td>
+          &lt;td>10&lt;/td>
+          &lt;td>$75.00&lt;/td>
+          &lt;td class="amount">$750.00&lt;/td>
+        &lt;/tr>
+      &lt;/tbody>
+    &lt;/table>
+    
+    &lt;div class="invoice-totals">
+      &lt;table>
+        &lt;tr>
+          &lt;td>Subtotal:&lt;/td>
+          &lt;td class="amount">$2,450.00&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td>Tax (8%):&lt;/td>
+          &lt;td class="amount">$196.00&lt;/td>
+        &lt;/tr>
+        &lt;tr class="total-row">
+          &lt;td>Total:&lt;/td>
+          &lt;td class="amount">$2,646.00&lt;/td>
+        &lt;/tr>
+      &lt;/table>
+    &lt;/div>
+    
+    &lt;div class="invoice-footer">
+      &lt;p>&lt;strong>Payment Terms:&lt;/strong> Net 30 days. Please make checks payable to Company Name or pay online at www.company.com/pay&lt;/p>
+      &lt;p>&lt;strong>Thank you for your business!&lt;/strong>&lt;/p>
+    &lt;/div>
+    
+    &lt;div class="invoice-qr">
+      &lt;img src="invoice-qr.png" alt="QR Code for payment">
+    &lt;/div>
+  &lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+                        
+                        <h3>Printable Certificate Example</h3>
+                        <p>Here's an example of CSS for a printable certificate:</p>
+                        
+                        <pre><code class="language-css">/* certificate-print.css */
+@media print {
+  /* Page setup for landscape certificate */
+  @page {
+    size: letter landscape;
+    margin: 1cm;
+  }
+  
+  body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Certificate container with border */
+  .certificate {
+    position: relative;
+    width: 25.4cm; /* Letter width in landscape */
+    height: 19.05cm; /* Letter height in landscape */
+    border: 0.5cm double #000;
+    padding: 1cm;
+    box-sizing: border-box;
+    text-align: center;
+    background: #fff;
+  }
+  
+  /* Decorative elements */
+  .certificate::before,
+  .certificate::after {
+    content: "";
+    position: absolute;
+    width: 5cm;
+    height: 5cm;
+    background-image: url('certificate-corner.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+  }
+  
+  .certificate::before {
+    top: 1cm;
+    left: 1cm;
+  }
+  
+  .certificate::after {
+    bottom: 1cm;
+    right: 1cm;
+    transform: rotate(180deg);
+  }
+  
+  /* Certificate header */
+  .certificate-header {
+    margin-bottom: 1cm;
+  }
+  
+  .certificate-title {
+    font-size: 24pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0.5cm;
+    letter-spacing: 0.1em;
+  }
+  
+  .certificate-subtitle {
+    font-size: 14pt;
+    font-style: italic;
+    margin-bottom: 1cm;
+  }
+  
+  /* Certificate body */
+  .certificate-body {
+    margin: 1.5cm 0;
+  }
+  
+  .recipient-name {
+    font-size: 28pt;
+    font-weight: bold;
+    margin: 1cm 0;
+    border-bottom: 1pt solid #000;
+    display: inline-block;
+    padding: 0 1cm 0.2cm;
+  }
+  
+  .certificate-text {
+    font-size: 14pt;
+    margin: 1cm 3cm;
+    line-height: 1.6;
+  }
+  
+  /* Certificate footer */
+  .certificate-footer {
+    margin-top: 2cm;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .signature {
+    text-align: center;
+    width: 7cm;
+  }
+  
+  .signature-line {
+    border-top: 1pt solid #000;
+    margin-top: 1.5cm;
+    padding-top: 0.2cm;
+  }
+  
+  /* Certificate seal */
+  .certificate-seal {
+    position: absolute;
+    bottom: 3cm;
+    right: 3cm;
+    width: 5cm;
+    height: 5cm;
+    background-image: url('certificate-seal.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+  }
+  
+  /* Certificate date */
+  .certificate-date {
+    position: absolute;
+    bottom: 1.5cm;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 12pt;
+  }
+}</code></pre>
+                        
+                        <p>Corresponding HTML structure:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+  &lt;title>Certificate of Completion&lt;/title>
+  &lt;link rel="stylesheet" href="certificate-print.css">
+&lt;/head>
+&lt;body>
+  &lt;div class="certificate">
+    &lt;div class="certificate-header">
+      &lt;img src="organization-logo.png" alt="Organization Logo" class="logo">
+      &lt;h1 class="certificate-title">Certificate of Completion&lt;/h1>
+      &lt;div class="certificate-subtitle">This certifies that&lt;/div>
+    &lt;/div>
+    
+    &lt;div class="certificate-body">
+      &lt;div class="recipient-name">John Doe&lt;/div>
+      
+      &lt;div class="certificate-text">
+        has successfully completed the course
+        &lt;strong>"Advanced Web Development"&lt;/strong>
+        with a total of 40 hours of instruction and practical exercises.
+      &lt;/div>
+    &lt;/div>
+    
+    &lt;div class="certificate-footer">
+      &lt;div class="signature">
+        &lt;div class="signature-line">Instructor Signature&lt;/div>
+        &lt;div>Dr. Jane Smith&lt;/div>
+        &lt;div>Lead Instructor&lt;/div>
+      &lt;/div>
+      
+      &lt;div class="signature">
+        &lt;div class="signature-line">Director Signature&lt;/div>
+        &lt;div>Dr. Robert Johnson&lt;/div>
+        &lt;div>Program Director&lt;/div>
+      &lt;/div>
+    &lt;/div>
+    
+    &lt;div class="certificate-seal">&lt;/div>
+    
+    &lt;div class="certificate-date">
+      Issued on January 15, 2025
+      &lt;br>
+      Certificate ID: CERT-2025-12345
+    &lt;/div>
+  &lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Print-Friendly Responsive Design</h2>
+                        <p>Combining print stylesheets with responsive design requires special considerations.</p>
+                        
+                        <h3>Responsive Images for Print</h3>
+                        <p>Ensure images work well both on screen and in print:</p>
+                        
+                        <pre><code class="language-css">/* Screen styles */
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Print styles */
+@media print {
+  .responsive-image {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* For high-resolution printing */
+  .responsive-image[data-print-src] {
+    content: attr(data-print-src);
+  }
+}</code></pre>
+                        
+                        <p>HTML for responsive images with print optimization:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Responsive image with print-specific version -->
+&lt;img 
+  src="image-web.jpg" 
+  data-print-src="image-print.jpg" 
+  class="responsive-image" 
+  alt="Description"
+></code></pre>
+                        
+                        <h3>Responsive Tables for Print</h3>
+                        <p>Ensure responsive tables print properly:</p>
+                        
+                        <pre><code class="language-css">/* Screen styles for responsive tables */
+@media screen and (max-width: 600px) {
+  .responsive-table thead {
+    display: none;
+  }
+  
+  .responsive-table tr {
+    display: block;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+  }
+  
+  .responsive-table td {
+    display: block;
+    text-align: right;
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+  
+  .responsive-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+  }
+}
+
+/* Print styles to restore table layout */
+@media print {
+  .responsive-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .responsive-table thead {
+    display: table-header-group;
+  }
+  
+  .responsive-table tr {
+    display: table-row;
+  }
+  
+  .responsive-table th,
+  .responsive-table td {
+    display: table-cell;
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .responsive-table td:before {
+    content: none !important;
+  }
+}</code></pre>
+                        
+                        <h3>Handling Responsive Layouts in Print</h3>
+                        <p>Ensure responsive layouts print properly:</p>
+                        
+                        <pre><code class="language-css">/* Screen styles for responsive layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print styles to optimize layout */
+@media print {
+  .grid-container {
+    display: block;
+  }
+  
+  .grid-item {
+    margin-bottom: 1cm;
+    break-inside: avoid;
+  }
+  
+  /* Alternative: keep grid but with fewer columns */
+  .grid-container.keep-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1cm;
+  }
+}</code></pre>
+                        
+                        <h3>Print Preview Button</h3>
+                        <p>Add a print button to your web pages:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Print button -->
+&lt;button class="print-button" onclick="window.print()">
+  &lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    &lt;polyline points="6 9 6 2 18 2 18 9">&lt;/polyline>
+    &lt;path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2">&lt;/path>
+    &lt;rect x="6" y="14" width="12" height="8">&lt;/rect>
+  &lt;/svg>
+  Print this page
+&lt;/button></code></pre>
+                        
+                        <pre><code class="language-css">/* Style for print button */
+.print-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.print-button:hover {
+  background-color: #e5e5e5;
+}
+
+.print-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Hide print button when printing */
+@media print {
+  .print-button {
+    display: none;
+  }
+}</code></pre>
+                        
+                        <h3>Print Options Dialog</h3>
+                        <p>Create a custom print options dialog:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Print options button -->
+&lt;button id="print-options-button" class="print-options-button">
+  Print Options
+&lt;/button>
+
+&lt;!-- Print options dialog -->
+&lt;div id="print-options-dialog" class="print-options-dialog">
+  &lt;div class="print-options-content">
+    &lt;h2>Print Options&lt;/h2>
+    
+    &lt;div class="print-option">
+      &lt;input type="checkbox" id="include-images" checked>
+      &lt;label for="include-images">Include Images&lt;/label>
+    &lt;/div>
+    
+    &lt;div class="print-option">
+      &lt;input type="checkbox" id="include-comments" checked>
+      &lt;label for="include-comments">Include Comments&lt;/label>
+    &lt;/div>
+    
+    &lt;div class="print-option">
+      &lt;input type="checkbox" id="include-code" checked>
+      &lt;label for="include-code">Include Code Samples&lt;/label>
+    &lt;/div>
+    
+    &lt;div class="print-option">
+      &lt;label for="print-size">Paper Size:&lt;/label>
+      &lt;select id="print-size">
+        &lt;option value="letter">Letter&lt;/option>
+        &lt;option value="a4">A4&lt;/option>
+        &lt;option value="legal">Legal&lt;/option>
+      &lt;/select>
+    &lt;/div>
+    
+    &lt;div class="print-option">
+      &lt;label for="print-orientation">Orientation:&lt;/label>
+      &lt;select id="print-orientation">
+        &lt;option value="portrait">Portrait&lt;/option>
+        &lt;option value="landscape">Landscape&lt;/option>
+      &lt;/select>
+    &lt;/div>
+    
+    &lt;div class="print-buttons">
+      &lt;button id="print-cancel">Cancel&lt;/button>
+      &lt;button id="print-apply">Print&lt;/button>
+    &lt;/div>
+  &lt;/div>
+&lt;/div></code></pre>
+                        
+                        <pre><code class="language-javascript">// Print options dialog functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const printOptionsButton = document.getElementById('print-options-button');
+  const printOptionsDialog = document.getElementById('print-options-dialog');
+  const printCancel = document.getElementById('print-cancel');
+  const printApply = document.getElementById('print-apply');
+  
+  // Show dialog
+  printOptionsButton.addEventListener('click', function() {
+    printOptionsDialog.style.display = 'flex';
+  });
+  
+  // Hide dialog
+  printCancel.addEventListener('click', function() {
+    printOptionsDialog.style.display = 'none';
+  });
+  
+  // Apply print options and print
+  printApply.addEventListener('click', function() {
+    // Get options
+    const includeImages = document.getElementById('include-images').checked;
+    const includeComments = document.getElementById('include-comments').checked;
+    const includeCode = document.getElementById('include-code').checked;
+    const printSize = document.getElementById('print-size').value;
+    const printOrientation = document.getElementById('print-orientation').value;
+    
+    // Apply options to document
+    document.body.classList.toggle('hide-images', !includeImages);
+    document.body.classList.toggle('hide-comments', !includeComments);
+    document.body.classList.toggle('hide-code', !includeCode);
+    document.body.setAttribute('data-print-size', printSize);
+    document.body.setAttribute('data-print-orientation', printOrientation);
+    
+    // Hide dialog
+    printOptionsDialog.style.display = 'none';
+    
+    // Print after a short delay to ensure styles are applied
+    setTimeout(function() {
+      window.print();
+      
+      // Reset after printing
+      setTimeout(function() {
+        document.body.classList.remove('hide-images', 'hide-comments', 'hide-code');
+      }, 1000);
+    }, 100);
+  });
+});</code></pre>
+                        
+                        <pre><code class="language-css">/* Print options dialog styles */
+.print-options-dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.print-options-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.print-option {
+  margin-bottom: 15px;
+}
+
+.print-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Print styles based on options */
+@media print {
+  body.hide-images img:not(.essential-image) {
+    display: none !important;
+  }
+  
+  body.hide-comments .comment-section {
+    display: none !important;
+  }
+  
+  body.hide-code .code-block {
+    display: none !important;
+  }
+  
+  body[data-print-size="letter"] {
+    /* Letter size styles */
+  }
+  
+  body[data-print-size="a4"] {
+    /* A4 size styles */
+  }
+  
+  body[data-print-orientation="landscape"] {
+    /* Landscape orientation styles */
+  }
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Creating a Print Stylesheet</h2>
+                        <p>Let's put your knowledge of print stylesheets into practice with a hands-on exercise.</p>
+                        
+                        <h3>Exercise: Create a Print Stylesheet for a Blog</h3>
+                        <p>In this exercise, you'll create a print stylesheet for a blog page.</p>
+                        
+                        <h4>Step 1: Start with the HTML Structure</h4>
+                        <p>Here's a simplified blog page structure:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+  &lt;title>My Tech Blog - CSS Grid Layout Tutorial&lt;/title>
+  &lt;link rel="stylesheet" href="styles.css">
+  &lt;!-- We'll add print styles here -->
+&lt;/head>
+&lt;body>
+  &lt;header class="site-header">
+    &lt;div class="logo">
+      &lt;img src="logo.png" alt="My Tech Blog">
+    &lt;/div>
+    &lt;nav class="main-nav">
+      &lt;ul>
+        &lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Tutorials&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">News&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+      &lt;/ul>
+    &lt;/nav>
+    &lt;div class="search-box">
+      &lt;input type="text" placeholder="Search...">
+      &lt;button>Search&lt;/button>
+    &lt;/div>
+  &lt;/header>
+
+  &lt;main class="content">
+    &lt;article class="blog-post">
+      &lt;header class="post-header">
+        &lt;h1>CSS Grid Layout: A Comprehensive Tutorial&lt;/h1>
+        &lt;div class="post-meta">
+          &lt;span class="post-date">January 15, 2025&lt;/span>
+          &lt;span class="post-author">by Jane Smith&lt;/span>
+          &lt;span class="post-category">CSS&lt;/span>
+        &lt;/div>
+      &lt;/header>
+      
+      &lt;div class="post-content">
+        &lt;p class="post-intro">CSS Grid Layout is a powerful tool for creating two-dimensional layouts on the web. In this tutorial, we'll explore how to use CSS Grid to create complex layouts with ease.&lt;/p>
+        
+        &lt;h2>What is CSS Grid?&lt;/h2>
+        &lt;p>CSS Grid Layout is a two-dimensional layout system designed specifically for the web. It allows you to organize content into rows and columns, and it makes it easier to design web pages without having to use floats and positioning.&lt;/p>
+        
+        &lt;figure class="post-image">
+          &lt;img src="css-grid-example.png" alt="CSS Grid Example">
+          &lt;figcaption>Fig 1: A basic CSS Grid layout example&lt;/figcaption>
+        &lt;/figure>
+        
+        &lt;h2>Basic Grid Terminology&lt;/h2>
+        &lt;p>Before diving into CSS Grid, it's important to understand some key terminology:&lt;/p>
+        
+        &lt;ul>
+          &lt;li>&lt;strong>Grid Container&lt;/strong>: The element on which display: grid is applied.&lt;/li>
+          &lt;li>&lt;strong>Grid Item&lt;/strong>: The children of the grid container.&lt;/li>
+          &lt;li>&lt;strong>Grid Line&lt;/strong>: The dividing lines that make up the structure of the grid.&lt;/li>
+          &lt;li>&lt;strong>Grid Track&lt;/strong>: The space between two adjacent grid lines (rows or columns).&lt;/li>
+          &lt;li>&lt;strong>Grid Cell&lt;/strong>: The space between four grid lines, like a table cell.&lt;/li>
+          &lt;li>&lt;strong>Grid Area&lt;/strong>: The total space surrounded by four grid lines.&lt;/li>
+        &lt;/ul>
+        
+        &lt;h2>Creating a Basic Grid&lt;/h2>
+        &lt;p>To create a basic grid, you need to set the display property of an element to grid:&lt;/p>
+        
+        &lt;div class="code-block">
+          &lt;pre>&lt;code>.container {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 100px 100px;
+  gap: 20px;
+}&lt;/code>&lt;/pre>
+        &lt;/div>
+        
+        &lt;p>This creates a grid with three columns, each 200px wide, and two rows, each 100px tall, with a 20px gap between grid items.&lt;/p>
+        
+        &lt;!-- More content would go here -->
+        
+        &lt;div class="share-buttons">
+          &lt;button>Share on Twitter&lt;/button>
+          &lt;button>Share on Facebook&lt;/button>
+          &lt;button>Share on LinkedIn&lt;/button>
+        &lt;/div>
+        
+        &lt;div class="related-posts">
+          &lt;h3>Related Posts&lt;/h3>
+          &lt;ul>
+            &lt;li>&lt;a href="#">Flexbox vs. Grid: When to Use Each&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">CSS Variables: A Modern Approach&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Responsive Design Best Practices&lt;/a>&lt;/li>
+          &lt;/ul>
+        &lt;/div>
+        
+        &lt;div class="comments-section">
+          &lt;h3>Comments (5)&lt;/h3>
+          &lt;div class="comment">
+            &lt;div class="comment-author">John Doe&lt;/div>
+            &lt;div class="comment-date">January 16, 2025&lt;/div>
+            &lt;div class="comment-content">
+              &lt;p>Great tutorial! I've been struggling with CSS Grid and this really helped clarify things.&lt;/p>
+            &lt;/div>
+          &lt;/div>
+          &lt;!-- More comments would go here -->
+          
+          &lt;form class="comment-form">
+            &lt;h4>Leave a Comment&lt;/h4>
+            &lt;div class="form-group">
+              &lt;label for="name">Name:&lt;/label>
+              &lt;input type="text" id="name">
+            &lt;/div>
+            &lt;div class="form-group">
+              &lt;label for="email">Email:&lt;/label>
+              &lt;input type="email" id="email">
+            &lt;/div>
+            &lt;div class="form-group">
+              &lt;label for="comment">Comment:&lt;/label>
+              &lt;textarea id="comment" rows="5">&lt;/textarea>
+            &lt;/div>
+            &lt;button type="submit">Submit Comment&lt;/button>
+          &lt;/form>
+        &lt;/div>
+      &lt;/div>
+    &lt;/article>
+  &lt;/main>
+  
+  &lt;aside class="sidebar">
+    &lt;div class="widget about-author">
+      &lt;h3>About the Author&lt;/h3>
+      &lt;img src="author.jpg" alt="Jane Smith" class="author-image">
+      &lt;p>Jane Smith is a front-end developer with 10 years of experience. She specializes in CSS and JavaScript.&lt;/p>
+    &lt;/div>
+    
+    &lt;div class="widget popular-posts">
+      &lt;h3>Popular Posts&lt;/h3>
+      &lt;ul>
+        &lt;li>&lt;a href="#">Introduction to CSS Variables&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">JavaScript ES6 Features&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Responsive Design Techniques&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Web Accessibility Guidelines&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">CSS Animation Tips&lt;/a>&lt;/li>
+      &lt;/ul>
+    &lt;/div>
+    
+    &lt;div class="widget newsletter">
+      &lt;h3>Subscribe to Newsletter&lt;/h3>
+      &lt;form>
+        &lt;input type="email" placeholder="Your email address">
+        &lt;button type="submit">Subscribe&lt;/button>
+      &lt;/form>
+    &lt;/div>
+    
+    &lt;div class="widget advertisements">
+      &lt;h3>Sponsored&lt;/h3>
+      &lt;div class="ad">
+        &lt;img src="ad1.jpg" alt="Advertisement">
+      &lt;/div>
+    &lt;/div>
+  &lt;/aside>
+  
+  &lt;footer class="site-footer">
+    &lt;div class="footer-widgets">
+      &lt;div class="footer-widget">
+        &lt;h4>About My Tech Blog&lt;/h4>
+        &lt;p>A blog dedicated to web development tutorials and news.&lt;/p>
+      &lt;/div>
+      &lt;div class="footer-widget">
+        &lt;h4>Categories&lt;/h4>
+        &lt;ul>
+          &lt;li>&lt;a href="#">HTML&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="#">CSS&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="#">JavaScript&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="#">Web Design&lt;/a>&lt;/li>
+        &lt;/ul>
+      &lt;/div>
+      &lt;div class="footer-widget">
+        &lt;h4>Follow Us&lt;/h4>
+        &lt;div class="social-links">
+          &lt;a href="#">Twitter&lt;/a>
+          &lt;a href="#">Facebook&lt;/a>
+          &lt;a href="#">Instagram&lt;/a>
+          &lt;a href="#">GitHub&lt;/a>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;div class="copyright">
+      &lt;p>&copy; 2025 My Tech Blog. All rights reserved.&lt;/p>
+    &lt;/div>
+  &lt;/footer>
+  
+  &lt;!-- Print button -->
+  &lt;button class="print-button" onclick="window.print()">
+    Print this article
+  &lt;/button>
+&lt;/body>
+&lt;/html></code></pre>
+                        
+                        <h4>Step 2: Create the Print Stylesheet</h4>
+                        <p>Now, let's create a print stylesheet for this blog page:</p>
+                        
+                        <pre><code class="language-css">/* Add this to your styles.css file */
+
+/* Print Styles */
+@media print {
+  /* Basic page setup */
+  @page {
+    margin: 2cm;
+  }
+  
+  body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    background: white !important;
+    color: black !important;
+  }
+  
+  /* Hide unnecessary elements */
+  .main-nav,
+  .search-box,
+  .sidebar,
+  .share-buttons,
+  .comments-section,
+  .site-footer,
+  .print-button,
+  .ad,
+  .newsletter,
+  form {
+    display: none !important;
+  }
+  
+  /* Layout adjustments */
+  .site-header {
+    text-align: center;
+    margin-bottom: 2cm;
+    border-bottom: 1pt solid #ccc;
+    padding-bottom: 1cm;
+  }
+  
+  .content {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+  }
+  
+  /* Typography adjustments */
+  h1 {
+    font-size: 24pt;
+    margin-bottom: 0.5cm;
+  }
+  
+  h2 {
+    font-size: 18pt;
+    margin-top: 1cm;
+    margin-bottom: 0.5cm;
+  }
+  
+  h3 {
+    font-size: 14pt;
+    margin-top: 0.8cm;
+    margin-bottom: 0.3cm;
+  }
+  
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  /* Links */
+  a {
+    color: black !important;
+    text-decoration: underline;
+  }
+  
+  /* External links - show URL */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    font-style: italic;
+  }
+  
+  /* Don't show URL for internal links */
+  a[href^="#"]:after,
+  a[href^="/"]:after {
+    content: "";
+  }
+  
+  /* Images */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  figure {
+    margin: 1cm 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  figcaption {
+    font-style: italic;
+    font-size: 10pt;
+  }
+  
+  /* Code blocks */
+  .code-block {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    border: 1pt solid #ccc;
+    padding: 0.5cm;
+    margin: 0.5cm 0;
+    background: none !important;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10pt;
+    white-space: pre-wrap;
+  }
+  
+  /* Page breaks */
+  h1, h2, h3 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  /* Related posts */
+  .related-posts {
+    margin-top: 1cm;
+    padding-top: 0.5cm;
+    border-top: 1pt solid #ccc;
+  }
+  
+  /* Add print-only elements */
+  .post-header:after {
+    content: "Printed from: " attr(data-url);
+    display: block;
+    font-size: 10pt;
+    color: #666;
+    margin-top: 0.5cm;
+  }
+  
+  /* Add page numbers */
+  @bottom-right {
+    content: "Page " counter(page);
+    font-size: 10pt;
+  }
+  
+  /* Add print date */
+  .post-content:after {
+    content: "Printed on " attr(data-print-date);
+    display: block;
+    text-align: center;
+    font-size: 10pt;
+    margin-top: 2cm;
+    font-style: italic;
+  }
+}</code></pre>
+                        
+                        <h4>Step 3: Add JavaScript to Set Dynamic Data</h4>
+                        <p>Add this JavaScript to set the current URL and date for printing:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Add this before the closing body tag -->
+&lt;script>
+  // Set current URL and date for printing
+  document.addEventListener('DOMContentLoaded', function() {
+    const postHeader = document.querySelector('.post-header');
+    const postContent = document.querySelector('.post-content');
+    
+    if (postHeader) {
+      postHeader.setAttribute('data-url', window.location.href);
+    }
+    
+    if (postContent) {
+      const now = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      postContent.setAttribute('data-print-date', now.toLocaleDateString(undefined, options));
+    }
+  });
+&lt;/script></code></pre>
+                        
+                        <h4>Step 4: Test the Print Stylesheet</h4>
+                        <p>To test your print stylesheet:</p>
+                        <ol>
+                            <li>Open the page in a browser</li>
+                            <li>Press Ctrl+P (Windows/Linux) or Cmd+P (Mac) to open the print dialog</li>
+                            <li>Check the print preview to see how your page will look when printed</li>
+                            <li>Make adjustments to your print stylesheet as needed</li>
+                        </ol>
+                        
+                        <h4>Step 5: Enhance the Print Stylesheet</h4>
+                        <p>Here are some additional enhancements you could make:</p>
+                        
+                        <pre><code class="language-css">/* Additional print stylesheet enhancements */
+@media print {
+  /* Add a print-only header with logo and site name */
+  body::before {
+    content: "";
+    display: block;
+    height: 50pt;
+    background-image: url('logo-print.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 1cm;
+  }
+  
+  /* Add a QR code linking back to the article */
+  .post-content::after {
+    content: "";
+    display: block;
+    height: 100pt;
+    background-image: url('qr-code.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-top: 1cm;
+  }
+  
+  /* Add a watermark for draft content */
+  .draft-article {
+    position: relative;
+  }
+  
+  .draft-article::after {
+    content: "DRAFT";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 100pt;
+    color: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    z-index: 1000;
+  }
+  
+  /* Create a table of contents for long articles */
+  .toc {
+    page-break-before: always;
+    break-before: always;
+  }
+  
+  /* Force page breaks at specific points */
+  .page-break {
+    page-break-before: always;
+    break-before: always;
+  }
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored CSS for print, covering techniques for creating effective print stylesheets and optimizing web content for printing. Here's a summary of what we've learned:</p>
+                        
+                        <ul>
+                            <li><strong>Print Stylesheet Basics</strong>: Using media queries, separate stylesheets, or @import to define print-specific styles</li>
+                            <li><strong>Essential Print Techniques</strong>: Hiding unnecessary elements, optimizing layout for paper, managing page breaks, handling links and URLs, optimizing images, and adding print-only content</li>
+                            <li><strong>Advanced Print Techniques</strong>: Using the @page rule, page margin boxes, generated content, color adjustments, and layout modifications</li>
+                            <li><strong>Creating Printable Documents</strong>: Designing specialized print layouts for invoices, certificates, and other documents</li>
+                            <li><strong>Print-Friendly Responsive Design</strong>: Ensuring responsive designs work well when printed</li>
+                        </ul>
+                        
+                        <p>Remember these key principles when creating print stylesheets:</p>
+                        <ol>
+                            <li><strong>Simplify</strong>: Remove unnecessary elements and simplify the layout for print</li>
+                            <li><strong>Optimize</strong>: Adjust typography, colors, and images for better print quality</li>
+                            <li><strong>Control</strong>: Manage page breaks to ensure content flows logically across pages</li>
+                            <li><strong>Enhance</strong>: Add print-specific information like URLs, page numbers, and timestamps</li>
+                            <li><strong>Test</strong>: Always test your print stylesheets across different browsers and devices</li>
+                        </ol>
+                        
+                        <p>By implementing these techniques, you can ensure that your web content remains usable and attractive when printed, providing a better experience for users who need physical copies of your content.</p>
+                        
+                        <p>In the next lesson, we'll explore the Future of CSS, looking at emerging features, specifications, and trends that will shape the future of web styling.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page47.html" class="btn">Previous: CSS Testing</a>
+                        <a href="page49.html" class="btn">Next: Future of CSS</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

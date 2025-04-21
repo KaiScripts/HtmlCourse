@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms Advanced | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn advanced HTML form techniques for creating powerful, user-friendly, and accessible web forms.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="15">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html" class="active">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional HTML</h3>
+                <ul>
+                    <li><a href="page13.html">13. Advanced HTML Concepts</a></li>
+                    <li><a href="page14.html">14. HTML5 Semantic Elements</a></li>
+                    <li><a href="page15.html" class="active">15. HTML Forms Advanced</a></li>
+                    <li><a href="page16.html">16. HTML Media & Graphics</a></li>
+                    <li><a href="page17.html">17. HTML APIs</a></li>
+                    <li><a href="page18.html">18. Web Storage</a></li>
+                    <li><a href="page19.html">19. Geolocation API</a></li>
+                    <li><a href="page20.html">20. Drag & Drop API</a></li>
+                    <li><a href="page21.html">21. Web Workers</a></li>
+                    <li><a href="page22.html">22. Server-Sent Events</a></li>
+                    <li><a href="page23.html">23. WebSockets</a></li>
+                    <li><a href="page24.html">24. Responsive HTML</a></li>
+                    <li><a href="page25.html">25. HTML Accessibility</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 30%;"></div>
+                </div>
+                <p style="text-align: center;">Page 15 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Advanced HTML Forms</h1>
+                    
+                    <div class="card">
+                        <h2>Beyond Basic Forms</h2>
+                        <p>In the HTML basics section, we covered the fundamentals of creating forms with elements like <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code>. Now, we'll explore advanced form techniques that professional developers use to create more powerful, user-friendly, and accessible web forms.</p>
+                        
+                        <p>HTML5 introduced significant enhancements to form capabilities, including new input types, attributes, and elements that make it easier to create sophisticated forms with built-in validation, better semantics, and enhanced user experiences.</p>
+                        
+                        <div class="info-box">
+                            <h4>Why Advanced Forms Matter</h4>
+                            <p>Forms are the primary way users interact with websites and web applications. Advanced form techniques allow you to:</p>
+                            <ul>
+                                <li><strong>Improve user experience</strong> with more intuitive inputs and better feedback</li>
+                                <li><strong>Reduce errors</strong> with built-in validation and constraints</li>
+                                <li><strong>Increase accessibility</strong> for users with disabilities</li>
+                                <li><strong>Streamline data collection</strong> with specialized input types</li>
+                                <li><strong>Enhance mobile experiences</strong> with touch-friendly controls</li>
+                                <li><strong>Reduce development time</strong> by leveraging browser capabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>HTML5 Input Types</h2>
+                        <p>HTML5 introduced several new input types that provide specialized interfaces for different types of data. These input types not only improve user experience but also provide built-in validation and appropriate virtual keyboards on mobile devices.</p>
+                        
+                        <h3>Email Input</h3>
+                        <p>The <code>email</code> input type is designed specifically for email addresses and provides built-in validation.</p>
+                        
+                        <pre><code class="language-html">&lt;label for="user-email"&gt;Email Address:&lt;/label&gt;
+&lt;input type="email" id="user-email" name="email" required&gt;</code></pre>
+                        
+                        <p><strong>Key features:</strong></p>
+                        <ul>
+                            <li>Validates that the input contains a properly formatted email address</li>
+                            <li>Shows an email-specific keyboard on mobile devices</li>
+                            <li>Can use the <code>multiple</code> attribute to accept multiple email addresses separated by commas</li>
+                        </ul>
+                        
+                        <pre><code class="language-html">&lt;!-- Multiple email addresses --&gt;
+&lt;label for="cc-emails"&gt;CC (separate multiple emails with commas):&lt;/label&gt;
+&lt;input type="email" id="cc-emails" name="cc" multiple&gt;</code></pre>
+                        
+                        <h3>URL Input</h3>
+                        <p>The <code>url</code> input type is designed for web addresses and provides built-in validation.</p>
+                        
+                        <pre><code class="language-html">&lt;label for="website"&gt;Website:&lt;/label&gt;
+&lt;input type="url" id="website" name="website" placeholder="https://example.com"&gt;</code></pre>
+                        
+                        <p><strong>Key features:</strong></p>
+                        <ul>
+                            <li>Validates that the input contains a properly formatted URL</li>
+                            <li>Shows a URL-specific keyboard on mobile devices (with ".com" key)</li>
+                            <li>Typically requires the protocol (http:// or https://) to be valid</li>
+                        </ul>
+                        
+                        <h3>Telephone Input</h3>
+                        <p>The <code>tel</code> input type is designed for telephone numbers.</p>
+                        
+                        <pre><code class="language-html">&lt;label for="phone"&gt;Phone Number:&lt;/label&gt;
+&lt;input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"&gt;</code></pre>
+                        
+                        <p><strong>Key features:</strong></p>
+                        <ul>
+                            <li>Shows a telephone keypad on mobile devices</li>
+                            <li>Does not provide built-in validation (since phone formats vary globally)</li>
+                            <li>Can be combined with the <code>pattern</code> attribute for custom validation</li>
+                        </ul>
+                        
+                        <h3>Number Input</h3>
+                        <p>The <code>number</code> input type is designed for numeric values and provides a spinbox interface.</p>
+                        
+                        <pre><code class="language-html">&lt;label for="quantity"&gt;Quantity:&lt;/label&gt;
+&lt;input type="number" id="quantity" name="quantity" min="1" max="100" step="1" value="1"&gt;</code></pre>
+                        
+                        <p><strong>Key features:</strong></p>
+                        <ul>
+                            <li>Validates that the input is a number</li>
+                            <li>Provides increment/decrement buttons</li>
+                            <li>Shows a numeric keypad on mobile devices</li>
+                            <li>Supports <code>min</code>, <code>max</code>, and <code>step</code> attributes for constraints</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>When to Use Number vs. Text</h4>
+                            <p>The <code>number</code> input type should only be used for values that the user might want to increment or decrement. For numeric values that aren't quantities, such as credit card numbers, postal codes, or ID numbers, use <code>type="text"</code> with appropriate patterns or specialized types like <code>type="tel"</code>.</p>
+                        </div>
+                        
+                        <h3>Range Input</h3>
+                        <p>The <code>range</code> input type creates a slider control for selecting a numeric value within a range.</p>
+                        
+                        <pre><code class="language-html">&lt;label for="volume"&gt;Volume:&lt;/label&gt;
+&lt;input type="range" id="volume" name="volume" min="0" max="100" step="1" value="50"&gt;
+&lt;output for="volume"&gt;50&lt;/output&gt;
+
+&lt;script&gt;
+    const volumeInput = document.getElementById('volume');
+    const volumeOutput = document.querySelector('output[for="volume"]');
+    
+    volumeInput.addEventListener('input', function() {
+        volumeOutput.textContent = this.value;
+    });
+&lt;/script&gt;</code></pre>
+                        
+                        <p><strong>Key features:</strong></p>
+                        <ul>
+                            <li>Provides a slider interface for selecting a value</li>
+                            <li>Good for values where the exact number is less important than the relative position</li>
+                            <li>Supports <code>min</code>, <code>max</code>, and <code>step</code> attributes</li>
+                            <li>Often paired with an <code>&lt;output&gt;</code> element to display the current value</li>
+                        </ul>
+                        
+                        <h3>Date and Time Inputs</h3>
+                        <p>HTML5 introduced several input types for dates and times, providing calendar and time picker interfaces.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Date input --&gt;
+&lt;label for="birthdate"&gt;Date of Birth:&lt;/label&gt;
+&lt;input type="date" id="birthdate" name="birthdate" min="1900-01-01" max="2025-12-31"&gt;
+
+&lt;!-- Time input --&gt;
+&lt;label for="meeting-time"&gt;Meeting Time:&lt;/label&gt;
+&lt;input type="time" id="meeting-time" name="meeting-time"&gt;
+
+&lt;!-- Date and time input --&gt;
+&lt;label for="appointment"&gt;Appointment:&lt;/label&gt;
+&lt;input type="datetime-local" id="appointment" name="appointment"&gt;
+
+&lt;!-- Month input --&gt;
+&lt;label for="credit-expiry"&gt;Credit Card Expiration:&lt;/label&gt;
+&lt;input type="month" id="credit-expiry" name="credit-expiry"&gt;
+
+&lt;!-- Week input --&gt;
+&lt;label for="vacation-week"&gt;Vacation Week:&lt;/label&gt;
+&lt;input type="week" id="vacation-week" name="vacation-week"&gt;</code></pre>
+                        
+                        <p><strong>Key features:</strong></p>
+                        <ul>
+                            <li>Provides specialized date/time picker interfaces</li>
+                            <li>Ensures consistent date/time formats</li>
+                            <li>Supports <code>min</code> and <code>max</code> attributes for date ranges</li>
+                            <li>Returns standardized values (e.g., "2025-04-20" for dates)</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Browser Support Considerations</h4>
+                            <p>Date and time inputs have varying levels of support across browsers. Some browsers may fall back to a text input. Always provide clear format instructions and consider using JavaScript date picker libraries for consistent experiences.</p>
+                        </div>
+                        
+                        <h3>Color Input</h3>
+                        <p>The <code>color</code> input type creates a color picker interface.</p>
+                        
+                        <pre><code class="language-html">&lt;label for="theme-color"&gt;Theme Color:&lt;/label&gt;
+&lt;input type="color" id="theme-color" name="theme-color" value="#3366ff"&gt;</code></pre>
+                        
+                        <p><strong>Key features:</strong></p>
+                        <ul>
+                            <li>Provides a color picker interface</li>
+                            <li>Returns colors in hexadecimal format (#RRGGBB)</li>
+                            <li>Can set a default color with the <code>value</code> attribute</li>
+                        </ul>
+                        
+                        <h3>Search Input</h3>
+                        <p>The <code>search</code> input type is designed for search boxes.</p>
+                        
+                        <pre><code class="language-html">&lt;form role="search"&gt;
+    &lt;label for="site-search"&gt;Search the site:&lt;/label&gt;
+    &lt;input type="search" id="site-search" name="q" placeholder="Search..."&gt;
+    &lt;button type="submit"&gt;Search&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        
+                        <p><strong>Key features:</strong></p>
+                        <ul>
+                            <li>Styled differently in some browsers (rounded corners, clear button)</li>
+                            <li>Shows a search-optimized keyboard on mobile devices</li>
+                            <li>Provides semantic meaning for search functionality</li>
+                        </ul>
+                        
+                        <h3>File Input</h3>
+                        <p>The <code>file</code> input type allows users to upload files.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Basic file upload --&gt;
+&lt;label for="document-upload"&gt;Upload Document:&lt;/label&gt;
+&lt;input type="file" id="document-upload" name="document"&gt;
+
+&lt;!-- Multiple file upload --&gt;
+&lt;label for="photo-upload"&gt;Upload Photos:&lt;/label&gt;
+&lt;input type="file" id="photo-upload" name="photos" multiple&gt;
+
+&lt;!-- Restricted file types --&gt;
+&lt;label for="image-upload"&gt;Upload Image:&lt;/label&gt;
+&lt;input type="file" id="image-upload" name="image" accept="image/*"&gt;
+
+&lt;!-- Specific file types --&gt;
+&lt;label for="resume-upload"&gt;Upload Resume:&lt;/label&gt;
+&lt;input type="file" id="resume-upload" name="resume" accept=".pdf,.doc,.docx"&gt;</code></pre>
+                        
+                        <p><strong>Key features:</strong></p>
+                        <ul>
+                            <li>Provides a file selection interface</li>
+                            <li>Supports the <code>multiple</code> attribute for selecting multiple files</li>
+                            <li>Supports the <code>accept</code> attribute to specify allowed file types</li>
+                            <li>Requires <code>enctype="multipart/form-data"</code> on the form for file uploads</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Custom File Input Styling</h4>
+                            <p>The default file input styling is difficult to customize. Professional developers often use techniques to create custom-styled file inputs:</p>
+                            <pre><code class="language-html">&lt;div class="custom-file-upload"&gt;
+    &lt;input type="file" id="file-upload" name="file" class="file-input-hidden"&gt;
+    &lt;label for="file-upload" class="file-upload-button"&gt;Choose File&lt;/label&gt;
+    &lt;span class="file-name"&gt;No file chosen&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+    .file-input-hidden {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+    
+    .file-upload-button {
+        display: inline-block;
+        padding: 10px 15px;
+        background: #3366ff;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .file-name {
+        margin-left: 10px;
+    }
+&lt;/style&gt;
+
+&lt;script&gt;
+    document.getElementById('file-upload').addEventListener('change', function() {
+        const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+        document.querySelector('.file-name').textContent = fileName;
+    });
+&lt;/script&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Form Attributes</h2>
+                        <p>HTML5 introduced several new attributes that enhance form functionality, validation, and user experience.</p>
+                        
+                        <h3>Validation Attributes</h3>
+                        <p>HTML5 provides built-in form validation through attributes, reducing the need for JavaScript validation.</p>
+                        
+                        <h4>required</h4>
+                        <p>The <code>required</code> attribute specifies that an input field must be filled out before submitting the form.</p>
+                        
+                        <pre><code class="language-html">&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" name="username" required&gt;</code></pre>
+                        
+                        <h4>pattern</h4>
+                        <p>The <code>pattern</code> attribute specifies a regular expression that the input's value must match.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Password with requirements --&gt;
+&lt;label for="password"&gt;Password:&lt;/label&gt;
+&lt;input type="password" id="password" name="password" 
+       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+       title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 characters"
+       required&gt;
+
+&lt;!-- US Zip Code --&gt;
+&lt;label for="zipcode"&gt;Zip Code:&lt;/label&gt;
+&lt;input type="text" id="zipcode" name="zipcode" 
+       pattern="[0-9]{5}(-[0-9]{4})?" 
+       title="Five digit zip code, optionally followed by a hyphen and four more digits"&gt;</code></pre>
+                        
+                        <h4>min, max, and step</h4>
+                        <p>These attributes set constraints on numeric inputs and date/time inputs.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Age input with range --&gt;
+&lt;label for="age"&gt;Age:&lt;/label&gt;
+&lt;input type="number" id="age" name="age" min="18" max="120"&gt;
+
+&lt;!-- Price with decimal steps --&gt;
+&lt;label for="price"&gt;Price:&lt;/label&gt;
+&lt;input type="number" id="price" name="price" min="0" step="0.01"&gt;
+
+&lt;!-- Future date selection --&gt;
+&lt;label for="delivery-date"&gt;Delivery Date:&lt;/label&gt;
+&lt;input type="date" id="delivery-date" name="delivery-date" 
+       min="2025-04-21" max="2025-12-31"&gt;</code></pre>
+                        
+                        <h4>minlength and maxlength</h4>
+                        <p>These attributes specify the minimum and maximum number of characters allowed in a text input.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Username with length constraints --&gt;
+&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" name="username" 
+       minlength="3" maxlength="20"&gt;
+
+&lt;!-- Message with minimum length --&gt;
+&lt;label for="message"&gt;Message:&lt;/label&gt;
+&lt;textarea id="message" name="message" 
+          minlength="10" maxlength="1000" 
+          rows="5" cols="30"&gt;&lt;/textarea&gt;</code></pre>
+                        
+                        <h3>User Experience Attributes</h3>
+                        <p>These attributes enhance the user experience by providing additional functionality and information.</p>
+                        
+                        <h4>placeholder</h4>
+                        <p>The <code>placeholder</code> attribute provides a hint that describes the expected value of an input field.</p>
+                        
+                        <pre><code class="language-html">&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email" 
+       placeholder="name@example.com"&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Placeholder Best Practices</h4>
+                            <p>Placeholders should:</p>
+                            <ul>
+                                <li>Provide hints, not labels (always use a separate <code>&lt;label&gt;</code>)</li>
+                                <li>Be concise and show the expected format</li>
+                                <li>Not contain critical information (they disappear when the user starts typing)</li>
+                                <li>Have sufficient contrast for readability</li>
+                            </ul>
+                        </div>
+                        
+                        <h4>autocomplete</h4>
+                        <p>The <code>autocomplete</code> attribute specifies whether a form or input field should have autocomplete enabled.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Disable autocomplete for the entire form --&gt;
+&lt;form autocomplete="off"&gt;
+    &lt;!-- Form fields --&gt;
+&lt;/form&gt;
+
+&lt;!-- Enable specific autocomplete types --&gt;
+&lt;label for="full-name"&gt;Full Name:&lt;/label&gt;
+&lt;input type="text" id="full-name" name="name" autocomplete="name"&gt;
+
+&lt;label for="street-address"&gt;Street Address:&lt;/label&gt;
+&lt;input type="text" id="street-address" name="address" autocomplete="street-address"&gt;
+
+&lt;label for="cc-number"&gt;Credit Card Number:&lt;/label&gt;
+&lt;input type="text" id="cc-number" name="cc-number" autocomplete="cc-number"&gt;</code></pre>
+                        
+                        <p>Common <code>autocomplete</code> values include:</p>
+                        <ul>
+                            <li><code>name</code>, <code>given-name</code>, <code>family-name</code></li>
+                            <li><code>email</code></li>
+                            <li><code>tel</code></li>
+                            <li><code>street-address</code>, <code>postal-code</code>, <code>country</code></li>
+                            <li><code>cc-name</code>, <code>cc-number</code>, <code>cc-exp</code>, <code>cc-csc</code></li>
+                            <li><code>username</code>, <code>new-password</code>, <code>current-password</code></li>
+                        </ul>
+                        
+                        <h4>autofocus</h4>
+                        <p>The <code>autofocus</code> attribute specifies that an input field should automatically get focus when the page loads.</p>
+                        
+                        <pre><code class="language-html">&lt;label for="search"&gt;Search:&lt;/label&gt;
+&lt;input type="search" id="search" name="q" autofocus&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Autofocus Accessibility Considerations</h4>
+                            <p>Use <code>autofocus</code> sparingly, as it can be disorienting for screen reader users. It's most appropriate on search pages or forms that are the primary purpose of the page.</p>
+                        </div>
+                        
+                        <h4>readonly</h4>
+                        <p>The <code>readonly</code> attribute specifies that an input field is read-only and cannot be modified.</p>
+                        
+                        <pre><code class="language-html">&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" name="username" value="johndoe" readonly&gt;</code></pre>
+                        
+                        <h4>disabled</h4>
+                        <p>The <code>disabled</code> attribute specifies that an input field is disabled and cannot be used.</p>
+                        
+                        <pre><code class="language-html">&lt;label for="premium-feature"&gt;Premium Feature:&lt;/label&gt;
+&lt;input type="checkbox" id="premium-feature" name="premium-feature" disabled&gt;
+&lt;span class="note"&gt;Available only in the Pro plan&lt;/span&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>readonly vs. disabled</h4>
+                            <p>Both attributes prevent users from modifying the input, but they have important differences:</p>
+                            <ul>
+                                <li><code>readonly</code> fields are still focusable and included in form submission</li>
+                                <li><code>disabled</code> fields are not focusable and are not included in form submission</li>
+                                <li><code>readonly</code> is typically used for information that should be submitted but not changed</li>
+                                <li><code>disabled</code> is used for fields that are temporarily unavailable</li>
+                            </ul>
+                        </div>
+                        
+                        <h4>list</h4>
+                        <p>The <code>list</code> attribute refers to a <code>&lt;datalist&gt;</code> element that contains predefined options for an input field.</p>
+                        
+                        <pre><code class="language-html">&lt;label for="browser"&gt;Browser:&lt;/label&gt;
+&lt;input type="text" id="browser" name="browser" list="browsers"&gt;
+
+&lt;datalist id="browsers"&gt;
+    &lt;option value="Chrome"&gt;
+    &lt;option value="Firefox"&gt;
+    &lt;option value="Safari"&gt;
+    &lt;option value="Edge"&gt;
+    &lt;option value="Opera"&gt;
+&lt;/datalist&gt;</code></pre>
+                        
+                        <h4>multiple</h4>
+                        <p>The <code>multiple</code> attribute specifies that the user is allowed to enter multiple values in an input field.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Multiple email addresses --&gt;
+&lt;label for="recipients"&gt;Recipients:&lt;/label&gt;
+&lt;input type="email" id="recipients" name="recipients" multiple&gt;
+
+&lt;!-- Multiple file upload --&gt;
+&lt;label for="gallery-upload"&gt;Upload Images:&lt;/label&gt;
+&lt;input type="file" id="gallery-upload" name="gallery" multiple&gt;</code></pre>
+                        
+                        <h3>Form Submission Attributes</h3>
+                        <p>These attributes control how forms are submitted and validated.</p>
+                        
+                        <h4>novalidate</h4>
+                        <p>The <code>novalidate</code> attribute specifies that the form should not be validated when submitted.</p>
+                        
+                        <pre><code class="language-html">&lt;form novalidate&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        
+                        <h4>formnovalidate</h4>
+                        <p>The <code>formnovalidate</code> attribute on a submit button specifies that the form should not be validated when submitted with that button.</p>
+                        
+                        <pre><code class="language-html">&lt;form&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;button type="submit" formnovalidate&gt;Save Draft&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        
+                        <h4>formaction, formmethod, formenctype, formtarget</h4>
+                        <p>These attributes on a submit button override the corresponding attributes of the form.</p>
+                        
+                        <pre><code class="language-html">&lt;form action="/submit" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    
+    &lt;!-- Regular submission --&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    
+    &lt;!-- Alternative submission --&gt;
+    &lt;button type="submit" 
+            formaction="/submit-special" 
+            formmethod="get" 
+            formenctype="multipart/form-data" 
+            formtarget="_blank"&gt;
+        Special Submit
+    &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Form Elements</h2>
+                        <p>Beyond the basic form elements, HTML5 introduced several new elements that enhance form functionality and user experience.</p>
+                        
+                        <h3>&lt;datalist&gt;</h3>
+                        <p>The <code>&lt;datalist&gt;</code> element provides a list of predefined options for an input field, creating a combobox-like experience.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Basic datalist --&gt;
+&lt;label for="country"&gt;Country:&lt;/label&gt;
+&lt;input type="text" id="country" name="country" list="countries"&gt;
+
+&lt;datalist id="countries"&gt;
+    &lt;option value="United States"&gt;
+    &lt;option value="Canada"&gt;
+    &lt;option value="United Kingdom"&gt;
+    &lt;option value="Australia"&gt;
+    &lt;option value="Germany"&gt;
+    &lt;option value="France"&gt;
+    &lt;option value="Japan"&gt;
+&lt;/datalist&gt;
+
+&lt;!-- Datalist with additional information --&gt;
+&lt;label for="airport"&gt;Airport:&lt;/label&gt;
+&lt;input type="text" id="airport" name="airport" list="airports"&gt;
+
+&lt;datalist id="airports"&gt;
+    &lt;option value="JFK"&gt;John F. Kennedy International Airport&lt;/option&gt;
+    &lt;option value="LAX"&gt;Los Angeles International Airport&lt;/option&gt;
+    &lt;option value="LHR"&gt;London Heathrow Airport&lt;/option&gt;
+    &lt;option value="CDG"&gt;Paris Charles de Gaulle Airport&lt;/option&gt;
+&lt;/datalist&gt;
+
+&lt;!-- Datalist with color input --&gt;
+&lt;label for="favorite-color"&gt;Favorite Color:&lt;/label&gt;
+&lt;input type="color" id="favorite-color" name="favorite-color" list="presetColors"&gt;
+
+&lt;datalist id="presetColors"&gt;
+    &lt;option value="#ff0000"&gt;
+    &lt;option value="#00ff00"&gt;
+    &lt;option value="#0000ff"&gt;
+    &lt;option value="#ffff00"&gt;
+    &lt;option value="#ff00ff"&gt;
+&lt;/datalist&gt;</code></pre>
+                        
+                        <p><strong>Key features:</strong></p>
+                        <ul>
+                            <li>Provides suggestions while still allowing free-form input</li>
+                            <li>Works with various input types (text, email, url, color, etc.)</li>
+                            <li>More flexible than a <code>&lt;select&gt;</code> element</li>
+                            <li>Can include additional information in the option text</li>
+                        </ul>
+                        
+                        <h3>&lt;output&gt;</h3>
+                        <p>The <code>&lt;output&gt;</code> element represents the result of a calculation or user action.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Simple calculator --&gt;
+&lt;form oninput="result.value = parseInt(a.value) + parseInt(b.value)"&gt;
+    &lt;input type="number" id="a" name="a" value="0"&gt;
+    +
+    &lt;input type="number" id="b" name="b" value="0"&gt;
+    =
+    &lt;output name="result" for="a b"&gt;0&lt;/output&gt;
+&lt;/form&gt;
+
+&lt;!-- Range slider with output --&gt;
+&lt;form&gt;
+    &lt;label for="price-range"&gt;Price Range: $&lt;output id="price-output"&gt;50&lt;/output&gt;&lt;/label&gt;
+    &lt;input type="range" id="price-range" name="price-range" 
+           min="0" max="100" step="1" value="50" 
+           oninput="price-output.value = this.value"&gt;
+&lt;/form&gt;</code></pre>
+                        
+                        <p><strong>Key features:</strong></p>
+                        <ul>
+                            <li>Provides a semantic way to display calculation results</li>
+                            <li>Can be associated with input elements using the <code>for</code> attribute</li>
+                            <li>Can be updated dynamically with JavaScript or the <code>oninput</code> event</li>
+                            <li>Included in form submission data</li>
+                        </ul>
+                        
+                        <h3>&lt;progress&gt;</h3>
+                        <p>The <code>&lt;progress&gt;</code> element represents the completion progress of a task.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Determinate progress (with known value) --&gt;
+&lt;label for="download-progress"&gt;Download progress:&lt;/label&gt;
+&lt;progress id="download-progress" value="70" max="100"&gt;70%&lt;/progress&gt;
+
+&lt;!-- Indeterminate progress (activity indicator) --&gt;
+&lt;label for="loading-progress"&gt;Loading:&lt;/label&gt;
+&lt;progress id="loading-progress"&gt;Working...&lt;/progress&gt;
+
+&lt;!-- Updating progress with JavaScript --&gt;
+&lt;label for="upload-progress"&gt;Uploading file:&lt;/label&gt;
+&lt;progress id="upload-progress" value="0" max="100"&gt;0%&lt;/progress&gt;
+
+&lt;script&gt;
+    // Simulate progress
+    const progressBar = document.getElementById('upload-progress');
+    let value = 0;
+    
+    const interval = setInterval(() => {
+        value += 10;
+        progressBar.value = value;
+        
+        if (value >= 100) {
+            clearInterval(interval);
+        }
+    }, 1000);
+&lt;/script&gt;</code></pre>
+                        
+                        <p><strong>Key features:</strong></p>
+                        <ul>
+                            <li>Provides a visual representation of progress</li>
+                            <li>Can be determinate (with a specific value) or indeterminate (activity indicator)</li>
+                            <li>Can be updated dynamically with JavaScript</li>
+                            <li>More semantic than using a div with a custom progress bar</li>
+                        </ul>
+                        
+                        <h3>&lt;meter&gt;</h3>
+                        <p>The <code>&lt;meter&gt;</code> element represents a scalar measurement within a known range.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Basic usage --&gt;
+&lt;label for="disk-space"&gt;Disk usage:&lt;/label&gt;
+&lt;meter id="disk-space" value="75" min="0" max="100"&gt;75%&lt;/meter&gt;
+
+&lt;!-- With optimum, low, and high values --&gt;
+&lt;label for="fuel"&gt;Fuel level:&lt;/label&gt;
+&lt;meter id="fuel" value="0.25" min="0" max="1" low="0.25" high="0.75" optimum="0.5"&gt;
+    25% full
+&lt;/meter&gt;</code></pre>
+                        
+                        <p><strong>Key features:</strong></p>
+                        <ul>
+                            <li>Represents a gauge or meter</li>
+                            <li>Typically rendered with different colors based on the value's position within the range</li>
+                            <li>Supports <code>low</code>, <code>high</code>, and <code>optimum</code> attributes to define thresholds</li>
+                            <li>Different from <code>&lt;progress&gt;</code>, which represents completion of a task</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Progress vs. Meter</h4>
+                            <p>While both <code>&lt;progress&gt;</code> and <code>&lt;meter&gt;</code> display a bar, they have different semantic meanings:</p>
+                            <ul>
+                                <li><code>&lt;progress&gt;</code> represents completion of a task (e.g., download progress, form completion)</li>
+                                <li><code>&lt;meter&gt;</code> represents a measurement within a range (e.g., disk usage, temperature, score)</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>&lt;fieldset&gt; and &lt;legend&gt;</h3>
+                        <p>The <code>&lt;fieldset&gt;</code> element groups related form controls, and the <code>&lt;legend&gt;</code> element provides a caption for the fieldset.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Basic usage --&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Personal Information&lt;/legend&gt;
+    
+    &lt;div&gt;
+        &lt;label for="full-name"&gt;Full Name:&lt;/label&gt;
+        &lt;input type="text" id="full-name" name="full-name" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;label for="phone"&gt;Phone:&lt;/label&gt;
+        &lt;input type="tel" id="phone" name="phone"&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+
+&lt;!-- Radio button group --&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Preferred Contact Method&lt;/legend&gt;
+    
+    &lt;div&gt;
+        &lt;input type="radio" id="contact-email" name="contact-method" value="email"&gt;
+        &lt;label for="contact-email"&gt;Email&lt;/label&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;input type="radio" id="contact-phone" name="contact-method" value="phone"&gt;
+        &lt;label for="contact-phone"&gt;Phone&lt;/label&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;input type="radio" id="contact-text" name="contact-method" value="text"&gt;
+        &lt;label for="contact-text"&gt;Text Message&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+
+&lt;!-- Disabled fieldset --&gt;
+&lt;fieldset disabled&gt;
+    &lt;legend&gt;Premium Features (Upgrade to Access)&lt;/legend&gt;
+    
+    &lt;div&gt;
+        &lt;input type="checkbox" id="feature1" name="features" value="feature1"&gt;
+        &lt;label for="feature1"&gt;Advanced Analytics&lt;/label&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;input type="checkbox" id="feature2" name="features" value="feature2"&gt;
+        &lt;label for="feature2"&gt;Priority Support&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+                        
+                        <p><strong>Key features:</strong></p>
+                        <ul>
+                            <li>Groups related form controls semantically</li>
+                            <li>Provides visual grouping with a border</li>
+                            <li>The <code>&lt;legend&gt;</code> element provides a caption for the group</li>
+                            <li>Can be disabled as a group using the <code>disabled</code> attribute</li>
+                            <li>Improves accessibility by creating a relationship between the legend and all controls in the fieldset</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Form Validation and Constraint Validation API</h2>
+                        <p>HTML5 introduced built-in form validation, which can be enhanced with the Constraint Validation API in JavaScript.</p>
+                        
+                        <h3>Built-in Validation</h3>
+                        <p>HTML5 provides several ways to validate form inputs without JavaScript:</p>
+                        
+                        <pre><code class="language-html">&lt;form&gt;
+    &lt;!-- Required field --&gt;
+    &lt;div&gt;
+        &lt;label for="username"&gt;Username:&lt;/label&gt;
+        &lt;input type="text" id="username" name="username" required&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Email validation --&gt;
+    &lt;div&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Pattern validation --&gt;
+    &lt;div&gt;
+        &lt;label for="password"&gt;Password:&lt;/label&gt;
+        &lt;input type="password" id="password" name="password" 
+               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+               title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 characters"
+               required&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Length validation --&gt;
+    &lt;div&gt;
+        &lt;label for="bio"&gt;Bio:&lt;/label&gt;
+        &lt;textarea id="bio" name="bio" minlength="10" maxlength="200"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Range validation --&gt;
+    &lt;div&gt;
+        &lt;label for="age"&gt;Age:&lt;/label&gt;
+        &lt;input type="number" id="age" name="age" min="18" max="120"&gt;
+    &lt;/div&gt;
+    
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        
+                        <p>When a form with validation attributes is submitted, the browser automatically checks the inputs and:</p>
+                        <ol>
+                            <li>Prevents submission if any inputs are invalid</li>
+                            <li>Focuses the first invalid input</li>
+                            <li>Displays a validation message</li>
+                            <li>Adds the <code>:invalid</code> CSS pseudo-class to invalid inputs</li>
+                        </ol>
+                        
+                        <h3>Constraint Validation API</h3>
+                        <p>The Constraint Validation API allows you to access and control form validation through JavaScript.</p>
+                        
+                        <pre><code class="language-html">&lt;form id="registration-form" novalidate&gt;
+    &lt;div&gt;
+        &lt;label for="username"&gt;Username:&lt;/label&gt;
+        &lt;input type="text" id="username" name="username" required&gt;
+        &lt;span class="error" id="username-error"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+        &lt;span class="error" id="email-error"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;label for="password"&gt;Password:&lt;/label&gt;
+        &lt;input type="password" id="password" name="password" 
+               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required&gt;
+        &lt;span class="error" id="password-error"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;label for="confirm-password"&gt;Confirm Password:&lt;/label&gt;
+        &lt;input type="password" id="confirm-password" name="confirm-password" required&gt;
+        &lt;span class="error" id="confirm-password-error"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    
+    &lt;button type="submit"&gt;Register&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('registration-form');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirm-password');
+        
+        // Custom validation for password confirmation
+        confirmPassword.addEventListener('input', function() {
+            if (this.value !== password.value) {
+                this.setCustomValidity('Passwords do not match');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+        
+        // Handle form submission
+        form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                
+                // Display custom error messages
+                const inputs = form.querySelectorAll('input');
+                inputs.forEach(input => {
+                    const errorSpan = document.getElementById(`${input.id}-error`);
+                    
+                    if (!input.validity.valid) {
+                        let errorMessage = '';
+                        
+                        if (input.validity.valueMissing) {
+                            errorMessage = 'This field is required';
+                        } else if (input.validity.typeMismatch) {
+                            errorMessage = `Please enter a valid ${input.type}`;
+                        } else if (input.validity.patternMismatch) {
+                            errorMessage = input.title || 'Please match the requested format';
+                        } else if (input.validity.tooShort) {
+                            errorMessage = `Please use at least ${input.minLength} characters`;
+                        } else if (input.validity.tooLong) {
+                            errorMessage = `Please use no more than ${input.maxLength} characters`;
+                        } else if (input.validity.rangeUnderflow) {
+                            errorMessage = `Value must be at least ${input.min}`;
+                        } else if (input.validity.rangeOverflow) {
+                            errorMessage = `Value must be no more than ${input.max}`;
+                        } else if (input.validity.customError) {
+                            errorMessage = input.validationMessage;
+                        }
+                        
+                        errorSpan.textContent = errorMessage;
+                        input.classList.add('invalid');
+                    } else {
+                        errorSpan.textContent = '';
+                        input.classList.remove('invalid');
+                    }
+                });
+            }
+        });
+        
+        // Clear error messages on input
+        form.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', function() {
+                const errorSpan = document.getElementById(`${this.id}-error`);
+                if (this.validity.valid) {
+                    errorSpan.textContent = '';
+                    this.classList.remove('invalid');
+                }
+            });
+        });
+    });
+&lt;/script&gt;
+
+&lt;style&gt;
+    .error {
+        color: red;
+        font-size: 0.8em;
+        display: block;
+        margin-top: 5px;
+    }
+    
+    input.invalid {
+        border: 2px solid red;
+    }
+&lt;/style&gt;</code></pre>
+                        
+                        <p>The Constraint Validation API provides several properties and methods:</p>
+                        
+                        <h4>Validation Properties</h4>
+                        <ul>
+                            <li><code>validity</code>: Returns a ValidityState object with validation state</li>
+                            <li><code>validity.valid</code>: Returns <code>true</code> if the element's value is valid</li>
+                            <li><code>validity.valueMissing</code>: Returns <code>true</code> if the element has a <code>required</code> attribute but no value</li>
+                            <li><code>validity.typeMismatch</code>: Returns <code>true</code> if the value is not of the correct type (e.g., email, url)</li>
+                            <li><code>validity.patternMismatch</code>: Returns <code>true</code> if the value doesn't match the specified pattern</li>
+                            <li><code>validity.tooLong</code>: Returns <code>true</code> if the value exceeds <code>maxlength</code></li>
+                            <li><code>validity.tooShort</code>: Returns <code>true</code> if the value is shorter than <code>minlength</code></li>
+                            <li><code>validity.rangeUnderflow</code>: Returns <code>true</code> if the value is less than <code>min</code></li>
+                            <li><code>validity.rangeOverflow</code>: Returns <code>true</code> if the value is greater than <code>max</code></li>
+                            <li><code>validity.stepMismatch</code>: Returns <code>true</code> if the value doesn't align with the <code>step</code> attribute</li>
+                            <li><code>validity.badInput</code>: Returns <code>true</code> if the browser can't convert the input to a valid value</li>
+                            <li><code>validity.customError</code>: Returns <code>true</code> if the element has a custom error set by <code>setCustomValidity()</code></li>
+                            <li><code>validationMessage</code>: Returns the validation message for an invalid element</li>
+                            <li><code>willValidate</code>: Returns <code>true</code> if the element will be validated when the form is submitted</li>
+                        </ul>
+                        
+                        <h4>Validation Methods</h4>
+                        <ul>
+                            <li><code>checkValidity()</code>: Returns <code>true</code> if the element's value is valid</li>
+                            <li><code>reportValidity()</code>: Reports invalid field and returns <code>true</code> if the element's value is valid</li>
+                            <li><code>setCustomValidity(message)</code>: Sets a custom error message (empty string means valid)</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Custom Validation Best Practices</h4>
+                            <ul>
+                                <li>Use <code>novalidate</code> on the form when implementing custom validation to prevent double validation</li>
+                                <li>Provide clear, specific error messages that explain how to fix the issue</li>
+                                <li>Position error messages close to the relevant input field</li>
+                                <li>Use visual cues (like red borders) to indicate invalid fields</li>
+                                <li>Validate in real-time when possible, not just on form submission</li>
+                                <li>Always implement server-side validation as well, since client-side validation can be bypassed</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Form Accessibility</h2>
+                        <p>Creating accessible forms is essential for ensuring that all users, including those with disabilities, can interact with your web forms.</p>
+                        
+                        <h3>Proper Labeling</h3>
+                        <p>Every form control should have a properly associated label.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Explicit labeling (preferred) --&gt;
+&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" name="username"&gt;
+
+&lt;!-- Implicit labeling (less preferred) --&gt;
+&lt;label&gt;
+    Username:
+    &lt;input type="text" name="username"&gt;
+&lt;/label&gt;
+
+&lt;!-- Hidden labels with aria-label --&gt;
+&lt;input type="search" name="q" aria-label="Search"&gt;
+
+&lt;!-- Labels with additional description --&gt;
+&lt;label for="password"&gt;Password:&lt;/label&gt;
+&lt;input type="password" id="password" name="password" aria-describedby="password-requirements"&gt;
+&lt;p id="password-requirements"&gt;Password must be at least 8 characters and include a number and uppercase letter.&lt;/p&gt;</code></pre>
+                        
+                        <h3>Grouping Controls</h3>
+                        <p>Use <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> to group related form controls.</p>
+                        
+                        <pre><code class="language-html">&lt;fieldset&gt;
+    &lt;legend&gt;Shipping Address&lt;/legend&gt;
+    
+    &lt;div&gt;
+        &lt;label for="shipping-name"&gt;Full Name:&lt;/label&gt;
+        &lt;input type="text" id="shipping-name" name="shipping-name" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;label for="shipping-street"&gt;Street Address:&lt;/label&gt;
+        &lt;input type="text" id="shipping-street" name="shipping-street" required&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- More address fields --&gt;
+&lt;/fieldset&gt;
+
+&lt;fieldset&gt;
+    &lt;legend&gt;Payment Method&lt;/legend&gt;
+    
+    &lt;div&gt;
+        &lt;input type="radio" id="payment-credit" name="payment-method" value="credit"&gt;
+        &lt;label for="payment-credit"&gt;Credit Card&lt;/label&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;input type="radio" id="payment-paypal" name="payment-method" value="paypal"&gt;
+        &lt;label for="payment-paypal"&gt;PayPal&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+                        
+                        <h3>Error Handling</h3>
+                        <p>Provide clear error messages and associate them with the relevant form controls.</p>
+                        
+                        <pre><code class="language-html">&lt;div&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" 
+           aria-describedby="email-error" 
+           aria-invalid="true"&gt;
+    &lt;div id="email-error" class="error" role="alert"&gt;
+        Please enter a valid email address
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>Focus Management</h3>
+                        <p>Ensure proper focus management for form interactions.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Focus visible styles --&gt;
+&lt;style&gt;
+    input:focus, select:focus, textarea:focus, button:focus {
+        outline: 2px solid blue;
+        outline-offset: 2px;
+    }
+&lt;/style&gt;
+
+&lt;!-- Skip to form link --&gt;
+&lt;a href="#registration-form" class="skip-link"&gt;Skip to registration form&lt;/a&gt;
+
+&lt;!-- Form with id for skip link target --&gt;
+&lt;form id="registration-form"&gt;
+    &lt;!-- Form fields --&gt;
+&lt;/form&gt;
+
+&lt;!-- Focus first error on submission --&gt;
+&lt;script&gt;
+    document.getElementById('registration-form').addEventListener('submit', function(event) {
+        if (!this.checkValidity()) {
+            event.preventDefault();
+            
+            // Find the first invalid input and focus it
+            const firstInvalid = this.querySelector(':invalid');
+            if (firstInvalid) {
+                firstInvalid.focus();
+            }
+        }
+    });
+&lt;/script&gt;</code></pre>
+                        
+                        <h3>Keyboard Accessibility</h3>
+                        <p>Ensure all form controls are keyboard accessible.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Custom file input with keyboard accessibility --&gt;
+&lt;div class="custom-file-upload"&gt;
+    &lt;input type="file" id="file-upload" name="file" class="visually-hidden"&gt;
+    &lt;label for="file-upload" class="file-upload-button" tabindex="0" role="button"
+           onkeydown="if(event.key === ' ' || event.key === 'Enter') { event.preventDefault(); this.click(); }"&gt;
+        Choose File
+    &lt;/label&gt;
+    &lt;span class="file-name"&gt;No file chosen&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+    
+    .file-upload-button:focus {
+        outline: 2px solid blue;
+        outline-offset: 2px;
+    }
+&lt;/style&gt;</code></pre>
+                        
+                        <h3>ARIA Attributes for Forms</h3>
+                        <p>Use ARIA attributes to enhance form accessibility when needed.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Required fields --&gt;
+&lt;label for="name"&gt;Name: &lt;span aria-hidden="true"&gt;*&lt;/span&gt;&lt;/label&gt;
+&lt;input type="text" id="name" name="name" required aria-required="true"&gt;
+
+&lt;!-- Field descriptions --&gt;
+&lt;label for="password"&gt;Password:&lt;/label&gt;
+&lt;input type="password" id="password" name="password" aria-describedby="password-hint"&gt;
+&lt;p id="password-hint" class="hint"&gt;Password must be at least 8 characters.&lt;/p&gt;
+
+&lt;!-- Error states --&gt;
+&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email" aria-invalid="true" aria-describedby="email-error"&gt;
+&lt;p id="email-error" class="error" role="alert"&gt;Please enter a valid email address.&lt;/p&gt;
+
+&lt;!-- Live regions for dynamic content --&gt;
+&lt;div aria-live="polite" id="form-status"&gt;
+    &lt;!-- Will be announced when content changes --&gt;
+&lt;/div&gt;
+
+&lt;!-- Custom controls --&gt;
+&lt;div class="custom-select" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-owns="options-list"&gt;
+    &lt;input type="text" id="country" name="country" aria-autocomplete="list" aria-controls="options-list"&gt;
+    &lt;button type="button" tabindex="-1" aria-label="Show options"&gt;&lt;span aria-hidden="true"&gt;▼&lt;/span&gt;&lt;/button&gt;
+    &lt;ul id="options-list" role="listbox" hidden&gt;
+        &lt;li role="option" id="option-1"&gt;United States&lt;/li&gt;
+        &lt;li role="option" id="option-2"&gt;Canada&lt;/li&gt;
+        &lt;li role="option" id="option-3"&gt;United Kingdom&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Form Accessibility Checklist</h4>
+                            <ul>
+                                <li>All form controls have properly associated labels</li>
+                                <li>Related controls are grouped with fieldset and legend</li>
+                                <li>Required fields are clearly indicated (both visually and programmatically)</li>
+                                <li>Error messages are clear and associated with their fields</li>
+                                <li>Form is navigable using keyboard only</li>
+                                <li>Focus states are clearly visible</li>
+                                <li>Instructions and hints are provided where needed</li>
+                                <li>Color is not the only way to convey information</li>
+                                <li>Form works with screen readers and other assistive technologies</li>
+                                <li>Sufficient color contrast for all text and controls</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Multi-step Forms and Form UX</h2>
+                        <p>Complex forms are often broken into multiple steps to improve user experience. Here's how to implement multi-step forms effectively.</p>
+                        
+                        <h3>Multi-step Form Structure</h3>
+                        <p>A basic multi-step form structure using HTML, CSS, and JavaScript:</p>
+                        
+                        <pre><code class="language-html">&lt;form id="multi-step-form"&gt;
+    &lt;!-- Progress indicator --&gt;
+    &lt;div class="progress-bar"&gt;
+        &lt;div class="step active" data-step="1"&gt;Account&lt;/div&gt;
+        &lt;div class="step" data-step="2"&gt;Personal&lt;/div&gt;
+        &lt;div class="step" data-step="3"&gt;Review&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Step 1: Account Information --&gt;
+    &lt;div class="form-step active" id="step-1"&gt;
+        &lt;h2&gt;Account Information&lt;/h2&gt;
+        
+        &lt;div class="form-group"&gt;
+            &lt;label for="email"&gt;Email:&lt;/label&gt;
+            &lt;input type="email" id="email" name="email" required&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="form-group"&gt;
+            &lt;label for="password"&gt;Password:&lt;/label&gt;
+            &lt;input type="password" id="password" name="password" required&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="form-group"&gt;
+            &lt;label for="confirm-password"&gt;Confirm Password:&lt;/label&gt;
+            &lt;input type="password" id="confirm-password" name="confirm-password" required&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="form-navigation"&gt;
+            &lt;button type="button" class="next-step"&gt;Next&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Step 2: Personal Information --&gt;
+    &lt;div class="form-step" id="step-2"&gt;
+        &lt;h2&gt;Personal Information&lt;/h2&gt;
+        
+        &lt;div class="form-group"&gt;
+            &lt;label for="first-name"&gt;First Name:&lt;/label&gt;
+            &lt;input type="text" id="first-name" name="first-name" required&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="form-group"&gt;
+            &lt;label for="last-name"&gt;Last Name:&lt;/label&gt;
+            &lt;input type="text" id="last-name" name="last-name" required&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="form-group"&gt;
+            &lt;label for="phone"&gt;Phone:&lt;/label&gt;
+            &lt;input type="tel" id="phone" name="phone"&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="form-navigation"&gt;
+            &lt;button type="button" class="prev-step"&gt;Previous&lt;/button&gt;
+            &lt;button type="button" class="next-step"&gt;Next&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Step 3: Review --&gt;
+    &lt;div class="form-step" id="step-3"&gt;
+        &lt;h2&gt;Review Your Information&lt;/h2&gt;
+        
+        &lt;div class="review-section"&gt;
+            &lt;h3&gt;Account Information&lt;/h3&gt;
+            &lt;p&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;span id="review-email"&gt;&lt;/span&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="review-section"&gt;
+            &lt;h3&gt;Personal Information&lt;/h3&gt;
+            &lt;p&gt;&lt;strong&gt;Name:&lt;/strong&gt; &lt;span id="review-name"&gt;&lt;/span&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;strong&gt;Phone:&lt;/strong&gt; &lt;span id="review-phone"&gt;&lt;/span&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="form-group"&gt;
+            &lt;input type="checkbox" id="terms" name="terms" required&gt;
+            &lt;label for="terms"&gt;I agree to the Terms and Conditions&lt;/label&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="form-navigation"&gt;
+            &lt;button type="button" class="prev-step"&gt;Previous&lt;/button&gt;
+            &lt;button type="submit"&gt;Submit&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+
+&lt;style&gt;
+    /* Multi-step form styles */
+    .form-step {
+        display: none;
+    }
+    
+    .form-step.active {
+        display: block;
+    }
+    
+    .progress-bar {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    
+    .step {
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        background-color: #f0f0f0;
+        position: relative;
+    }
+    
+    .step.active {
+        background-color: #3366ff;
+        color: white;
+    }
+    
+    .step:not(:last-child):after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        width: 20px;
+        height: 2px;
+        background-color: #ccc;
+        z-index: -1;
+    }
+    
+    .form-navigation {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    
+    button {
+        padding: 10px 15px;
+        background-color: #3366ff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button.prev-step {
+        background-color: #999;
+    }
+&lt;/style&gt;
+
+&lt;script&gt;
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('multi-step-form');
+        const steps = form.querySelectorAll('.form-step');
+        const nextButtons = form.querySelectorAll('.next-step');
+        const prevButtons = form.querySelectorAll('.prev-step');
+        const progressSteps = form.querySelectorAll('.progress-bar .step');
+        
+        // Next button click
+        nextButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Get current step
+                const currentStep = this.closest('.form-step');
+                const currentStepIndex = Array.from(steps).indexOf(currentStep);
+                
+                // Validate current step
+                const inputs = currentStep.querySelectorAll('input, select, textarea');
+                let isValid = true;
+                
+                inputs.forEach(input => {
+                    if (input.hasAttribute('required') && !input.value) {
+                        isValid = false;
+                        input.classList.add('invalid');
+                    } else {
+                        input.classList.remove('invalid');
+                    }
+                });
+                
+                if (!isValid) {
+                    return;
+                }
+                
+                // If it's the second step, populate review page
+                if (currentStepIndex === 1) {
+                    document.getElementById('review-email').textContent = document.getElementById('email').value;
+                    document.getElementById('review-name').textContent = 
+                        document.getElementById('first-name').value + ' ' + 
+                        document.getElementById('last-name').value;
+                    document.getElementById('review-phone').textContent = document.getElementById('phone').value || 'Not provided';
+                }
+                
+                // Move to next step
+                currentStep.classList.remove('active');
+                steps[currentStepIndex + 1].classList.add('active');
+                
+                // Update progress bar
+                progressSteps[currentStepIndex].classList.remove('active');
+                progressSteps[currentStepIndex + 1].classList.add('active');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        // Previous button click
+        prevButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Get current step
+                const currentStep = this.closest('.form-step');
+                const currentStepIndex = Array.from(steps).indexOf(currentStep);
+                
+                // Move to previous step
+                currentStep.classList.remove('active');
+                steps[currentStepIndex - 1].classList.add('active');
+                
+                // Update progress bar
+                progressSteps[currentStepIndex].classList.remove('active');
+                progressSteps[currentStepIndex - 1].classList.add('active');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        // Form submission
+        form.addEventListener('submit', function(event) {
+            // Prevent default submission for this example
+            event.preventDefault();
+            
+            // In a real application, you would submit the form data here
+            alert('Form submitted successfully!');
+        });
+    });
+&lt;/script&gt;</code></pre>
+                        
+                        <h3>Form UX Best Practices</h3>
+                        <p>Here are some best practices for creating user-friendly forms:</p>
+                        
+                        <h4>1. Keep it Simple</h4>
+                        <ul>
+                            <li>Only ask for information you really need</li>
+                            <li>Break long forms into logical steps</li>
+                            <li>Group related fields together</li>
+                            <li>Use a single-column layout for most forms</li>
+                        </ul>
+                        
+                        <h4>2. Provide Clear Guidance</h4>
+                        <ul>
+                            <li>Use descriptive labels</li>
+                            <li>Show format examples for complex inputs</li>
+                            <li>Provide help text for confusing fields</li>
+                            <li>Clearly mark required fields</li>
+                        </ul>
+                        
+                        <h4>3. Offer Immediate Feedback</h4>
+                        <ul>
+                            <li>Validate inputs as users type or when they leave a field</li>
+                            <li>Show success indicators for valid inputs</li>
+                            <li>Provide clear, specific error messages</li>
+                            <li>Position error messages close to the relevant field</li>
+                        </ul>
+                        
+                        <h4>4. Optimize for Efficiency</h4>
+                        <ul>
+                            <li>Use appropriate input types for automatic validation and appropriate mobile keyboards</li>
+                            <li>Enable autofill where appropriate</li>
+                            <li>Implement smart defaults when possible</li>
+                            <li>Use progressive disclosure for optional fields</li>
+                        </ul>
+                        
+                        <h4>5. Make Forms Accessible</h4>
+                        <ul>
+                            <li>Ensure keyboard navigability</li>
+                            <li>Provide visible focus states</li>
+                            <li>Use proper semantic markup</li>
+                            <li>Ensure sufficient color contrast</li>
+                            <li>Test with screen readers</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Mobile Form Considerations</h4>
+                            <ul>
+                                <li>Use appropriate input types to trigger the right mobile keyboard</li>
+                                <li>Make touch targets large enough (at least 44×44 pixels)</li>
+                                <li>Minimize the need for typing with select lists, radio buttons, etc.</li>
+                                <li>Consider using native date pickers on mobile</li>
+                                <li>Test your forms on actual mobile devices</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Form Security Considerations</h2>
+                        <p>When creating forms, it's important to consider security to protect both your users and your application.</p>
+                        
+                        <h3>CSRF Protection</h3>
+                        <p>Cross-Site Request Forgery (CSRF) attacks trick users into submitting unwanted requests. Protect against CSRF with tokens:</p>
+                        
+                        <pre><code class="language-html">&lt;form action="/submit" method="post"&gt;
+    &lt;!-- CSRF token --&gt;
+    &lt;input type="hidden" name="csrf_token" value="random_token_generated_by_server"&gt;
+    
+    &lt;!-- Form fields --&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username"&gt;
+    
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        
+                        <h3>Sensitive Data Handling</h3>
+                        <p>Be careful with sensitive data in forms:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Use HTTPS for all forms --&gt;
+&lt;form action="https://example.com/submit" method="post"&gt;
+    &lt;!-- Use autocomplete="off" for sensitive fields --&gt;
+    &lt;label for="credit-card"&gt;Credit Card Number:&lt;/label&gt;
+    &lt;input type="text" id="credit-card" name="credit-card" autocomplete="off"&gt;
+    
+    &lt;!-- Use appropriate autocomplete attributes for payment fields --&gt;
+    &lt;label for="cc-name"&gt;Name on Card:&lt;/label&gt;
+    &lt;input type="text" id="cc-name" name="cc-name" autocomplete="cc-name"&gt;
+    
+    &lt;label for="cc-exp"&gt;Expiration Date:&lt;/label&gt;
+    &lt;input type="text" id="cc-exp" name="cc-exp" autocomplete="cc-exp"&gt;
+    
+    &lt;!-- Never use hidden fields for sensitive data --&gt;
+    &lt;input type="hidden" name="user_id" value="12345"&gt; &lt;!-- OK for non-sensitive data --&gt;
+&lt;/form&gt;</code></pre>
+                        
+                        <h3>Input Validation</h3>
+                        <p>Always validate user input on both client and server sides:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Client-side validation --&gt;
+&lt;form id="registration-form"&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username" 
+           pattern="[a-zA-Z0-9_]{3,20}" 
+           title="Username must be 3-20 characters and may only contain letters, numbers, and underscores"
+           required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;button type="submit"&gt;Register&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+    // Additional client-side validation
+    document.getElementById('registration-form').addEventListener('submit', function(event) {
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        
+        // Check for potentially malicious content
+        if (username.includes('&lt;script&gt;') || email.includes('&lt;script&gt;')) {
+            event.preventDefault();
+            alert('Invalid input detected');
+        }
+    });
+&lt;/script&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Form Security Checklist</h4>
+                            <ul>
+                                <li>Use HTTPS for all forms</li>
+                                <li>Implement CSRF protection</li>
+                                <li>Validate all input on both client and server sides</li>
+                                <li>Sanitize data before displaying it back to users</li>
+                                <li>Use appropriate autocomplete attributes</li>
+                                <li>Don't store sensitive data in hidden fields</li>
+                                <li>Implement rate limiting for form submissions</li>
+                                <li>Use CAPTCHA or similar for sensitive forms</li>
+                                <li>Be cautious with file uploads (validate file types, scan for malware)</li>
+                                <li>Don't expose sensitive information in error messages</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Advanced Form</h2>
+                        <p>Let's create a comprehensive form that incorporates many of the advanced techniques we've learned.</p>
+                        
+                        <h3>Exercise: Create a Registration Form</h3>
+                        <p>Create a registration form with the following features:</p>
+                        <ul>
+                            <li>Multiple steps (Account, Personal, Preferences)</li>
+                            <li>Various input types (text, email, password, date, etc.)</li>
+                            <li>Client-side validation</li>
+                            <li>Accessibility features</li>
+                            <li>Progress indicator</li>
+                            <li>Responsive design</li>
+                        </ul>
+                        
+                        <p>Start with this template and enhance it:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Advanced Registration Form&lt;/title&gt;
+    &lt;style&gt;
+        /* Add your styles here */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;main&gt;
+        &lt;h1&gt;Create Your Account&lt;/h1&gt;
+        
+        &lt;form id="registration-form" novalidate&gt;
+            &lt;!-- Progress indicator --&gt;
+            &lt;div class="progress-bar"&gt;
+                &lt;!-- Add progress steps here --&gt;
+            &lt;/div&gt;
+            
+            &lt;!-- Step 1: Account Information --&gt;
+            &lt;div class="form-step active" id="step-1"&gt;
+                &lt;h2&gt;Account Information&lt;/h2&gt;
+                
+                &lt;!-- Add account fields here --&gt;
+                
+                &lt;div class="form-navigation"&gt;
+                    &lt;button type="button" class="next-step"&gt;Next&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;!-- Step 2: Personal Information --&gt;
+            &lt;div class="form-step" id="step-2"&gt;
+                &lt;h2&gt;Personal Information&lt;/h2&gt;
+                
+                &lt;!-- Add personal information fields here --&gt;
+                
+                &lt;div class="form-navigation"&gt;
+                    &lt;button type="button" class="prev-step"&gt;Previous&lt;/button&gt;
+                    &lt;button type="button" class="next-step"&gt;Next&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;!-- Step 3: Preferences --&gt;
+            &lt;div class="form-step" id="step-3"&gt;
+                &lt;h2&gt;Preferences&lt;/h2&gt;
+                
+                &lt;!-- Add preference fields here --&gt;
+                
+                &lt;div class="form-navigation"&gt;
+                    &lt;button type="button" class="prev-step"&gt;Previous&lt;/button&gt;
+                    &lt;button type="submit"&gt;Complete Registration&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/main&gt;
+    
+    &lt;script&gt;
+        // Add your JavaScript here
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Enhance the form template with:</p>
+                            <ol>
+                                <li>At least 5 different input types</li>
+                                <li>Custom validation messages</li>
+                                <li>A datalist for one of the fields</li>
+                                <li>A progress or meter element</li>
+                                <li>Proper fieldset and legend grouping</li>
+                                <li>ARIA attributes for accessibility</li>
+                                <li>CSS to make it visually appealing and responsive</li>
+                                <li>JavaScript to handle the multi-step functionality and validation</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored advanced HTML form techniques that professional developers use to create powerful, user-friendly, and accessible web forms:</p>
+                        <ul>
+                            <li>HTML5 input types (email, url, tel, number, range, date, color, search, file)</li>
+                            <li>Advanced form attributes (required, pattern, min/max, minlength/maxlength, placeholder, autocomplete, autofocus, readonly, disabled, list, multiple)</li>
+                            <li>Advanced form elements (datalist, output, progress, meter, fieldset/legend)</li>
+                            <li>Form validation and the Constraint Validation API</li>
+                            <li>Form accessibility best practices</li>
+                            <li>Multi-step forms and form UX considerations</li>
+                            <li>Form security considerations</li>
+                        </ul>
+                        
+                        <p>Forms are one of the primary ways users interact with websites and web applications. By implementing these advanced techniques, you can create forms that are not only functional but also provide a great user experience for all users, including those with disabilities.</p>
+                        
+                        <p>Remember that the best forms are:</p>
+                        <ul>
+                            <li><strong>Simple</strong> - Only ask for what you need</li>
+                            <li><strong>Clear</strong> - Provide guidance and feedback</li>
+                            <li><strong>Efficient</strong> - Use appropriate input types and smart defaults</li>
+                            <li><strong>Accessible</strong> - Ensure everyone can use your forms</li>
+                            <li><strong>Secure</strong> - Protect user data and your application</li>
+                        </ul>
+                        
+                        <p>In the next lesson, we'll explore HTML media and graphics, including audio, video, canvas, and SVG elements that allow you to create rich, interactive content.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page14.html" class="btn">Previous: HTML5 Semantic Elements</a>
+                        <a href="page16.html" class="btn">Next: HTML Media & Graphics</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

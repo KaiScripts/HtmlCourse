@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images & Multimedia | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to add images, videos, audio, and other multimedia elements to your web pages using HTML.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="6">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html" class="active">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>HTML Basics</h3>
+                <ul>
+                    <li><a href="page1.html">1. Introduction to HTML</a></li>
+                    <li><a href="page2.html">2. HTML Document Structure</a></li>
+                    <li><a href="page3.html">3. HTML Elements & Tags</a></li>
+                    <li><a href="page4.html">4. Text Formatting</a></li>
+                    <li><a href="page5.html">5. Links & Navigation</a></li>
+                    <li><a href="page6.html" class="active">6. Images & Multimedia</a></li>
+                    <li><a href="page7.html">7. Lists</a></li>
+                    <li><a href="page8.html">8. Tables</a></li>
+                    <li><a href="page9.html">9. Forms Basics</a></li>
+                    <li><a href="page10.html">10. Semantic HTML</a></li>
+                    <li><a href="page11.html">11. HTML Attributes</a></li>
+                    <li><a href="page12.html">12. HTML Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 12%;"></div>
+                </div>
+                <p style="text-align: center;">Page 6 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Images & Multimedia in HTML</h1>
+                    
+                    <div class="card">
+                        <h2>Enhancing Web Pages with Visual Content</h2>
+                        <p>While text forms the foundation of web content, visual elements like images, videos, and audio bring web pages to life. Multimedia content can convey information more effectively, create emotional connections, and enhance the overall user experience.</p>
+                        
+                        <p>HTML5 provides robust support for multimedia, making it easier than ever to incorporate various types of media into your web pages. In this lesson, we'll explore how to add images, videos, audio, and other multimedia elements to your websites.</p>
+                        
+                        <div class="info-box">
+                            <h4>Evolution of Multimedia on the Web</h4>
+                            <p>In the early days of the web, adding multimedia was complex and often required plugins like Flash. HTML5 introduced native support for audio and video, eliminating the need for third-party plugins and making multimedia more accessible and secure.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Adding Images to Web Pages</h2>
+                        <p>Images are the most common type of multimedia content on the web. They can be used for photos, illustrations, icons, logos, backgrounds, and more.</p>
+                        
+                        <h3>The Image Element</h3>
+                        <p>Images are added to web pages using the <code>&lt;img&gt;</code> element. This is an empty (self-closing) element that doesn't have a closing tag.</p>
+                        
+                        <pre><code class="language-html">&lt;img src="image.jpg" alt="Description of the image"&gt;</code></pre>
+                        
+                        <p>The <code>&lt;img&gt;</code> element has two essential attributes:</p>
+                        <ul>
+                            <li><code>src</code> (source): Specifies the path to the image file</li>
+                            <li><code>alt</code> (alternative text): Provides a text description of the image</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Accessibility Tip</h4>
+                            <p>The <code>alt</code> attribute is crucial for accessibility. It provides a text alternative for users who cannot see the image, such as those using screen readers or those with images disabled. It also displays if the image fails to load.</p>
+                            <p>Good alt text should be concise but descriptive, conveying the purpose and content of the image. For decorative images that don't add content, use an empty alt attribute (<code>alt=""</code>) to indicate that the image can be safely ignored by screen readers.</p>
+                        </div>
+                        
+                        <h3>Image File Paths</h3>
+                        <p>The <code>src</code> attribute can contain different types of file paths:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Absolute URL (external image) --&gt;
+&lt;img src="https://example.com/images/photo.jpg" alt="Example photo"&gt;
+
+&lt;!-- Relative URL (image in the same directory) --&gt;
+&lt;img src="logo.png" alt="Company logo"&gt;
+
+&lt;!-- Relative URL (image in a subdirectory) --&gt;
+&lt;img src="images/banner.jpg" alt="Banner image"&gt;
+
+&lt;!-- Relative URL (image in a parent directory) --&gt;
+&lt;img src="../icons/icon.svg" alt="Icon"&gt;</code></pre>
+                        
+                        <h3>Image Formats</h3>
+                        <p>Several image formats are supported by web browsers, each with its own advantages:</p>
+                        
+                        <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                            <div class="mini-card">
+                                <h4>JPEG (.jpg, .jpeg)</h4>
+                                <p>Best for photographs and complex images with many colors. Supports lossy compression but doesn't support transparency.</p>
+                            </div>
+                            <div class="mini-card">
+                                <h4>PNG (.png)</h4>
+                                <p>Best for images with transparency, simple graphics, and text. Lossless compression but larger file sizes than JPEG for photographs.</p>
+                            </div>
+                            <div class="mini-card">
+                                <h4>GIF (.gif)</h4>
+                                <p>Supports simple animations and transparency. Limited to 256 colors, so not suitable for photographs.</p>
+                            </div>
+                            <div class="mini-card">
+                                <h4>SVG (.svg)</h4>
+                                <p>Vector format that scales without losing quality. Ideal for logos, icons, and simple illustrations. Can be styled with CSS and manipulated with JavaScript.</p>
+                            </div>
+                            <div class="mini-card">
+                                <h4>WebP (.webp)</h4>
+                                <p>Modern format developed by Google that offers better compression than JPEG and PNG with support for transparency and animation. Not supported by all browsers.</p>
+                            </div>
+                            <div class="mini-card">
+                                <h4>AVIF (.avif)</h4>
+                                <p>Newest format with excellent compression and quality. Limited browser support but growing.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h4>Choosing the Right Format</h4>
+                            <p>As a general rule:</p>
+                            <ul>
+                                <li>Use JPEG for photographs</li>
+                                <li>Use PNG for images with transparency or simple graphics</li>
+                                <li>Use SVG for icons, logos, and illustrations</li>
+                                <li>Use WebP when you can provide fallbacks for older browsers</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Additional Image Attributes</h3>
+                        <p>Besides <code>src</code> and <code>alt</code>, the <code>&lt;img&gt;</code> element supports several other attributes:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Setting width and height --&gt;
+&lt;img src="image.jpg" alt="Description" width="500" height="300"&gt;
+
+&lt;!-- Adding a title (tooltip) --&gt;
+&lt;img src="image.jpg" alt="Description" title="Additional information about the image"&gt;
+
+&lt;!-- Specifying loading behavior --&gt;
+&lt;img src="image.jpg" alt="Description" loading="lazy"&gt;
+
+&lt;!-- Controlling image decoding --&gt;
+&lt;img src="image.jpg" alt="Description" decoding="async"&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Performance Tip</h4>
+                            <p>Always specify the <code>width</code> and <code>height</code> attributes for images. This helps the browser allocate space for the image before it loads, reducing layout shifts as the page loads.</p>
+                            <p>The <code>loading="lazy"</code> attribute defers loading images until they're near the viewport, improving page load performance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Responsive Images</h2>
+                        <p>Responsive images adapt to different screen sizes and device capabilities, ensuring optimal display and performance across devices.</p>
+                        
+                        <h3>Basic Responsive Images with CSS</h3>
+                        <p>The simplest way to make images responsive is with CSS:</p>
+                        
+                        <pre><code class="language-css">img {
+    max-width: 100%;
+    height: auto;
+}</code></pre>
+                        
+                        <p>This ensures that images never exceed their container's width and maintain their aspect ratio.</p>
+                        
+                        <h3>The Picture Element</h3>
+                        <p>For more advanced responsive image solutions, HTML5 introduced the <code>&lt;picture&gt;</code> element. It allows you to specify different image sources for different screen sizes, pixel densities, or image formats.</p>
+                        
+                        <pre><code class="language-html">&lt;picture&gt;
+    &lt;!-- For small screens --&gt;
+    &lt;source media="(max-width: 600px)" srcset="small-image.jpg"&gt;
+    
+    &lt;!-- For medium screens --&gt;
+    &lt;source media="(max-width: 1200px)" srcset="medium-image.jpg"&gt;
+    
+    &lt;!-- For browsers that don't support WebP --&gt;
+    &lt;source srcset="image.jpg"&gt;
+    
+    &lt;!-- Fallback for browsers that don't support the picture element --&gt;
+    &lt;img src="image.jpg" alt="Description"&gt;
+&lt;/picture&gt;</code></pre>
+                        
+                        <p>The browser will use the first <code>&lt;source&gt;</code> element that matches the current conditions. If none match, or if the browser doesn't support the <code>&lt;picture&gt;</code> element, it will use the <code>&lt;img&gt;</code> element as a fallback.</p>
+                        
+                        <h3>The Srcset Attribute</h3>
+                        <p>The <code>srcset</code> attribute allows you to provide multiple image sources with different resolutions, letting the browser choose the most appropriate one based on the device's pixel density and viewport size.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Different resolutions for different pixel densities --&gt;
+&lt;img src="image.jpg" alt="Description" 
+     srcset="image.jpg 1x, image@2x.jpg 2x, image@3x.jpg 3x"&gt;
+
+&lt;!-- Different sizes for different viewport widths --&gt;
+&lt;img src="image-large.jpg" alt="Description" 
+     srcset="image-small.jpg 500w, image-medium.jpg 1000w, image-large.jpg 1500w"
+     sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"&gt;</code></pre>
+                        
+                        <p>In the second example, the <code>sizes</code> attribute tells the browser what size the image will be displayed at different viewport widths, helping it choose the most appropriate source from the <code>srcset</code>.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Image Maps</h2>
+                        <p>Image maps allow you to create clickable areas on an image, each linking to a different destination. They're useful for creating interactive diagrams, maps, or complex navigation elements.</p>
+                        
+                        <pre><code class="language-html">&lt;img src="map.jpg" alt="Office floor plan" usemap="#office-map"&gt;
+
+&lt;map name="office-map"&gt;
+    &lt;!-- Rectangular area --&gt;
+    &lt;area shape="rect" coords="34,44,270,350" alt="Conference Room" href="conference.html"&gt;
+    
+    &lt;!-- Circular area --&gt;
+    &lt;area shape="circle" coords="337,300,44" alt="Lobby" href="lobby.html"&gt;
+    
+    &lt;!-- Polygonal area --&gt;
+    &lt;area shape="poly" coords="140,121,181,116,204,160,204,222,191,270,140,329,85,271,78,234,78,182" 
+          alt="Office Space" href="office.html"&gt;
+&lt;/map&gt;</code></pre>
+                        
+                        <p>The <code>usemap</code> attribute of the <code>&lt;img&gt;</code> element references the <code>name</code> attribute of the <code>&lt;map&gt;</code> element. Each <code>&lt;area&gt;</code> element defines a clickable region with these attributes:</p>
+                        <ul>
+                            <li><code>shape</code>: The shape of the area (rect, circle, poly)</li>
+                            <li><code>coords</code>: The coordinates that define the area</li>
+                            <li><code>alt</code>: Alternative text for accessibility</li>
+                            <li><code>href</code>: The URL to navigate to when the area is clicked</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Figure and Figcaption</h2>
+                        <p>The <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> elements provide a semantic way to associate captions with images or other content.</p>
+                        
+                        <pre><code class="language-html">&lt;figure&gt;
+    &lt;img src="chart.jpg" alt="Sales chart showing growth in Q3"&gt;
+    &lt;figcaption&gt;Figure 1: Sales increased by 25% in Q3 2025.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                        
+                        <p>The <code>&lt;figure&gt;</code> element represents self-contained content that is referenced from the main content, such as illustrations, diagrams, photos, or code listings. The <code>&lt;figcaption&gt;</code> element provides a caption or legend for the figure.</p>
+                        
+                        <p>Using these elements improves the semantic structure of your document and helps screen readers understand the relationship between the image and its caption.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Adding Video to Web Pages</h2>
+                        <p>HTML5 introduced the <code>&lt;video&gt;</code> element for embedding videos without requiring plugins like Flash.</p>
+                        
+                        <h3>Basic Video Element</h3>
+                        <pre><code class="language-html">&lt;video src="video.mp4" controls width="640" height="360"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;</code></pre>
+                        
+                        <p>The content between the opening and closing tags is displayed if the browser doesn't support the <code>&lt;video&gt;</code> element.</p>
+                        
+                        <h3>Video Attributes</h3>
+                        <p>The <code>&lt;video&gt;</code> element supports several attributes to control its behavior:</p>
+                        
+                        <pre><code class="language-html">&lt;video src="video.mp4" controls width="640" height="360" 
+       autoplay muted loop poster="video-thumbnail.jpg"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;</code></pre>
+                        
+                        <ul>
+                            <li><code>controls</code>: Displays video controls (play, pause, volume, etc.)</li>
+                            <li><code>autoplay</code>: Starts playing the video automatically (many browsers require <code>muted</code> for autoplay)</li>
+                            <li><code>muted</code>: Mutes the audio</li>
+                            <li><code>loop</code>: Plays the video repeatedly</li>
+                            <li><code>poster</code>: Specifies an image to display before the video plays</li>
+                            <li><code>preload</code>: Hints how much of the video to preload (none, metadata, auto)</li>
+                            <li><code>playsinline</code>: Plays the video inline on iOS devices instead of fullscreen</li>
+                        </ul>
+                        
+                        <h3>Multiple Sources</h3>
+                        <p>Different browsers support different video formats. To ensure maximum compatibility, you can provide multiple sources:</p>
+                        
+                        <pre><code class="language-html">&lt;video controls width="640" height="360"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    &lt;p&gt;Your browser does not support the video element. &lt;a href="video.mp4"&gt;Download the video&lt;/a&gt;.&lt;/p&gt;
+&lt;/video&gt;</code></pre>
+                        
+                        <p>The browser will use the first source it supports. If none are supported, it will display the fallback content.</p>
+                        
+                        <div class="info-box">
+                            <h4>Video Formats</h4>
+                            <p>Common video formats for the web include:</p>
+                            <ul>
+                                <li><strong>MP4 (H.264)</strong>: Widely supported across all browsers</li>
+                                <li><strong>WebM (VP8/VP9)</strong>: Open format with better compression than MP4</li>
+                                <li><strong>Ogg (Theora)</strong>: Open format, less common</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Adding Audio to Web Pages</h2>
+                        <p>Similar to video, HTML5 introduced the <code>&lt;audio&gt;</code> element for embedding audio content.</p>
+                        
+                        <h3>Basic Audio Element</h3>
+                        <pre><code class="language-html">&lt;audio src="audio.mp3" controls&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+                        
+                        <h3>Audio Attributes</h3>
+                        <p>The <code>&lt;audio&gt;</code> element supports many of the same attributes as the <code>&lt;video&gt;</code> element:</p>
+                        
+                        <pre><code class="language-html">&lt;audio src="audio.mp3" controls autoplay muted loop preload="auto"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+                        
+                        <h3>Multiple Sources</h3>
+                        <p>As with video, you can provide multiple audio sources for better compatibility:</p>
+                        
+                        <pre><code class="language-html">&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    &lt;p&gt;Your browser does not support the audio element. &lt;a href="audio.mp3"&gt;Download the audio&lt;/a&gt;.&lt;/p&gt;
+&lt;/audio&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Audio Formats</h4>
+                            <p>Common audio formats for the web include:</p>
+                            <ul>
+                                <li><strong>MP3</strong>: Widely supported, good compression</li>
+                                <li><strong>AAC</strong>: Better quality than MP3 at similar bit rates</li>
+                                <li><strong>Ogg Vorbis</strong>: Open format, good quality</li>
+                                <li><strong>WAV</strong>: Uncompressed, high quality but large file size</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Embedding Content</h2>
+                        <p>The <code>&lt;iframe&gt;</code> element allows you to embed content from other sources, such as maps, videos from platforms like YouTube, or other web pages.</p>
+                        
+                        <h3>Embedding YouTube Videos</h3>
+                        <pre><code class="language-html">&lt;iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+                        
+                        <h3>Embedding Google Maps</h3>
+                        <pre><code class="language-html">&lt;iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!..." 
+        width="600" height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy"&gt;&lt;/iframe&gt;</code></pre>
+                        
+                        <h3>Embedding Other Web Pages</h3>
+                        <pre><code class="language-html">&lt;iframe src="https://example.com" width="800" height="600"&gt;
+    &lt;p&gt;Your browser does not support iframes.&lt;/p&gt;
+&lt;/iframe&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Security Considerations</h4>
+                            <p>Embedding content from other sources can pose security risks. Always use the <code>sandbox</code> attribute to restrict the capabilities of the embedded content, and only embed content from trusted sources.</p>
+                            <pre><code class="language-html">&lt;iframe src="https://example.com" sandbox="allow-scripts allow-same-origin"&gt;&lt;/iframe&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>SVG Graphics</h2>
+                        <p>Scalable Vector Graphics (SVG) is an XML-based format for vector graphics. Unlike raster formats (JPEG, PNG), SVG images can scale to any size without losing quality, making them ideal for responsive design.</p>
+                        
+                        <h3>Embedding SVG</h3>
+                        <p>There are several ways to include SVG in your web pages:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- As an image --&gt;
+&lt;img src="icon.svg" alt="Icon"&gt;
+
+&lt;!-- Inline SVG --&gt;
+&lt;svg width="100" height="100" viewBox="0 0 100 100"&gt;
+    &lt;circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="red" /&gt;
+&lt;/svg&gt;
+
+&lt;!-- Using an object --&gt;
+&lt;object data="graphic.svg" type="image/svg+xml"&gt;
+    &lt;img src="graphic.png" alt="Fallback image"&gt;
+&lt;/object&gt;</code></pre>
+                        
+                        <p>Inline SVG offers the most flexibility, allowing you to style the SVG with CSS and manipulate it with JavaScript.</p>
+                        
+                        <h3>Basic SVG Shapes</h3>
+                        <p>SVG provides several basic shapes:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Rectangle --&gt;
+&lt;svg width="200" height="100"&gt;
+    &lt;rect width="150" height="75" fill="blue" /&gt;
+&lt;/svg&gt;
+
+&lt;!-- Circle --&gt;
+&lt;svg width="100" height="100"&gt;
+    &lt;circle cx="50" cy="50" r="40" fill="green" /&gt;
+&lt;/svg&gt;
+
+&lt;!-- Ellipse --&gt;
+&lt;svg width="200" height="100"&gt;
+    &lt;ellipse cx="100" cy="50" rx="80" ry="40" fill="yellow" /&gt;
+&lt;/svg&gt;
+
+&lt;!-- Line --&gt;
+&lt;svg width="200" height="100"&gt;
+    &lt;line x1="0" y1="0" x2="200" y2="100" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;
+
+&lt;!-- Polygon --&gt;
+&lt;svg width="200" height="200"&gt;
+    &lt;polygon points="100,10 40,180 190,60 10,60 160,180" fill="purple" /&gt;
+&lt;/svg&gt;</code></pre>
+                        
+                        <p>SVG also supports more complex shapes, text, gradients, filters, and animations.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Multimedia Accessibility</h2>
+                        <p>Making multimedia content accessible is essential for users with disabilities. Here are some key considerations:</p>
+                        
+                        <h3>Alternative Text for Images</h3>
+                        <p>Always provide descriptive <code>alt</code> text for images that convey information:</p>
+                        
+                        <pre><code class="language-html">&lt;img src="chart.jpg" alt="Bar chart showing sales increasing by 25% in Q3 2025"&gt;</code></pre>
+                        
+                        <h3>Captions and Transcripts</h3>
+                        <p>Provide captions for videos and transcripts for audio content:</p>
+                        
+                        <pre><code class="language-html">&lt;video controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;track src="captions.vtt" kind="subtitles" srclang="en" label="English"&gt;
+&lt;/video&gt;</code></pre>
+                        
+                        <p>The <code>&lt;track&gt;</code> element is used to specify text tracks (like subtitles or captions) for media elements.</p>
+                        
+                        <h3>Audio Descriptions</h3>
+                        <p>For videos with important visual information, provide audio descriptions that describe what's happening on screen for users who can't see the video.</p>
+                        
+                        <h3>Controls</h3>
+                        <p>Always include controls for audio and video content so users can pause, adjust volume, or stop playback as needed.</p>
+                        
+                        <h3>No Auto-Play</h3>
+                        <p>Avoid auto-playing media with sound, as it can be disruptive and confusing, especially for screen reader users.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Adding Multimedia</h2>
+                        <p>Let's put what we've learned into practice by creating a web page with various multimedia elements:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Multimedia Example&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        figure {
+            margin: 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        figcaption {
+            font-style: italic;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        video, audio {
+            width: 100%;
+            margin: 20px 0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Multimedia Example&lt;/h1&gt;
+    
+    &lt;h2&gt;Featured Image&lt;/h2&gt;
+    &lt;figure&gt;
+        &lt;img src="https://via.placeholder.com/800x400" alt="A placeholder image for demonstration"&gt;
+        &lt;figcaption&gt;Figure 1: This is a placeholder image used for demonstration purposes.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    
+    &lt;h2&gt;Image Gallery&lt;/h2&gt;
+    &lt;div class="gallery"&gt;
+        &lt;img src="https://via.placeholder.com/300x200?text=Image+1" alt="Gallery image 1"&gt;
+        &lt;img src="https://via.placeholder.com/300x200?text=Image+2" alt="Gallery image 2"&gt;
+        &lt;img src="https://via.placeholder.com/300x200?text=Image+3" alt="Gallery image 3"&gt;
+        &lt;img src="https://via.placeholder.com/300x200?text=Image+4" alt="Gallery image 4"&gt;
+    &lt;/div&gt;
+    
+    &lt;h2&gt;Responsive Image Example&lt;/h2&gt;
+    &lt;picture&gt;
+        &lt;source media="(max-width: 600px)" srcset="https://via.placeholder.com/400x200?text=Small"&gt;
+        &lt;source media="(max-width: 1000px)" srcset="https://via.placeholder.com/600x300?text=Medium"&gt;
+        &lt;img src="https://via.placeholder.com/800x400?text=Large" alt="Responsive image example"&gt;
+    &lt;/picture&gt;
+    
+    &lt;h2&gt;Video Example&lt;/h2&gt;
+    &lt;video controls poster="https://via.placeholder.com/800x450?text=Video+Thumbnail"&gt;
+        &lt;source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"&gt;
+        Your browser does not support the video element.
+    &lt;/video&gt;
+    
+    &lt;h2&gt;Audio Example&lt;/h2&gt;
+    &lt;audio controls&gt;
+        &lt;source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg"&gt;
+        Your browser does not support the audio element.
+    &lt;/audio&gt;
+    
+    &lt;h2&gt;SVG Example&lt;/h2&gt;
+    &lt;svg width="200" height="200" viewBox="0 0 200 200"&gt;
+        &lt;rect x="50" y="50" width="100" height="100" fill="#3a86ff" /&gt;
+        &lt;circle cx="100" cy="100" r="40" fill="#ff006e" /&gt;
+        &lt;text x="100" y="180" text-anchor="middle" fill="#000"&gt;SVG Example&lt;/text&gt;
+    &lt;/svg&gt;
+    
+    &lt;h2&gt;Embedded Content Example&lt;/h2&gt;
+    &lt;iframe 
+        width="100%" 
+        height="400" 
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Try It Yourself</h4>
+                            <p>Create the HTML document above and view it in your browser. Then try to:</p>
+                            <ol>
+                                <li>Add an image map to one of the images</li>
+                                <li>Create a more complex SVG graphic</li>
+                                <li>Add captions to the video using a <code>&lt;track&gt;</code> element</li>
+                                <li>Embed a Google Map of your favorite location</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored images and multimedia in HTML:</p>
+                        <ul>
+                            <li>Images are added using the <code>&lt;img&gt;</code> element with <code>src</code> and <code>alt</code> attributes</li>
+                            <li>Responsive images can be created using CSS, the <code>&lt;picture&gt;</code> element, or the <code>srcset</code> attribute</li>
+                            <li>The <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> elements provide semantic structure for images with captions</li>
+                            <li>Videos are embedded using the <code>&lt;video&gt;</code> element with various attributes to control playback</li>
+                            <li>Audio content is added with the <code>&lt;audio&gt;</code> element</li>
+                            <li>The <code>&lt;iframe&gt;</code> element allows embedding content from other sources</li>
+                            <li>SVG provides scalable vector graphics that can be embedded directly or as external files</li>
+                            <li>Accessibility considerations include alternative text, captions, and transcripts</li>
+                        </ul>
+                        
+                        <p>Multimedia content enhances the user experience and can convey information more effectively than text alone. By following best practices for performance and accessibility, you can create engaging, inclusive web pages that work well for all users. In the next lesson, we'll explore lists, which are essential for organizing and structuring content.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page5.html" class="btn">Previous: Links & Navigation</a>
+                        <a href="page7.html" class="btn">Next: Lists</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

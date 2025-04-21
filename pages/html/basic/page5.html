@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links & Navigation | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to create links and navigation systems in HTML to connect web pages and create user-friendly websites.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="5">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html" class="active">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>HTML Basics</h3>
+                <ul>
+                    <li><a href="page1.html">1. Introduction to HTML</a></li>
+                    <li><a href="page2.html">2. HTML Document Structure</a></li>
+                    <li><a href="page3.html">3. HTML Elements & Tags</a></li>
+                    <li><a href="page4.html">4. Text Formatting</a></li>
+                    <li><a href="page5.html" class="active">5. Links & Navigation</a></li>
+                    <li><a href="page6.html">6. Images & Multimedia</a></li>
+                    <li><a href="page7.html">7. Lists</a></li>
+                    <li><a href="page8.html">8. Tables</a></li>
+                    <li><a href="page9.html">9. Forms Basics</a></li>
+                    <li><a href="page10.html">10. Semantic HTML</a></li>
+                    <li><a href="page11.html">11. HTML Attributes</a></li>
+                    <li><a href="page12.html">12. HTML Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 10%;"></div>
+                </div>
+                <p style="text-align: center;">Page 5 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Links & Navigation in HTML</h1>
+                    
+                    <div class="card">
+                        <h2>The Power of Hyperlinks</h2>
+                        <p>Hyperlinks are what make the web a "web." They connect pages and resources together, allowing users to navigate between them. Without links, each web page would be an isolated island of information.</p>
+                        
+                        <p>The ability to link documents together is what transformed the internet from a collection of separate files into the interconnected World Wide Web we know today. In fact, HTML stands for HyperText Markup Language, and the "HyperText" part refers specifically to text that contains links to other content.</p>
+                        
+                        <div class="info-box">
+                            <h4>Historical Note</h4>
+                            <p>The concept of hypertext was first proposed by Ted Nelson in the 1960s, but it was Tim Berners-Lee who implemented it in the early 1990s when he created the World Wide Web. The ability to link documents together was revolutionary and fundamentally changed how we access and share information.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>The Anchor Element</h2>
+                        <p>In HTML, links are created using the anchor element <code>&lt;a&gt;</code>. The most important attribute of the anchor element is <code>href</code> (hypertext reference), which specifies the destination of the link.</p>
+                        
+                        <pre><code class="language-html">&lt;a href="https://www.example.com"&gt;Visit Example.com&lt;/a&gt;</code></pre>
+                        
+                        <p>This creates a link with the text "Visit Example.com" that, when clicked, takes the user to the URL specified in the <code>href</code> attribute.</p>
+                        
+                        <h3>Link Text</h3>
+                        <p>The content between the opening and closing <code>&lt;a&gt;</code> tags is what users see and click on. This can be text, images, or even other HTML elements (except for other anchor elements).</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Text link --&gt;
+&lt;a href="about.html"&gt;About Us&lt;/a&gt;
+
+&lt;!-- Image link --&gt;
+&lt;a href="product.html"&gt;&lt;img src="product-image.jpg" alt="Our Product"&gt;&lt;/a&gt;
+
+&lt;!-- Button-like link --&gt;
+&lt;a href="contact.html"&gt;&lt;div class="button"&gt;Contact Us&lt;/div&gt;&lt;/a&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Accessibility Tip</h4>
+                            <p>Always make sure your link text is descriptive and makes sense out of context. Screen reader users often navigate by jumping from link to link, so link text like "click here" or "read more" doesn't provide enough information about where the link leads.</p>
+                            <p>Good: <code>&lt;a href="pricing.html"&gt;View our pricing plans&lt;/a&gt;</code></p>
+                            <p>Poor: <code>&lt;a href="pricing.html"&gt;Click here&lt;/a&gt;</code></p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Types of Links</h2>
+                        <p>HTML supports several types of links, each with its own purpose and syntax:</p>
+                        
+                        <h3>Absolute URLs</h3>
+                        <p>Absolute URLs provide the complete path to a resource, including the protocol (http, https), domain name, and path.</p>
+                        
+                        <pre><code class="language-html">&lt;a href="https://www.example.com/about/team.html"&gt;Our Team&lt;/a&gt;</code></pre>
+                        
+                        <p>Use absolute URLs when linking to pages on different websites.</p>
+                        
+                        <h3>Relative URLs</h3>
+                        <p>Relative URLs specify the path to a resource relative to the current document. They don't include the protocol or domain name.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Link to a page in the same directory --&gt;
+&lt;a href="contact.html"&gt;Contact Us&lt;/a&gt;
+
+&lt;!-- Link to a page in a subdirectory --&gt;
+&lt;a href="about/team.html"&gt;Our Team&lt;/a&gt;
+
+&lt;!-- Link to a page in a parent directory --&gt;
+&lt;a href="../products.html"&gt;Products&lt;/a&gt;
+
+&lt;!-- Link to a page two directories up --&gt;
+&lt;a href="../../index.html"&gt;Home&lt;/a&gt;</code></pre>
+                        
+                        <p>Use relative URLs when linking to pages within your own website. They make your site more portable and easier to maintain.</p>
+                        
+                        <h3>Root-Relative URLs</h3>
+                        <p>Root-relative URLs specify the path from the root directory of the website. They start with a forward slash.</p>
+                        
+                        <pre><code class="language-html">&lt;a href="/about/team.html"&gt;Our Team&lt;/a&gt;</code></pre>
+                        
+                        <p>This link points to the "team.html" page in the "about" directory from the root of the website, regardless of where the current page is located.</p>
+                        
+                        <h3>Fragment Identifiers (Anchor Links)</h3>
+                        <p>Fragment identifiers link to a specific section within a page. They use the <code>#</code> symbol followed by the ID of the target element.</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Link to a section on the same page --&gt;
+&lt;a href="#section2"&gt;Go to Section 2&lt;/a&gt;
+
+&lt;!-- The target section --&gt;
+&lt;h2 id="section2"&gt;Section 2&lt;/h2&gt;</code></pre>
+                        
+                        <p>You can also combine fragment identifiers with URLs to link to a specific section of another page:</p>
+                        
+                        <pre><code class="language-html">&lt;a href="about.html#team"&gt;Our Team&lt;/a&gt;</code></pre>
+                        
+                        <h3>Email Links</h3>
+                        <p>Email links open the user's default email client with a new message addressed to the specified email address. They use the <code>mailto:</code> protocol.</p>
+                        
+                        <pre><code class="language-html">&lt;a href="mailto:contact@example.com"&gt;Email Us&lt;/a&gt;</code></pre>
+                        
+                        <p>You can also include subject, body text, and other email fields:</p>
+                        
+                        <pre><code class="language-html">&lt;a href="mailto:contact@example.com?subject=Website%20Inquiry&body=Hello%2C%20I%20have%20a%20question%20about..."&gt;Email Us&lt;/a&gt;</code></pre>
+                        
+                        <p>Note that spaces and special characters in the subject and body must be URL-encoded (e.g., spaces become %20).</p>
+                        
+                        <h3>Phone Links</h3>
+                        <p>Phone links initiate a call when clicked on mobile devices. They use the <code>tel:</code> protocol.</p>
+                        
+                        <pre><code class="language-html">&lt;a href="tel:+1234567890"&gt;Call Us&lt;/a&gt;</code></pre>
+                        
+                        <h3>Download Links</h3>
+                        <p>You can use the <code>download</code> attribute to specify that a link should download a file rather than navigate to it.</p>
+                        
+                        <pre><code class="language-html">&lt;a href="files/brochure.pdf" download&gt;Download Brochure&lt;/a&gt;</code></pre>
+                        
+                        <p>You can also specify a different filename for the downloaded file:</p>
+                        
+                        <pre><code class="language-html">&lt;a href="files/brochure.pdf" download="company-brochure.pdf"&gt;Download Brochure&lt;/a&gt;</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Link Attributes</h2>
+                        <p>The anchor element supports several attributes that modify its behavior:</p>
+                        
+                        <h3>Target Attribute</h3>
+                        <p>The <code>target</code> attribute specifies where to open the linked document. The most common values are:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Open in the same tab/window (default) --&gt;
+&lt;a href="page.html" target="_self"&gt;Same Tab&lt;/a&gt;
+
+&lt;!-- Open in a new tab/window --&gt;
+&lt;a href="page.html" target="_blank"&gt;New Tab&lt;/a&gt;
+
+&lt;!-- Open in the parent frame (used with framesets) --&gt;
+&lt;a href="page.html" target="_parent"&gt;Parent Frame&lt;/a&gt;
+
+&lt;!-- Open in the full body of the window (used with framesets) --&gt;
+&lt;a href="page.html" target="_top"&gt;Full Window&lt;/a&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Security Tip</h4>
+                            <p>When using <code>target="_blank"</code>, it's recommended to also include <code>rel="noopener noreferrer"</code> to prevent potential security vulnerabilities:</p>
+                            <pre><code class="language-html">&lt;a href="https://example.com" target="_blank" rel="noopener noreferrer"&gt;Example&lt;/a&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Rel Attribute</h3>
+                        <p>The <code>rel</code> attribute specifies the relationship between the current document and the linked document. Common values include:</p>
+                        
+                        <pre><code class="language-html">&lt;!-- Indicates that the link is to an alternate version of the page --&gt;
+&lt;a href="mobile-version.html" rel="alternate"&gt;Mobile Version&lt;/a&gt;
+
+&lt;!-- Indicates that the link is to the author of the document --&gt;
+&lt;a href="author.html" rel="author"&gt;About the Author&lt;/a&gt;
+
+&lt;!-- Indicates that the link is to an external resource --&gt;
+&lt;a href="https://example.com" rel="external"&gt;External Site&lt;/a&gt;
+
+&lt;!-- Indicates that the link should not be followed by search engines --&gt;
+&lt;a href="private.html" rel="nofollow"&gt;Private Page&lt;/a&gt;
+
+&lt;!-- Prevents the new page from accessing the window.opener property --&gt;
+&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;Safe External Link&lt;/a&gt;</code></pre>
+                        
+                        <h3>Title Attribute</h3>
+                        <p>The <code>title</code> attribute provides additional information about the link. It typically appears as a tooltip when the user hovers over the link.</p>
+                        
+                        <pre><code class="language-html">&lt;a href="products.html" title="View our complete product catalog"&gt;Products&lt;/a&gt;</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Styling Links</h2>
+                        <p>Links have different states that can be styled using CSS:</p>
+                        
+                        <pre><code class="language-css">/* Unvisited link */
+a:link {
+    color: #3a86ff;
+    text-decoration: none;
+}
+
+/* Visited link */
+a:visited {
+    color: #8338ec;
+}
+
+/* Mouse over link */
+a:hover {
+    color: #ff006e;
+    text-decoration: underline;
+}
+
+/* Selected link */
+a:active {
+    color: #ffbe0b;
+}</code></pre>
+                        
+                        <p>These styles should be defined in this order (link, visited, hover, active) for proper behavior.</p>
+                        
+                        <div class="info-box">
+                            <h4>Accessibility Tip</h4>
+                            <p>Always ensure there's sufficient contrast between link text and regular text, and provide visual cues beyond just color (like underlines) to indicate links. This helps users with color vision deficiencies identify links.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Creating Navigation Menus</h2>
+                        <p>Navigation menus are collections of links that help users move around a website. They're typically implemented using lists:</p>
+                        
+                        <h3>Basic Navigation Menu</h3>
+                        <pre><code class="language-html">&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="services.html"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                        
+                        <p>The <code>&lt;nav&gt;</code> element is a semantic container for navigation links. Using an unordered list (<code>&lt;ul&gt;</code>) for navigation is a common practice that provides good structure and accessibility.</p>
+                        
+                        <h3>Dropdown Menu</h3>
+                        <p>Dropdown menus can be created using nested lists:</p>
+                        
+                        <pre><code class="language-html">&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="products.html"&gt;Products&lt;/a&gt;
+            &lt;ul class="dropdown"&gt;
+                &lt;li&gt;&lt;a href="products/category1.html"&gt;Category 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="products/category2.html"&gt;Category 2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="products/category3.html"&gt;Category 3&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                        
+                        <p>The dropdown functionality would be implemented with CSS and possibly JavaScript.</p>
+                        
+                        <h3>Breadcrumb Navigation</h3>
+                        <p>Breadcrumb navigation shows the user's location in the website hierarchy:</p>
+                        
+                        <pre><code class="language-html">&lt;nav aria-label="Breadcrumb"&gt;
+    &lt;ol class="breadcrumb"&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="products.html"&gt;Products&lt;/a&gt;&lt;/li&gt;
+        &lt;li aria-current="page"&gt;Product Name&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+                        
+                        <p>Breadcrumbs typically use ordered lists (<code>&lt;ol&gt;</code>) since they represent a sequence of steps.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Skip Navigation Links</h2>
+                        <p>Skip navigation links allow keyboard users and screen reader users to bypass navigation menus and jump directly to the main content. They're an important accessibility feature.</p>
+                        
+                        <pre><code class="language-html">&lt;a href="#main-content" class="skip-link"&gt;Skip to main content&lt;/a&gt;
+
+&lt;!-- Navigation menu here --&gt;
+
+&lt;main id="main-content"&gt;
+    &lt;!-- Main content here --&gt;
+&lt;/main&gt;</code></pre>
+                        
+                        <p>The skip link is typically the first focusable element on the page and is often visually hidden until it receives focus.</p>
+                        
+                        <pre><code class="language-css">.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Link Best Practices</h2>
+                        <p>Follow these best practices to create effective and accessible links:</p>
+                        
+                        <h3>Use Descriptive Link Text</h3>
+                        <p>Link text should clearly indicate where the link will take the user.</p>
+                        <ul>
+                            <li>Good: <code>&lt;a href="pricing.html"&gt;View our pricing plans&lt;/a&gt;</code></li>
+                            <li>Poor: <code>&lt;a href="pricing.html"&gt;Click here&lt;/a&gt;</code></li>
+                        </ul>
+                        
+                        <h3>Keep Link Text Concise</h3>
+                        <p>Link text should be brief but descriptive. Avoid using entire sentences as link text.</p>
+                        
+                        <h3>Indicate External Links</h3>
+                        <p>Let users know when a link will take them to an external site. This can be done with an icon or explicit text.</p>
+                        <pre><code class="language-html">&lt;a href="https://example.com" target="_blank" rel="noopener noreferrer"&gt;Example Website (External Link)&lt;/a&gt;</code></pre>
+                        
+                        <h3>Indicate File Downloads</h3>
+                        <p>When linking to a file that will be downloaded, indicate the file type and size if possible.</p>
+                        <pre><code class="language-html">&lt;a href="files/report.pdf" download&gt;Download Annual Report (PDF, 2.5MB)&lt;/a&gt;</code></pre>
+                        
+                        <h3>Avoid "Click Here"</h3>
+                        <p>Don't use generic phrases like "click here" or "read more" as link text. These phrases provide no context about the link destination and are problematic for screen reader users.</p>
+                        
+                        <h3>Don't Open Too Many New Windows</h3>
+                        <p>Use <code>target="_blank"</code> sparingly. Opening too many new windows or tabs can be disorienting for users, especially those with cognitive disabilities.</p>
+                        
+                        <h3>Check for Broken Links</h3>
+                        <p>Regularly check your website for broken links. Broken links frustrate users and harm your site's credibility and search engine ranking.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Creating a Navigation System</h2>
+                        <p>Let's put what we've learned into practice by creating a simple website with a navigation system:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        header {
+            background: #333;
+            color: white;
+            padding: 1rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        
+        nav li {
+            margin-right: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        main {
+            padding: 1rem;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;a href="#main-content" class="skip-link"&gt;Skip to main content&lt;/a&gt;
+    
+    &lt;header&gt;
+        &lt;h1&gt;My Website&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="services.html"&gt;Services&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main id="main-content"&gt;
+        &lt;section&gt;
+            &lt;h2&gt;Welcome to My Website&lt;/h2&gt;
+            &lt;p&gt;This is the home page of my website. Here you'll find information about:&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#section1"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#section2"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#section3"&gt;Section 3&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+        
+        &lt;section id="section1"&gt;
+            &lt;h2&gt;Section 1&lt;/h2&gt;
+            &lt;p&gt;This is the content for section 1.&lt;/p&gt;
+            &lt;p&gt;&lt;a href="#main-content"&gt;Back to top&lt;/a&gt;&lt;/p&gt;
+        &lt;/section&gt;
+        
+        &lt;section id="section2"&gt;
+            &lt;h2&gt;Section 2&lt;/h2&gt;
+            &lt;p&gt;This is the content for section 2.&lt;/p&gt;
+            &lt;p&gt;&lt;a href="#main-content"&gt;Back to top&lt;/a&gt;&lt;/p&gt;
+        &lt;/section&gt;
+        
+        &lt;section id="section3"&gt;
+            &lt;h2&gt;Section 3&lt;/h2&gt;
+            &lt;p&gt;This is the content for section 3.&lt;/p&gt;
+            &lt;p&gt;&lt;a href="#main-content"&gt;Back to top&lt;/a&gt;&lt;/p&gt;
+        &lt;/section&gt;
+        
+        &lt;section&gt;
+            &lt;h2&gt;External Resources&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="https://example.com" target="_blank" rel="noopener noreferrer"&gt;Example Website (External Link)&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="files/sample.pdf" download&gt;Download Sample PDF&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="mailto:contact@example.com"&gt;Email Us&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2025 My Website. All rights reserved.&lt;/p&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="privacy.html"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="terms.html"&gt;Terms of Service&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="sitemap.html"&gt;Sitemap&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <div class="try-it-box">
+                            <h4>Try It Yourself</h4>
+                            <p>Create the HTML document above and view it in your browser. Then try to:</p>
+                            <ol>
+                                <li>Add a dropdown menu to one of the navigation items</li>
+                                <li>Create a breadcrumb navigation at the top of the main content</li>
+                                <li>Add a phone link to the external resources section</li>
+                                <li>Create a second page (e.g., about.html) and link to it from the navigation</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored links and navigation in HTML:</p>
+                        <ul>
+                            <li>Links are created using the anchor element <code>&lt;a&gt;</code> with the <code>href</code> attribute</li>
+                            <li>Different types of links include absolute URLs, relative URLs, fragment identifiers, email links, and phone links</li>
+                            <li>Link attributes like <code>target</code>, <code>rel</code>, and <code>title</code> modify link behavior</li>
+                            <li>Navigation menus are typically created using lists within a <code>&lt;nav&gt;</code> element</li>
+                            <li>Skip navigation links improve accessibility by allowing users to bypass navigation menus</li>
+                            <li>Best practices include using descriptive link text, indicating external links and file downloads, and avoiding generic phrases like "click here"</li>
+                        </ul>
+                        
+                        <p>Links are what make the web a web, connecting pages and resources together. Well-designed navigation systems help users find what they're looking for and move around your website efficiently. In the next lesson, we'll explore images and multimedia, which add visual interest and enhance the user experience.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page4.html" class="btn">Previous: Text Formatting</a>
+                        <a href="page6.html" class="btn">Next: Images & Multimedia</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

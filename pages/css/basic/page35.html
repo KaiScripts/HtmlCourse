@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions & Animations | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to create engaging animations and smooth transitions using CSS to enhance user experience.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="35">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html" class="active">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>CSS Basics</h3>
+                <ul>
+                    <li><a href="page26.html">26. Introduction to CSS</a></li>
+                    <li><a href="page27.html">27. CSS Selectors</a></li>
+                    <li><a href="page28.html">28. CSS Box Model</a></li>
+                    <li><a href="page29.html">29. Typography</a></li>
+                    <li><a href="page30.html">30. Colors & Backgrounds</a></li>
+                    <li><a href="page31.html">31. Layout Basics</a></li>
+                    <li><a href="page32.html">32. Flexbox</a></li>
+                    <li><a href="page33.html">33. CSS Grid</a></li>
+                    <li><a href="page34.html">34. Responsive Design</a></li>
+                    <li><a href="page35.html" class="active">35. Transitions & Animations</a></li>
+                    <li><a href="page36.html">36. CSS Variables</a></li>
+                    <li><a href="page37.html">37. CSS Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+                <p style="text-align: center;">Page 35 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Transitions & Animations</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to CSS Transitions</h2>
+                        <p>CSS transitions allow you to change property values smoothly over a specified duration, rather than having them change immediately. This creates a more polished and engaging user experience by adding subtle motion to your web pages.</p>
+                        
+                        <p>Transitions are perfect for simple animations triggered by user interactions like hovering, clicking, or focusing on elements. They're easy to implement and have excellent browser support.</p>
+                        
+                        <h3>Basic Transition Syntax</h3>
+                        <p>The basic syntax for a CSS transition involves specifying which property to animate, how long the animation should take, and how it should progress over time:</p>
+                        
+                        <pre><code class="language-css">selector {
+  /* Initial state */
+  property: value;
+  
+  /* Transition definition */
+  transition-property: property;
+  transition-duration: time;
+  transition-timing-function: timing-function;
+  transition-delay: time;
+}
+
+selector:hover {
+  /* End state */
+  property: new-value;
+}</code></pre>
+                        
+                        <p>Or using the shorthand property:</p>
+                        
+                        <pre><code class="language-css">selector {
+  /* Initial state */
+  property: value;
+  
+  /* Shorthand: property duration timing-function delay */
+  transition: property time timing-function time;
+}
+
+selector:hover {
+  /* End state */
+  property: new-value;
+}</code></pre>
+                        
+                        <h3>Simple Transition Example</h3>
+                        <p>Here's a simple example of a button that changes color smoothly when hovered:</p>
+                        
+                        <pre><code class="language-css">.button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  /* Transition definition */
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}</code></pre>
+                        
+                        <p>In this example, when a user hovers over the button, its background color will smoothly change from <code>#3498db</code> to <code>#2980b9</code> over 0.3 seconds with an "ease" timing function.</p>
+                        
+                        <div class="info-box">
+                            <h4>When to Use Transitions</h4>
+                            <p>Transitions are best for:</p>
+                            <ul>
+                                <li>Simple state changes (hover, focus, active states)</li>
+                                <li>Single-step animations</li>
+                                <li>Subtle UI feedback</li>
+                                <li>Enhancing user interactions</li>
+                            </ul>
+                            <p>For more complex, multi-step, or automatically playing animations, use CSS animations (covered later in this lesson).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Transition Properties</h2>
+                        <p>Let's explore the individual properties that make up a CSS transition:</p>
+                        
+                        <h3>transition-property</h3>
+                        <p>Specifies which CSS property (or properties) should be animated:</p>
+                        
+                        <pre><code class="language-css">/* Single property */
+transition-property: opacity;
+
+/* Multiple properties */
+transition-property: opacity, transform;
+
+/* All properties (can be performance-intensive) */
+transition-property: all;
+
+/* No transitions */
+transition-property: none;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Animatable Properties</h4>
+                            <p>Not all CSS properties can be animated. Generally, properties with numeric values work well for transitions. Common animatable properties include:</p>
+                            <ul>
+                                <li>Colors (<code>color</code>, <code>background-color</code>, <code>border-color</code>)</li>
+                                <li>Dimensions (<code>width</code>, <code>height</code>, <code>padding</code>, <code>margin</code>)</li>
+                                <li>Position (<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>)</li>
+                                <li>Transforms (<code>transform</code>)</li>
+                                <li>Opacity (<code>opacity</code>)</li>
+                                <li>Shadows (<code>box-shadow</code>, <code>text-shadow</code>)</li>
+                            </ul>
+                            <p>Properties like <code>display</code> cannot be transitioned because they don't have intermediate values.</p>
+                        </div>
+                        
+                        <h3>transition-duration</h3>
+                        <p>Specifies how long the transition should take to complete:</p>
+                        
+                        <pre><code class="language-css">/* Time in seconds */
+transition-duration: 0.3s;
+
+/* Time in milliseconds */
+transition-duration: 300ms;
+
+/* Multiple durations (one for each property) */
+transition-duration: 0.3s, 0.5s;</code></pre>
+                        
+                        <p>The default value is <code>0s</code> (no transition). Values must be positive.</p>
+                        
+                        <h3>transition-timing-function</h3>
+                        <p>Specifies how the intermediate values are calculated during the transition:</p>
+                        
+                        <pre><code class="language-css">/* Predefined functions */
+transition-timing-function: ease;        /* Default: slow start, fast middle, slow end */
+transition-timing-function: linear;      /* Constant speed */
+transition-timing-function: ease-in;     /* Slow start, fast end */
+transition-timing-function: ease-out;    /* Fast start, slow end */
+transition-timing-function: ease-in-out; /* Slow start and end, fast middle */
+
+/* Cubic Bezier curve (custom timing) */
+transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.0);
+
+/* Steps function (discrete transitions) */
+transition-timing-function: steps(4, end);
+
+/* Multiple timing functions */
+transition-timing-function: ease, linear;</code></pre>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Timing Function</th>
+                                        <th>Description</th>
+                                        <th>Visual Representation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ease</code></td>
+                                        <td>Starts slow, speeds up in the middle, then slows down at the end</td>
+                                        <td>▁▂▄▆█▆▄▂▁</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>linear</code></td>
+                                        <td>Constant speed throughout</td>
+                                        <td>▁▂▃▄▅▆▇█</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ease-in</code></td>
+                                        <td>Starts slow, then speeds up</td>
+                                        <td>▁▁▂▃▄▆▇█</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ease-out</code></td>
+                                        <td>Starts fast, then slows down</td>
+                                        <td>█▇▆▄▃▂▁▁</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ease-in-out</code></td>
+                                        <td>Starts and ends slow, speeds up in the middle</td>
+                                        <td>▁▂▃▆█▆▃▂▁</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>steps(n, jump)</code></td>
+                                        <td>Jumps between steps instead of smooth transition</td>
+                                        <td>▁▁▁▄▄▄███</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3>transition-delay</h3>
+                        <p>Specifies how long to wait before starting the transition:</p>
+                        
+                        <pre><code class="language-css">/* Time in seconds */
+transition-delay: 0.2s;
+
+/* Time in milliseconds */
+transition-delay: 200ms;
+
+/* Multiple delays (one for each property) */
+transition-delay: 0s, 0.2s;</code></pre>
+                        
+                        <p>The default value is <code>0s</code> (no delay). Values can be negative, which starts the transition from partway through its cycle.</p>
+                        
+                        <h3>transition (Shorthand)</h3>
+                        <p>The shorthand property combines all the individual transition properties:</p>
+                        
+                        <pre><code class="language-css">/* property duration timing-function delay */
+transition: opacity 0.3s ease 0.1s;
+
+/* Multiple transitions */
+transition: 
+  opacity 0.3s ease 0.1s,
+  transform 0.5s ease-out 0s;
+
+/* All properties */
+transition: all 0.3s ease;</code></pre>
+                        
+                        <p>When using the shorthand, unspecified values will use their default:</p>
+                        <ul>
+                            <li><code>transition-property</code>: all</li>
+                            <li><code>transition-duration</code>: 0s</li>
+                            <li><code>transition-timing-function</code>: ease</li>
+                            <li><code>transition-delay</code>: 0s</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practical Transition Examples</h2>
+                        <p>Let's explore some practical examples of CSS transitions:</p>
+                        
+                        <h3>Button Hover Effect</h3>
+                        <p>A button that changes color, grows slightly, and adds a shadow when hovered:</p>
+                        
+                        <pre><code class="language-css">.button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  
+  /* Multiple transitions with different durations */
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}</code></pre>
+                        
+                        <h3>Expanding Search Input</h3>
+                        <p>A search input that expands when focused:</p>
+                        
+                        <pre><code class="language-css">.search-input {
+  width: 150px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  
+  transition: width 0.3s ease-out, border-color 0.3s ease;
+}
+
+.search-input:focus {
+  width: 250px;
+  border-color: #3498db;
+}</code></pre>
+                        
+                        <h3>Dropdown Menu</h3>
+                        <p>A smooth dropdown menu that appears on hover:</p>
+                        
+                        <pre><code class="language-css">.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  
+  transition: 
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0s linear 0.3s; /* Delay visibility change until after fade-out */
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: 
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0s linear 0s; /* No delay for visibility on hover */
+}</code></pre>
+                        
+                        <h3>Image Zoom Effect</h3>
+                        <p>An image that zooms slightly on hover:</p>
+                        
+                        <pre><code class="language-css">.image-container {
+  overflow: hidden; /* Prevents the image from spilling out */
+}
+
+.image-container img {
+  width: 100%;
+  display: block;
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
+}</code></pre>
+                        
+                        <h3>Accordion Panel</h3>
+                        <p>A smooth accordion panel that expands and collapses:</p>
+                        
+                        <pre><code class="language-css">.accordion-item {
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+}
+
+.accordion-header {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 15px;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 200px; /* Approximate height, adjust as needed */
+  padding: 15px;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Performance Tip</h4>
+                            <p>For the best performance, transition properties that trigger minimal repaints:</p>
+                            <ul>
+                                <li><code>transform</code> and <code>opacity</code> are the most efficient properties to animate</li>
+                                <li>Avoid transitioning properties like <code>width</code>, <code>height</code>, or <code>position</code> when possible</li>
+                                <li>Use <code>transform: scale()</code> instead of <code>width/height</code></li>
+                                <li>Use <code>transform: translate()</code> instead of <code>top/left/right/bottom</code></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Introduction to CSS Animations</h2>
+                        <p>While transitions are great for simple state changes, CSS animations provide more control for complex, multi-step animations that can run automatically without user interaction.</p>
+                        
+                        <p>CSS animations consist of two components:</p>
+                        <ol>
+                            <li><strong>Keyframes</strong>: Define the stages and styles of the animation</li>
+                            <li><strong>Animation Properties</strong>: Assign the keyframes to an element and define how it should animate</li>
+                        </ol>
+                        
+                        <h3>Basic Animation Syntax</h3>
+                        <p>First, define the keyframes using the <code>@keyframes</code> rule:</p>
+                        
+                        <pre><code class="language-css">@keyframes animation-name {
+  0% {
+    /* Starting styles */
+    property: value;
+  }
+  
+  50% {
+    /* Intermediate styles */
+    property: another-value;
+  }
+  
+  100% {
+    /* Ending styles */
+    property: final-value;
+  }
+}</code></pre>
+                        
+                        <p>Then, apply the animation to an element:</p>
+                        
+                        <pre><code class="language-css">selector {
+  /* Individual properties */
+  animation-name: animation-name;
+  animation-duration: time;
+  animation-timing-function: timing-function;
+  animation-delay: time;
+  animation-iteration-count: number | infinite;
+  animation-direction: normal | reverse | alternate | alternate-reverse;
+  animation-fill-mode: none | forwards | backwards | both;
+  animation-play-state: running | paused;
+  
+  /* Or use the shorthand */
+  animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+}</code></pre>
+                        
+                        <h3>Simple Animation Example</h3>
+                        <p>Here's a simple example of a pulsing effect:</p>
+                        
+                        <pre><code class="language-css">/* Define the keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Apply the animation */
+.pulse-element {
+  animation: pulse 2s ease infinite;
+}</code></pre>
+                        
+                        <p>In this example, the element will continuously scale up and down in a pulsing motion.</p>
+                        
+                        <div class="info-box">
+                            <h4>When to Use Animations</h4>
+                            <p>CSS animations are best for:</p>
+                            <ul>
+                                <li>Continuous or looping animations</li>
+                                <li>Animations with multiple steps or keyframes</li>
+                                <li>Animations that play automatically</li>
+                                <li>Complex movement patterns</li>
+                                <li>Attention-grabbing effects</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Keyframes</h2>
+                        <p>The <code>@keyframes</code> rule is where you define the sequence of styles that your animation will follow.</p>
+                        
+                        <h3>Keyframe Selectors</h3>
+                        <p>You can define keyframes using percentages or the keywords <code>from</code> and <code>to</code>:</p>
+                        
+                        <pre><code class="language-css">/* Using percentages */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
+
+/* Using from/to (equivalent to 0%/100%) */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100px);
+  }
+}</code></pre>
+                        
+                        <h3>Multiple Keyframes</h3>
+                        <p>You can add as many keyframes as needed for complex animations:</p>
+                        
+                        <pre><code class="language-css">@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}</code></pre>
+                        
+                        <h3>Multiple Properties</h3>
+                        <p>Each keyframe can animate multiple properties:</p>
+                        
+                        <pre><code class="language-css">@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}</code></pre>
+                        
+                        <h3>Grouping Keyframe Selectors</h3>
+                        <p>You can group keyframe selectors that share the same styles:</p>
+                        
+                        <pre><code class="language-css">@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Naming Conventions</h4>
+                            <p>When naming your animations:</p>
+                            <ul>
+                                <li>Use descriptive names that indicate what the animation does (e.g., <code>fade-in</code>, <code>slide-left</code>, <code>bounce</code>)</li>
+                                <li>Use kebab-case (hyphens between words) for consistency</li>
+                                <li>Avoid generic names like <code>animation1</code> that don't describe the effect</li>
+                                <li>Consider prefixing with your project or component name for larger projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Animation Properties</h2>
+                        <p>Let's explore the individual properties that control how animations behave:</p>
+                        
+                        <h3>animation-name</h3>
+                        <p>Specifies the name of the <code>@keyframes</code> rule to use:</p>
+                        
+                        <pre><code class="language-css">animation-name: pulse;
+
+/* Multiple animations */
+animation-name: pulse, fade;
+
+/* No animation */
+animation-name: none;</code></pre>
+                        
+                        <h3>animation-duration</h3>
+                        <p>Specifies how long the animation should take to complete one cycle:</p>
+                        
+                        <pre><code class="language-css">/* Time in seconds */
+animation-duration: 2s;
+
+/* Time in milliseconds */
+animation-duration: 500ms;
+
+/* Multiple durations (one for each named animation) */
+animation-duration: 2s, 500ms;</code></pre>
+                        
+                        <p>The default value is <code>0s</code> (no animation). Values must be positive.</p>
+                        
+                        <h3>animation-timing-function</h3>
+                        <p>Specifies how the animation progresses over time:</p>
+                        
+                        <pre><code class="language-css">/* Predefined functions */
+animation-timing-function: ease;        /* Default: slow start, fast middle, slow end */
+animation-timing-function: linear;      /* Constant speed */
+animation-timing-function: ease-in;     /* Slow start, fast end */
+animation-timing-function: ease-out;    /* Fast start, slow end */
+animation-timing-function: ease-in-out; /* Slow start and end, fast middle */
+
+/* Cubic Bezier curve (custom timing) */
+animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.0);
+
+/* Steps function (discrete animations) */
+animation-timing-function: steps(10, end);
+
+/* Multiple timing functions */
+animation-timing-function: ease, linear;</code></pre>
+                        
+                        <p>The timing function applies to each keyframe segment, not just the overall animation.</p>
+                        
+                        <h3>animation-delay</h3>
+                        <p>Specifies how long to wait before starting the animation:</p>
+                        
+                        <pre><code class="language-css">/* Time in seconds */
+animation-delay: 1s;
+
+/* Time in milliseconds */
+animation-delay: 500ms;
+
+/* Multiple delays (one for each named animation) */
+animation-delay: 0s, 1s;
+
+/* Negative values start the animation partway through its cycle */
+animation-delay: -0.5s;</code></pre>
+                        
+                        <p>The default value is <code>0s</code> (no delay).</p>
+                        
+                        <h3>animation-iteration-count</h3>
+                        <p>Specifies how many times the animation should repeat:</p>
+                        
+                        <pre><code class="language-css">/* Specific number of times */
+animation-iteration-count: 3;
+
+/* Run indefinitely */
+animation-iteration-count: infinite;
+
+/* Multiple values (one for each named animation) */
+animation-iteration-count: 3, infinite;</code></pre>
+                        
+                        <p>The default value is <code>1</code> (play once). Values can be non-integer (e.g., <code>2.5</code> will play twice and then stop halfway through the third cycle).</p>
+                        
+                        <h3>animation-direction</h3>
+                        <p>Specifies whether the animation should play forward, backward, or alternate between the two:</p>
+                        
+                        <pre><code class="language-css">/* Forward each cycle (default) */
+animation-direction: normal;
+
+/* Backward each cycle */
+animation-direction: reverse;
+
+/* Forward then backward */
+animation-direction: alternate;
+
+/* Backward then forward */
+animation-direction: alternate-reverse;
+
+/* Multiple values */
+animation-direction: normal, alternate;</code></pre>
+                        
+                        <h3>animation-fill-mode</h3>
+                        <p>Specifies how the element should be styled before and after the animation:</p>
+                        
+                        <pre><code class="language-css">/* No styles applied before or after (default) */
+animation-fill-mode: none;
+
+/* Retain the styles from the last keyframe after the animation ends */
+animation-fill-mode: forwards;
+
+/* Apply the styles from the first keyframe during the delay period */
+animation-fill-mode: backwards;
+
+/* Apply both forwards and backwards behaviors */
+animation-fill-mode: both;
+
+/* Multiple values */
+animation-fill-mode: forwards, none;</code></pre>
+                        
+                        <h3>animation-play-state</h3>
+                        <p>Specifies whether the animation is running or paused:</p>
+                        
+                        <pre><code class="language-css">/* Animation is playing (default) */
+animation-play-state: running;
+
+/* Animation is paused */
+animation-play-state: paused;
+
+/* Multiple values */
+animation-play-state: running, paused;</code></pre>
+                        
+                        <p>This property is often used with JavaScript to pause and resume animations based on user interaction.</p>
+                        
+                        <h3>animation (Shorthand)</h3>
+                        <p>The shorthand property combines all the individual animation properties:</p>
+                        
+                        <pre><code class="language-css">/* name duration timing-function delay iteration-count direction fill-mode play-state */
+animation: pulse 2s ease 0.5s infinite alternate forwards running;
+
+/* Multiple animations */
+animation: 
+  pulse 2s ease infinite,
+  fade 1s linear 0.5s 1 normal;</code></pre>
+                        
+                        <p>When using the shorthand, unspecified values will use their default:</p>
+                        <ul>
+                            <li><code>animation-name</code>: none</li>
+                            <li><code>animation-duration</code>: 0s</li>
+                            <li><code>animation-timing-function</code>: ease</li>
+                            <li><code>animation-delay</code>: 0s</li>
+                            <li><code>animation-iteration-count</code>: 1</li>
+                            <li><code>animation-direction</code>: normal</li>
+                            <li><code>animation-fill-mode</code>: none</li>
+                            <li><code>animation-play-state</code>: running</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Order Matters</h4>
+                            <p>When using the animation shorthand, the order of time values matters:</p>
+                            <ul>
+                                <li>The first time value is always interpreted as <code>animation-duration</code></li>
+                                <li>The second time value is always interpreted as <code>animation-delay</code></li>
+                            </ul>
+                            <p>For example: <code>animation: pulse 2s 0.5s</code> means a duration of 2 seconds and a delay of 0.5 seconds.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practical Animation Examples</h2>
+                        <p>Let's explore some practical examples of CSS animations:</p>
+                        
+                        <h3>Fade In</h3>
+                        <p>A simple fade-in effect for elements as they appear:</p>
+                        
+                        <pre><code class="language-css">@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in-element {
+  animation: fade-in 1s ease-out forwards;
+}</code></pre>
+                        
+                        <h3>Bounce</h3>
+                        <p>A bouncing animation that can be used for attention-grabbing elements:</p>
+                        
+                        <pre><code class="language-css">@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.bounce-element {
+  animation: bounce 2s ease infinite;
+}</code></pre>
+                        
+                        <h3>Spinner</h3>
+                        <p>A loading spinner animation:</p>
+                        
+                        <pre><code class="language-css">@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #3498db;
+  animation: spin 1s linear infinite;
+}</code></pre>
+                        
+                        <h3>Slide In</h3>
+                        <p>Elements sliding in from different directions:</p>
+                        
+                        <pre><code class="language-css">@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-left {
+  animation: slide-in-left 0.5s forwards;
+}
+
+.slide-right {
+  animation: slide-in-right 0.5s forwards;
+}</code></pre>
+                        
+                        <h3>Heartbeat</h3>
+                        <p>A pulsing heartbeat effect:</p>
+                        
+                        <pre><code class="language-css">@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.3);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.3);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+.heart-icon {
+  animation: heartbeat 1.5s ease infinite;
+}</code></pre>
+                        
+                        <h3>Shake</h3>
+                        <p>A shaking animation for error messages or form validation:</p>
+                        
+                        <pre><code class="language-css">@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+.error-message {
+  animation: shake 0.6s ease;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Animation Libraries</h4>
+                            <p>For more complex animations, consider using CSS animation libraries:</p>
+                            <ul>
+                                <li><strong>Animate.css</strong>: A library of ready-to-use animations</li>
+                                <li><strong>Magic Animations</strong>: Special effects animations</li>
+                                <li><strong>Hover.css</strong>: Hover effects for links and buttons</li>
+                                <li><strong>CSShake</strong>: Various shake animations</li>
+                            </ul>
+                            <p>These libraries provide pre-built animations that you can easily apply to your elements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Controlling Animations with JavaScript</h2>
+                        <p>JavaScript can be used to control CSS animations dynamically:</p>
+                        
+                        <h3>Adding and Removing Animation Classes</h3>
+                        <p>The simplest way to control animations is by adding and removing classes:</p>
+                        
+                        <pre><code class="language-javascript">// HTML: <div id="element" class="box"></div>
+
+const element = document.getElementById('element');
+
+// Add animation
+element.addEventListener('click', () => {
+  element.classList.add('animate');
+});
+
+// Remove animation after it completes
+element.addEventListener('animationend', () => {
+  element.classList.remove('animate');
+});</code></pre>
+                        
+                        <h3>Controlling Animation Properties</h3>
+                        <p>You can also control animation properties directly:</p>
+                        
+                        <pre><code class="language-javascript">const element = document.getElementById('element');
+
+// Pause animation
+function pauseAnimation() {
+  element.style.animationPlayState = 'paused';
+}
+
+// Resume animation
+function resumeAnimation() {
+  element.style.animationPlayState = 'running';
+}
+
+// Change animation duration
+function setSpeed(seconds) {
+  element.style.animationDuration = seconds + 's';
+}</code></pre>
+                        
+                        <h3>Animation Events</h3>
+                        <p>JavaScript provides events for detecting animation states:</p>
+                        
+                        <pre><code class="language-javascript">const element = document.getElementById('element');
+
+// Fires when an animation starts
+element.addEventListener('animationstart', (event) => {
+  console.log(`Animation started: ${event.animationName}`);
+});
+
+// Fires when an animation iteration completes
+element.addEventListener('animationiteration', (event) => {
+  console.log(`Animation iteration completed: ${event.animationName}`);
+});
+
+// Fires when an animation completes
+element.addEventListener('animationend', (event) => {
+  console.log(`Animation completed: ${event.animationName}`);
+});</code></pre>
+                        
+                        <h3>Triggering Animations on Scroll</h3>
+                        <p>A common technique is to trigger animations when elements come into view:</p>
+                        
+                        <pre><code class="language-javascript">// Using Intersection Observer API
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+      // Optional: Stop observing after animation is triggered
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.1 // Trigger when at least 10% of the element is visible
+});
+
+// Observe all elements with the 'animate-on-scroll' class
+document.querySelectorAll('.animate-on-scroll').forEach(element => {
+  observer.observe(element);
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>CSS vs. JavaScript Animations</h4>
+                            <p>When deciding between CSS and JavaScript animations:</p>
+                            <ul>
+                                <li><strong>Use CSS animations for</strong>: Simple animations, hover effects, loading indicators, transitions between states</li>
+                                <li><strong>Use JavaScript animations for</strong>: Complex animations that need precise control, animations that depend on user input, animations that need to be synchronized with other events</li>
+                            </ul>
+                            <p>JavaScript animation libraries like GSAP (GreenSock Animation Platform) or anime.js provide more advanced animation capabilities than pure CSS.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Animation Performance</h2>
+                        <p>Animations can impact performance if not implemented carefully. Here are some tips for creating performant animations:</p>
+                        
+                        <h3>Use GPU-Accelerated Properties</h3>
+                        <p>Some CSS properties are more efficient to animate because they can be handled by the GPU:</p>
+                        
+                        <pre><code class="language-css">/* Efficient properties for animation */
+.efficient {
+  transform: translateX(100px); /* Instead of left/right */
+  transform: scale(1.5);        /* Instead of width/height */
+  transform: rotate(45deg);     /* Rotation */
+  opacity: 0.5;                 /* Transparency */
+}
+
+/* Less efficient properties */
+.less-efficient {
+  left: 100px;
+  width: 150px;
+  height: 150px;
+  background-color: red; /* Color animations are less efficient but still okay */
+}</code></pre>
+                        
+                        <h3>Promote Elements to Their Own Layer</h3>
+                        <p>You can hint to the browser to create a separate layer for elements that will be animated:</p>
+                        
+                        <pre><code class="language-css">.will-animate {
+  will-change: transform, opacity;
+}
+
+/* Or for older browsers */
+.will-animate {
+  transform: translateZ(0); /* Forces GPU acceleration */
+}</code></pre>
+                        
+                        <p>Use <code>will-change</code> sparingly, as creating too many layers can actually harm performance.</p>
+                        
+                        <h3>Avoid Animating Many Elements Simultaneously</h3>
+                        <p>Animating many elements at once can cause performance issues. Consider staggering animations or reducing the number of animated elements.</p>
+                        
+                        <pre><code class="language-css">/* Staggered animations */
+.item:nth-child(1) { animation-delay: 0s; }
+.item:nth-child(2) { animation-delay: 0.1s; }
+.item:nth-child(3) { animation-delay: 0.2s; }
+.item:nth-child(4) { animation-delay: 0.3s; }</code></pre>
+                        
+                        <h3>Optimize Keyframes</h3>
+                        <p>Use the minimum number of keyframes needed to achieve your effect:</p>
+                        
+                        <pre><code class="language-css">/* Inefficient - too many keyframes */
+@keyframes inefficient {
+  0% { transform: translateX(0); }
+  10% { transform: translateX(10px); }
+  20% { transform: translateX(20px); }
+  /* ... and so on */
+  100% { transform: translateX(100px); }
+}
+
+/* Efficient - only necessary keyframes */
+@keyframes efficient {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100px); }
+}</code></pre>
+                        
+                        <h3>Test on Real Devices</h3>
+                        <p>Always test your animations on actual devices, especially lower-powered mobile devices, to ensure they perform well.</p>
+                        
+                        <div class="info-box">
+                            <h4>Debugging Animation Performance</h4>
+                            <p>Use browser developer tools to identify performance issues:</p>
+                            <ul>
+                                <li>Chrome DevTools Performance panel can record and analyze animation performance</li>
+                                <li>The "Rendering" tab can highlight repaints and show the compositor layers</li>
+                                <li>Enable "Paint flashing" to see which areas are being repainted</li>
+                                <li>Use the FPS meter to monitor frame rate during animations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Accessibility Considerations</h2>
+                        <p>While animations can enhance user experience, they can also cause issues for some users. Here are some accessibility considerations:</p>
+                        
+                        <h3>Respecting User Preferences</h3>
+                        <p>Some users prefer reduced motion due to vestibular disorders or other conditions. CSS provides a media query to detect this preference:</p>
+                        
+                        <pre><code class="language-css">/* Default animations */
+.element {
+  animation: bounce 1s infinite;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .element {
+    animation: none; /* Disable the animation */
+  }
+}</code></pre>
+                        
+                        <h3>Avoiding Flashing Content</h3>
+                        <p>Rapidly flashing content (more than 3 times per second) can trigger seizures in people with photosensitive epilepsy:</p>
+                        
+                        <pre><code class="language-css">/* Potentially problematic */
+@keyframes dangerous-flash {
+  0%, 49% { background-color: white; }
+  50%, 100% { background-color: black; }
+}
+
+/* Safer alternative */
+@keyframes gentle-pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}</code></pre>
+                        
+                        <h3>Providing Controls</h3>
+                        <p>For longer or continuous animations, consider providing controls to pause or stop them:</p>
+                        
+                        <pre><code class="language-html">&lt;div class="animated-content"&gt;
+  &lt;!-- Content with animations --&gt;
+&lt;/div&gt;
+&lt;button class="animation-toggle" aria-pressed="false"&gt;Pause Animations&lt;/button&gt;</code></pre>
+                        
+                        <pre><code class="language-javascript">const toggle = document.querySelector('.animation-toggle');
+const content = document.querySelector('.animated-content');
+
+toggle.addEventListener('click', () => {
+  const isPaused = toggle.getAttribute('aria-pressed') === 'true';
+  
+  if (isPaused) {
+    content.style.animationPlayState = 'running';
+    toggle.setAttribute('aria-pressed', 'false');
+    toggle.textContent = 'Pause Animations';
+  } else {
+    content.style.animationPlayState = 'paused';
+    toggle.setAttribute('aria-pressed', 'true');
+    toggle.textContent = 'Play Animations';
+  }
+});</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>WCAG Guidelines</h4>
+                            <p>The Web Content Accessibility Guidelines (WCAG) provide specific criteria for animations:</p>
+                            <ul>
+                                <li><strong>2.2.2 Pause, Stop, Hide</strong>: Provide a way to pause, stop, or hide any animation that starts automatically and lasts more than 5 seconds</li>
+                                <li><strong>2.3.1 Three Flashes or Below Threshold</strong>: Web pages do not contain anything that flashes more than three times in any one second period</li>
+                                <li><strong>2.3.3 Animation from Interactions</strong>: Motion animation triggered by interaction can be disabled, unless the animation is essential</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: CSS Transitions and Animations</h2>
+                        <p>Let's practice applying CSS transitions and animations with a hands-on exercise.</p>
+                        
+                        <h3>Exercise: Create an Animated Card</h3>
+                        <p>Create an HTML file with the following content:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Animated Card&lt;/title&gt;
+  &lt;link rel="stylesheet" href="animations.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="card"&gt;
+      &lt;div class="card-image"&gt;
+        &lt;img src="https://via.placeholder.com/300x200" alt="Card image"&gt;
+        &lt;div class="card-badge"&gt;New&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="card-content"&gt;
+        &lt;h2 class="card-title"&gt;Product Title&lt;/h2&gt;
+        &lt;p class="card-description"&gt;This is a description of the product. It provides details about features and benefits.&lt;/p&gt;
+        &lt;div class="card-price"&gt;$99.99&lt;/div&gt;
+        &lt;button class="card-button"&gt;Add to Cart&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="controls"&gt;
+    &lt;button id="animate-button"&gt;Animate Card&lt;/button&gt;
+    &lt;label&gt;
+      &lt;input type="checkbox" id="reduce-motion"&gt;
+      Reduce Motion
+    &lt;/label&gt;
+  &lt;/div&gt;
+  
+  &lt;script src="animations.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>Now, create a CSS file named <code>animations.css</code> and a JavaScript file named <code>animations.js</code> to implement the following features:</p>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Implement the following transitions and animations:</p>
+                            <ol>
+                                <li>When the card is hovered:
+                                    <ul>
+                                        <li>Apply a subtle shadow increase</li>
+                                        <li>Slightly scale up the card</li>
+                                        <li>Transition these changes smoothly</li>
+                                    </ul>
+                                </li>
+                                <li>When the "Add to Cart" button is hovered:
+                                    <ul>
+                                        <li>Change the background color</li>
+                                        <li>Add a subtle scale effect</li>
+                                    </ul>
+                                </li>
+                                <li>Create a pulsing animation for the "New" badge</li>
+                                <li>When the "Animate Card" button is clicked:
+                                    <ul>
+                                        <li>Play an entrance animation for the card (e.g., slide in and fade in)</li>
+                                        <li>Stagger the animations of the card elements (image, title, description, price, button)</li>
+                                    </ul>
+                                </li>
+                                <li>Implement the "Reduce Motion" checkbox to disable or simplify animations when checked</li>
+                                <li>Ensure all animations respect the user's system preference for reduced motion</li>
+                            </ol>
+                            <p>Use both transitions and keyframe animations as appropriate, and make sure your implementation is performant and accessible.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored CSS transitions and animations, powerful tools for adding motion and interactivity to web pages:</p>
+                        <ul>
+                            <li><strong>CSS Transitions</strong>: Allow property changes to occur smoothly over time, perfect for state changes like hover effects</li>
+                            <li><strong>Transition Properties</strong>: Control which properties change, how long the change takes, how it progresses, and when it starts</li>
+                            <li><strong>CSS Animations</strong>: Provide more control for complex, multi-step animations that can run automatically</li>
+                            <li><strong>Keyframes</strong>: Define the stages and styles of an animation using percentages or from/to</li>
+                            <li><strong>Animation Properties</strong>: Control how animations play, including duration, timing, repetition, direction, and more</li>
+                            <li><strong>JavaScript Control</strong>: Use JavaScript to add, remove, or modify animations dynamically</li>
+                            <li><strong>Performance Optimization</strong>: Use GPU-accelerated properties, minimize repaints, and test on real devices</li>
+                            <li><strong>Accessibility</strong>: Respect user preferences for reduced motion and avoid potentially harmful animations</li>
+                        </ul>
+                        
+                        <p>When used appropriately, transitions and animations can significantly enhance user experience by providing visual feedback, guiding attention, and adding personality to your websites. Remember to use them purposefully and with consideration for performance and accessibility.</p>
+                        
+                        <p>In the next lesson, we'll explore CSS Variables (Custom Properties), which allow you to define reusable values in your stylesheets for more maintainable and flexible CSS.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page34.html" class="btn">Previous: Responsive Design</a>
+                        <a href="page36.html" class="btn">Next: CSS Variables</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

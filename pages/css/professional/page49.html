@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future of CSS | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Explore emerging CSS features, specifications, and trends that will shape the future of web styling.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="49">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html" class="active">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>Professional CSS</h3>
+                <ul>
+                    <li><a href="page38.html">38. Advanced CSS Features</a></li>
+                    <li><a href="page39.html">39. CSS Preprocessors</a></li>
+                    <li><a href="page40.html">40. CSS Architecture</a></li>
+                    <li><a href="page41.html">41. CSS Frameworks</a></li>
+                    <li><a href="page42.html">42. Advanced Layouts</a></li>
+                    <li><a href="page43.html">43. Advanced Animations</a></li>
+                    <li><a href="page44.html">44. CSS-in-JS</a></li>
+                    <li><a href="page45.html">45. CSS Houdini</a></li>
+                    <li><a href="page46.html">46. CSS Performance</a></li>
+                    <li><a href="page47.html">47. CSS Testing</a></li>
+                    <li><a href="page48.html">48. CSS for Print</a></li>
+                    <li><a href="page49.html" class="active">49. Future of CSS</a></li>
+                    <li><a href="page50.html">50. Building a Portfolio</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 98%;"></div>
+                </div>
+                <p style="text-align: center;">Page 49 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>Future of CSS</h1>
+                    
+                    <div class="card">
+                        <h2>Introduction to the Future of CSS</h2>
+                        <p>CSS continues to evolve at a rapid pace, with new features and capabilities being developed to address the growing complexity of modern web design. In this lesson, we'll explore emerging CSS features, specifications in development, and trends that will shape the future of web styling.</p>
+                        
+                        <p>Understanding these upcoming features not only prepares you for future web development but also helps you make informed decisions about when to adopt new techniques versus using established patterns with better browser support.</p>
+                        
+                        <h3>The CSS Standardization Process</h3>
+                        <p>Before diving into future features, it's important to understand how CSS evolves:</p>
+                        
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="step-number">1</div>
+                                <h4>Editor's Draft</h4>
+                                <p>Initial proposal and working draft created by the CSS Working Group</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">2</div>
+                                <h4>Working Draft</h4>
+                                <p>Public document published for review and feedback</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">3</div>
+                                <h4>Candidate Recommendation</h4>
+                                <p>Feature is stable and ready for implementation by browsers</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">4</div>
+                                <h4>Proposed Recommendation</h4>
+                                <p>Final call for review before standardization</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">5</div>
+                                <h4>Recommendation</h4>
+                                <p>Official W3C standard that should be implemented by all browsers</p>
+                            </div>
+                        </div>
+                        
+                        <p>Features can be at different stages in different browsers, which is why we often need to use vendor prefixes or feature detection. The <a href="https://caniuse.com/" target="_blank">Can I Use</a> website is an invaluable resource for checking browser support for CSS features.</p>
+                        
+                        <h3>How to Experiment with Future CSS</h3>
+                        <p>There are several ways to experiment with upcoming CSS features:</p>
+                        
+                        <ul>
+                            <li><strong>Browser Flags</strong>: Many browsers allow you to enable experimental features through flags (e.g., chrome://flags)</li>
+                            <li><strong>Nightly or Canary Builds</strong>: Use developer versions of browsers that include the latest features</li>
+                            <li><strong>Polyfills</strong>: JavaScript libraries that simulate CSS features in browsers that don't support them natively</li>
+                            <li><strong>PostCSS</strong>: A tool that allows you to use future CSS syntax today by transforming it into compatible code</li>
+                            <li><strong>CSS Houdini</strong>: A set of APIs that give developers direct access to the CSS Object Model</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Important Note</h4>
+                            <p>When experimenting with future CSS features, remember:</p>
+                            <ul>
+                                <li>Never rely on experimental features for production websites without proper fallbacks</li>
+                                <li>Features may change significantly before final standardization</li>
+                                <li>Browser support can vary widely for cutting-edge features</li>
+                                <li>Always implement progressive enhancement to ensure your site works for all users</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Emerging Layout Features</h2>
+                        <p>CSS layout continues to evolve with new features that make complex layouts easier to implement.</p>
+                        
+                        <h3>Container Queries</h3>
+                        <p>Container queries allow you to apply styles based on the size of a parent container rather than the viewport, enabling truly responsive components.</p>
+                        
+                        <pre><code class="language-css">/* Define a container */
+.card-container {
+  container-type: inline-size;
+  container-name: card;
+}
+
+/* Apply styles based on container width */
+@container card (min-width: 400px) {
+  .card {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 1rem;
+  }
+  
+  .card-image {
+    grid-row: span 2;
+  }
+}
+
+@container card (max-width: 399px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-image {
+    margin-bottom: 1rem;
+  }
+}</code></pre>
+                        
+                        <p>Container queries are revolutionary because they allow components to be truly self-contained and responsive to their immediate context, not just the overall page size.</p>
+                        
+                        <h3>Subgrid</h3>
+                        <p>Subgrid allows nested grids to inherit the track sizing of their parent grid, making it easier to align elements across different levels of nesting.</p>
+                        
+                        <pre><code class="language-css">/* Parent grid */
+.parent-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+/* Child element that spans 6 columns */
+.child {
+  grid-column: span 6;
+  
+  /* Create a subgrid that inherits parent tracks */
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+/* Grandchild elements can now align with parent grid tracks */
+.grandchild-1 {
+  grid-column: span 2; /* Spans 2 of the parent's tracks */
+}
+
+.grandchild-2 {
+  grid-column: span 4; /* Spans 4 of the parent's tracks */
+}</code></pre>
+                        
+                        <p>Subgrid solves the common problem of aligning nested elements with the main page grid, making complex layouts much easier to implement.</p>
+                        
+                        <h3>Masonry Layout</h3>
+                        <p>Native CSS masonry layout allows for creating Pinterest-style grid layouts without JavaScript.</p>
+                        
+                        <pre><code class="language-css">.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: masonry;
+  gap: 1rem;
+}</code></pre>
+                        
+                        <p>This simple declaration creates a masonry layout where items of varying heights are arranged optimally to minimize gaps, similar to how bricks are laid in a wall.</p>
+                        
+                        <h3>Aspect Ratio</h3>
+                        <p>The aspect-ratio property allows you to maintain proportional dimensions for elements without complex padding hacks.</p>
+                        
+                        <pre><code class="language-css">/* 16:9 aspect ratio */
+.video-container {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+/* 1:1 aspect ratio (square) */
+.profile-image {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* 4:3 aspect ratio */
+.card {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+}</code></pre>
+                        
+                        <p>This property is particularly useful for responsive media, cards, and other elements that need to maintain specific proportions at different screen sizes.</p>
+                        
+                        <h3>Parent Selector (:has)</h3>
+                        <p>The :has pseudo-class allows you to select elements based on their descendants, effectively providing a "parent selector" that has long been missing from CSS.</p>
+                        
+                        <pre><code class="language-css">/* Style a card differently if it contains an image */
+.card:has(img) {
+  padding-top: 0;
+}
+
+/* Style a form differently if it contains required fields */
+form:has([required]) {
+  border-left: 4px solid red;
+}
+
+/* Style a paragraph that contains a link */
+p:has(a) {
+  padding-right: 1.5em;
+  background-image: url('external-link.svg');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 1em;
+}
+
+/* Style a list item differently when its checkbox is checked */
+li:has(> input[type="checkbox"]:checked) {
+  text-decoration: line-through;
+  opacity: 0.7;
+}</code></pre>
+                        
+                        <p>The :has selector opens up many possibilities that previously required JavaScript, making CSS more powerful for creating interactive and context-aware designs.</p>
+                        
+                        <h3>Anchor Positioning</h3>
+                        <p>Anchor positioning provides a new way to position elements relative to other elements, making it easier to create tooltips, popovers, and other positioned elements.</p>
+                        
+                        <pre><code class="language-css">/* The trigger element */
+.tooltip-trigger {
+  position: relative;
+  anchor-name: --tooltip-anchor;
+}
+
+/* The tooltip */
+.tooltip {
+  position: absolute;
+  top: anchor(--tooltip-anchor top);
+  left: anchor(--tooltip-anchor right);
+  transform: translateY(-50%);
+}</code></pre>
+                        
+                        <p>This approach simplifies positioning by allowing elements to be anchored to specific parts of other elements, even as those elements move or resize.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Styling Features</h2>
+                        <p>Beyond layout, CSS is gaining powerful new styling capabilities that enable more sophisticated visual effects.</p>
+                        
+                        <h3>Color Functions and Spaces</h3>
+                        <p>New color functions and color spaces provide more control and expressiveness for working with color.</p>
+                        
+                        <pre><code class="language-css">/* Modern color syntax */
+.element {
+  /* Relative color syntax */
+  color: hsl(from var(--brand-color) h s calc(l - 20%));
+  
+  /* Color mixing */
+  background-color: color-mix(in srgb, var(--primary-color) 70%, var(--secondary-color) 30%);
+  
+  /* Relative luminance adjustment */
+  border-color: color-adjust(var(--brand-color) lightness(1.2));
+  
+  /* New color spaces */
+  box-shadow: 0 5px 15px oklch(0.3 0.2 240 / 0.4);
+}
+
+/* Color contrast function */
+.text {
+  color: color-contrast(var(--background-color) vs black, white, #0072b1);
+}</code></pre>
+                        
+                        <p>These new color features allow for more sophisticated color manipulation directly in CSS, reducing the need for preprocessors or JavaScript for color operations.</p>
+                        
+                        <h3>Nesting</h3>
+                        <p>Native CSS nesting allows you to write nested selectors similar to preprocessors like Sass, but directly in standard CSS.</p>
+                        
+                        <pre><code class="language-css">.card {
+  padding: 1rem;
+  border-radius: 8px;
+  
+  /* Nested selectors */
+  & .card-header {
+    margin-bottom: 1rem;
+    
+    & h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+  }
+  
+  & .card-body {
+    line-height: 1.5;
+  }
+  
+  /* Nested pseudo-classes */
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    & .card-header {
+      color: var(--primary-color);
+    }
+  }
+}</code></pre>
+                        
+                        <p>Native nesting makes CSS more maintainable and reduces the need for preprocessors, while maintaining the logical structure of component styles.</p>
+                        
+                        <h3>Custom Properties with Type Checking</h3>
+                        <p>Enhanced custom properties (CSS variables) with type checking and default values provide more robust and flexible styling systems.</p>
+                        
+                        <pre><code class="language-css">@property --main-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #1a73e8;
+}
+
+@property --border-width {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 2px;
+}
+
+@property --animation-speed {
+  syntax: '<time>';
+  inherits: true;
+  initial-value: 300ms;
+}
+
+.component {
+  color: var(--main-color);
+  border: var(--border-width) solid var(--main-color);
+  transition: all var(--animation-speed) ease;
+}</code></pre>
+                        
+                        <p>Type checking ensures that variables contain valid values of the expected type, preventing unexpected styling issues and making CSS more robust.</p>
+                        
+                        <h3>Scroll-Driven Animations</h3>
+                        <p>Scroll-driven animations allow you to create animations that progress based on scroll position, without JavaScript.</p>
+                        
+                        <pre><code class="language-css">.parallax-section {
+  animation-timeline: scroll();
+  animation-name: parallax;
+}
+
+@keyframes parallax {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+.fade-in-section {
+  opacity: 0;
+  animation: fade-in linear;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}</code></pre>
+                        
+                        <p>This feature enables sophisticated scroll-based effects that previously required complex JavaScript, making performant scroll animations accessible to more developers.</p>
+                        
+                        <h3>Cascade Layers</h3>
+                        <p>Cascade layers provide a way to organize and prioritize styles, making it easier to manage style conflicts in large projects.</p>
+                        
+                        <pre><code class="language-css">/* Define layers and their order */
+@layer reset, base, components, utilities;
+
+/* Reset layer */
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+/* Base layer */
+@layer base {
+  body {
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  h1, h2, h3 {
+    margin-bottom: 0.5em;
+  }
+}
+
+/* Components layer */
+@layer components {
+  .button {
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    background-color: #0072b1;
+    color: white;
+  }
+}
+
+/* Utilities layer (highest priority) */
+@layer utilities {
+  .hidden {
+    display: none !important;
+  }
+  
+  .flex {
+    display: flex;
+  }
+}</code></pre>
+                        
+                        <p>Cascade layers help solve specificity issues and make CSS more maintainable by providing explicit control over which styles take precedence, regardless of their specificity or source order.</p>
+                        
+                        <h3>Font Metrics Override</h3>
+                        <p>Font metrics override properties allow you to adjust how fonts are rendered, ensuring consistent typography across different font families.</p>
+                        
+                        <pre><code class="language-css">@font-face {
+  font-family: 'CustomFont';
+  src: url('custom-font.woff2') format('woff2');
+  ascent-override: 90%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+  size-adjust: 105%;
+}
+
+.text {
+  font-family: 'CustomFont', system-ui, sans-serif;
+}</code></pre>
+                        
+                        <p>These properties help solve the problem of layout shifts when fonts load or when fallback fonts have different metrics than the primary font.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Advanced Interaction Features</h2>
+                        <p>CSS is becoming more powerful for creating interactive experiences without JavaScript.</p>
+                        
+                        <h3>View Transitions API</h3>
+                        <p>The View Transitions API allows for smooth transitions between different states of a page or between pages.</p>
+                        
+                        <pre><code class="language-css">/* Define transitions for specific elements */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-from-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Apply transitions to elements */
+::view-transition-old(root) {
+  animation: 300ms ease-out both fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 300ms ease-out 50ms both fade-in;
+}
+
+::view-transition-old(header) {
+  animation: 500ms ease-out both slide-to-left;
+}
+
+::view-transition-new(header) {
+  animation: 500ms ease-out both slide-from-right;
+}</code></pre>
+                        
+                        <p>JavaScript example to trigger a view transition:</p>
+                        
+                        <pre><code class="language-javascript">// Trigger a view transition when navigating
+document.querySelectorAll('a[data-transition]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    
+    // Start the transition
+    if (document.startViewTransition) {
+      document.startViewTransition(() => {
+        // Update the DOM during the transition
+        window.location.href = link.href;
+      });
+    } else {
+      // Fallback for browsers that don't support view transitions
+      window.location.href = link.href;
+    }
+  });
+});</code></pre>
+                        
+                        <p>View transitions enable sophisticated page transitions that were previously only possible with complex JavaScript libraries.</p>
+                        
+                        <h3>Scroll Snap Enhancements</h3>
+                        <p>Enhanced scroll snap features provide more control over scrolling behavior.</p>
+                        
+                        <pre><code class="language-css">.carousel {
+  scroll-snap-type: x mandatory;
+  overscroll-behavior: contain;
+  
+  /* New scroll snap features */
+  scroll-start: 20px;
+  scroll-padding-inline: 10%;
+  scroll-timeline: --carousel-scroll;
+}
+
+.carousel-item {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  
+  /* Animation based on scroll position */
+  animation: scale-on-scroll linear;
+  animation-timeline: --carousel-scroll;
+}
+
+@keyframes scale-on-scroll {
+  from {
+    scale: 0.9;
+    opacity: 0.7;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}</code></pre>
+                        
+                        <p>These enhancements make it easier to create sophisticated scrolling experiences like carousels and slideshows without JavaScript.</p>
+                        
+                        <h3>Media Queries Level 5</h3>
+                        <p>New media query features allow for more sophisticated responsive design based on user preferences and device capabilities.</p>
+                        
+                        <pre><code class="language-css">/* User preference media queries */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121212;
+    --text: #f5f5f5;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --contrast-ratio: 7:1;
+  }
+}
+
+/* Device capability media queries */
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@media (pointer: fine) {
+  .button {
+    padding: 0.5em 1em;
+  }
+}
+
+/* Environmental media queries */
+@media (light-level: dim) {
+  :root {
+    --brightness: 1.2;
+  }
+}
+
+@media (environment-blending: subtractive) {
+  /* Styles for AR/VR environments */
+}</code></pre>
+                        
+                        <p>These advanced media queries enable more nuanced responsive design that adapts not just to screen size but to user preferences and environmental conditions.</p>
+                        
+                        <h3>Logical Properties and Values</h3>
+                        <p>Logical properties and values make it easier to create layouts that adapt to different writing modes and text directions.</p>
+                        
+                        <pre><code class="language-css">/* Traditional physical properties */
+.box-physical {
+  margin-left: 1rem;
+  padding-right: 2rem;
+  border-top: 1px solid;
+  text-align: left;
+}
+
+/* Logical properties */
+.box-logical {
+  margin-inline-start: 1rem;
+  padding-inline-end: 2rem;
+  border-block-start: 1px solid;
+  text-align: start;
+}
+
+/* Logical values */
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* In RTL languages, this will automatically reverse */
+html[dir="rtl"] .container {
+  /* No need to change anything! */
+}</code></pre>
+                        
+                        <p>Logical properties make internationalization much easier by automatically adapting layouts to different writing directions without requiring separate stylesheets.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS Houdini and the Extensible Web</h2>
+                        <p>CSS Houdini represents a paradigm shift in how CSS works, allowing developers to extend CSS itself.</p>
+                        
+                        <h3>The Future of CSS Houdini</h3>
+                        <p>While we covered CSS Houdini basics in a previous lesson, here we'll explore how Houdini is evolving and what new capabilities it will bring.</p>
+                        
+                        <h4>Animation Worklet</h4>
+                        <p>The Animation Worklet API allows for high-performance animations that run on the compositor thread.</p>
+                        
+                        <pre><code class="language-javascript">// Register a custom animation
+registerAnimator('parallax', class {
+  constructor(options) {
+    this.options = options;
+  }
+  
+  animate(currentTime, effect) {
+    effect.localTime = currentTime * this.options.speed;
+  }
+});
+
+// Use the custom animation in CSS
+.parallax-element {
+  animation: parallax 1s linear;
+  animation-timeline: scroll();
+}</code></pre>
+                        
+                        <h4>Layout API</h4>
+                        <p>The Layout API allows developers to create custom layout algorithms.</p>
+                        
+                        <pre><code class="language-javascript">// Register a custom layout
+registerLayout('masonry', class {
+  static get inputProperties() {
+    return ['--column-width', '--column-gap'];
+  }
+  
+  async layout(children, edges, constraints, styleMap) {
+    const columnWidth = styleMap.get('--column-width').value;
+    const columnGap = styleMap.get('--column-gap').value;
+    
+    // Calculate number of columns
+    const numColumns = Math.floor((constraints.fixedInlineSize + columnGap) / (columnWidth + columnGap));
+    
+    // Implement masonry layout algorithm
+    // ...
+    
+    return {
+      childFragments: childFragments,
+      autoBlockSize: maxHeight
+    };
+  }
+});
+
+// Use the custom layout in CSS
+.masonry-container {
+  display: layout(masonry);
+  --column-width: 200px;
+  --column-gap: 20px;
+}</code></pre>
+                        
+                        <h4>Parser API</h4>
+                        <p>The Parser API will allow developers to extend CSS with custom syntaxes.</p>
+                        
+                        <pre><code class="language-javascript">// Register a custom CSS function
+registerCSSFunction('responsive-size', (args, context) => {
+  const [minSize, maxSize, minWidth, maxWidth] = args;
+  const viewportWidth = context.viewportWidth;
+  
+  // Calculate responsive size based on viewport
+  const size = minSize + (maxSize - minSize) * 
+    Math.min(1, Math.max(0, (viewportWidth - minWidth) / (maxWidth - minWidth)));
+  
+  return `${size}px`;
+});
+
+// Use the custom function in CSS
+.element {
+  font-size: responsive-size(16px, 24px, 320px, 1200px);
+}</code></pre>
+                        
+                        <h3>Web Components and CSS</h3>
+                        <p>The integration of CSS with Web Components is becoming more powerful, allowing for truly encapsulated styling.</p>
+                        
+                        <pre><code class="language-javascript">// Create a custom element with encapsulated styles
+class FancyButton extends HTMLElement {
+  constructor() {
+    super();
+    
+    // Create shadow DOM
+    this.attachShadow({ mode: 'open' });
+    
+    // Add styles and content
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host {
+          display: inline-block;
+        }
+        
+        :host([disabled]) {
+          opacity: 0.5;
+          pointer-events: none;
+        }
+        
+        button {
+          background: var(--button-bg, #0072b1);
+          color: var(--button-text, white);
+          border: none;
+          border-radius: 4px;
+          padding: 0.5em 1em;
+          font-size: var(--button-font-size, 1rem);
+          cursor: pointer;
+          transition: all 0.3s;
+        }
+        
+        button:hover {
+          background: var(--button-hover-bg, #005682);
+        }
+        
+        ::slotted(svg) {
+          width: 1em;
+          height: 1em;
+          margin-right: 0.5em;
+          vertical-align: -0.125em;
+        }
+      </style>
+      
+      <button part="button">
+        <slot></slot>
+      </button>
+    `;
+  }
+}
+
+// Register the custom element
+customElements.define('fancy-button', FancyButton);</code></pre>
+                        
+                        <p>Using the custom element with CSS customization:</p>
+                        
+                        <pre><code class="language-html">&lt;style>
+  fancy-button {
+    --button-bg: #ff5722;
+    --button-hover-bg: #e64a19;
+    --button-font-size: 1.2rem;
+  }
+  
+  /* Style the internal button part */
+  fancy-button::part(button) {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+&lt;/style>
+
+&lt;fancy-button>
+  &lt;svg viewBox="0 0 24 24">
+    &lt;path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+  &lt;/svg>
+  Click Me
+&lt;/fancy-button></code></pre>
+                        
+                        <p>The integration of CSS with Web Components through Shadow DOM, CSS custom properties, and the ::part() pseudo-element enables powerful component-based styling with proper encapsulation.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>CSS for New Display Technologies</h2>
+                        <p>CSS is evolving to address new display technologies and environments.</p>
+                        
+                        <h3>CSS for Virtual and Augmented Reality</h3>
+                        <p>CSS is being extended to support 3D environments in VR and AR applications.</p>
+                        
+                        <pre><code class="language-css">/* Experimental CSS for VR/AR */
+.vr-scene {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.vr-object {
+  /* Position in 3D space */
+  transform: translate3d(0, 0, -100px) rotateY(45deg);
+  
+  /* Depth properties */
+  z-depth: 100px;
+  
+  /* Environment interaction */
+  environment-blending: additive;
+  
+  /* Spatial anchoring */
+  spatial-anchor: floor;
+}
+
+@media (immersive-mode: vr) {
+  /* VR-specific styles */
+  .vr-controls {
+    display: block;
+  }
+}
+
+@media (immersive-mode: ar) {
+  /* AR-specific styles */
+  .ar-indicators {
+    display: block;
+  }
+}</code></pre>
+                        
+                        <p>While many of these properties are still experimental or conceptual, they represent the direction CSS is heading to support immersive web experiences.</p>
+                        
+                        <h3>CSS for Foldable Devices</h3>
+                        <p>New CSS features are being developed to support foldable and dual-screen devices.</p>
+                        
+                        <pre><code class="language-css">/* Styles for foldable devices */
+@media (spanning: single-fold-vertical) {
+  .app-container {
+    display: grid;
+    grid-template-columns: env(fold-left) env(fold-width) env(fold-right);
+    gap: 0;
+  }
+  
+  .left-panel {
+    grid-column: 1;
+  }
+  
+  .fold-area {
+    grid-column: 2;
+    background: black;
+  }
+  
+  .right-panel {
+    grid-column: 3;
+  }
+}
+
+@media (spanning: single-fold-horizontal) {
+  .app-container {
+    display: grid;
+    grid-template-rows: env(fold-top) env(fold-height) env(fold-bottom);
+    gap: 0;
+  }
+}</code></pre>
+                        
+                        <p>These features allow web applications to adapt to the unique form factors of foldable devices, creating experiences that take advantage of the fold rather than being hindered by it.</p>
+                        
+                        <h3>CSS for Print-like Displays</h3>
+                        <p>E-ink and other print-like displays require special consideration in CSS.</p>
+                        
+                        <pre><code class="language-css">/* Styles for e-ink displays */
+@media (update: slow) {
+  /* Reduce animations and transitions */
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  /* Optimize contrast */
+  body {
+    color: black;
+    background: white;
+  }
+  
+  /* Optimize typography for e-ink */
+  p, li {
+    font-family: serif;
+    line-height: 1.5;
+  }
+  
+  /* Reduce image complexity */
+  img {
+    filter: grayscale(100%) contrast(1.2);
+  }
+}
+
+/* Styles for high-contrast mode */
+@media (prefers-contrast: high) {
+  :root {
+    --text-color: black;
+    --background-color: white;
+    --link-color: #0000EE;
+    --visited-link-color: #551A8B;
+  }
+}</code></pre>
+                        
+                        <p>These media queries allow websites to adapt to the unique characteristics of e-ink and other specialized displays, providing a better user experience on these devices.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>The Future of CSS Architecture</h2>
+                        <p>CSS architecture is evolving to address the challenges of modern web development.</p>
+                        
+                        <h3>CSS Module Scripts</h3>
+                        <p>CSS Module Scripts allow for importing CSS directly into JavaScript modules.</p>
+                        
+                        <pre><code class="language-javascript">// Import CSS as a module
+import styles from './styles.css' assert { type: 'css' };
+
+// Apply the styles
+document.adoptedStyleSheets = [styles];</code></pre>
+                        
+                        <p>This approach provides better encapsulation and allows CSS to be treated as a first-class module in JavaScript applications.</p>
+                        
+                        <h3>Declarative Shadow DOM</h3>
+                        <p>Declarative Shadow DOM allows for server-rendered shadow DOM, improving performance and SEO for web components.</p>
+                        
+                        <pre><code class="language-html">&lt;custom-element>
+  &lt;template shadowroot="open">
+    &lt;style>
+      p { color: blue; }
+    &lt;/style>
+    &lt;p>This content is in the shadow DOM&lt;/p>
+  &lt;/template>
+  &lt;p>This content is in the light DOM&lt;/p>
+&lt;/custom-element></code></pre>
+                        
+                        <p>This feature allows shadow DOM to be defined directly in HTML, making it possible to render encapsulated components on the server.</p>
+                        
+                        <h3>CSS Scoping</h3>
+                        <p>CSS scoping provides a way to limit the scope of styles without using shadow DOM.</p>
+                        
+                        <pre><code class="language-css">/* Scoped styles */
+@scope (.card) {
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Limit scope to direct children */
+  @scope (:scope > .card-body) {
+    a {
+      color: blue;
+    }
+  }
+}
+
+/* Multiple scopes */
+@scope (.primary-button) {
+  background-color: blue;
+  color: white;
+}
+
+@scope (.secondary-button) {
+  background-color: gray;
+  color: white;
+}</code></pre>
+                        
+                        <p>CSS scoping provides a middle ground between global styles and shadow DOM, allowing for better style encapsulation without the complexity of web components.</p>
+                        
+                        <h3>CSS Hooks</h3>
+                        <p>CSS Hooks is a proposed feature that would allow CSS to define callback points for JavaScript.</p>
+                        
+                        <pre><code class="language-css">/* Define a CSS hook */
+@hook scroll-progress {
+  value: calc(100% * scroll-y / (scroll-height - height));
+}
+
+/* Use the hook value */
+.progress-bar {
+  width: var(--scroll-progress);
+}</code></pre>
+                        
+                        <p>JavaScript registration:</p>
+                        
+                        <pre><code class="language-javascript">// Register a callback for the hook
+CSS.registerHook('scroll-progress', (element, properties) => {
+  // Calculate the scroll progress
+  const scrollY = window.scrollY;
+  const maxScroll = document.body.scrollHeight - window.innerHeight;
+  const progress = `${(scrollY / maxScroll) * 100}%`;
+  
+  // Return the value
+  return { '--scroll-progress': progress };
+});</code></pre>
+                        
+                        <p>CSS Hooks would provide a standardized way for CSS to interact with JavaScript, making it easier to create dynamic styles that respond to user interactions and other events.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Preparing for the Future of CSS</h2>
+                        <p>As CSS continues to evolve, it's important to adopt strategies that allow you to use new features while maintaining compatibility with older browsers.</p>
+                        
+                        <h3>Progressive Enhancement</h3>
+                        <p>Progressive enhancement is a strategy that starts with a solid baseline experience and then enhances it for browsers that support newer features.</p>
+                        
+                        <pre><code class="language-css">/* Base styles that work everywhere */
+.card {
+  display: block;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+}
+
+/* Enhanced layout with flexbox */
+@supports (display: flex) {
+  .card {
+    display: flex;
+  }
+}
+
+/* Further enhanced with grid */
+@supports (display: grid) {
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+}
+
+/* Even more enhanced with container queries */
+@supports (container-type: inline-size) {
+  .card-container {
+    container-type: inline-size;
+  }
+  
+  @container (min-width: 400px) {
+    .card {
+      flex-direction: row;
+    }
+  }
+}</code></pre>
+                        
+                        <p>This approach ensures that your website works for all users while providing an enhanced experience for those with modern browsers.</p>
+                        
+                        <h3>Feature Detection</h3>
+                        <p>Feature detection allows you to check if a browser supports a specific CSS feature before using it.</p>
+                        
+                        <pre><code class="language-css">/* CSS feature detection with @supports */
+@supports (aspect-ratio: 16/9) {
+  .video-container {
+    aspect-ratio: 16/9;
+  }
+}
+
+@supports not (aspect-ratio: 16/9) {
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Combining feature detections */
+@supports (display: grid) and (gap: 1rem) {
+  .container {
+    display: grid;
+    gap: 1rem;
+  }
+}</code></pre>
+                        
+                        <p>JavaScript feature detection:</p>
+                        
+                        <pre><code class="language-javascript">// Check if a CSS property is supported
+function supportsProperty(property) {
+  return property in document.documentElement.style;
+}
+
+// Check if a CSS value is supported
+function supportsPropertyValue(property, value) {
+  const element = document.createElement('div');
+  element.style[property] = value;
+  return element.style[property] === value;
+}
+
+// Example usage
+if (supportsProperty('aspectRatio')) {
+  // Use aspect-ratio
+} else {
+  // Use fallback
+}
+
+// Check for @supports API
+if (window.CSS && CSS.supports) {
+  if (CSS.supports('display', 'grid')) {
+    // Use CSS Grid
+  }
+}</code></pre>
+                        
+                        <p>Feature detection allows you to provide appropriate fallbacks for browsers that don't support newer CSS features.</p>
+                        
+                        <h3>Polyfills and Ponyfills</h3>
+                        <p>Polyfills and ponyfills can help bridge the gap between current browser support and future CSS features.</p>
+                        
+                        <pre><code class="language-javascript">// Example: Container Queries polyfill
+import 'container-query-polyfill';
+
+// Example: CSS Nesting ponyfill with PostCSS
+// postcss.config.js
+module.exports = {
+  plugins: [
+    require('postcss-nesting')
+  ]
+};
+
+// Example: Using a custom element as a polyfill
+class AspectRatio extends HTMLElement {
+  connectedCallback() {
+    const ratio = this.getAttribute('ratio') || '16/9';
+    const [width, height] = ratio.split('/').map(Number);
+    
+    this.style.position = 'relative';
+    this.style.paddingBottom = `${(height / width) * 100}%`;
+    
+    Array.from(this.children).forEach(child => {
+      child.style.position = 'absolute';
+      child.style.top = '0';
+      child.style.left = '0';
+      child.style.width = '100%';
+      child.style.height = '100%';
+    });
+  }
+}
+
+customElements.define('aspect-ratio', AspectRatio);</code></pre>
+                        
+                        <p>HTML usage:</p>
+                        
+                        <pre><code class="language-html">&lt;aspect-ratio ratio="16/9">
+  &lt;iframe src="video.mp4" frameborder="0" allowfullscreen>&lt;/iframe>
+&lt;/aspect-ratio></code></pre>
+                        
+                        <p>Polyfills and ponyfills allow you to use future CSS features today, even in browsers that don't yet support them natively.</p>
+                        
+                        <h3>Staying Informed</h3>
+                        <p>To stay current with CSS developments, follow these resources:</p>
+                        
+                        <ul>
+                            <li><strong>CSS Working Group</strong>: <a href="https://github.com/w3c/csswg-drafts" target="_blank">GitHub repository</a> where CSS specifications are developed</li>
+                            <li><strong>MDN Web Docs</strong>: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS documentation</a> with browser compatibility information</li>
+                            <li><strong>Can I Use</strong>: <a href="https://caniuse.com/" target="_blank">Browser support tables</a> for modern web technologies</li>
+                            <li><strong>CSS Tricks</strong>: <a href="https://css-tricks.com/" target="_blank">Articles and tutorials</a> on CSS techniques</li>
+                            <li><strong>Smashing Magazine</strong>: <a href="https://www.smashingmagazine.com/category/css/" target="_blank">In-depth CSS articles</a></li>
+                            <li><strong>Web.dev</strong>: <a href="https://web.dev/tags/css/" target="_blank">Google's resource</a> for modern web development</li>
+                            <li><strong>Chrome Status</strong>: <a href="https://www.chromestatus.com/features#category%3A%20CSS" target="_blank">Status of CSS features</a> in Chrome</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Experimenting with Future CSS</h2>
+                        <p>Let's put your knowledge of future CSS features into practice with a hands-on exercise.</p>
+                        
+                        <h3>Exercise: Create a Component Using Future CSS Features</h3>
+                        <p>In this exercise, you'll create a card component that uses several future CSS features, with appropriate fallbacks for current browsers.</p>
+                        
+                        <h4>Step 1: Set Up the HTML Structure</h4>
+                        <pre><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+  &lt;title>Future CSS Card Component&lt;/title>
+  &lt;link rel="stylesheet" href="styles.css">
+&lt;/head>
+&lt;body>
+  &lt;div class="card-container">
+    &lt;article class="card">
+      &lt;div class="card-image">
+        &lt;img src="https://picsum.photos/600/400" alt="Sample image">
+      &lt;/div>
+      &lt;div class="card-content">
+        &lt;h2>Card Title&lt;/h2>
+        &lt;p>This is a card component that uses future CSS features with appropriate fallbacks.&lt;/p>
+        &lt;button class="card-button">Learn More&lt;/button>
+      &lt;/div>
+    &lt;/article>
+    
+    &lt;article class="card">
+      &lt;div class="card-image">
+        &lt;img src="https://picsum.photos/600/400?random=2" alt="Sample image">
+      &lt;/div>
+      &lt;div class="card-content">
+        &lt;h2>Another Card&lt;/h2>
+        &lt;p>This card demonstrates container queries, aspect ratio, and other modern CSS features.&lt;/p>
+        &lt;button class="card-button">Explore&lt;/button>
+      &lt;/div>
+    &lt;/article>
+    
+    &lt;article class="card">
+      &lt;div class="card-image">
+        &lt;img src="https://picsum.photos/600/400?random=3" alt="Sample image">
+      &lt;/div>
+      &lt;div class="card-content">
+        &lt;h2>Third Card&lt;/h2>
+        &lt;p>The layout of these cards adapts based on their container width, not just the viewport.&lt;/p>
+        &lt;button class="card-button">Details&lt;/button>
+      &lt;/div>
+    &lt;/article>
+  &lt;/div>
+  
+  &lt;script src="script.js">&lt;/script>
+&lt;/body>
+&lt;/html></code></pre>
+                        
+                        <h4>Step 2: Create the CSS with Future Features and Fallbacks</h4>
+                        <pre><code class="language-css">/* Base styles */
+:root {
+  --primary-color: #2563eb;
+  --text-color: #1f2937;
+  --background-color: #f9fafb;
+  --card-background: #ffffff;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --border-radius: 8px;
+  --spacing: 1rem;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.5;
+  padding: 2rem;
+}
+
+/* Card container - basic fallback */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card container - with CSS Grid */
+@supports (display: grid) {
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
+
+/* Card container - with container queries */
+@supports (container-type: inline-size) {
+  .card-container {
+    container-type: inline-size;
+    container-name: cards;
+  }
+}
+
+/* Basic card styles */
+.card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Card image - fallback for aspect-ratio */
+.card-image {
+  position: relative;
+  padding-bottom: 66.67%; /* 3:2 aspect ratio */
+  overflow: hidden;
+}
+
+.card-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card image - with aspect-ratio */
+@supports (aspect-ratio: 3/2) {
+  .card-image {
+    position: static;
+    padding-bottom: 0;
+    aspect-ratio: 3/2;
+  }
+  
+  .card-image img {
+    position: static;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.card-content {
+  padding: var(--spacing);
+}
+
+.card-content h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.card-content p {
+  margin-bottom: 1.5rem;
+}
+
+.card-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 80%, black);
+}
+
+/* Fallback for color-mix */
+@supports not (color-mix(in srgb, #000, #fff)) {
+  .card-button:hover {
+    background-color: #1e40af; /* Darker blue */
+  }
+}
+
+/* Container query for card layout */
+@supports (container-type: inline-size) {
+  @container cards (min-width: 800px) {
+    .card {
+      display: grid;
+      grid-template-columns: 40% 60%;
+    }
+    
+    .card-image {
+      height: 100%;
+    }
+    
+    .card-content {
+      padding: 1.5rem;
+    }
+  }
+  
+  @container cards (max-width: 799px) {
+    .card-content h2 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/* Scroll-driven animations */
+@supports (animation-timeline: scroll()) {
+  .card {
+    animation: fade-in linear;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #f9fafb;
+    --background-color: #111827;
+    --card-background: #1f2937;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card-button {
+    transition: none;
+  }
+  
+  .card:hover {
+    transform: none;
+  }
+  
+  @supports (animation-timeline: scroll()) {
+    .card {
+      animation: none;
+    }
+  }
+}</code></pre>
+                        
+                        <h4>Step 3: Add JavaScript for Polyfills and Feature Detection</h4>
+                        <pre><code class="language-javascript">// Feature detection for aspect-ratio
+if (!CSS.supports('aspect-ratio', '1/1')) {
+  console.log('Aspect ratio not supported, using fallback');
+}
+
+// Feature detection for container queries
+if (!CSS.supports('container-type', 'inline-size')) {
+  console.log('Container queries not supported, using fallback');
+  
+  // Simple responsive layout fallback
+  const handleResize = () => {
+    const container = document.querySelector('.card-container');
+    const cards = document.querySelectorAll('.card');
+    
+    if (window.innerWidth >= 800) {
+      cards.forEach(card => {
+        card.style.display = 'grid';
+        card.style.gridTemplateColumns = '40% 60%';
+      });
+    } else {
+      cards.forEach(card => {
+        card.style.display = 'block';
+      });
+    }
+  };
+  
+  // Initial call and event listener
+  handleResize();
+  window.addEventListener('resize', handleResize);
+}
+
+// Feature detection for color-mix
+if (!CSS.supports('color', 'color-mix(in srgb, #000, #fff)')) {
+  console.log('Color-mix not supported, using fallback colors');
+}
+
+// Feature detection for scroll-driven animations
+if (!CSS.supports('animation-timeline', 'scroll()')) {
+  console.log('Scroll-driven animations not supported, using fallback');
+  
+  // Simple intersection observer fallback
+  const cards = document.querySelectorAll('.card');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      } else {
+        entry.target.style.opacity = '0';
+        entry.target.style.transform = 'translateY(20px)';
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+  
+  cards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(card);
+  });
+}</code></pre>
+                        
+                        <h4>Step 4: Test in Different Browsers</h4>
+                        <p>To fully appreciate this exercise, test your component in different browsers to see how the progressive enhancement approach works:</p>
+                        <ol>
+                            <li>Modern browsers like Chrome or Firefox will show the full experience with container queries and other advanced features</li>
+                            <li>Older browsers will fall back to the simpler but still functional layout</li>
+                            <li>Use browser developer tools to simulate different viewport sizes and see how the layout adapts</li>
+                        </ol>
+                        
+                        <h4>Step 5: Experiment with Additional Features</h4>
+                        <p>Once you have the basic component working, try adding more future CSS features:</p>
+                        <ul>
+                            <li>Add parent selectors with :has()</li>
+                            <li>Implement cascade layers with @layer</li>
+                            <li>Use logical properties for better internationalization</li>
+                            <li>Add anchor positioning for tooltips</li>
+                            <li>Implement native CSS nesting</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored the future of CSS and the exciting features that are coming to web styling. Here's a summary of what we've learned:</p>
+                        
+                        <ul>
+                            <li><strong>Emerging Layout Features</strong>: Container queries, subgrid, masonry layout, aspect ratio, parent selectors, and anchor positioning are making layouts more powerful and flexible.</li>
+                            <li><strong>Advanced Styling Features</strong>: New color functions, native nesting, typed custom properties, scroll-driven animations, and cascade layers are enhancing the expressiveness and maintainability of CSS.</li>
+                            <li><strong>Advanced Interaction Features</strong>: View transitions, scroll snap enhancements, advanced media queries, and logical properties are making it easier to create interactive and adaptable experiences.</li>
+                            <li><strong>CSS Houdini and the Extensible Web</strong>: The Animation Worklet, Layout API, Parser API, and integration with Web Components are allowing developers to extend CSS itself.</li>
+                            <li><strong>CSS for New Display Technologies</strong>: CSS is evolving to support VR/AR, foldable devices, and print-like displays, ensuring the web remains relevant across all platforms.</li>
+                            <li><strong>The Future of CSS Architecture</strong>: CSS Module Scripts, Declarative Shadow DOM, CSS Scoping, and CSS Hooks are changing how we organize and structure CSS in applications.</li>
+                            <li><strong>Preparing for the Future</strong>: Progressive enhancement, feature detection, polyfills, and staying informed are essential strategies for working with future CSS features today.</li>
+                        </ul>
+                        
+                        <p>The future of CSS is bright, with many powerful features on the horizon that will make web styling more capable, expressive, and maintainable. By understanding these upcoming features and adopting progressive enhancement strategies, you can start using the power of future CSS today while ensuring your websites remain accessible to all users.</p>
+                        
+                        <p>In the next and final lesson, we'll explore how to build a professional portfolio that showcases your HTML and CSS skills, bringing together everything you've learned throughout this course.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page48.html" class="btn">Previous: CSS for Print</a>
+                        <a href="page50.html" class="btn">Next: Building a Portfolio</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

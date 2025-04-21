@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn about the CSS Box Model and how it controls the layout and spacing of elements on a web page.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="28">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html" class="active">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>CSS Basics</h3>
+                <ul>
+                    <li><a href="page26.html">26. Introduction to CSS</a></li>
+                    <li><a href="page27.html">27. CSS Selectors</a></li>
+                    <li><a href="page28.html" class="active">28. CSS Box Model</a></li>
+                    <li><a href="page29.html">29. Typography</a></li>
+                    <li><a href="page30.html">30. Colors & Backgrounds</a></li>
+                    <li><a href="page31.html">31. Layout Basics</a></li>
+                    <li><a href="page32.html">32. Flexbox</a></li>
+                    <li><a href="page33.html">33. CSS Grid</a></li>
+                    <li><a href="page34.html">34. Responsive Design</a></li>
+                    <li><a href="page35.html">35. Transitions & Animations</a></li>
+                    <li><a href="page36.html">36. CSS Variables</a></li>
+                    <li><a href="page37.html">37. CSS Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 56%;"></div>
+                </div>
+                <p style="text-align: center;">Page 28 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>CSS Box Model</h1>
+                    
+                    <div class="card">
+                        <h2>Understanding the Box Model</h2>
+                        <p>The CSS Box Model is a fundamental concept that describes how elements are rendered on a web page. Every HTML element is treated as a rectangular box with content, padding, border, and margin areas.</p>
+                        
+                        <p>Understanding the box model is crucial for controlling layout and spacing in CSS. It helps you predict how elements will be sized and positioned, and how they'll interact with other elements on the page.</p>
+                        
+                        <h3>The Four Components of the Box Model</h3>
+                        <p>The box model consists of four concentric layers:</p>
+                        
+                        <ol>
+                            <li><strong>Content</strong>: The innermost area where the actual content (text, images, etc.) is displayed</li>
+                            <li><strong>Padding</strong>: The space between the content and the border</li>
+                            <li><strong>Border</strong>: The line that surrounds the padding</li>
+                            <li><strong>Margin</strong>: The outermost layer, which creates space between the element and adjacent elements</li>
+                        </ol>
+                        
+                        <div class="info-box">
+                            <h4>Box Model Visualization</h4>
+                            <p>Think of the box model like a gift:</p>
+                            <ul>
+                                <li>The <strong>content</strong> is the gift itself</li>
+                                <li>The <strong>padding</strong> is the tissue paper wrapped around the gift</li>
+                                <li>The <strong>border</strong> is the gift box</li>
+                                <li>The <strong>margin</strong> is the space you leave around the gift when placing it next to other gifts</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Box Model Properties</h3>
+                        <p>Each layer of the box model can be controlled with specific CSS properties:</p>
+                        
+                        <pre><code class="language-css">div {
+  /* Content dimensions */
+  width: 300px;
+  height: 200px;
+  
+  /* Padding (inner space) */
+  padding-top: 20px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  /* Shorthand: padding: 20px 15px 20px 15px; */
+  /* Further shorthand: padding: 20px 15px; (top/bottom, left/right) */
+  
+  /* Border */
+  border-width: 2px;
+  border-style: solid;
+  border-color: #333;
+  /* Shorthand: border: 2px solid #333; */
+  
+  /* Margin (outer space) */
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  /* Shorthand: margin: 10px 5px 10px 5px; */
+  /* Further shorthand: margin: 10px 5px; (top/bottom, left/right) */
+}</code></pre>
+                        
+                        <h3>Box Sizing</h3>
+                        <p>By default, the <code>width</code> and <code>height</code> properties in CSS only set the dimensions of the content area. This means that padding and border are added to the specified width and height, which can make layout calculations challenging.</p>
+                        
+                        <p>The <code>box-sizing</code> property changes how the width and height of elements are calculated:</p>
+                        
+                        <pre><code class="language-css">/* Default box sizing (content-box) */
+.default-box {
+  box-sizing: content-box;
+  width: 300px;
+  padding: 20px;
+  border: 10px solid #333;
+  /* Total width: 300px + 20px*2 + 10px*2 = 360px */
+}
+
+/* Alternative box sizing (border-box) */
+.border-box {
+  box-sizing: border-box;
+  width: 300px;
+  padding: 20px;
+  border: 10px solid #333;
+  /* Total width: 300px (includes content, padding, and border) */
+}</code></pre>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Box Sizing</th>
+                                        <th>Description</th>
+                                        <th>Total Width Calculation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>content-box</code></td>
+                                        <td>Default. Width and height apply to content area only</td>
+                                        <td>width + padding-left + padding-right + border-left + border-right</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>border-box</code></td>
+                                        <td>Width and height include content, padding, and border</td>
+                                        <td>width (content area is reduced to accommodate padding and border)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <p>Most modern CSS frameworks and reset stylesheets set <code>box-sizing: border-box</code> for all elements because it makes layout calculations much more intuitive:</p>
+                        
+                        <pre><code class="language-css">/* Apply border-box to all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Box Sizing Best Practice</h4>
+                            <p>Using <code>box-sizing: border-box</code> is generally considered a best practice in modern web development because:</p>
+                            <ul>
+                                <li>It makes width and height calculations more intuitive</li>
+                                <li>It simplifies responsive design</li>
+                                <li>It prevents unexpected layout issues when adding padding or borders</li>
+                                <li>It's easier to create grid-based layouts</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Content Dimensions</h2>
+                        <p>The content area is the innermost part of the box model, where text, images, and other content are displayed.</p>
+                        
+                        <h3>Width and Height</h3>
+                        <p>The <code>width</code> and <code>height</code> properties set the dimensions of the content area (or the entire element if <code>box-sizing: border-box</code> is used).</p>
+                        
+                        <pre><code class="language-css">div {
+  width: 300px;   /* Sets the width of the content area */
+  height: 200px;  /* Sets the height of the content area */
+}</code></pre>
+                        
+                        <h3>Min and Max Dimensions</h3>
+                        <p>You can also set minimum and maximum dimensions for elements, which is particularly useful for responsive design:</p>
+                        
+                        <pre><code class="language-css">div {
+  /* Minimum dimensions */
+  min-width: 200px;   /* Element won't be narrower than 200px */
+  min-height: 100px;  /* Element won't be shorter than 100px */
+  
+  /* Maximum dimensions */
+  max-width: 800px;   /* Element won't be wider than 800px */
+  max-height: 600px;  /* Element won't be taller than 600px */
+}</code></pre>
+                        
+                        <p>Common use cases for min and max dimensions:</p>
+                        <ul>
+                            <li><code>max-width: 100%</code>: Ensures an element (like an image) doesn't overflow its container</li>
+                            <li><code>min-height: 100vh</code>: Makes an element at least as tall as the viewport</li>
+                            <li><code>max-width: 1200px</code>: Limits the width of a container on large screens</li>
+                            <li><code>min-width: 320px</code>: Ensures an element doesn't become too narrow on small screens</li>
+                        </ul>
+                        
+                        <h3>Width and Height Units</h3>
+                        <p>CSS offers various units for specifying dimensions:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Unit</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                        <th>Use Case</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>px</code></td>
+                                        <td>Pixels (fixed unit)</td>
+                                        <td><code>width: 300px;</code></td>
+                                        <td>Fixed-size elements, borders, precise layouts</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>%</code></td>
+                                        <td>Percentage of parent element</td>
+                                        <td><code>width: 50%;</code></td>
+                                        <td>Responsive layouts, fluid widths</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>em</code></td>
+                                        <td>Relative to element's font size</td>
+                                        <td><code>width: 20em;</code></td>
+                                        <td>Elements that should scale with text size</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rem</code></td>
+                                        <td>Relative to root element's font size</td>
+                                        <td><code>width: 20rem;</code></td>
+                                        <td>Consistent scaling across the document</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vw</code></td>
+                                        <td>1% of viewport width</td>
+                                        <td><code>width: 50vw;</code></td>
+                                        <td>Elements relative to viewport width</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vh</code></td>
+                                        <td>1% of viewport height</td>
+                                        <td><code>height: 100vh;</code></td>
+                                        <td>Full-height layouts, hero sections</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vmin</code></td>
+                                        <td>1% of smaller viewport dimension</td>
+                                        <td><code>width: 50vmin;</code></td>
+                                        <td>Elements that scale with viewport but maintain proportion</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vmax</code></td>
+                                        <td>1% of larger viewport dimension</td>
+                                        <td><code>width: 50vmax;</code></td>
+                                        <td>Elements that scale with viewport but maintain proportion</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3>Auto Width and Height</h3>
+                        <p>Elements can also have their dimensions calculated automatically:</p>
+                        
+                        <pre><code class="language-css">div {
+  /* Auto width (default for most elements) */
+  width: auto;  /* Element will size to fit its content or fill its container */
+  
+  /* Auto height (default for most elements) */
+  height: auto;  /* Element will size to fit its content */
+}</code></pre>
+                        
+                        <p>Block-level elements (like <code>div</code>, <code>p</code>, <code>h1</code>) with <code>width: auto</code> will expand to fill their container, while inline elements (like <code>span</code>, <code>a</code>, <code>strong</code>) with <code>width: auto</code> will only be as wide as their content.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Padding</h2>
+                        <p>Padding is the space between an element's content and its border. It creates internal spacing and is part of the element's background.</p>
+                        
+                        <h3>Padding Properties</h3>
+                        <p>You can set padding on each side of an element individually:</p>
+                        
+                        <pre><code class="language-css">div {
+  padding-top: 20px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+}</code></pre>
+                        
+                        <h3>Padding Shorthand</h3>
+                        <p>The <code>padding</code> shorthand property allows you to set all four sides at once:</p>
+                        
+                        <pre><code class="language-css">/* Four values: top, right, bottom, left (clockwise from top) */
+div {
+  padding: 20px 15px 20px 15px;
+}
+
+/* Three values: top, right/left, bottom */
+div {
+  padding: 20px 15px 20px;
+}
+
+/* Two values: top/bottom, right/left */
+div {
+  padding: 20px 15px;
+}
+
+/* One value: all four sides */
+div {
+  padding: 20px;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Padding Memory Aid: TRouBLe</h4>
+                            <p>To remember the order of the four values in shorthand properties, use the mnemonic "TRouBLe":</p>
+                            <ul>
+                                <li><strong>T</strong>op</li>
+                                <li><strong>R</strong>ight</li>
+                                <li><strong>B</strong>ottom</li>
+                                <li><strong>L</strong>eft</li>
+                            </ul>
+                            <p>This applies to padding, margin, and border shorthand properties.</p>
+                        </div>
+                        
+                        <h3>Padding and Box Sizing</h3>
+                        <p>Remember that padding affects the total size of an element differently depending on the <code>box-sizing</code> property:</p>
+                        
+                        <pre><code class="language-css">/* With default box-sizing (content-box) */
+.box1 {
+  width: 200px;
+  padding: 20px;
+  /* Total width: 200px + 20px*2 = 240px */
+}
+
+/* With border-box */
+.box2 {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  /* Total width: 200px (content area is reduced to 160px) */
+}</code></pre>
+                        
+                        <h3>Padding and Inline Elements</h3>
+                        <p>For inline elements, padding behaves a bit differently:</p>
+                        <ul>
+                            <li>Horizontal padding (left and right) works as expected</li>
+                            <li>Vertical padding (top and bottom) is applied visually but doesn't affect the line height or layout flow</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">/* Padding on inline elements */
+span {
+  padding: 10px 20px;
+  background-color: yellow;
+  /* Horizontal padding (20px) affects layout */
+  /* Vertical padding (10px) is visible but doesn't push other lines away */
+}</code></pre>
+                        
+                        <p>To make vertical padding affect layout, you can change the display property:</p>
+                        
+                        <pre><code class="language-css">span {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: yellow;
+  /* Now both horizontal and vertical padding affect layout */
+}</code></pre>
+                        
+                        <h3>Padding and Percentage Values</h3>
+                        <p>When using percentage values for padding, the percentage is calculated based on the <em>width</em> of the containing block, even for top and bottom padding:</p>
+                        
+                        <pre><code class="language-css">div {
+  width: 400px;
+  padding: 10%; /* All sides get 40px of padding (10% of 400px) */
+}</code></pre>
+                        
+                        <p>This can create interesting effects for responsive design, such as maintaining aspect ratios:</p>
+                        
+                        <pre><code class="language-css">/* Creating a responsive square */
+.square {
+  width: 100%;
+  padding-bottom: 100%; /* Creates a square regardless of width */
+  height: 0;
+  background-color: #333;
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Border</h2>
+                        <p>The border is a line that surrounds the padding and content of an element. It can have different styles, widths, and colors.</p>
+                        
+                        <h3>Border Properties</h3>
+                        <p>You can control the width, style, and color of borders:</p>
+                        
+                        <pre><code class="language-css">div {
+  /* Border width */
+  border-width: 2px;
+  
+  /* Border style (required for the border to be visible) */
+  border-style: solid;
+  
+  /* Border color */
+  border-color: #333;
+}</code></pre>
+                        
+                        <h3>Border Shorthand</h3>
+                        <p>The <code>border</code> shorthand property combines width, style, and color:</p>
+                        
+                        <pre><code class="language-css">div {
+  border: 2px solid #333;
+}</code></pre>
+                        
+                        <h3>Individual Border Sides</h3>
+                        <p>You can set different borders for each side of an element:</p>
+                        
+                        <pre><code class="language-css">div {
+  border-top: 1px solid #333;
+  border-right: 2px dashed #666;
+  border-bottom: 3px dotted #999;
+  border-left: 4px double #ccc;
+}</code></pre>
+                        
+                        <p>You can also target specific properties of each border side:</p>
+                        
+                        <pre><code class="language-css">div {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #333;
+  
+  border-right-width: 2px;
+  border-right-style: dashed;
+  border-right-color: #666;
+  
+  /* And so on for bottom and left */
+}</code></pre>
+                        
+                        <h3>Border Styles</h3>
+                        <p>CSS offers several border styles:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Border Style</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>none</code></td>
+                                        <td>No border (default)</td>
+                                        <td><code>border-style: none;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>solid</code></td>
+                                        <td>A single solid line</td>
+                                        <td><code>border-style: solid;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dashed</code></td>
+                                        <td>A series of dashes</td>
+                                        <td><code>border-style: dashed;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dotted</code></td>
+                                        <td>A series of dots</td>
+                                        <td><code>border-style: dotted;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>double</code></td>
+                                        <td>Two parallel solid lines</td>
+                                        <td><code>border-style: double;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>groove</code></td>
+                                        <td>Appears carved into the page</td>
+                                        <td><code>border-style: groove;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ridge</code></td>
+                                        <td>Appears raised from the page</td>
+                                        <td><code>border-style: ridge;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>inset</code></td>
+                                        <td>Makes the element appear embedded</td>
+                                        <td><code>border-style: inset;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>outset</code></td>
+                                        <td>Makes the element appear raised</td>
+                                        <td><code>border-style: outset;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>hidden</code></td>
+                                        <td>Same as none, but takes up space in border-collapse: collapse tables</td>
+                                        <td><code>border-style: hidden;</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3>Border Radius</h3>
+                        <p>The <code>border-radius</code> property adds rounded corners to elements:</p>
+                        
+                        <pre><code class="language-css">/* Equal radius on all corners */
+div {
+  border-radius: 10px;
+}
+
+/* Different radius for each corner (top-left, top-right, bottom-right, bottom-left) */
+div {
+  border-radius: 10px 20px 30px 40px;
+}
+
+/* Individual corner properties */
+div {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 40px;
+}</code></pre>
+                        
+                        <p>You can create circular or elliptical shapes with border-radius:</p>
+                        
+                        <pre><code class="language-css">/* Creating a circle */
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+/* Creating a pill shape */
+.pill {
+  width: 200px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: #333;
+}</code></pre>
+                        
+                        <h3>Border Images</h3>
+                        <p>For more complex borders, you can use images:</p>
+                        
+                        <pre><code class="language-css">div {
+  border: 15px solid transparent;
+  border-image: url('border-image.png') 30 round;
+  /* 30 is the slice value, round is the repeat method */
+}</code></pre>
+                        
+                        <p>The <code>border-image</code> property is a shorthand for several border-image properties:</p>
+                        
+                        <pre><code class="language-css">div {
+  border-image-source: url('border-image.png');
+  border-image-slice: 30;
+  border-image-width: 15px;
+  border-image-outset: 0;
+  border-image-repeat: round;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Border vs. Outline</h4>
+                            <p>CSS also provides the <code>outline</code> property, which is similar to border but with some key differences:</p>
+                            <ul>
+                                <li>Outlines don't take up space (they don't affect layout)</li>
+                                <li>Outlines can be non-rectangular</li>
+                                <li>Outlines don't have individual side properties</li>
+                                <li>Outlines don't affect the element's size</li>
+                            </ul>
+                            <p>Outlines are commonly used for focus states:</p>
+                            <pre><code class="language-css">button:focus {
+  outline: 2px solid blue;
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Margin</h2>
+                        <p>Margin is the space outside an element, creating separation between the element and adjacent elements. Unlike padding, margin is transparent and doesn't have a background color.</p>
+                        
+                        <h3>Margin Properties</h3>
+                        <p>You can set margin on each side of an element individually:</p>
+                        
+                        <pre><code class="language-css">div {
+  margin-top: 20px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+}</code></pre>
+                        
+                        <h3>Margin Shorthand</h3>
+                        <p>The <code>margin</code> shorthand property works the same way as the <code>padding</code> shorthand:</p>
+                        
+                        <pre><code class="language-css">/* Four values: top, right, bottom, left */
+div {
+  margin: 20px 15px 20px 15px;
+}
+
+/* Three values: top, right/left, bottom */
+div {
+  margin: 20px 15px 20px;
+}
+
+/* Two values: top/bottom, right/left */
+div {
+  margin: 20px 15px;
+}
+
+/* One value: all four sides */
+div {
+  margin: 20px;
+}</code></pre>
+                        
+                        <h3>Auto Margins</h3>
+                        <p>Setting <code>margin</code> to <code>auto</code> can be used for horizontal centering of block-level elements with a defined width:</p>
+                        
+                        <pre><code class="language-css">/* Center a block element horizontally */
+div {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  /* Shorthand: margin: 0 auto; */
+}</code></pre>
+                        
+                        <p>You can also use <code>auto</code> margins to push elements to one side:</p>
+                        
+                        <pre><code class="language-css">/* Push an element to the right */
+.push-right {
+  margin-left: auto;
+}
+
+/* Push an element to the left */
+.push-left {
+  margin-right: auto;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Auto Margins and Flexbox</h4>
+                            <p>Auto margins are particularly powerful when combined with flexbox:</p>
+                            <pre><code class="language-css">.flex-container {
+  display: flex;
+}
+
+/* This will push the element to the right, creating space between it and other flex items */
+.push-right {
+  margin-left: auto;
+}
+
+/* This creates space on both sides, centering the element */
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}</code></pre>
+                        </div>
+                        
+                        <h3>Negative Margins</h3>
+                        <p>Unlike padding and border, margins can have negative values, which can pull elements outside their normal flow:</p>
+                        
+                        <pre><code class="language-css">div {
+  margin-top: -20px; /* Pulls the element 20px upward */
+  margin-left: -10px; /* Pulls the element 10px to the left */
+}</code></pre>
+                        
+                        <p>Common use cases for negative margins:</p>
+                        <ul>
+                            <li>Overlapping elements for creative designs</li>
+                            <li>Compensating for padding in nested containers</li>
+                            <li>Creating hanging indents or outdents</li>
+                            <li>Adjusting the position of elements without changing the document flow</li>
+                        </ul>
+                        
+                        <h3>Margin Collapse</h3>
+                        <p>One of the most confusing aspects of margins is margin collapse. When two vertical margins meet, they collapse into a single margin, taking the larger of the two values:</p>
+                        
+                        <pre><code class="language-css">.top-element {
+  margin-bottom: 20px;
+}
+
+.bottom-element {
+  margin-top: 30px;
+}
+
+/* The margin between these elements will be 30px, not 50px */</code></pre>
+                        
+                        <p>Margin collapse only happens with vertical (top and bottom) margins, not horizontal (left and right) margins. It also only happens between block-level elements.</p>
+                        
+                        <p>Margin collapse can be prevented by:</p>
+                        <ul>
+                            <li>Adding a border or padding between the margins</li>
+                            <li>Creating a new block formatting context (e.g., with <code>overflow: hidden</code>)</li>
+                            <li>Using flexbox or grid layout</li>
+                            <li>Setting <code>display: flow-root</code> on the parent</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Margin Collapse Scenarios</h4>
+                            <p>Margin collapse occurs in three scenarios:</p>
+                            <ol>
+                                <li><strong>Adjacent siblings</strong>: The bottom margin of one element collapses with the top margin of the next</li>
+                                <li><strong>Parent and first/last child</strong>: If there's no border, padding, or inline content separating them, the margins collapse</li>
+                                <li><strong>Empty blocks</strong>: If a block has no height, border, or padding, its top and bottom margins collapse</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Calculating Total Element Size</h2>
+                        <p>Understanding how to calculate the total size of an element is crucial for layout planning.</p>
+                        
+                        <h3>With content-box (Default)</h3>
+                        <p>When using the default <code>box-sizing: content-box</code>:</p>
+                        
+                        <pre><code class="language-css">div {
+  box-sizing: content-box; /* Default */
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  border: 10px solid #333;
+  margin: 15px;
+}</code></pre>
+                        
+                        <p>Total width calculation:</p>
+                        <ul>
+                            <li>Content width: 300px</li>
+                            <li>+ Left padding: 20px</li>
+                            <li>+ Right padding: 20px</li>
+                            <li>+ Left border: 10px</li>
+                            <li>+ Right border: 10px</li>
+                            <li>= <strong>Total width: 360px</strong> (excluding margin)</li>
+                        </ul>
+                        
+                        <p>Total height calculation:</p>
+                        <ul>
+                            <li>Content height: 200px</li>
+                            <li>+ Top padding: 20px</li>
+                            <li>+ Bottom padding: 20px</li>
+                            <li>+ Top border: 10px</li>
+                            <li>+ Bottom border: 10px</li>
+                            <li>= <strong>Total height: 260px</strong> (excluding margin)</li>
+                        </ul>
+                        
+                        <p>Space occupied in layout (including margin):</p>
+                        <ul>
+                            <li>Width: 360px + 15px (left margin) + 15px (right margin) = <strong>390px</strong></li>
+                            <li>Height: 260px + 15px (top margin) + 15px (bottom margin) = <strong>290px</strong></li>
+                        </ul>
+                        
+                        <h3>With border-box</h3>
+                        <p>When using <code>box-sizing: border-box</code>:</p>
+                        
+                        <pre><code class="language-css">div {
+  box-sizing: border-box;
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  border: 10px solid #333;
+  margin: 15px;
+}</code></pre>
+                        
+                        <p>Total width calculation:</p>
+                        <ul>
+                            <li>Total width (including content, padding, and border): 300px</li>
+                            <li>Content width: 300px - 20px (left padding) - 20px (right padding) - 10px (left border) - 10px (right border) = <strong>240px</strong></li>
+                        </ul>
+                        
+                        <p>Total height calculation:</p>
+                        <ul>
+                            <li>Total height (including content, padding, and border): 200px</li>
+                            <li>Content height: 200px - 20px (top padding) - 20px (bottom padding) - 10px (top border) - 10px (bottom border) = <strong>140px</strong></li>
+                        </ul>
+                        
+                        <p>Space occupied in layout (including margin):</p>
+                        <ul>
+                            <li>Width: 300px + 15px (left margin) + 15px (right margin) = <strong>330px</strong></li>
+                            <li>Height: 200px + 15px (top margin) + 15px (bottom margin) = <strong>230px</strong></li>
+                        </ul>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Measurement</th>
+                                        <th>content-box</th>
+                                        <th>border-box</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Content width</td>
+                                        <td>300px</td>
+                                        <td>240px</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Content height</td>
+                                        <td>200px</td>
+                                        <td>140px</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total element width (excluding margin)</td>
+                                        <td>360px</td>
+                                        <td>300px</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total element height (excluding margin)</td>
+                                        <td>260px</td>
+                                        <td>200px</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Space occupied in layout (width)</td>
+                                        <td>390px</td>
+                                        <td>330px</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Space occupied in layout (height)</td>
+                                        <td>290px</td>
+                                        <td>230px</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Box Model and Display Types</h2>
+                        <p>The box model applies differently depending on an element's <code>display</code> property.</p>
+                        
+                        <h3>Block-Level Elements</h3>
+                        <p>Elements with <code>display: block</code> (like <code>div</code>, <code>p</code>, <code>h1</code>-<code>h6</code>):</p>
+                        <ul>
+                            <li>Take up the full width available by default</li>
+                            <li>Start on a new line</li>
+                            <li>Respect all box model properties (width, height, margin, padding, border)</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">div {
+  display: block;
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  border: 1px solid #333;
+  margin: 10px;
+}</code></pre>
+                        
+                        <h3>Inline Elements</h3>
+                        <p>Elements with <code>display: inline</code> (like <code>span</code>, <code>a</code>, <code>strong</code>):</p>
+                        <ul>
+                            <li>Take up only as much width as necessary</li>
+                            <li>Do not start on a new line</li>
+                            <li>Ignore width and height properties</li>
+                            <li>Respect horizontal padding and margins, but vertical padding and margins don't affect layout</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">span {
+  display: inline;
+  width: 300px;  /* Ignored */
+  height: 200px; /* Ignored */
+  padding: 20px; /* Horizontal padding affects layout, vertical padding is visible but doesn't affect layout */
+  border: 1px solid #333;
+  margin: 10px;  /* Horizontal margins affect layout, vertical margins are ignored */
+}</code></pre>
+                        
+                        <h3>Inline-Block Elements</h3>
+                        <p>Elements with <code>display: inline-block</code>:</p>
+                        <ul>
+                            <li>Flow with text (don't start on a new line)</li>
+                            <li>Respect all box model properties (width, height, margin, padding, border)</li>
+                            <li>Only take up as much width as needed (unless specified)</li>
+                        </ul>
+                        
+                        <pre><code class="language-css">span {
+  display: inline-block;
+  width: 300px;  /* Respected */
+  height: 200px; /* Respected */
+  padding: 20px; /* All padding affects layout */
+  border: 1px solid #333;
+  margin: 10px;  /* All margins affect layout */
+}</code></pre>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Property</th>
+                                        <th>block</th>
+                                        <th>inline</th>
+                                        <th>inline-block</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Starts on new line</td>
+                                        <td>Yes</td>
+                                        <td>No</td>
+                                        <td>No</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Width</td>
+                                        <td>Full width by default</td>
+                                        <td>Width of content</td>
+                                        <td>Width of content by default</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Can set width/height</td>
+                                        <td>Yes</td>
+                                        <td>No</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vertical margins</td>
+                                        <td>Respected</td>
+                                        <td>Ignored</td>
+                                        <td>Respected</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vertical padding</td>
+                                        <td>Affects layout</td>
+                                        <td>Visible but doesn't affect layout</td>
+                                        <td>Affects layout</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3>Other Display Values</h3>
+                        <p>Modern CSS offers several other display values that affect how the box model is applied:</p>
+                        
+                        <pre><code class="language-css">/* Flexbox */
+.container {
+  display: flex;
+}
+
+/* Grid */
+.container {
+  display: grid;
+}
+
+/* No display (element is removed from the document flow) */
+.hidden {
+  display: none;
+}
+
+/* Table-like display */
+.table {
+  display: table;
+}
+.row {
+  display: table-row;
+}
+.cell {
+  display: table-cell;
+}</code></pre>
+                        
+                        <p>We'll explore flexbox and grid in more detail in later lessons.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: Box Model</h2>
+                        <p>Let's practice applying the box model concepts with a hands-on exercise.</p>
+                        
+                        <h3>Exercise: Create a Card Layout</h3>
+                        <p>Create an HTML file with the following content:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Box Model Practice&lt;/title&gt;
+  &lt;link rel="stylesheet" href="box-model.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="card"&gt;
+      &lt;img src="https://via.placeholder.com/300x200" alt="Placeholder Image"&gt;
+      &lt;div class="card-content"&gt;
+        &lt;h2&gt;Card Title&lt;/h2&gt;
+        &lt;p&gt;This is some sample text for our card. It demonstrates how the box model works in CSS.&lt;/p&gt;
+        &lt;a href="#" class="button"&gt;Learn More&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="card featured"&gt;
+      &lt;img src="https://via.placeholder.com/300x200" alt="Placeholder Image"&gt;
+      &lt;div class="card-content"&gt;
+        &lt;h2&gt;Featured Card&lt;/h2&gt;
+        &lt;p&gt;This is a featured card with different styling to show how we can modify the box model properties.&lt;/p&gt;
+        &lt;a href="#" class="button"&gt;Learn More&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="card"&gt;
+      &lt;img src="https://via.placeholder.com/300x200" alt="Placeholder Image"&gt;
+      &lt;div class="card-content"&gt;
+        &lt;h2&gt;Another Card&lt;/h2&gt;
+        &lt;p&gt;Here's another card to demonstrate how multiple elements interact with each other using the box model.&lt;/p&gt;
+        &lt;a href="#" class="button"&gt;Learn More&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>Now, create a CSS file named <code>box-model.css</code> and style the cards using box model properties:</p>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Apply the following styles to create an attractive card layout:</p>
+                            <ol>
+                                <li>Set <code>box-sizing: border-box</code> for all elements</li>
+                                <li>Create a container with maximum width and center it on the page</li>
+                                <li>Style the cards with:
+                                    <ul>
+                                        <li>Fixed width</li>
+                                        <li>Padding inside the card content area</li>
+                                        <li>Margin between cards</li>
+                                        <li>Border around the cards</li>
+                                        <li>Rounded corners using border-radius</li>
+                                    </ul>
+                                </li>
+                                <li>Make the featured card stand out with:
+                                    <ul>
+                                        <li>Different border color</li>
+                                        <li>More padding</li>
+                                        <li>A box shadow</li>
+                                    </ul>
+                                </li>
+                                <li>Style the button with:
+                                    <ul>
+                                        <li>Padding</li>
+                                        <li>Border</li>
+                                        <li>Border-radius</li>
+                                        <li>Display as inline-block</li>
+                                    </ul>
+                                </li>
+                                <li>Make the images responsive by setting <code>max-width: 100%</code></li>
+                                <li>Use margin to create space between elements inside the card</li>
+                            </ol>
+                            <p>Try to create a visually appealing card layout using the box model properties we've learned in this lesson.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored the CSS Box Model, which is fundamental to understanding how elements are sized and positioned on a web page:</p>
+                        <ul>
+                            <li><strong>Box Model Components</strong>: Content, padding, border, and margin</li>
+                            <li><strong>Box Sizing</strong>: How <code>content-box</code> and <code>border-box</code> affect element sizing</li>
+                            <li><strong>Content Dimensions</strong>: Setting width, height, and min/max dimensions</li>
+                            <li><strong>Padding</strong>: Creating space inside elements</li>
+                            <li><strong>Border</strong>: Adding lines around elements with various styles</li>
+                            <li><strong>Margin</strong>: Creating space between elements, including auto margins and margin collapse</li>
+                            <li><strong>Total Size Calculation</strong>: How to determine the full size of an element</li>
+                            <li><strong>Display Types</strong>: How the box model applies to block, inline, and inline-block elements</li>
+                        </ul>
+                        
+                        <p>Understanding the box model is essential for creating precise layouts and managing spacing in CSS. It forms the foundation for more advanced layout techniques like flexbox and grid, which we'll explore in upcoming lessons.</p>
+                        
+                        <p>In the next lesson, we'll dive into CSS Typography, where you'll learn how to style text to create readable and visually appealing content.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page27.html" class="btn">Previous: CSS Selectors</a>
+                        <a href="page29.html" class="btn">Next: Typography</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

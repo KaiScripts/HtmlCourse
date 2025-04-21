@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Document Structure | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn about the essential structure of HTML documents and how to create your first web page.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="2">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../basic/page1.html" class="active">HTML Basics</a></li>
+                    <li><a href="../professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                    <li><a href="../../css/professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>HTML Basics</h3>
+                <ul>
+                    <li><a href="page1.html">1. Introduction to HTML</a></li>
+                    <li><a href="page2.html" class="active">2. HTML Document Structure</a></li>
+                    <li><a href="page3.html">3. HTML Elements & Tags</a></li>
+                    <li><a href="page4.html">4. Text Formatting</a></li>
+                    <li><a href="page5.html">5. Links & Navigation</a></li>
+                    <li><a href="page6.html">6. Images & Multimedia</a></li>
+                    <li><a href="page7.html">7. Lists</a></li>
+                    <li><a href="page8.html">8. Tables</a></li>
+                    <li><a href="page9.html">9. Forms Basics</a></li>
+                    <li><a href="page10.html">10. Semantic HTML</a></li>
+                    <li><a href="page11.html">11. HTML Attributes</a></li>
+                    <li><a href="page12.html">12. HTML Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 4%;"></div>
+                </div>
+                <p style="text-align: center;">Page 2 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>HTML Document Structure</h1>
+                    
+                    <div class="card">
+                        <h2>The Anatomy of an HTML Document</h2>
+                        <p>Every HTML document follows a standard structure that tells browsers how to interpret and display the content. This structure serves as the foundation for all web pages, regardless of their complexity.</p>
+                        
+                        <p>Let's examine the basic structure of an HTML document:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Web Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;This is my first web page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>This may look complex at first, but it's actually quite simple when broken down into its components. Let's explore each part in detail.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>The DOCTYPE Declaration</h2>
+                        <p>The first line of an HTML document is the DOCTYPE declaration:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;</code></pre>
+                        
+                        <p>This declaration tells the browser which version of HTML the page is using. The declaration above specifies HTML5, the current standard. In older versions of HTML, this declaration was more complex, but HTML5 simplified it.</p>
+                        
+                        <div class="info-box">
+                            <h4>Historical Note</h4>
+                            <p>In HTML4, the DOCTYPE declaration was much longer and included a reference to a Document Type Definition (DTD). For example:</p>
+                            <pre><code class="language-html">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</code></pre>
+                            <p>HTML5 simplified this to the much cleaner <code>&lt;!DOCTYPE html&gt;</code>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>The HTML Element</h2>
+                        <p>The <code>&lt;html&gt;</code> element is the root element of an HTML page. All other elements must be descendants of this element.</p>
+                        
+                        <pre><code class="language-html">&lt;html lang="en"&gt;
+    <!-- All other elements go here -->
+&lt;/html&gt;</code></pre>
+                        
+                        <p>The <code>lang</code> attribute specifies the language of the document. This helps search engines and browsers. For English, we use <code>"en"</code>. Other common values include <code>"es"</code> for Spanish, <code>"fr"</code> for French, and <code>"de"</code> for German.</p>
+                        
+                        <div class="info-box">
+                            <h4>Accessibility Tip</h4>
+                            <p>Always include the <code>lang</code> attribute in your HTML element. It helps screen readers pronounce content correctly and is important for accessibility.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>The Head Section</h2>
+                        <p>The <code>&lt;head&gt;</code> element contains meta-information about the document that isn't displayed directly on the page. This includes:</p>
+                        
+                        <pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Web Page&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+                        
+                        <p>Let's break down the elements typically found in the head section:</p>
+                        
+                        <h3>The Meta Charset Element</h3>
+                        <p>The <code>&lt;meta charset="UTF-8"&gt;</code> element specifies the character encoding for the document. UTF-8 is the recommended encoding as it covers almost all characters and symbols in the world.</p>
+                        
+                        <h3>The Viewport Meta Element</h3>
+                        <p>The viewport meta tag is crucial for responsive design:</p>
+                        <pre><code class="language-html">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+                        <p>This tells the browser to set the viewport width to the device width and set the initial zoom level to 1.0. This is essential for making websites look good on mobile devices.</p>
+                        
+                        <h3>The Title Element</h3>
+                        <p>The <code>&lt;title&gt;</code> element defines the title of the document, which appears in the browser tab and in search engine results:</p>
+                        <pre><code class="language-html">&lt;title&gt;My First Web Page&lt;/title&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>SEO Tip</h4>
+                            <p>The title is one of the most important elements for search engine optimization (SEO). Make sure your titles are descriptive and contain relevant keywords.</p>
+                        </div>
+                        
+                        <h3>Other Common Head Elements</h3>
+                        <p>While not shown in our basic example, the head section often includes:</p>
+                        <ul>
+                            <li><code>&lt;link&gt;</code> elements for CSS stylesheets</li>
+                            <li><code>&lt;script&gt;</code> elements for JavaScript</li>
+                            <li>Additional <code>&lt;meta&gt;</code> tags for SEO and social media sharing</li>
+                        </ul>
+                        
+                        <p>We'll explore these in more detail in later lessons.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>The Body Section</h2>
+                        <p>The <code>&lt;body&gt;</code> element contains all the content that is visible to users when they visit your web page:</p>
+                        
+                        <pre><code class="language-html">&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;This is my first web page.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+                        
+                        <p>Everything that users see and interact with on your website—text, images, links, forms, etc.—goes inside the body element. In our example, we have:</p>
+                        <ul>
+                            <li>An <code>&lt;h1&gt;</code> element for the main heading</li>
+                            <li>A <code>&lt;p&gt;</code> element for a paragraph of text</li>
+                        </ul>
+                        
+                        <p>The body section is where you'll spend most of your time as a web developer, creating and organizing content for your users.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Creating Your First HTML Document</h2>
+                        <p>Now that we understand the basic structure, let's create a complete HTML document step by step:</p>
+                        
+                        <ol>
+                            <li>Open a text editor (like Notepad, VS Code, or Sublime Text)</li>
+                            <li>Copy the following code:</li>
+                        </ol>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Web Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My First Web Page&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph of text on my web page.&lt;/p&gt;
+    &lt;p&gt;I'm learning &lt;strong&gt;HTML&lt;/strong&gt; and it's exciting!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <ol start="3">
+                            <li>Save the file with a .html extension, for example, "index.html"</li>
+                            <li>Open the file in a web browser</li>
+                        </ol>
+                        
+                        <p>Congratulations! You've just created your first HTML document. When you open it in a browser, you should see a page with a heading and two paragraphs, with the word "HTML" in bold.</p>
+                        
+                        <div class="try-it-box">
+                            <h4>Try It Yourself</h4>
+                            <p>Modify the HTML document you just created by:</p>
+                            <ol>
+                                <li>Changing the title to something personal</li>
+                                <li>Adding another paragraph</li>
+                                <li>Adding an <code>&lt;em&gt;</code> element to emphasize some text (it will appear in italics)</li>
+                            </ol>
+                            <p>Save the file and refresh your browser to see the changes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Nesting HTML Elements</h2>
+                        <p>HTML elements can be nested inside other elements. This creates a parent-child relationship between elements, forming the document's structure.</p>
+                        
+                        <p>For example, in our document, the <code>&lt;strong&gt;</code> element is nested inside a <code>&lt;p&gt;</code> element:</p>
+                        
+                        <pre><code class="language-html">&lt;p&gt;I'm learning &lt;strong&gt;HTML&lt;/strong&gt; and it's exciting!&lt;/p&gt;</code></pre>
+                        
+                        <p>Here, <code>&lt;p&gt;</code> is the parent element, and <code>&lt;strong&gt;</code> is the child element. This nesting creates the hierarchical structure of the Document Object Model (DOM).</p>
+                        
+                        <div class="info-box">
+                            <h4>Proper Nesting</h4>
+                            <p>Elements must be properly nested. This means that if element B starts inside element A, then element B must end before element A ends.</p>
+                            <p>Correct: <code>&lt;a&gt;&lt;strong&gt;Text&lt;/strong&gt;&lt;/a&gt;</code></p>
+                            <p>Incorrect: <code>&lt;a&gt;&lt;strong&gt;Text&lt;/a&gt;&lt;/strong&gt;</code></p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>HTML Document Validation</h2>
+                        <p>It's important to ensure your HTML documents are valid, meaning they follow the HTML standard. Valid HTML documents are more likely to display correctly across different browsers and devices.</p>
+                        
+                        <p>You can validate your HTML using the W3C Markup Validation Service at <a href="https://validator.w3.org/" target="_blank">validator.w3.org</a>.</p>
+                        
+                        <p>Common validation errors include:</p>
+                        <ul>
+                            <li>Missing required elements (like <code>&lt;title&gt;</code>)</li>
+                            <li>Unclosed tags</li>
+                            <li>Improperly nested elements</li>
+                            <li>Using deprecated elements or attributes</li>
+                        </ul>
+                        
+                        <p>Regularly validating your HTML helps you catch and fix these issues early.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've learned about the essential structure of an HTML document:</p>
+                        <ul>
+                            <li>The DOCTYPE declaration specifies the HTML version</li>
+                            <li>The <code>&lt;html&gt;</code> element is the root of the document</li>
+                            <li>The <code>&lt;head&gt;</code> section contains meta-information</li>
+                            <li>The <code>&lt;body&gt;</code> section contains visible content</li>
+                            <li>Elements can be nested to create a hierarchical structure</li>
+                            <li>Validation ensures your HTML follows standards</li>
+                        </ul>
+                        
+                        <p>Understanding this structure is fundamental to web development. In the next lesson, we'll dive deeper into HTML elements and tags, exploring the building blocks that make up web content.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page1.html" class="btn">Previous: Introduction to HTML</a>
+                        <a href="page3.html" class="btn">Next: HTML Elements & Tags</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../../css/basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../../css/professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

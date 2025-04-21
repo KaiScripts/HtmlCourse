@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors | HTML & CSS Mastery Course</title>
+    <meta name="description" content="Learn how to target HTML elements with CSS selectors, from basic to advanced techniques.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body data-page="27">
+    <!-- Glowing elements for futuristic effect -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container grid">
+            <div class="logo">
+                <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                <h1>HTML & CSS Mastery</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                    <li><a href="../../html/professional/page13.html">Pro HTML</a></li>
+                    <li><a href="../basic/page26.html" class="active">CSS Basics</a></li>
+                    <li><a href="../professional/page38.html">Pro CSS</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container grid">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" style="grid-column: span 3;">
+                <h3>CSS Basics</h3>
+                <ul>
+                    <li><a href="page26.html">26. Introduction to CSS</a></li>
+                    <li><a href="page27.html" class="active">27. CSS Selectors</a></li>
+                    <li><a href="page28.html">28. CSS Box Model</a></li>
+                    <li><a href="page29.html">29. Typography</a></li>
+                    <li><a href="page30.html">30. Colors & Backgrounds</a></li>
+                    <li><a href="page31.html">31. Layout Basics</a></li>
+                    <li><a href="page32.html">32. Flexbox</a></li>
+                    <li><a href="page33.html">33. CSS Grid</a></li>
+                    <li><a href="page34.html">34. Responsive Design</a></li>
+                    <li><a href="page35.html">35. Transitions & Animations</a></li>
+                    <li><a href="page36.html">36. CSS Variables</a></li>
+                    <li><a href="page37.html">37. CSS Best Practices</a></li>
+                </ul>
+                
+                <div class="progress-container" style="margin-top: 3rem;">
+                    <div class="progress-bar" style="width: 54%;"></div>
+                </div>
+                <p style="text-align: center;">Page 27 of 50</p>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content" style="grid-column: span 9;">
+                <section class="section animate" data-animation="fade-in">
+                    <h1>CSS Selectors</h1>
+                    
+                    <div class="card">
+                        <h2>Understanding CSS Selectors</h2>
+                        <p>CSS selectors are patterns used to select and style HTML elements. They are the bridge between your HTML document and your style rules, allowing you to target specific elements or groups of elements for styling.</p>
+                        
+                        <p>Mastering CSS selectors is crucial for efficient and effective styling. With the right selectors, you can:</p>
+                        <ul>
+                            <li>Target elements precisely without adding extra classes or IDs to your HTML</li>
+                            <li>Create more maintainable code by reducing redundancy</li>
+                            <li>Apply styles conditionally based on element states or positions</li>
+                            <li>Implement complex styling patterns with minimal code</li>
+                        </ul>
+                        
+                        <p>In this lesson, we'll explore the full range of CSS selectors, from basic to advanced, and learn how to use them effectively.</p>
+                        
+                        <div class="info-box">
+                            <h4>Selector Specificity</h4>
+                            <p>Before diving into the different types of selectors, it's important to understand <strong>specificity</strong>, which determines which styles take precedence when multiple rules target the same element.</p>
+                            <p>Specificity is calculated as a four-part value: <code>inline styles, IDs, classes/attributes, elements</code></p>
+                            <ul>
+                                <li>Inline styles: <code>style="..."</code> (highest specificity)</li>
+                                <li>ID selectors: <code>#header</code></li>
+                                <li>Class selectors, attribute selectors, and pseudo-classes: <code>.button</code>, <code>[type="submit"]</code>, <code>:hover</code></li>
+                                <li>Element selectors and pseudo-elements: <code>div</code>, <code>::before</code> (lowest specificity)</li>
+                            </ul>
+                            <p>When conflicts arise, the selector with the highest specificity wins. If specificity is equal, the last rule defined takes precedence.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Basic Selectors</h2>
+                        <p>Let's start with the most fundamental CSS selectors that form the building blocks of more complex selection patterns.</p>
+                        
+                        <h3>Universal Selector</h3>
+                        <p>The universal selector (<code>*</code>) selects all elements on the page.</p>
+                        
+                        <pre><code class="language-css">/* Selects all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}</code></pre>
+                        
+                        <p>Use cases:</p>
+                        <ul>
+                            <li>CSS resets</li>
+                            <li>Setting global box-sizing</li>
+                            <li>Debugging (e.g., adding borders to all elements)</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Performance Note</h4>
+                            <p>While convenient, the universal selector can impact performance on large pages because it applies to every element. Use it judiciously, especially for properties that trigger layout recalculations.</p>
+                        </div>
+                        
+                        <h3>Type Selector (Element Selector)</h3>
+                        <p>Type selectors target elements based on their HTML tag name.</p>
+                        
+                        <pre><code class="language-css">/* Selects all paragraph elements */
+p {
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+/* Selects all heading level 2 elements */
+h2 {
+  font-size: 1.5em;
+  margin-top: 1em;
+}</code></pre>
+                        
+                        <p>Use cases:</p>
+                        <ul>
+                            <li>Setting base styles for common elements</li>
+                            <li>Establishing typographic hierarchy</li>
+                            <li>Resetting browser defaults for specific elements</li>
+                        </ul>
+                        
+                        <h3>Class Selector</h3>
+                        <p>Class selectors target elements based on the value of their <code>class</code> attribute. They are preceded by a dot (<code>.</code>).</p>
+                        
+                        <pre><code class="language-css">/* Selects all elements with class="button" */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0066cc;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Selects all elements with class="error" */
+.error {
+  color: red;
+  border: 1px solid red;
+  padding: 10px;
+}</code></pre>
+                        
+                        <p>HTML usage:</p>
+                        
+                        <pre><code class="language-html">&lt;a href="#" class="button"&gt;Click Me&lt;/a&gt;
+&lt;button class="button"&gt;Submit&lt;/button&gt;
+&lt;div class="error"&gt;Invalid input&lt;/div&gt;</code></pre>
+                        
+                        <p>Use cases:</p>
+                        <ul>
+                            <li>Styling reusable components</li>
+                            <li>Applying the same styles to different types of elements</li>
+                            <li>Creating utility classes for common styling patterns</li>
+                        </ul>
+                        
+                        <h3>ID Selector</h3>
+                        <p>ID selectors target elements based on the value of their <code>id</code> attribute. They are preceded by a hash symbol (<code>#</code>).</p>
+                        
+                        <pre><code class="language-css">/* Selects the element with id="header" */
+#header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+/* Selects the element with id="main-content" */
+#main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}</code></pre>
+                        
+                        <p>HTML usage:</p>
+                        
+                        <pre><code class="language-html">&lt;header id="header"&gt;
+  &lt;h1&gt;Website Title&lt;/h1&gt;
+&lt;/header&gt;
+&lt;main id="main-content"&gt;
+  &lt;p&gt;Main content goes here...&lt;/p&gt;
+&lt;/main&gt;</code></pre>
+                        
+                        <p>Use cases:</p>
+                        <ul>
+                            <li>Styling unique page elements that appear only once</li>
+                            <li>Creating CSS hooks for JavaScript functionality</li>
+                            <li>Creating anchor links within a page</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4>Classes vs. IDs</h4>
+                            <p>While both classes and IDs can be used as CSS selectors, they have important differences:</p>
+                            <ul>
+                                <li><strong>Uniqueness</strong>: IDs must be unique within a document, while multiple elements can share the same class</li>
+                                <li><strong>Specificity</strong>: ID selectors have higher specificity than class selectors</li>
+                                <li><strong>JavaScript</strong>: IDs can be used with <code>getElementById()</code>, while classes require <code>getElementsByClassName()</code> or <code>querySelectorAll()</code></li>
+                                <li><strong>URL Fragments</strong>: IDs can be targeted in URLs with hash fragments (<code>#section-name</code>)</li>
+                            </ul>
+                            <p>Best practice: Use classes for styling and IDs for JavaScript hooks or anchor links. Avoid using IDs for styling when possible to keep specificity manageable.</p>
+                        </div>
+                        
+                        <h3>Attribute Selector</h3>
+                        <p>Attribute selectors target elements based on the presence or value of their attributes. They are enclosed in square brackets.</p>
+                        
+                        <pre><code class="language-css">/* Selects all elements with a title attribute */
+[title] {
+  cursor: help;
+}
+
+/* Selects all input elements with type="text" */
+input[type="text"] {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+/* Selects all links with target="_blank" */
+a[target="_blank"] {
+  padding-right: 20px;
+  background: url('external-link-icon.svg') no-repeat right center;
+}</code></pre>
+                        
+                        <p>HTML usage:</p>
+                        
+                        <pre><code class="language-html">&lt;p title="Additional information"&gt;Hover over me for more info.&lt;/p&gt;
+&lt;input type="text" placeholder="Enter your name"&gt;
+&lt;a href="https://example.com" target="_blank"&gt;External Link&lt;/a&gt;</code></pre>
+                        
+                        <p>Attribute selectors can also match patterns within attribute values:</p>
+                        
+                        <pre><code class="language-css">/* Selects elements with an attribute value that begins with specified text */
+[class^="icon-"] {
+  padding-left: 20px;
+}
+
+/* Selects elements with an attribute value that ends with specified text */
+[href$=".pdf"] {
+  background-image: url('pdf-icon.svg');
+}
+
+/* Selects elements with an attribute value that contains specified text */
+[href*="example"] {
+  color: purple;
+}
+
+/* Selects elements with an attribute value that contains a word (space-separated) */
+[class~="primary"] {
+  font-weight: bold;
+}</code></pre>
+                        
+                        <p>Use cases:</p>
+                        <ul>
+                            <li>Styling form elements based on their type</li>
+                            <li>Adding icons to links based on their URL or target</li>
+                            <li>Styling elements without adding extra classes</li>
+                            <li>Creating icon systems with prefixed class names</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Combinators</h2>
+                        <p>Combinators allow you to select elements based on their relationship to other elements in the document tree.</p>
+                        
+                        <h3>Descendant Combinator (Space)</h3>
+                        <p>The descendant combinator (represented by a space) selects elements that are descendants of another element, regardless of how deeply nested they are.</p>
+                        
+                        <pre><code class="language-css">/* Selects all p elements that are descendants of article elements */
+article p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Selects all li elements that are descendants of nav elements */
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}</code></pre>
+                        
+                        <p>HTML structure:</p>
+                        
+                        <pre><code class="language-html">&lt;article&gt;
+  &lt;h2&gt;Article Title&lt;/h2&gt;
+  &lt;p&gt;This paragraph will be selected.&lt;/p&gt;
+  &lt;div&gt;
+    &lt;p&gt;This nested paragraph will also be selected.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;p&gt;This paragraph outside the article will NOT be selected.&lt;/p&gt;</code></pre>
+                        
+                        <h3>Child Combinator (>)</h3>
+                        <p>The child combinator selects elements that are direct children of another element.</p>
+                        
+                        <pre><code class="language-css">/* Selects all li elements that are direct children of ul elements */
+ul > li {
+  list-style-type: square;
+}
+
+/* Selects all p elements that are direct children of div elements */
+div > p {
+  margin-bottom: 10px;
+}</code></pre>
+                        
+                        <p>HTML structure:</p>
+                        
+                        <pre><code class="language-html">&lt;div&gt;
+  &lt;p&gt;This paragraph is a direct child of the div and will be selected.&lt;/p&gt;
+  &lt;section&gt;
+    &lt;p&gt;This paragraph is NOT a direct child of the div and will NOT be selected.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        <h3>Adjacent Sibling Combinator (+)</h3>
+                        <p>The adjacent sibling combinator selects an element that immediately follows another element and shares the same parent.</p>
+                        
+                        <pre><code class="language-css">/* Selects p elements that immediately follow h2 elements */
+h2 + p {
+  font-weight: bold;
+}
+
+/* Selects div elements that immediately follow form elements */
+form + div {
+  margin-top: 20px;
+}</code></pre>
+                        
+                        <p>HTML structure:</p>
+                        
+                        <pre><code class="language-html">&lt;section&gt;
+  &lt;h2&gt;Section Title&lt;/h2&gt;
+  &lt;p&gt;This paragraph immediately follows the h2 and will be selected.&lt;/p&gt;
+  &lt;p&gt;This paragraph does NOT immediately follow the h2 and will NOT be selected.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+                        
+                        <h3>General Sibling Combinator (~)</h3>
+                        <p>The general sibling combinator selects elements that follow another element and share the same parent, regardless of whether they immediately follow it.</p>
+                        
+                        <pre><code class="language-css">/* Selects all p elements that follow an h2 element and share the same parent */
+h2 ~ p {
+  color: #666;
+}
+
+/* Selects all li elements that follow an li with class="active" and share the same parent */
+li.active ~ li {
+  opacity: 0.7;
+}</code></pre>
+                        
+                        <p>HTML structure:</p>
+                        
+                        <pre><code class="language-html">&lt;section&gt;
+  &lt;p&gt;This paragraph appears before the h2 and will NOT be selected.&lt;/p&gt;
+  &lt;h2&gt;Section Title&lt;/h2&gt;
+  &lt;p&gt;This paragraph follows the h2 and will be selected.&lt;/p&gt;
+  &lt;div&gt;Some content&lt;/div&gt;
+  &lt;p&gt;This paragraph also follows the h2 and will be selected, even though there's a div in between.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Combinator</th>
+                                        <th>Symbol</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Descendant</td>
+                                        <td>Space ( )</td>
+                                        <td>Selects all descendants, regardless of nesting level</td>
+                                        <td><code>div p</code> selects all <code>&lt;p&gt;</code> inside any <code>&lt;div&gt;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Child</td>
+                                        <td>></td>
+                                        <td>Selects only direct children</td>
+                                        <td><code>div > p</code> selects only <code>&lt;p&gt;</code> that are direct children of <code>&lt;div&gt;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Adjacent Sibling</td>
+                                        <td>+</td>
+                                        <td>Selects the element immediately following</td>
+                                        <td><code>h2 + p</code> selects the <code>&lt;p&gt;</code> immediately after an <code>&lt;h2&gt;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>General Sibling</td>
+                                        <td>~</td>
+                                        <td>Selects all following siblings</td>
+                                        <td><code>h2 ~ p</code> selects all <code>&lt;p&gt;</code> that follow an <code>&lt;h2&gt;</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Pseudo-Classes</h2>
+                        <p>Pseudo-classes select elements based on their state or position in the document. They are preceded by a colon (<code>:</code>).</p>
+                        
+                        <h3>User Action Pseudo-Classes</h3>
+                        <p>These pseudo-classes respond to user interactions:</p>
+                        
+                        <pre><code class="language-css">/* Styles applied when the mouse hovers over a link */
+a:hover {
+  text-decoration: underline;
+  color: #0077cc;
+}
+
+/* Styles applied when a link is being clicked/activated */
+a:active {
+  color: #ff0000;
+}
+
+/* Styles applied when an element receives focus */
+input:focus {
+  outline: 2px solid #4d90fe;
+  box-shadow: 0 0 5px rgba(77, 144, 254, 0.5);
+}</code></pre>
+                        
+                        <h3>Link State Pseudo-Classes</h3>
+                        <p>These pseudo-classes target links in different states:</p>
+                        
+                        <pre><code class="language-css">/* Unvisited links */
+a:link {
+  color: #0066cc;
+}
+
+/* Visited links */
+a:visited {
+  color: #800080;
+}
+
+/* Note: For privacy reasons, browsers limit the styles you can apply to :visited links */</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Order Matters: LVHA</h4>
+                            <p>When using link pseudo-classes, the order matters due to specificity rules. Remember the mnemonic "LoVe HAte" for the correct order:</p>
+                            <ol>
+                                <li><code>:link</code></li>
+                                <li><code>:visited</code></li>
+                                <li><code>:hover</code></li>
+                                <li><code>:active</code></li>
+                            </ol>
+                        </div>
+                        
+                        <h3>Form Pseudo-Classes</h3>
+                        <p>These pseudo-classes target form elements in different states:</p>
+                        
+                        <pre><code class="language-css">/* Checked checkboxes and radio buttons */
+input:checked {
+  box-shadow: 0 0 0 2px #4d90fe;
+}
+
+/* Disabled form elements */
+input:disabled {
+  background-color: #f2f2f2;
+  cursor: not-allowed;
+}
+
+/* Required form elements */
+input:required {
+  border-left: 4px solid #ff0000;
+}
+
+/* Valid form elements */
+input:valid {
+  border-color: green;
+}
+
+/* Invalid form elements */
+input:invalid {
+  border-color: red;
+}</code></pre>
+                        
+                        <h3>Structural Pseudo-Classes</h3>
+                        <p>These pseudo-classes select elements based on their position in the document structure:</p>
+                        
+                        <pre><code class="language-css">/* First child of its parent */
+li:first-child {
+  font-weight: bold;
+}
+
+/* Last child of its parent */
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* Only child of its parent */
+p:only-child {
+  font-style: italic;
+}
+
+/* First element of its type among siblings */
+p:first-of-type {
+  font-size: 1.2em;
+}
+
+/* Last element of its type among siblings */
+p:last-of-type {
+  margin-bottom: 2em;
+}
+
+/* Only element of its type among siblings */
+img:only-of-type {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Every odd-numbered child (1st, 3rd, 5th, etc.) */
+tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Every even-numbered child (2nd, 4th, 6th, etc.) */
+tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/* Specific numbered child (e.g., 3rd child) */
+li:nth-child(3) {
+  color: red;
+}
+
+/* Every 3rd child starting from the 2nd */
+li:nth-child(3n+2) {
+  text-decoration: underline;
+}
+
+/* Every odd-numbered element of its type */
+p:nth-of-type(odd) {
+  background-color: #f0f0f0;
+}</code></pre>
+                        
+                        <h3>Other Useful Pseudo-Classes</h3>
+                        
+                        <pre><code class="language-css">/* Elements that don't match the selector */
+:not(.featured) {
+  opacity: 0.8;
+}
+
+/* Empty elements (no children or text) */
+div:empty {
+  display: none;
+}
+
+/* The root element (usually html) */
+:root {
+  --main-color: #0066cc;
+  font-size: 16px;
+}
+
+/* Target element (when URL has a fragment matching the element's ID) */
+:target {
+  background-color: #ffffd0;
+  animation: highlight 2s ease-out;
+}</code></pre>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Pseudo-Class</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3">User Action</td>
+                                        <td><code>:hover</code></td>
+                                        <td>Element being hovered by mouse pointer</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:active</code></td>
+                                        <td>Element being activated (clicked)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:focus</code></td>
+                                        <td>Element that has keyboard focus</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">Link State</td>
+                                        <td><code>:link</code></td>
+                                        <td>Unvisited links</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:visited</code></td>
+                                        <td>Visited links</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="5">Form</td>
+                                        <td><code>:checked</code></td>
+                                        <td>Checked radio buttons or checkboxes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:disabled</code></td>
+                                        <td>Disabled form elements</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:required</code></td>
+                                        <td>Required form elements</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:valid</code></td>
+                                        <td>Form elements with valid input</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:invalid</code></td>
+                                        <td>Form elements with invalid input</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="9">Structural</td>
+                                        <td><code>:first-child</code></td>
+                                        <td>First child of its parent</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:last-child</code></td>
+                                        <td>Last child of its parent</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:only-child</code></td>
+                                        <td>Only child of its parent</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:first-of-type</code></td>
+                                        <td>First element of its type among siblings</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:last-of-type</code></td>
+                                        <td>Last element of its type among siblings</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:only-of-type</code></td>
+                                        <td>Only element of its type among siblings</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:nth-child()</code></td>
+                                        <td>Elements based on their position among siblings</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:nth-last-child()</code></td>
+                                        <td>Elements based on position counting from the last</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:nth-of-type()</code></td>
+                                        <td>Elements based on position among siblings of same type</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="4">Other</td>
+                                        <td><code>:not()</code></td>
+                                        <td>Elements that don't match the selector</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:empty</code></td>
+                                        <td>Elements with no children or text</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:root</code></td>
+                                        <td>Root element (usually <code>&lt;html&gt;</code>)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>:target</code></td>
+                                        <td>Element targeted by URL fragment</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Pseudo-Elements</h2>
+                        <p>Pseudo-elements create "virtual" elements that don't exist in the HTML but can be styled with CSS. They are preceded by a double colon (<code>::</code>).</p>
+                        
+                        <div class="info-box">
+                            <h4>Single vs. Double Colon</h4>
+                            <p>Historically, both pseudo-classes and pseudo-elements used a single colon. CSS3 introduced the double colon (<code>::</code>) to distinguish pseudo-elements from pseudo-classes. For backward compatibility, many browsers still support the single-colon syntax for pseudo-elements, but the double-colon is preferred for new code.</p>
+                        </div>
+                        
+                        <h3>Common Pseudo-Elements</h3>
+                        
+                        <pre><code class="language-css">/* First line of text */
+p::first-line {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* First letter of text */
+p::first-letter {
+  font-size: 2em;
+  float: left;
+  margin-right: 0.1em;
+}
+
+/* Content before an element */
+.info::before {
+  content: "ℹ️ ";
+}
+
+/* Content after an element */
+a[href^="http"]::after {
+  content: " ↗";
+  font-size: 0.8em;
+}
+
+/* Selected text */
+::selection {
+  background-color: #ffb7b7;
+  color: #000;
+}
+
+/* Placeholder text in form inputs */
+input::placeholder {
+  color: #999;
+  font-style: italic;
+}</code></pre>
+                        
+                        <h3>Creating Decorative Elements with ::before and ::after</h3>
+                        <p>The <code>::before</code> and <code>::after</code> pseudo-elements are particularly powerful because they allow you to create decorative elements without adding extra HTML.</p>
+                        
+                        <pre><code class="language-css">/* Creating a fancy quote style */
+blockquote {
+  position: relative;
+  padding: 20px 40px;
+  font-style: italic;
+}
+
+blockquote::before {
+  content: """;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 4em;
+  line-height: 1;
+  color: #ccc;
+}
+
+blockquote::after {
+  content: """;
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  font-size: 4em;
+  line-height: 1;
+  color: #ccc;
+}
+
+/* Creating a tooltip */
+.tooltip {
+  position: relative;
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}</code></pre>
+                        
+                        <p>HTML usage:</p>
+                        
+                        <pre><code class="language-html">&lt;blockquote&gt;
+  The only way to learn a new programming language is by writing programs in it.
+  &lt;cite&gt;Dennis Ritchie&lt;/cite&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hover over &lt;span class="tooltip" data-tooltip="This is a helpful tip!"&gt;this text&lt;/span&gt; to see a tooltip.&lt;/p&gt;</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Important Rules for ::before and ::after</h4>
+                            <ul>
+                                <li>The <code>content</code> property is required, even if it's empty (<code>content: "";</code>)</li>
+                                <li>They are inline elements by default but can be changed with the <code>display</code> property</li>
+                                <li>They are not actual DOM elements, so they can't be selected with JavaScript or receive user interactions directly</li>
+                                <li>They are not accessible to screen readers by default, so don't use them for important content</li>
+                                <li>They can use the <code>attr()</code> function to access HTML attributes of their parent element</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Complex Selectors and Combinations</h2>
+                        <p>CSS selectors can be combined to create powerful and precise targeting patterns.</p>
+                        
+                        <h3>Multiple Selectors</h3>
+                        <p>You can apply the same styles to multiple selectors by separating them with commas:</p>
+                        
+                        <pre><code class="language-css">/* Apply the same styles to h1, h2, and h3 elements */
+h1, h2, h3 {
+  font-family: 'Georgia', serif;
+  color: #333;
+}
+
+/* Apply the same styles to multiple classes */
+.error, .warning, .notice {
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}</code></pre>
+                        
+                        <h3>Compound Selectors</h3>
+                        <p>You can combine different types of selectors without spaces to target elements that match all conditions:</p>
+                        
+                        <pre><code class="language-css">/* Target div elements with class="container" */
+div.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Target elements with both "btn" and "primary" classes */
+.btn.primary {
+  background-color: #0066cc;
+  color: white;
+}
+
+/* Target input elements with type="submit" and class="button" */
+input[type="submit"].button {
+  cursor: pointer;
+  font-weight: bold;
+}</code></pre>
+                        
+                        <h3>Complex Selector Chains</h3>
+                        <p>You can create complex selector chains by combining various selectors and combinators:</p>
+                        
+                        <pre><code class="language-css">/* Target paragraphs that are direct children of articles and have class="intro" */
+article > p.intro {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Target list items that are descendants of nav, but only when they're hovered */
+nav li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Target the first paragraph after a heading inside a section */
+section h2 + p {
+  margin-top: 0;
+}
+
+/* Target all paragraphs that follow a div with class="note" and share the same parent */
+div.note ~ p {
+  font-style: italic;
+}
+
+/* Target the first list item of an unordered list inside the main element */
+main ul li:first-child {
+  font-weight: bold;
+}
+
+/* Target all links that are being hovered and have an href attribute starting with "https" */
+a[href^="https"]:hover {
+  color: green;
+}</code></pre>
+                        
+                        <h3>:is() and :where() Pseudo-Classes</h3>
+                        <p>Modern CSS includes the <code>:is()</code> and <code>:where()</code> pseudo-classes, which can simplify complex selectors:</p>
+                        
+                        <pre><code class="language-css">/* Without :is() */
+header h1, header h2, header h3,
+footer h1, footer h2, footer h3,
+main h1, main h2, main h3 {
+  font-family: 'Arial', sans-serif;
+}
+
+/* With :is() */
+:is(header, footer, main) :is(h1, h2, h3) {
+  font-family: 'Arial', sans-serif;
+}
+
+/* The difference between :is() and :where() is specificity:
+   - :is() takes the specificity of its most specific argument
+   - :where() has zero specificity */
+
+/* This has the specificity of an ID selector */
+:is(#header, .container, p) {
+  margin-bottom: 20px;
+}
+
+/* This has zero specificity, regardless of what's inside */
+:where(#header, .container, p) {
+  margin-bottom: 20px;
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Browser Support Note</h4>
+                            <p>The <code>:is()</code> and <code>:where()</code> pseudo-classes are relatively new and may not be supported in older browsers. Check browser compatibility before using them in production.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Selector Specificity in Detail</h2>
+                        <p>Understanding specificity is crucial for writing maintainable CSS and debugging style conflicts.</p>
+                        
+                        <h3>How Specificity Is Calculated</h3>
+                        <p>Specificity is calculated as a four-part value, often represented as four numbers separated by commas:</p>
+                        
+                        <ol>
+                            <li><strong>Inline styles</strong>: 1,0,0,0</li>
+                            <li><strong>IDs</strong>: 0,1,0,0 per ID</li>
+                            <li><strong>Classes, attributes, and pseudo-classes</strong>: 0,0,1,0 per instance</li>
+                            <li><strong>Elements and pseudo-elements</strong>: 0,0,0,1 per instance</li>
+                        </ol>
+                        
+                        <p>The selector with the highest specificity wins. If two selectors have the same specificity, the one that comes later in the CSS takes precedence.</p>
+                        
+                        <h3>Specificity Examples</h3>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Selector</th>
+                                        <th>Specificity Value</th>
+                                        <th>Explanation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>p</code></td>
+                                        <td>0,0,0,1</td>
+                                        <td>One element</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>p.intro</code></td>
+                                        <td>0,0,1,1</td>
+                                        <td>One class, one element</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>.container p</code></td>
+                                        <td>0,0,1,1</td>
+                                        <td>One class, one element</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>div.container p.intro</code></td>
+                                        <td>0,0,2,2</td>
+                                        <td>Two classes, two elements</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>#header</code></td>
+                                        <td>0,1,0,0</td>
+                                        <td>One ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>nav ul li a:hover</code></td>
+                                        <td>0,0,1,4</td>
+                                        <td>One pseudo-class, four elements</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>div p::first-line</code></td>
+                                        <td>0,0,0,3</td>
+                                        <td>Two elements, one pseudo-element</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>[type="text"]</code></td>
+                                        <td>0,0,1,0</td>
+                                        <td>One attribute</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>p[class="intro"]</code></td>
+                                        <td>0,0,1,1</td>
+                                        <td>One attribute, one element</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>style="color: red;"</code></td>
+                                        <td>1,0,0,0</td>
+                                        <td>Inline style</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3>The !important Exception</h3>
+                        <p>The <code>!important</code> declaration overrides normal specificity rules and takes precedence over all other declarations. If multiple conflicting declarations use <code>!important</code>, the normal specificity rules apply among them.</p>
+                        
+                        <pre><code class="language-css">p {
+  color: red !important; /* This will override any other color declarations for p elements */
+}
+
+#content p {
+  color: blue; /* This would normally win due to higher specificity, but !important above takes precedence */
+}</code></pre>
+                        
+                        <div class="info-box">
+                            <h4>Avoiding Specificity Problems</h4>
+                            <p>To maintain manageable CSS, follow these best practices:</p>
+                            <ul>
+                                <li>Avoid using IDs for styling when possible</li>
+                                <li>Keep selectors as simple as possible</li>
+                                <li>Use classes for most styling needs</li>
+                                <li>Avoid using <code>!important</code> except as a last resort</li>
+                                <li>Use a consistent naming convention (like BEM) to reduce the need for complex selectors</li>
+                                <li>Consider using CSS custom properties (variables) for values that need to be overridden</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Practice Exercise: CSS Selectors</h2>
+                        <p>Let's practice using different types of CSS selectors to style a webpage.</p>
+                        
+                        <h3>Exercise: Style a Blog Layout</h3>
+                        <p>Create an HTML file with the following content:</p>
+                        
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;CSS Selectors Practice&lt;/title&gt;
+  &lt;link rel="stylesheet" href="selectors.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header id="main-header"&gt;
+    &lt;h1&gt;My Blog&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#" class="active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Articles&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  
+  &lt;main&gt;
+    &lt;section class="featured-posts"&gt;
+      &lt;h2&gt;Featured Posts&lt;/h2&gt;
+      
+      &lt;article class="post featured"&gt;
+        &lt;h3&gt;Getting Started with CSS Selectors&lt;/h3&gt;
+        &lt;p class="meta"&gt;Posted on &lt;time datetime="2025-04-15"&gt;April 15, 2025&lt;/time&gt; by &lt;a href="#"&gt;Admin&lt;/a&gt;&lt;/p&gt;
+        &lt;p class="excerpt"&gt;Learn the fundamentals of CSS selectors and how to use them effectively in your projects.&lt;/p&gt;
+        &lt;a href="#" class="read-more"&gt;Read More&lt;/a&gt;
+      &lt;/article&gt;
+    &lt;/section&gt;
+    
+    &lt;section class="recent-posts"&gt;
+      &lt;h2&gt;Recent Posts&lt;/h2&gt;
+      
+      &lt;article class="post"&gt;
+        &lt;h3&gt;CSS Box Model Explained&lt;/h3&gt;
+        &lt;p class="meta"&gt;Posted on &lt;time datetime="2025-04-10"&gt;April 10, 2025&lt;/time&gt; by &lt;a href="#"&gt;Admin&lt;/a&gt;&lt;/p&gt;
+        &lt;p class="excerpt"&gt;Understanding the CSS box model is crucial for layout and spacing in web design.&lt;/p&gt;
+        &lt;a href="#" class="read-more"&gt;Read More&lt;/a&gt;
+      &lt;/article&gt;
+      
+      &lt;article class="post"&gt;
+        &lt;h3&gt;Flexbox vs. Grid: When to Use Each&lt;/h3&gt;
+        &lt;p class="meta"&gt;Posted on &lt;time datetime="2025-04-05"&gt;April 5, 2025&lt;/time&gt; by &lt;a href="#"&gt;Admin&lt;/a&gt;&lt;/p&gt;
+        &lt;p class="excerpt"&gt;Comparing CSS Flexbox and Grid layout systems to help you choose the right tool for the job.&lt;/p&gt;
+        &lt;a href="#" class="read-more"&gt;Read More&lt;/a&gt;
+      &lt;/article&gt;
+      
+      &lt;article class="post"&gt;
+        &lt;h3&gt;CSS Variables for Beginners&lt;/h3&gt;
+        &lt;p class="meta"&gt;Posted on &lt;time datetime="2025-04-01"&gt;April 1, 2025&lt;/time&gt; by &lt;a href="#"&gt;Admin&lt;/a&gt;&lt;/p&gt;
+        &lt;p class="excerpt"&gt;Learn how to use CSS custom properties (variables) to make your stylesheets more maintainable.&lt;/p&gt;
+        &lt;a href="#" class="read-more"&gt;Read More&lt;/a&gt;
+      &lt;/article&gt;
+    &lt;/section&gt;
+    
+    &lt;aside class="sidebar"&gt;
+      &lt;div class="widget"&gt;
+        &lt;h3&gt;Categories&lt;/h3&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;CSS Basics&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Layout Techniques&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Responsive Design&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Best Practices&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      
+      &lt;div class="widget"&gt;
+        &lt;h3&gt;Subscribe&lt;/h3&gt;
+        &lt;form&gt;
+          &lt;input type="email" placeholder="Your email address" required&gt;
+          &lt;button type="submit"&gt;Subscribe&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+  
+  &lt;footer&gt;
+    &lt;p&gt;&copy; 2025 My Blog. All rights reserved.&lt;/p&gt;
+    &lt;ul class="social-links"&gt;
+      &lt;li&gt;&lt;a href="#" title="Facebook"&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#" title="Twitter"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#" title="Instagram"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <p>Now, create a CSS file named <code>selectors.css</code> and use different types of selectors to style the page. Here are some tasks to complete:</p>
+                        
+                        <div class="try-it-box">
+                            <h4>Challenge Yourself</h4>
+                            <p>Use the following selector types to style the blog layout:</p>
+                            <ol>
+                                <li>Use a universal selector to set <code>box-sizing: border-box</code> for all elements</li>
+                                <li>Use type selectors to style basic elements like <code>body</code>, <code>h1</code>-<code>h3</code>, and <code>p</code></li>
+                                <li>Use an ID selector to style the header</li>
+                                <li>Use class selectors to style posts, featured posts, and widgets</li>
+                                <li>Use a descendant combinator to style links inside the navigation</li>
+                                <li>Use a child combinator to style list items that are direct children of the navigation</li>
+                                <li>Use an adjacent sibling combinator to add margin to posts that follow another post</li>
+                                <li>Use attribute selectors to style required form inputs and links with titles</li>
+                                <li>Use pseudo-classes to style link states, the first post, and every odd list item</li>
+                                <li>Use pseudo-elements to add decorative content before or after certain elements</li>
+                                <li>Use a combination of selectors to target specific elements without adding extra classes</li>
+                            </ol>
+                            <p>Try to create a visually appealing blog layout using only CSS selectors without modifying the HTML.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <p>In this lesson, we've explored the wide range of CSS selectors available for targeting HTML elements:</p>
+                        <ul>
+                            <li><strong>Basic Selectors</strong>: Universal (<code>*</code>), type (element), class (<code>.class</code>), ID (<code>#id</code>), and attribute (<code>[attr]</code>) selectors</li>
+                            <li><strong>Combinators</strong>: Descendant (space), child (<code>&gt;</code>), adjacent sibling (<code>+</code>), and general sibling (<code>~</code>) combinators</li>
+                            <li><strong>Pseudo-Classes</strong>: Selectors that target elements based on their state or position, like <code>:hover</code>, <code>:first-child</code>, and <code>:checked</code></li>
+                            <li><strong>Pseudo-Elements</strong>: Selectors that create virtual elements for styling, like <code>::before</code>, <code>::after</code>, and <code>::first-line</code></li>
+                            <li><strong>Complex Selectors</strong>: Combinations of multiple selectors to create precise targeting patterns</li>
+                            <li><strong>Specificity</strong>: The system that determines which styles take precedence when multiple rules target the same element</li>
+                        </ul>
+                        
+                        <p>Understanding and effectively using CSS selectors is a fundamental skill for web development. With the right selectors, you can write more efficient, maintainable, and powerful CSS.</p>
+                        
+                        <p>In the next lesson, we'll explore the CSS Box Model, which is essential for understanding how elements are sized and spaced on the page.</p>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="page-navigation">
+                        <a href="page26.html" class="btn">Previous: Introduction to CSS</a>
+                        <a href="page28.html" class="btn">Next: CSS Box Model</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../../../assets/images/logo.svg" alt="HTML & CSS Mastery">
+                        <h2>HTML & CSS Mastery</h2>
+                    </div>
+                    <p>A comprehensive guide to modern web development with a futuristic aesthetic approach.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../html/basic/page1.html">HTML Basics</a></li>
+                        <li><a href="../../html/professional/page13.html">Professional HTML</a></li>
+                        <li><a href="../basic/page26.html">CSS Basics</a></li>
+                        <li><a href="../professional/page38.html">Professional CSS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">HTML Reference</a></li>
+                        <li><a href="#">CSS Reference</a></li>
+                        <li><a href="#">Web Design Principles</a></li>
+                        <li><a href="#">Accessibility Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HTML & CSS Mastery Course. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>
